@@ -1,0 +1,29 @@
+# ── macOS ─────────────────────────────────────────────
+# 外掛 package 內出現 .DS_Store 會被 runtime 掃到，不要進版控
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# ── Windows ───────────────────────────────────────────
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ── 編輯器 / 暫存 ─────────────────────────────────────
+*.swp
+*.swo
+*~
+*.tmp
+*.bak
+
+# ── 憑證 / 敏感設定 ───────────────────────────────────
+# 外掛可以帶 MCP server 設定，token 一律不進版控
+.env
+.env.*
+*.key
+*.pem
+**/credentials*.json
+**/*secret*.json
