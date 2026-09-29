@@ -16,6 +16,24 @@ plugins/
       learning-game-feel/              # 回饋層 / game feel
         SKILL.md
         references/feedback-recipes.md
+  three-kingdoms-focus-studio/         # 三國志 YouTube 音樂發布外掛 v1.0.0
+    .minimax-plugin/plugin.json
+    icon.png                           # 單一圖示（無 darkIcon）
+    skills/
+      yt-focus-music-pipeline/         # 協調層：分流 / 閘門 / 交接契約（單一入口）
+        SKILL.md
+      three-kingdoms-focus-music/      # 發布類型 / 長時混音 / 封面 / 循環影片 / QC
+        SKILL.md  SKILL.cn.md  meta.yaml
+      three-kingdoms-video-project/    # 角色專案包 / 規格閘門 / 章節拼接 / 兩階段封面
+        SKILL.md
+      music3-instrumental-prompts/     # 純器樂 Music 3.0 Structured Caption
+        SKILL.md
+        references/  templates/        # 4 份 references + 6 份模板
+      three-kingdoms-music-review/     # 審查 QA（prompt / 技術 / 聆聽 / 銜接）
+        SKILL.md
+        references/  scripts/measure_audio.py
+      three-kingdoms-vocal-single/     # 角色人聲單曲 / 歌詞 / 分鏡 / Short
+        SKILL.md
 ```
 
 ## 目前外掛
@@ -24,12 +42,25 @@ plugins/
 |---|---|---|---|
 | `learning-game-studio` | 0.2.0 | `learning-mechanics` | 選適合學習目標的遊戲機制、擋掉會教錯的機制、驗收四訊號 |
 | | | `learning-game-feel` | 回饋層：讓因果關係看得見、獎勵不阻斷、手機優先 |
+| `three-kingdoms-focus-studio` | 1.0.0 | `yt-focus-music-pipeline` | **單一入口**：分流三條路徑、擋住人工確認閘門、定義 skill 間交接契約 |
+| | | `three-kingdoms-focus-music` | 發布類型分類、長時混音結構、封面、15 秒循環影片、發布包、QC |
+| | | `three-kingdoms-video-project` | 角色專案包、規格閘門 `確認規格`、master prompt、候選審查、章節音訊拼接、兩階段封面 |
+| | | `music3-instrumental-prompts` | 純器樂 Music 3.0 Structured Caption（6 份模板 + 4 份 references）|
+| | | `three-kingdoms-music-review` | 審查 QA：prompt / 技術 / 聆聽 / 銜接四層，附 `measure_audio.py` |
+| | | `three-kingdoms-vocal-single` | 角色人聲單曲：歌詞、發音與韻律鎖、分鏡圖、YouTube Short 分支 |
 
 載入方式（**名稱必須帶外掛前綴**）：
 
 ```
 learning-game-studio:learning-mechanics
 learning-game-studio:learning-game-feel
+
+three-kingdoms-focus-studio:yt-focus-music-pipeline
+three-kingdoms-focus-studio:three-kingdoms-focus-music
+three-kingdoms-focus-studio:three-kingdoms-video-project
+three-kingdoms-focus-studio:music3-instrumental-prompts
+three-kingdoms-focus-studio:three-kingdoms-music-review
+three-kingdoms-focus-studio:three-kingdoms-vocal-single
 ```
 
 ## 重要：本機安裝處是「複製」，不是 symlink
@@ -75,3 +106,19 @@ rsync -a --delete --exclude '.DS_Store' --exclude '._*' \
 ## Provenance
 
 `learning-game-studio` 為**原創撰寫**（兩支 SKILL.md 與兩份 reference 都是自寫內容）。設計時參考了 OpenAI 的 `game-studio` 外掛（MIT，MiniMax 官方打包）的**分層思路與品質標準**，但**未複製其任何檔案**。若未來要公開散布、且內容開始包含上游素材，需補上 MIT 授權聲明與來源標註（repo + commit）。
+
+### `three-kingdoms-focus-studio`
+
+這個外掛是**整合包**，內含兩種來源不同的內容：
+
+- **`yt-focus-music-pipeline`（1 支）＝本次新撰寫。** 依據另外 5 支 skill 的實際內容撰寫協調層（分流、閘門、交接契約），未複製它們的流程細節。撰寫後交由獨立 verifier 逐項比對來源，修正 1 個 Critical 供應商契約錯誤與 5 個較小缺陷後定稿。
+- **另外 5 支＝自既有本機 skill 原樣搬入**，來源為：
+  - `three-kingdoms-video-project`、`music3-instrumental-prompts`、`three-kingdoms-focus-music`、`three-kingdoms-vocal-single` ← `~/.agents/skills/`
+  - `three-kingdoms-music-review` ← `~/.codex/skills/`
+
+搬入時做的**唯一**改動是移除 2 個 Codex 專用介面檔 `agents/openai.yaml`（Codex UI 描述檔，MiniMax plugin 不使用）。SKILL.md 與所有 references / templates **位元組未動**。
+
+其中 `music3-instrumental-prompts` 自述為 MiniMax 官方 `music-caption-rewriter` skill 的**純器樂特化分支**（該 skill 另存於 `~/.agents/skills/music-caption-rewriter/`）。若本 repo 日後要公開散布，這一支需補上上游的來源標註與授權聲明。
+
+⚠️ 這 5 支的原作者與授權狀態尚未確認。**發布前需先確認**再對外散布。
+

@@ -1,0 +1,38 @@
+Global Metadata
+Basic Attributes: bpm is 85. key is F, and scale is minor. Ambient Pop / Cinematic Electronic.
+Global Emotional Progression: Solitary meditative stillness that invites mystery and introspection,
+swelling into a cathartic expansive release in the middle, then receding back to a tranquil fade that
+mirrors the opening quietude. The return should feel like exhaling.
+Application Scenarios & Imagery: Twilight landscapes, misty forests, ancient ruins, a long reflective
+journey, the final two minutes of a film that wants to sit with you.
+Sonics & Production Profile: Cavernous wide soundstage, dark warm frequency profile dominated by rich
+low-mids and smooth highs. Highly breathable dynamics with real headroom, so percussion and layered
+textures can lift without harsh compression.
+
+Vocal Details
+Lead Instrument: Instrumental — no vocals, no choir, no spoken word, no vocal samples. The lead
+melodic role is carried by a melancholic piano playing sparse, reverberant chords, present from the
+first bar through to the last.
+Performance: Widely spaced, slowly voiced chords with a soft legato touch and a long natural decay.
+The left hand carries the harmony; the right hand adds single notes only at the two emotional peaks,
+never as a continuous melody line.
+Harmonic Bed: Atmospheric synth pads swell in shortly after the opening and hold underneath
+everything. A deep sustained sub-bass synth joins when the percussion arrives, grounding the low end.
+Spatial: Long-tail hall reverb on the piano, widening stereo on the pads, with the sub-bass kept
+mono and centred.
+
+Arrangement
+Instrument Lifecycle Description (Primary/Secondary Layering): The piano opens alone, unaccompanied,
+and persists through the entire piece — it is the spine. Synth pads enter shortly after and swell
+gradually. When the percussion arrives, a layer of synthesized string textures emerges at the climax
+to heighten the emotional weight, then withdraws completely so the last bars belong to the piano
+alone again. A single high, glassy chime marks each section change and never repeats in the same
+register.
+Groove & Foundation Progression: The first section runs with no percussion at all, the piano's own
+rhythm providing the only pulse. A subdued electronic pattern enters with a soft kick and brushed
+snare, establishing a slow heartbeat-like feel. It gains definition with crisp hi-hats and a slightly
+more present snare through the middle, then dissolves back to silence for the final bars.
+Embellishments, Textures & Spatial FX: Subtle risers and reverse cymbal swells lead into the swell —
+used twice, never more. Granular noise textures and wind-like ambient sound are woven through the
+background at low level, reinforcing the organic theme and adding depth to the stereo field without
+ever becoming audible as a distinct event.

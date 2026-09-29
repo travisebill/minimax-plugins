@@ -1,0 +1,37 @@
+Global Metadata
+Basic Attributes: bpm is 68. key is E, and scale is minor. Dark Underscore / Tense Minimal.
+Global Emotional Progression: Unease that tightens almost imperceptibly. The listener should realise
+they are already afraid several bars before anything visibly happens. The ending leaves the question
+unanswered rather than resolving it.
+Application Scenarios & Imagery: Horror underscore, a slow approach, a scene where something is
+present but off-screen, a thriller sequence that is holding its breath.
+Sonics & Production Profile: Dark, dry, and narrow. Short decays, almost no reverb, and a
+high-mid-heavy frequency profile that makes the quiet parts feel exposed rather than comforting.
+Silence is used as an instrument.
+
+Vocal Details
+Lead Instrument: Instrumental — no vocals, no choir, no whispers, no spoken word, no vocal samples.
+The lead melodic role is carried by a detuned upright piano, its natural wobble left audible, plus a
+bowed cello that enters only near the end.
+Performance: The piano repeats a short, unresolved figure — the same five notes, never resolving —
+with a slightly uneven human touch and a percussive mechanism noise audible between notes. The cello
+bowing is extremely slow and quiet, more texture than melody.
+Harmonic Bed: A low sustained drone a semitone below the piano's root holds continuously and never
+moves. No other sustained element.
+Spatial: Very dry and close, with almost no reverb. The lack of space is deliberate and is what makes
+the track feel claustrophobic.
+
+Arrangement
+Instrument Lifecycle Description (Primary/Secondary Layering): A low drone enters alone for the first
+eight bars. The upright piano figure enters, thin and exposed, and repeats without variation for the
+bulk of the track. A slow metallic scrape appears once around the midpoint and never returns. Near
+the end a bowed cello joins, barely audible at first, rising just enough to be noticed. The piano
+stops abruptly mid-figure — not a resolution, just a stop — and the drone continues alone into the
+fade.
+Groove & Foundation Progression: There is no groove. No drums, no percussion, no repeating rhythmic
+figure. Time is held by the piano's uneven repetition, which is precisely what makes it unsettling.
+Nothing is quantized and nothing locks.
+Embellishments, Textures & Spatial FX: Very sparse and irregular. A single high metallic ping appears
+exactly once. No risers, no impacts, no big build, no cymbal swell, no sub-bass drop. Any
+conventional tension-building device would defeat the purpose — the tension must come from
+withholding, not from escalation.

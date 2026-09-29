@@ -1,0 +1,36 @@
+Global Metadata
+Basic Attributes: bpm is 78. key is F#, and scale is major. Lo-fi / Chillhop.
+Global Emotional Progression: Warm, unhurried, faintly melancholy, and completely level. There are no
+builds, no drops, no key changes, and no emotional swings. The track's job is to stay out of the way
+for a long time without becoming boring.
+Application Scenarios & Imagery: Study and reading background, livestream and podcast bed, a
+coffee-shop corner, late-night work sessions.
+Sonics & Production Profile: Warm and close-mic'd, soft tape saturation, gentle low-pass filtering,
+dusty high end. A wide but unforced stereo field. Deliberately imperfect timing — no grid-tight
+quantization anywhere.
+
+Vocal Details
+Lead Instrument: Instrumental — no vocals, no vocal samples, no spoken elements. The lead melodic
+role is carried by a soft Rhodes-style electric piano playing sparse, lazily voiced chords, supported
+by a muted lead guitar that answers rather than leads.
+Performance: Rhodes chords are wide, slow, and slightly behind the beat, with a gentle tremolo. The
+guitar answers on the and-of-three roughly every fourth bar in a single short phrase — it never
+competes and never solos.
+Harmonic Bed: A walking upright bass moves a simple two-bar figure throughout, round and woody
+rather than deep.
+Spatial: Everything sits close and slightly narrow. No reverb throws, no stereo widening, no
+impressive space — the room should feel small and lived-in.
+
+Arrangement
+Instrument Lifecycle Description (Primary/Secondary Layering): A dusty boom-bap snare and a rounded,
+muted kick establish the groove from bar one and never change. Rhodes enters first with the widest
+chords. The upright bass walks throughout without interruption. The lead guitar appears only
+sparsely. A brushed shaker and an occasional rim click arrive as sparse percussive details and never
+double the main groove. The track ends with a slow four-bar decay and a clean, uneventful stop.
+Groove & Foundation Progression: Laid-back swing throughout, with the snare sitting slightly behind
+the grid. The kick is muted and rounded, never punchy. No velocity build, no fills, no ghost-note
+escalation, no filter sweeps, no risers, no drops, no tempo changes at any point.
+Embellishments, Textures & Spatial FX: Warm tape hiss and faint vinyl crackle sit underneath
+everything at a level that is felt rather than heard. A single low-passed chord stab may appear once
+in the second half — never twice, never louder. No ambient washes, no risers, no dramatic anything.
+The track should be safe to loop for two hours.

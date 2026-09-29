@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "name": "three-kingdoms-focus-studio",
+  "displayName": "三國志專注音樂工作室",
+  "version": "1.0.0",
+  "description": "三國志 YouTube 音樂發布流程工具箱：統籌長時間專注音樂、角色人聲單曲與專輯曲目的完整製作鏈，涵蓋音樂生成 prompt 撰寫、候選審查、章節拼接、封面、15 秒循環影片與上架文案。以 yt-focus-music-pipeline 作為單一入口分流。",
+  "author": "Travis Chen",
+  "icon": "icon.png",
+  "category": "Studio",
+  "exampleQueries": [
+    "幫我做一支 60 分鐘的三國志讀書專注音樂 YouTube 影片，含封面和 15 秒循環影片",
+    "我要做諸葛亮的角色單曲 MV，幫我從歌詞走到分鏡圖和 YouTube Short",
+    "幫我審查這批三國志專注音樂的候選音檔，確認段落銜接和技術品質",
+    "規劃一個三國志專輯，每首曲各配封面，最後整理成可上架的發布包",
+    "用 Music 3.0 幫我寫一條純器樂的 ambient cinematic 提示詞"
+  ],
+  "apps": [],
+  "mcpServers": [],
+  "skills": [
+    "skills/yt-focus-music-pipeline/SKILL.md",
+    "skills/three-kingdoms-focus-music/SKILL.md",
+    "skills/three-kingdoms-video-project/SKILL.md",
+    "skills/music3-instrumental-prompts/SKILL.md",
+    "skills/three-kingdoms-music-review/SKILL.md",
+    "skills/three-kingdoms-vocal-single/SKILL.md"
+  ]
+}

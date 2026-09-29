@@ -1,0 +1,16 @@
+display-name-zh: 三國志專注音樂
+version: 0.3.1
+tag-en: "Sound & Music / Creative Generation"
+tag-cn: "聲音音樂 / 創作生成"
+complete-tags-en:
+  - "Sound & Music / Creative Generation"
+complete-tags-cn:
+  - "聲音音樂 / 創作生成"
+summary-en: "Create Three Kingdoms-inspired music releases with confirmed YouTube cover and loop-video prompts, long-form audio assembly, and reusable publishing records."
+summary-cn: "生成三國志音樂發布包，先確認封面與循環影片提示詞再製作。"
+desc-en: "For users who want a repeatable Three Kingdoms-inspired music release system that can produce long focus mixes, single songs, album tracks, character songs, matching cover art, looping video covers, and reusable release notes. The user can provide the target format, duration, temperament, forbidden elements, title text, and whether the run should update the archive for future Three Kingdoms-related songs in different styles such as bossa nova, jazz, romantic, or travel-themed variations. The workflow classifies the release type, plans the music, generates one final musical unit per target, extends duration-bound releases by adding compatible new music until the total reaches the requested length, confirms the cover prompt before producing 16:9 YouTube cover art, confirms the video prompt before creating a 15-second MiniMax-H3 seamless loop cover, and assembles publish-ready copy with literary pinned comments. It is best for recurring Three Kingdoms music projects and does not handle unrelated TVC advertising or non-Three-Kingdoms music release systems unless the user explicitly redefines the scope."
+desc-cn: "適用於想要可反覆使用的三國志音樂發布流程，能產出長時間專注混音、單曲、專輯曲目、角色歌、對應封面、循環影片與可重用的發布紀錄。使用者可提供輸出形式、時長、音樂性格、禁用元素、標題文字，以及這次是否要更新歸檔，方便未來持續新增不同曲風的三國志歌曲，例如 bossa nova、爵士、浪漫或遊山玩水版本。流程會先分類發布類型，再規劃音樂、每個目標生成一個最終音樂單位；若總長不足指定時長，會新增相容音樂直到達標；YouTube 封面固定 16:9，封面與影片都先確認提示詞再生成，循環影片預設用 MiniMax-H3 製作 15 秒無接縫版本，並整理文青風格置頂留言與可上架文案。最適合持續製作三國志音樂系列，不適用於無關的 TVC 廣告或完全脫離三國志主題的音樂發布系統，除非使用者明確重新定義範圍。"
+author-en: "MiniMax Design"
+author-cn: "MiniMax Design"
+source: community
+cover: ""

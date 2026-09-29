@@ -1,0 +1,34 @@
+Global Metadata
+Basic Attributes: bpm is 92. key is A, and scale is mixed. Fantasy / Exploration Game Background.
+Global Emotional Progression: Calm, curious, and gently expectant. Warmth and safety with a low
+undercurrent of wonder. The mood is constant — the player is walking through something beautiful, and
+the music is noticing it alongside them.
+Application Scenarios & Imagery: Open-world exploration, a hub area, overworld traversal, a
+character walking a forest or coastline path. Designed to survive long playback.
+Sonics & Production Profile: Warm, spacious, and lightly diffused. A gentle low-pass sits over
+everything so nothing is ever harsh or attention-grabbing. No sharp transients anywhere in the mix.
+
+Vocal Details
+Lead Instrument: Instrumental — no vocals, no choir, no spoken word, no vocal samples. The lead
+melodic role is carried by a plucked harp and a soft nylon-string acoustic guitar, trading phrases
+rather than playing together.
+Performance: The harp states short, bell-like phrases with a natural decay. The guitar plays soft
+fingerpicked figures in a steady relaxed pulse. They alternate, leaving space between them — neither
+ever plays a melody line long enough to become the focus.
+Harmonic Bed: A sustained warm pad and a low cello drone hold underneath without moving. A soft
+frame drum keeps a slow, unobtrusive pulse that never resolves into a strong beat.
+Spatial: Generous reverb on the harp with a long smooth tail, shorter and drier on the guitar, so
+the two sit at clearly different depths. Nothing is panned hard.
+
+Arrangement
+Instrument Lifecycle Description (Primary/Secondary Layering): The pad and cello drone are present
+from the first second and never leave. A distant flute-like lead appears only in the second half as a
+reward for attention. The frame drum enters quietly and stays at the same level for the entire
+track. The harp and guitar trade phrases throughout, and both drop out together for the final eight
+bars so the track can resolve into the drone alone and loop.
+Groove & Foundation Progression: A slow, unassertive pulse — the track has no strong beat and no
+climaxes. The nylon guitar's fingerpicking supplies the only forward motion. No percussion accents,
+no fills, no rhythmic surprises, no build.
+Embellishments, Textures & Spatial FX: Occasional soft wind and distant bird-like textures sit
+underneath at very low level, changing subtly rather than repeating. No dramatic risers, no impact
+hits, no key change, no tempo change. The loop point must be unnoticeable.
