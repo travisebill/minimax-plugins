@@ -29,6 +29,46 @@ workflow (routing, reference selection, template safety) defer to `music-caption
    strongly implied. Otherwise use a range or qualitative tempo ("slow, 80–90 BPM").
 6. **Never pad with dead adjectives.** `good`, `nice`, `high quality`, `professional` carry zero
    control value and waste the character budget. Every word must change what the model renders.
+7. **Do not request a foley sound source as a separate layer.** Rain, thunder, water, wind as a
+   weather sound, birds, insects, fire, fireplace, static, tape hiss and vinyl crackle compete with
+   the music rather than support it, and generation gives you no decibel control over them. The model
+   renders them as loudly as it likes, usually over the instruments. Keep these out of the caption
+   and add them in post where the level is measurable.
+
+   **The carve-out: ambience that is the subject.** Some genres *are* air. Epic scoring lives on wind
+   and distance. Live jazz records carry room tone, crowd and the acoustic of the room. Chinese
+   instrumental work lives on the breath of a suona and the air inside a dizi. Stripping those out
+   produces a technically clean track that no longer sounds like its genre.
+
+   When the ambience is the subject it stays in the caption, and it obeys level discipline:
+
+   - **Never place it at `0:00`.** The opening is where the ear is most sensitive and where the model
+     puts it loudest. Bring it in after the first third.
+   - **Request character, not a sound effect.** "Air around the low strings" is controllable;
+     "wind sound" is a named effect the model realises literally and prominently.
+   - **Anchor it underneath something.** "Beneath the pad, below the low strings" gives the model a
+     reference to stay under.
+   - **Never combine it with "every audible element is a musical instrument."** That sentence
+     contradicts the request, and a contradiction is resolved arbitrarily. Write the framing that
+     matches what you actually want.
+   - **Measure it afterwards.** A genre-appropriate ambience that renders 20 dB over the mix is still
+     a defect, and post is the only place that gets fixed.
+
+   The difference between the two cases is not the sound, it is whether the sound is the point. Vinyl
+   crackle under a lo-fi beat is decoration, and decoration that cannot be levelled is a liability.
+   Wind across a desert vista is the scene, and a scene belongs in the caption.
+
+8. **Never name what you do not want.** An explicit `no rain / no hiss / no crackle` is unreliable
+   and can seed the concept it forbids. Verified 2026-09-30: a caption stating "absolutely no rain,
+   no thunder, no fire, no crackle, no hiss" still produced audible tape hiss, while a caption that
+   simply never mentioned those words did not. Exclude by positive framing — describe only the
+   musical content and state what the mix *is*, never what it is not. Reserve named exclusions for
+   instrument-level choices where the model can act on them, not for ambience categories.
+
+   Scope this rule to ambience categories. Naming a specific unwanted *instrument* is different and
+   generally useful: "no saxophone" and "no vibraphone" are choices the model can act on, and several
+   genres need them, because a bossa nova without a nylon string lead or a folk arrangement with no
+   accordion fails for exactly that reason.
 
 ---
 
@@ -128,8 +168,33 @@ Revise once if any check fails, then return only the corrected result.
 - [ ] No artist names, no copyrighted soundtrack references
 - [ ] No fabricated exact BPM or key
 - [ ] No dead adjectives
+- [ ] **No foley sound source requested as a separate layer** (Rule 7)
+- [ ] If genre-defining ambience is present: it is deferred past the first third, requested as character
+      rather than as a named effect, anchored beneath an instrument, and never paired with
+      "every audible element is a musical instrument"
+- [ ] **No ambience category named even in a negative clause** (Rule 8)
+- [ ] No unwanted **instrument** named as a negative, unless the genre requires the exclusion
+- [ ] No self-contradiction: anything asked for in `Arrangement` must not also appear in an exclusion list
 - [ ] Word count fits the runtime budget
 - [ ] Callers were told `is_instrumental: true` and to leave `lyrics` empty
+
+## Text edits that break the structure
+
+A global whitespace collapse such as `re.sub(r"\s{2,}", " ", text)` silently destroys the
+three-block contract, because the blank line before `**Vocal Details**` and `**Arrangement**` is
+the only thing separating the blocks. The result reads as one run-on paragraph beginning
+`...late-night listening. **Vocal Details**`, and the model loses the block boundaries it relies on.
+
+Split on the headings and rejoin with blank lines instead of collapsing the whole string:
+
+```python
+parts = [p.strip() for p in re.split(r"(\*\*(?:Global Metadata|Vocal Details|Arrangement)\*\*)", text) if p.strip()]
+text = "\n".join("" if i else part for i, part in enumerate(parts))
+```
+
+Verify after any bulk word edit: the three headings must each start their own line, the line before
+each must be empty, and the production paragraph must sit below the timeline rather than trailing
+the final timestamp.
 
 ---
 

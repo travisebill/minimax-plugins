@@ -14,7 +14,8 @@ Performance: Short, tight, fully articulated plucks with a fast attack and a cle
 decay. No reverb tail on the lead — the motif must read as precise and engineered, not washed.
 Harmonic Bed: A deep controlled sub-bass supports the motif, and a single sustained low-string swell
 appears for one bar to create lift.
-Spatial: Tight and centred in the low end, wide and bright above. No ambient wash, no hall, no room.
+Spatial: Tight and centred in the low end, wide and bright above. A short decay with no perceptible
+space surrounding the instruments.
 
 Arrangement
 Instrument Lifecycle Description (Primary/Secondary Layering): The track opens on a single
@@ -25,6 +26,6 @@ on the resolution with a short natural decay — no fade, no tail.
 Groove & Foundation Progression: Four-on-the-floor throughout, straight and confident, with a deep
 controlled sub-bass on the downbeat. The low end is tight and modern, not 808-boomy, and it never
 drowns the midrange. No half-time drop, no break, no breakdown.
-Embellishments, Textures & Spatial FX: None. No risers, no reverse cymbals, no build beyond three
-seconds, no ambient texture, no vinyl noise. The discipline here is the point — every sound must earn
+Embellishments, Textures & Spatial FX: None beyond the instruments themselves. No risers, no reverse
+cymbals, no build beyond three seconds. Every audible element in this track is a musical instrument playing a pitched or rhythmically defined part. The discipline here is the point — every sound must earn
 its place within fifteen seconds, and anything decorative is a liability.

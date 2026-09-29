@@ -55,6 +55,23 @@ Keep the Three Kingdoms identity stable while allowing the musical style to vary
 
 For long focus music, create a long-form structure before generation.
 
+**Size the release to the real per-track length, not the advertised maximum.** Music 3.0
+generates a complete song of roughly 1.5–3.5 minutes when it is being used for good-quality
+instrumental. Measured 2026-09-30: 2.90 minutes. A caption cannot extend this and the hosted API
+exposes no duration parameter, so a 65-minute release needs about 22–26 tracks, not 6. Plan the
+track count from a midpoint of 2.5 minutes and correct it after the first real measurement.
+
+**Author a core set and a reserve set, not one fixed set.** The per-track length varies between
+calls, so a single sized set either overshoots or leaves the release short.
+
+- Core set: sized from the 2.5 minute midpoint, the intended running order.
+- Reserve set: shorter, simpler arrangement timelines, written and held back. They exist to plug a
+  shortfall revealed by measurement, not to be generated up front.
+- Ship a decision table beside the prompts mapping the user's measured average to the action:
+  at 3.5 minutes drop tracks, at 2.5 use everything, at 1.8 add the whole reserve bank. When even
+  the full bank falls short, say so in advance with the number of extra tracks required — do not let
+  the user discover the shortfall after generating everything.
+
 For the 60-minute default, use 6 musical chapters of about 10 minutes each:
 
 1. Opening desk lamp — establish quiet historical reading atmosphere.
@@ -63,6 +80,14 @@ For the 60-minute default, use 6 musical chapters of about 10 minutes each:
 4. Wind through command tent — airy middle section, reduced density.
 5. Long campaign reflection — gentle emotional weight without climax.
 6. Returning to stillness — soft resolution and loop-friendly ending.
+
+**Give each chapter a minute range, not a track count.** A chapter is "8 to 12 minutes", and the
+tracks that land there get decided after measurement. A track count stated in advance is a claim the
+provider will not honour. Give the closing chapter the most tracks, because it carries the resolution.
+
+Keep the descent on more than one axis at once — tempo, instrument count, density, and later in
+assembly the frequency content and low-end weight. Reducing instrument count alone reads as thinning
+out rather than settling down.
 
 For a single song or album track, define one clear emotional lane and one clear listening use. Keep the song identity distinct instead of hiding multiple songs in one prompt.
 
@@ -85,6 +110,16 @@ Prompt rules:
 ### MiniMax Music 3.0 interface and guide reference
 
 When MiniMax Music 3.0 is selected, identify the delivery route before writing a paste-ready payload. The public Music Generation API and web prompt field use model `music-3.0`, with `prompt` limited to 2,000 characters and `lyrics` sent separately. Count the actual plain-text `prompt`, including spaces and paragraph breaks, and record the safety margin. The open-weight model-card/SGLang route uses a different `input`/`instructions` contract and token budget; never use its limit as the public prompt-field limit.
+
+**Identify the route before assuming any capability.** A local connector wrapper is not the hosted API. Measured 2026-09-30 on the local `batch_text_to_music` connector, six calls returned 13.96, 28.21, 31.09, 40.05, 40.73 and 41.15 seconds — the length is random and uncontrollable, the schema has no duration parameter, and a caption asking for "about two to three minutes" still returned 40 seconds. The same schema also has no `is_instrumental` field, and 4 of 5 generations carried wordless vocals despite captions that spelled out `no vocals, no choir, no spoken word`.
+
+The consequences are structural, not cosmetic:
+
+- The connector cannot produce a long-form release. Sixty minutes would need roughly 130 tracks.
+- The connector cannot guarantee an instrumental result. Worded exclusions are not a control surface.
+- File metadata confirms the producer but carries no model version, so it cannot establish which model ran.
+
+When only the connector is available, hand over the paste-ready payloads and the chapter plan instead of attempting generation, and say plainly which capabilities the route cannot deliver. Do not spend many turns generating short candidates and stitching them to simulate a long release; the user can produce properly sized tracks in one pass.
 
 Apply the official Music 3.0 guide's structured prompting principles to focus music: state the global creative intent, describe the emotional arc, and give a fine-grained temporal arrangement that names instrument entry, layering, transformation, and exit. Use section-level structure when it improves coherence, while keeping the public payload concise. For instrumental cues, use structural tags only in `lyrics`; place arrangement and negative constraints in `prompt`. Keep the full reusable master separate from each constrained delivery version.
 
@@ -132,6 +167,14 @@ Use stable, lowercase-kebab track IDs and preserve the release ID in every gener
 
 If the provider assigns a filename, preserve that provider-original filename and bytes; record it beside the canonical candidate ID rather than silently replacing it. Do not rename a source file to imply selection or approval. Record `selected candidate` and approval state in the manifest. A chapter assembly uses `<release-id>-chapter-<NN>-mix-v<NN>.<ext>`, and a complete release uses `<release-id>-full-mix-v<NN>.<ext>`. Increment the version for a changed render or mix, preserve earlier siblings, and do not use `final` or `approved` in a filename before the corresponding approval gate.
 
+**Write the manifest as a machine-readable file, not a note in a plan document.** A release that spans many sessions loses track state if it lives only in prose. The manifest holds the release intent, the prompt-set path and version, per-track entries, the QA gate definitions, and the open questions. Per track: track ID, chapter, slot, selected candidate number, filename, duration, bitrate, integrated loudness, true peak, and one row per gate.
+
+**Approval state is a field, and it defaults to pending.** Distinguish `pending_user_confirmation` from `user_approved`, and never set the latter on the user's behalf. Improvements are not approvals: when a user reports something is better, that is progress on the previous defect, not a statement that the current candidate is accepted. A track that passes every measurement and has never been listened to is still pending.
+
+**The user's listening is the binding gate.** Measurements establish that nothing measurable is wrong. They cannot establish that a room, a pair of earphones and a listener at bedtime find it right. Keep both facts: the measurement is a pass, the gate is open, and neither substitutes for the other.
+
+**Designate an intent, then let the judgment follow from it.** When the user describes an atmosphere rather than a specification, record the intent in the project file as the criterion that later decisions are measured against. This prevents a specific, checkable failure: framing an atmosphere as a set of per-device playback paths or usage instructions, which converts a mood into a manual. Every processing decision then answers one question — how does this bring the listening closer to the stated intent — and a decision that cannot answer it is not made, however technically correct it looks.
+
 ## STEP 6: Produce a Loopable Video Cover When Requested
 
 If the user wants a loopable video cover for YouTube or a music platform:
@@ -167,9 +210,15 @@ Before delivery, check:
 - Final duration is greater than or equal to the requested duration when the user specifies a minimum or exact long-form release length; generate more compatible music if the available total is short.
 - No vocals or spoken words are present unless explicitly requested.
 - No sudden loud moments break concentration.
+- No environmental or foley sound is present. This one needs a measurement, not a caption review: locate the quietest sustained passage and read the 10-16 kHz floor there, using one-second sub-windows and taking the minimum so instrument attacks do not masquerade as a bed. A floor near digital silence argues against a continuous bed; a raised floor can be cymbals, tape colour or a real noise layer, and only listening separates them.
+- No low-frequency content that ignores the arrangement. A 20-60 Hz level identical in the intro and the outro is a fixed bed; a level that moves with the passage is authored content.
 - Visual assets remain legible at thumbnail size.
 - The cover and video still feel like the same release family.
 - The release can be reused later as part of the same Three Kingdoms archive.
+
+Route each item to the right instrument. Loudness, peaks, band levels, dynamics and duration come from `three-kingdoms-music-review`'s `scripts/measure_audio.py`. Vocals, instruments and whether the emotional arc landed come from listening, and are labelled as such. See [three-kingdoms-music-review](../three-kingdoms-music-review/SKILL.md) for the routing rules and the recorded model failures that justify them.
+
+- If a cue contains vocals when vocals were not requested, check first whether the route can set the instrumental flag. Regenerating with better wording does not fix a route that lacks the control.
 
 ## Confirmation Points
 

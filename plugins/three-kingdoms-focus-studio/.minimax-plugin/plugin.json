@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "name": "three-kingdoms-focus-studio",
   "displayName": "三國志專注音樂工作室",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "三國志 YouTube 音樂發布流程工具箱：統籌長時間專注音樂、角色人聲單曲與專輯曲目的完整製作鏈，涵蓋音樂生成 prompt 撰寫、候選審查、章節拼接、封面、15 秒循環影片與上架文案。以 yt-focus-music-pipeline 作為單一入口分流。",
   "author": "Travis Chen",
   "icon": "icon.png",

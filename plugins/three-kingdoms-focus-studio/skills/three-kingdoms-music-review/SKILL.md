@@ -22,6 +22,40 @@ Record mode and evidence coverage before conclusions:
 
 Use evidence labels `measured`, `audio-model-observation`, `human-observation`, `prompt-intent`, `inference`, `not-assessed`. An MP3 path, player embed, waveform, spectrogram or ffmpeg report does not itself give the language model auditory perception. Missing listening evidence remains `not-assessed`, never a pass. Numeric DSP estimates of BPM, key or instrument identity are estimates, not listening facts.
 
+## Which question goes to which tool
+
+Route by question type, because the two tool families fail in opposite directions.
+
+| Question | Use | Why |
+|---|---|---|
+| Noise floor, band energy, dynamics, peaks, clipping, duration | `scripts/measure_audio.py` | Reproducible arithmetic on the samples. Deterministic and re-checkable. |
+| Is there a voice? Which instruments? Does the emotional arc land? | An audio-capable model, labelled `audio-model-observation` | Genuine semantic judgement, but a judgement and not a measurement. |
+
+A model asked whether it hears rain or crackle is answering a fine-grained perceptual question it is not built for. Two recorded failures on one 174 s lo-fi track:
+
+- Asked the same question about two caption variants, it answered **backwards** — reporting ambience on the version whose prompt requested it least, and none on the version that named it as forbidden.
+- On the accepted candidate it reported "vinyl crackle / tape hiss audible consistently throughout". The measured 10-16 kHz floor in that track's quietest passage was **-91 dB**, against -37 to -43 dB where the drum kit enters. A 50 dB separation, not a noise bed.
+
+All figures from `measure_audio.py` are **genre-relative**. The separations quoted above come from
+sparse lo-fi sleep material. A nylon-string bossa nova, a brass-forward jazz chart or a close-mic
+folk recording will show a legitimately higher high-band floor and a wider short-term range. Compare
+a track against its own sections and against other tracks of the same genre and instrumentation; never
+apply one genre's absolute as another genre's pass/fail line. `windows_above_median_3lu` is a defect
+signal for calm material and a normal reading for material that is supposed to move.
+
+So: **never let a model's foley or ambience claim trigger regeneration on its own.** Measure first. If the measurement is clean and the model objects, the model's observation is recorded and set aside. If the measurement is dirty, still confirm by listening, because a band level shows how much of a sound there is, never what the sound is.
+
+Conversely, do not let a clean measurement overrule a listener. If the user hears something objectionable that the numbers do not show, the finding stands and the number is reported as insufficient, not as a rebuttal.
+
+## The listening gate belongs to the user
+
+`agent-recommended` is not `user-approved`, and this is not a formality. A track the user has heard in their own room on their own equipment at their own volume is a stronger observation than any desk measurement, and it is the only observation that accounts for the listening context.
+
+A track is not verified until the user says so. "Much better" is progress, not approval. When a technical check passes but the listening gate is open, report `pending_user_confirmation` and keep working; never close the gate by inferring intent from an earlier comment.
+
+Record the candidate number the user generated, not just the filename. `t03-v05.mp3` means five attempts existed; knowing which one was selected, and why, is the part that is lost when only the final file is kept.
+
+
 ## Review
 
 Read [references/rubric.md](references/rubric.md) for the selected modes. Compare against the approved chapter function and exact musical intent, not generic prestige genres. Report the highest-impact findings first and give the smallest repair that preserves identity. Distinguish deliberate style from unwanted distraction and technical defects from artistic preference.

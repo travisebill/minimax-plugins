@@ -30,7 +30,11 @@ double the main groove. The track ends with a slow four-bar decay and a clean, u
 Groove & Foundation Progression: Laid-back swing throughout, with the snare sitting slightly behind
 the grid. The kick is muted and rounded, never punchy. No velocity build, no fills, no ghost-note
 escalation, no filter sweeps, no risers, no drops, no tempo changes at any point.
-Embellishments, Textures & Spatial FX: Warm tape hiss and faint vinyl crackle sit underneath
-everything at a level that is felt rather than heard. A single low-passed chord stab may appear once
-in the second half — never twice, never louder. No ambient washes, no risers, no dramatic anything.
-The track should be safe to loop for two hours.
+Embellishments, Textures & Spatial FX: Surface character comes from the instruments themselves —
+tape saturation on the Rhodes, a rounded low-pass across the whole mix, and slightly detuned
+oscillators beating slowly against each other.
+Every audible element in this track is a musical instrument playing a pitched or rhythmically defined part.
+A single low-passed chord stab may appear
+once in the second half — never twice, never louder. Decay stays close to the instruments rather
+than spreading into a space around them. No risers, no dramatic
+anything. The track should be safe to loop for two hours.
