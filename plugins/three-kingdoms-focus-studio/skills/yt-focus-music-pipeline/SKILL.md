@@ -25,6 +25,7 @@ description: >-
 | `music3-instrumental-prompts` | `skills/music3-instrumental-prompts/` | 純器樂 Music 3.0 Structured Caption 撰寫（templates/ + references/） |
 | `three-kingdoms-music-review` | `skills/three-kingdoms-music-review/` | prompt 與音檔的審查 QA，附 `scripts/measure_audio.py` |
 | `three-kingdoms-vocal-single` | `skills/three-kingdoms-vocal-single/` | 角色人聲單曲、歌詞與發音鎖、分鏡圖、YouTube Short 分支 |
+| `yt-publish-strategy` | `skills/yt-publish-strategy/` | **YouTube 發布策略**：標題與關鍵字選詞、說明結構、hashtag 使用、AI 揭露義務、YPP 變現合規、競爭者基準 |
 
 讀取這些檔案時以套件內的相對路徑為準，不要假設它們存在於 `~/.agents/skills/` 或 `~/.codex/skills/`。
 
@@ -77,6 +78,26 @@ description: >-
 觸發：使用者提到既有的 project ID、slug、資產或狀態。
 
 先檢查專案包現況再往下走。修訂時保留目前已核准或候選的版本，另開新版本，回到對應的核准閘門。
+
+### 路徑 D — 發布策略（標題、說明、關鍵字、變現合規）
+
+觸發：使用者要上架影片、調整標題或說明、選關鍵字或 hashtag、確認 YPP／變現資格、
+問「為什麼沒人看到我的片」、或提到搜尋排名與曝光。
+
+**主導 skill：`yt-publish-strategy`**
+
+```
+需求分流
+  → 讀 SKILL.md 的硬性規則 R1–R8（標題結構、片長、搜尋匹配句、創作筆記、hashtag、AI 揭露）
+  → 標題選詞：references/title-keyword-strategy.md（實測競品數據 + 可套用範本）
+  → 說明撰寫：templates/description-template.md（分層範本：搜尋匹配句 / 正文 / 創作筆記 / 章節 / hashtag）
+  → 變現合規檢查：references/monetization-policy.md（YPP 門檻、inauthentic content、AI 揭露、Content ID、mid-roll）
+  → 競品與失敗對照：references/channel-baseline.md（同策略失敗案例 + 成功案例做法）
+  → 發布前檢查清單（SKILL.md 末段）
+```
+
+**路由 A/B/C 任一路徑在產出發布包時，都必須呼叫本路徑檢查標題與說明。**
+不要在 A/B/C 裡自行發明標題格式或 hashtag 組合。
 
 ---
 

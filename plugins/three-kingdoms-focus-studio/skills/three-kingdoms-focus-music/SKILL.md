@@ -203,6 +203,19 @@ When the user wants a publishable package, produce the full set:
 
 Keep the description concise, readable, and SEO-friendly. Mention reading, study, work, focus, Three Kingdoms, Chinese-style atmosphere, album release, or the genre when relevant. Pinned comments should use a literary, reflective, gentle style rather than a purely functional marketing style.
 
+**🔴 標題、說明、hashtag 與 AI 揭露一律交給 `yt-publish-strategy`，不要在本 skill 自行發明格式。**
+
+那裡有 2026-09-30 實測的競品數據與官方政策條文，包含：
+
+- 標題必須是 `時長 + 功能 + 樂器`，英文為主中文為副（實測「有功能關鍵字的那支贏 56 倍」）
+- 說明**最前面**必須有搜尋匹配句（官方：搜尋匹配靠 title + description + 影片內容）
+- 說明必須有**創作筆記**段（政策禁止 AI 內容「沒有原創見解」，純器樂頻道靠這段自保）
+- hashtag 只用需求詞與品牌詞，刪掉描述製作形式的 tag
+- 上傳時務必勾 **AI use: Yes**（官方強制清單第一項是 `AI generated music`）
+
+本頻道實測：通用關鍵字（專注音樂、古箏專注音樂、深度工作音樂…）**前 25 名完全沒有上榜**，
+只在自創的「三國 專注音樂」排第一。**詩意人物標題是這頻道沒有流量的直接原因。**
+
 ## STEP 8: Quality Check
 
 Before delivery, check:
