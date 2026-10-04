@@ -4,7 +4,11 @@
 
 ## 這個 repo 是什麼
 
-MiniMax Code **本機外掛（local Plugin V1）** 的版控來源。`plugins/<name>/` 一個目錄 = 一個外掛。
+MiniMax Code 與 Codex 外掛的版控來源。
+
+- MiniMax：`plugins/<name>/`，下列操作規則適用於此版本。
+- Codex：`codex/marketplace/plugins/<name>/`；先讀 `codex/AGENTS.md` 與 `codex/README.md`，使用 Codex manifest 和 CLI 流程。
+- 根目錄 `.agents/plugins/marketplace.json` 僅供 Codex 從 GitHub 安裝，來源路徑必須指向 `codex/marketplace/plugins/`。
 
 ## 三個必知事實
 

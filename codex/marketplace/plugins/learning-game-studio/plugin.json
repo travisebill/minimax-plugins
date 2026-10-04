@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "learning-game-studio",
+  "version": "0.2.1",
+  "description": "Makes teaching interactions genuinely playable: selects a game mechanic that fits the learning objective, gives it readable feedback and game feel, aligns rewards with mastery, and blocks mechanics that would teach something wrong.",
+  "author": {
+    "name": "Travis Chen"
+  },
+  "keywords": [
+    "codex",
+    "skills",
+    "education"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "教學遊戲工作室",
+        "shortDescription": "讓教學互動具備目標、挑戰與清楚回饋",
+        "longDescription": "Makes teaching interactions genuinely playable: selects a game mechanic that fits the learning objective, gives it readable feedback and game feel, aligns rewards with mastery, and blocks mechanics that would teach something wrong.",
+        "developerName": "Travis Chen",
+        "category": "Education",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "這一章的互動很單調，幫我選一個適合的遊戲機制並實作",
+          "把「移項法則」改造成有目標、有回饋、有進度的遊戲化關卡",
+          "答對答錯看起來一樣、按下去沒反應，幫我補回饋感"
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png",
+        "logoDark": "./assets/icon-dark.png",
+        "composerIconDark": "./assets/icon-dark.png"
+      }
+    }
+  }
+}

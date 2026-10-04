@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "name": "learning-game-studio",
+      "version": "0.2.1",
+      "status": "pass",
+      "matched_files": 13
+    },
+    {
+      "name": "three-kingdoms-focus-studio",
+      "version": "1.2.1",
+      "status": "pass",
+      "matched_files": 39
+    }
+  ]
+}

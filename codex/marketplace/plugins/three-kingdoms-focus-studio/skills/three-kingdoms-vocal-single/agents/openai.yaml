@@ -1,0 +1,4 @@
+interface:
+  display_name: "三國角色人聲單曲"
+  short_description: "建立三國角色單曲的歌詞、發音與聲線指引，規劃完整歌曲影片和 Short"
+  default_prompt: "使用 $three-kingdoms-vocal-single，幫我規劃一首三國角色人聲單曲及其影片分鏡。"

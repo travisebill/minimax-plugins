@@ -1,0 +1,4 @@
+interface:
+  display_name: "教學遊戲機制"
+  short_description: "選擇符合學習目標的互動機制，檢查解法、挑戰、進度與獎勵是否正確"
+  default_prompt: "使用 $learning-mechanics，幫我把這一章的教學互動改成有目標與回饋的遊戲。"

@@ -1,0 +1,32 @@
+{
+  "name": "travis-codex-studios",
+  "interface": {
+    "displayName": "Travis 創作與教學工作室"
+  },
+  "plugins": [
+    {
+      "name": "learning-game-studio",
+      "source": {
+        "source": "local",
+        "path": "./codex/marketplace/plugins/learning-game-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Education"
+    },
+    {
+      "name": "three-kingdoms-focus-studio",
+      "source": {
+        "source": "local",
+        "path": "./codex/marketplace/plugins/three-kingdoms-focus-studio"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

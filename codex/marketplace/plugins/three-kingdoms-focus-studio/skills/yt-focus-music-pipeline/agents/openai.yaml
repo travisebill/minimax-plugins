@@ -1,0 +1,4 @@
+interface:
+  display_name: "三國音樂製作流程"
+  short_description: "從三國音樂構思分流到企劃、提示詞、審查、封面與影片發布文案"
+  default_prompt: "使用 $yt-focus-music-pipeline，幫我規劃一支三國主題的讀書音樂影片。"

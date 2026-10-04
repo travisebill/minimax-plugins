@@ -1,0 +1,4 @@
+interface:
+  display_name: "三國影片企劃"
+  short_description: "建立三國角色影片的規格與逐曲提示詞，保存封面、章節圖與核准紀錄"
+  default_prompt: "使用 $three-kingdoms-video-project，幫我建立一個三國角色影片企劃包。"

@@ -1,0 +1,206 @@
+{
+  "source_repository": "https://github.com/travisebill/minimax-plugins",
+  "source_commit": "0d74e7638bcb04bf589ed9b5e37e78efda3ec00c",
+  "ported_date": "2026-10-05",
+  "name": "three-kingdoms-focus-studio",
+  "source_version": "1.2.0",
+  "codex_version": "1.2.1",
+  "files": [
+    {
+      "source_path": ".minimax-plugin/plugin.json",
+      "source_sha256": "417b4f520dd546836de0a803ec6e9e8832c05f580310ffa800c043b7d5584874",
+      "codex_path": null,
+      "codex_sha256": null,
+      "change": "replaced_by_codex_manifests"
+    },
+    {
+      "source_path": "icon.png",
+      "source_sha256": "ae0dc161bd62b52d80ebd20b0ca3c07d7d6a47325f6dad967622d44cd1b42137",
+      "codex_path": "assets/icon.png",
+      "codex_sha256": "ae0dc161bd62b52d80ebd20b0ca3c07d7d6a47325f6dad967622d44cd1b42137",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/SKILL.md",
+      "source_sha256": "504e9e74b61eec8a6e835185f61afdb41945c4959543c6648ec886359c3550ed",
+      "codex_path": "skills/music3-instrumental-prompts/SKILL.md",
+      "codex_sha256": "16ecf37f97e502ec0130f57003aa1a9e6b9efc2bb7cc0465977d417b934c4e00",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/references/api-contract.md",
+      "source_sha256": "4b1814449229fd071b9ed7a977be580e0014d2ef08d876ee272ad0e9fd29f6b5",
+      "codex_path": "skills/music3-instrumental-prompts/references/api-contract.md",
+      "codex_sha256": "4b1814449229fd071b9ed7a977be580e0014d2ef08d876ee272ad0e9fd29f6b5",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/references/compressing-for-hosted-api.md",
+      "source_sha256": "51763e532b65782c4bdf06e207134ede4c27aecac4efee2ff5df6f61cac1bbea",
+      "codex_path": "skills/music3-instrumental-prompts/references/compressing-for-hosted-api.md",
+      "codex_sha256": "51763e532b65782c4bdf06e207134ede4c27aecac4efee2ff5df6f61cac1bbea",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/references/failure-modes.md",
+      "source_sha256": "2eef6b4fcb35effb3ab61f85f298061d0a83fff20664794a040f1a1200d64fe5",
+      "codex_path": "skills/music3-instrumental-prompts/references/failure-modes.md",
+      "codex_sha256": "2eef6b4fcb35effb3ab61f85f298061d0a83fff20664794a040f1a1200d64fe5",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/references/writing-rules.md",
+      "source_sha256": "499e51a3a13f57e8b75de8845c7e60807021a99b61cde85617d30c46ae95cc27",
+      "codex_path": "skills/music3-instrumental-prompts/references/writing-rules.md",
+      "codex_sha256": "499e51a3a13f57e8b75de8845c7e60807021a99b61cde85617d30c46ae95cc27",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/templates/ambient-cinematic_0001.txt",
+      "source_sha256": "9ce74c51fb51fe5fe017b2ebd0fae98e7802ce07ce3fda1fd4af16152334a27d",
+      "codex_path": "skills/music3-instrumental-prompts/templates/ambient-cinematic_0001.txt",
+      "codex_sha256": "9ce74c51fb51fe5fe017b2ebd0fae98e7802ce07ce3fda1fd4af16152334a27d",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/templates/brand-sting_0001.txt",
+      "source_sha256": "e1fb2d4bc62eff5926eff37d8e376004edf80c19ac0aceb132350901af30893b",
+      "codex_path": "skills/music3-instrumental-prompts/templates/brand-sting_0001.txt",
+      "codex_sha256": "e1fb2d4bc62eff5926eff37d8e376004edf80c19ac0aceb132350901af30893b",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/templates/cinematic-epic_0001.txt",
+      "source_sha256": "ea0abd2c84dc263ffddfbbeed83a87e937807cf124155987a09f41a72d678dd6",
+      "codex_path": "skills/music3-instrumental-prompts/templates/cinematic-epic_0001.txt",
+      "codex_sha256": "ea0abd2c84dc263ffddfbbeed83a87e937807cf124155987a09f41a72d678dd6",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/templates/game-bgm-exploration_0001.txt",
+      "source_sha256": "3715a35e7b4619e5a0f820790e804cc7ce48d75222b70c03ef02fc7c8c6366ad",
+      "codex_path": "skills/music3-instrumental-prompts/templates/game-bgm-exploration_0001.txt",
+      "codex_sha256": "3715a35e7b4619e5a0f820790e804cc7ce48d75222b70c03ef02fc7c8c6366ad",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/templates/lofi-chillhop_0001.txt",
+      "source_sha256": "d6417b2302ad2cde7dc3f948f51fd8f153d5a46c82a691ac2cb81f43ce077971",
+      "codex_path": "skills/music3-instrumental-prompts/templates/lofi-chillhop_0001.txt",
+      "codex_sha256": "d6417b2302ad2cde7dc3f948f51fd8f153d5a46c82a691ac2cb81f43ce077971",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/music3-instrumental-prompts/templates/tension-horror_0001.txt",
+      "source_sha256": "c4c4aaed0f5858be8278ee466ee03ff39e6b8734fb4632dac83abb57ee8f5664",
+      "codex_path": "skills/music3-instrumental-prompts/templates/tension-horror_0001.txt",
+      "codex_sha256": "c4c4aaed0f5858be8278ee466ee03ff39e6b8734fb4632dac83abb57ee8f5664",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/three-kingdoms-focus-music/SKILL.cn.md",
+      "source_sha256": "87b5818959b1256165a6ad225e41ca1d9e2ccc3dc6076827ebbfb440e375e551",
+      "codex_path": "skills/three-kingdoms-focus-music/SKILL.cn.md",
+      "codex_sha256": "87b5818959b1256165a6ad225e41ca1d9e2ccc3dc6076827ebbfb440e375e551",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/three-kingdoms-focus-music/SKILL.md",
+      "source_sha256": "bf446511c3fdecb118fd2514463d258768f302eb2ae4e81831c638e8c78cacef",
+      "codex_path": "skills/three-kingdoms-focus-music/SKILL.md",
+      "codex_sha256": "a73a0f1ea3ab460cc679d91e742252b41273b00e1d77fea90548f2caa15489f9",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/three-kingdoms-focus-music/meta.yaml",
+      "source_sha256": "db1e3122347e03cb95a24113b779d6a6cb7274cb05d842532a49df74ff5e9a93",
+      "codex_path": "skills/three-kingdoms-focus-music/meta.yaml",
+      "codex_sha256": "db1e3122347e03cb95a24113b779d6a6cb7274cb05d842532a49df74ff5e9a93",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/three-kingdoms-music-review/SKILL.md",
+      "source_sha256": "947463df2b594cd1310f5bd83efcbeb7ca6e30795fa445843f8de4fbed2a2385",
+      "codex_path": "skills/three-kingdoms-music-review/SKILL.md",
+      "codex_sha256": "b0e10367f7b604031b6658b4bd30f67e036fc304918a2ced50dbac4fb4223dbd",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/three-kingdoms-music-review/references/audio-listening.md",
+      "source_sha256": "77e876ccad00e0b30f218d59c272998c092a4511589f629d5b808aee3195c17d",
+      "codex_path": "skills/three-kingdoms-music-review/references/audio-listening.md",
+      "codex_sha256": "77e876ccad00e0b30f218d59c272998c092a4511589f629d5b808aee3195c17d",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/three-kingdoms-music-review/references/rubric.md",
+      "source_sha256": "87b40ed2e3a943d5aa18550ee41dba0a9870b9376f97dfc520278f7e3ca5a917",
+      "codex_path": "skills/three-kingdoms-music-review/references/rubric.md",
+      "codex_sha256": "87b40ed2e3a943d5aa18550ee41dba0a9870b9376f97dfc520278f7e3ca5a917",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/three-kingdoms-music-review/scripts/measure_audio.py",
+      "source_sha256": "c105f12289bb6ba27b37296e649fc5390462283c1a7b8fb154abe9adacba2f7e",
+      "codex_path": "skills/three-kingdoms-music-review/scripts/measure_audio.py",
+      "codex_sha256": "c105f12289bb6ba27b37296e649fc5390462283c1a7b8fb154abe9adacba2f7e",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/three-kingdoms-video-project/SKILL.md",
+      "source_sha256": "6a477f97f80f0a407c9431d73aafc29494d1cfd66ef4bb1f0c316304310851b2",
+      "codex_path": "skills/three-kingdoms-video-project/SKILL.md",
+      "codex_sha256": "1dc3c8b4b780fd33c635b49da50c1df9d1b786cf8d71b32c2a7f982192e7972d",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/three-kingdoms-vocal-single/SKILL.md",
+      "source_sha256": "63fb3bac68abc144b0bfeacc02aae7559253ba682f73920c1e69762b5d1cb2a8",
+      "codex_path": "skills/three-kingdoms-vocal-single/SKILL.md",
+      "codex_sha256": "f975da488ac916831654afe35ac00f67132e82aeac507da0fe24ea20116c691a",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/yt-focus-music-pipeline/SKILL.md",
+      "source_sha256": "aa2737ca1be5afcc15f5851ad76ee83410bd4e3fce2326023e47906dda8ec9e0",
+      "codex_path": "skills/yt-focus-music-pipeline/SKILL.md",
+      "codex_sha256": "950acef90bad65b927f733131a127b5cb980c97341e95fcd6a33d7655102bc43",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/yt-publish-strategy/SKILL.md",
+      "source_sha256": "675c6a26e73f04ad415880d95efbecc38c76a87a3629ee34ce40592a9c2e726f",
+      "codex_path": "skills/yt-publish-strategy/SKILL.md",
+      "codex_sha256": "afaf2567f67ed23033a5ec5bc2d0a3517f431c2666ce10540348c2c0b27e332b",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/yt-publish-strategy/references/channel-baseline.md",
+      "source_sha256": "7f31347c3a5b523391f005e2aeb1ec73eff08abac798e488330723a145decb8d",
+      "codex_path": "skills/yt-publish-strategy/references/channel-baseline.md",
+      "codex_sha256": "7f31347c3a5b523391f005e2aeb1ec73eff08abac798e488330723a145decb8d",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/yt-publish-strategy/references/monetization-policy.md",
+      "source_sha256": "99bae504253bc64d17ca88a028622b422763c5e38aec6ae4530cefabba1dd199",
+      "codex_path": "skills/yt-publish-strategy/references/monetization-policy.md",
+      "codex_sha256": "99bae504253bc64d17ca88a028622b422763c5e38aec6ae4530cefabba1dd199",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/yt-publish-strategy/references/title-keyword-strategy.md",
+      "source_sha256": "b7817e2501c5bcaab1b49b25b0487bff738c0e19fe95f81cf33de522cc2d117e",
+      "codex_path": "skills/yt-publish-strategy/references/title-keyword-strategy.md",
+      "codex_sha256": "b7817e2501c5bcaab1b49b25b0487bff738c0e19fe95f81cf33de522cc2d117e",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/yt-publish-strategy/templates/description-template.md",
+      "source_sha256": "549b1b11c59b1c6e58089c23d2220c25d803cb1662a8557a3f07b3dcdf0f5e12",
+      "codex_path": "skills/yt-publish-strategy/templates/description-template.md",
+      "codex_sha256": "549b1b11c59b1c6e58089c23d2220c25d803cb1662a8557a3f07b3dcdf0f5e12",
+      "change": "unchanged"
+    }
+  ]
+}

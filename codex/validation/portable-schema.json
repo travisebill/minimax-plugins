@@ -1,0 +1,13 @@
+{
+  "schema_url": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "results": [
+    {
+      "plugin": "learning-game-studio",
+      "result": "pass"
+    },
+    {
+      "plugin": "three-kingdoms-focus-studio",
+      "result": "pass"
+    }
+  ]
+}

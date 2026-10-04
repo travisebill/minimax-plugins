@@ -1,0 +1,59 @@
+{
+  "source_repository": "https://github.com/travisebill/minimax-plugins",
+  "source_commit": "0d74e7638bcb04bf589ed9b5e37e78efda3ec00c",
+  "ported_date": "2026-10-05",
+  "name": "learning-game-studio",
+  "source_version": "0.2.0",
+  "codex_version": "0.2.1",
+  "files": [
+    {
+      "source_path": ".minimax-plugin/plugin.json",
+      "source_sha256": "de1df8424f0ead361787f22d74416a9ab64c9bbcc41ffcb43aa040530d76d0f3",
+      "codex_path": null,
+      "codex_sha256": null,
+      "change": "replaced_by_codex_manifests"
+    },
+    {
+      "source_path": "icon-dark.png",
+      "source_sha256": "93c76aec24bd87aed386914258cdd3a7d162a622af832b1f9b7beae0b527cbae",
+      "codex_path": "assets/icon-dark.png",
+      "codex_sha256": "93c76aec24bd87aed386914258cdd3a7d162a622af832b1f9b7beae0b527cbae",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "icon.png",
+      "source_sha256": "950c24743acdb563b0d37104a6defcdbe7e65d4ffd44ae4b9f10667c44005258",
+      "codex_path": "assets/icon.png",
+      "codex_sha256": "950c24743acdb563b0d37104a6defcdbe7e65d4ffd44ae4b9f10667c44005258",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/learning-game-feel/SKILL.md",
+      "source_sha256": "30cc5ba972eb4e8b6a483fa9eebd880c7865a2d07b1602c1010c59607265084c",
+      "codex_path": "skills/learning-game-feel/SKILL.md",
+      "codex_sha256": "53868e6697fc1c45554a6309f2ed08242e0b2e94d380152960ac83b85945418d",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/learning-game-feel/references/feedback-recipes.md",
+      "source_sha256": "583bc15a2fff154c21eb6594531a13cd66aa5e03aed3a6d2eb1c7f01e0f51e3b",
+      "codex_path": "skills/learning-game-feel/references/feedback-recipes.md",
+      "codex_sha256": "583bc15a2fff154c21eb6594531a13cd66aa5e03aed3a6d2eb1c7f01e0f51e3b",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/learning-mechanics/SKILL.md",
+      "source_sha256": "0fff015f9ae9be1277a7545677238201985b9f2fd1c0c05773c36c4d79957caa",
+      "codex_path": "skills/learning-mechanics/SKILL.md",
+      "codex_sha256": "6aa5b6b28b4e5c5b6f1d7762c81a5f55ebdcce40540a1e60ef62cc249cf0a770",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/learning-mechanics/references/mechanic-catalog.md",
+      "source_sha256": "4eb0af356633a1c725b1be1693416b3dade90646a1cb07421a722e7c34a56e3d",
+      "codex_path": "skills/learning-mechanics/references/mechanic-catalog.md",
+      "codex_sha256": "4eb0af356633a1c725b1be1693416b3dade90646a1cb07421a722e7c34a56e3d",
+      "change": "unchanged"
+    }
+  ]
+}

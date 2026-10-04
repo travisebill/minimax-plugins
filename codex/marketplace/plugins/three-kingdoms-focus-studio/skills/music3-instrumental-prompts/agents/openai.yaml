@@ -1,0 +1,4 @@
+interface:
+  display_name: "Music 3.0 純器樂提示詞"
+  short_description: "把音樂需求整理成 Music 3.0 純器樂提示詞，保留聲部角色與段落安排"
+  default_prompt: "使用 $music3-instrumental-prompts，依照已確認的需求撰寫 Music 3.0 純器樂提示詞。"

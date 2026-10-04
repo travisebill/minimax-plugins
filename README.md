@@ -1,6 +1,25 @@
 # minimax-plugins
 
-存放 **MiniMax Code 本機外掛（local Plugin V1）** 的版控來源。未來新增的外掛都放這裡的 `plugins/` 底下。
+存放 **MiniMax Code 本機外掛（local Plugin V1）** 與 **Codex 外掛** 的版控來源。MiniMax 版本位於 `plugins/`，Codex 版本位於 `codex/marketplace/plugins/`。
+
+## Codex 版本
+
+| 外掛 | 版本 | 技能數 | 說明 |
+| --- | --- | --- | --- |
+| `learning-game-studio` | 0.2.1 | 2 | 教學遊戲機制與互動回饋 |
+| `three-kingdoms-focus-studio` | 1.2.1 | 7 | 三國音樂企劃、提示詞、審查與 YouTube 發布 |
+
+使用支援 `codex plugin` 的 Codex CLI，並先完成此私人 repo 的 GitHub 存取設定：
+
+```sh
+codex plugin marketplace add travisebill/minimax-plugins
+codex plugin add learning-game-studio@travis-codex-studios
+codex plugin add three-kingdoms-focus-studio@travis-codex-studios
+```
+
+[Codex 使用與維護說明](codex/README.md) · [完整安裝 ZIP](codex/dist/minimax-codex-plugins-bundle.zip) · [驗證紀錄](codex/validation/verification.md)
+
+根目錄 `.agents/plugins/marketplace.json` 是 GitHub 安裝入口；`codex/marketplace/.agents/plugins/marketplace.json` 供解壓或本機來源安裝。以下 MiniMax 安裝指令適用於原本的 `plugins/` 版本。
 
 ## 目錄結構
 

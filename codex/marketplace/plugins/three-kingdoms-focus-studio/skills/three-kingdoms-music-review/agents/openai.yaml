@@ -1,0 +1,4 @@
+interface:
+  display_name: "三國音樂審查"
+  short_description: "檢查音樂提示詞、音訊技術品質與章節銜接，分開記錄量測和聆聽證據"
+  default_prompt: "使用 $three-kingdoms-music-review，審查這份音樂提示詞與候選音檔，標示尚未評估的項目。"

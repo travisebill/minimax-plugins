@@ -1,0 +1,32 @@
+{
+  "name": "three-kingdoms-focus-studio",
+  "version": "1.2.1",
+  "description": "三國主題音樂的企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面與 YouTube 發布策略。保存人工核准與來源紀錄；內附上游 2026-09-30 的歷史研究資料，實際使用前查核最新政策。",
+  "author": {
+    "name": "Travis Chen"
+  },
+  "keywords": [
+    "codex",
+    "skills",
+    "music"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "三國音樂工作室",
+    "shortDescription": "三國音樂企劃、審查與 YouTube 發布流程",
+    "longDescription": "三國主題音樂的企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面與 YouTube 發布策略。保存人工核准與來源紀錄；內附上游 2026-09-30 的歷史研究資料，實際使用前查核最新政策。",
+    "developerName": "Travis Chen",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "幫我做一支 60 分鐘的三國志讀書專注音樂 YouTube 影片，含封面和 15 秒循環影片",
+      "我要做諸葛亮的角色單曲 MV，幫我從歌詞走到分鏡圖和 YouTube Short",
+      "幫我審查這批三國志專注音樂的候選音檔，確認段落銜接和技術品質"
+    ],
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  }
+}

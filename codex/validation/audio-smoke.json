@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "duration_seconds": 15,
+  "full_decode": "pass",
+  "source_unchanged": true,
+  "overwrite_rejected": true,
+  "listening_status": "not-assessed",
+  "continuity_status": "not-assessed",
+  "measurements": {
+    "integrated_lufs": -25.05,
+    "true_peak_dbtp": -24.29,
+    "loudness_range_lu": 0.0
+  },
+  "band_profile_executed": true
+}

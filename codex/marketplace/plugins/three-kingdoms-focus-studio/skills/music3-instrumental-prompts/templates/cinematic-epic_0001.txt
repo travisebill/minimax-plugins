@@ -1,0 +1,39 @@
+Global Metadata
+Basic Attributes: bpm is 84. key is D, and scale is minor. Cinematic Orchestral / Epic Score.
+Global Emotional Progression: Cold isolation, then slow accumulating tension, then an explosive
+heroic release, then a hollow restrained aftermath. The climax must feel earned, never announced.
+Application Scenarios & Imagery: Game boss-reveal trailer, historical war-drama montage, a last stand
+on a collapsing ridge line.
+Sonics & Production Profile: Wide dark soundstage, deep sub-bass weight, shimmering high string
+textures. Dynamic range travels from near-silence to dense wall-of-sound, then collapses back to
+almost nothing. Long hall reverb tail, no hard digital edges.
+
+Vocal Details
+Lead Instrument: Instrumental — no vocals, no choir, no spoken word, no vocal samples. The lead
+melodic role is carried by a solo erhu with audible pitch slides and breathy bowing through the first
+half, later doubled by a legato violin line.
+Performance: Rubato and unaccompanied at the opening, the erhu stating its motif alone. The violin
+enters legato and without vibrato, holding long sustained notes. Vibrato is withheld until the
+climax, and then only on the highest line.
+Harmonic Bed: Low cello and viola sustain a pedal drone underneath. A grand piano places sparse,
+reverberant chords in the gaps rather than running a continuous pattern.
+Spatial: Long hall reverb on all melodic material, with a short darker reflection under the
+percussive layer for contrast.
+
+Arrangement
+Instrument Lifecycle Description (Primary/Secondary Layering): Opens on the solo erhu motif with no
+percussion. A low cello drone enters beneath it, then sparse frame-drum pulses establish a slow
+marching tempo. Violas add a rising countermelody as tension thickens. Low brass swells and a timpani
+roll mark the pre-chorus. The climax lands with the full string section, taiko-driven low end, a
+brass fanfare, and a distorted electric guitar layer cutting through for aggressive texture. A beat
+of near-silence precedes the final rise. The outro strips to a single sustained string harmonic that
+decays into silence.
+Groove & Foundation Progression: The first section has no percussion at all — the groove is entirely
+the erhu's phrasing. The frame-drum pulse enters at roughly half the final tempo and sits behind the
+beat rather than on it, which keeps the opening feeling weighted rather than marching. In the climax
+the pattern expands with snare rolls, cymbal crashes, and driving kick, pushing the low end to the
+front of the mix.
+Embellishments, Textures & Spatial FX: Cinematic risers and reverse cymbal swells mark each
+transition and never appear twice in the same form. Sub-bass drops accent only the heaviest drum
+hits. A wide air movement enters after the first third, sitting beneath the low strings and the pad,
+well below them, and it is what sells the sense of scale.

@@ -1,0 +1,82 @@
+{
+  "status": "pass",
+  "host": "Codex Desktop/0.146.0 (Mac OS 27.0.1; arm64) dumb (minimax_plugin_verification; 1.0.0)",
+  "plugins": [
+    {
+      "name": "learning-game-studio",
+      "installed": true,
+      "enabled": true,
+      "version": "0.2.1",
+      "display_name": "教學遊戲工作室",
+      "skill_names": [
+        "learning-game-studio:learning-game-feel",
+        "learning-game-studio:learning-mechanics"
+      ]
+    },
+    {
+      "name": "three-kingdoms-focus-studio",
+      "installed": true,
+      "enabled": true,
+      "version": "1.2.1",
+      "display_name": "三國音樂工作室",
+      "skill_names": [
+        "three-kingdoms-focus-studio:music3-instrumental-prompts",
+        "three-kingdoms-focus-studio:three-kingdoms-focus-music",
+        "three-kingdoms-focus-studio:three-kingdoms-music-review",
+        "three-kingdoms-focus-studio:three-kingdoms-video-project",
+        "three-kingdoms-focus-studio:three-kingdoms-vocal-single",
+        "three-kingdoms-focus-studio:yt-focus-music-pipeline",
+        "three-kingdoms-focus-studio:yt-publish-strategy"
+      ]
+    }
+  ],
+  "enabled_skill_count": 9,
+  "skills": [
+    {
+      "name": "learning-game-studio:learning-game-feel",
+      "enabled": true,
+      "plugin_cache_relative_path": "learning-game-studio/0.2.1/skills/learning-game-feel/SKILL.md"
+    },
+    {
+      "name": "learning-game-studio:learning-mechanics",
+      "enabled": true,
+      "plugin_cache_relative_path": "learning-game-studio/0.2.1/skills/learning-mechanics/SKILL.md"
+    },
+    {
+      "name": "three-kingdoms-focus-studio:music3-instrumental-prompts",
+      "enabled": true,
+      "plugin_cache_relative_path": "three-kingdoms-focus-studio/1.2.1/skills/music3-instrumental-prompts/SKILL.md"
+    },
+    {
+      "name": "three-kingdoms-focus-studio:three-kingdoms-focus-music",
+      "enabled": true,
+      "plugin_cache_relative_path": "three-kingdoms-focus-studio/1.2.1/skills/three-kingdoms-focus-music/SKILL.md"
+    },
+    {
+      "name": "three-kingdoms-focus-studio:three-kingdoms-music-review",
+      "enabled": true,
+      "plugin_cache_relative_path": "three-kingdoms-focus-studio/1.2.1/skills/three-kingdoms-music-review/SKILL.md"
+    },
+    {
+      "name": "three-kingdoms-focus-studio:three-kingdoms-video-project",
+      "enabled": true,
+      "plugin_cache_relative_path": "three-kingdoms-focus-studio/1.2.1/skills/three-kingdoms-video-project/SKILL.md"
+    },
+    {
+      "name": "three-kingdoms-focus-studio:three-kingdoms-vocal-single",
+      "enabled": true,
+      "plugin_cache_relative_path": "three-kingdoms-focus-studio/1.2.1/skills/three-kingdoms-vocal-single/SKILL.md"
+    },
+    {
+      "name": "three-kingdoms-focus-studio:yt-focus-music-pipeline",
+      "enabled": true,
+      "plugin_cache_relative_path": "three-kingdoms-focus-studio/1.2.1/skills/yt-focus-music-pipeline/SKILL.md"
+    },
+    {
+      "name": "three-kingdoms-focus-studio:yt-publish-strategy",
+      "enabled": true,
+      "plugin_cache_relative_path": "three-kingdoms-focus-studio/1.2.1/skills/yt-publish-strategy/SKILL.md"
+    }
+  ],
+  "export_note": "Absolute machine paths omitted from this repository copy; original verification performed locally."
+}

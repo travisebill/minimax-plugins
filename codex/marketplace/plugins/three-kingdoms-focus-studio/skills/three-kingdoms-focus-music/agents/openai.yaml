@@ -1,0 +1,4 @@
+interface:
+  display_name: "三國音樂發布包"
+  short_description: "規劃三國背景音樂的曲目與長時混音，整理封面、影片與可重用發布包"
+  default_prompt: "使用 $three-kingdoms-focus-music，幫我規劃三國音樂的長時混音與發布包。"

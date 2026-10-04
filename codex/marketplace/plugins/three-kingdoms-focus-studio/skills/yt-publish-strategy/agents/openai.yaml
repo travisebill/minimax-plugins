@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube 發布策略"
+  short_description: "整理三國音樂影片的標題、說明與關鍵字，查核最新揭露和變現政策"
+  default_prompt: "使用 $yt-publish-strategy，幫我整理這支三國音樂影片的 YouTube 發布文案。"
