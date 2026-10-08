@@ -17,7 +17,7 @@ EXPECTED = {
         'yt-focus-music-pipeline', 'three-kingdoms-focus-music',
         'three-kingdoms-video-project', 'music3-instrumental-prompts',
         'three-kingdoms-music-review', 'three-kingdoms-vocal-single',
-        'yt-publish-strategy',
+        'yt-publish-strategy', 'audio-reactive-waveform',
     },
 }
 

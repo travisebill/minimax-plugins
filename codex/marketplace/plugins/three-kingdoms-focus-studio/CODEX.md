@@ -12,6 +12,7 @@ Use the installed files below, even when older global skills have matching names
 | Instrumental caption | [music3-instrumental-prompts](skills/music3-instrumental-prompts/SKILL.md) |
 | Prompt, technical, listening or continuity review | [three-kingdoms-music-review](skills/three-kingdoms-music-review/SKILL.md) |
 | Character vocal single and storyboards | [three-kingdoms-vocal-single](skills/three-kingdoms-vocal-single/SKILL.md) |
+| Transparent music bars and CapCut overlays | [audio-reactive-waveform](skills/audio-reactive-waveform/SKILL.md) |
 | YouTube metadata and policy checks | [yt-publish-strategy](skills/yt-publish-strategy/SKILL.md) |
 
 Resolve a skill's `references/`, `templates/` and `scripts/` relative to that skill directory. Keep generated project files in the user's workspace, outside the installed plugin. `SKILL.cn.md` and `meta.yaml` are retained upstream companion material; `SKILL.md` is the executable workflow entrypoint.
