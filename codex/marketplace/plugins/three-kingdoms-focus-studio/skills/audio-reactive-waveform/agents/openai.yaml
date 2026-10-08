@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audio-reactive waveform"
+  short_description: "Local transparent music bars styled from video references"
+  default_prompt: "Use $audio-reactive-waveform to match this reference video and render a 20-second transparent MOV sample from my music."

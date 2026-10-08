@@ -81,7 +81,8 @@ def main():
             listed = request('skills/list', {'cwds': [str(ROOT)], 'forceReload': True})
             skills = [s for entry in listed['data'] for s in entry['skills']
                       if '/travis-codex-studios/' in s['path']]
-            assert len(skills) == 9, [(s['name'], s['path']) for s in skills]
+            expected_count = sum(len(list((ROOT / 'marketplace/plugins' / name / 'skills').glob('*/SKILL.md'))) for name in NAMES)
+            assert len(skills) == expected_count, [(s['name'], s['path']) for s in skills]
             assert all(s['enabled'] for s in skills)
             package_errors = [e for entry in listed['data'] for e in entry['errors']
                               if 'travis-codex-studios' in e['path']]

@@ -1,0 +1,72 @@
+{
+  "source_repository": "https://github.com/travis18/codex-skills",
+  "source_commit": "acd01f07b6001d13dac336428932da4aba9d6694",
+  "source_path": "skills/audio-reactive-waveform",
+  "added_date": "2026-10-08",
+  "license_note": "Source attribution retained; no additional license grant is asserted.",
+  "files": [
+    {
+      "source_path": "skills/audio-reactive-waveform/SKILL.md",
+      "codex_path": "skills/audio-reactive-waveform/SKILL.md",
+      "change": "unchanged",
+      "source_sha256": "aff49a016d734fe81b9e909ec372df6dbef36922bb8e828d50e3266bfd0ef83a",
+      "codex_sha256": "aff49a016d734fe81b9e909ec372df6dbef36922bb8e828d50e3266bfd0ef83a"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/agents/openai.yaml",
+      "codex_path": "skills/audio-reactive-waveform/agents/openai.yaml",
+      "change": "unchanged",
+      "source_sha256": "38d19af6d809220da6d460c3a82fa2d154db14d1e9154115b821d262e1fac743",
+      "codex_sha256": "38d19af6d809220da6d460c3a82fa2d154db14d1e9154115b821d262e1fac743"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/assets/gold-mirrored.json",
+      "codex_path": "skills/audio-reactive-waveform/assets/gold-mirrored.json",
+      "change": "unchanged",
+      "source_sha256": "b18cafd83e0ff823b76974b90b03c6b8cc6712bae2b44fe9345a91427f0736e6",
+      "codex_sha256": "b18cafd83e0ff823b76974b90b03c6b8cc6712bae2b44fe9345a91427f0736e6"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/references/local-setup.md",
+      "codex_path": "skills/audio-reactive-waveform/references/local-setup.md",
+      "change": "adapted_plugin_path_and_workspace_venv",
+      "source_sha256": "8a81019fc05475e5818bcd0c56539ef5ffa12230eaeef8b78cae00fc11251553",
+      "codex_sha256": "263e24642cf50903ed1e93f8bf4dbab365f9333135ae735ab419f9d9c8195759"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/references/reference-matching.md",
+      "codex_path": "skills/audio-reactive-waveform/references/reference-matching.md",
+      "change": "unchanged",
+      "source_sha256": "fd43caa2c9ad61b9f9962e766e5d2c57c1d0477c8ba80286b01de26d2c11f453",
+      "codex_sha256": "fd43caa2c9ad61b9f9962e766e5d2c57c1d0477c8ba80286b01de26d2c11f453"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/references/style.md",
+      "codex_path": "skills/audio-reactive-waveform/references/style.md",
+      "change": "unchanged",
+      "source_sha256": "33f9e7eff12a1ff517acc24a0cbbbd1311d6869ae3ced9bf0d3b6b264be579c7",
+      "codex_sha256": "33f9e7eff12a1ff517acc24a0cbbbd1311d6869ae3ced9bf0d3b6b264be579c7"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/requirements.txt",
+      "codex_path": "skills/audio-reactive-waveform/requirements.txt",
+      "change": "unchanged",
+      "source_sha256": "105a25c9a24a53a42b52ccc93f930e1ea4a88b42372d440ae7c1b82c3a8b2c64",
+      "codex_sha256": "105a25c9a24a53a42b52ccc93f930e1ea4a88b42372d440ae7c1b82c3a8b2c64"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/scripts/render_waveform.py",
+      "codex_path": "skills/audio-reactive-waveform/scripts/render_waveform.py",
+      "change": "unchanged",
+      "source_sha256": "9c71b74c06a1f4d1dcc4aad5f8722c97fd55201baae08b6ef51a25e54f90ba44",
+      "codex_sha256": "9c71b74c06a1f4d1dcc4aad5f8722c97fd55201baae08b6ef51a25e54f90ba44"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/tests/test_renderer.py",
+      "codex_path": "skills/audio-reactive-waveform/tests/test_renderer.py",
+      "change": "unchanged",
+      "source_sha256": "a7388c71ae96ca47e2adeb51151f303f3a8d4e6939aed82f7ea19ce668b6aca8",
+      "codex_sha256": "a7388c71ae96ca47e2adeb51151f303f3a8d4e6939aed82f7ea19ce668b6aca8"
+    }
+  ]
+}
