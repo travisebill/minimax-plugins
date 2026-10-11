@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Visual Anatomy">
+  <rect width="512" height="512" rx="112" fill="#0B1626"/>
+  <g fill="none" stroke="#2CE0BE" stroke-width="5" stroke-linecap="round" opacity=".55">
+    <path d="M96 330a160 160 0 0 0 320 0"/><path d="M62 330a194 194 0 0 0 388 0"/>
+    <path d="M128 330a128 128 0 0 0 256 0"/><path d="M160 330a96 96 0 0 0 192 0"/>
+  </g>
+  <circle cx="236" cy="228" r="132" fill="#0F2036" stroke="#2CE0BE" stroke-width="11"/>
+  <g stroke-linecap="round" fill="none">
+    <path d="M236 322V168" stroke="#FF7A59" stroke-width="13"/>
+    <path d="M236 262l-46-44M236 262l46-44M236 208l-40-38M236 208l40-38" stroke="#2CE0BE" stroke-width="10"/>
+    <path d="M236 300l-62 34M236 300l62 34" stroke="#2CE0BE" stroke-width="8" opacity=".8"/>
+  </g>
+  <g fill="none" stroke="#FF7A59" stroke-width="8" stroke-linejoin="round">
+    <path d="M190 218l-26-4 8-25zM282 218l26-4-8-25zM196 170l-24-10 14-22zM276 170l24-10-14-22z"/>
+  </g>
+  <g transform="rotate(-45 340 340)">
+    <rect x="322" y="300" width="36" height="96" rx="16" fill="none" stroke="#2CE0BE" stroke-width="13"/>
+  </g>
+</svg>

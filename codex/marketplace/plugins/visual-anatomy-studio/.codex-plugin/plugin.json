@@ -28,9 +28,9 @@
       "照新冠那個網站的做法做血管內皮的致病機制",
       "把這個主題做成多視角互動網站，視覺優先，最後給我網址"
     ],
-    "composerIcon": "./assets/icon.png",
-    "logo": "./assets/icon.png",
-    "logoDark": "./assets/icon-dark.png",
-    "composerIconDark": "./assets/icon-dark.png"
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
+    "logoDark": "./assets/icon-dark.svg",
+    "composerIconDark": "./assets/icon-dark.svg"
   }
 }

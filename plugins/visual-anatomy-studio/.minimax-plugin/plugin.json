@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "description": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: researches current data, generates scientific-style illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes six interaction bug classes and a position-and-pixel verification harness.",
   "author": "Travis Chen",
-  "icon": "icon.png",
-  "darkIcon": "icon-dark.png",
+  "icon": "icon.svg",
+  "darkIcon": "icon-dark.svg",
   "category": "Education",
   "exampleQueries": [
     "視覺解剖 F1 新加坡站排位賽結果",
