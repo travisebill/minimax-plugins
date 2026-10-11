@@ -1,0 +1,36 @@
+{
+  "name": "visual-anatomy-studio",
+  "version": "0.1.0",
+  "description": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: researches current data, generates scientific-style illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes six interaction bug classes and a position-and-pixel verification harness.",
+  "author": {
+    "name": "Travis Chen"
+  },
+  "keywords": [
+    "codex",
+    "skills",
+    "education",
+    "visualization",
+    "interactive"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "視覺解剖工作室",
+    "shortDescription": "把任何主題做成多視角、可互動的視覺解說網站",
+    "longDescription": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: researches current data, generates scientific-style illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes six interaction bug classes and a position-and-pixel verification harness.",
+    "developerName": "Travis Chen",
+    "category": "Education",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "視覺解剖 F1 新加坡站排位賽結果",
+      "照新冠那個網站的做法做血管內皮的致病機制",
+      "把這個主題做成多視角互動網站，視覺優先，最後給我網址"
+    ],
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
+    "logoDark": "./assets/icon-dark.svg",
+    "composerIconDark": "./assets/icon-dark.svg"
+  }
+}
