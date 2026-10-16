@@ -88,6 +88,133 @@ const sample = () => pg.evaluate(() => { const c=document.querySelector('canvas'
 const p1 = await sample(); await pg.waitForTimeout(1400); const p2 = await sample();
 R.animation = p1 !== p2 ? 'ok' : '❌ frozen';
 
+// 5b. STYLE: contrast must be checked, never eyeballed (components.md §0).
+// Return verdicts, not ratios — a ratio nobody compares is just a number.
+R.style = await pg.evaluate(() => {
+  const v = k => getComputedStyle(document.documentElement).getPropertyValue(k).trim();
+  // Parse hex AND rgb(). `\d+` is NOT enough — "#FFFFFF" has no digits at all and
+  // crashes match(). Return null on anything unparseable so a bad token FAILS the
+  // assertion instead of throwing out of the whole harness.
+  const lum = c => {
+    c = String(c).trim();
+    let r, g, b;
+    const hex = c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (hex) {
+      let h = hex[1];
+      if (h.length === 3) h = h[0]+h[0] + h[1]+h[1] + h[2]+h[2];
+      r = parseInt(h.slice(0,2),16); g = parseInt(h.slice(2,4),16); b = parseInt(h.slice(4,6),16);
+    } else {
+      const n = c.match(/[\d.]+/g);
+      if (!n) return null;
+      [r, g, b] = n.slice(0,3).map(Number);
+    }
+    const f = x => { x /= 255; return x <= .03928 ? x/12.92 : Math.pow((x+.055)/1.055, 2.4); };
+    return .2126*f(r) + .7152*f(g) + .0722*f(b);
+  };
+  const ratio = (a, b) => {
+    const x = lum(a), y = lum(b);
+    if (x === null || y === null) return null;
+    return (Math.max(x,y) + .05) / (Math.min(x,y) + .05);
+  };
+  const test = (a, b, min) => {
+    const r = ratio(v(a), v(b));
+    if (r === null) return `UNPARSEABLE ${a}=${v(a)} — FAIL`;
+    return `${r.toFixed(2)}:1 ${r >= min ? 'ok' : '*** FAIL (need ' + min + ')'}`;
+  };
+  return {
+    style: document.documentElement.dataset.style || '(unnamed)',
+    'txt/bg':     test('--txt','--bg',7),
+    'txt3/bg':    test('--txt3','--bg',4.5),
+    'on/mint':    test('--on-accent','--mint',4.5),
+    accents: ['--mint','--coral','--amber','--peri','--sky'].filter(k => v(k)).length + '/5'
+             + (['--mint','--coral','--amber','--peri','--sky'].every(k => v(k)) ? ' ok' : ' *** FAIL'),
+  };
+});
+
+// 5c. STYLE LEAK: no component may carry a raw hue.
+//
+// Three traps this must avoid, all of which produce false alarms:
+//   1. custom properties return their DECLARED text, so you cannot string-match a
+//      `color-mix(...)` token. Apply each token to a probe and read it back.
+//   2. Chrome serialises the SAME colour differently per property — `color-mix()` in
+//      `background-color` comes back `rgba(...)` but in `border-color` it comes back
+//      `color(srgb ...)`. Compare parsed channels, never strings.
+//   3. `background-image` gradients are composite strings, so the value never equals
+//      any single token. Extract each colour function and test those.
+R.styleLeak = await pg.evaluate(() => {
+  const KEYS = ['--mint','--coral','--amber','--peri','--sky','--bg','--bg2','--card',
+                '--txt','--txt2','--txt3','--line','--line2','--on-accent','--amber-a10',
+                '--mint-a12','--mint-a30','--coral-a30','--shade','--shade-deep','--veil',
+                '--txt-a05','--txt-a12'];
+  const parse = c => {
+    c = String(c).trim();
+    let m = c.match(/^color\(srgb ([\d.]+) ([\d.]+) ([\d.]+)(?:\s*\/\s*([\d.]+))?\)$/);
+    if (m) return [+m[1]*255, +m[2]*255, +m[3]*255, m[4] === undefined ? 1 : +m[4]];
+    m = c.match(/^rgba?\(([^)]+)\)$/);
+    if (m) { const p = m[1].split(/[,\s/]+/).filter(Boolean).map(Number);
+             return [p[0], p[1], p[2], p[3] === undefined ? 1 : p[3]]; }
+    return null;
+  };
+  const key = c => { const p = parse(c); return p ? p.map(n => Math.round(n)).join(',') : null; };
+
+  // resolve every token under BOTH a background and a border, to capture both serialisations
+  const probe = document.createElement('i');
+  probe.style.cssText = 'position:absolute;width:0;height:0;opacity:0';
+  document.body.appendChild(probe);
+  const ok = new Set();
+  for (const k of KEYS) {
+    for (const prop of ['backgroundColor','borderTopColor']) {
+      probe.style[prop] = '';
+      probe.style[prop] = `var(${k})`;
+      const v = getComputedStyle(probe)[prop];
+      if (v && v !== 'rgba(0, 0, 0, 0)' && v !== 'transparent') { const kk = key(v); if (kk) ok.add(kk); }
+    }
+  }
+  probe.remove();
+
+  // `color` is inherited, so it false-positives on every element — check paint only.
+  const PAINT = ['backgroundColor','borderTopColor','borderLeftColor',
+                 'borderRightColor','borderBottomColor','backgroundImage'];
+  const COLORFN = /(color\(srgb[^)]*\)|rgba?\([^)]*\))/g;
+  const bad = [];
+  for (const el of document.querySelectorAll('.vstage,.vtip,.card,.chip,.cmp-l,.vhot,.vp-play,.tbl')) {
+    const cs = getComputedStyle(el);
+    for (const prop of PAINT) {
+      const v = cs[prop];
+      if (!v || v === 'none' || v === 'transparent' || v === 'rgba(0, 0, 0, 0)') continue;
+      if (prop === 'backgroundImage') {
+        for (const part of v.match(COLORFN) || []) {
+          if (!ok.has(key(part))) bad.push(`${el.className.split(' ')[0]}:gradient ${part}`);
+        }
+        continue;
+      }
+      if (!ok.has(key(v))) bad.push(`${el.className.split(' ')[0]}:${prop}=${v}`);
+    }
+  }
+  return { tokensResolved: ok.size, leaks: bad.length ? [...new Set(bad)].slice(0,6) : 'none' };
+});
+// 5d. the same check at the SOURCE level — a raw hue in a declaration is the real bug,
+//     and it survives minification, so grep the css text too
+R.styleLeakSource = await pg.evaluate(() => {
+  const hits = [];
+  for (const sheet of document.styleSheets) {
+    let rules; try { rules = sheet.cssRules; } catch (_) { continue; }   // cross-origin fonts
+    const walk = rs => { for (const r of rs) {
+      if (r.cssRules) { walk(r.cssRules); continue; }
+      if (!r.style) continue;
+      const sel = r.selectorText || '';
+      if (/:root/.test(sel)) continue;                  // the palette definition itself
+      for (const prop of ['color','background','background-color','border','border-top-color',
+                          'border-color','outline','box-shadow']) {
+        const v = r.style.getPropertyValue(prop);
+        if (/(#[0-9a-f]{3,6}\b|rgba?\()/i.test(v)) hits.push(`${sel} { ${prop}:${v} }`);
+      }
+    }};
+    walk(rules);
+  }
+  return hits.length ? hits.slice(0,6) : 'none';
+});
+
 // 6. layout integrity
 R.overflowDesktop = await pg.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2);
 const m = await b.newPage({ viewport:{width:390,height:844}, isMobile:true, hasTouch:true });
@@ -110,6 +237,8 @@ await b.close();
 | A control is alive | readout text differs at min vs max — not "the handler was attached" |
 | Images load | `naturalWidth > 0` on every visible `<img>` — not that the `<img>` tag exists |
 | Page didn't break | `errs` empty including 404s — not just no `pageerror` |
+| Text is readable | `ratio(--txt,--bg) >= 7` — not "it looked fine" |
+| Style system intact | computed component colours ∈ the token set — not "the page looks styled" |
 | Lens switch works | `scrollY` actually changed — not the tab has class `on` |
 
 ## Post-deploy
