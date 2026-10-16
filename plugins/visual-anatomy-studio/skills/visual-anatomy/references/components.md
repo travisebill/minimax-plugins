@@ -4,8 +4,102 @@ All of these are the versions that survived real debugging. Extend them, do not 
 them. Markup assumes a page whose shell is: topbar → scale map → one `<section class="panel">`
 per lens → Q&A → sources.
 
-Global conventions: `C` is a colour object `{mint,coral,peri,amber,violet}`; `$` and `$$` are
+Global conventions: `C` is a colour object `{mint,coral,amber,peri,sky}`; `$` and `$$` are
 `querySelector`/`querySelectorAll`; `REDUCED` is `matchMedia('(prefers-reduced-motion: reduce)').matches`.
+
+## 0. The style layer — read this before writing any CSS
+
+**The shell is style-agnostic. All visual personality lives in the `:root` block below.**
+Choose the style with the user (see `styles.md` §3) *before* generating imagery, then paste
+that style's `:root` over this one. Do not edit any other rule to re-skin the page.
+
+**Never hardcode a hue in a component.** `rgba(72,224,189,.06)` is one style's mint, and it
+breaks the moment a different style is chosen. Everything below is a token on purpose.
+
+```css
+:root{ /* ── BASE TOKENS. Replace this block wholesale with a style from styles.md. ── */
+  --bg:#0A0E14; --bg2:#10161F; --card:#141B26; --line:#1E2836; --line2:#2E3D4F;
+  --txt:#E6EDF5; --txt2:#93A5B8; --txt3:#6A7E96;
+  --mint:#FFC44D; --coral:#FF5C5C; --amber:#48E0BD; --peri:#8B7BFF; --sky:#4DD0E1;
+  --on-accent:#0A0E14;          /* text sitting ON a --mint fill */
+  --radius:6px;
+  --font-display:"Space Grotesk","Noto Sans TC",sans-serif;
+  --font-body:"Noto Sans TC",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --bar-h:58px;
+}
+
+/* ── DERIVED TOKENS. Keep this block byte-identical in every build. ──
+   These are a pure function of the base tokens, so they belong in ONE shared place.
+   A style that redefines only some of them leaves the rest unset and the components
+   that use them lose their surfaces *silently* — the topbar, tooltip and lightbox all
+   vanish. Never move these into a style block. If a tone the base set cannot express is
+   needed, add it HERE, not per style. */
+:root{
+  --mint-a12: color-mix(in srgb, var(--mint) 12%, transparent);
+  --mint-a30: color-mix(in srgb, var(--mint) 30%, transparent);
+  --coral-a30:color-mix(in srgb, var(--coral) 30%, transparent);
+  --amber-a10:color-mix(in srgb, var(--amber) 10%, transparent);
+  --shade:     color-mix(in srgb, var(--bg) 72%, transparent);
+  --shade-deep:color-mix(in srgb, var(--bg) 93%, transparent);
+  --veil:      color-mix(in srgb, var(--bg) 94%, transparent);
+  --txt-a05:   color-mix(in srgb, var(--txt)  5%, transparent);
+  --txt-a12:   color-mix(in srgb, var(--txt) 12%, transparent);
+}
+```
+
+The `C` object mirrors the tokens, so JS reads the same palette the CSS does:
+
+```js
+const css=getComputedStyle(document.documentElement);
+const C=Object.fromEntries(['mint','coral','amber','peri','sky']
+  .map(k=>[k,css.getPropertyValue('--'+k).trim()]));
+```
+
+`color-mix()` needs Chrome 111 / Safari 16.2 / Firefox 113. For older targets, write
+resolved `rgba()` literals into the `:root` block — never back into a component.
+
+**Five accents, always** (`--mint --coral --amber --peri --sky`). Components are
+position-agnostic about which hue is which, so a style may re-map them freely — that is
+how you give a political page blue/green parties on a neutral sheet.
+
+**Before shipping, assert contrast rather than eyeballing it:**
+
+```js
+  // Parse hex AND rgb(). `\d+` is NOT enough — "#FFFFFF" has no digits at all and
+  // crashes match(). Return null on anything unparseable so a bad token FAILS the
+  // assertion instead of throwing out of the whole harness.
+  const lum = c => {
+    c = String(c).trim();
+    let r, g, b;
+    const hex = c.match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+    if (hex) {
+      let h = hex[1];
+      if (h.length === 3) h = h[0]+h[0] + h[1]+h[1] + h[2]+h[2];
+      r = parseInt(h.slice(0,2),16); g = parseInt(h.slice(2,4),16); b = parseInt(h.slice(4,6),16);
+    } else {
+      const n = c.match(/[\d.]+/g);
+      if (!n) return null;
+      [r, g, b] = n.slice(0,3).map(Number);
+    }
+    const f = x => { x /= 255; return x <= .03928 ? x/12.92 : Math.pow((x+.055)/1.055, 2.4); };
+    return .2126*f(r) + .7152*f(g) + .0722*f(b);
+  };
+  const ratio = (a, b) => {
+    const x = lum(a), y = lum(b);
+    if (x === null || y === null) return null;
+    return (Math.max(x,y) + .05) / (Math.min(x,y) + .05);
+  };
+  const test = (a, b, min) => {
+    const r = ratio(v(a), v(b));
+    if (r === null) return `UNPARSEABLE ${a}=${v(a)} — FAIL`;
+    return `${r.toFixed(2)}:1 ${r >= min ? 'ok' : '*** FAIL (need ' + min + ')'}`;
+  };
+R.contrast_on   = ratio(v('--on-accent'), v('--mint')) >= 4.5 ? 'ok' : '❌ '+ratio(v('--on-accent'),v('--mint')).toFixed(2);
+```
+
+Light styles fail this most often. If `--on-accent` does not clear 4.5:1 against `--mint`,
+re-map `--mint` or set `--on-accent` by hand — never leave it to `color: white`.
 
 ---
 
@@ -30,15 +124,15 @@ image box, so they survive responsive layout.
 
 ```css
 .vstage{position:relative;margin:20px 0 0;border:1px solid var(--line);border-radius:18px;
-  overflow:hidden;background:linear-gradient(160deg,rgba(72,224,189,.06),rgba(0,0,0,.3))}
+  overflow:hidden;background:linear-gradient(160deg,var(--mint-a12),var(--shade))}
 .vstage img{display:block;width:100%;height:auto}
 .vstage.vstage-hero img{max-height:min(58vh,560px);object-fit:cover}
 .vcap{padding:13px 17px;font-size:13.2px;color:var(--txt2);line-height:1.7;
-  background:rgba(0,0,0,.35);border-top:1px solid var(--line)}
+  background:var(--shade);border-top:1px solid var(--line)}
 .vzoom{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:9px;
-  border:1px solid var(--line2);background:rgba(6,9,15,.72);color:var(--txt2);cursor:pointer}
+  border:1px solid var(--line2);background:var(--shade-deep);color:var(--txt2);cursor:pointer}
 .vhot{position:absolute;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;
-  border:2px solid var(--mint);background:rgba(72,224,189,.2);cursor:pointer;transition:.2s;z-index:3}
+  border:2px solid var(--mint);background:var(--mint-a30);cursor:pointer;transition:.2s;z-index:3}
 .vhot::after{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--mint)}
 .vhot::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--mint);
   opacity:.55;animation:vhot 2.3s ease-out infinite}
@@ -87,9 +181,9 @@ addEventListener("scroll",()=>{ if(!pinned)return; cancelAnimationFrame(raf);
 
 ```css
 .vtip{position:fixed;z-index:300;max-width:min(320px,calc(100vw - 32px));padding:11px 14px;
-  border-radius:11px;background:rgba(8,12,19,.96);border:1px solid var(--mint);
+  border-radius:11px;background:var(--shade-deep);border:1px solid var(--mint);
   font-size:12.8px;line-height:1.6;pointer-events:none;opacity:0;transform:translateY(4px);
-  transition:.18s;box-shadow:0 12px 30px -10px #000}
+  transition:.18s;box-shadow:0 12px 30px -10px var(--txt-a12)}
 .vtip.on{opacity:1;transform:none}
 ```
 
@@ -114,14 +208,14 @@ addEventListener("scroll",()=>{ if(!pinned)return; cancelAnimationFrame(raf);
 .vcompare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vcompare .cmp-a{position:relative}
 .vcompare .cmp-b{clip-path:inset(0 calc(100% - var(--x)) 0 0)}
-.vcompare .cmp-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:#fff;
-  box-shadow:0 0 14px rgba(255,255,255,.85);pointer-events:none}
+.vcompare .cmp-line{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:var(--txt);
+  box-shadow:0 0 14px var(--txt-a12);pointer-events:none}
 .vcompare .cmp-line i{position:absolute;top:50%;left:50%;width:38px;height:38px;margin:-19px 0 0 -19px;
-  border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 4px 16px rgba(0,0,0,.6)}
+  border-radius:50%;background:var(--txt);box-shadow:0 4px 16px var(--shade-deep)}
 .vcompare .cmp-l{position:absolute;top:12px;font-size:11.5px;font-weight:800;padding:5px 12px;
-  border-radius:99px;background:rgba(6,9,15,.8)}
-.vcompare .cmp-lt{left:12px;color:var(--mint);border:1px solid rgba(72,224,189,.4)}
-.vcompare .cmp-rt{right:12px;color:var(--coral);border:1px solid rgba(255,138,91,.4)}
+  border-radius:99px;background:var(--shade-deep)}
+.vcompare .cmp-lt{left:12px;color:var(--mint);border:1px solid var(--mint-a30)}
+.vcompare .cmp-rt{right:12px;color:var(--coral);border:1px solid var(--coral-a30)}
 ```
 
 Drag handling — listen on `window`, not the element, and suppress the click that follows a
@@ -159,12 +253,12 @@ addEventListener("keydown",e=>{ if(e.key==="Escape") close(); });
 ```
 
 ```css
-.lb{position:fixed;inset:0;z-index:200;background:rgba(3,5,9,.94);backdrop-filter:blur(10px);
+.lb{position:fixed;inset:0;z-index:200;background:var(--veil);backdrop-filter:blur(10px);
   display:none;place-items:center;padding:3vh 3vw}
 .lb.on{display:grid}
 .lb img{max-width:100%;max-height:90vh;object-fit:contain;border-radius:12px}
 .lb-x{position:absolute;top:16px;right:16px;width:42px;height:42px;border-radius:11px;
-  border:1px solid var(--line2);background:rgba(255,255,255,.08);color:var(--txt);cursor:pointer;font-size:19px}
+  border:1px solid var(--line2);background:var(--txt-a12);color:var(--txt);cursor:pointer;font-size:19px}
 .lb-cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;color:var(--txt2);font-size:13.5px;padding:0 5vw}
 ```
 
@@ -196,12 +290,12 @@ $$(".vplayer").forEach(fig=>{
 ```
 
 ```css
-.vp-wrap{position:relative;background:#05080d}
+.vp-wrap{position:relative;background:var(--bg)}
 .vp-wrap video{display:block;width:100%;height:auto;max-height:min(56vh,520px);object-fit:cover}
 .vp-play{position:absolute;inset:0;margin:auto;width:74px;height:74px;border-radius:50%;
-  border:1px solid rgba(255,255,255,.35);background:rgba(6,9,15,.55);backdrop-filter:blur(8px);
-  color:#fff;font-size:26px;cursor:pointer;display:grid;place-items:center;transition:.2s}
-.vp-play:hover{background:var(--mint);color:#04120e;transform:scale(1.07)}
+  border:1px solid var(--txt-a12);background:var(--shade);backdrop-filter:blur(8px);
+  color:var(--txt);font-size:26px;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.vp-play:hover{background:var(--mint);color:var(--on-accent);transform:scale(1.07)}
 .vp-wrap.playing .vp-play{opacity:0;pointer-events:none}
 ```
 
@@ -246,7 +340,7 @@ $$(".card p, .psim-hint, .sources li").forEach(el=>{
 
 ```css
 body.t-light .long{position:relative;max-height:4.6em;overflow:hidden;cursor:pointer;
-  mask-image:linear-gradient(180deg,#000 62%,transparent 100%)}
+  mask-image:linear-gradient(180deg,#000 62%,transparent 100%);  /* alpha-only: safe on any bg */
 body.t-light .long.open{max-height:none;overflow:visible;cursor:default;mask-image:none}
 body.t-light .long::after{content:"⋯ 點擊展開";position:absolute;right:0;bottom:0;font-size:11.5px;
   color:var(--mint);background:linear-gradient(90deg,transparent,var(--bg) 30%);padding-left:34px}
