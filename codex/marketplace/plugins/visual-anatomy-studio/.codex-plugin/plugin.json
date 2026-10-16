@@ -1,7 +1,7 @@
 {
   "name": "visual-anatomy-studio",
-  "version": "0.1.0",
-  "description": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: researches current data, generates scientific-style illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes six interaction bug classes and a position-and-pixel verification harness.",
+  "version": "0.2.0",
+  "description": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: chooses a topic-matched visual style with the user (10 catalogued styles), researches current data, generates styled illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes eight interaction and style bug classes and a position-and-pixel verification harness.",
   "author": {
     "name": "Travis Chen"
   },
@@ -16,7 +16,7 @@
   "interface": {
     "displayName": "視覺解剖工作室",
     "shortDescription": "把任何主題做成多視角、可互動的視覺解說網站",
-    "longDescription": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: researches current data, generates scientific-style illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes six interaction bug classes and a position-and-pixel verification harness.",
+    "longDescription": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: chooses a topic-matched visual style with the user (10 catalogued styles), researches current data, generates styled illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes eight interaction and style bug classes and a position-and-pixel verification harness.",
     "developerName": "Travis Chen",
     "category": "Education",
     "capabilities": [
