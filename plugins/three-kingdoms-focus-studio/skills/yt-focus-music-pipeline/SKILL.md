@@ -3,14 +3,14 @@ name: yt-focus-music-pipeline
 description: >-
   統籌三國志 YouTube 專注音樂影片與音樂發布流程的單一入口。當使用者想做長時間專注音樂、
   角色人聲單曲 MV、專輯曲目，或需要從構思走到「已核准的音樂 prompt + 封面 + 章節圖 +
-  循環影片 + 可上架文案」整套發布包時使用。負責分流到六個專門 skill、擋下必須人工確認的
+  循環影片 + 可上架文案」整套發布包時使用。負責分流到七個專門 skill、擋下必須人工確認的
   閘門、並管理 skill 之間的交接契約。若使用者只想要單一步驟（例如只寫 prompt、只做審查），
   直接呼叫對應 skill 即可，不必走本流程。
 ---
 
 # 三國志專注音樂影片 — 流程協調層
 
-本 skill **不重做**底下六個 skill 的工作。它只做三件事：
+本 skill **不重做**底下七個 skill 的工作。它只做三件事：
 
 1. **分流** — 判斷這次要做哪一條路徑。
 2. **擋閘門** — 認出哪些節點必須由使用者明確確認，不能由代理自行跨越。
@@ -26,6 +26,7 @@ description: >-
 | `three-kingdoms-music-review` | `skills/three-kingdoms-music-review/` | prompt 與音檔的審查 QA，附 `scripts/measure_audio.py` |
 | `three-kingdoms-vocal-single` | `skills/three-kingdoms-vocal-single/` | 角色人聲單曲、歌詞與發音鎖、分鏡圖、YouTube Short 分支 |
 | `yt-publish-strategy` | `skills/yt-publish-strategy/` | **YouTube 發布策略**：標題與關鍵字選詞、說明結構、hashtag 使用、AI 揭露義務、YPP 變現合規、競爭者基準 |
+| `audio-reactive-waveform` | `skills/audio-reactive-waveform/` | 由本地音樂渲染透明頻譜條 MOV，先做短片確認，再輸出全曲供剪輯疊加 |
 
 讀取這些檔案時以套件內的相對路徑為準，不要假設它們存在於 `~/.agents/skills/` 或 `~/.codex/skills/`。
 
@@ -101,6 +102,19 @@ description: >-
 
 ---
 
+## 音樂視覺化 — waveform / 頻譜條
+
+觸發：音樂驅動波形、透明頻譜條、music visualizer，或 CapCut 疊加素材。
+直接載入 `three-kingdoms-focus-studio:audio-reactive-waveform`；僅需疊加素材時，
+依其流程確認音檔與樣式、先做最多 20 秒的透明 MOV，不必啟動完整影片企劃。
+
+交接：本地音樂路徑、參考圖或影片（若有）、畫布與 FPS、輸出資料夾。
+交付無聲 ProRes 4444 MOV 與確切 style JSON；原音樂另放音軌、對齊起點。
+確認短片外觀與剪輯軟體的透明匯入後，才能做全曲。普通 MP4 預覽沒有透明度。
+這是 Python／FFmpeg 本地渲染，不使用音樂生成 API 或 MiniMax-H3。
+
+---
+
 ## 供應商選擇
 
 音樂生成供應商由使用者決定，不要自行改：
@@ -159,7 +173,7 @@ skill 之間靠檔案與命名交接，**不要靠對話記憶**。
 ## 不做的事
 
 - 不在本地生成音樂。這個套件產出的是 prompt、規格、審查、交接，以及**由已核准外部音檔做的本地確定性章節拼接 WAV** — 拼接必須標示為 `assembly from supplied external results`，不得描述為本地生成音樂。原始音檔由外部供應商生成後由使用者提供。
-- 不宣稱已生成任何音訊或影片，除非使用者已提供該檔案。
+- 只對實際取得或本地渲染並驗證的檔案宣稱已產出；透明頻譜條 MOV 必須標明為由提供音樂驅動的本地視覺化，不是生成新音樂或外部影片。
 - 不跨越上面任何一個硬性閘門。
 - 不在沒有既有專案包的情況下假設章節數。`three-kingdoms-focus-music` 對 60 分鐘的預設是 6 章 × 約 10 分鐘，但使用者宣告的章節數才是權威。
 - 不把兩條路徑混在同一次生成裡。
