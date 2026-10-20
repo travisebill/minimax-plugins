@@ -178,8 +178,9 @@
       "source_path": "skills/yt-publish-strategy/references/channel-baseline.md",
       "source_sha256": "7f31347c3a5b523391f005e2aeb1ec73eff08abac798e488330723a145decb8d",
       "codex_path": "skills/yt-publish-strategy/references/channel-baseline.md",
-      "codex_sha256": "7f31347c3a5b523391f005e2aeb1ec73eff08abac798e488330723a145decb8d",
-      "change": "unchanged"
+      "codex_sha256": "eda1c7f8120fe563464e118ac539e3b697502d1f5d38ffdd4505683908813258",
+      "change": "adapted",
+      "notes": "Added current catism.cloud website note on 2026-10-21; preserved the 2026-09-30 snapshot and the original source commit/hash."
     },
     {
       "source_path": "skills/yt-publish-strategy/references/monetization-policy.md",
