@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "name": "three-kingdoms-focus-studio",
   "displayName": "三國志專注音樂工作室",
-  "version": "1.2.0",
-  "description": "三國志 YouTube 音樂發布流程工具箱：統籌長時間專注音樂、角色人聲單曲與專輯曲目的完整製作鏈，涵蓋音樂生成 prompt 撰寫、候選審查、章節拼接、封面、15 秒循環影片與上架文案；並內建經一手實測驗證的 YouTube 發布策略（標題關鍵字選詞、說明結構、hashtag 與 AI 揭露義務、YPP 變現合規）與競爭者基準。以 yt-focus-music-pipeline 作為單一入口分流。",
+  "version": "1.3.0",
+  "description": "三國志 YouTube 音樂發布流程工具箱：統籌長時間專注音樂、角色人聲單曲與專輯曲目的完整製作鏈，涵蓋音樂生成 prompt 撰寫、候選審查、章節拼接、封面、15 秒循環影片、音樂驅動透明頻譜條與上架文案；並內建經一手實測驗證的 YouTube 發布策略（標題關鍵字選詞、說明結構、hashtag 與 AI 揭露義務、YPP 變現合規）與競爭者基準。以 yt-focus-music-pipeline 作為單一入口分流。",
   "author": "Travis Chen",
   "icon": "icon.png",
   "category": "Studio",
@@ -15,7 +15,8 @@
     "用 Music 3.0 幫我寫一條純器樂的 ambient cinematic 提示詞",
     "幫我寫一支 60 分鐘三國志專注音樂的 YouTube 標題、說明和 hashtag，要能被搜尋到",
     "為什麼我的三國專注音樂沒有人看？幫我檢查標題和關鍵字策略",
-    "我要申請 YouTube 合作夥伴計畫變現，幫我檢查是否符合資格和政策"
+    "我要申請 YouTube 合作夥伴計畫變現，幫我檢查是否符合資格和政策",
+    "用這首音樂製作可疊在 CapCut 影片上的透明 waveform，先做 20 秒 MOV 給我確認"
   ],
   "apps": [],
   "mcpServers": [],
@@ -26,6 +27,7 @@
     "skills/music3-instrumental-prompts/SKILL.md",
     "skills/three-kingdoms-music-review/SKILL.md",
     "skills/three-kingdoms-vocal-single/SKILL.md",
-    "skills/yt-publish-strategy/SKILL.md"
+    "skills/yt-publish-strategy/SKILL.md",
+    "skills/audio-reactive-waveform/SKILL.md"
   ]
 }
