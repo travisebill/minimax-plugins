@@ -1,7 +1,7 @@
 {
   "name": "visual-anatomy-studio",
-  "version": "0.2.0",
-  "description": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: chooses a topic-matched visual style with the user (10 catalogued styles), researches current data, generates styled illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes eight interaction and style bug classes and a position-and-pixel verification harness.",
+  "version": "0.2.1",
+  "description": "Builds topic-matched, multi-perspective interactive explainers with tools available in the current host. MiniMax Design MCP is optional; compatible providers can supply illustrations, video, music, narration and custom voices.",
   "author": {
     "name": "Travis Chen"
   },
@@ -15,8 +15,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "視覺解剖工作室",
-    "shortDescription": "把任何主題做成多視角、可互動的視覺解說網站",
-    "longDescription": "Builds a single-file, multi-perspective interactive HTML explainer on any topic and deploys it to a public URL: chooses a topic-matched visual style with the user (10 catalogued styles), researches current data, generates styled illustrations and 10s H3 video clips, and wires clickable hotspots, drag comparators, scrubber timelines and a scale map of the viewpoints. Encodes eight interaction and style bug classes and a position-and-pixel verification harness.",
+    "shortDescription": "多視角解說網站與可選影音素材",
+    "longDescription": "Builds topic-matched multi-perspective explainers with tools available in the current host. MiniMax Design MCP is optional; compatible providers can supply illustrations, video, music, narration and custom voices. Includes a 10-style catalog, interactive hotspots, drag comparators, scrubber timelines and verification guidance.",
     "developerName": "Travis Chen",
     "category": "Education",
     "capabilities": [
@@ -26,7 +26,7 @@
     "defaultPrompt": [
       "視覺解剖 F1 新加坡站排位賽結果",
       "照新冠那個網站的做法做血管內皮的致病機制",
-      "把這個主題做成多視角互動網站，視覺優先，最後給我網址"
+      "把這個主題做成多視角互動網站，依目前可用工具加入旁白或配樂，最後給我網址"
     ],
     "composerIcon": "./assets/icon.svg",
     "logo": "./assets/icon.svg",
