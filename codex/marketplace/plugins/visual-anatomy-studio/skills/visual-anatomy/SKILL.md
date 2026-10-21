@@ -3,8 +3,8 @@ name: visual-anatomy
 description: |
   Build a single-file, multi-perspective interactive HTML explainer on any topic and
   deploy it to a public URL. Chooses a visual style that matches the subject with the
-  user (10 catalogued styles, from clinical to broadcast), researches current data,
-  generates styled illustrations and 10s H3 video clips, and wires clickable hotspots,
+  user (10 catalogued styles, from clinical to broadcast), researches current data, and uses tools available in the current host to produce
+  illustrations, video, music and narration. It wires clickable hotspots,
   drag comparators, scrubber timelines and a scale map of the "lenses" (viewpoints).
   Trigger phrases: "視覺解剖", "像新冠那個網站", "多視角互動網站", "用互動的方式解釋",
   "做成可互動的網頁來解釋", "visual anatomy of", "interactive explainer for",
@@ -97,24 +97,39 @@ say so on the page rather than picking whichever is convenient.
 Where a number is an estimate, model output, or a schematic, **label it on the page**
 ("示意模型 · 非實測"). Fabricated precision is worse than an honest range.
 
-### 4. Start the slow generation first
+### 4. Route generation to tools available here
 
-Video generation (H3) takes 15–30 minutes and the images ~2 minutes. Submit video
-tasks immediately after the style is locked, then do images, then build the page, then
-collect the video. Do not reorder this — it is the single biggest wall-clock saving.
+Before generating media, inspect the current tool catalog and load the relevant installed
+provider skill. `mcode-tools` is one possible provider, not a required dependency. Choose a
+provider whose live tools support the requested asset and the selected visual style. Batch
+images according to that provider's current request limits.
 
-Use `mcode-tools` for both. Load the `mcode-tools-master` skill first, discover the
-tools, and read `references/imagery.md` in this skill for **the chosen style's prompt
-block** and the compression steps. Batch image generation in one `requests[]` call.
+When MiniMax Design MCP is available and the user has not selected another provider:
 
-> Every prompt — stills *and* video — must carry the chosen style's fragment. Style is
-> baked into the pixels, so this decision is not reversible by CSS afterwards.
+1. Call `list_projects` first. Select a suitable project with `open: true` and call
+   `open_project` with its returned `projectId` before other project operations. If no
+   suitable MiniMax project is open, use another compatible provider when available unless
+   the user specifically requires MiniMax; otherwise ask the user to open a project.
+2. Call `capability_list` for the required media operations and `capability_get` for each
+   selected capability. Treat the live parameter schema and model rules as authoritative.
+3. Submit through `execute` only when prompts and references are ready. Wait on the same
+   `taskId` with `task_wait` until completion; a timeout is not a reason to submit duplicate
+   work.
+4. If a task requests cost approval, show the quoted amount and wait for the user's
+   explicit approval before calling `confirm_cost`.
+5. Retrieve finished outputs with `get_output` and the returned `versionId`, then copy
+   assets into the page's local folders. Do not construct download URLs from resource IDs.
+
+For other providers, follow their live generation, cost, wait and retrieval contracts. Do
+not assume model names, formats, duration limits or latency from a different computer.
+Every image and video prompt must still carry the user's chosen style fragment; style is
+baked into the pixels and cannot be repaired with CSS.
 
 ### 5. Build the page
 
-Single file: inline `<style>` and `<script>`, assets in a sibling `img/` and `video/`
-folder next to `index.html`. No frameworks, no CDN JS. Google Fonts is fine (it is a
-stylesheet, and the page degrades to system fonts offline).
+Single file: inline `<style>` and `<script>`, with assets in sibling `img/`, `video/` and, when generated, `audio/` folders next to `index.html`. No frameworks, no CDN JS. Google Fonts is fine (it is a stylesheet, and the page degrades to system fonts offline).
+
+Audio players must have visible controls and must not autoplay. Include a transcript for narration. Retrieve generated media locally before embedding it; do not rely on temporary provider URLs.
 
 Copy component code from `references/components.md` rather than rewriting it. It is
 already free of the six bugs listed below.
@@ -172,8 +187,8 @@ sibling by default, so mixed-height side-by-side visuals need `align-items:start
 `website_deploy` with `path` = the folder containing `index.html`, `source_path` = the
 same folder. The tool publishes a **publicly accessible** URL and archives the source
 privately. Confirm first if the user has not already asked for a URL, and tell them the
-link is public. Verify after deploying with an HTTP check on the page and on 2–3 assets —
-a 200 on the page alone does not prove the images and video resolved.
+link is public. Verify after deploying with an HTTP check on the page and on 2–3 assets, including audio
+or video when present — a 200 on the page alone does not prove the media resolved.
 
 ## Output contract
 
@@ -182,8 +197,10 @@ a 200 on the page alone does not prove the images and video resolved.
 3. **The style used, and why it was the right register for this topic** — plus any accent
    override and its justification
 4. The as-of date of the data
-5. What was verified and what remains unverified (be explicit; never imply you tested
-   something in a browser you could not actually reach)
+5. Which media were produced and which provider supplied them, plus any requested media
+   that could not be generated in this environment
+6. What was verified and what remains unverified (be explicit; never imply you tested
+   something in a browser you could not actually reach or listened to audio you did not hear)
 
 ## Failure handling
 
@@ -205,6 +222,7 @@ a 200 on the page alone does not prove the images and video resolved.
   image before wiring hotspots onto it.
 - **Video generation fails or times out** → ship the page without it. The static
   illustrations carry the content; the video is an enhancement, not the load-bearing part.
+- **A requested media type has no compatible tool in this environment** → continue with the supported assets and state which output is missing; do not silently substitute another medium.
 - **A control cannot be made to work correctly** → remove it and state that it was removed.
   A broken interactive element costs more trust than its absence.
 - **The user reports "it doesn't respond"** → reproduce it, screenshot it, and read the
@@ -247,4 +265,6 @@ page flagged as permanently stale after 11/28.
 - `references/components.md` — copy-paste component code (stage, hotspot, comparator,
   player, scale map, lightbox, text collapse) and their CSS. All tokenised.
 - `references/imagery.md` — per-style image/video prompt blocks, aspect ratios, compression
+- `references/audio.md` — provider-adaptive music, narration, custom voice and sound workflow
 - `references/verify.md` — Playwright verification harness and assertion recipes
+
