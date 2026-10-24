@@ -1206,6 +1206,14 @@ approved:
 At every gate, and again before completion, verify:
 
 - required files exist and links point to the current project ID;
+- **the upload master itself is verified by measurement, not by file presence** —
+  codec, resolution, frame rate, pixel format, frame count against
+  `round(duration × fps)`, and that the video and audio tracks are the same
+  length. A release package whose self-check only confirms the file *exists*
+  will happily ship a master that is three frames short of its own audio;
+- **every number in the delivery documents is reproducible by a command** —
+  frame count, byte size, duration, and the README/spec figures are compared
+  against the measured values by the package's own check;
 - for a chapterized project, `spec.md`, `music-prompt-vN.md`,
   `chapter-image-prompt-vN.md`, the declared chapter manifest, and the actual
   chapter image files have a one-to-one match with no missing or extra chapter;

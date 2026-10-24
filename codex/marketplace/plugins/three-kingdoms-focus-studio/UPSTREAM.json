@@ -150,8 +150,8 @@
       "source_path": "skills/three-kingdoms-video-project/SKILL.md",
       "source_sha256": "6a477f97f80f0a407c9431d73aafc29494d1cfd66ef4bb1f0c316304310851b2",
       "codex_path": "skills/three-kingdoms-video-project/SKILL.md",
-      "codex_sha256": "e6326e518bbe82dd74174061ba2cc7b741a4da1ae0f084526bf21d005131f071",
-      "change": "adapted"
+      "codex_sha256": "1d8cefe28cedba6ed2311559c2b319eceb2e24c3644391d7b1bb9665929546c8",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/three-kingdoms-vocal-single/SKILL.md",
@@ -164,8 +164,8 @@
       "source_path": "skills/yt-focus-music-pipeline/SKILL.md",
       "source_sha256": "aa2737ca1be5afcc15f5851ad76ee83410bd4e3fce2326023e47906dda8ec9e0",
       "codex_path": "skills/yt-focus-music-pipeline/SKILL.md",
-      "codex_sha256": "9b12744bb5f93e023cd985dd12384bfc591195e85c20c77253f203c8007e3726",
-      "change": "adapted"
+      "codex_sha256": "a34a1bf7da7ecbf9c93ce66f43859bf87a3e162a5a4e41eb39baf3a644232cba",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/yt-publish-strategy/SKILL.md",

@@ -2,14 +2,14 @@
 
 這是 [travisebill/minimax-plugins](https://github.com/travisebill/minimax-plugins) 的 Codex 移植版本，保留兩個獨立外掛，共 9 個技能。
 
-> **版本要分清兩件事**：本表列的是**原始碼版本**（目前 1.5.0）；已發布的 ZIP 仍是 1.2.1（`dist/`），移植當時的規格與驗證紀錄保留在 `spec.md` 與 `validation/`。原始碼可以先跑，發布產物與主機驗證另排期 —— 見 `marketplace/plugins/three-kingdoms-focus-studio/WAVEFORM.md`。
+> **版本要分清兩件事**：本表列的是**原始碼版本**（目前 1.5.1）；已發布的 ZIP 仍是 1.2.1（`dist/`），移植當時的規格與驗證紀錄保留在 `spec.md` 與 `validation/`。原始碼可以先跑，發布產物與主機驗證另排期 —— 見 `marketplace/plugins/three-kingdoms-focus-studio/WAVEFORM.md`。
 
 最初的移植來源固定於 commit `0d74e7638bcb04bf589ed9b5e37e78efda3ec00c`，移植日期為 2026-10-05。
 
 | 外掛 | 版本 | 可以做什麼 |
 | --- | --- | --- |
 | 教學遊戲工作室 `learning-game-studio` | 0.2.1 | 學習目標與遊戲機制配對、互動實作、回饋動畫、進度獎勵、手機與無障礙驗收 |
-| 三國音樂工作室 `three-kingdoms-focus-studio` | 1.5.0 | 音樂與影片企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面、整部上傳影片製作與 YouTube 文案 |
+| 三國音樂工作室 `three-kingdoms-focus-studio` | 1.5.1 | 音樂與影片企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面、整部上傳影片製作與 YouTube 文案 |
 
 ## 安裝
 
