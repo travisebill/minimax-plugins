@@ -112,7 +112,19 @@ Prompt rules:
 
 ### MiniMax Music 3.0 interface and guide reference
 
-When MiniMax Music 3.0 is selected, identify the delivery route before writing a paste-ready payload. The public Music Generation API and web prompt field use model `music-3.0`, with `prompt` limited to 2,000 characters and `lyrics` sent separately. Count the actual plain-text `prompt`, including spaces and paragraph breaks, and record the safety margin. The open-weight model-card/SGLang route uses a different `input`/`instructions` contract and token budget; never use its limit as the public prompt-field limit.
+When MiniMax Music 3.0 is selected, **identify the delivery route before writing a payload**. There are four routes and their parameters are not interchangeable. Treating one route's limits as another's is the single most common source of wrong instructions.
+
+| Route | Instrumental control | Duration control | Prompt limit |
+|---|---|---|---|
+| **MiniMax Design MCP** (`generate_music:music-3.0`) | `params.mode: "instrumental"` | **none — only a timeline inside the prompt** | 2,000 chars |
+| **Hosted Music Generation API** | `is_instrumental: true` | none | 2,000 chars |
+| **SGLang open-weight** (`/v1/audio/speech`) | none | `max_new_tokens` (25 frames/sec) | 5,000 tokens |
+| **Local connector wrapper** | **no flag exists at all** | none | schema-dependent |
+
+Two corrections that must not be repeated:
+
+- **`max_new_tokens` exists only on the SGLang route.** It is not a parameter of the hosted API or of the MCP. The MCP exposes no duration parameter at all.
+- **The instrumental control differs per route.** The hosted API's flag is `is_instrumental`. The MCP's is `params.mode: "instrumental"`. On the MCP, `lyrics` is **not** a control: it is only meaningful in `mode: "song"`, and a controlled experiment on 18 candidates found that five different `lyrics` values — including a deliberately empty control — all produced wordless vocals. Sending `mode: "instrumental"` and omitting `lyrics` entirely produced 18/18 clean instrumental results.
 
 **Identify the route before assuming any capability.** A local connector wrapper is not the hosted API. Measured 2026-09-30 on the local `batch_text_to_music` connector, six calls returned 13.96, 28.21, 31.09, 40.05, 40.73 and 41.15 seconds — the length is random and uncontrollable, the schema has no duration parameter, and a caption asking for "about two to three minutes" still returned 40 seconds. The same schema also has no `is_instrumental` field, and 4 of 5 generations carried wordless vocals despite captions that spelled out `no vocals, no choir, no spoken word`.
 
@@ -122,9 +134,13 @@ The consequences are structural, not cosmetic:
 - The connector cannot guarantee an instrumental result. Worded exclusions are not a control surface.
 - File metadata confirms the producer but carries no model version, so it cannot establish which model ran.
 
+**Prefer the MCP route when it is available.** Measured 2026-10-22 through `minimax-design`: 18 candidates across six chapters, `params.mode: "instrumental"`, no `lyrics` field, positive-only captions — 18/18 confirmed instrumental by measurement, spectral corroboration and human listening. Duration came from a minute-level timeline written into the prompt: a prompt with no timeline produced 59.9 seconds; the same prompt with a `0:00 … 3:50` timeline produced 188 seconds. Because exact length is not guaranteed, report a **minute range**, not a track count. Read `skills/yt-focus-music-pipeline/references/design-mcp-execution.md` before executing through the MCP.
+
 When only the connector is available, hand over the paste-ready payloads and the chapter plan instead of attempting generation, and say plainly which capabilities the route cannot deliver. Do not spend many turns generating short candidates and stitching them to simulate a long release; the user can produce properly sized tracks in one pass.
 
-Apply the official Music 3.0 guide's structured prompting principles to focus music: state the global creative intent, describe the emotional arc, and give a fine-grained temporal arrangement that names instrument entry, layering, transformation, and exit. Use section-level structure when it improves coherence, while keeping the public payload concise. For instrumental cues, use structural tags only in `lyrics`; place arrangement and negative constraints in `prompt`. Keep the full reusable master separate from each constrained delivery version.
+Apply the official Music 3.0 guide's structured prompting principles to focus music: state the global creative intent, describe the emotional arc, and give a fine-grained temporal arrangement that names instrument entry, layering, transformation, and exit. Keep the full reusable master separate from each constrained delivery version.
+
+**Where the structure actually goes.** Put the entire section timeline — entry, layering, transformation and exit of every instrument — into the `Arrangement` block of the prompt. Section tags belong in `lyrics` only on routes where `lyrics` is a real input (the hosted API, `mode: "song"`); on the MCP instrumental route there is no `lyrics` field at all. Structural tags are generative hints, not symbolic constraints: they do not by themselves define an instrumental arrangement. Likewise, worded exclusions in the caption are not a control surface — measured 2026-09-30, five of five captions that spelled out `no vocals, no choir, no spoken word` still produced wordless vocals. Write positive descriptions of what should be there, and use the route's real flag for what should not.
 
 The guide describes Music 3.0 as generating a complete song from creative intent and optional lyrics, with duration up to five minutes. This does not change a project's release topology: a 60-minute focus release still uses independent cues when the plan calls for them. Since instrument, arrangement, and other details can drift, audio QA must verify the intended emotional arc, timed entries/exits, instrument presence, vocal absence, section order, and technical file properties against the prompt.
 
@@ -189,7 +205,8 @@ If the user wants a loopable video cover for YouTube or a music platform:
 - Keep motion extremely restrained.
 - Prefer slow breathing light, drifting mist, faint particle movement, water ripples, gentle fabric movement, eye blinks, or a slow fan gesture when compatible with the cover.
 - Maintain a seamless loop, with no abrupt cuts or attention-grabbing effects.
-- The video should be silent unless the user explicitly asks for sound.
+- The video should be silent unless the user explicitly asks for sound. **But `audio: false` does not guarantee silence** — measured twice on the MCP (2026-10-22), a 6.58 s and a 15.08 s mp4 both came back with an AAC track (mean −24.2 dB and −46.5 dB, i.e. near-silence but a real track). Always probe the produced file, strip with `ffmpeg -an -c:v copy`, and verify with `volumedetect`. `-vn` drops video, not audio.
+- **A loop is not seamless until it is measured.** Binding the same image to both the first and last frame (`mode: first-last-frame`, two identical references) guarantees the opening frame but not the closing one. Measured 2026-10-22 on a 15.08 s / 24 fps clip: the wrap transition differed by 1.6949 mean absolute levels against a maximum *natural* in-clip transition of 0.9067 — the single largest transition in the whole clip. The clip visibly decelerated to a near-stop and then snapped back. Use a local cross-dissolve of the last 0.5 s into the first frames (measured wrap 0.6601, with differing pixels above 4/255 dropping from 5.68% to 0.024%) and re-measure. The measurement rule and the script shape are in `skills/yt-focus-music-pipeline/references/design-mcp-execution.md`.
 
 The loopable video cover should visually match the audio mood so it can be combined with the final audio into a publishable release.
 

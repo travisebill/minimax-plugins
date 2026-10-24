@@ -22,3 +22,9 @@
 主機驗證使用已安裝的 Codex app-server metadata API，沒有模型生成請求。介面視覺呈現未做螢幕走查；安裝及技能載入已由 runtime 驗證。
 
 本次未執行真實供應商生成、音檔聆聽、YouTube 上架或教學學習成效試驗；外掛仍保留原工作流程的各項實測與人工確認要求。上游 2026-09-30 研究未重新執行，其資料在工作流程內標示為歷史參考。
+
+## 後續狀態（2026-10-24 更新）
+
+本檔記錄的是 **1.2.1 的主機驗證結果**。此後原始碼已推進到 **1.5.0 / 8 個技能**（新增 minimax-design MCP 執行層、整部上傳影片製作章節、YouTube 標記 (Tags) 策略），**1.5.0 尚未在 Codex 主機安裝與驗證** —— 本環境無法執行主機層級的安裝列舉與快取完整性比對。
+
+已在本機完成的是**套件層級**驗證：`python3 scripts/package_plugins.py` 對兩個套件回報 `status: pass`（manifest 身分／版本／UI metadata 一致、Agent Plugins 1.0 schema、圖示與檔案完整性、skill 清單與實際目錄相符）。打包產物未隨本次更新重新發布；需要時請在取得最新原始碼後執行 `python3 scripts/package_plugins.py` 重新打包，並在 Codex 主機重跑 `scripts/verify_host.py`。

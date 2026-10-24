@@ -2,6 +2,37 @@
 
 Verified against the official MiniMax API reference. Last checked 2026-09-29.
 
+## ★ First identify the route
+
+Music 3.0 is reachable through four different interfaces with **different
+parameters**. This file describes the hosted API and the SGLang open-weight
+route; the MCP route and the local connector are listed so their limits are not
+mistaken for these.
+
+| Route | Instrumental control | Length control | Prompt limit | This file |
+|---|---|---|---|---|
+| Hosted Music Generation API | `is_instrumental: true` | none | 2,000 chars | § below |
+| **MiniMax Design MCP** | `params.mode: "instrumental"` | **none — timeline in the prompt only** | 2,000 chars | pointer only |
+| SGLang open-weight | none | `max_new_tokens` | 5,000 tokens | § below |
+| Local connector wrapper | **no flag exists** | none | schema-dependent | § below |
+
+Two corrections that must not be repeated:
+
+- **`max_new_tokens` exists only on the SGLang route.** It is not a parameter of
+  the hosted API and it is not a parameter of the MCP. The MCP exposes no length
+  parameter at all; the only lever is a minute-level timeline inside the prompt
+  (measured 2026-10-22: the same caption gave 59.9 s with no timeline and
+  188 s with a `0:00 … 3:50` timeline).
+- **The instrumental flag differs per route.** The hosted API's flag is
+  `is_instrumental`. The MCP's is `params.mode: "instrumental"`. On the MCP the
+  `lyrics` field exists only in `mode: "song"`, and it is **not** a control: five
+  `lyrics` values including an empty control all produced wordless vocals
+  (measured 2026-10-22, 18 candidates).
+
+For the full MCP contract, the ten measured failure modes and the output
+retrieval procedure, read
+`skills/yt-focus-music-pipeline/references/design-mcp-execution.md`.
+
 ---
 
 ## Endpoint
@@ -37,7 +68,7 @@ Content-Type: application/json
 | Parameter | Rule | Notes |
 |---|---|---|
 | `model` | required | `music-3.0` (recommended), `music-2.6` for the previous generation |
-| `is_instrumental` | required for instrumental | Set `true` to suppress vocals. This is the only switch that enables instrumental output |
+| `is_instrumental` | required for instrumental | Set `true` to suppress vocals. This is the only switch that enables instrumental output **on the hosted API**. On the MiniMax Design MCP the equivalent is `params.mode: "instrumental"`; on the SGLang route and the local connector there is **no flag at all**, so instrumental output cannot be guaranteed on those routes |
 | `prompt` | **required, 1–2000 characters** | The entire control channel for instrumental |
 | `lyrics` | not required | Do not rely on it for structure in this mode |
 | `lyrics_optimizer` | not applicable | Only for auto-generating lyrics on vocal requests |
@@ -103,7 +134,13 @@ the `-free` variants were 3 RPM before discontinuation.
 
 ---
 
-## Open-weights runtime
+## Open-weights runtime (SGLang route)
+
+> **This section is the SGLang route only.** `max_new_tokens` below is a
+> parameter of *this* interface only. It does not exist on the hosted API, and it
+> does not exist on the MiniMax Design MCP — the MCP has no length parameter
+> whatsoever, and its only length lever is a minute-level timeline written into
+> the prompt.
 
 Model: `MiniMaxAI/MiniMax-Music3` — 8B Global LLM (Qwen3-8B init) + 0.6B Local LLM, with
 continuous hidden-state synthesis through Flow Matching (2.4B) and Flow-VAE (123M).

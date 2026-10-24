@@ -34,6 +34,49 @@ Read [Codex runtime guidance](../../CODEX.md) before using this skill. Resolve b
 
 ---
 
+## MCP 執行層 — 代理直接生成
+
+當環境提供 **`minimax-design` MCP** 時，音樂、圖像、影片的生成由代理**直接執行**，
+不再走「人工貼 prompt → 人工上傳 → 人工回填」。使用者只保留**決策與修改意見**。
+
+完整執行手冊（能力契約、參數表、坑 A–J、產出取回、閘門規則）：
+
+> **讀 [references/design-mcp-execution.md](references/design-mcp-execution.md)** — 動手前先讀它。
+
+### 三條路由，按環境選
+
+| 情況 | 走哪條 | 結果 |
+|---|---|---|
+| 有 `minimax-design` MCP | **MCP 執行層**（首選） | 代理生成、取回、本地驗證、交付 |
+| 只有 Hosted API key | Hosted API 路線 | 依 `music3-instrumental-prompts/references/api-contract.md` |
+| 什麼都沒有 | 交付 prompt 文字 | **明說**這條路做不到長度控制與器樂保證 |
+
+### 三個最容易錯譯的地方（全部實測過）
+
+1. **`max_new_tokens` 不存在於 MCP。** 它只屬於 SGLang 開源權重路線。
+   MCP 的時長**只能靠 prompt 內的分鐘級時間軸** —— 實測不寫時間軸得 59.9 秒、
+   寫 `0:00 … 3:50` 得 188 秒。
+2. **器樂控制閥是 `params.mode: "instrumental"`，不是 `lyrics`。**
+   實測 `lyrics` 欄位五種寫法（含留空控制組）**全部**帶無字人聲；
+   `mode: "instrumental"` + 不送 `lyrics` + 正向描述 → 18/18 乾淨。
+3. **`audio: false` 不保證無聲。** 實測兩次都產出 AAC 軌 → 產出後必須剝除並驗證。
+
+### 代理仍然要自己驗收的兩件事
+
+- **循環影片接縫**：`first-last-frame` 把首末幀綁成同一張圖**不保證**無縫
+  （實測繞回差異 1.6949 > 片內最大自然轉場 0.9067）。
+  必須量測，並在需要時用本地交叉溶解修掉。
+- **圖像尺寸**：`resolution: "1k"` + `16:9` 實得 **1672×941**（不是 1920×1080），
+  `2k` 得 2560×1440。要標準尺寸就在本地正規化。
+
+### 授權邊界
+
+MCP 執行層**不取消**任何閘門。創意核准 ≠ 供應商執行授權；
+付費呼叫前要先向使用者說明**金額**（`confirm_cost` 不可代理自行核准）；
+`deliver`、上傳、外部寫入都要先取得同意。
+
+---
+
 ## 分流
 
 先讀使用者的第一句話，再決定路徑。**不要**在需求已經夠具體時硬跑一輪問卷。
@@ -50,11 +93,12 @@ Read [Codex runtime guidance](../../CODEX.md) before using this skill. Resolve b
   → 專案規格閘門「確認規格」（video-project 的規格閘門）
   → 音樂 prompt：music3-instrumental-prompts 撰寫
   → three-kingdoms-music-review 審查確切最終 payload，保存版本化報告
-  → 「prompt 已確認」後，依已核准的供應商、設定與候選數立即生成
+  → 「prompt 已確認」後，依已核准的供應商、設定與候選數立即生成（MCP 執行層）
   → 音檔來源驗證，再審查 technical / listening / continuity
-  → 章節拼接：video-project 的 chapter audio assembly（音檔由使用者提供）
+  → 候選選曲核准（使用者指定；代理只給 `agent-recommended`）
+  → 章節拼接：video-project 的 chapter audio assembly
   → 封面圖兩階段：無文字母版 → 有標題成品（封面 prompt 需先確認；兩個階段各自需獨立核准）
-  → 15 秒無縫循環影片：MiniMax-H3，以已核准封面為首幀
+  → 15 秒循環影片：MiniMax-H3，以已核准封面為首幀；產出後剝音軌 + 量測循環接縫
   → 發布文案 + 置頂留言 + 歸檔紀錄
   → 交付前 QC
 ```
@@ -71,10 +115,8 @@ Read [Codex runtime guidance](../../CODEX.md) before using this skill. Resolve b
   → 規格與核准閘門
   → 歌詞 + 虛構演唱音色指引 + 發音與韻律鎖
   → 音樂 prompt（Music 3.0 或 Lyria 3.5）
-  → three-kingdoms-music-review 審查最終 payload，保存版本化報告
-  → 沿用確切 prompt 與生成範圍的核准，執行外部生成與音檔審查
   → 分鏡圖核准
-  → 外部生成交接 + 字幕後製
+  → 外部生成（MCP 執行層或供應商介面）+ 字幕後製
   → 驗證
 ```
 
@@ -108,16 +150,21 @@ Read [Codex runtime guidance](../../CODEX.md) before using this skill. Resolve b
 
 ---
 
+
 ## 供應商選擇
 
 音樂生成供應商由使用者決定，不要自行改：
 
-- **MiniMax Music 3.0** — 公開 API 與網頁欄位使用 `model: music-3.0`，`prompt` 上限 **2,000 字元**，`lyrics` 分開送出。上限 5 分鐘。既有付費／Token Plan 用戶保留存取權（120 RPM）；**自 2026-08-20 起付費 Music Generation API 不再開放新用戶** — 不要把新用戶導去申請金鑰。
+- **MiniMax Design MCP**（環境有 MCP 時的首選）— `generate_music:music-3.0`，`prompt` ≤ **2,000 字元**，
+  器樂控制閥是 `params.mode: "instrumental"`（**不是** `lyrics`），**沒有任何時長參數**，
+  長度只能靠 prompt 內的分鐘級時間軸。詳見 [MCP 執行層](references/design-mcp-execution.md)。
+- **MiniMax Music 3.0 公開 API** — 公開 API 與網頁欄位使用 `model: music-3.0`，`prompt` 上限 **2,000 字元**，`lyrics` 分開送出，器樂控制閥是 `is_instrumental: true`。上限 5 分鐘。既有付費／Token Plan 用戶保留存取權（120 RPM）；**自 2026-08-20 起付費 Music Generation API 不再開放新用戶** — 不要把新用戶導去申請金鑰。
 - **Google Gemini API / Lyria 3.5** — 全曲用 `lyria-3.5`，走 Interactions API 的**單一 `input`**（文字或文字＋圖片清單）payload。`lyria-3-clip-preview` 僅供 30 秒 prompt 測試。**不可**套用 MiniMax 的 `lyrics` + `instructions` 兩欄制。
 
-**絕對不要**把開源權重（`MiniMaxAI/MiniMax-Music3`）的 token 上限當成公開 API 的字元上限，兩者不同。詳情讀 `skills/music3-instrumental-prompts/references/api-contract.md`。
+**絕對不要**把開源權重（`MiniMaxAI/MiniMax-Music3`）的 token 上限當成公開 API 的字元上限，兩者不同；
+也**不要**把 SGLang 的 `max_new_tokens` 當成 MCP 或公開 API 的長度控制。詳情讀 `skills/music3-instrumental-prompts/references/api-contract.md`。
 
-視覺供應商：**循環影片一律 MiniMax-H3**（預設 15 秒無縫循環），**封面圖 16:9**（YouTube 封面與縮圖），只有明確要求專輯平台作品時才用正方形。
+視覺供應商：**循環影片一律 MiniMax-H3**（預設 15 秒無縫循環），**封面圖 16:9**（YouTube 封面與縮圖），只有明確要求專輯平台作品時才用正方形。MCP 路線下，**圖像尺寸不會自動等於 1920×1080**（`1k` + `16:9` 實得 1672×941），交付前要本地正規化。
 
 ---
 
@@ -125,13 +172,16 @@ Read [Codex runtime guidance](../../CODEX.md) before using this skill. Resolve b
 
 以下每一個都必須取得使用者的明確確認才能往下走。代理給建議不等於使用者核准。先核對既有紀錄；相同版本與範圍的核准直接沿用，不重複詢問。
 
-音樂 prompt 先經確切 payload 審查，再取得核准；`prompt 已確認` 已包含該供應商、設定與候選數的立即生成授權。明確授權「修訂後立即生成」時，完成修訂版本審查即可執行。
-
 1. **規格閘門 `確認規格`** — 動任何 prompt 或生成任何圖之前，先用繁體中文總結已定案的設計並取得此明確回應。
-2. **封面 prompt 確認** — 產生封面圖之前必須先給出確切 prompt 讓使用者確認或修改。
-3. **影片 prompt 確認** — 產生循環影片之前同樣必須先確認。
-4. **候選選曲核准** — `agent-recommended` 不等於 `user-approved`。候選比較只能就實際評估過的維度排序。
-5. **人工審查保留** — 使用者保留最終核准權。審查者的建議不得自動變更已選候選、核准 prompt、重新生成、置入或發布。
+2. **`prompt 已確認`（音樂）** — 音樂 prompt 先經**確切 payload 審查**（不是概念描述），再取得核准。
+   此回應已包含該供應商、設定與候選數的**立即生成授權**；明確授權「修訂後立即生成」時，
+   完成修訂版本的審查即可執行，不必再問一次。
+3. **封面 prompt 確認** — 產生封面圖之前必須先給出確切 prompt 讓使用者確認或修改。
+4. **影片 prompt 確認** — 產生循環影片之前同樣必須先確認。
+5. **候選選曲核准** — `agent-recommended` 不等於 `user-approved`。候選比較只能就實際評估過的維度排序。
+6. **人工審查保留** — 使用者保留最終核准權。審查者的建議不得自動變更已選候選、核准 prompt、重新生成、置入或發布。
+
+**創意核准 ≠ 供應商執行授權。** 兩者是分開的紀錄，不可互相代替。
 
 另外，未被要求時不要主動生成人聲；未定義視覺方向時不要擅自擴張成完整發布包；超過 60 分鐘或明顯轉向戲劇化戰爭配樂前要先問。完整確認點清單見 `skills/three-kingdoms-focus-music/SKILL.md` §Confirmation Points — 本節不是窮舉。
 
@@ -168,7 +218,8 @@ skill 之間靠檔案與命名交接，**不要靠對話記憶**。
 ## 不做的事
 
 - 不在本地生成音樂。這個套件產出的是 prompt、規格、審查、交接，以及**由已核准外部音檔做的本地確定性章節拼接 WAV** — 拼接必須標示為 `assembly from supplied external results`，不得描述為本地生成音樂。原始音檔由外部供應商生成，可由使用者提供或經已授權工具取得。
-- 只有實際工具結果、供應商任務狀態或經驗證的來源檔案，才能支持已生成音訊或影片的陳述。
+- 只對實際取得或本地渲染並驗證的檔案宣稱已產出；透明頻譜條 MOV 必須標明為由提供音樂驅動的本地視覺化，不是生成新音樂或外部影片。只有實際工具結果、供應商任務狀態或經驗證的來源檔案，才能支持已生成音訊或影片的陳述。
+- 不把 MCP 產生的音訊說成「本地生成」。MCP 產物仍由 MiniMax 模型產生；本地的部分只有拼接、正規化與量測。
 - 不跨越上面任何一個硬性閘門。
 - 不在沒有既有專案包的情況下假設章節數。`three-kingdoms-focus-music` 對 60 分鐘的預設是 6 章 × 約 10 分鐘，但使用者宣告的章節數才是權威。
 - 不把兩條路徑混在同一次生成裡。

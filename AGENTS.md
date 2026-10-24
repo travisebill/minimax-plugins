@@ -32,6 +32,11 @@ MiniMax Code 與 Codex 外掛的版控來源。
 ## 雷區
 
 - `.DS_Store`：只要在 Finder 裡開過外掛目錄就會生成，會混進 package。已列 `.gitignore`，但**不要**因此就放心用 Finder 瀏覽
+- `._*` 與 `__pycache__`：外掛放在 exFAT 或外接磁碟時，macOS 會替每個檔案生成 AppleDouble 側車檔；
+  跑過 skill 內的測試或 import 過腳本也會留下 `__pycache__`。
+  兩者都已被 `.gitignore` 擋在版控外，但 `codex/scripts/package_plugins.py` 掃的是**檔案系統**，
+  會被 `._README.md`、`__pycache__` 這種項目擋下而整包驗證失敗。
+  **打包或整包驗證前先清一次**：`find . -name '._*' -type f -delete; find . -name '__pycache__' -type d -exec rm -rf {} +`
 - 裸 skill 名載入失敗（`Local skill not found`）≠ 外掛沒被收錄，先確認有沒有帶 `<plugin>:<skill>` 前綴
 - manifest 的 `apps` 必須是 `[]`；不要建 `*.app.json`
 - 不要把 token / 憑證寫進 manifest、MCP headers 或 env（`.gitignore` 只是最後一道防線）

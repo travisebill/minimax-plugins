@@ -89,6 +89,40 @@ Three Kingdoms: Cao Cao's Capital | 1HR Chinese Guqin Music for Study & Writing
 官方：tag 越多相關性越低；超過 **60 個全部忽略**。
 另注意 Non-hashtags 條款：**堆疊描述性標籤字串本身違反政策**。
 
+### R6b. 「標記 (Tags)」是另一個欄位，規則和 hashtag 不同
+
+**不要把兩者混為一談** —— 它們在不同地方、規則不同、寬限度不同。
+
+| | hashtag | 標記 (Tags) |
+|---|---|---|
+| 位置 | 影片說明裡，觀眾**看得到** | YouTube Studio → Details → Show more → Tags，觀眾**看不到** |
+| 上限 | 官方 60 個即全部忽略 | **總計 500 字元**（含逗號） |
+| 超標 | 關聯性稀釋 | **從尾端無聲截斷，不跳錯誤訊息** |
+| 作用 | 把影片跟其他影片／播放清單連結 | 讓 YouTube 讀懂內容，補標題放不下的變體與生僻詞 |
+
+官方說明頁（support.google.com/youtube/answer/146402）對標記的定位只有一句：
+
+> "Tags can be useful if the content of your video is commonly misspelled.
+> Otherwise, tags play a minimal role in your video's discovery."
+
+**也就是說：標記唯一被官方點名的用途是「拼錯的搜尋詞」與「標題放不下的生僻詞」。**
+它不是排名工具 —— 標題、縮圖、說明開頭的權重遠高於它。
+
+實務規則：
+
+- **不要填滿 500 字元。** 官方與業界一致的口徑是 5～15 個就夠，
+  填滿只會讓不相干的詞稀釋相關性；留餘裕給日後微調。
+- **YouTube 依序讀取標記，第一個權重最高**；截斷也從尾端發生 →
+  最重要的放最前面，最不重要的放最後。
+- **把「觀眾真的會打、但標題塞不進去」的變體放在這裡**：
+  含空格的查詢字串（`專注 音樂`）、樂器別名與拼音變體（`hsiao flute`）、
+  標題裡只有裸樂器名而沒有可搜片語的情況（`erhu music`）。
+- **不要用不相關的熱門關鍵字填額度** —— 官方明文說這會讓系統混淆影片內容。
+- **頻道層級另有一個「關鍵字 (Keywords)」欄位**（Settings → Channel → Basic info），
+  同樣 500 字元上限，但它描述**整個頻道**，應放樂器與品牌詞而非單片專屬的用途詞。
+- 「堆疊描述性標籤字串違反政策」是**說明欄**的條款，不是標記欄的 ——
+  不要把兩邊的限制互相套用。
+
 ### R7. AI 揭露是強制的
 
 官方「必須揭露」清單**第一項就是 `AI generated music`**。

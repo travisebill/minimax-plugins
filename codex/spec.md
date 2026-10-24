@@ -11,6 +11,8 @@
 | learning-game-studio | 0.2.0 | 0.2.1 | 2 |
 | three-kingdoms-focus-studio | 1.2.0 | 1.2.1 | 7 |
 
+> 上表是 **2026-10-05 移植當時**的狀態，保留為歷史紀錄。此後原始碼持續更新至 **1.5.0 / 8 個技能**（新增 minimax-design MCP 執行層、整部上傳影片製作、YouTube 標記 (Tags) 策略等）；已發布 ZIP 與主機驗證紀錄另排期更新。
+
 交付範圍：保留技能、參考資料、模板、圖示與音訊量測腳本；增加 Agent Plugins 1.0 manifest、Codex 相容 manifest、技能 UI metadata、套件內路由與本機 marketplace。
 
 行為修正：音樂提示詞必須先審查再取得核准並生成；沿用既有核准範圍；技能以套件內檔案為優先；歷史供應商與 YouTube 資料在實際使用時查核最新官方來源。

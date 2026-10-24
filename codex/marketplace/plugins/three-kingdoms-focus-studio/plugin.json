@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "three-kingdoms-focus-studio",
-  "version": "1.3.0",
-  "description": "三國主題音樂的企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面與 YouTube 發布策略。保存人工核准與來源紀錄；內附上游 2026-09-30 的歷史研究資料，實際使用前查核最新政策。",
+  "version": "1.5.0",
+  "description": "三國主題音樂的企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面與 YouTube 發布策略。保存人工核准與來源紀錄；內附上游 2026-09-30 的歷史研究資料，實際使用前查核最新政策。內建 minimax-design MCP 執行層參考與量測工具，並新增整部上傳影片製作章節。",
   "author": {
     "name": "Travis Chen"
   },
@@ -15,8 +15,8 @@
     "com.openai": {
       "interface": {
         "displayName": "三國音樂工作室",
-        "shortDescription": "三國音樂企劃、審查與 YouTube 發布流程",
-        "longDescription": "三國主題音樂的企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面與 YouTube 發布策略。保存人工核准與來源紀錄；內附上游 2026-09-30 的歷史研究資料，實際使用前查核最新政策。",
+        "shortDescription": "三國音樂、影片製作與 YouTube 發布流程",
+        "longDescription": "三國主題音樂的企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面與 YouTube 發布策略。保存人工核准與來源紀錄；內附上游 2026-09-30 的歷史研究資料，實際使用前查核最新政策。內建 minimax-design MCP 執行層參考與量測工具，並新增整部上傳影片製作章節（背景循環片、波形疊加、章節名與書法標題、分章合成與幀級驗證）。",
         "developerName": "Travis Chen",
         "category": "Productivity",
         "capabilities": [

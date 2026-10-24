@@ -32,6 +32,8 @@ Route by question type, because the two tool families fail in opposite direction
 | Question | Use | Why |
 |---|---|---|
 | Noise floor, band energy, dynamics, peaks, clipping, duration | `scripts/measure_audio.py` | Reproducible arithmetic on the samples. Deterministic and re-checkable. |
+| Where exactly did a level jump happen? | `scripts/locate_level_jumps.py` | Same 100 ms ebur128 windows as `measure_audio.py`, with timestamps — turns a counter into a re-listenable moment, and shows whether a large share is many small jumps or one single event. |
+| Does the spectrum support a claimed voice at the model's own timestamp? | `scripts/detect_vocal_bands.py` | Band-energy trend across 200–400 Hz, 1–2.5 kHz, 2.5–4 kHz and 8–12 kHz against the neighbouring windows. |
 | Is there a voice? Which instruments? Does the emotional arc land? | An audio-capable model, labelled `audio-model-observation` | Genuine semantic judgement, but a judgement and not a measurement. |
 
 A model asked whether it hears rain or crackle is answering a fine-grained perceptual question it is not built for. Two recorded failures on one 174 s lo-fi track:
@@ -46,9 +48,74 @@ a track against its own sections and against other tracks of the same genre and 
 apply one genre's absolute as another genre's pass/fail line. `windows_above_median_3lu` is a defect
 signal for calm material and a normal reading for material that is supposed to move.
 
+### The dynamic metric that actually detects an instant (LRA does not)
+
+**LRA measures the overall loudness range of a track, not whether it contains a sudden jump.** It is
+the wrong proxy and it misclassifies in both directions. Measured on four tracks (2026-10-22):
+
+| Track | LRA | Verdict LRA gives | `w>3LU` windows | `w>6LU` windows | What was actually true |
+|---|---|---|---|---|---|
+| `c01-t04` | 11.9 | over threshold | 1 | 0 | no instant at all — wrongly rejected |
+| `c06-t01` | 15.8 | over threshold | 1 | 0 | no instant at all — wrongly rejected |
+| `c02-t02` | 8.2 | within threshold | 296 | **5** | a real dynamic jump — wrongly passed |
+| `c06-t03` | 9.0 | within threshold | 543 | **116** | a real dynamic jump — wrongly passed |
+
+Use the **short-term dynamics** counters instead:
+
+- **`windows_above_median_6lu == 0` is the hard gate.** Any window sitting more than 6 LU above the
+  track's own median is an instant jump — a dropped edit, a slammed limiter, a splice.
+- `windows_above_median_3lu` is the "calm material defect" signal, but it is **not** an absolute
+  pass/fail line. Every number is genre-relative.
+- Two layers: `w>6LU == 0` is the hard gate; the share of `w>3LU` windows is a strict layer at ≤3%
+  and a concern layer at ≤6%. Use the relaxed layer only when the strict layer cannot fill the
+  required minute range, and **record that it was relaxed**.
+
+A large `w>3LU` share is also not automatically scattered jumps. In one measured track, a 17.13%
+share turned out to be a **single one-second event** (00:23.30–00:24.30), not many small ones.
+Locate the timestamps before describing the distribution — `locate_level_jumps.py` reuses the same
+ebur128 100 ms windows as `measure_audio.py` and reports where the jumps actually are.
+
 So: **never let a model's foley or ambience claim trigger regeneration on its own.** Measure first. If the measurement is clean and the model objects, the model's observation is recorded and set aside. If the measurement is dirty, still confirm by listening, because a band level shows how much of a sound there is, never what the sound is.
 
 Conversely, do not let a clean measurement overrule a listener. If the user hears something objectionable that the numbers do not show, the finding stands and the number is reported as insufficient, not as a rebuttal.
+
+## Consistency is not correctness
+
+**A model's agreement with itself is not a reliability signal.** Judge the model against the human
+and the measurement, never against the model's own repeated answers.
+
+Measured 2026-10-22 on one 142.7 s candidate, across **four independent calls** (one prompt run
+twice plus two other phrasings): the model reported `VOICE PRESENT` **every time**, and one response
+added "synthesized vocaloid-style 'oooh' sounds and pitch-shifted vocal chops starting around the
+25-second mark", naming specific timestamps. The human listening verdict was **no voice**, and the
+spectral corroboration at the model's own reported timestamps (25 s and 33 s) showed 2.5–4 kHz
+undulation of 14.3 and 14.7 dB — both **below** the 30.8/33.1 and 21.7/17.6 dB of the surrounding
+windows. Two independent methods agreed and the model was wrong, **consistently** wrong. The likely
+cause: the lead instrument is a breathy ocarina-like timbre whose formant structure resembles a
+voice, and the model classified the instrument as a voice.
+
+Consistency also fails the other way. Running one identical prompt over 18 candidates twice flipped
+the answer on 4 of them — `VOICE`→`NO_VOICE` on one, `NO_VOICE`→`VOICE` on another, and a third
+changed from a specific timestamped claim to a clean negative.
+
+### Verification order for any "is there a voice?" claim
+
+1. **Ask the same segment three ways.** If the answers disagree, the model is unreliable on this
+   question and its answer carries no weight. A model that reverses with the phrasing of the
+   question is hallucinating, not describing.
+2. **Corroborate at the model's own timestamps.** Do not pick your own convenient spot — a
+   self-chosen point may support the claim while the model's own point does not, and then the
+   self-chosen point was a false signal. Human voice has formant structure: take a 0.25 s window and
+   scan 200–400 Hz, 1–2.5 kHz, **2.5–4 kHz** and 8–12 kHz against the neighbouring windows. If the
+   disputed window's 2.5–4 kHz trend matches its neighbours, there is no sustained voice feature.
+3. **Human listening is the only binding gate.** Every measurement passing is not a pass. A
+   measurement can be clean and the model can still be right about something the numbers do not
+   model (a lyric in a language you do not read, a very quiet voice under the noise floor).
+
+The same rule applies to a model's foley or ambience claim: it never triggers regeneration on its
+own. Measured 2026-10-22, a candidate was said to carry "vinyl crackle", while the quietest passage
+measured a 10–16 kHz floor of −91.0 dB — effectively digital silence. The claim was refuted by
+measurement, not by argument.
 
 ## The listening gate belongs to the user
 

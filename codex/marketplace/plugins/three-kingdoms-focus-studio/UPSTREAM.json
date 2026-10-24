@@ -3,8 +3,8 @@
   "source_commit": "0d74e7638bcb04bf589ed9b5e37e78efda3ec00c",
   "ported_date": "2026-10-05",
   "name": "three-kingdoms-focus-studio",
-  "source_version": "1.2.0",
-  "codex_version": "1.2.1",
+  "source_version": "1.4.0",
+  "codex_version": "1.4.0",
   "files": [
     {
       "source_path": ".minimax-plugin/plugin.json",
@@ -31,8 +31,8 @@
       "source_path": "skills/music3-instrumental-prompts/references/api-contract.md",
       "source_sha256": "4b1814449229fd071b9ed7a977be580e0014d2ef08d876ee272ad0e9fd29f6b5",
       "codex_path": "skills/music3-instrumental-prompts/references/api-contract.md",
-      "codex_sha256": "4b1814449229fd071b9ed7a977be580e0014d2ef08d876ee272ad0e9fd29f6b5",
-      "change": "unchanged"
+      "codex_sha256": "4b08704034df73579708eac6bab4d89d394e7ed1200618f14cd9c1c55b822826",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/music3-instrumental-prompts/references/compressing-for-hosted-api.md",
@@ -45,8 +45,8 @@
       "source_path": "skills/music3-instrumental-prompts/references/failure-modes.md",
       "source_sha256": "2eef6b4fcb35effb3ab61f85f298061d0a83fff20664794a040f1a1200d64fe5",
       "codex_path": "skills/music3-instrumental-prompts/references/failure-modes.md",
-      "codex_sha256": "2eef6b4fcb35effb3ab61f85f298061d0a83fff20664794a040f1a1200d64fe5",
-      "change": "unchanged"
+      "codex_sha256": "fbbd3875401e4fc4a37968c91689ec4b63b49b942ce399393530166429152fe6",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/music3-instrumental-prompts/references/writing-rules.md",
@@ -108,8 +108,8 @@
       "source_path": "skills/three-kingdoms-focus-music/SKILL.md",
       "source_sha256": "bf446511c3fdecb118fd2514463d258768f302eb2ae4e81831c638e8c78cacef",
       "codex_path": "skills/three-kingdoms-focus-music/SKILL.md",
-      "codex_sha256": "a73a0f1ea3ab460cc679d91e742252b41273b00e1d77fea90548f2caa15489f9",
-      "change": "adapted"
+      "codex_sha256": "46a1c185e313634a710728900fe69146e98ba73880c0e8323a4ce07895c5d223",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/three-kingdoms-focus-music/meta.yaml",
@@ -122,8 +122,8 @@
       "source_path": "skills/three-kingdoms-music-review/SKILL.md",
       "source_sha256": "947463df2b594cd1310f5bd83efcbeb7ca6e30795fa445843f8de4fbed2a2385",
       "codex_path": "skills/three-kingdoms-music-review/SKILL.md",
-      "codex_sha256": "b0e10367f7b604031b6658b4bd30f67e036fc304918a2ced50dbac4fb4223dbd",
-      "change": "adapted"
+      "codex_sha256": "6cb96ba64b0c2f0a879dc7a8afeaa4c72858a67eee39f8869693045c8e977485",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/three-kingdoms-music-review/references/audio-listening.md",
@@ -150,29 +150,29 @@
       "source_path": "skills/three-kingdoms-video-project/SKILL.md",
       "source_sha256": "6a477f97f80f0a407c9431d73aafc29494d1cfd66ef4bb1f0c316304310851b2",
       "codex_path": "skills/three-kingdoms-video-project/SKILL.md",
-      "codex_sha256": "1dc3c8b4b780fd33c635b49da50c1df9d1b786cf8d71b32c2a7f982192e7972d",
-      "change": "adapted"
+      "codex_sha256": "e6326e518bbe82dd74174061ba2cc7b741a4da1ae0f084526bf21d005131f071",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/three-kingdoms-vocal-single/SKILL.md",
       "source_sha256": "63fb3bac68abc144b0bfeacc02aae7559253ba682f73920c1e69762b5d1cb2a8",
       "codex_path": "skills/three-kingdoms-vocal-single/SKILL.md",
-      "codex_sha256": "f975da488ac916831654afe35ac00f67132e82aeac507da0fe24ea20116c691a",
-      "change": "adapted"
+      "codex_sha256": "b4e58ef74ae3f15e260bfa42ebb51c36a2bf1a519a855205d0ad1ee395332450",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/yt-focus-music-pipeline/SKILL.md",
       "source_sha256": "aa2737ca1be5afcc15f5851ad76ee83410bd4e3fce2326023e47906dda8ec9e0",
       "codex_path": "skills/yt-focus-music-pipeline/SKILL.md",
-      "codex_sha256": "950acef90bad65b927f733131a127b5cb980c97341e95fcd6a33d7655102bc43",
-      "change": "adapted"
+      "codex_sha256": "9b12744bb5f93e023cd985dd12384bfc591195e85c20c77253f203c8007e3726",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/yt-publish-strategy/SKILL.md",
       "source_sha256": "675c6a26e73f04ad415880d95efbecc38c76a87a3629ee34ce40592a9c2e726f",
       "codex_path": "skills/yt-publish-strategy/SKILL.md",
-      "codex_sha256": "afaf2567f67ed23033a5ec5bc2d0a3517f431c2666ce10540348c2c0b27e332b",
-      "change": "adapted"
+      "codex_sha256": "22ceb34a3fdc2f15c70065aa50145f4527a0a4f76037b321c7607aac1e127983",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/yt-publish-strategy/references/channel-baseline.md",
@@ -201,6 +201,196 @@
       "codex_path": "skills/yt-publish-strategy/templates/description-template.md",
       "codex_sha256": "549b1b11c59b1c6e58089c23d2220c25d803cb1662a8557a3f07b3dcdf0f5e12",
       "change": "unchanged"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": ".codex-plugin/plugin.json",
+      "codex_sha256": "519bb192a3110b5678c4e538bf376e90dba3f0382f366364d5ea06977a40fa48",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "CODEX.md",
+      "codex_sha256": "8419bffe6218f3ceafc51e54f4ba4dd83bcb6b13e0b2bf26a199e4f2687d8b4f",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "README.md",
+      "codex_sha256": "c091dabbaaef3e1e5aa6b1f1c0162cff8ccf3c31873fa898c70c8b07c62b8ee3",
+      "change": "adapted"
+    },
+    {
+      "source_path": "WAVEFORM.md",
+      "source_sha256": "138b30f26c5c12f62688ff0784253f2f585ebb5dd201d5dd03c1df544112288d",
+      "codex_path": "WAVEFORM.md",
+      "codex_sha256": "2d49b45bde4db3c6604e1c4818eddeb4bb594624e85bad8ce7a8459cbc3bedfa",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "plugin.json",
+      "codex_sha256": "378a88ef3a6fa6308cb9279fa0038b120143c00e76e305d192595f3b77e97c3b",
+      "change": "adapted_for_mcp_execution_layer"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/SKILL.md",
+      "source_sha256": "aff49a016d734fe81b9e909ec372df6dbef36922bb8e828d50e3266bfd0ef83a",
+      "codex_path": "skills/audio-reactive-waveform/SKILL.md",
+      "codex_sha256": "161105e662ab31f4250e4e1da1a3de3e905511483c1b82c3fe6621dfdae80766",
+      "change": "adapted_for_mcp_execution_layer"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/audio-reactive-waveform/agents/openai.yaml",
+      "codex_sha256": "38d19af6d809220da6d460c3a82fa2d154db14d1e9154115b821d262e1fac743",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/assets/gold-mirrored.json",
+      "source_sha256": "b18cafd83e0ff823b76974b90b03c6b8cc6712bae2b44fe9345a91427f0736e6",
+      "codex_path": "skills/audio-reactive-waveform/assets/gold-mirrored.json",
+      "codex_sha256": "b18cafd83e0ff823b76974b90b03c6b8cc6712bae2b44fe9345a91427f0736e6",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/references/local-setup.md",
+      "source_sha256": "8a03fbf8dde9223e1d5a547a1ce19e74fcd306862e7e95397e62a20474404200",
+      "codex_path": "skills/audio-reactive-waveform/references/local-setup.md",
+      "codex_sha256": "263e24642cf50903ed1e93f8bf4dbab365f9333135ae735ab419f9d9c8195759",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/audio-reactive-waveform/references/output-variants.md",
+      "codex_sha256": "c4170b0f75a87d8358c5c33912b1f066012c4fabd2a9ed1430d54b2c46dd47a6",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/references/reference-matching.md",
+      "source_sha256": "fd43caa2c9ad61b9f9962e766e5d2c57c1d0477c8ba80286b01de26d2c11f453",
+      "codex_path": "skills/audio-reactive-waveform/references/reference-matching.md",
+      "codex_sha256": "fd43caa2c9ad61b9f9962e766e5d2c57c1d0477c8ba80286b01de26d2c11f453",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/references/style.md",
+      "source_sha256": "33f9e7eff12a1ff517acc24a0cbbbd1311d6869ae3ced9bf0d3b6b264be579c7",
+      "codex_path": "skills/audio-reactive-waveform/references/style.md",
+      "codex_sha256": "33f9e7eff12a1ff517acc24a0cbbbd1311d6869ae3ced9bf0d3b6b264be579c7",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/requirements.txt",
+      "source_sha256": "105a25c9a24a53a42b52ccc93f930e1ea4a88b42372d440ae7c1b82c3a8b2c64",
+      "codex_path": "skills/audio-reactive-waveform/requirements.txt",
+      "codex_sha256": "105a25c9a24a53a42b52ccc93f930e1ea4a88b42372d440ae7c1b82c3a8b2c64",
+      "change": "unchanged"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/audio-reactive-waveform/scripts/make_variants.py",
+      "codex_sha256": "352fc8488b535d9a9d20a99bf930c12a19bd630be396490e525611b2949dee6b",
+      "change": "adapted"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/scripts/render_waveform.py",
+      "source_sha256": "9c71b74c06a1f4d1dcc4aad5f8722c97fd55201baae08b6ef51a25e54f90ba44",
+      "codex_path": "skills/audio-reactive-waveform/scripts/render_waveform.py",
+      "codex_sha256": "9c71b74c06a1f4d1dcc4aad5f8722c97fd55201baae08b6ef51a25e54f90ba44",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/audio-reactive-waveform/tests/test_renderer.py",
+      "source_sha256": "a7388c71ae96ca47e2adeb51151f303f3a8d4e6939aed82f7ea19ce668b6aca8",
+      "codex_path": "skills/audio-reactive-waveform/tests/test_renderer.py",
+      "codex_sha256": "a7388c71ae96ca47e2adeb51151f303f3a8d4e6939aed82f7ea19ce668b6aca8",
+      "change": "unchanged"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/music3-instrumental-prompts/agents/openai.yaml",
+      "codex_sha256": "040ad67ce480d4e36ee46e16008976f27bf0004127a067b35b615d837cc14ea3",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/three-kingdoms-focus-music/agents/openai.yaml",
+      "codex_sha256": "fdd1d683e2b0366c923836515674b2ff6ee6aafb8db59bdedbb0dff0e1af02e8",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/three-kingdoms-music-review/agents/openai.yaml",
+      "codex_sha256": "d62a7cd9db0f547bdaaec17629bce2451e30f55318c48be5d71d0e307c8c091d",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/three-kingdoms-music-review/scripts/detect_vocal_bands.py",
+      "codex_sha256": "1caa35e2abe407da1ec95262b88c9a50e23e475b7310df2083361ba2c54f7c72",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/three-kingdoms-music-review/scripts/locate_level_jumps.py",
+      "codex_sha256": "470980045f87512dd3c8fc7dda66b90e5598b661b766bec706d21c33040b3b32",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/three-kingdoms-video-project/agents/openai.yaml",
+      "codex_sha256": "20b33c8498adf585b84f24e685c21bdece21454475fb11fd9130b6cc42b40b98",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/three-kingdoms-video-project/scripts/verify_loop_seam.py",
+      "codex_sha256": "376855abbb07fc74d1158522f2a5095cf796e0fd937fc56ecaf553218a1be6af",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/three-kingdoms-vocal-single/agents/openai.yaml",
+      "codex_sha256": "44a890b2b497d651fe97de978dc52e6b2cc878e808373b7f7713e26dcbb8d8ae",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/yt-focus-music-pipeline/agents/openai.yaml",
+      "codex_sha256": "6b4687cfe57ee731a4926e0699f997fe3a9b710f88a67afdd0ec5d261990c3b8",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/yt-focus-music-pipeline/references/design-mcp-execution.md",
+      "codex_sha256": "0b177742fa5bb18de7e6b537eec2178a4d863daa121b2d7f84532bffaf6cbfb4",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/yt-publish-strategy/agents/openai.yaml",
+      "codex_sha256": "a9e9c115fdbb6e26ae57ba835b6d587fb09b44ab83872b0426fe6ffa0975d13b",
+      "change": "adapted"
     }
-  ]
+  ],
+  "revision_date": "2026-10-22"
 }

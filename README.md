@@ -7,7 +7,11 @@
 | 外掛 | 版本 | 技能數 | 說明 |
 | --- | --- | --- | --- |
 | `learning-game-studio` | 0.2.1 | 2 | 教學遊戲機制與互動回饋 |
-| `three-kingdoms-focus-studio` | 1.2.1 | 7 | 三國音樂企劃、提示詞、審查與 YouTube 發布 |
+| `three-kingdoms-focus-studio` | 1.5.0 | 8 | 三國音樂企劃、影片製作、提示詞、審查與 YouTube 發布 |
+
+> 本表列的是**原始碼版本**。Codex 的已發布 ZIP 仍是 1.2.1（`codex/dist/`）——
+> 發布產物與主機驗證紀錄另排期，理由見 `codex/validation/verification.md`；
+> 原始碼更新不需要等發布，兩者的差異是刻意的。
 
 使用支援 `codex plugin` 的 Codex CLI，並先完成此私人 repo 的 GitHub 存取設定：
 
@@ -35,30 +39,39 @@ plugins/
       learning-game-feel/              # 回饋層 / game feel
         SKILL.md
         references/feedback-recipes.md
-  three-kingdoms-focus-studio/         # 三國志 YouTube 音樂發布外掛 v1.3.0
+  three-kingdoms-focus-studio/         # 三國志 YouTube 音樂發布外掛 v1.5.0
     .minimax-plugin/plugin.json
     icon.png                           # 單一圖示（無 darkIcon）
     skills/
       yt-focus-music-pipeline/         # 協調層：分流 / 閘門 / 交接契約（單一入口）
         SKILL.md
+        references/design-mcp-execution.md  # minimax-design MCP 執行層與實測坑位
       three-kingdoms-focus-music/      # 發布類型 / 長時混音 / 封面 / 循環影片 / QC
         SKILL.md  SKILL.cn.md  meta.yaml
-      three-kingdoms-video-project/    # 角色專案包 / 規格閘門 / 章節拼接 / 兩階段封面
+      three-kingdoms-video-project/    # 角色專案包 / 規格閘門 / 章節拼接 / 兩階段封面 / 整部影片製作
         SKILL.md
+        scripts/verify_loop_seam.py       # 循環片接縫與場景穩定性量測
       music3-instrumental-prompts/     # 純器樂 Music 3.0 Structured Caption
         SKILL.md
         references/  templates/        # 4 份 references + 6 份模板
       three-kingdoms-music-review/     # 審查 QA（prompt / 技術 / 聆聽 / 銜接）
         SKILL.md
         references/  scripts/measure_audio.py
+                   scripts/detect_vocal_bands.py
+                   scripts/locate_level_jumps.py
       three-kingdoms-vocal-single/     # 角色人聲單曲 / 歌詞 / 分鏡 / Short
         SKILL.md
       audio-reactive-waveform/        # 音樂驅動透明頻譜條 MOV / 樣式 / CLI 測試
         SKILL.md  requirements.txt
-        references/  assets/  scripts/  tests/
-      yt-publish-strategy/             # YouTube 發布策略 / 關鍵字 / AI 揭露 / YPP 變現合規
+        references/  assets/  scripts/  tests/   # 含 output-variants.md / make_variants.py
+      yt-publish-strategy/             # YouTube 發布策略 / 關鍵字 / 標記 / AI 揭露 / YPP 變現合規
         SKILL.md
         references/  templates/        # 3 份 references + 1 份模板
+
+tools/                                  # repo 開發工具（不進外掛 package）
+  validate_plugin.py                    # 靜態驗證外掛結構
+  sync_codex_variant.py                 # MiniMax 版 → Codex 版同步（保留 Codex 差異）
+  refresh_upstream_hashes.py            # 重算 UPSTREAM.json 的檔案雜湊
 ```
 
 ## 目前外掛
@@ -67,14 +80,14 @@ plugins/
 |---|---|---|---|
 | `learning-game-studio` | 0.2.0 | `learning-mechanics` | 選適合學習目標的遊戲機制、擋掉會教錯的機制、驗收四訊號 |
 | | | `learning-game-feel` | 回饋層：讓因果關係看得見、獎勵不阻斷、手機優先 |
-| `three-kingdoms-focus-studio` | 1.3.0 | `yt-focus-music-pipeline` | **單一入口**：分流三條路徑、擋住人工確認閘門、定義 skill 間交接契約 |
+| `three-kingdoms-focus-studio` | 1.5.0 | `yt-focus-music-pipeline` | **單一入口**：分流三條路徑、擋住人工確認閘門、定義 skill 間交接契約；內建 minimax-design MCP 執行層 |
 | | | `three-kingdoms-focus-music` | 發布類型分類、長時混音結構、封面、15 秒循環影片、發布包、QC |
-| | | `three-kingdoms-video-project` | 角色專案包、規格閘門 `確認規格`、master prompt、候選審查、章節音訊拼接、兩階段封面 |
+| | | `three-kingdoms-video-project` | 角色專案包、規格閘門 `確認規格`、master prompt、候選審查、章節音訊拼接、兩階段封面、**整部上傳影片製作**（背景循環片＋波形疊加＋章節名／書法標題、分章合成與幀級驗證）|
 | | | `music3-instrumental-prompts` | 純器樂 Music 3.0 Structured Caption（6 份模板 + 4 份 references）|
-| | | `three-kingdoms-music-review` | 審查 QA：prompt / 技術 / 聆聽 / 銜接四層，附 `measure_audio.py` |
+| | | `three-kingdoms-music-review` | 審查 QA：prompt / 技術 / 聆聽 / 銜接四層，附 `measure_audio.py`、`detect_vocal_bands.py`、`locate_level_jumps.py` |
 | | | `three-kingdoms-vocal-single` | 角色人聲單曲：歌詞、發音與韻律鎖、分鏡圖、YouTube Short 分支 |
-| | | `yt-publish-strategy` | YouTube 發布策略：標題關鍵字選詞、說明結構、hashtag、AI 生成揭露義務、YPP 變現合規（附 2026-09-30 實測基準）|
-| | | `audio-reactive-waveform` | 本地音樂驅動透明頻譜條，輸出無聲 ProRes 4444 MOV 供 CapCut 疊加 |
+| | | `yt-publish-strategy` | YouTube 發布策略：標題關鍵字選詞、說明結構、hashtag、**標記 (Tags)**、AI 生成揭露義務、YPP 變現合規（附 2026-09-30 實測基準）|
+| | | `audio-reactive-waveform` | 本地音樂驅動透明頻譜條，輸出無聲 ProRes 4444 MOV 供 CapCut 疊加；附樣式變體產生器 |
 
 [MiniMax waveform 安裝與使用](plugins/three-kingdoms-focus-studio/WAVEFORM.md)（Python 3.10+、NumPy、FFmpeg／ffprobe；先確認 20 秒短片再做全曲）。
 
@@ -147,7 +160,10 @@ rsync -a --delete --exclude '.DS_Store' --exclude '._*' \
   - `three-kingdoms-video-project`、`music3-instrumental-prompts`、`three-kingdoms-focus-music`、`three-kingdoms-vocal-single` ← `~/.agents/skills/`
   - `three-kingdoms-music-review` ← `~/.codex/skills/`
 
-搬入時做的**唯一**改動是移除 2 個 Codex 專用介面檔 `agents/openai.yaml`（Codex UI 描述檔，MiniMax plugin 不使用）。SKILL.md 與所有 references / templates **位元組未動**。
+**最初搬入時**做的唯一改動是移除 2 個 Codex 專用介面檔 `agents/openai.yaml`（Codex UI 描述檔，MiniMax plugin 不使用）。
+自 v1.4.0 起本 repo 開始自行維護這幾支 skill（實測修正錯譯、補 MCP 執行層與整部影片製作章節），
+**不再與來源保持位元組一致**；每次變更的逐條依據見各 skill 的 SKILL.md 與 git 歷史。
+`audio-reactive-waveform` 則相反：它是從本 repo 的 Codex 版移植回 MiniMax 版的。
 
 其中 `music3-instrumental-prompts` 自述為 MiniMax 官方 `music-caption-rewriter` skill 的**純器樂特化分支**（該 skill 另存於 `~/.agents/skills/music-caption-rewriter/`）。若本 repo 日後要公開散布，這一支需補上上游的來源標註與授權聲明。
 
@@ -155,7 +171,7 @@ rsync -a --delete --exclude '.DS_Store' --exclude '._*' \
 
 ### `audio-reactive-waveform` 移植
 
-MiniMax v1.3.0 從本 repo 的 Codex 版移植此技能；保留原始渲染程式、測試、
+MiniMax v1.3.0 從本 repo 的 Codex 版移植此技能（v1.5.0 起同步兩側的樣式變體說明）；保留原始渲染程式、測試、
 樣式與參考文件，改寫安裝說明並省略 MiniMax 不使用的 `agents/openai.yaml`。
 確切來源 commit、原始來源鏈與檔案雜湊見
 [UPSTREAM.json](plugins/three-kingdoms-focus-studio/skills/audio-reactive-waveform/UPSTREAM.json)。

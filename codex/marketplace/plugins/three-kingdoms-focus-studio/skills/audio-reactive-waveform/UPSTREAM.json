@@ -8,9 +8,9 @@
     {
       "source_path": "skills/audio-reactive-waveform/SKILL.md",
       "codex_path": "skills/audio-reactive-waveform/SKILL.md",
-      "change": "unchanged",
+      "change": "adapted_for_mcp_execution_layer",
       "source_sha256": "aff49a016d734fe81b9e909ec372df6dbef36922bb8e828d50e3266bfd0ef83a",
-      "codex_sha256": "aff49a016d734fe81b9e909ec372df6dbef36922bb8e828d50e3266bfd0ef83a"
+      "codex_sha256": "161105e662ab31f4250e4e1da1a3de3e905511483c1b82c3fe6621dfdae80766"
     },
     {
       "source_path": "skills/audio-reactive-waveform/agents/openai.yaml",
@@ -67,6 +67,19 @@
       "change": "unchanged",
       "source_sha256": "a7388c71ae96ca47e2adeb51151f303f3a8d4e6939aed82f7ea19ce668b6aca8",
       "codex_sha256": "a7388c71ae96ca47e2adeb51151f303f3a8d4e6939aed82f7ea19ce668b6aca8"
+    },
+    {
+      "codex_path": "skills/audio-reactive-waveform/references/output-variants.md",
+      "codex_sha256": "c4170b0f75a87d8358c5c33912b1f066012c4fabd2a9ed1430d54b2c46dd47a6",
+      "source_sha256": null,
+      "change": "added_for_mcp_execution_layer"
+    },
+    {
+      "codex_path": "skills/audio-reactive-waveform/scripts/make_variants.py",
+      "codex_sha256": "352fc8488b535d9a9d20a99bf930c12a19bd630be396490e525611b2949dee6b",
+      "source_sha256": null,
+      "change": "added_for_mcp_execution_layer"
     }
-  ]
+  ],
+  "revision_date": "2026-10-22"
 }

@@ -45,7 +45,15 @@ approval vocabulary.
 
 Supported branches:
 
-- `MiniMax Music 3.0`: retain the existing two-field
+- **`minimax-design` MCP** (preferred when the environment provides it): the
+  agent executes generation itself. `generate_music:music-3.0` with
+  `params.mode: "instrumental"`, no `lyrics` field, and a minute-level timeline
+  inside the prompt as the only length lever. `generate_image` for covers and
+  chapter images, `generate_video:MiniMax-H3` for the loop video. Read
+  `skills/yt-focus-music-pipeline/references/design-mcp-execution.md` before
+  executing — it carries the parameter contract, the ten measured failure
+  modes and the output retrieval procedure.
+- `MiniMax Music 3.0` hosted API / SGLang: retain the existing two-field
   `lyrics / input` plus `music description / instructions` workflow below.
 - `Google Gemini API / Lyria 3.5`: use `lyria-3.5` for a full song and
   `lyria-3-clip-preview` only for a fixed 30-second prompt test. Use the
@@ -63,6 +71,37 @@ never in prompts, manifests or release files; otherwise create a copy-ready
 handoff and do not report external audio as generated. See the [Lyria 3.5
 music-generation guide](https://ai.google.dev/gemini-api/docs/music-generation)
 and [Interactions API](https://ai.google.dev/gemini-api/docs/interactions-overview).
+
+### Execution mode and its authorization
+
+`execution-mode` records **who runs the generation**, and it is separate from
+creative approval:
+
+| `execution-mode` | Meaning | Authorization needed |
+|---|---|---|
+| `mcp` | the agent calls the provider through the MCP | the `prompt 已確認` gate already covers the approved provider, settings and candidate count; state the cost before any paid call |
+| `api` | the agent calls a provider API directly | same as `mcp` |
+| `manual` | the user runs the generation and hands the files back | the delivery contract; report nothing as produced until a real file exists |
+
+**Creative approval is not execution authorization.** Approving a prompt says
+the music is right; it does not by itself authorize spending credits. Before
+any paid call, tell the user the amount. `confirm_cost` is never approved on
+the user's behalf by the agent.
+
+A reviewer's `agent-recommended` verdict never becomes `user-approved`, and an
+agent that generated the file has not thereby selected it.
+
+### What the agent must verify after an MCP generation
+
+- the source file exists, decodes, and its hash is recorded;
+- the instrumental condition holds (measurement plus listening — never a model's
+  claim alone);
+- the actual duration is measured and recorded as a **minute range**, not
+  assumed from the prompt;
+- a produced video carries no audio track, and a produced loop's seam is
+  measured;
+- the product is labelled as an external result, and any locally assembled
+  chapter is labelled `assembly from supplied external results`.
 
 ## Entry routing
 
@@ -146,10 +185,16 @@ After approval, create the stable project ID and package directory. In the
 │   └── chapter-01-v1.wav
 ├── cover-image-prompt-v1.md
 ├── chapter-image-prompt-v1.md       # required for chapterized projects
-└── chapter-images/                  # one image per declared chapter
-    ├── chapter-01-v1.png
-    ├── chapter-02-v1.png
-    └── ...
+├── chapter-images/                  # one image per declared chapter
+│   ├── chapter-01-v1.png
+│   ├── chapter-02-v1.png
+│   └── ...
+├── loop-video-prompt-v1.md          # 15-second loop video prompt
+├── loop-video/                      # loop video delivery plus its verification record
+│   ├── loop-video-v1.mp4            # verified delivery file (no audio track)
+│   ├── loop-video-v1-seam.md        # wrap-transition measurement and any fix applied
+│   └── ...
+└── visual-measurements/             # machine-readable measurement output (JSON)
 
 assets/releases/S01-Pxx/
 ├── README.md
@@ -174,6 +219,9 @@ assets/releases/S01-Pxx/
 │   ├── chapter-01-v1.png
 │   ├── chapter-02-v1.png
 │   └── ...
+├── loop-video/                      # approved loop video delivery and its seam record
+│   ├── loop-video-v1.mp4
+│   └── loop-video-v1-seam.md
 └── later revisions with new version numbers
 ```
 
@@ -267,10 +315,16 @@ full long-form mixing and mastering remain external. Use the model's two
 separate inputs rather than merging lyrics and musical instructions:
 
 - `lyrics` / API `input`: lyrics are optional and section tags define macro
-  structure. For instrumental focus music, use no lyric text; when the target
-  interface supports tag-only input, put one tag per line such as `[Intro]`,
-  `[Instrumental]`, `[Solo]` and `[Outro]`. Never put scene prose, production
-  notes or negative constraints in the lyrics field.
+  structure. **This field is only real on routes where it is an actual input** —
+  the hosted API, and the MCP only in `mode: "song"`. On the MCP instrumental
+  route there is no `lyrics` field at all: omit it entirely rather than sending
+  tag-only payloads. When the target interface supports tag-only input (hosted
+  API), put one tag per line such as `[Intro]`, `[Instrumental]`, `[Solo]` and
+  `[Outro]`. Never put scene prose, production notes or negative constraints in
+  the lyrics field. Measured 2026-10-22 through the MCP: five `lyrics` values —
+  `[Instrumental]`, `Instrumental`, structural tags, a descriptive sentence, and
+  an **empty control** — all produced wordless vocals. The field is not a
+  control surface and must never be described as one.
 - `music description` / API `instructions`: use a Structured Caption with all
   three sections below. Keep it in English and make the field names visible so
   the structure survives handoff between the model card, SGLang API and
@@ -278,11 +332,25 @@ separate inputs rather than merging lyrics and musical instructions:
   - `Global Metadata`: genre and subgenre, BPM, time signature, key and scale
     (or an explicit unconstrained choice), listening scenario, production
     profile, and a time-ordered emotional progression.
-  - `Vocal Details`: for this focus-video workflow explicitly state
-    `instrumental only; no lead vocals, backing vocals, spoken words, chants,
-    lyrics or vocal effects`. For a project that intentionally includes voice,
-    specify gender, timbre, delivery, harmony, backing vocals and effects here
-    instead of hiding them in the arrangement prose.
+  - `Vocal Details`: for this focus-video workflow state the instrumental
+    condition **in positive terms** — name the texture that carries the melody
+    (for example `a solo Chinese zither carries the lead line; a Rhodes
+    electric piano answers beneath it`). Do **not** enumerate absences as the
+    mechanism (`instrumental only; no lead vocals, backing vocals, spoken
+    words, chants, lyrics or vocal effects`): worded exclusions are not a
+    control surface. Naming a sound category can seed it — measured for foley
+    and ambience categories (rain, thunder, vinyl crackle), so do not enumerate
+    those. For **vocal** categories the enumeration was inert on the MCP
+    (2026-10-22: 18/18 candidates clean with the exclusions present), so the
+    line may stay as documentation; it is simply never the mechanism.
+    Measured 2026-09-30, five of five captions that spelled out `no vocals, no
+    choir, no spoken word` still produced wordless vocals. The real control is the
+    route's flag — `is_instrumental: true` on the hosted API, `params.mode:
+    "instrumental"` on the MCP — and on a route with no flag, treat
+    instrumental output as unguaranteed and disclose it. For a project that
+    intentionally includes voice, specify gender, timbre, delivery, harmony,
+    backing vocals and effects here instead of hiding them in the arrangement
+    prose.
   - `Arrangement`: primary and secondary instruments, the groove and bass or
     low-end behavior, percussion, textures and spatial effects, plus the
     section-level entry, layering, transformation and exit of instruments.
@@ -294,9 +362,12 @@ recognizable. Every per-song request must select exactly one declared chapter
 and exactly one variation; include the chapter's action, density and emotional
 function without pasting all chapter directions into one request.
 
-Use this compact Music 3.0 handoff shape in the prompt artifact:
+Use this compact Music 3.0 handoff shape in the prompt artifact. **The shape
+depends on the route** — the `lyrics/input` block exists only where `lyrics` is
+a real input, and the instrumental control is the route's flag.
 
 ```text
+# Hosted API / SGLang shape (lyrics is a real input on these routes):
 lyrics/input:
 [Intro]
 [Instrumental]
@@ -305,9 +376,22 @@ lyrics/input:
 
 music description/instructions:
 Global Metadata: [genre/subgenre], [BPM], [time signature], [key/scale], [listening scenario], [production profile], [emotional progression].
-Vocal Details: instrumental only; no lead vocals, backing vocals, spoken words, chants, lyrics or vocal effects.
+Vocal Details: [a positive statement of the lead instrumental texture that carries the melody].
 Arrangement: [primary and secondary instruments]; [section-by-section entry and exit]; [groove, bass, percussion, textures, spatial effects]; [chapter direction and one variation].
 ```
+
+```text
+# MiniMax Design MCP instrumental route (there is no lyrics field at all):
+params.mode: instrumental     # the only instrumental control
+prompt:
+Global Metadata: [genre/subgenre], [BPM], [time signature], [key/scale], [listening scenario], [production profile], [emotional progression].
+Vocal Details: [a positive statement of the lead instrumental texture that carries the melody].
+Arrangement: [primary and secondary instruments]; [section-by-section entry and exit]; [groove, bass, percussion, textures, spatial effects]; [chapter direction and one variation]; [a minute-level timeline, which is the only length control on this route].
+```
+
+The `Vocal Details` line must read as a positive statement. Never paste
+`instrumental only; no lead vocals, ...` into a payload as the mechanism — see
+the `Vocal Details` rule above.
 
 The current MiniMax Music 3.0 model card limits the tokenized text prompt to
 5,000 tokens. Treat that as the hard ceiling for the final substituted music
@@ -330,14 +414,23 @@ per-song delivery string instead:
   project notes. The full master remains unchanged as the reusable source of
   truth.
 
-When handing off Music 3.0 API settings, remember that `max_new_tokens` is a
-maximum number of audio frames at 25 frames per second, not a guaranteed final
-duration. Use `round(target_seconds × 25)` as the starting cap: 4,250–4,750 for
-a 2:50–3:10 cue and 7,500 for a five-minute ceiling. Generation may end earlier.
-Record the requested cap and measure the returned file externally. The current
-documented output is non-streaming 32 kHz, 16-bit stereo WAV; preserve the
-actual response format in the handoff record rather than assuming the prompt
-controlled it. Always invoke $music-caption-rewriter to draft the music description/instructions
+**`max_new_tokens` belongs to the SGLang open-weight route only.** When handing
+off Music 3.0 **SGLang** settings, `max_new_tokens` is a maximum number of audio
+frames at 25 frames per second, not a guaranteed final duration. Use
+`round(target_seconds × 25)` as the starting cap: 4,250–4,750 for a 2:50–3:10
+cue and 7,500 for a five-minute ceiling. Generation may end earlier. Record the
+requested cap and measure the returned file externally. The current documented
+output is non-streaming 32 kHz, 16-bit stereo WAV; preserve the actual response
+format in the handoff record rather than assuming the prompt controlled it.
+
+**Do not carry `max_new_tokens` to the hosted API or to the MCP.** Neither
+exposes it. On the hosted API the length lever is the caption plus the model
+ceiling; on the **MiniMax Design MCP** there is **no length parameter at
+all** — the only lever is a minute-level timeline written into the prompt.
+Measured 2026-10-22 on the MCP with one identical caption: no timeline produced
+**59.9 seconds**; the same caption carrying `0:00 … 3:50` produced **188
+seconds**. Because exact length is not guaranteed, report a **minute range**
+rather than a track count, and measure every returned file. Always invoke $music-caption-rewriter to draft the music description/instructions
 field for every MiniMax Music 3.0 song prompt, including material prompt
 revisions. This is required whenever MiniMax Music 3.0 is selected. If it is
 missing, install it globally for Codex with:
@@ -770,6 +863,321 @@ whole affected set before requesting approval.
 Reference-based titled generation is allowed when the approved Stage 1 master
 is used and the user manually checks text and composition. Deterministic human
 typography is the fallback when generated typography is not exact.
+
+### Stage 3: 15-second loop video
+
+Start only from the approved titled cover. Draft the exact video prompt and get
+explicit approval before generating.
+
+- `generate_video:MiniMax-H3`, `mode: first-last-frame`, `duration: 15`,
+  `resolution: 2k`. Bind the **approved cover as both the first and the last
+  frame** (`references: [{versionId: A}, {versionId: A}]`). `first-last-frame`
+  does not accept a fixed `aspect_ratio`; the reference image sets the frame.
+- Keep the camera still and the framing unchanged. Motion stays inside the
+  scene — breathing light, drifting mist, faint particles, slow water, cloth.
+- **Silence must be verified, not assumed.** `audio: false` does not guarantee
+  a silent file: measured twice on 2026-10-22, a 6.58 s and a 15.08 s mp4 both
+  came back with an AAC track (mean −24.2 dB and −46.5 dB). Probe the output,
+  strip with `ffmpeg -an -c:v copy` (not `-vn`, which drops video instead), and
+  confirm with `volumedetect`.
+- **The seam must be measured.** Binding one image to both ends guarantees the
+  opening frame, not the closing one. Measured 2026-10-22 on a 15.08 s / 24 fps
+  clip: wrap transition 1.6949 mean absolute levels against a maximum
+  *natural* in-clip transition of 0.9067 — the single largest transition in the
+  clip, and the clip visibly decelerated to a near-stop before snapping back.
+  The rule is **the wrap difference must not exceed the largest natural
+  in-clip transition**; a re-encode control with identical content measured
+  1.7000, which proves the seam came from the source and not from encoding.
+  Fix locally with a 0.5 s cross-dissolve of the tail into the head (measured
+  wrap 0.6601; pixels differing by more than 4/255 dropped from 5.68% to
+  0.024%) and re-measure.
+- Re-measure with `scripts/verify_loop_seam.py`, which has first been validated
+  against a known seamless and a known seamed control (`--self-check GOOD BAD`).
+  Record the measurement, the control, and the fix in
+  `loop-video/loop-video-v1-seam.md`.
+- Save the delivered file under `loop-video/` and wait for explicit approval
+  such as `批准 loop-video-v1`.
+
+## Full-length video production
+
+Applies after the chapter audio assembly, the chapter image set and the titled
+cover are approved. This is the upload master, not the loop video.
+
+### Output spec
+
+| Item | Value |
+|---|---|
+| Resolution / fps | 1920×1080 / 30 fps / yuv420p |
+| Video codec | h264, `libx264 -preset medium -crf 22` |
+| Audio codec | AAC 256 kbps / 44.1 kHz, sourced from the master WAV |
+| Container | mp4 with `+faststart` |
+| Frame count | `round(total_seconds × 30)`; the encoded file must match exactly |
+
+**`crf 22`, not `crf 20`.** Measured on the same 60-second sample: `crf 20` = 7.24 Mbps
+(3.12 GB for a 61-minute release), `crf 22` = 5.34 Mbps (2.30 GB). The picture
+difference is mean 2.70/255, max 25, with only 1.97% of pixels differing by more
+than 8 — imperceptible on ambient content. Pick the tier that keeps the delivery
+file near the size of the previous release, then say which one you used.
+
+### Layer order
+
+```
+background   per-chapter 15 s loop, scaled to 1920×1080, -stream_loop -1
+  └ scrim    optional soft vignette under the waveform (local PNG, alpha)
+      └ waveform   transparent 640×280 overlay, positioned per chapter
+          └ text overlay   chapter name + title, one PNG per chapter
+```
+
+### ★ The ffmpeg length trap — always limit the output
+
+**ffmpeg encodes until the *longest* mapped output stream ends, not the shortest.**
+A full-length transparent waveform MOV is thousands of seconds long, so a chapter
+segment silently renders as the whole film.
+
+Measured failure: a 650 s chapter segment rendered 3702 s and 2 GB+ before it was
+caught. Always pass `-t <segment_seconds>` **as an output option**, and verify the
+resulting duration with `ffprobe` before moving on.
+
+### ★ The waveform overlay must be written to a local APFS folder
+
+`audio-reactive-waveform`'s renderer finalizes by moving its temp directory into
+place, which fails on exFAT with `Cannot finalize on this filesystem. Use a local
+APFS/NTFS/ext4 folder`. Render the overlay to a local APFS path (for example
+`~/Movies/Waveform Output/`), then reference it from the composition. A 61-minute
+overlay is about 13 GB.
+
+### Per-chapter background loops
+
+Generate one loop per chapter from that chapter's approved image with
+`generate_video:MiniMax-H3`, `mode: first-last-frame`, the same image bound to
+both the first and the last frame.
+
+- `audio: false` still returns an AAC track (measured repeatedly). Strip it with
+  `ffmpeg -an -c:v copy` and confirm with `volumedetect`.
+- **`first-last-frame` binds the opening frame only.** The closing frame is the
+  model's free choice, and it often is not the same picture. Measured on a
+  chapter loop: the wrap transition differed by 14.88 while the largest natural
+  in-clip transition was 1.10 — 36× the median, and the single largest transition
+  in the clip. The model had drifted the light and the mist density and never
+  returned.
+- **Measure the seam and choose the fix by how far it overshoots:**
+  - **within ~3× of the largest natural transition** → a short cross-dissolve is
+    enough, because both ends are similar pictures;
+  - **far beyond it** → the ends are different pictures, so a dissolve reads as an
+    obvious blend. Use a **ping-pong** instead (forward plus reverse, dropping the
+    duplicated end frames): every transition is then a natural single-frame step,
+    which makes the loop seamless by construction. It doubles the length and
+    reverses the motion, which is acceptable when the camera is fixed and only
+    atmosphere drifts.
+- **A seamless seam is not the same as correct content.** `first-last-frame`
+  guarantees the *opening* frame only; the model is free to drift anywhere after
+  that, and a ping-pong will faithfully replay a scene change in the middle of
+  the clip. Measured on a chapter loop: the wrap difference was 14.88 while the
+  model had abandoned the reference scene entirely and drifted through two
+  unrelated landscapes before going black. The seam could be fixed; the content
+  could not.
+  → **Check scene stability separately.** Take the first frame as the reference
+  and compute the structural correlation of every frame against it. Measured on
+  the bad loop the minimum fell to **−0.126**; on the good ones it stayed above
+  0.87. A loop whose minimum drops below zero has swapped scenes and must be
+  regenerated, however clean its seam is.
+- Verify with the same rule used elsewhere: a loop is seamless when the wrap
+  difference does not exceed the largest natural transition inside the clip.
+
+### Chapter name and title overlay
+
+Render one RGBA PNG per chapter containing the chapter name and the title.
+
+- **Measure the background, then pick the colour.** A bright cover needs dark ink;
+  a night chapter needs ivory. Compute the contrast of both candidates against
+  the actual pixels of that chapter's region and take the higher one. On the
+  S02-P01 chapter images the ivory used by the previous release scored 1.16:1
+  against the dawn sky — invisible — while deep ink scored 16.81:1.
+- **Extract the calligraphic title from the approved titled cover instead of
+  rendering it.** macOS has no matching calligraphic or regular-script Chinese
+  face for a brush-style title, but the approved cover already carries the exact
+  strokes. Threshold the luminance inside the title's crop into an alpha mask and
+  reuse it in every chapter, recoloured per scene. This costs nothing and cannot
+  drift.
+- **Clean the extracted alpha before using it.** A plain luminance threshold over
+  the title's crop also captures the cover's terrain: measured, the terrain
+  averaged alpha 123 while the brush strokes averaged 250. Binarise the alpha,
+  label the connected components, and keep only the components whose mean alpha
+  is high — the strokes are nearly solid, the terrain is not. Left in, the terrain
+  shows up in the final frame as a visible rectangular patch.
+- **Give the text a contrasting outline.** One fill colour only works if the
+  whole glyph sits on a background of similar brightness. Measured on the S02-P01
+  chapter images, the deep-ink brush title fell to 1.15:1 in one chapter (the
+  strokes crossed a near-black market canopy) and 1.04:1 in another (a
+  watchtower). A 3 px outline in the opposite luminance — ivory under a dark
+  fill, dark under a light fill — raised the same worst cases to 15–17:1 while
+  leaving the chapters that already read cleanly unchanged. Apply the same
+  treatment to the chapter name.
+- **Pick the fill colour from the background luminance *under the strokes*, not
+  from the whole region.** The strokes can land on a different part of the scene
+  than the region's average; in one chapter the region averaged mid-grey while
+  the strokes sat on near-black.
+- **Search the layout across all chapters.** Score candidate positions for the
+  title and the waveform by how much fine detail and how much luminance spread
+  they contain across every chapter image, and forbid the three elements from
+  overlapping. Score alone is not enough: it does not know that a watchtower or
+  the moon is the subject. Render the top candidates and look at them.
+- **Measure the rendered ink extent, not the nominal box.** A chapter name
+  drawn at x=104 with a 60 px face can still have ink out to x=590, and an
+  extracted brush mask carries its own left bearing. Lay the title out from the
+  **measured** right edge of the name and require a real gap (measured: a title
+  placed 44 px from the name read as colliding; moving it to 190 px apart read
+  as two separate elements).
+- Put the loop's dynamic elements in the calm band of the frame — the sky, not
+  over foreground detail. The waveform is a good candidate for the lower band:
+  the sky of these scenes is the calm area, and the lower third is usually the
+  most detailed part of the frame.
+
+### Verification
+
+Port the checks from the previous release's verification scripts and re-point them
+at the new paths. They must cover:
+
+1. structure, duration and codec;
+2. a **full decode with no errors**;
+3. **frame count exactly matching the 30 fps timeline**;
+4. the audio track against the master WAV by raw sample correlation, with the
+   offset found by FFT cross-correlation and the RMS envelope as the primary
+   criterion (see *Comparing the final audio to the master*);
+5. **end-to-end A/V sync** between the visible waveform and the audio. The
+   waveform overlay is a *spectrogram*, not a time-domain envelope: extract the
+   48 bar heights and compare them against the 48 band energies of the audio,
+   scanning for the best alignment. A time-domain envelope comparison measures
+   the wrong thing. Three traps, all of which produce **false failures**:
+   - **Reproduce the renderer's own ceiling.** `render_waveform.py` normalises
+     against the **98.5th percentile of the whole track**, not of a local
+     block. Approximating it with a per-block ceiling re-anchors the dB scale,
+     the `clip(0, 1)` then truncates the shape, and the correlation drops
+     without anything being wrong. Recompute the reference with the renderer's
+     algorithm and a **global** ceiling, and prove the reimplementation is
+     faithful with a self-test (measured: max relative error 8.8e-16 against
+     the renderer's own loop).
+   - **Do not measure bar heights on the composite.** The overlay sits on top of
+     the loop and a scrim, and warm background content — lanterns, autumn
+     foliage, low sun — is the same colour as the bars. Measured on the
+     S02-P01 cut, extracting bar heights from the final frame by saturation
+     gave a correlation as low as **−0.36** against the audio reference, and
+     the fix was not a better threshold: background removal, column-majority
+     voting and row-wise background estimates all stayed under 0.93.
+     → **Compare only the bar cores.** The overlay file's alpha channel *is* the
+     exact bar geometry; the pixels where alpha > 0.9 are the bar colour
+     itself in the final frame, so the background cannot influence them.
+     Extract those pixels, compare their **luma** (yuv420p subsamples chroma,
+     so luma is the only channel that survives), and scan for the best frame
+     offset. Measured on the same cut: 0.975–0.992 at the best offset at every
+     test point.
+   - **Give the check a negative control.** Re-run the comparison against a
+     deliberately shifted reference (measured: ±20 frames, 667 ms) and require
+     the score to drop clearly below the real one. Without it, a check that
+     passes for any offset is not a check. The reference's own shape
+     self-correlation at 667 ms averages 0.47, so a correct score near 0.98
+     separates cleanly from a shifted one.
+5. the **chapter name shown at each chapter boundary is the right one**. Do not
+   settle for "the pixels in the name region changed by more than 3" — the
+   background is moving, so that region changes on its own and the check passes
+   whether or not the name switched. Do not settle for a "darkness inside the
+   mask minus darkness outside the mask" score either: with four of six names
+   in the same ink colour it only separates the light group from the dark one,
+   and measured on the S02-P01 cut it picked the wrong chapter in three of six.
+   → **Treat the overlay PNG as ground truth.** It *is* what was composited, so
+   for each candidate chapter compute what the region would look like —
+   take the overlay's alpha and colour, estimate the clean background with a
+   large-kernel median filter, and build the predicted luminance deviation —
+   then take the cosine between the prediction and the deviation actually
+   measured in the frame. The prediction carries the polarity, so dark-ink and
+   ivory names can be compared in one scale. Measured: every chapter matched
+   its own overlay with a margin of 0.26–0.52 over the runner-up. Then check
+   that the winner flips from chapter *i* to chapter *i+1* across each
+   boundary.
+6. the chapter boundaries come from the assembly record, not from the plan: each
+   chapter starts at the previous chapter's length minus the inter-chapter
+   crossfade overlap. The final boundary is the last chapter's start plus its
+   length — never the last chapter's length alone.
+
+Build one segment per chapter, then produce the final cut. **Do not stitch the
+chapter segments with the concat demuxer and `-c copy`.**
+
+The concat demuxer shifts each file's timestamps by the **container duration** of
+the previous file. In a chapter segment the audio runs a few milliseconds longer
+than the video, so that shift is slightly too large and the error accumulates
+across chapters. Measured on a 61-minute cut: the final audio drifted up to
+**240 ms** from the master and ended 0.24 s long, with timestamp gaps at the
+chapter joins. The content was still correct — the RMS envelope matched the
+master at 0.88–0.999 — but the sample-level correlation collapsed, so a
+sample-exact audio check fails for a reason that has nothing to do with the
+audio.
+
+Two ways out:
+
+- **Single-pass concat (preferred).** One ffmpeg call: each chapter's loop
+  input is `-stream_loop -1` and is cut with `trim` to the exact chapter
+  boundary, each chapter gets its own scrim, waveform slice and text overlay,
+  the six video streams are joined with the **concat filter**, and the master
+  WAV is mapped straight in as the audio. The timeline is rebuilt rather than
+  copied, so nothing can drift, and the audio never passes through an
+  intermediate encode.
+- **Mux the master audio last.** Concat the video only, then mux the master WAV.
+  Cheap, but the video still carries the accumulated per-chapter rounding.
+
+### ★ Cut the chapters by frame number, not by seconds
+
+A `trim` whose bounds are given in **seconds** yields a per-chapter frame count
+that rounds independently, so the video track drifts against the audio track by
+one frame here and there. Measured on a 61-minute cut: the video came out
+**111075 frames = 3702.500 s** while the audio and the master were
+**3702.600 s** — three frames short.
+
+Nothing looks broken at that scale, and the audio check still passes, because
+the *content* is right; but anything derived from the video timeline slides
+relative to the audio as the film runs. Measured on the same cut, the visible
+waveform overlay moved from **0 frames** ahead of the audio at the start to
+**+3 frames (100 ms)** at the end, and the chapter name switched to the next
+chapter's title about half a second early at one boundary.
+
+Cut by frame instead:
+
+```
+frame_bounds = [round(boundary_seconds * 30) for boundary_seconds in bounds]
+chapter_frames = [frame_bounds[i+1] - frame_bounds[i] for i in range(n)]
+#   trim=start_frame=0:end_frame=<chapter_frames[i]>          (loop segment)
+#   trim=start_frame=<frame_bounds[i]>:end_frame=<frame_bounds[i+1]>   (overlay)
+```
+
+The chapter totals then add up to exactly `round(total_seconds * 30)`, the
+video and audio tracks have the same length, and the chapter boundaries land on
+the same frame index on both sides. **Assert the encoded frame count and the
+duration in the composition script itself** — a self-check that fails loudly is
+cheaper than a drift that only shows up in a downstream measurement.
+
+### Comparing the final audio to the master
+
+Do **not** assume the MP4's AAC track is offset by one AAC frame (1024 samples
+≈ 23.2 ms). Measured on the S02-P01 cut with ffmpeg's MP4 demuxer, the best
+alignment was **0 samples at all five test points** — the demuxer applies the
+container's edit list, so the encoder priming is already compensated.
+
+What *is* true, and costly to learn the hard way: **an alignment search on an
+equally spaced grid can miss the correct offset, and a music signal's
+sample-level correlation is extremely sensitive to a few samples of shift.**
+The grid `range(-2822, 2823, 32)` never contains 0 (`-2822 + 32k = 0` has no
+integer solution), and on the same 3-second excerpt the correlation was
+**0.99988 at lag 0, 0.95516 at lag −6 and 0.82 at lag −30**. A grid search
+reported 0.82–0.96 for a track that was bit-identical to the master.
+
+- Find the offset with an **FFT cross-correlation**, which yields the exact
+  integer-sample peak instead of whatever the grid happens to contain.
+- Use the **RMS envelope** (10 ms hop) as the primary criterion and the raw
+  sample correlation as a secondary one. The envelope is insensitive to
+  sub-millisecond shifts, so it judges *is this the same track* without
+  failing on encoder bookkeeping.
+- Report the best offset, the sample correlation and the envelope correlation
+  together; a zero lag with high envelope correlation is the expected result
+  for a correctly muxed master.
 
 ## Completion and validation
 

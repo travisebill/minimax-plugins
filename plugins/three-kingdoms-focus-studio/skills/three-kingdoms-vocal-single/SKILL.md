@@ -794,11 +794,26 @@ boundary file is supplied in both adjacent positions when clips are chained.
 Frame-pair approval remains a local storyboard approval; it does not imply
 that the external video exists or that `批准 short-v1` has been granted.
 
-The user manually supplies this package to the selected external generator.
-The Skill does not assume a connector, does not upload files, and does not
+**When the `minimax-design` MCP is available, the agent executes the video
+generation itself** instead of handing the package over. Declare
+`output.resources` and `output.composition.placements`, bind the approved
+frame pair as ordered references, and wait for the task to reach a terminal
+state before reporting anything. The execution contract, the ten measured
+failure modes and the output retrieval procedure are in
+`skills/yt-focus-music-pipeline/references/design-mcp-execution.md`.
+
+When no such tool is available, the user manually supplies this package to the
+selected external generator. The Skill does not upload files, and does not
 report external generation as completed merely because prompts or images exist.
 Local Lyria execution is reported only after an explicit request, a configured
 `GEMINI_API_KEY`, and a recorded returned candidate.
+
+On either route, never claim a video exists before a real file has been
+produced and verified. `audio: false` on the MCP does **not** guarantee a
+silent file — measured twice (2026-10-22), returned mp4s carried a near-silent
+AAC track (mean −24.2 dB and −46.5 dB). Probe the output, strip the track with
+`ffmpeg -an -c:v copy` (not `-vn`, which drops video instead), and confirm
+silence with `volumedetect`.
 
 Initial video generation is text-free. If captions are enabled, wait until the
 external video passes its own review, then create `caption-plan-v1.md` with
