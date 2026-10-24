@@ -112,6 +112,33 @@ three-kingdoms-focus-studio:yt-publish-strategy
 three-kingdoms-focus-studio:audio-reactive-waveform
 ```
 
+## Plugin Hook — 自動守門
+
+`three-kingdoms-focus-studio` 自帶四個 Hook（`hooks/hooks.json`），把「靠代理記得做」
+的事變成機械性檢查。**Plugin Hook 隨外掛載入，不需要去 Settings 開關**
+（那是專案 Hook 才有的限制）；但外掛更新後要**重啟 MiniMax Code** 才會被重新載入。
+
+| 事件 | 觸發 | 做什麼 | 為什麼 |
+|---|---|---|---|
+| `SessionStart` | 回合開始 | 檢查波形疊加條母檔是否還在（缺 → 提醒 A/V 驗證會失敗並附重生指令）、列出本工作目錄已有的發布包 | 母檔只存在本機、不在發布包裡，刪掉時最後一項驗證會直接失敗且不說原因 |
+| `PreToolUse` (`bash`) | 指令含 `git` | **先清側車檔再讓命令跑** | exFAT 上 macOS 替每個檔案生成 `._檔名`，連 `.git/objects/pack/` 裡的都被 git 當 pack index 讀 → 每個指令都噴 `non-monotonic index`，錯誤訊息不可讀 |
+| `PostToolUse` (`bash`) | 指令含 python／pytest／npm／node／git | 清掉 `__pycache__` 與側車檔（工作目錄 ＋ 外掛套件目錄） | 整包驗證掃的是**檔案系統**不是版控，遇到這些直接斷言失敗 |
+| `Stop` | 代理準備結束 | **交付前守門**：ffprobe 比對成片影片軌／音軌時長（差 > 0.05 s 就擋）、幀數 == round(時長 × fps) | 「影片軌比音軌短幾幀」不會報錯、音軌比對也會過，只有兩軌互相比才看得出來 |
+
+**Hook 的硬限制**：每個事件的**所有** handler 共享 **15 秒**（`SessionEnd` 只有 3 秒），
+單一 handler 的 `timeout` 是 1–10 秒。所以 Hook 裡**只能做 0.05～0.5 秒的快速量測** ——
+完整的最終驗證（約 10 分鐘）**不能**放進 Hook，仍然要代理顯式呼叫
+`verify_final_video.py`。
+
+**Hook 的驗證**：`tools/validate_plugin.py` 會檢查 hooks 檔案存在、欄位合規
+（type/command/name≤64/timeout 1–10/matcher≤256）、`${PLUGIN_ROOT}` 引用路徑存在、
+以及**每個 `.mjs` 都跑 `node --check`**。`node --check` 只解析語法，抓不到
+`import { os } from "node:os"` 這種錯誤（要執行時才炸），而 Hook 腳本是在
+使用者每個回合都會跑的 —— 一個壞掉的 import 會燒掉整個事件預算。
+
+> `node --check` 只驗證語法，**不代表 hook 會被 runtime 執行**；
+> 載入後仍要用代表性 JSON 餵 stdin 實跑一次確認。
+
 ## 重要：本機安裝處是「複製」，不是 symlink
 
 MiniMax Code 的外掛必須在 `<activeDataDir>/plugins/<name>/`（`activeDataDir` 通常是 `~/.minimax`，舊 profile 可能是 `~/.mavis`）。**runtime 會拒絕 symlink 的外掛目錄**，所以本 repo 與本機安裝處是兩份實體檔案，需要同步。

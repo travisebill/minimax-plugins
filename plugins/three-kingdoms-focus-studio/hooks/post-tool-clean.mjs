@@ -8,6 +8,8 @@
 // 而 hook 的事件預算只有 15 秒，每個 bash 都掃會把它吃光。
 //
 // 純副作用事件：成功就靜默結束，不輸出任何東西。
+import { existsSync } from "node:fs";
+import { resolve } from "node:path";
 import { readHookInput, workDir, gitRootsUnder, cleanArtifacts } from "./lib/hook-utils.mjs";
 
 const input = readHookInput();
@@ -28,6 +30,13 @@ if (/\bgit\b/.test(command)) {
 // 其他會產生快取的指令：掃工作目錄
 if (RELEVANT.test(command)) {
   cleanArtifacts(base, { budgetMs: 1400, maxFiles: 12000, skipGit: false });
+
+  // 外掛套件自己的目錄：跑 skill 內的測試時，__pycache__ 會落在這裡，
+  // 而整包驗證（codex/scripts/package_plugins.py）掃的就是它 → 會斷言失敗。
+  const pkgRoot = process.env.PLUGIN_ROOT || process.env.MINIMAX_PLUGIN_ROOT;
+  if (pkgRoot && existsSync(pkgRoot) && resolve(pkgRoot) !== resolve(base)) {
+    cleanArtifacts(pkgRoot, { budgetMs: 1000, maxFiles: 8000, skipGit: false });
+  }
 }
 
 process.exit(0);
