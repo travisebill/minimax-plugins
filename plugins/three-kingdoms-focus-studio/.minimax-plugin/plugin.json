@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "name": "three-kingdoms-focus-studio",
   "displayName": "三國志專注音樂工作室",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "三國志 YouTube 音樂發布流程工具箱：統籌長時間專注音樂、角色人聲單曲與專輯曲目的完整製作鏈，涵蓋音樂生成 prompt 撰寫、候選審查、章節拼接、封面、章節圖、15 秒循環影片、**整部上傳影片製作（背景循環片＋波形疊加＋章節名／書法標題、分章合成與幀級驗證）**、音樂驅動透明頻譜條與上架文案；並內建經一手實測驗證的 YouTube 發布策略（標題關鍵字選詞、說明結構、hashtag 與 AI 揭露義務、YPP 變現合規）與競爭者基準。內建 minimax-design MCP 執行層：音樂／圖像／影片由代理直接生成，含四條音樂介面的參數對照、器樂控制閥、長度控制、循環接縫量測與十項實測坑位。以 yt-focus-music-pipeline 作為單一入口分流。",
   "author": "Travis Chen",
   "icon": "icon.png",
@@ -34,5 +34,8 @@
     "skills/three-kingdoms-vocal-single/SKILL.md",
     "skills/yt-publish-strategy/SKILL.md",
     "skills/audio-reactive-waveform/SKILL.md"
+  ],
+  "hooks": [
+    "hooks/hooks.json"
   ]
 }

@@ -7,7 +7,7 @@
 | 外掛 | 版本 | 技能數 | 說明 |
 | --- | --- | --- | --- |
 | `learning-game-studio` | 0.2.1 | 2 | 教學遊戲機制與互動回饋 |
-| `three-kingdoms-focus-studio` | 1.5.1 | 8 | 三國音樂企劃、影片製作、提示詞、審查與 YouTube 發布 |
+| `three-kingdoms-focus-studio` | 1.6.0 | 8 | 三國音樂企劃、影片製作、提示詞、審查與 YouTube 發布 |
 
 > 本表列的是**原始碼版本**。Codex 的已發布 ZIP 仍是 1.2.1（`codex/dist/`）——
 > 發布產物與主機驗證紀錄另排期，理由見 `codex/validation/verification.md`；
@@ -39,7 +39,7 @@ plugins/
       learning-game-feel/              # 回饋層 / game feel
         SKILL.md
         references/feedback-recipes.md
-  three-kingdoms-focus-studio/         # 三國志 YouTube 音樂發布外掛 v1.5.1
+  three-kingdoms-focus-studio/         # 三國志 YouTube 音樂發布外掛 v1.6.0
     .minimax-plugin/plugin.json
     icon.png                           # 單一圖示（無 darkIcon）
     skills/
@@ -68,6 +68,11 @@ plugins/
         SKILL.md
         references/  templates/        # 3 份 references + 1 份模板
 
+hooks/                             # Plugin Hook：自動守門（SessionStart / PreToolUse / PostToolUse / Stop）
+  hooks.json
+  session-start.mjs  pre-git-clean.mjs  post-tool-clean.mjs  stop-delivery-gate.mjs
+  lib/hook-utils.mjs
+
 tools/                                  # repo 開發工具（不進外掛 package）
   validate_plugin.py                    # 靜態驗證外掛結構
   sync_codex_variant.py                 # MiniMax 版 → Codex 版同步（保留 Codex 差異）
@@ -80,7 +85,7 @@ tools/                                  # repo 開發工具（不進外掛 packa
 |---|---|---|---|
 | `learning-game-studio` | 0.2.0 | `learning-mechanics` | 選適合學習目標的遊戲機制、擋掉會教錯的機制、驗收四訊號 |
 | | | `learning-game-feel` | 回饋層：讓因果關係看得見、獎勵不阻斷、手機優先 |
-| `three-kingdoms-focus-studio` | 1.5.1 | `yt-focus-music-pipeline` | **單一入口**：分流三條路徑、擋住人工確認閘門、定義 skill 間交接契約；內建 minimax-design MCP 執行層 |
+| `three-kingdoms-focus-studio` | 1.6.0 | `yt-focus-music-pipeline` | **單一入口**：分流三條路徑、擋住人工確認閘門、定義 skill 間交接契約；內建 minimax-design MCP 執行層 |
 | | | `three-kingdoms-focus-music` | 發布類型分類、長時混音結構、封面、15 秒循環影片、發布包、QC |
 | | | `three-kingdoms-video-project` | 角色專案包、規格閘門 `確認規格`、master prompt、候選審查、章節音訊拼接、兩階段封面、**整部上傳影片製作**（背景循環片＋波形疊加＋章節名／書法標題、分章合成與幀級驗證）|
 | | | `music3-instrumental-prompts` | 純器樂 Music 3.0 Structured Caption（6 份模板 + 4 份 references）|

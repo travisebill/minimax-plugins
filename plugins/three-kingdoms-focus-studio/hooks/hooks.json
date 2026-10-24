@@ -1,0 +1,58 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "影片製作環境自檢",
+            "command": "node \"${PLUGIN_ROOT}/hooks/session-start.mjs\"",
+            "commandWindows": "node \"${PLUGIN_ROOT}\\hooks\\session-start.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "bash",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "git 前預清側車檔",
+            "command": "node \"${PLUGIN_ROOT}/hooks/pre-git-clean.mjs\"",
+            "commandWindows": "node \"${PLUGIN_ROOT}\\hooks\\pre-git-clean.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "bash",
+        "hooks": [
+          {
+            "type": "command",
+            "name": "清除側車檔與快取",
+            "command": "node \"${PLUGIN_ROOT}/hooks/post-tool-clean.mjs\"",
+            "commandWindows": "node \"${PLUGIN_ROOT}\\hooks\\post-tool-clean.mjs\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "交付物時長與幀數守門",
+            "command": "node \"${PLUGIN_ROOT}/hooks/stop-delivery-gate.mjs\"",
+            "commandWindows": "node \"${PLUGIN_ROOT}\\hooks\\stop-delivery-gate.mjs\"",
+            "timeout": 8
+          }
+        ]
+      }
+    ]
+  }
+}
