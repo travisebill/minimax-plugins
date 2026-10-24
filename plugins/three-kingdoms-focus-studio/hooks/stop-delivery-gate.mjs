@@ -7,7 +7,7 @@
 //
 // 這個閘門只做 0.14 秒就能完成的量測，不跑完整驗證（完整驗證要 10 分鐘，
 // 遠超 Hook 的 15 秒事件預算）。
-import { existsSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { readHookInput, projectDir, probeStreams, emitBlock } from "./lib/hook-utils.mjs";
 

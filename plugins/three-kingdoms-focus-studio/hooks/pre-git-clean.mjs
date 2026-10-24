@@ -13,7 +13,7 @@ const command = String(input?.tool_input?.command || "");
 if (!/\bgit\b/.test(command)) process.exit(0);
 
 const base = workDir(input);
-const roots = gitRootsUnder(base, 4);
+const roots = gitRootsUnder(base, 5);
 const targets = roots.length ? roots : [base];
 
 for (const root of targets) {
