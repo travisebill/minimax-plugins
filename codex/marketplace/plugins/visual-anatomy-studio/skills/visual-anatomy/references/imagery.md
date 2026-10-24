@@ -1,14 +1,33 @@
-# Imagery — generating and shipping art
+# Image and video generation
 
-Load the `mcode-tools-master` skill before running any `mcode-tools` command. Discover the
-tools rather than assuming the names below are current; they are the ones last observed.
+## Route by tools available now
 
-## Order of operations
+Media tools vary by computer and session. Inspect the current tool catalog and load only
+the relevant installed provider skill. Use a provider only when its live tools support the
+requested asset. `mcode-tools` is optional; if no compatible generator is available,
+continue with the rest of the page and report the missing media.
 
-1. Submit **video** tasks first (15–30 min), then do everything else
-2. Batch **images** in one `generate_image` call (`requests[]`, not a flat prompt)
-3. Build the page while video runs
-4. Collect video, compress, embed
+When MiniMax Design MCP is available and the user has not selected another provider:
+
+1. Call `list_projects` first. Select a suitable project with `open: true`, then call
+   `open_project` with its returned `projectId` before other project operations. If no
+   suitable project is open, use another compatible provider when available unless the
+   user specifically requires MiniMax; otherwise ask the user to open a project.
+2. Call `capability_list` for the requested media operation and `capability_get` for the
+   selected capability. The returned schema and rules are authoritative; do not reuse
+   guessed or stale parameters.
+3. Submit through `execute` when prompts and references are ready. Use `task_wait` with the
+   same `taskId` until the task settles; never duplicate a task just because a wait timed
+   out.
+4. If a task requests cost approval, show the quote and wait for the user's explicit
+   agreement before calling `confirm_cost`.
+5. Retrieve completed results with `get_output` and the returned `versionId`, then copy
+   them into the website's local `img/` or `video/` folder. Never construct download URLs
+   from resource IDs.
+
+For other providers, follow their own live project, schema, cost, wait and retrieval
+contracts. If the user specified a provider, honor that choice or explain what it cannot
+do. Do not assume model names, request formats or wait times from another host.
 
 ## Image prompts
 
@@ -88,52 +107,41 @@ filled with cloudy fluid, angry red and coral, opaque and heavy*.
 The sentence-apart rule holds for light styles too — *in dry season: pale, dry, cracked,
 warm ochre* vs *in flood: swollen, dark, saturated, standing water*.
 
-## Video (MiniMax H3)
+## Video
 
-```json
-{"model":"MiniMax-H3","duration":10,"ratio":"16:9","resolution":"2K","prompt":"<…>"}
-```
+Use the selected provider's live video contract for duration, frame ratio, resolution,
+reference limits and audio settings. For MiniMax Design, the observed H3 catalog supports
+short 4–15 second clips; re-read `capability_get` before each generation session and obey
+its current schema.
 
-- H3 renders a **synchronized native audio track**. Prompt for ambience/SFX only —
-  `"no voiceover, no speech, no music, only soft room tone"` — otherwise you get narration
-  you did not ask for and cannot control.
-- **Carry the chosen style into the video prompt too.** H3 is biased toward photoreal
-  cinematic footage; on a flat-vector style (Ledger, Broadsheet, Clinical, Plate) say so
-  explicitly — `flat 2D vector animation, paper-textured background, no volumetric light,
-  no depth of field` — or the clip reads as a different style from the page it sits on.
-- Submit 2, not more. One for the mechanism, one for the scene. More is latency you do not need.
-- `duration` 4–15 for H3, 5–15 for H3-Max.
-- Re-query for a fresh URL; download links are temporary and results are retained ~7 days.
-- Keyframe mode (`input_image` + `reference_type`) gives visual continuity with your
-  generated stills — worth it when the video must match a specific illustration.
+- Carry the chosen style into every video prompt. H3 tends toward cinematic footage; for a
+  flat style, state the intended 2D or illustration language explicitly so the clip does
+  not clash with the page.
+- Generate separate clips and merge them only with an available editing tool; do not call
+  them one continuous video unless they were actually joined.
+- When separately generated narration or music will accompany a clip, disable video audio
+  if the live capability exposes that option. See [audio.md](audio.md) for the audio path.
+- Pass image or video references only when the live capability accepts their type and
+  limits.
 
-## Download and compress
+## Retrieve and compress
 
-```bash
-url=$(mcode-tools get_asset_url <node_id> | python3 -c "import sys,json;print(json.load(sys.stdin)['download_url'])")
-curl -sSL -o raw.jpg "$url"
-```
+Use the output path or retrieval method returned by the selected provider. Never derive a
+CDN or download URL from an asset ID. Copy media into the page's local `img/` and `video/`
+folders before embedding them. If an image library or `ffmpeg` is available, resize images
+and compress video; otherwise keep the returned format and report it accurately.
 
-Never construct a CDN URL from `node_id` — it does not work.
-
-Then, with Pillow:
+With Pillow, a responsive WebP can be produced like this:
 
 ```python
 im = Image.open("raw.jpg").convert("RGB")
 tw = 1800 if slot_is_hero else 1600
 im2 = im.resize((tw, round(h*tw/w)), Image.LANCZOS)
-im2.save(f"{name}.webp", "WEBP", quality=82, method=6)     # primary
-im2.resize((im2.width//2, im2.height//2), LANCZOS).save(f"{name}-sm.webp","WEBP",quality=72)
+im2.save(f"{name}.webp", "WEBP", quality=82, method=6)
+im2.resize((im2.width//2, im2.height//2), Image.LANCZOS).save(f"{name}-sm.webp", "WEBP", quality=72)
 ```
 
-Serve `.webp` directly; browsers that do not support it are a rounding error. Keep the
-`-sm` variant and reference it with `<source media="(max-width:760px)">` so phones do not
-pull the full-size file.
-
-**Budget check before deploying:** a set of 8 raw 2K images is ~22 MB. Compressed webp it
-should land under ~1.5 MB. If it does not, the resize step was skipped.
-
-## Video compress
+When `ffmpeg` is available, compress video and extract its poster after compression:
 
 ```bash
 ffmpeg -i in.mp4 -vf "scale=1280:-2" -c:v libx264 -profile:v high -crf 24 -preset slow \
@@ -141,11 +149,9 @@ ffmpeg -i in.mp4 -vf "scale=1280:-2" -c:v libx264 -profile:v high -crf 24 -prese
 ffmpeg -y -ss 3 -i out-720.mp4 -frames:v 1 -q:v 4 poster.jpg
 ```
 
-720p H.264 plays everywhere; a 10 s 2K master compresses from ~8 MB to ~1.8 MB. Extract the
-poster **after** compressing and use it as the `poster` attribute.
-
-`ffmpeg` in some builds has no VP9 encoder, which silently produces a 264-byte `.webm`.
-Check the output size, and if webm is not viable just ship mp4.
+Check transformed file sizes and playability; some `ffmpeg` builds lack a VP9 encoder and
+may produce a tiny invalid WebM. Keep the original output until the optimized file has
+been checked.
 
 ## Checklist before wiring hotspots
 
@@ -155,3 +161,4 @@ Check the output size, and if webm is not viable just ship mp4.
       image on a dark page. CSS cannot fix this; it is baked into the pixels
 - [ ] Only then place hotspot coordinates, reading percentages off the actual image
 - [ ] Confirm the two comparator images are genuinely different files
+

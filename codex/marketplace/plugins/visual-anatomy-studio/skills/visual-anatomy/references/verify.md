@@ -248,7 +248,7 @@ Playwright cannot reach the deployed host in every environment (TLS trust). Fall
 ```bash
 curl -sSL -o live.html -w "HTTP %{http_code} %{size_download}B\n" "$URL"
 grep -c 'class="vhot"' live.html
-for u in img/a.webp img/b.webp video/c.mp4; do
+for u in img/a.webp img/b.webp video/c.mp4 audio/narration.mp3; do
   curl -sS -o /dev/null -w "$u HTTP %{http_code}\n" "$BASE/$u"; done
 ```
 
@@ -261,3 +261,4 @@ A 200 on the page alone proves nothing about its assets.
 3. Read the *computed* styles and the live rect, not the source
 4. Only then theorise
 5. Re-verify the same way. Never declare a fix on the strength of "the class is now set".
+

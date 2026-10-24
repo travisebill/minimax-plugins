@@ -4,6 +4,8 @@
 > 訂閱數取自 YouTube 頁面 microformat（第一方），非第三方估算。
 > **訂閱數需定期重抓**——這個賽道變動很快。
 
+> **官網遷移註記（2026-10-21）**：目前官網為 https://3kingdoms.catism.cloud。下方 https://3kingdoms.catism.life 與 HTTP 200 是 2026-09-30 的歷史快照，保留原文；新製作內容與對外連結請使用目前官網。
+
 ---
 
 ## 1. 本頻道現況
