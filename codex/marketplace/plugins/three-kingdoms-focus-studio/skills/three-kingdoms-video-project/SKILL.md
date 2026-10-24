@@ -1074,6 +1074,14 @@ at the new paths. They must cover:
      so luma is the only channel that survives), and scan for the best frame
      offset. Measured on the same cut: 0.975–0.992 at the best offset at every
      test point.
+   - **The check needs the overlay file itself, with its alpha channel.** The
+     encoded film alone is not enough — the bar geometry comes from the
+     overlay's alpha, not from the picture. A 61-minute overlay is about
+     13 GB. Keep it (and the audio-derived reference track) until the release
+     is signed off; if it has to be reclaimed, regenerate it with
+     `audio-reactive-waveform`'s renderer from the master WAV and the saved
+     style JSON — no credits, but the regeneration has to happen before the
+     A/V check can be re-run.
    - **Give the check a negative control.** Re-run the comparison against a
      deliberately shifted reference (measured: ±20 frames, 667 ms) and require
      the score to drop clearly below the real one. Without it, a check that

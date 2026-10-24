@@ -150,7 +150,7 @@
       "source_path": "skills/three-kingdoms-video-project/SKILL.md",
       "source_sha256": "6a477f97f80f0a407c9431d73aafc29494d1cfd66ef4bb1f0c316304310851b2",
       "codex_path": "skills/three-kingdoms-video-project/SKILL.md",
-      "codex_sha256": "1d8cefe28cedba6ed2311559c2b319eceb2e24c3644391d7b1bb9665929546c8",
+      "codex_sha256": "281b9a269cdaeb67a840132e225279518422e4e6db1eaa920b9fe2564aa3f806",
       "change": "adapted_for_mcp_execution_layer"
     },
     {
@@ -165,7 +165,7 @@
       "source_sha256": "aa2737ca1be5afcc15f5851ad76ee83410bd4e3fce2326023e47906dda8ec9e0",
       "codex_path": "skills/yt-focus-music-pipeline/SKILL.md",
       "codex_sha256": "a34a1bf7da7ecbf9c93ce66f43859bf87a3e162a5a4e41eb39baf3a644232cba",
-      "change": "adapted_for_mcp_execution_layer"
+      "change": "adapted"
     },
     {
       "source_path": "skills/yt-publish-strategy/SKILL.md",
@@ -207,7 +207,7 @@
       "source_path": null,
       "source_sha256": null,
       "codex_path": ".codex-plugin/plugin.json",
-      "codex_sha256": "166015123b8f123fda47152b63badaa2c8eec1a0d6dc6f9f9644f80ca81a992c",
+      "codex_sha256": "af67ae8a0987734ed21cc9e6c0b311f1cf74898893e2269a09dce46032373704",
       "change": "adapted"
     },
     {
@@ -221,7 +221,7 @@
       "source_path": null,
       "source_sha256": null,
       "codex_path": "README.md",
-      "codex_sha256": "97dd809d0278235e1753b80e7c01c33c0a5dab53a6eda1c67c5395ad5d124325",
+      "codex_sha256": "c24667f96bd131154cfdf32709c14f16fbf5c1cf4031d8c7a5bf85f38934af10",
       "change": "adapted"
     },
     {
@@ -235,7 +235,7 @@
       "source_path": null,
       "source_sha256": null,
       "codex_path": "plugin.json",
-      "codex_sha256": "a6a82c1ab73355fe9dc3dd62f5bf42c43414af62c7f09d2bda7f4c1f6c60e3d5",
+      "codex_sha256": "e027098dadaf7a4da091ad44c784da19473d08df8b7a18e1ebc2fd02500c9a77",
       "change": "adapted"
     },
     {
