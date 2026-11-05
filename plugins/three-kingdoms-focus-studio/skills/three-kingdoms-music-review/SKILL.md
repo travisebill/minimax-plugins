@@ -63,9 +63,11 @@ Use the **short-term dynamics** counters instead:
   track's own median is an instant jump — a dropped edit, a slammed limiter, a splice.
 - `windows_above_median_3lu` is the "calm material defect" signal, but it is **not** an absolute
   pass/fail line. Every number is genre-relative.
-- Two layers: `w>6LU == 0` is the hard gate; the share of `w>3LU` windows is a strict layer at ≤3%
-  and a concern layer at ≤6%. Use the relaxed layer only when the strict layer cannot fill the
-  required minute range, and **record that it was relaxed**.
+- Two layers: `w>6LU == 0` is the hard gate **at track level**; the share of `w>3LU` windows is a
+  strict layer at ≤3% and a concern layer at ≤6%. Use the relaxed layer only when the strict layer
+  cannot fill the required minute range, and **record that it was relaxed**.
+- **This is a track-level detector, not the master-level "does it sound uneven" criterion.** For the
+  assembled master use the 3-second criterion below.
 
 A large `w>3LU` share is also not automatically scattered jumps. In one measured track, a 17.13%
 share turned out to be a **single one-second event** (00:23.30–00:24.30), not many small ones.
@@ -75,6 +77,54 @@ ebur128 100 ms windows as `measure_audio.py` and reports where the jumps actuall
 So: **never let a model's foley or ambience claim trigger regeneration on its own.** Measure first. If the measurement is clean and the model objects, the model's observation is recorded and set aside. If the measurement is dirty, still confirm by listening, because a band level shows how much of a sound there is, never what the sound is.
 
 Conversely, do not let a clean measurement overrule a listener. If the user hears something objectionable that the numbers do not show, the finding stands and the number is reported as insufficient, not as a rebuttal.
+
+### Master-level loudness evenness — 3-second sliding RMS, not a 100 ms window count
+
+The `w>6LU` counters detect **instant jumps inside a track** (a dropped edit, a slammed limiter, a
+hard splice). They are **not** the criterion for "does the finished hour sound like it keeps
+swelling and fading". A 100 ms RMS window measures **the gaps between notes and the isolated
+attacks**; the human short-term loudness perception window is about **3 seconds**.
+
+Measured 2026-11-01, same audio, same window length, different meter:
+
+| Measurement | S02-P03 (material the old gate was calibrated on) | S02-P04 jazz master |
+|---|---:|---:|
+| 100 ms **raw RMS** window count `w>6LU` | 3257 | 2681 |
+| 100 ms **EBU R128 momentary** window count `w>6LU` | — | **0** |
+| **3-second sliding RMS** exceedance ratio | 0.1108% | **0.0000%** |
+
+**Rule.** The assembled master's loudness-evenness gate is
+**the share of time that a 3-second sliding RMS sits more than 6 LU above the master's own median
+≤ 0.15%**. On that scale S02-P04 is *cleaner than the material the old gate was calibrated on*; the
+2681 raw-RMS windows are entirely the jazz attacks. **Do not squash the music to satisfy a
+`w>6LU == 0` count.**
+
+**When a release record shows both a 100 ms window count and a 3-second ratio, label which meter
+produced which number.** The same file and the same window length differ by 2681 windows between
+the two meters, so an unlabelled pair of numbers reads as a contradiction. `measure_audio.py`'s
+`short_term_dynamics` is EBU R128 momentary; the raw-RMS counters in the seam verifier are a
+different measurement and the two must not be compared directly.
+
+### Head-noise detection has to run on every batch of candidates
+
+**Running it on the first batch only misses every later batch.** Measured 2026-10-31: a candidate
+that was on the recommended list opened with 0.5–3.4 s of broadband brush hiss, its head peak
+measuring 21 dB above the track's own reference level.
+
+| Parameter | Value | Why |
+|---|---|---|
+| Scan window | **12 s** | The hiss ran to 5.4 s; a 3 s window misses it |
+| Trim limit | **8 s** | With a 4 s limit the longest offender keeps 1.5 s of hiss inside |
+| Safety gate | **35%** | Only the part that is certainly noise is cut |
+| Verdict threshold | head − reference P95 **> +8 dB** | Prefer under-flagging over mis-cutting |
+
+**Re-measure after trimming.** The fade-in you add yourself becomes a false positive — it showed
+up as a −20.36 dB high-frequency protrusion in the first 100 ms window and needed a second 0.35 s
+trim to clear. Brush hiss is a broadband high-frequency protrusion, so the "HF(9–16 kHz) minus
+low-mid(200 Hz–2 kHz)" ratio is what detects it.
+
+A measurement passing is not the same as a candidate passing: every batch of candidates needs its
+own head check, and the reviewer's recommended shortlist is where a missed batch hides.
 
 ## Consistency is not correctness
 

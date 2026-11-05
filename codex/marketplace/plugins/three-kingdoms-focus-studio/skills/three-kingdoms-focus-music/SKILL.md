@@ -223,6 +223,37 @@ When the user wants a publishable package, produce the full set:
 
 Keep the description concise, readable, and SEO-friendly. Mention reading, study, work, focus, Three Kingdoms, Chinese-style atmosphere, album release, or the genre when relevant. Pinned comments should use a literary, reflective, gentle style rather than a purely functional marketing style.
 
+### The release package is a deliverable, not a copy of the working directory
+
+Ship the deliverables and the evidence, not the scratch. Measured on S02-P04: the first
+packaging run was 10.1 GB; after excluding test intermediates it was 5.2 GB. The whole
+difference was leftovers — per-song alignment test WAVs (1.8 GB), crossfade-method test
+WAVs (876 MB), superseded masters and chapter audio (1.5 GB), the previous chapter-audio
+set (671 MB).
+
+**Exclude from the package, but keep inside it:** the trimmed candidate set that the
+approved selection points at, the measurement JSON, the waveform reference JSON, the
+render style JSON, and the rebuild instructions for anything large. Excluding a file the
+approved selection references breaks the package's own reproducibility check, so those
+stay.
+
+**Packaging order, and it is not interchangeable:**
+1. build the README, the sha256 manifest and the representative stills **in the project
+   directory**;
+2. copy the project into the release package, sweeping the `._*` sidecar files that
+   macOS creates on exFAT destinations;
+3. run the package self-check against the package.
+Reversing steps 1 and 2 ships a stale README and a manifest whose hashes no longer match —
+measured, and it cost a full re-packaging cycle to find.
+
+### Fill a short release with more music, never with stretched music
+
+If the assembled master falls short of the declared length, add compatible songs rather
+than time-stretching the existing ones. Measured on S02-P04: 24 songs produced 54:35
+against a 60-minute declaration and a cover subtitle that promised "1 Hour"; three added
+songs took it to 60:04 with the chapter arc intact. The added songs belong at the **end of
+their chapter** and must not renumber the existing slots or rename their candidate files.
+
 **🔴 標題、說明、hashtag 與 AI 揭露一律交給 `yt-publish-strategy`，不要在本 skill 自行發明格式。**
 
 那裡有 2026-09-30 實測的競品數據與官方政策條文，包含：

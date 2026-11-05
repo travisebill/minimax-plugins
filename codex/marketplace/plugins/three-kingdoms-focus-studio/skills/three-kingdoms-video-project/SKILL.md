@@ -778,6 +778,38 @@ For each chapter:
    video. If a source, order or boundary changes, create a new assembly version
    and re-run the affected checks; preserve the prior WAV and record.
 
+**Level every song before the chapter is concatenated, not only the chapter.**
+
+Chapter-level two-pass loudnorm gives the chapter one gain. It does **not** remove the
+level steps *between* songs: measured on a 24-song release, every chapter sat at
+−14.0 LUFS while adjacent tracks inside a chapter still differed by 0.1–9.3 dB.
+The fix is to align each song once before concatenation with a two-pass loudnorm whose
+LRA target is set **high** (e.g. 20): a target above the material's measured LRA makes
+that pass apply gain only and leave the dynamics alone. Measured: the step count fell
+by 21%, every chapter landed exactly on −14.0 LUFS, and the chapter's internal density
+ranking survived.
+
+Two facts follow, and they are different jobs:
+- `two-pass loudnorm` with an LRA target **above** the material's measured LRA only adds
+  gain; **below** it, it compresses dynamics.
+- Per-song alignment therefore wants a **high** LRA target; the chapter-level pass is
+  where any dynamic shaping belongs. Do not confuse the two.
+
+**A seam that reads as a hole is usually the material's own tail, not the fade.**
+Measured: the gaps between tracks averaged 3.05 s, but sampling the same metric *inside*
+single tracks gave 0.32 s over 92 interior points. The holes came from the material
+decaying to silence at its own end. Shortening the fade, deepening the crossfade or
+trimming the tail silence each recovered only ~0.5 s. The real fix is in the prompt:
+end every song unit on a sustained tone that **stops cleanly instead of fading to
+silence**, so the fade has something to join to.
+
+**Appending extra songs to lengthen a chapter.** When a release is short of its declared
+length, add compatible songs rather than stretching the existing ones. Append them at the
+**end of the chapter**, and do **not** renumber the existing slots or rename their
+candidate files — the approved selection record points at those names. Keep the prompt
+generator's existing track payloads byte-identical and diff the new prompt set against the
+old one to prove it (measured: 18/18 identical, 3 added).
+
 The assembly record must include at least `chapter-id`, assembly version,
 ordered input track IDs, selected candidate IDs and source hashes, target PCM
 format, per-boundary mode and duration, output path, output duration, output
@@ -1008,6 +1040,20 @@ Render one RGBA PNG per chapter containing the chapter name and the title.
   label the connected components, and keep only the components whose mean alpha
   is high — the strokes are nearly solid, the terrain is not. Left in, the terrain
   shows up in the final frame as a visible rectangular patch.
+- **Component-level filtering cannot separate photographic background that touches the
+  title.** The rule above holds while the terrain is a separate blob. It **fails when a
+  stroke lands on bright background**: the two then share one connected component, the
+  mean is dominated by the strokes, and the background passes. Measured on the S02-P04
+  cover: the 「夜」's long left sweep sits directly on a lit temple eave, the eave came
+  through as a stepped rectangle under the glyph, and it showed up on every chapter
+  frame of the finished film.
+  **Fix: classify per pixel, not per component.** Strokes are **bright and warm**
+  (ivory → gold: R > 150, R ≥ G ≥ 0.85B); the eave is **cool blue-grey photographic
+  texture**. Take the large components of that warm-bright mask, dilate them into a
+  *stroke neighbourhood*, and keep the alpha only inside that neighbourhood. Measured:
+  921 intruder pixels removed, all four glyphs intact with their soft edges, extraction
+  coverage still 1.0000 and the damage self-test still failing at 0.8791.
+  **The separator here is colour temperature and saturation, not brightness.**
 - **Give the text a contrasting outline.** One fill colour only works if the
   whole glyph sits on a background of similar brightness. Measured on the S02-P01
   chapter images, the deep-ink brush title fell to 1.15:1 in one chapter (the
@@ -1025,6 +1071,20 @@ Render one RGBA PNG per chapter containing the chapter name and the title.
   they contain across every chapter image, and forbid the three elements from
   overlapping. Score alone is not enough: it does not know that a watchtower or
   the moon is the subject. Render the top candidates and look at them.
+  Measured on S02-P04: the waveform's best-scoring position sat directly on the
+  chapter-1 cat and had to be moved to the lower left. The score cannot see a cat.
+- **The extraction region and the placement position are two different things.** When
+  the title has to clear an object in the frame — S02-P04: the cat in chapter 6 — the
+  overlay builder needs a placement scale and an offset on top of the extraction box.
+  Measured: scale 1.00 overlapped the cat's face, 0.78 touched its ear, 0.70 came
+  within a few pixels, and **0.63 cleared it** while each glyph still read at ~89 px,
+  larger than the 60 px chapter name, so the visual hierarchy held. Keep the scale and
+  the placement in the overlay record, and point the verification scripts at the
+  *placed* box rather than the *extracted* one.
+- **Residual-ink checks must use the soft edge, not the binarised core.** After a
+  downscale, LANCZOS spreads the anti-aliased fringe wider than the binary mask. The
+  tolerance is `alpha > 2` dilated by the outline width, not `alpha > threshold`;
+  measured, the binary version reported 414 px of phantom residue on a clean overlay.
 - **Measure the rendered ink extent, not the nominal box.** A chapter name
   drawn at x=104 with a 60 px face can still have ink out to x=590, and an
   extracted brush mask carries its own left bearing. Lay the title out from the

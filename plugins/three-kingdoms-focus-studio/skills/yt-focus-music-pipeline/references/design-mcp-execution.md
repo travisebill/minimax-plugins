@@ -249,13 +249,13 @@ ffmpeg -hide_banner -i out.mp4 -map 0:a:0 -af volumedetect -f null - 2>&1 | grep
 
 ---
 
-## 6. 坑 A–J（全部為實測）
+## 6. 坑 A–K（全部為實測）
 
 | 坑 | 現象 | 處理 |
 |---|---|---|
 | **A** | 使用者在 App 介面手動生成的產物全在 `store/.pending-<uuid>`；`composition_search`／`task_query`／`index.sqlite` **都看不到** | 代理只能直接掃 `store/` 目錄 |
 | **B** | `audio: false` 仍產出 AAC 音軌（兩次實測） | 產出後剝除並以 `volumedetect` 驗證 |
-| **C** | 參考圖的版面元素無法剝除 | 先本地裁乾淨，或說明限制，不要反覆重試 |
+| **C**（修訂） | 參考圖的版面元素「無法」剝除 —— **這條已被推翻** | **多格設定圖可以直接當參考圖**，只要 prompt 寫明 `do not reproduce the reference layout: no panel grid, no borders, no colour strip, no other poses, no lettering of any kind`。實測零格線洩漏、角色外觀逐項一致。本地裁主格降為**備援**（需要單一姿勢參考，或真的洩漏版面時才用） |
 | **D** | `1k` + `16:9` → 1672×941（不是 1920×1080）；`2k` → 2560×1440 | 要標準尺寸就在本地正規化 |
 | **E** | `.pending` 檔名**沒有副檔名** | 靠 `file`／ffprobe 判斷型別 |
 | **F** | 專案重新命名 → `projectId` 改變 | 綁定後不要重新命名；必須綁定時重新 `open_project` |
@@ -263,6 +263,7 @@ ffmpeg -hide_banner -i out.mp4 -map 0:a:0 -af volumedetect -f null - 2>&1 | grep
 | **H** | 目視判讀小型索引圖會誤讀（本次誤讀出 16 個不存在的角色） | 索引圖只當導覽，數量與內容以 API／檔案清單為準 |
 | **I** | `open_project` 對**未在 App 開啟**的專案回 `PROJECT_NOT_OPEN` | 請使用者在 App 開啟該專案後重試 |
 | **J** | `deliver` 匯入本機檔案：路徑驗證只接受當前開啟專案資料夾內，但 4 次重播全在 `materialize` 階段回 `MATERIALIZATION_OUTCOME_UNKNOWN` | 改用**文字完全鎖定風格**替代參考圖；不要無限重試 |
+| **K** | 透過 deferred 工具路徑呼叫 `execute` 時，**陣列與整數參數會被字串化**（`references: [{…}]`、`count`、`output.resources`、`output.composition.placements`）→ schema 驗證必然失敗（`/references: must be array`）。**重試沒有用** —— 同一份 payload 重送仍失敗 | **直連 MCP 端點**講 JSON-RPC（見 §9）。注意 `capability_get` 的 `ids: ["…"]` 這種「字串陣列」反而會過 —— **不要把兩者混為一談** |
 
 ---
 
@@ -282,3 +283,33 @@ ffmpeg -hide_banner -i out.mp4 -map 0:a:0 -af volumedetect -f null - 2>&1 | grep
 成品若由外部結果組裝而來，必須標為
 `assembly from supplied external results`，
 **不得宣稱本地生成了音樂**。
+
+## 9. 直連 MCP 端點（deferred 工具路徑不可用時）
+
+碰到坑 K 時，直接對 MCP 端點講 JSON-RPC：
+
+1. `mavis mcp list` 取 `endpoint`（Design = `http://127.0.0.1:18810/mcp`）
+2. `initialize` → **記下回應的 `Mcp-Session-Id` 標頭** → `notifications/initialized`
+3. `tools/call`，body 是 `{"name": "<tool>", "arguments": {…}}`
+4. **回應是 SSE**：跳過 `: keepalive` 行，取**最後一個** `data:` 行再 JSON.parse
+5. **每次 HTTP 連線都是新的 MCP session** → 專案綁定要重取
+   （`tools/call` 前先送一次 `open_project`）
+
+好處：參數原樣送出、不受字串化影響，還能一次送出多個獨立生成做批次並行。
+
+實作參考（S02-P04 專案內）：`tools/design_mcp_call.py`（直連 client）、
+`tools/design_wait.py`（等任務到終態）、`tools/design_batch.py`（多任務並行批次）。
+
+## 10. 付費生成的實測單價（2026-11-01）
+
+| 能力 | 設定 | credits |
+|---|---|---:|
+| `generate_image:gpt-image-2.5-sunburst` | 2k/high，**無參考圖** | **160**／張 |
+| | 2k/high，**1 張參考圖** | **170**／張 |
+| | 2k/high，**2 張參考圖** | **180**／張 |
+| `generate_music:music-3.0` | count=2 | **40**／批 |
+| | count=3 | **60**／批 |
+| `generate_video:MiniMax-H3` | 15 秒 / 2k | **1,440**／支 |
+
+**參考圖越多越貴** —— 先前記過「帶 1 張或 2 張同價 170」是**錯的**。
+H3 的 15 秒 / 2k 實測 **1,440**（先前估的 1,950 高估 35%）。
