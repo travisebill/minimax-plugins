@@ -271,6 +271,10 @@ Before delivery, check:
 - Final duration is greater than or equal to the requested duration when the user specifies a minimum or exact long-form release length; generate more compatible music if the available total is short.
 - No vocals or spoken words are present unless explicitly requested.
 - No sudden loud moments break concentration.
+- At master level the loudness-evenness gate is a **3-second sliding RMS exceedance ratio
+  ≤ 0.15%**, not a 100 ms window count — a 100 ms window measures the gaps between notes
+  and the isolated attacks, not what a listener hears as unevenness. See
+  `three-kingdoms-music-review`.
 - No environmental or foley sound is present. This one needs a measurement, not a caption review: locate the quietest sustained passage and read the 10-16 kHz floor there, using one-second sub-windows and taking the minimum so instrument attacks do not masquerade as a bed. A floor near digital silence argues against a continuous bed; a raised floor can be cymbals, tape colour or a real noise layer, and only listening separates them.
 - No low-frequency content that ignores the arrangement. A 20-60 Hz level identical in the intro and the outro is a fixed bed; a level that moves with the passage is authored content.
 - Visual assets remain legible at thumbnail size.
