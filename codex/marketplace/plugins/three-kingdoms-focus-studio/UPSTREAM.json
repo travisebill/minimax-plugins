@@ -165,7 +165,7 @@
       "source_sha256": "aa2737ca1be5afcc15f5851ad76ee83410bd4e3fce2326023e47906dda8ec9e0",
       "codex_path": "skills/yt-focus-music-pipeline/SKILL.md",
       "codex_sha256": "4fd1ffa5e7dda40e509c8ff059188a8a1102a61bba9bacebad08ff02be37625c",
-      "change": "adapted_for_mcp_execution_layer"
+      "change": "adapted"
     },
     {
       "source_path": "skills/yt-publish-strategy/SKILL.md",
@@ -382,8 +382,8 @@
       "source_path": null,
       "source_sha256": null,
       "codex_path": "skills/yt-focus-music-pipeline/references/design-mcp-execution.md",
-      "codex_sha256": "f153d2ce03f6e3491f93536d7d25894004fd5b1f13cd35b3780e5a4d89fbcaf9",
-      "change": "adapted"
+      "codex_sha256": "3815f5762847a05010e7dd324199b9bf805887cfcb45eddd87dacfa52c667708",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": null,
@@ -391,6 +391,34 @@
       "codex_path": "skills/yt-publish-strategy/agents/openai.yaml",
       "codex_sha256": "a9e9c115fdbb6e26ae57ba835b6d587fb09b44ab83872b0426fe6ffa0975d13b",
       "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/yt-focus-music-pipeline/scripts/design_batch.py",
+      "codex_sha256": "99a0b4647fa68d7050963e1d51af27af48124db825bc1cac5dadfdbdfebefb34",
+      "change": "added_for_mcp_execution_layer"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/yt-focus-music-pipeline/scripts/design_mcp_call.py",
+      "codex_sha256": "929378a2ee203b236007d0e31e98bc5fb87034f5078d55267233f183f0db9038",
+      "change": "added_for_mcp_execution_layer"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/yt-focus-music-pipeline/scripts/design_wait.py",
+      "codex_sha256": "f028f943bd9ecda4df27845598a184c022dc7207827117201b1f8e7fe1dd7be3",
+      "change": "added_for_mcp_execution_layer"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/yt-focus-music-pipeline/scripts/design_wait_many.py",
+      "codex_sha256": "a5fc76237535d28ddc586c2b21d1759d79bab415a034589d2f6316b23b31c0d4",
+      "change": "added_for_mcp_execution_layer"
     }
   ],
   "revision_date": "2026-10-22"

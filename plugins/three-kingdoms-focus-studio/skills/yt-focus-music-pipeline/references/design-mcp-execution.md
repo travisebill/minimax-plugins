@@ -297,8 +297,17 @@ ffmpeg -hide_banner -i out.mp4 -map 0:a:0 -af volumedetect -f null - 2>&1 | grep
 
 好處：參數原樣送出、不受字串化影響，還能一次送出多個獨立生成做批次並行。
 
-實作參考（S02-P04 專案內）：`tools/design_mcp_call.py`（直連 client）、
-`tools/design_wait.py`（等任務到終態）、`tools/design_batch.py`（多任務並行批次）。
+實作參考（**本 skill 的 `scripts/` 內，隨外掛走**）：
+`scripts/design_mcp_call.py`（直連 client，endpoint 自動從 `~/.minimax/mcp.json` 發現，
+專案用 `DESIGN_MCP_PROJECT` 指定）、`scripts/design_wait.py`（等任務到終態）、
+`scripts/design_wait_many.py`（等多個任務）、`scripts/design_batch.py`（多任務並行批次）。
+
+```sh
+# 確認連線與綁定
+python3 scripts/design_mcp_call.py --endpoint
+# 列出工具
+python3 scripts/design_mcp_call.py --list
+```
 
 ## 10. 付費生成的實測單價（2026-11-01）
 
