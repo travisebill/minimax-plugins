@@ -102,14 +102,14 @@
       "source_sha256": "87b5818959b1256165a6ad225e41ca1d9e2ccc3dc6076827ebbfb440e375e551",
       "codex_path": "skills/three-kingdoms-focus-music/SKILL.cn.md",
       "codex_sha256": "08a82002f5c98227744c6bfeffbce4fcb53fc6b68ed83694c4ab6b7924d179f5",
-      "change": "adapted_for_mcp_execution_layer"
+      "change": "unchanged"
     },
     {
       "source_path": "skills/three-kingdoms-focus-music/SKILL.md",
       "source_sha256": "bf446511c3fdecb118fd2514463d258768f302eb2ae4e81831c638e8c78cacef",
       "codex_path": "skills/three-kingdoms-focus-music/SKILL.md",
       "codex_sha256": "bbe6623ea1de6c48f6cddb8604e9c7d23d4956f38aeb662b538527e11e887b3f",
-      "change": "adapted_for_mcp_execution_layer"
+      "change": "adapted"
     },
     {
       "source_path": "skills/three-kingdoms-focus-music/meta.yaml",
@@ -151,7 +151,7 @@
       "source_sha256": "6a477f97f80f0a407c9431d73aafc29494d1cfd66ef4bb1f0c316304310851b2",
       "codex_path": "skills/three-kingdoms-video-project/SKILL.md",
       "codex_sha256": "3486d3a684aedd8bbd206f0b2eb51800309beb59616bb5d24cd9af1a1183b83a",
-      "change": "adapted_for_mcp_execution_layer"
+      "change": "adapted"
     },
     {
       "source_path": "skills/three-kingdoms-vocal-single/SKILL.md",
@@ -164,7 +164,7 @@
       "source_path": "skills/yt-focus-music-pipeline/SKILL.md",
       "source_sha256": "aa2737ca1be5afcc15f5851ad76ee83410bd4e3fce2326023e47906dda8ec9e0",
       "codex_path": "skills/yt-focus-music-pipeline/SKILL.md",
-      "codex_sha256": "0070d7a6e4a518a92d3446e9269f1ec3a38d1d7be15b7f918a7ef3767e56d38f",
+      "codex_sha256": "4fd1ffa5e7dda40e509c8ff059188a8a1102a61bba9bacebad08ff02be37625c",
       "change": "adapted_for_mcp_execution_layer"
     },
     {
@@ -235,7 +235,7 @@
       "source_path": null,
       "source_sha256": null,
       "codex_path": "plugin.json",
-      "codex_sha256": "3775dc75fa9592b8f7912b4e913b5023b7ceec5c5361327c077730fc64c9ece2",
+      "codex_sha256": "6a18f4e7d1bdc849d0a82af79445d5445ee5aca622bbcf9424beec599d9aae5b",
       "change": "adapted"
     },
     {

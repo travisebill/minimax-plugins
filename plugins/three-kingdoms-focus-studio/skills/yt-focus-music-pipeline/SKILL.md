@@ -37,7 +37,7 @@ description: >-
 當環境提供 **`minimax-design` MCP** 時，音樂、圖像、影片的生成由代理**直接執行**，
 不再走「人工貼 prompt → 人工上傳 → 人工回填」。使用者只保留**決策與修改意見**。
 
-完整執行手冊（能力契約、參數表、坑 A–J、產出取回、閘門規則）：
+完整執行手冊（能力契約、參數表、坑 A–K、產出取回、閘門規則、直連 MCP、實測單價）：
 
 > **讀 [references/design-mcp-execution.md](references/design-mcp-execution.md)** — 動手前先讀它。
 
