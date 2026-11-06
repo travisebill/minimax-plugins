@@ -41,7 +41,14 @@ INSTALL_ROOT = Path.home() / ".minimax" / "plugins"
 
 
 def run(cmd: list[str], cwd: Path | None = None) -> subprocess.CompletedProcess:
-    return subprocess.run(cmd, cwd=cwd, check=True, capture_output=True, text=True)
+    proc = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+    if proc.returncode != 0:
+        # 讓真正的原因露出來，不要只丟一個 returncode
+        detail = "\n".join(x for x in (proc.stderr, proc.stdout) if x and x.strip()).strip()
+        raise subprocess.CalledProcessError(
+            proc.returncode, cmd,
+            output=proc.stdout, stderr=detail or None)
+    return proc
 
 
 def excluded(rel: str) -> bool:
@@ -129,7 +136,15 @@ def main() -> int:
         cmd = ["rsync", "-a",
                "--exclude", ".DS_Store", "--exclude", "._*", "--exclude", "__pycache__",
                str(src_dir) + "/", str(dst_dir) + "/"]
-        run(cmd)
+        try:
+            run(cmd)
+        except subprocess.CalledProcessError as e:
+            print("  ❌ rsync 失敗：", file=sys.stderr)
+            for line in (e.stderr or "").splitlines()[:12]:
+                print(f"     {line}", file=sys.stderr)
+            print("\n  這通常是 agent 沙箱把 ~/.minimax 設為唯讀造成的。", file=sys.stderr)
+            print("  請在 agent session 之外（你自己的 shell）執行本腳本。", file=sys.stderr)
+            return 2
         print("  rsync 完成")
 
     print("\n驗證：")
