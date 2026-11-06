@@ -101,14 +101,14 @@
       "source_path": "skills/three-kingdoms-focus-music/SKILL.cn.md",
       "source_sha256": "87b5818959b1256165a6ad225e41ca1d9e2ccc3dc6076827ebbfb440e375e551",
       "codex_path": "skills/three-kingdoms-focus-music/SKILL.cn.md",
-      "codex_sha256": "ec2bb2cc1d6ce52bfd312a1643cdd7b29a7fb5deb4217d5b715a3a316afbfa49",
+      "codex_sha256": "08a82002f5c98227744c6bfeffbce4fcb53fc6b68ed83694c4ab6b7924d179f5",
       "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/three-kingdoms-focus-music/SKILL.md",
       "source_sha256": "bf446511c3fdecb118fd2514463d258768f302eb2ae4e81831c638e8c78cacef",
       "codex_path": "skills/three-kingdoms-focus-music/SKILL.md",
-      "codex_sha256": "f5d2d961c0917b02ce8c164ac6adcb739b81e2bcbef8cd8185ba390fbce6e238",
+      "codex_sha256": "bbe6623ea1de6c48f6cddb8604e9c7d23d4956f38aeb662b538527e11e887b3f",
       "change": "adapted_for_mcp_execution_layer"
     },
     {
@@ -150,8 +150,8 @@
       "source_path": "skills/three-kingdoms-video-project/SKILL.md",
       "source_sha256": "6a477f97f80f0a407c9431d73aafc29494d1cfd66ef4bb1f0c316304310851b2",
       "codex_path": "skills/three-kingdoms-video-project/SKILL.md",
-      "codex_sha256": "3087b7376298ded6aef6aca8594cd214f8aca79247e320eeca5ef2b9d2f4ce43",
-      "change": "adapted"
+      "codex_sha256": "3486d3a684aedd8bbd206f0b2eb51800309beb59616bb5d24cd9af1a1183b83a",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/three-kingdoms-vocal-single/SKILL.md",
@@ -164,8 +164,8 @@
       "source_path": "skills/yt-focus-music-pipeline/SKILL.md",
       "source_sha256": "aa2737ca1be5afcc15f5851ad76ee83410bd4e3fce2326023e47906dda8ec9e0",
       "codex_path": "skills/yt-focus-music-pipeline/SKILL.md",
-      "codex_sha256": "6478fef2c9a66e1c664d1340c1b96fbeb77ae19a64f049a13b11d572f619139f",
-      "change": "adapted"
+      "codex_sha256": "0070d7a6e4a518a92d3446e9269f1ec3a38d1d7be15b7f918a7ef3767e56d38f",
+      "change": "adapted_for_mcp_execution_layer"
     },
     {
       "source_path": "skills/yt-publish-strategy/SKILL.md",

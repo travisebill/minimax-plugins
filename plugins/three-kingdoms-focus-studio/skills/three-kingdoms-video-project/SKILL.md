@@ -254,6 +254,45 @@ Inspect existing paths before choosing an ID. If the repository has
 project is completed. The index records ID, Chinese title, English title,
 Three Kingdoms anchor, use case, status, and links to the package.
 
+## The cat: a channel rule, not a per-film choice
+
+**From S02-P04 onward, every film in this channel carries a cat.** This is a
+channel-level rule, not a creative option, and it is not something to
+rediscover per project. It lives here because this file is the procedure a new
+project follows, and a rule that exists only in chat memory does not survive a
+planning session.
+
+- **Every frame family needs one cat**: the cover, each chapter image, and the
+  loop video of that chapter. The cat is **not obvious but is observable**, and
+  it **must be in motion** — tail sweep, head turn, stretch, rubbing a post. A
+  static cat pasted into a corner does not satisfy the rule.
+- **At most one cat in a frame at a time.**
+- **The cats are permanent channel assets, not a candidate pool.** Each one locks
+  its coat pattern, eye colour, body type, accessories, personality and a
+  signature action family, and carries its own version number. **To change one,
+  cut a new version and keep the old one** — never silently redesign an
+  established character.
+- **The roster lives in the previous release package** under
+  `character-assets/manifest.md`, together with every cat's character sheet, its
+  clean reference crop, and the Design `versionId` / `resourceId` provenance.
+  Read it before planning; do not regenerate the sheets.
+
+Planning consequences:
+
+- The spec must declare the assignment: which cat is on the cover, which cat in
+  each chapter, and which cats stay in the rotation pool.
+- The loop video of a chapter reuses that chapter's cat.
+- **Reference image:** a multi-panel character sheet can be passed straight in
+  as the reference, as long as the prompt says `do not reproduce the reference
+  layout: no panel grid, no borders, no colour strip, no other poses, no
+  lettering of any kind` — measured, zero grid bleed and an exact match on the
+  cat's appearance. The local single-panel crop is the fallback, used when a
+  single pose is needed or a layout actually leaks.
+- **Verification:** do not judge the cat's appearance from a thumbnail or a
+  contact sheet. A 2560 px sheet scaled to 640 px leaves a few dozen pixels of
+  fur, which is how a calico reads as a brown tabby. Zoom in and compare the
+  markings before accepting an image set.
+
 ## Prompt package
 
 Create the prompt artifacts required by the project topology:
@@ -842,6 +881,9 @@ music project with declared chapters must not skip them.
   grid, labels, measurements, seals, or source-image text.
 - Preserve readable faces, hands, action, composition, title negative space,
   and future subtle-animation anchors.
+- **The cover carries one cat** — the assigned one, in motion, not centred, not
+  obvious. The cover is the first frame of the film, so it sets the rule for
+  every later chapter image.
 - If the user supplies an image, view it before editing, preserve it as
   `*-source-user.png`, and never overwrite the supplied source.
 - Save each generated or edited candidate with a new version. Normalize the
@@ -866,6 +908,9 @@ history; it is never silently replaced.
 - Inspect every boundary between adjacent images. If a person or object moves
   to a new location, the pair must state a credible movement path or a clear
   temporal/spatial cut; an unexplained teleport is a failed continuity check.
+- **Every chapter image carries exactly one cat** — the assigned cat, in motion.
+  The chapter's difference must not come from swapping the cat; it comes from
+  the declared action, composition, light, or emotional state.
 - Keep every delivery image text-free, 16:9, 1920×1080 PNG. Preserve raw or
   user-supplied sources when available, and never overwrite an earlier
   candidate or approved version.
@@ -1282,6 +1327,10 @@ At every gate, and again before completion, verify:
 - **every number in the delivery documents is reproducible by a command** —
   frame count, byte size, duration, and the README/spec figures are compared
   against the measured values by the package's own check;
+- **the cat rule holds end to end**: the cover, every chapter image and every
+  loop video carry the assigned cat, in motion, one cat at a time, and each cat's
+  appearance still matches its locked description in the roster. This is checked
+  by **looking at the images zoomed in**, not by a thumbnail contact sheet;
 - for a chapterized project, `spec.md`, `music-prompt-vN.md`,
   `chapter-image-prompt-vN.md`, the declared chapter manifest, and the actual
   chapter image files have a one-to-one match with no missing or extra chapter;

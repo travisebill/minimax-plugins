@@ -159,6 +159,11 @@ If the user asks for cover art, avatar, banner, or album art, reuse the same Thr
 - Banner: wide 16:9, with safe-area composition for YouTube.
 - Album art: clear title hierarchy, strong symbol, readable at thumbnail size.
 - Style: Chinese ink-wash, seal-carving, scholar-warrior restraint, minimal clutter, readable at thumbnail size.
+- **Every release carries one cat.** Since S02-P04 this is a channel rule, not a per-release
+  choice: the cat is not obvious but is observable, and it must be in motion. The roster of
+  permanent cat assets lives in the previous release package under
+  `character-assets/manifest.md`; read it, pick from it, and do not regenerate the sheets.
+  See `skills/three-kingdoms-video-project/SKILL.md` §The cat.
 - If the user gives title text, preserve it; otherwise use symbolic or abstract identity marks.
 - Before generating any cover image, draft the exact cover prompt and ask the user to confirm or revise it. Do not start cover generation until the user explicitly confirms the prompt.
 
