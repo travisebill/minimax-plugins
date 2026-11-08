@@ -1,6 +1,6 @@
 # Codex 教學、音樂與 AFP 工作室
 
-這是 [travisebill/minimax-plugins](https://github.com/travisebill/minimax-plugins) 的 Codex 移植版本，保留三個獨立外掛，共 11 個技能。
+這是 [travisebill/minimax-plugins](https://github.com/travisebill/minimax-plugins) 的 Codex 移植版本，保留三個獨立外掛，共 12 個技能。
 
 > **版本要分清兩件事**：本表列的是**原始碼版本**；已發布的 ZIP 仍是較早的版本（`dist/`），移植當時的規格與驗證紀錄保留在 `spec.md` 與 `validation/`。原始碼可以先跑，發布產物與主機驗證另排期 —— 見 `marketplace/plugins/three-kingdoms-focus-studio/WAVEFORM.md`。
 
@@ -52,7 +52,7 @@ codex plugin list --marketplace travis-codex-studios --json
 ## 移植調整
 
 - 增加根目錄 `plugin.json` 與 `.codex-plugin/plugin.json`，保留原圖示與教學外掛的深色圖示。
-- 9 個技能補上 Codex UI metadata；套件內的 `CODEX.md` 統一處理技能路由與執行能力。
+- 當初移植的 9 個技能補上 Codex UI metadata（`afpds-studio` 加入後共 12 個）；套件內的 `CODEX.md` 統一處理技能路由與執行能力。
 - 把音樂流程改為「最終 payload 審查 → 核准 → 生成 → 候選審查」，沿用使用者已授權的確切版本、設定和候選數。
 - 保存上游研究內容，明確標示其歷史日期；現行供應商限制與 YouTube 政策在使用時查核官方來源。
 - 原樣保留參考資料、模板與音訊量測腳本。來源差異、每個檔案的 hash 見 `UPSTREAM.json`。

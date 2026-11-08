@@ -237,7 +237,9 @@ MiniMax v1.3.0 從本 repo 的 Codex 版移植此技能（v1.5.0 起同步兩側
   與 3 支 `.mjs` 腳本都是該專案自撰的；`corpus/` 則是 **AFP Consortium 公開出版品
   （32 份 PDF）的純文字萃取**，萃取工具為 `pdfminer.six`，每頁以 `<<<PAGE n>>>` 標記。
   來源專案沒有公開 remote，因此無法用 commit 追溯；可追溯性由 `corpus/index.json`
-  內的 AFPC 文件編號與頁數，以及每個檔案的 SHA-256（`specs/manifest.json` 的對應欄位）提供。
+  提供：每份文件的 AFPC 文件編號、頁數、**原始 PDF 的 SHA-256**（鎖定「這份文字是從
+  哪一份出版品萃取出來的」）、下載來源網址，以及萃取後 `.txt` 的位元組大小與每頁平均字元數；
+  `.txt` 本身的位元組內容則由本 repo 的 git 版本控制固定。
   **搬入時做了三處改動**：
   1. 移除 `spec-search.mjs` 與 SKILL.md 中指向來源專案本機絕對路徑的 fallback
      （外掛內不得含機器專屬路徑），語料改由隨套件附帶的 `corpus/` 目錄提供。
