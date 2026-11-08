@@ -233,9 +233,11 @@ MiniMax v1.3.0 從本 repo 的 Codex 版移植此技能（v1.5.0 起同步兩側
 
 這個外掛有兩個來源不同的部分：
 
-- **`afpds-expert`（1 支）＝自本機 `AFPDS_Expert` 專案搬入。** SKILL.md、6 份 references
-  與 3 支 `.mjs` 腳本都是該專案自撰的；`corpus/` 則是 **AFP Consortium 公開出版品
-  （32 份 PDF）的純文字萃取**，萃取工具為 `pdfminer.six`，每頁以 `<<<PAGE n>>>` 標記。
+- **`afpds-expert`（1 支）＝自本機 `AFPDS_Expert` 專案搬入。** 自該專案搬入的是
+  SKILL.md、6 份 references 與 3 支 `.mjs` 腳本（`spec-search.mjs` /
+  `verify-stream.mjs` / `mo-dca-structures.mjs`），全部是該專案自撰的；
+  `corpus/` 則是 **AFP Consortium 公開出版品（32 份 PDF）的純文字萃取**，
+  萃取工具為 `pdfminer.six`，每頁以 `<<<PAGE n>>>` 標記。
   來源專案沒有公開 remote，因此無法用 commit 追溯；可追溯性由 `corpus/index.json`
   提供：每份文件的 AFPC 文件編號、頁數、**原始 PDF 的 SHA-256**（鎖定「這份文字是從
   哪一份出版品萃取出來的」）、下載來源網址，以及萃取後 `.txt` 的位元組大小與每頁平均字元數；
@@ -253,8 +255,9 @@ MiniMax v1.3.0 從本 repo 的 Codex 版移植此技能（v1.5.0 起同步兩側
      實測（608,529 bytes、5,484 個結構的真實檔）：前綴可有可無時，
      前 40 個結構各做一次 `Length + 1`，**40/40 全部被放行**；改成全檔一致後，
      同樣的 40 次竄改 **40/40 全部被抓到**。
-  4. 新增 `scripts/test-verify-stream.mjs`：對有／無 `X'5A'` 前綴兩種編碼各跑
-     8 條正負向測試（含上面那個差 1 的案例），確保「修好之後不會變成不會失敗的假綠」。
+  4. 新增 `scripts/test-verify-stream.mjs`：對有／無 `X'5A'` 前綴兩種編碼合計
+     **17 條**正負向測試（無前綴 8 條、有前綴 9 條；含上面那個差 1 的案例，
+     以及「有前綴卻少一個前綴」），確保「修好之後不會變成不會失敗的假綠」。
 - **`afp-renderer`（1 支）＝本次新撰寫。** 9 支 Python 模組（`afpstream` / `resources` /
   `resfile` / `ptoca` / `goca` / `imimage` / `colors` / `units` / `render`）與
   `references/renderer.md` 全部新寫。之所以自己寫：目前沒有成熟、持續維護的
