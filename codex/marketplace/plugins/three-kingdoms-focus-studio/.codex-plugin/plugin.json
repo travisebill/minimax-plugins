@@ -1,6 +1,6 @@
 {
   "name": "three-kingdoms-focus-studio",
-  "version": "1.6.0",
+  "version": "1.7.1",
   "description": "三國主題音樂的企劃、純器樂提示詞、角色人聲單曲、候選審查、章節拼接、封面與 YouTube 發布策略。保存人工核准與來源紀錄；內附上游 2026-09-30 的歷史研究資料，實際使用前查核最新政策。內建 minimax-design MCP 執行層參考與量測工具，並新增整部上傳影片製作章節。",
   "author": {
     "name": "Travis Chen"
