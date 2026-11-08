@@ -127,11 +127,24 @@ for (const [encoding, encode] of [
   const r5 = run(good.subarray(0, good.length - 4));
   check(`${encoding}: truncated file rejected`, r5.code === 1 && r5.out.includes('ERROR'), `rc=${r5.code}\n${r5.out}`);
 
-  // 6. an unknown structure identifier is reported
+  // 6. an unknown structure identifier must be WARNED about, not failed.
+  //    The chain is still structurally consistent, so the validator must not
+  //    fail the file — but it has to name the identifier it did not recognise.
+  //    The identifier is replaced on a plain descriptor (Page Descriptor) so
+  //    that the begin/end nesting stays intact and the warning is the ONLY
+  //    signal. Corrupting a Begin structure instead would make this case pass
+  //    via a nesting side effect, and the test would no longer test what its
+  //    name says.
   const badId = Buffer.from(good);
-  badId.write('D3FF00', lenAt + 2, 'hex');
+  const pgdAt = badId.indexOf(Buffer.from('D3A6AF', 'hex'));
+  if (pgdAt < 0) throw new Error('test setup: Page Descriptor identifier not found');
+  badId.write('D3FF00', pgdAt, 'hex');
   const r6 = run(badId);
-  check(`${encoding}: unknown identifier reported`, r6.code === 1 && (r6.out.includes('WARN') || r6.out.includes('ERROR')), `rc=${r6.code}\n${r6.out}`);
+  check(
+    `${encoding}: unknown identifier warned, not failed`,
+    r6.code === 0 && r6.out.includes('WARN') && r6.out.includes('D3FF00'),
+    `rc=${r6.code}\n${r6.out}`,
+  );
 
   // 7. a Length that is off by exactly ONE must still be caught.
   //    This is the case that a "the X'5A' prefix is optional" parser cannot
