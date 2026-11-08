@@ -99,7 +99,7 @@ function describe(sf) {
   };
 }
 
-function verifyModca(buf, opts) {
+function verifyModca(buf, opts, prefixed) {
   const errors = [];
   const warnings = [];
   const fields = [];
@@ -113,10 +113,22 @@ function verifyModca(buf, opts) {
     //    record by surrounding the structured field with additional bytes (such
     //    as the X'5A' prefix)."
     // [mo-dca-reference-mixed-object-document-content-architecture-reference p.53]
-    // So the SFI starts after the prefix, and the next record starts at
-    // sfi + length. A stream that already has the prefix stripped is also
-    // accepted, because SFLength defines the structured field either way.
-    const sfi = buf[off] === 0x5A ? off + 1 : off;
+    //
+    // A stream uses that prefix for EVERY structured field, or for none of them.
+    // Deciding per record would let an off-by-one Length slip through: the
+    // record would swallow the next record's prefix byte as data and the chain
+    // would still line up, so the error would be invisible. The convention is
+    // therefore decided once, for the whole stream, and enforced on every
+    // record.
+    if (prefixed && buf[off] !== 0x5A) {
+      errors.push(
+        `offset ${off}: expected the X'5A' structured field prefix, got ` +
+          `0x${buf[off].toString(16).toUpperCase()} — every structured field in ` +
+          `this stream carries it`,
+      );
+      break;
+    }
+    const sfi = prefixed ? off + 1 : off;
     if (buf.length - sfi < INTRODUCER) {
       errors.push(
         `offset ${off}: only ${buf.length - off} byte(s) left — a structured field introducer needs ${INTRODUCER}`,
@@ -204,6 +216,17 @@ function verifyModca(buf, opts) {
   }
 
   return { errors, warnings, fields, layer: 'modca' };
+}
+
+// Which convention the stream uses is a property of the whole stream, not of
+// each record. Parse the file both ways and keep the reading that is
+// self-consistent: the wrong one lands on garbage lengths almost immediately.
+function bestModca(buf, opts) {
+  const trials = [false, true].map((prefixed) => verifyModca(buf, opts, prefixed));
+  trials.sort(
+    (a, b) => a.errors.length - b.errors.length || b.fields.length - a.fields.length,
+  );
+  return trials[0];
 }
 
 // Triplet format: Tlength(1B) | Tid(1B) | data. Tlength counts itself and the id.
@@ -323,7 +346,7 @@ function main() {
   let layer = flags.layer;
   if (layer === 'auto') layer = looksLikeModca(buf) ? 'modca' : 'ipds';
 
-  const result = layer === 'ipds' ? verifyIpds(buf) : verifyModca(buf, flags);
+  const result = layer === 'ipds' ? verifyIpds(buf) : bestModca(buf, flags);
 
   if (!flags.quiet) {
     console.log(`file    : ${positional[0]}`);

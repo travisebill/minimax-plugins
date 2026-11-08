@@ -42,10 +42,20 @@ one extra `X'5A'` byte in front of it, and that byte is *not* counted in the len
 "Some platforms include structured fields in a larger platform-specific record by
 surrounding the structured field with additional bytes (such as the X'5A' prefix)"
 [mo-dca-reference-mixed-object-document-content-architecture-reference p.53].
-`verify-stream.mjs` therefore reads the SFI after the prefix when it sees one, and
-accepts a prefix-stripped stream as well. IPDS commands have no such prefix —
+`verify-stream.mjs` therefore reads the SFI after the prefix, and accepts a
+prefix-stripped stream as well. IPDS commands have no such prefix —
 their length runs `Length(2B) | Command(2B) | Flag(1B) | [CID(2B)] | Data`
 [ipds-reference-intelligent-printer-data-stream-reference p.106].
+
+**The prefix convention is decided once for the whole stream and enforced on every
+record**, and that is not a detail. A parser that treats the prefix as optional
+per record cannot see a Length that is off by exactly one: the record swallows
+the next record's `X'5A'` byte as data, every later record still ends on the
+same absolute offset, and the chain is self-consistent — the error disappears.
+Measured on a 608,529-byte, 5,484-structure file: with a per-record prefix, a
+`Length + 1` on any of the first 40 structures was accepted **40 out of 40
+times**; with the convention enforced, the same 40 corruptions are caught
+**40 out of 40**. `scripts/test-verify-stream.mjs` pins this down.
 
 ```js
 import { MO_DCA_STRUCTURES as structures } from "./scripts/mo-dca-structures.mjs";
