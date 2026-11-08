@@ -1,0 +1,1273 @@
+<<<PAGE 1>>>
+AFP Color 
+Management
+
+March 1, 2007
+John F. Meixel
+Advanced Technical Support
+IBM Printing Systems 
+Boulder, Colorado
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 2>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Agenda
+
+(cid:137) Two key messages!
+(cid:137) What colors can I print?
+(cid:137) How do I handle colors that I cannot print?
+(cid:137) How do you create a printer ICC profile?
+(cid:137) New AFP color implementation
+
+2
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 3>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Two Key Messages
+
+1. With the new AFP color architecture you will not get the 
+same colors on different model printers!  (But that’s OK!)
+2. Four-color, CMYK, printers can reproduce most, but not all, 
+
+of the PANTONE® solid colors!  (That’s mostly OK.)
+
+3
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 4>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+What Colors Can I Print?
+
+Each line surrounds the colors
+that can be reproduced
+
+Monitor (RGB)
+Printer (CMYK)
+Pantone
+
+Visible Spectrum
+
+(cid:137) Monitors, printers, and 
+Pantone® all support 
+different ranges/gamuts 
+of colors
+
+(cid:137) Different model monitors 
+and printers each have 
+their own gamut
+
+(cid:137) Different paper types 
+also affect gamut 
+(cid:137) No CMYK printer can 
+
+print all of the colors that 
+can be reproduced by a 
+monitor or Pantone
+
+4
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 5>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+How important is it to get the exact color?
+
+(cid:137) In most cases, e.g. photographic images, visually          
+
+“pleasing colors” are adequate
+
+(cid:137) In at least one case, corporate logos, we want the colors to be 
+
+exactly correct, unfortunately this is rarely possible with printers 
+that use a four-color, CMYK, process
+
+(cid:137) With CMYK printers compromises are required when attempting 
+
+to reproduce specific colors
+
+(cid:137) Check to see if the printer you are considering can reproduce 
+
+the colors you require!
+
+5
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 6>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Pantone Matching System®
+
+(cid:137) Colors, in corporate logos, are usually defined using the Pantone 
+
+Matching System, e.g. IBM blue is Pantone 2718
+
+(cid:137) The Pantone Solid Color System contains over 1,400 solid (spot) 
+colors that are created by mixing combinations of 14 base colors
+
+(cid:137) When using a four-color process (CMYK) printer Pantone 
+
+provides simulations of the closest color that can be achieved
+
+Sources: “PANTONE numbering systems explained,” and “what are other 
+ways to define color?” under “articles of interest” at www.pantone.com
+
+6
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 7>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+PANTONE COLOR BRIDGE®
+
+(cid:137) The Pantone Color Bridge 
+
+reference tool provides color 
+samples of both CMYK/Process 
+and solid colors
+
+(cid:137) Samples, from an old set, are 
+
+shown at right
+
+(cid:137) The closest CMYK simulation is 
+shown in the left column, the 
+correct solid in the right
+
+(cid:137) As you can see, in many cases, 
+
+the difference is significant
+
+7
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 8>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+How Do I Handle Colors That I Cannot Print?
+
+(cid:137) Different printers, monitors, cameras, and scanners generate 
+
+unique ranges of colors, i.e. gamuts
+
+(cid:137) When you view an image on a PC, using Photoshop, how do you 
+guarantee that you will get the desired colors when the image is
+printed on the target printer?
+
+(cid:137) Answer: Use a color management system based on ICC profiles 
+
+8
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 9>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+ICC Profiles
+
+(cid:137) File format defined by the International Color Consortium, ICC
+(cid:137) Describes the color characteristics of a particular device: digital 
+
+camera, scanner, monitor, printer
+
+(cid:137) Used to intelligently-transform, device-unique, color information 
+
+between devices
+
+(cid:137) For printers color characteristics change with type of paper used, 
+
+e.g. coated and uncoated; worst case: separate ICC profile 
+required for each paper type
+
+(cid:137) ICC profile is also called a Color Space, and in Photoshop it can 
+be the Working Space which identifies the profile used for editing 
+
+(cid:137) ICC profiles are provided by the device vendor and can also be 
+
+created by the user using special hardware/software 
+
+9
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 10>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+ICC Profile 3D Colorspace Comparisons
+
+(cid:137) ICC profiles describe the color gamut supported by the device
+(cid:137) A three-dimensional representation allows exact comparison of 
+
+the color capabilities of two devices
+
+(cid:137) The ICCView website builds a 3D model comparing any two ICC 
+profiles and is available at: http://www.iccview.de/index_eng.htm
+
+(cid:137) Model depicts CIE L*a*b* colorspace
+
+(cid:131) L* = Lightness
+(cid:131) a* = green-magenta axis
+(cid:131) b* = yellow-blue axis
+
+CIE = International Commission on Illumination, 
+or, Commission Internationale de l'Eclairage
+
+10
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 11>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+ICC Profile Effects:
+Each Image/Device has a Different Profile/Gamut
+
+Original Image
+
+Monitor
+
+Proof Printer
+
+Production Printer
+
+sRGB
+
+Adobe RGB (1998)
+
+Proof
+
+Production
+
+4 Unique ICC Profiles
+
+11
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 12>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Color Management with ICC Profiles
+
+1. A Color Management System uses the input image’s ICC 
+profile to convert its colors to a device-independent format 
+called the Profile Connection Space.  
+
+2. Then the target printer’s ICC profile is used to convert the 
+device-independent image to the printer-specific format.
+
+Plus: Color objects can print correctly on any device
+
+that supports ICC profiles
+
+Minus: Two transforms are required hurting performance
+
+Transform
+
+Profile 
+Connection
+Space
+
+Transform
+
+Image ICC Profile
+
+12
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+Printer ICC Profile
+
+<<<PAGE 13>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Link Profile
+
+(cid:127) Converting from device-dependent to device-independent to 
+
+device-dependent is flexible but hurts performance.  
+
+(cid:127) Systems, using the new AFP Color Management Architecture, 
+automatically build the equivalent of a Link Profile, from two 
+device-specific profiles, using a single transform for optimum 
+performance.
+
+Transform
+
+Link
+Profile
+
+Image ICC Profile
+
+13
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+Printer ICC Profile
+
+<<<PAGE 14>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Rendering Intents
+(cid:137) Specifies color conversion when moving from one color space, 
+(ICC profile), to another; i.e. how to handle colors, in an image, 
+that cannot be reproduced exactly on a printer or monitor 
+
+(cid:137) Perceptual: 
+
+(cid:131) Preserves visual relationships between colors, 
+(cid:131) Compresses image’s gamut to fit within that of target device
+(cid:131) Most pleasing for photographic images
+
+(cid:137) Saturation:
+
+(cid:131) Produces vivid colors at expense of accuracy
+(cid:131) Most suitable for business graphics
+(cid:137) Colorimetric (Relative and Absolute):
+
+(cid:131) Match colors exactly and clip out-of-gamut colors 
+(cid:131) Used for logos and proofing 
+(cid:131) Relative maps source white to paper white (logos)
+(cid:131) Absolute tries to preserve source white in destination (proofing)
+
+14
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 15>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Source Image
+
+Colors Using Target
+Printer’s ICC Profile
+
+15
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 16>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Pink shows out of gamut colors
+
+Source
+
+Target
+
+16
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 17>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Perceptual
+
+Source
+
+Target
+
+17
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 18>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Source Image
+
+Colors Using Target
+Printer’s ICC Profile
+
+18
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 19>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Pink shows out of gamut colors
+
+Source
+
+Target
+
+19
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 20>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Perceptual
+
+Source
+
+Target
+
+20
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 21>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Source Image
+
+Colors Using Target
+Printer’s ICC Profile
+
+21
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 22>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Pink shows out of gamut colors
+
+Source
+
+Target
+
+22
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 23>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Perceptual
+
+Source
+
+Target
+
+23
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 24>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Source Image
+
+Colors Using Target
+Printer’s ICC Profile
+
+24
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 25>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Absolute Colorimetric
+
+Pink shows out of gamut colors
+
+Source
+
+Target
+
+25
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 26>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Perceptual
+
+Source
+
+Target
+
+26
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 27>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Create Printer ICC Profile
+
+27
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 28>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Create ICC Profile for CMYK Printer
+
+(cid:137) Print CMYK 
+
+testchart on printer 
+to be profiled
+
+(cid:137) Industry-standard 
+
+ECI2002V testchart 
+commonly used for 
+printer profiling
+(cid:137) Contains 1485 
+
+patches
+
+28
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 29>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Reading Testchart, PC with Instrument Attached
+
+29
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 30>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Create Printer ICC Profile from Measurement Data
+
+A reference file, 
+containing the 
+requested colors, is 
+compared with the 
+measurement file to 
+produce the ICC Profile
+
+30
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 31>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Computing Profile, takes around 5 minutes
+
+(cid:137) Profile is either loaded into printer 
+or print server resource library
+(cid:137) In AFP the profile is called a Color 
+Conversion Color Management 
+Resource, (CC CMR)
+
+(cid:137) At least one is needed for each 
+
+printer model
+
+(cid:137) Different profiles may be needed for 
+
+each paper type if the paper 
+difference is enough to affect color 
+gamut
+
+(cid:137) Printer vendors will likely provide 
+
+profiles for standard papers
+
+31
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 32>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+New AFP Color Implementation
+
+32
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 33>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+AFP Color Consortium and AFP Color Management 
+Architecture, (ACMA)
+
+(cid:137) Purpose: Create a comprehensive open standard for 
+accurate and consistent full-color production print.
+
+(cid:137) Goals:
+
+(cid:131) Accurate color rendering  
+(cid:131) Consistent color rendering across AFP output devices
+(cid:131) Tunable colors and grayscales 
+(cid:131) High-speed color conversions
+
+33
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 34>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+AFP Color Consortium and AFP Color Management 
+Architecture, (ACMA)
+
+(cid:137) Established in October 2004
+(cid:137) 31 member companies published ACMA architecture March 2006
+(cid:137) Role expanded in 2006 to include the entire AFP architecture
+(cid:137) Consortium members provide AFP: application generators,      
+
+print servers, printers, and consulting services
+
+(cid:137) Consortium will verify vendor to vendor interoperability and certify 
+
+product compliancy
+
+(cid:137) Architecture requires compliant products to support a minimum 
+function set to make certain each solution is useful and portable
+
+(cid:137) For architecture documentation and other information: 
+
+www.afpcolor.org
+
+34
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 35>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+AFP Color Consortium Members
+
+(cid:137) Document Composition & 
+
+Resource Creation
+
+(cid:131) Cincom
+(cid:131) COPI
+(cid:131) DocuCorp
+(cid:131) Document Sciences
+(cid:131) Elixir Technologies
+(cid:131) Exstream Software
+(cid:131) FormsPath SL
+(cid:131) GMC Software Technology
+(cid:131) Group 1
+Invaris
+(cid:131)
+Inventive Designers
+(cid:131)
+ISIS-Papyrus
+(cid:131)
+(cid:131) Metavante
+(cid:131) PrintSoft
+(cid:131) StreamServe
+
+(cid:137) Servers & Transforms
+
+(cid:131) CDP Communications
+(cid:131) Compart Systemhaus
+(cid:131) Crawford Technologies
+(cid:131) Emtex
+(cid:131) LRS
+(cid:131) MPI
+(cid:131) Solimar Systems
+(cid:131) Xenos Group
+(cid:137) Printers & Controllers
+
+IBM
+Intermate
+
+(cid:131)
+(cid:131)
+(cid:131) Kodak
+(cid:131) Lexmark
+(cid:131) Oce
+(cid:131) Ricoh
+(cid:131) Xeikon International
+(cid:131) Xerox
+
+35
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 36>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Data Objects
+CMRs
+RATs
+
+36
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 37>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Data Object Resources
+
+(cid:137) Resource type to support data formats not-defined by AFP
+(cid:137) No conversion required! 
+(cid:137) Examples:
+(cid:131) TIFF
+(cid:131) JPEG
+(cid:131) GIF
+(cid:131) EPS
+(cid:131) PDF Single-Page Object
+(cid:131) TrueType/OpenType Font
+
+37
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 38>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Color Management Resources, CMRs
+
+(cid:137) New AFP resource type to implement color management
+(cid:137) 5 Types:
+
+(cid:131) Color Conversion (CC): Contains ICC Profile which describes the color 
+characteristics of a Data Object, (e.g. TIFF/JPEG), or printer; used to 
+convert color data between the two
+
+(cid:131) Tone Transfer Curve (TTC): Specifies grayscale appearance:
+
+(cid:127) Dark
+(cid:127) Accutone
+(cid:127) Highlight Midtone
+(cid:127) Standard
+
+(cid:131) Halftone (HT): Specifies halftone line screen 
+(cid:131) Indexed (IX): Extends highlight color support for colorant mixing
+(cid:131) Link Color Conversion (LK): Look-up tables that convert colors directly 
+from the input color space to the output color space; helps performance
+
+38
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 39>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Resource Access Table (RAT)
+
+RAT
+
+(cid:137) When Data Objects and CMRs are installed in resource libraries, 
+
+they are processed using a Resource Access Table (RAT)
+
+(cid:137) Maps a resource name, specified in the application print file, to the 
+
+resource file name and other information needed to process it
+
+(cid:137) Allows resources to be referenced in data stream by their 
+inherent, native name, not by a platform-specific file name
+(cid:137) RATs are located in same directory as the resources they map
+(cid:137) RATs were first introduced in AFP with TrueType/OpenType fonts
+(cid:137) There are three types of RATs, each with a hard-coded file name:
+
+(cid:131) Data Object RAT: AFP_DataObjectResource.rat
+(cid:131) Color Management Resource RAT: AFP_ColorManagementResource.rat
+(cid:131) TrueType/OpenType Font RAT: IBM_DataObjectFont.rat
+
+39
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 40>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Data Objects Defined in Pagedef and Stored in Print 
+Server Resource Library
+
+1. Place unmodified TIFFs/JPEGs in print server 
+directory or inline using original file names
+
+2. Build pagedef using data objects with OBTYPE of 
+
+IOCA and OBID of TIFF/JPEG
+
+PAGEDEF TIFF REPLACE YES                                        
+WIDTH 8.5 in                                          
+HEIGHT 11.0 in;                                       
+
+How resources are retrieved is
+described on the following pages.
+
+FONT NORM  CS H200  CP V10037 HEIGHT  9 RATIO 70;         
+
+OBJECT CCBIG    OBXNAME CCBIG    OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+OBJECT CCSMALL  OBXNAME CCSMALL  OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+OBJECT IBMLOGO  OBXNAME IBMLOGO  OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+OBJECT BARB1    OBXNAME BARB1    OBKEEP PRELOAD OBTYPE OTHER OBID JPEG;
+OBJECT BARB2    OBXNAME BARB2    OBKEEP PRELOAD OBTYPE OTHER OBID JPEG;
+OBJECT BARB3    OBXNAME BARB3    OBKEEP PRELOAD OBTYPE OTHER OBID JPEG;
+OBJECT CHECKSUM OBXNAME CHECKSUM OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+OBJECT CKHEADER OBXNAME CKHEADER OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+OBJECT DBHEADER OBXNAME DBHEADER OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+
+On z/OS the resources are stored in the
+UNIX HFS, (Hierarchical File System).
+
+40
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+Directory
+
+CableCarBig.tif
+CableCarSmall.tif
+IBMlogo.tif
+Barbara1.jpg
+Barbara2.jpg
+Barbara3.jpg
+CheckSummary.tif
+
+<<<PAGE 41>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Data Object Resource RAT Maps Application 
+Resource Name to Resource Filename
+
+OBJECT CCBIG    OBXNAME CCBIG    OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+
+Application Pagedef
+
+Data Object Resource RAT
+
+Object Name
+
+Filename
+
+CCBIG
+
+CableCarBig.tif
+
+CCSMALL
+
+CableCarSmall.tif
+
+IBMLOGO
+
+IBMlogo.tif
+
+BARB1
+
+Barbara1.jpg
+
+Directory
+
+AFP_DataObjectResource.rat
+
+CableCarBig.tif
+CableCarSmall.tif
+IBMlogo.tif
+Barbara1.jpg
+Barbara2.jpg
+Barbara3.jpg
+CheckSummary.tif
+
+41
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 42>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Data Object Resource RAT Also Identifies           
+Color Management Resources (CMRs) Associated 
+with the Data Object
+
+Application Pagedef
+OBJECT CCBIG    OBXNAME CCBIG    OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+
+Data Object Resource RAT
+
+Object 
+Name
+
+Filename
+
+CC CMR 
+Name
+
+CCBIG
+
+CableCarBig.tif
+
+sRGB
+
+CCSMALL
+
+CableCarSmall.tif
+
+sRGB
+
+Directory
+
+AFP_DataObjectResource.rat
+
+CableCarBig.tif
+
+42
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 43>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Another RAT, the Color Management Resource RAT,
+Maps CMR Name to CMR Filename
+
+Application Pagedef
+OBJECT CCBIG    OBXNAME CCBIG    OBKEEP PRELOAD OBTYPE OTHER OBID TIFF;
+
+Data Object Resource RAT
+
+Object 
+Name
+
+Filename
+
+CC CMR 
+Name
+
+CCBIG
+
+CableCarBig.tif
+
+sRGB
+
+CCSMALL
+
+CableCarSmall.tif
+
+sRGB
+
+Color Management Resource RAT
+
+CMR Name
+
+Filename
+
+sRGB
+
+sRGBCC001001.cmr
+
+Adobe_RGB
+
+Adobe_RGBCC001001.cmr
+
+Directory
+
+AFP_DataObjectResource.rat
+
+CableCarBig.tif
+
+AFP_ColorManagementResource.rat
+
+sRGBCC001001.cmr
+
+43
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 44>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Specifying Rendering Intent in an Application
+
+Application Pagedef
+
+OBJECT CCBIG    OBXNAME CCBIG    OBKEEP PRELOAD OBTYPE OTHER OBID TIFF
+
+RENDER PERCP;
+
+OBJECT CCSMALL  OBXNAME CCSMALL  OBKEEP PRELOAD OBTYPE OTHER OBID TIFF
+
+RENDER SATUR; 
+
+OBJECT IBMLOGO  OBXNAME IBMLOGO  OBKEEP PRELOAD OBTYPE OTHER OBID TIFF
+
+OBJECT BARB1    OBXNAME BARB1    OBKEEP PRELOAD OBTYPE OTHER OBID TIFF
+
+RENDER RELCM;
+
+RENDER ABSCM;
+
+PERCP = Perceptual
+SATUR = Saturation
+RELCM = Relative Colorimetric
+ABSCM = Absolute Colorimetric
+
+44
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 45>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Specifying Line Screen and Appearance for Monochrome 
+Printers that Support the Color Architecture
+
+Application Pagedef
+
+OBJECT CCBIG    OBXNAME CCBIG    OBKEEP PRELOAD OBTYPE OTHER OBID TIFF
+
+OB2CMR ‘106lpi’ OB2XNAME ‘HTgeneric106’ instr
+OB2CMR ‘hilitemidtone’ OB2XNAME ‘TCgenerichilmid’ instr;
+
+(cid:137) The command above uses generic CMRs to request a line screening of 106lpi 
+
+and an appearance of highlight midtones.  
+
+(cid:137) Generic CMRs allow a device-independent specification, similar to Infoprint 
+
+Submit, where the actual result may not exactly match the requested value.  For 
+example, when a line screen of 106lpi is requested on a 4100-HD3/4 the actual 
+line screen generated is 96lpi.
+
+(cid:137) Specific CMRs can be used instead of generic however an error will occur if the 
+
+device cannot provide the requested value.
+
+45
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 46>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+AFP Application Enablers
+
+(cid:137) AFP application enablers are the best choice for creating AFP 
+
+color applications, see AFP Consortium member list for vendors
+(cid:137) They can create highly custom statements required to exploit the
+
+value of color
+
+(cid:137) The consortium members are working together to test the 
+interoperability of applications, print servers, and printers 
+
+46
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 47>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Recommended Reading
+
+(cid:137) Real World Color Management
+by Bruce Fraser, Chris Murphy, 
+and Fred Bunting
+
+(cid:137) Explains how to use color 
+
+management in your workflow
+
+47
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 48>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Remember: Two Key Messages
+
+1. With the new AFP color architecture you will not get the 
+
+same colors on different model printers!
+
+2. Four-color, CMYK, printers can reproduce most, but not all, 
+
+of the PANTONE® solid colors!
+
+48
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT
+
+<<<PAGE 49>>>
+OUTPUT SOLUTIONS FOR AN ON DEMAND WORLD
+
+Color is Coming,
+
+Be Prepared!
+
+Questions?
+
+49
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+IBM OUTPUT ENVIRONMENT

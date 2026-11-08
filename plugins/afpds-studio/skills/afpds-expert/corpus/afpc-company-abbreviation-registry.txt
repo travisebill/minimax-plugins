@@ -1,0 +1,254 @@
+<<<PAGE 1>>>
+AFPC Company Abbreviation Registry 
+As of 12/20/2019 
+
+Company 
+Abbreviation  Company Name 
+ACT 
+ASG 
+AST 
+CAJ 
+CDO 
+CDP 
+CIN 
+CPI 
+CPT 
+CTI 
+DOC 
+DOX 
+EBL 
+EFI 
+EK  and EKC 
+ELX 
+FIS 
+GEM 
+GMC 
+HPQ 
+
+Actuate - Xenos Group 
+ASG Software Solutions 
+Assentis Technologies AG 
+Canon Inc 
+CRE-DO GmbH 
+CDP Communications Inc. 
+Cincom Systems, Inc. 
+Copi 
+Compart AG 
+Crawford Technologies 
+DocPath 
+Doxee 
+eBilling 
+EFI 
+Kodak 
+Elixir Technologies Corporation 
+FIS (Metavante) 
+Gemadec SA 
+GMC Software Technology 
+Hewlett-Packard Development 
+Company, LP 
+International Business Machines 
+Inventive Designers n.v. 
+Ricoh Production Print Solutions 
+(InfoPrint) 
+Levi, Ray & Shoup, Inc. 
+Lexmark 
+MPI Tech A/S 
+MPI Tech S.A. 
+Océ 
+Oracle 
+OpenText Corporation (StreamServe) 
+ISIS Papyrus Software AG 
+Pitney Bowes 
+PrintSoft 
+Printronix 
+
+OPS 
+ORC 
+OTC 
+PAP 
+PBI 
+PRS 
+PTX 
+RIH and RPS  Ricoh 
+
+IBM 
+IND 
+IPS 
+
+LRS 
+LXK 
+MPI 
+
+RIS 
+SFS 
+SOL 
+STS 
+AFPC-0012-06 
+
+RISO Kagaku Corporation 
+Sefas Innovation 
+Solimar Systems, Inc. 
+StreamServe 
+
+IANA Private 
+Enterprise 
+Number 
+Not registered 
+Not registered 
+Not registered 
+1.3.6.1.4.1.1602 
+1.3.6.1.4.1.36848 
+1.3.6.1.4.1.37911 
+1.3.6.1.4.1.10912 
+1.3.6.1.4.1.37380 
+1.3.6.1.4.1.27787 
+Not registered 
+Not registered 
+Not registered 
+Not registered 
+1.3.6.1.4.1.2136 
+1.3.6.1.4.1.314 
+Not registered 
+1.3.6.1.4.1.16463 
+Not registered 
+Not registered 
+1.3.6.1.4.1.11 
+
+1.3.6.1.4.1.2 
+1.3.6.1.4.1.26645 
+1.3.6.1.4.1.28918 
+
+1.3.6.1.4.1.4793 
+1.3.6.1.4.1.641 
+1.3.6.1.4.1.2612 
+1.3.6.1.4.1.8630 
+1.3.6.1.4.1.1552 
+1.3.6.1.4.1.111 
+1.3.6.1.4.1.14876 
+1.3.6.1.4.1.35379 
+1.3.6.1.4.1.3894 
+1.3.6.1.4.1.23798 
+1.3.6.1.4.1.10504 
+1.3.6.1.4.1.367 
+1.3.6.1.4.1.22163 
+1.3.6.1.4.1.24807 
+Not registered 
+1.3.6.1.4.1.36835 
+1.3.6.1.4.1.11835 
+
+Used for IPDS 
+Manufacturer 
+Value 
+No 
+No 
+No 
+Yes 
+No 
+No 
+No 
+No 
+Yes 
+No 
+No 
+No 
+No 
+Yes 
+Yes 
+No 
+No 
+No 
+No 
+No 
+
+Yes 
+No 
+Yes 
+
+No 
+Yes 
+Yes 
+
+Yes 
+No 
+No 
+No 
+No 
+No 
+Yes 
+Yes 
+
+No 
+No 
+No 
+No 
+
+AFP Consortium 
+
+Page 1 of 2
+
+<<<PAGE 2>>>
+AFPC Company Abbreviation Registry 
+As of 12/20/2019 
+
+Company 
+Abbreviation  Company Name 
+TAG 
+XKN 
+XRX 
+
+TAGG Informatique 
+Xeikon 
+Xerox 
+
+IANA Private 
+Enterprise 
+Number 
+Not registered 
+Not registered 
+1.3.6.1.4.1.253 
+
+Used for IPDS 
+Manufacturer 
+Value 
+No 
+Yes 
+Yes 
+
+Notes: 
+ 
+
+IPDS printers and transforms place the company abbreviation in the manufacturer field of the 
+XOH-OPC reply; this value must be three EBCDIC characters.  Company abbreviations are 
+also used in the CMR name for device-dependent CMRs. 
+
+ 
+
+IANA is the Internet Assigned Number Authority. 
+
+Changes since the first version (08/19/2009): 
+
+  10/12/2009 – Removed IANA number 1.3.6.1.4.1.12911 from the Océ entry since this 
+
+number is not used in the context of AFP/IPDS 
+
+  04/27/2010 – Added “MPI” as the registered manufacturer value for MPI Tech A/S 
+  05/12/2010 – Added 1.3.6.1.4.1.2612 as a second IANA value for MPI (this value was 
+
+originally registered to i-data international) 
+  11/08/2010 – Added a row for Compart AG 
+  02/14/2011 – Added companies that don’t receive IPDS (to complete the list of AFPC 
+companies); the registry was also renamed from “IPDS Registry” to “AFPC Company 
+Abbreviation Registry” 
+
+  10/14/2011 – Added eBilling and updated company names for Océ, InfoPrint, and Xeikon 
+  02/22/2012 – Added Actuate 
+  04/23/2013 – Added ASG Software Solutions and Doxee. 
+  04/29/2013 – Added RISO Kagaku Corporation 
+  07/20/2017 – Added EFI 
+  12/20/2019 – Added Canon 
+
+AFPC-0012-06 
+
+AFP Consortium 
+
+Page 2 of 2

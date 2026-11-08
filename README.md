@@ -67,6 +67,20 @@ plugins/
       yt-publish-strategy/             # YouTube 發布策略 / 關鍵字 / 標記 / AI 揭露 / YPP 變現合規
         SKILL.md
         references/  templates/        # 3 份 references + 1 份模板
+  afpds-studio/                       # AFP 規格知識＋渲染外掛 v1.0.0
+    .minimax-plugin/plugin.json
+    icon.png  icon-dark.png
+    skills/
+      afpds-expert/                   # 規格知識層：IPDS / MO:DCA / OCA / FOCA，每個常數都能追回頁碼
+        SKILL.md
+        references/                   # 6 份分層蒸餾（ipds / modca / oca / 字型 / 線資料 / 生態）
+        scripts/                      # spec-search.mjs / verify-stream.mjs / test-verify-stream.mjs / mo-dca-structures.mjs
+        corpus/                       # AFPC 出版品全文語料（32 份 .txt ＋ index.json，約 12 MB）
+      afp-renderer/                   # MO:DCA 資料流 → PNG 渲染器
+        SKILL.md
+        references/renderer.md
+        scripts/afp_render/           # 9 支 Python 模組（afpstream / resources / resfile / ptoca / goca / imimage / colors / units / render）
+        research/modca-structure-table.json   # 98 個 MO:DCA 結構識別碼（import 時讀取，不可刪）
 
 hooks/                             # Plugin Hook：自動守門（SessionStart / PreToolUse / PostToolUse / Stop）
   hooks.json
@@ -93,6 +107,8 @@ tools/                                  # repo 開發工具（不進外掛 packa
 | | | `three-kingdoms-vocal-single` | 角色人聲單曲：歌詞、發音與韻律鎖、分鏡圖、YouTube Short 分支 |
 | | | `yt-publish-strategy` | YouTube 發布策略：標題關鍵字選詞、說明結構、hashtag、**標記 (Tags)**、AI 生成揭露義務、YPP 變現合規（附 2026-09-30 實測基準）|
 | | | `audio-reactive-waveform` | 本地音樂驅動透明頻譜條，輸出無聲 ProRes 4444 MOV 供 CapCut 疊加；附樣式變體產生器 |
+| `afpds-studio` | 1.0.0 | `afpds-expert` | AFP/AFPDS 規格知識層：IPDS 傳輸、MO:DCA 文件結構、OCA 內容架構（IOCA/GOCA/PTOCA/BCOCA）、FOCA 字型與編碼；每個位元組值、結構 ID 與排序規則都附規格頁碼，附 12 MB AFPC 全文語料與位元組驗證器 |
+| | | `afp-renderer` | MO:DCA 資料流 → PNG 渲染器：解 FOCA 字型、PTOCA 文字、GOCA 圖形、IOCA 影像並合成頁面預覽，繪圖規則逐條標回規格頁碼 |
 
 [MiniMax waveform 安裝與使用](plugins/three-kingdoms-focus-studio/WAVEFORM.md)（Python 3.10+、NumPy、FFmpeg／ffprobe；先確認 20 秒短片再做全曲）。
 
@@ -110,6 +126,9 @@ three-kingdoms-focus-studio:three-kingdoms-music-review
 three-kingdoms-focus-studio:three-kingdoms-vocal-single
 three-kingdoms-focus-studio:yt-publish-strategy
 three-kingdoms-focus-studio:audio-reactive-waveform
+
+afpds-studio:afpds-expert
+afpds-studio:afp-renderer
 ```
 
 ## Plugin Hook — 自動守門
@@ -207,3 +226,34 @@ MiniMax v1.3.0 從本 repo 的 Codex 版移植此技能（v1.5.0 起同步兩側
 樣式與參考文件，改寫安裝說明並省略 MiniMax 不使用的 `agents/openai.yaml`。
 確切來源 commit、原始來源鏈與檔案雜湊見
 [UPSTREAM.json](plugins/three-kingdoms-focus-studio/skills/audio-reactive-waveform/UPSTREAM.json)。
+
+### `afpds-studio`
+
+這個外掛有兩個來源不同的部分：
+
+- **`afpds-expert`（1 支）＝自本機 `AFPDS_Expert` 專案搬入。** SKILL.md、6 份 references
+  與 3 支 `.mjs` 腳本都是該專案自撰的；`corpus/` 則是 **AFP Consortium 公開出版品
+  （32 份 PDF）的純文字萃取**，萃取工具為 `pdfminer.six`，每頁以 `<<<PAGE n>>>` 標記。
+  來源專案沒有公開 remote，因此無法用 commit 追溯；可追溯性由 `corpus/index.json`
+  內的 AFPC 文件編號與頁數，以及每個檔案的 SHA-256（`specs/manifest.json` 的對應欄位）提供。
+  **搬入時做了三處改動**：
+  1. 移除 `spec-search.mjs` 與 SKILL.md 中指向來源專案本機絕對路徑的 fallback
+     （外掛內不得含機器專屬路徑），語料改由隨套件附帶的 `corpus/` 目錄提供。
+  2. **修正 `verify-stream.mjs` 對 MO:DCA 結構欄位前綴的處理。** 原版假設資料流
+     直接以 SFI 開頭，因此真實的 `.afp` 檔（每個結構欄位前有平台加的 `X'5A'` 位元組）
+     會被誤判成 IPDS 指令流並報錯。依 MO:DCA p.53 的說明，`X'5A'` 不計入 `SFLength`，
+     修正後兩種編碼都能解析。
+  3. 新增 `scripts/test-verify-stream.mjs`：對兩種編碼各跑 6 條正負向測試，
+     確保「修好之後不會變成不會失敗的假綠」。
+- **`afp-renderer`（1 支）＝本次新撰寫。** 9 支 Python 模組（`afpstream` / `resources` /
+  `resfile` / `ptoca` / `goca` / `imimage` / `colors` / `units` / `render`）與
+  `references/renderer.md` 全部新寫。之所以自己寫：目前沒有成熟、持續維護的
+  AFP 開源渲染器（Python / JavaScript / Go / Rust 皆無）。
+  每一條不顯眼的繪圖規則都在模組 docstring 標回規格頁碼，經四輪獨立 verifier 複審後定稿。
+  搬入時把來源的 `research/modca-structure-table.json` 一併附帶（渲染器在 import 時讀它，
+  缺了就啟動失敗），檔案內容與來源逐位元相同。
+
+⚠️ **`corpus/` 是 AFPC 出版品的衍生文字內容。** AFPC 出版品可從
+<https://www.afpconsortium.org/publications.html> 公開下載，但**其再散布授權條款尚未確認**。
+本 repo 為私人本機版控、尚未公開散布；若日後要公開散布這一份外掛，
+**需先確認 AFPC 出版品的再散布條款**（或改為安裝時下載、不隨套件附帶全文）。

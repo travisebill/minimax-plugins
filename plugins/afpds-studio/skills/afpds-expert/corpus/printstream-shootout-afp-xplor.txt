@@ -1,0 +1,433 @@
+<<<PAGE 1>>>
+Print Stream Shootout  
+AFP 
+
+Instructor
+Don Maxwell
+dmaxwell@crawfordtech.com
+
+<<<PAGE 2>>>
+What does an AFP environment look 
+like?
+
+Line Data
+
+Data File
+
+Other Print Stream
+(Xerox, PS, PDF)
+
+Line2AFP
+
+Document 
+Composition
+
+Transform to AFP
+
+This is the print stream
+
+AFPDS
+(Fully Composed)
+
+Queuing System 
+(Print Spool)
+
+Print Server
+
+IPDS Printer
+
+IPDS Printer
+
+These make up the 
+AFP Architecture
+
+<<<PAGE 3>>>
+History
+
+• First AFP products came out ~ 1984
+• Mainframe (MVS) environments only
+• At that time, all products were IBM
+
+– Printers
+
+• 3800-3 - @ 229 impressions / minute
+• 3820 @ 20 impressions / minute
+
+– Software
+
+• PSF / MVS
+
+– Print server for IPDS printers
+
+• PMF for data layout
+• OGL for electronic forms
+
+<<<PAGE 4>>>
+History
+
+• Remember:
+
+– The “standard” at the time were line printers that 
+
+used  monospaced fonts!
+
+• AFP originally supported:
+
+– 240 dpi resolution
+– Raster fonts – Usually no more than 15 sizes of each 
+
+typeface
+
+– No automatic rotation of fonts or images
+
+• AFP Focus:
+
+– Mainframe Data Centre printing
+
+• All variable
+– Performance 
+– Integrity 
+– Centralized management of resources
+
+<<<PAGE 5>>>
+Install Base
+
+• Transactional / Data Center
+
+– Financial
+
+• Banks, Insurance 
+
+– Utilities
+
+• Hydro, Cable, Gas, Water, Telephone
+
+– Government
+
+• Types of documents:
+
+– Policies, statements, SYSOUT, and billing 
+
+applications
+
+<<<PAGE 6>>>
+Enhancements to AFP
+
+• Lots of new printers, both by IBM and others:
+
+– Cut-sheet and continuous forms
+– Range from 15 to 2000 impressions per minute
+
+• More print server platforms
+
+– Addition of print servers on VM, AS/400, Windows, AIX, 
+
+Linux
+
+• Support for 300, 480 and 600 dpi resolutions
+• Native Vector Graphics support (GOCA)
+• Resolution-independent image (IOCA)
+• Native Bar Code support (BCOCA)
+• Finishing (stitch / fold )
+• Adobe Type1 font support (FOCA)
+
+<<<PAGE 7>>>
+Enhancements to AFP
+
+• Support for non-AFP image object types
+– JPEG/JFIF, TIFF, and even single page PS, 
+
+PDF
+
+• Added 32-bit color image support
+• Added Truetype / Opentype font support
+• Added Color Management to the AFP 
+
+architecture (2006 – CMOCA)
+• The enhancement continues…
+
+– AFP Consortium meets 3 times annually to 
+
+continue to enhance/improve the abilities of 
+the AFP architecture
+
+<<<PAGE 8>>>
+OEM Support
+
+• Many 3rd party vendors create solutions in 
+
+the AFP space:
+– Forms Design, Document composition
+– Font & image creation / Conversion tools
+– Print Servers
+– IPDS Printers
+– AFP Transforms
+– You can have an AFP shop, and no IBM software 
+
+or hardware…
+
+– Moreover, you can mix and match tools from 
+
+multiple vendors, and it works!
+
+<<<PAGE 9>>>
+Strengths of AFP
+
+• IPDS – Intelligent Printer Data Stream
+
+– A bi-directional conversation between the print server and 
+
+the printer
+
+• “Who are you, and what features/options do you support?”
+• Resource Management
+
+– Automatic downloading of resources
+– Purging at end of job (if required) or when printer memory full
+
+• Printer status
+
+– # of pages sent, # of pages confirmed printed
+
+• Error recovery
+
+– Can detect it if printer goes off the page, and report it back
+– Paper jam, can back up 
+
+• Co-ordination of pre/post devices via the Universal Pre and 
+
+Post Processor protocol (UP3I)
+
+<<<PAGE 10>>>
+Strengths of AFP
+
+• Integrity
+
+– The print server knows how many pages have 
+
+been committed to the output stacker
+
+– If a problem (paper jam, power outage) occurs, 
+the print server can back up to the last page 
+that it knows was committed to the output 
+stacker
+
+– All the dots on all the pages printed as 
+
+expected.
+
+– One of the largest “sins” is for an AFP printer to 
+drop all or part of a page and not tell you about 
+it!
+
+• Note that you can tell it not to tell you, so be 
+
+careful!
+
+<<<PAGE 11>>>
+Strengths of AFP
+
+• Object Based:
+
+– Everything is an object that has a start and end wrapper 
+
+around it (page, images, overlays, documents, etc)
+
+• improves integrity by being able to detect incomplete 
+
+print stream or incomplete object
+– Even support for PS, PDF objects 
+
+• Performance:
+
+– Capturing and retaining of objects means they only 
+need to be transmitted to the printer and processed 
+once
+
+– Most AFP applications are <30 Kbytes per page
+
+• Resources are managed independently
+
+– Page independence allows processing of pages in 
+parallel by print controllers that have multiple 
+processors.
+
+<<<PAGE 12>>>
+Strengths of AFP
+
+• Device independence:
+
+– An application that works on one AFP printer 
+
+should print correctly on an AFP printer from a 
+different vendor (or else it’s a bug)
+
+• There is little room for ambiguity 
+• There are no device specific controls for paper trays, 
+
+finishing, etc
+
+– Even moving an application from cut sheet to 2-
+UP continuous can be accomplished simply by 
+using a different FORMDEF; no changes to the 
+document composition step should be required
+
+<<<PAGE 13>>>
+Strengths of AFP
+
+• Open Architecture (officially!)
+
+– AFP Consortium now steers where AFP 
+
+architecture goes.
+• Lots of OEMs with product out there
+
+• Manageability
+
+– Facilitates centralized accounting, capacity 
+
+planning, resource management
+
+<<<PAGE 14>>>
+Strengths of AFP
+
+• Indexing / Archiving Tools
+
+– Tools to retrieve all needed resources for 
+
+efficient archiving of a print stream
+
+– Supports indexing for fast retrieval of a specific 
+
+document within a print file
+
+– Supports page grouping, and document 
+metadata on both page and group levels
+
+• Mature, Robust
+
+– Has stood the test of 22+ years
+
+<<<PAGE 15>>>
+Weaknesses
+
+• Imaging model compared to PostScript, PDF: 
+
+– Supports only 4 directions of text
+– Graduated screenings
+– Text along arbitrary paths
+– Bezier curves
+– Trapping
+– Color Management
+
+• This has been released as formal architecture by the AFP 
+Consortium.  People are free to start building product.
+
+• Some comment that AFP is “Proprietary” to IBM
+– If an IBM printer didn’t support that function, there 
+
+was no architecture for it
+
+– AFP Consortium has officially opened up the AFP 
+
+architecture to it’s competitors and partners.  The AFP 
+consortium now steers where AFP goes.
+
+<<<PAGE 16>>>
+Weaknesses
+
+• Some complain that it requires a print 
+
+server
+
+• Can’t just “lpr” an AFP file to a printer directly, but 
+need to go through the print server to have the print 
+“managed” for you.
+
+– This is not a weakness if you want managed output!
+• Some complain that this server is a CPU 
+
+pig
+
+• CPUs are cheaper than people, and continue to get 
+
+cheaper every year.  Having output with data 
+missing, or having people check the output is 
+expensive!
+
+<<<PAGE 17>>>
+Weaknesses
+
+• Print metadata / job ticket is external to the 
+
+print file 
+– This data is usually dependent on the print server and 
+platform, and is sometimes difficult to move around 
+between operating systems
+
+– Most LPRs don’t support this extra metadata
+• No native format that supports compressed 
+
+resources or pages (for archive purposes) like 
+PDF has
+– Archive formats / tools tend to be proprietary although 
+
+the AFP that they contain is not!
+
+• No free, high quality viewers available, unlike 
+
+PDF
+
+<<<PAGE 18>>>
+Opportunities
+
+• Completely variable, high speed, Full color
+
+– Don predicts:  “AFP will do full color before PDF 
+
+will go at high speed with integrity”
+
+<<<PAGE 19>>>
+Threats
+
+• PDF –
+
+– Imaging model is superior, based on PostScript
+– Full color, color management
+– Page independence
+– Ubiquitous
+– Good, free, viewers available
+
+• However..
+
+– PDF does not natively support paper tray  selection, 
+
+duplex printing, finishing
+– RIP speeds tend to be slow
+– no guarantee of integrity of the output (font 
+
+substitution)
+
+• Or that all the dots on all the pages printed as expected
+
+<<<PAGE 20>>>
+Closing Thoughts
+
+• Just having an AFP print stream does not 
+guarantee integrity, performance, device 
+independence
+– Much of the integrity comes from IPDS
+– The AFP software solution you choose must 
+
+support these features 
+
+– An AFP solution will be garbage if the vendor 
+
+does an “end run” around the standard 
+implementation
+
+– Some vendors have invented unique ways to 
+
+accomplish certain tasks that are non-standard, 
+and these may not survive the device 
+independence test.

@@ -1,0 +1,212 @@
+<<<PAGE 1>>>
+AFP Consortium White Paper                                                   
+
+Introduction 
+
+Advanced Function Presentation (AFP) is a document and information presentation architecture. It  
+allows compliant printer software and hardware to provide control independent of specific 
+applications and devices. 
+Using AFP, the users can control formatting, output media, whether a document is to be printed or 
+viewed online, and manage document storage and access in a distributed network across multiple 
+operating system platforms. 
+AFP is also considered to be a "cornerstone" of electronic document management (EDM) 
+applications such as print-and-view, and archive and retrieval. 
+
+The AFP specification consists of several sub-architectures, including: 
+
+•  MO:DCA (Mixed Object Document Content Architecture). This is a device-independent 
+
+Page Description Language (PDL) that describes the objects on a page. The 'Mixed Object' 
+moniker refers to the fact that  a MO:DCA file can include multiple types of objects, 
+including text, images, bar codes, indexes (meta information) and color management 
+objects. Objects can be re-used by keeping them stored centrally at a server and just placing 
+references to the respective object into the MO:DCA file. These objects are referred to as 
+resources. An elaborated resource concept makes AFP a sophisticated but still very compact 
+file format. 
+
+•  IPDS (Intelligent Printer Data Stream). This is the bi-directional protocol used between a 
+
+print server and the printer. It is used to send the page level data to the printer and to signal 
+errors and provide accounting information back to the print server. It also allows the server  
+to query a printer’s available resources (e.g. available memory, input trays, resident 
+resources etc.), characteristics,  and capabilities. 
+
+The MO:DCA format is sometimes called the AFPDS (AFP Data Stream), or simply the AFP 
+format. Some of the MO:DCA "objects" are defined by the  IOCA (Image), GOCA (Graphics), 
+BCOCA (Bar Code) and CMOCA (Color Management)  Object Content Architectures. Others, such 
+as TIFF, JPEG ( JFIF), GIF,  EPS, and PDF are defined by industry-standard specifications. 
+
+AFP with its compact data structures and the ability to carry meta information along with the 
+document is well established and accepted in high- volume and high- speed variable data printing 
+and  is used by countless work flow applications. The concept of carrying document meta data 
+inextricably connected to the document itself enables work flows to be processed safely and 
+reliably. 
+
+Any user that has to process large volumes of print output sooner or later considers an AFP- based 
+infrastructure. Today the vast majority of high volume variable data printing is done with AFP- 
+based systems. Industries having this kind of requirements typically are banking, insurance, 
+telecommunications, manufacturing, public services and service-oriented industries like print and 
+archive services. 
+
+                                                                Printed on an InfoPrint 5000 color printer 
+
+        1
+
+<<<PAGE 2>>>
+AFP Consortium White Paper                                                   
+
+Background and History 
+
+Originally AFP started as the general purpose document and information presentation architecture 
+of IBM. The first specifications and products go back to 1984. The major important concepts of 
+object-driven structures, print integrity, resource management, and support for high print speeds 
+have been preserved ever since. 
+
+In the early 2000s IBM planned to extend the object architectures with support for full color 
+devices, including support for comprehensive color management. The intent was to enable 
+applications to create color output that is independent from the devices used for printing and 
+preserves color consistency and quality and fidelity of the printed material. As an important 
+development goal it was required that the new architecture integrates seamlessly with the existing, 
+well known and proven features of AFP. 
+
+To gain more momentum, in October 2004 IBM initiated the formation of the AFP Color 
+Consortium (AFPCC). The idea was to gather partners from across the relevant industries, such as 
+hardware manufacturers that produce printers as well as software vendors of composition, work 
+flow, viewer and transform tools. Quickly more than 30 members came together in regular meetings 
+and work group sessions to create the new AFP CMOCA (Color Management Object Content 
+Architecture) specification. A major milestone was reached with the initial official release of the 
+CMOCA specification in May 2006. 
+
+Motivation 
+
+After the first official release of CMOCA it was time to plan the next steps for AFP enhancements. 
+Since the co-operation between the members of the AFP Color Consortium turned out to be very 
+effective and valuable, IBM decided to suggest a broadening of the scope of the consortium efforts. 
+
+In May 2006 IBM announced its plans to open up the complete scope of the AFP architecture to the 
+consortium. This new initiative was finalized in September 2006 and is now called simply the AFP 
+Consortium (AFPC). All the members of the former AFP Color Consortium also became members 
+of the new consortium. Since then more members have joined the effort, which now covers more 
+and more aspects of document-related industries. 
+
+Goals 
+
+The AFP Consortium works to make the architecture even more comprehensive and to keep the 
+specifications up-to-date. The existing concepts are developed further to cover advanced needs of 
+customers. New ideas and concepts are implemented by extending the existing architecture or 
+introducing new pieces into it. 
+As a long-term goal, the AFP Consortium envisions an open, international, best-of-breed standard 
+to address the diverse requirements of the worldwide AFP customer community. 
+
+                                                                Printed on an InfoPrint 5000 color printer 
+
+        2
+
+<<<PAGE 3>>>
+AFP Consortium White Paper                                                   
+
+Working with the AFP Consortium 
+
+How to get information 
+
+The AFP Consortium runs a web site that contains relevant information and news about further 
+enhancements, events and actions. The current versions of all the AFP specifications can be viewed 
+and downloaded. There are plans to eventually include best practices information as well as a user 
+forum on the web site. Please refer to the contact information section for details about where to 
+locate the web site. 
+
+In the near future there is a plan to form a Customer Council. Major AFP users can join to get into 
+closer contact with the AFP Consortium by holding regular meetings, phone, or web conferences. 
+As a benefit, members of the Customer Council will get first hand information about new activities, 
+and important new requirements can be fed into the consortium. 
+
+Good sources for information are our member companies with their representatives. Please refer to 
+the members list in the contact information section for details. 
+
+Finally, the AFP Consortium is normally present at exhibitions and conferences such as Xplor, 
+AIIM OnDemand, and Drupa. 
+
+Test and Validation 
+
+A particular concern is the interoperability of products from the different vendors. The AFP 
+Consortium internally constantly develops test cases and test suites for the members to assure their 
+conformance with the specifications. 
+
+Conclusion 
+
+In summary, the AFP Consortium wants to promote the worldwide development and 
+implementation of AFP, especially in new areas of the fast growing digital printing market. With a 
+strong, international, multi-vendor support the AFP Consortium will make sure that the investments 
+our customers make in AFP products are well protected for the future. 
+
+This, combined with AFP's proven track record in transaction print should make you feel like you 
+just have to join the AFP family! 
+
+Having a long and successful history, this leads us to our slogan: 
+
+Back to the future! 
+
+                                                                Printed on an InfoPrint 5000 color printer 
+
+        3
+
+<<<PAGE 4>>>
+AFP Consortium White Paper                                                   
+
+Contact information 
+
+Website:  
+
+http://www.afpcolor.org 
+
+Postal address:  
+
+AFP Consortium 
+
+c/o InfoPrint Solutions Company 
+Mail Stop 004N 
+6300 Diagonal Highway 
+Boulder, CO 80301 
+USA 
+
+Members List: (as of May 2008): 
+
+Assentis Technologies 
+CDP Communications 
+CRE-DO 
+Cincom 
+Compart Systemhaus 
+COPI 
+Crawford Technologies 
+DocPath Corporation 
+Document Sciences 
+Elixir Technologies 
+Emtex 
+GMC Software Technology 
+Pitney Bowes Group 1 
+HP 
+IBM 
+InfoPrint Solutions Company/Ricoh 
+Intense Technologies 
+
+Invaris 
+Inventive Designers 
+ISIS-Papyrus 
+Kodak/Intermate 
+Levi, Ray & Shoup 
+Lexmark 
+Metavante 
+MPI 
+Océ 
+PrintSoft Americas, Inc. 
+Punch Graphix  
+RenderX 
+Skywire Software 
+Solimar Systems, Inc. 
+StreamServe 
+Xenos Group Inc. 
+Xerox 
+
+                                                                Printed on an InfoPrint 5000 color printer 
+
+        4

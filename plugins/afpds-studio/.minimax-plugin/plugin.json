@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "name": "afpds-studio",
+  "displayName": "AFP 文件工作室",
+  "version": "1.0.0",
+  "description": "AFP / AFPDS（Advanced Function Presentation）文件開發工具箱：內建 AFPC 完整出版品語料庫（32 份文件、5,490 頁、11.7 MB 純文字），每個位元組值、結構識別碼與繪圖規則都能追回規格頁碼；並附一套自建的 MO:DCA 資料流 → PNG 渲染器，可直接解出 FOCA 字型、PTOCA 文字、GOCA 圖形與 IOCA 影像並合成頁面預覽。適合解析 .afp 檔、驗證結構、撰寫產生器，或把 AFP 頁面轉成圖片檢視。",
+  "author": "Travis Chen",
+  "icon": "icon.png",
+  "darkIcon": "icon-dark.png",
+  "category": "Code",
+  "exampleQueries": [
+    "幫我解析這份 .afp 檔，列出它的物件結構與每個結構的規格頁碼",
+    "把這個 AFP 的第 1 頁 render 成 PNG 給我看",
+    "這個 AFP 在印表機上印出來是空白的，幫我查結構有沒有問題",
+    "MO:DCA 的 Begin Object Container 是哪一頁？它的語法長什麼樣",
+    "幫我驗證我產生的 AFP 位元組結構是否正確",
+    "這個 .afp 少了哪些外部資源？沒有 .res 會影響畫面嗎"
+  ],
+  "apps": [],
+  "mcpServers": [],
+  "skills": [
+    "skills/afpds-expert/SKILL.md",
+    "skills/afp-renderer/SKILL.md"
+  ]
+}

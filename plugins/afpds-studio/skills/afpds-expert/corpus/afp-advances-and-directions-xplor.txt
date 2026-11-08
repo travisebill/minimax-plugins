@@ -1,0 +1,1411 @@
+<<<PAGE 1>>>
+AFP: Advances and Directions 
+XPLOR Document University
+
+Reinhard Hohensee
+Distinguished Engineer 
+IBM Printing Systems Division
+March 1, 2007
+
+© 2007 IBM Corporation
+IBM Printing Systems
+
+<<<PAGE 2>>>
+Agenda
+
+(cid:137) AFP – an open architecture
+
+(cid:131) AFP Color Consortium (AFPCC) and scope
+(cid:131) Expansion of scope – AFP Consortium (AFPC) 
+(cid:131) Current membership
+(cid:131) Status of work  
+
+(cid:137) Recent advances in AFP
+
+(cid:131) TTF/OTF Fonts
+(cid:131) Unicode
+(cid:131) Resource Access Tables (RATs)
+(cid:131) Color Management 
+
+(cid:137) Future directions
+(cid:137) Summary
+
+2
+
+<<<PAGE 3>>>
+AFP Color Consortium (AFPCC)
+
+(cid:137) Formed in October 2004
+(cid:137) Initial membership was 16 companies
+(cid:137) Scope was limited to developing a comprehensive color 
+management capability within the AFP architecture 
+(cid:137) Work progressed very well - first release of AFP Color 
+
+Management Architecture (ACMA) was formally approved by 
+AFPCC on January 20, 2006 and has been published; see 
+www.afpcolor.org :
+(cid:131) Overview document  - AFP Color Management Architecture (ACMA) 
+
+Release 1
+
+(cid:131) Significant updates to the MO:DCA, IPDS, and AFP Line Data data streams; 
+
+see updated  references
+
+(cid:131) New architecture reference – Color Management Object Content 
+
+Architecture (CMOCA) Reference
+
+• Provides syntax for wrapping ICC profiles and other color management objects 
+
+so they can be processed as AFP resources 
+
+3
+
+<<<PAGE 4>>>
+AFP Consortium (AFPC)
+
+(cid:137) In May, 2006, IBM announced proposal to open development of 
+complete AFP architecture to the AFPCC; this was accepted by 
+all members by September, 2006
+
+(cid:137) ***AFP is now a completely  OPEN architecture and the AFPCC 
+
+has become the AFP Consortium (AFPC)***
+(cid:131) Customer benefits
+
+• More consistent implementations, therefore better interoperability of products
+• Broader choice of vendors and products
+• Better investment protection - standards have industry staying power
+
+(cid:137) New scope of AFPC work:
+
+(cid:131) Data streams - MO:DCA, IPDS, AFP Line Data
+(cid:131) Object Architectures:
+
+AFP GOCA (vector graphics)                      BCOCA (bar codes)
+CMOCA (color management resources)     FOCA (fonts)
+IOCA (image)                                              PTOCA (text)
+
+(cid:131) **Develop AFP into best-of-breed presentation architecture**
+
+4
+
+<<<PAGE 5>>>
+Current AFP Consortium Membership (31)
+
+(cid:131) Document Composition & 
+
+Resource Creation:
+
+• Cincom
+• COPI
+• DocuCorp
+• Document Sciences
+• Elixir Technologies
+• Exstream Software
+• FormsPath
+• GMC Software Technology
+• Group 1
+Invaris
+•
+Inventive Designers
+•
+Isis-Papyrus
+•
+• Metavante
+• PrintSoft
+• StreamServe
+
+(cid:131) Servers & Transforms
+• CDP Communications 
+• Compart Systemhaus
+• Crawford Technologies
+• Emtex
+•
+• LRS
+• MPI
+• Solimar Systems
+• Xenos Group Inc.
+(cid:131) Printers & Controllers
+
+Intermate
+
+IBM
+•
+• Kodak
+• Lexmark
+• Oce
+• Ricoh
+• Xeikon International
+• Xerox
+
+5
+
+<<<PAGE 6>>>
+Recent AFP Advances: TrueType/OpenType Font 
+Support
+(cid:137) Scalable outline technology used on the Windows and Mac 
+platforms; most prevalent font technology in the industry
+
+(cid:137) Benefits for AFP customers:
+
+(cid:131) Provides greater choice of typefaces, particularly non-Latin typefaces
+(cid:131) Allows migration to the same single font technology on all presentation  
+
+platforms, e.g. Windows, zOS, AIX
+
+• Provides ability to print from Windows and Mac applications without font 
+
+substitutions
+
+• Provides ability to transform to/from other PDLs, e.g. PS/PDF, without font 
+
+substitutions
+
+• Provides the basis for future, more advanced support of complex non-Latin 
+
+scripts, e.g. Arabic, Hebrew, Indic, Thai
+
+(cid:137) Support added to AFP architecture and to AFP/IPDS products 
+starting in 2003; rollout of support on printers, servers, and 
+formatters continues
+
+6
+
+<<<PAGE 7>>>
+Installing TrueType/OpenType Fonts (TTF/OTFs) in 
+an AFP System
+
+(cid:137)TTF/OTFs are installed using an Installer such as the 
+
+IBM Font Installer for AFP Systems
+
+(cid:131) Windows application that installs fonts in remote print server 
+
+resource libraries using FTP protocol
+
+(cid:131) Builds a Resource Access Table (RAT) for the fonts in the 
+
+resource library
+
+(cid:131) RAT is indexed from the data stream with a full font name, 
+
+which matches the name specified within the font
+
+(cid:137)Fonts must support Unicode encoding
+(cid:137)Fonts are installed as is – they are not altered and they 
+are not wrapped in an AFP container; therefore they 
+can be shared with non-AFP applications
+
+7
+
+<<<PAGE 8>>>
+Installing TTF/OTFs (contd)
+(cid:137)Fonts can be installed as part of a TrueType Collection file 
+
+(TTC)
+
+(cid:131) File with common header and multiple TTF/OTFs that share tables
+(cid:131) File size reduction with TTC if fonts share large number of glyphs
+
+(cid:137)Fonts can be installed with ‘linked’ fonts:
+
+(cid:131) Fonts “font1”, “font a”, “font b”, and “font “c” are treated logically as a 
+single font; base font (font1) is always processed first, followed by the 
+first linked font (font a), then the second linked font (font b), etc. 
+
+ffn (font1)
+(base font)
+
+ffn = full font name
+
+ffn (font a)
+ffn (font b)
+ffn (font c)
+
+(first linked font)
+(second linked font)
+(third linked font)
+
+(cid:131) Provides ability to add additional characters (TTF/OTF file format 
+restricts number of characters in a given font to 64K) and user-defined 
+characters (UDCs) 
+
+8
+
+<<<PAGE 9>>>
+TTF/OTF Reference in AFP Data Stream
+
+AFP (MO:DCA-P)
+
+Data Stream
+.....
+BAG
+.....
+
+MDR
+
+Any TrueType/OpenType
+Font with Unicode c-map
+
+<EBCDIC character encoding>
+<FFN = SymbolPropBT>
+<Object-type OID = TTF/OTF>
+<Font LID n>
+<Font Descriptor>
+
+.....
+EAG
+.....
+BPT
+.....
+
+Set Font LID n
+PTX
+
+u{xxxx}
+
+.....
+
+one-to-one
+rendering
+
+9
+
+Resource Access Table (RAT)
+
+Full Font
+Name
+.....
+.....
+
+SymbolPropBT
+
+.....
+.....
+
+File Name
+
+.....
+.....
+Z0F48HOH
+.....
+.....
+
+TrueType/OpenType Font
+
+Encoding
+subtable
+(Unicode)
+
+Code glyph index
+.....
+.....
+xxxx
+.....
+.....
+
+.....
+.....
+index i
+.....
+.....
+
+Glyph table
+(TrueType
+outlines)
+
+.....
+A
+.....
+.....
+
+point
+size
+
+TrueType/OpenType
+
+Rasterizer
+(Printer-resident)
+
+rasterized
+glyph
+bit map
+
+A
+
+<<<PAGE 10>>>
+Recent AFP Advances: Unicode Support 
+
+(cid:137)Unicode support is an integral part of TrueType/OpenType font 
+
+support
+
+(cid:137)Unicode is a standard developed by the Unicode consortium that 
+defines a universal character encoding for the characters in all the 
+major scripts in the world
+
+(cid:137)Basic encoding is a double-byte encoding (UTF-16) that supports 
+
+64K characters
+
+(cid:137)Encoding can be extended to a four-byte encoding using the 
+
+surrogate concept:
+
+(cid:131) High-surrogate in range X’D800’ – X’DBFF’
+(cid:131) Low surrogate in range X’DC00’ – X’DFFF’
+(cid:131) Four-byte code consists of high-surrogate code followed by low-surrogate 
+
+code
+
+(cid:131) Addresses additional 1024x1024 = 1,048,576 characters
+
+10
+
+<<<PAGE 11>>>
+Character Groupings in Unicode Base Plane 
+
+Name
+
+Code Range
+
+Description
+
+General Scripts
+
+Symbols
+
+CJK Symbols
+
+CJK Ideographs
+
+0000-1FFF
+
+2000-2DFF
+
+2E00-3FFF
+
+3400-9FFF
+
+Yi Syllables
+
+A000-A4CF
+
+Hangul Syllables
+
+Surrogates
+
+Private Use
+
+AC00-D743
+
+D800-DFFF
+
+E000-F8FF
+
+Compatibility and Specials
+
+F900-FFFD
+
+11
+
+Phonetic scripts, e.g. Latin
+
+Punctuation, math symbols
+
+Unified CJK ideographs
+
+Korean Hangul syllables
+
+High/low surrogates
+
+<<<PAGE 12>>>
+Why Unicode?
+
+Current Environment
+
+The German and French words for beauty are Schonheit and beaute, respectively.
+
+English code page
+
+German
+code
+page
+
+Eng
+code
+page
+
+French
+code
+page
+
+English code
+
+page
+
+FS = font switch
+
+FS
+
+FS
+
+FS
+
+FS
+
+*** Application needs to understand scripts and code pages ***
+
+Unicode Environment
+
+The German and French words for beauty are Schonheit and beaute, respectively.
+
+Unicode code page
+
+*** Application only needs to understand Unicode ***
+
+12
+
+<<<PAGE 13>>>
+Recent AFP Advances: Resource Access Table 
+(RAT) 
+
+(cid:137) Architected table (defined in MO:DCA Reference) for processing 
+
+resources installed in resource libraries
+(cid:131) Allows referencing of resources in data stream by natural, platform-
+
+independent name, e.g. TTF/OTF full font name, CMR name
+
+(cid:131) Allows association of additional processing parameters with resource, e.g. 
+
+public/private flag and object OID, in platform-independent manner
+(cid:137) Table consists of common header, followed by repeating groups 
+
+that are defined for specific object types
+(cid:131) Repeating groups consist of a header with length and object-type identifier, 
+
+followed by MO:DCA triplet-like table vectors (TVs)
+
+(cid:131) TVs are specific to object-type
+
+13
+
+<<<PAGE 14>>>
+Resource Acccess Table (RAT) (contd)
+
+(cid:137) Currently supported object types
+
+(cid:131) TrueType/OpenType fonts (TTF/OTFs)
+(cid:131) Color Management Resources (CMRs)
+(cid:131) Data Objects, e.g. IOCA, EPS, PDF, TIFF, GIF, JFIF (JPEG)   
+
+(cid:137) File name for RATs is fixed:
+
+(cid:131) TTF/OTFs: IBM_DataObjectFont.rat
+(cid:131) CMRs: AFP_ColorManagementResource.rat
+(cid:131) Data Objects: AFP_DataObjectResource.rat
+
+14
+
+<<<PAGE 15>>>
+Resource Access Table – TTF/OTF RAT
+
+RG Header: Length, Flags (private/public, capture,…), identifier for  
+TrueType/OpenType font object-type
+
+Table Vector Type 
+
+Table Vector Content
+
+Font name
+
+File name
+
+Font OID
+
+Full font name in UTF-16BE; can 
+be repeated in multiple languages
+
+File name of font or font collection
+
+Object OID for font or font 
+collection 
+
+Index into font collection
+
+Ignored if not a collection
+
+Linked font names
+
+Full font names of linked fonts; 
+can be repeated   
+
+15
+
+<<<PAGE 16>>>
+Resource Access Table – CMR RAT
+
+RG Header: Length, Flags (private/public, capture,…) identifier for  
+CMR object type
+
+Table Vector Type 
+
+Table Vector Content
+
+CMR name
+
+File name
+
+CMR OID
+
+Mapped CMR name
+
+Name of CMR in UTF-16BE
+
+File name of CMR
+
+Object OID for CMR
+
+Name of CMR that is “mapped” to 
+this CMR; can be repeated
+
+(cid:131) Link CMR if this CMR is a CC CMR
+(cid:131) TTC or HT CMR if this CMR is 
+generic  
+
+16
+
+<<<PAGE 17>>>
+Resource Access Table – Data Object RAT
+
+RG Header: Length, Flags (private/public, capture,…), identifier for 
+data object type 
+
+Table Vector Type 
+
+Table Vector Content
+
+Object name
+
+Name of object in UTF-16BE
+
+File name
+
+CMR OID
+
+File name of object 
+
+Object OID for object 
+
+Rendering Intent (RI)
+
+Rendering Intent for object
+
+CMR name
+
+CMR Descriptor
+
+17
+
+Name of a CMR that is to be 
+associated with this object; can be 
+repeated   
+
+Processing mode for CMR 
+(audit/instruction); paired with 
+CMR name
+
+<<<PAGE 18>>>
+Recent AFP Advances: Color Management
+
+(cid:137) Customer benefits
+
+(cid:131) Device-independent color rendering - accurate colors regardless of output 
+
+device
+
+• Consistent colors across multi-vendor configurations and workflows
+• Tunable colors at system level (in contrast to dials on printer)
+
+(cid:137) AFP Color Management is based on: 
+
+(cid:131) ICC profiles and ICC color management concepts
+(cid:131) A new AFP object – the AFP Color Management Resource (CMR):
+
+• Provides wrapper for color management constructs, e.g. wrapper for an ICC 
+
+profile (which is not modified) 
+
+• Defined in a new formal architecture under the AFP Architecture umbrella – the 
+
+Color Management Object Content Architecture (CMOCA)
+
+• Published in the new CMOCA Architecture Reference
+• Allows color management constructs like ICC profiles, tone transfer curves, 
+halftones, to be processed as AFP resources – download once, reference 
+multiple times, capture in device, package in inline resource group, etc.
+
+18
+
+<<<PAGE 19>>>
+CMR Structure
+
+Length (bytes)
+
+4
+
+4
+
+2
+
+16
+
+4
+
+14
+
+28
+
+22
+
+46
+
+16
+
+8
+
+N
+
+Name
+
+Length
+
+Signature
+
+Reserved
+
+CMR Alias
+
+CMR Type
+
+CMR Version
+
+Device-specific fields 
+
+Media-specific fields
+
+CMR-type-specific fields
+
+Reserved
+
+Reserved
+
+CMRData
+
+Description
+
+CMR length, including length field
+
+Eye-catcher string
+
+Set to zero
+
+Human-readable name
+
+CMR Type
+
+Set to “@...@”
+
+Set to zero
+
+CMR data
+
+**Grayed fields in order shown define CMR name – 146 bytes = 73 characters, which is used to 
+
+reference the CMR in the data stream**
+
+19
+
+<<<PAGE 20>>>
+CMR Types
+
+(cid:137) Color Conversion (CC) CMRs: contain ICC profiles (in their 
+
+ICC-defined syntax) that convert a device-specific color to/from the 
+device-independent ICC Profile Connection Space (PCS)
+
+(cid:137) Tone Transfer Curve (TTC) CMRs: one-dimensional curves 
+
+that are used to modify the values of a particular color component, 
+e.g. cyan
+
+(cid:137) Halftone (HT) CMRs: screens that are applied to multibit data
+(cid:137) Indexed (IX) CMRs: mappings of indexed (numbered) colors in 
+the data stream to output device colors or colorant combinations
+(cid:137) Link Color Conversion (LK) CMRs: Look-up tables (LUTs) 
+
+that convert directly from a device-specific input color space in the 
+data to the device-specific output color space of the presentation 
+device
+
+20
+
+<<<PAGE 21>>>
+CMR Processing Modes
+
+(cid:137) Provides context for how a CMR that is tied to a document 
+
+component should be processed 
+
+(cid:137) Is specified along with the CMR reference and is not part of 
+
+the CMR
+
+(cid:137) Processing modes
+
+(cid:131) Audit: an audit CMR specifies color-management processing that has been 
+
+done on a document component; for example it may specify a color 
+conversion that has been done on the data (similar to an ICC input profile)
+(cid:131) Instruction: an instruction CMR specifies color-management processing 
+
+that is to be done on a document component; for example it may specify a 
+color conversion that is to be applied to the data (similar to an ICC output 
+profile)
+
+(cid:131) Link: a link CMR is used to convert an input color space in the presentation 
+data directly to the output color space of the presentation device without 
+going through the PCS (similar to an ICC device link profile)
+
+21
+
+<<<PAGE 22>>>
+CMR Installation
+
+(cid:137) CMRs can be installed in an AFP resource library with an 
+
+application that:
+(cid:131) uploads the CMR into the resource library of a print server
+(cid:131) builds the CMR Resource Access Table (RAT) entry for the CMR
+
+(cid:137) CMRs may also be carried in a printfile-level resource group 
+in a BRS - BOC/EOC – ERS container, and are then called 
+inline CMRs
+(cid:131) BRS specifies CMR name
+(cid:131) Print server always searches for CMRs first in resource group, then in  
+
+resource library via CMR RAT
+
+22
+
+<<<PAGE 23>>>
+Associating CMRs with a MO:DCA document 
+component
+
+(cid:137) CMRs can be associated with document components at all 
+
+levels of the MO:DCA document hierarchy:
+(cid:131) Printfile (highest)
+(cid:131) Document
+(cid:131) Group of pages/sheets
+(cid:131) Page/overlay
+(cid:131) Data object (lowest)
+
+(cid:137) A CMR at a lower level always overrides – for that document 
+
+component only – a conflicting CMR at a higher level
+(cid:131) Example: CC CMR at printfile level defines RGB = scanner (y) RGB, CC 
+
+CMR at page (n) level defines RGB = scanner (x) RGB. According to rule, 
+since CC CMRs conflict, all RGB for page (n) is interpreted as scanner (x) 
+RGB 
+
+23
+
+<<<PAGE 24>>>
+CMR Type: Color Conversion (CC) CMR
+
+ICC Profile Connection
+Space (PCS) - CIELab D50
+or CIEXYZ D50 (24 bit)
+
+TIFF image
+24 bit RGB
+scanner x
+
+CC CMR: scanner x
+ICC profile -
+RGB --> PCS
+
+CC CMR: Infocolor 130+
+ICC profile -
+PCS --> CMYK
+
+Printer bit map
+32 bit CMYK
+Infocolor 130+
+
+Processing mode = audit
+
+Processing mode = instruction
+
+24
+
+<<<PAGE 25>>>
+Link Color Conversions (contd)
+
+LK CMR:
+
+scanner x RGB ->
+Infocolor 130+ CMYK
+
+Printer bit map
+32 bit CMYK
+Infocolor 130+
+
+Processing mode = link
+
+TIFF image
+24 bit RGB
+scanner x
+
+25
+
+<<<PAGE 26>>>
+CMR Type: Indexed (IX) CMR - named colorant 
+output
+
+X’yyzz’ = X’0100’
+to X’FFFF’
+
+MO:DCA printfile
+
+....
+
+BPG/BMO (page/overlay)
+
+Color specified using X’4E’
+triplet syntax:
+
+<PTOCA -SEC>
+<GOCA - SPC>
+<BCOCA - BDD>
+<IOCA - IDD>
+<PGD/OBD>
+..........
+
+EPG/EMO
+
+ColSpce=X’06’
+(Highlight)
+
+Color=X’yyzz’
+
+Indexed (IX) CMR in MO:DCA
+Document Hierarchy:
+
+- printfile
+- document
+- page/sheet group
+- page/overlay
+- object
+
+Named Colorant Output:
+
+CMR Header
+
+Subset ID Tag - ID = X’01’
+
+Number of Named Colorants Tag - “n” colorants (max = 15)
+
+Color Palette Named Colorants Tag
+
+.............
+
+.............................
+
+...................
+
+X’yyzz’
+
+CIE Lab value (6B)
+
+Intensity of 1st colorant (1B)
+Intensity of 2nd colorant (1B)
+
+....................
+
+Intensity of nth colorant (1B)
+
+...............
+
+...........................
+
+......................
+
+Colorant Identification List Tag
+
+Length
+Length
+
+Length
+
+Colorant 1 Name (UTF-16BE) (2-250B)
+Colorant 2 Name (UTF-16BE) (2-250B)
+................................................
+
+Colorant n Name (UTF-16BE) (2-250B)
+
+AFP
+
+26
+
+<<<PAGE 27>>>
+Associating CMRs with a Document Component: 
+Printfile
+
+BFM (FormDef)
+
+BDG (Document Environment Group (DEG))
+
+.................
+MDR, CMRname = cmrxyz
+
+X’10’ triplet: Object-type OID = CMR
+X’91’ triplet: Processing mode = audit
+
+Resource
+Library
+
+CMR
+RAT
+
+cmrxyz
+
+..................
+
+EDG
+....................
+
+EFM
+
+AFP
+(MO:DCA-P)
+Printfile
+
+Print
+Server
+
+IPDS
+
+Controller PRT
+
+*** CMR scope = complete printfile ***
+
+Captured
+CMRs
+
+Printer
+Cache
+
+27
+
+<<<PAGE 28>>>
+Associating CMRs with a Document Component: 
+Group of pages/sheets 
+
+BMM, MM(a)
+
+......
+
+MDR, CMRname = cmrxyz
+
+X’10’ triplet: Object-type OID = CMR
+X’91’ triplet: Processing mode = audit
+
+Scope = group of pages/sheets
+
+Resource
+Library
+
+CMR
+RAT
+
+cmrxyz
+
+Medium Map (a) can be
+in FormDef or inline
+
+AFP
+(MO:DCA-P)
+Printfile
+
+Print
+Server
+
+IPDS
+
+Controller PRT
+
+........
+
+EMM
+
+BDT
+...
+
+Page (n)
+IMM, MM(a)
+Page (n+1)
+......
+......
+Page (m)
+
+EDT
+
+*** CMR scope = group of sheets
+
+that contain pages (n+1) to (m) ***
+
+Captured
+CMRs
+
+Printer
+Cache
+
+28
+
+<<<PAGE 29>>>
+Associating CMRs with a Document Component: 
+Page/Overlay
+
+BPG/BMO (page/overlay)
+
+BAG (Active Environment Group (AEG))
+
+.................
+MDR, CMRname = cmrxyz
+
+X’10’ triplet: Object-type OID = CMR
+X’91’ triplet: Processing mode = audit
+
+Scope = page/overlay
+
+Resource
+Library
+
+CMR
+RAT
+
+cmrxyz
+
+..................
+
+EAG
+....................
+
+EPG/EMO
+
+AFP
+(MO:DCA-P)
+Printfile
+
+Print
+Server
+
+IPDS
+
+Controller PRT
+
+*** CMR scope = page or overlay ***
+
+Captured
+CMRs
+
+Printer
+Cache
+
+29
+
+<<<PAGE 30>>>
+Associating CMRs with a Document Component: 
+Data Object via IOB
+
+BPG/BMO (page/overlay)
+
+BAG (Active Environment Group (AEG))
+
+.................
+
+MDR
+
+FQN type X’DE’ triplet: cmrxyz
+X’91’ triplet: Processing mode = audit
+
+Scope = data object
+
+..................
+
+EAG
+
+..................
+IOB
+
+FQN type X’01’ triplet: epslogo
+X’10’ triplet: Object-type OID = eps
+FQN type X’DE’ triplet: cmrxyz
+X’91’ triplet: Processing mode = audit
+
+Scope = data object
+
+..................
+
+EPG/EMO
+
+Resource
+Library
+
+CMR
+RAT
+
+cmrxyz
+
+MO:DCA
+printfile
+
+Print
+Server
+
+IPDS
+
+Controller PRT
+
+*** CMR scope = data object (eps) ***
+
+Captured
+CMRs
+
+Printer
+Cache
+
+30
+
+<<<PAGE 31>>>
+Associating CMRs with a Document Component: 
+Data Object via OEG
+
+BBC/BGR/BIM/BOC (data object)
+
+BOG (Object Environment Group (OEG))
+
+.................
+MDR, CMRname = cmrxyz
+
+X’10’ triplet: Object-type OID = CMR
+X’91’ triplet: Processing mode = audit
+
+Scope = data object
+
+Resource
+Library
+
+CMR
+RAT
+
+cmrxyz
+
+..................
+
+EOG
+....................
+EBC/EGR/EIM/EOC
+
+AFP
+(MO:DCA-P)
+Printfile
+
+Print
+Server
+
+IPDS
+
+Controller PRT
+
+*** CMR scope = data object ***
+
+Captured
+CMRs
+
+Printer
+Cache
+
+31
+
+<<<PAGE 32>>>
+Associating CMRs with a Data Object via Data 
+Object RAT
+
+BPG/BMO (page/overlay)
+
+BAG (Active Environment Group (AEG))
+
+.................
+
+MDR
+
+FQN type X’CE’ triplet: epslogo
+X’10’ triplet: Object-type OID = eps
+
+EAG
+
+................
+
+..................
+IOB
+
+Resource
+Libraries
+
+epslogo
+
+cmrxyz
+
+Data
+Object
+RAT
+
+CMR
+RAT
+
+FQN type X’01’ triplet: epslogo
+X’10’ triplet: Object-type OID = eps
+
+..................
+
+EPG/EMO
+
+AFP
+(MO:DCA-P)
+Printfile
+
+Print
+Server
+
+IPDS
+
+Controller PRT
+
+*** CMR scope = data object (eps) ***
+
+Captured
+CMRs
+
+Captured
+Data
+Objects
+
+Printer
+Cache
+
+32
+
+<<<PAGE 33>>>
+Rendering Intent
+
+(cid:137) To properly process a Color Conversion CMR (that contains 
+
+an  ICC profile) and a Link Color Conversion CMR (that 
+effectively provides a conversion between two ICC profiles), 
+system needs to know user rendering intent
+
+(cid:137) Rendering intents defined by ICC
+
+(cid:131) Perceptual: Preserve appearance by mapping all colors into the device gamut while 
+maintaining color relationships; typically used to render continuous-tone images 
+(cid:131) Saturation: Generate vivid, saturated colors, even at the expense of color accuracy; 
+
+typically used for business graphics
+
+(cid:131) Media-relative colorimetric: Maps white point of source color to white point of output 
+media; reproduces all in-gamut colors accurately. Colors ‘look right’ but may not be 
+accurate colorimetrically. Typically used for vector graphics or images.
+ICC-absolute colorimetric: Does not map white point of source color to white point 
+of output media; reproduces all in-gamut colors accurately. Colors are accurate 
+colorimetrically but may not ‘look right’. Typically used for logos or  proofing, i.e., 
+simulating output of one device/media on another device/media.
+
+(cid:131)
+
+33
+
+<<<PAGE 34>>>
+Rendering Intent (contd)
+
+(cid:137) Associated with MO:DCA document components at the 
+
+same levels of the document hierarchy as CMRs
+(cid:131) Printfile (highest)
+(cid:131) Document
+(cid:131) Group of pages/sheets
+(cid:131) Page/overlay
+(cid:131) Data object (lowest)
+
+(cid:137) RI triplet specifies rendering intent independently for each 
+
+major AFP object-type category
+(cid:131) IOCA
+(cid:131) Object containers (EPS/PDF/TIFF/JFIF/GIF)
+(cid:131) PTOCA
+(cid:131) GOCA 
+
+34
+
+<<<PAGE 35>>>
+Future Directions
+
+(cid:137) Develop AFP as the best-of-breed presentation architecture for 
+
+monochrome and color production variable-data printing
+(cid:131) Based on customer requirements, fill-in “missing” functionality in AFP  
+
+formats - PTOCA, GOCA, IOCA, BCOCA
+
+(cid:137) Develop infrastructure – architecture levels, testing, certification, 
+etc. to ensure interoperability of AFP products developed by 
+AFPC members
+(cid:131) Formatting applications
+(cid:131) Transforms
+(cid:131) Print Servers
+(cid:131) Printers 
+
+(cid:137) Develop extensions to allow AFP environments/products to better 
+interoperate with other environments – PS/PDF, XML, web, view, 
+archive, sort/search, index, etc; requires better metadata support
+
+35
+
+<<<PAGE 36>>>
+Summary
+
+(cid:137) AFP is now an open industry standard, developed by the AFP 
+
+Consortium (AFPC)
+
+(cid:137) AFP has been extended with a number of significant advances in 
+
+the past few years:
+(cid:131) TrueType/OpenType font support
+(cid:131) Unicode encoding 
+(cid:131) Resource Access Tables (RATs)
+(cid:131) ICC-based color management 
+
+(cid:137) Future Directions
+
+(cid:131) Best-of-breed presentation architecture
+(cid:131) Interoperability of products
+(cid:131) Interoperability with other environments
+
+36

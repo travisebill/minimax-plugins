@@ -1,0 +1,8937 @@
+<<<PAGE 1>>>
+Adva
+Data S
+
+anced Fu
+tream and
+
+unction
+d Object 
+
+n Presen
+Architect
+
+ntation C
+tures 
+
+Consort
+
+tium 
+
+AF
+(FG
+
+FPC 
+GIDs
+
+Font
+s) 
+
+t Ty
+
+pefa
+
+ace R
+
+Registry
+
+AFPC-00
+
+016-01
+
+<<<PAGE 2>>>
+AFPC-0016-01 
+First Edition (July 2011) 
+
+This edition applies is the first edition produced by the AFP Consortium™ and replaces and is based on the IBM® FGID 
+registry that was previously maintained by IBM Corporation.  This edition remains current until a new edition is 
+published.  This publication also applies to any subsequent releases of Advanced Function Presentation™ (AFP™) 
+products that use the AFP architectures until otherwise indicated in a new edition. 
+
+Internet 
+
+Visit our home page: http://www.afpcinc.org 
+
+Copyright © AFP Consortium 2011
+
+<<<PAGE 3>>>
+AFPC Font Typeface Registry 
+
+Table of Contents 
+Preface ......................................................................................................................................................... iii 
+
+AFP Consortium™ ..................................................................................................................................... iii 
+
+Trademarks .............................................................................................................................................. iii 
+
+Explanation of Reference Terms .............................................................................................................. iv 
+
+Registered Font Typefaces ................................................................................................................... iv 
+
+Font Class and Font Subclass Assignments ........................................................................................... v 
+
+Mapping of FGID Classifications to ISO‐Typeface Classifications ........................................................ vi 
+
+Font Global ID (FGID) Registry ...................................................................................................................... 1 
+
+Fixed Pitch (10 Pitch):  1–65 (X'0001' – X'0041') ....................................................................................... 1 
+
+Fixed Pitch (12 Pitch):  066–153 (X'0042' – X'0099') ................................................................................. 4 
+
+PSM Spacing (Size Independent):  154–200 (X'009A' – X'00C8') .............................................................. 6 
+
+Fixed Pitch (13.3 Pitch):  201–210 (X'00C9' – X'00D2') ............................................................................. 8 
+
+Fixed Pitch (15 Pitch):  211–239 (X'00C9' – X'00EF') ................................................................................. 9 
+
+Fixed Pitch (5 Pitch):  240–246 (X'00F0' – X'00F6') ................................................................................. 10 
+
+Fixed Pitch (17.1 Pitch):  247–259 (X'00F7' – X'0103') ............................................................................ 11 
+
+Fixed Pitch (8 Pitch):  260–273 (X'0104' – X'0111') ................................................................................. 12 
+
+Fixed Pitch (17‐27 Pitch):  274–299 (X'0112' – X'012B') ......................................................................... 13 
+
+Fixed Pitch (Size Independent):  300–699 (X'012C' – X'02BB') ............................................................... 14 
+
+PSM Spacing (Size Independent):  700–749 (X'02BC' – X'02ED') ............................................................ 20 
+
+IBM RPQs and Deviations:  750–2,303 (X'02EE' – X'08FF') ..................................................................... 21 
+
+Proportional Designs:  2,304–3,839 (X'0900' – X'0EFF') ......................................................................... 23 
+
+Customer Assigned:  3,840–4,095 (X'0F00' – X'0FFF') ............................................................................ 24 
+
+Scalable, Fixed or Proportional:  4,096–53,247 (X'1000' – X'CFFF') ........................................................ 25 
+
+Class 1 =Oldstyle Serifs ........................................................................................................................ 25 
+
+Class 2 =Transitional Serifs .................................................................................................................. 28 
+
+Class 3 = Modern Serifs ....................................................................................................................... 29 
+
+Class 4 = Clarendon Serifs ................................................................................................................... 30 
+
+Class 5 = Slab Serifs ............................................................................................................................. 32 
+
+Class 7 = Freeform Serifs ..................................................................................................................... 34 
+
+Class 8 = Sans Serif .............................................................................................................................. 35 
+
+Class 9 = Ornamentals ......................................................................................................................... 39 
+
+Class 10 = Scripts ................................................................................................................................. 40 
+
+Class 12 = Symbolic ............................................................................................................................. 41 
+
+Preface 
+
+AFP Consortium 
+
+Page i
+
+<<<PAGE 4>>>
+AFPC Font Typeface Registry 
+
+Asia Pacific Designs:  53,248–61,439 (X'D000' – X'EFFF') ....................................................................... 42 
+
+IBM AFP Restricted Use:  61,440–65,279 (X'F000' – X'FEFF') ................................................................. 45 
+
+Customer Assigned: 65,280–65,534 (X'FF00' – X'FFFE') ......................................................................... 45 
+
+Index ............................................................................................................................................................ 47 
+
+Page ii 
+
+AFP Consortium 
+
+Preface
+
+<<<PAGE 5>>>
+AFPC Font Typeface Registry 
+
+Preface 
+
+This document was originally an IBM Standard, but was removed from the standards process on June 30, 2000. The 
+FGID Registry is now maintained for AFP products by the Advanced Function Presentation Consortium (AFPC).  
+This registry contains the Font Typeface Global Identifier (FGID) and associated summary information for each font 
+typeface which has been registered.  The registry has become quiescent so that no further FGIDs will be assigned. 
+
+AFP Consortium™ 
+The Advanced Function Presentation (AFP) architectures began as the strategic, general purpose document and 
+information presentation architecture for the IBM Corporation. The first specifications and products go back to 
+1984. Although all of the components of the architecture have grown over the years, the major concepts of object-
+driven structures, print integrity, resource management, and support for high print speeds were built in from the 
+start.   
+
+In the early twenty-first century, IBM saw the need to enable applications to create color output that is independent 
+from the device used for printing and to preserve color consistency, quality, and fidelity of the printed material.  
+This need resulted in the formation, in October 2004, of the AFP Color Consortium™ (AFPCC™).  The goal was to 
+extend the object architectures with support for full-color devices including support for comprehensive color 
+management.  The idea of doing this via a consortium consisting of the primary AFP architecture users was to build 
+synergism with partners from across the relevant industries, such as hardware manufacturers that produce printers as 
+well as software vendors of composition, work flow, viewer and transform tools.  Quickly more than 30 members 
+came together in regular meetings and work group sessions to create the AFP Color Management Object Content 
+Architecture™ (CMOCA™).  A major milestone was reached by the AFP Color Consortium with the initial official 
+release of the CMOCA specification in May 2006. 
+
+Since the cooperation between the members of the AFP Color Consortium turned out to be very effective and 
+valuable, it was decided to broaden the scope of the consortium efforts and IBM soon announced its plans to open 
+up the complete scope of the AFP architecture to the consortium.  In June 2007, IBM's role as founding member of 
+the consortium was transferred to the InfoPrint Solutions Company, an IBM/Ricoh joint venture.  In February 2009, 
+the consortium was incorporated under a new set of bylaws with tiered membership and shared governance resulting 
+in the creation of a formal open standards body called the AFP Consortium (AFPCTM). Ownership of and 
+responsibility for the AFP architectures was transferred at that time to the AFP Consortium. 
+
+Trademarks  
+The following trademarks are mentioned in this document:  
+
+Candida™ is a trademark of Ludwig & Mayer GmbH & Co. 
+Century™ is a trademark of International Typeface Corporation 
+Century Schoolbook™ is a trademark of American Type Foundry 
+Clarendon is a trademark of Linotype 
+Aktiengesellschaft Excelsiorisa™ trademark of Linotype Aktiengesellschaft 
+Futura™ is a trademark of Fundicion Tipografica Neufville,S.A. 
+Garamond™ is a trademark of International Typeface Corporation 
+Hadassah™ is a trademark of Tetterode-Nederland 
+Helvetica™ is a trademark of Linotype Aktiengesellschaft 
+IBM® is a registered trademark of International Business Machines Corporation 
+ITC® is a registered trademark of International Typeface Corporation 
+
+The following are trademarks of International Typeface Corporation:  
+
+ITC Avant Garde Gothic™ 
+
+Preface 
+
+AFP Consortium 
+
+Page iii
+
+<<<PAGE 6>>>
+AFPC Font Typeface Registry 
+
+ITC Cheltenham™ 
+ITC Korinna™ 
+ITC Lubalin Graph™ 
+ITC Souvenir™  
+
+ITC Zapf Chancery™ is a trademark of International Typeface Corporation  
+ITC Zapf Dingbats™ is a trademark of International Typeface Corporation 
+
+Linotype AG® is a registered trademark of Linotype Aktiengesellschaft 
+Monotype® is a registered trademark of The Monotype Corporation plc 
+
+The following are trademarks of The Monotype Corporation plc: 
+
+Monotype Alachsoni™ 
+Monotype Arial™ 
+Monotype Baskerville™ 
+Monotype Bodoni™ 
+Monotype Century™ 
+Monotype Century Schoolbook™ 
+Monotype Garamond™ 
+Monotype Levenim™ 
+Monotype New Berolina™ 
+Monotype Old English™ 
+Monotype Penini™  
+Monotype Rockwell™ 
+Monotype Times New Roman™ 
+
+Optima™ is a trademark of Linotype Aktiengesellschaft 
+Oron™ is a trademark of Asher-Oron 
+Palatino™ is a trademark of Linotype Aktiengesellschaft 
+Sonoran Sans Serif™ is a functional equivalent of Monotype Arial 
+Sonoran Serif™ is a functional equivalent of Monotype Times New Roman 
+Times™ is a trademark of Linotype Aktiengesellschaft 
+Trump Medieval™ is a trademark of Linotype Aktiengesellschaft 
+Univers™ is a trademark of Linotype Aktiengesellschaft  
+
+Explanation of Reference Terms  
+
+Registered Font Typefaces  
+The tables on pages 1 through 45 are summaries of the Font Typeface Designs that are registered. The only item 
+registered is the FGID and the associated Font Typeface Name(s) as used by the implementing product(s). More 
+than one Font Typeface Name may be associated with a given FGID, if the names correspond to implementation 
+variations of the same design.  
+Additional information in the tables on pages v through vi was extracted from the registration application and is 
+only for reference. No guarantees are made to the accuracy of this additional information.  
+
+Page iv 
+
+AFP Consortium 
+
+Preface
+
+<<<PAGE 7>>>
+AFPC Font Typeface Registry 
+
+Font Class and Font Subclass Assignments 
+
+Font Class  
+1 Oldstyle Serifs  
+
+8 Sans Serifs  
+
+Font Subclass and Description  Font Class  
+1          IBM Rounded Legibility 
+2          Garalde 
+3          Venetian 
+4          Modified Venetian 
+5          Dutch Modern 
+6          Dutch Traditional 
+7          Contemporary 
+8–9      (Reserved) 
+10        Dutch Revival 
+11–13  (Reserved) 
+14        Mediaeval 
+15        Miscellaneous  
+
+2 Transitional Serifs  
+
+1          Direct Line 
+2          Script 
+3–14    (Reserved) 
+15        Miscellaneous  
+
+3 Modern Serifs  
+
+1          Italian 
+2          Script 
+3          Mincho 
+4–14    (Reserved) 
+15        Miscellaneous  
+
+4 Clarendon Serifs  
+
+5 Slab Serifs  
+
+6 (Reserved)  
+7 Freeform Serifs  
+
+1          Clarendon 
+2          Modern 
+3          Traditional 
+4          Newspaper 
+5          Stub Serif 
+6          Monotone 
+7          Typewriter 
+8–14    (Reserved) 
+15        Miscellaneous  
+1          Monotone 
+2          Humanist 
+3          Geometric 
+4          Swiss 
+5          Typewriter 
+6          Light Contrast 
+7          Engraved 
+8          Stub Serif 
+9–14    (Reserved) 
+15        Miscellaneous  
+1–15    (Reserved)  
+1          Modern 
+2          Light Contrast 
+3          Medium Contrast 
+4          Sharp Contrast 
+5–14    (Reserved) 
+15        Miscellaneous  
+
+9 Ornamentals  
+
+10 Scripts  
+
+11 (Reserved)  
+
+12 Symbolic  
+
+13 (Reserved)  
+14 (Reserved)  
+
+Font Subclass and Description  
+1          IBM Neo-grotesque 
+2          Humanist 
+3          Round Geometric, square ends 
+4          Round Geometric, round ends 
+5          Neo-grotesque 
+6          Modified Neo-grotesque 
+7          Single Alphabet 
+8          Square Geometric (OCR) 
+9          Typewriter 
+10        Matrix 
+11        Outline 
+12        Monotone 
+13        Light Contrast 
+14        (Reserved) 
+15        Miscellaneous  
+1          Engraved 
+2          Black Letter 
+3          Decorative 
+4          Three Dimensional 
+5          Art Deco 
+6          Monotone 
+7          Shadow 
+8          Ultra-high x 
+9–14    (Reserved) 
+15        Miscellaneous  
+1          Uncial 
+2          Brush Joined 
+3          Formal Joined 
+4          Monotone Joined 
+5          Caligraphic 
+6          Brush Unjoined 
+7          Formal Unjoined 
+8          Monotone Unjoined 
+9          Informal Unjoined 
+10        Kaisho (soft brush) 
+11        Soucho (engraved) 
+12        Hard Brush 
+13–14  (Reserved) 
+15        Miscellaneous  
+1-15     (Reserved)  
+
+1          Serif 
+2          Sans Serif 
+3          Mixed Serif 
+4          Design Transparent 
+5          (Reserved) 
+6          Oldstyle Serifs 
+7          Neo-grotesque Sans Serif 
+8          Design Independent 
+9–14    (Reserved) 
+15        Miscellaneous  
+1–15    (Reserved)  
+1–15    (Reserved) 
+
+15 (Reserved)  
+
+1–15    (Reserved)  
+
+Preface 
+
+AFP Consortium 
+
+Page v
+
+<<<PAGE 8>>>
+AFPC Font Typeface Registry 
+
+Mapping of FGID Classifications to ISO­Typeface Classifications 
+
+AFP Font Class  
+
+ISO Class  
+
+AFP Font Class  
+
+ISO Class  
+
+1.1  
+
+1.2  
+
+1.3  
+
+1.4  
+
+1.5  
+
+1.6  
+
+1.7  
+
+1.10  
+
+1.14  
+
+2.1  
+
+2.2  
+
+3.1  
+
+3.2  
+
+3.3  
+
+4.1  
+
+4.2  
+
+4.3  
+
+4.4  
+
+4.5  
+
+4.6  
+
+4.7  
+
+5.1  
+
+5.2  
+
+5.3  
+
+5.4  
+
+5.5  
+
+5.6  
+
+5.8  
+
+7.1  
+
+7.2  
+
+7.3  
+
+7.4  
+
+4.5.1  
+
+4.1.2  
+
+4.1.1  
+
+4.2.2  
+
+4.1.3  
+
+4.5.0  
+
+4.4.0  
+
+4.1.3  
+
+(none)  
+
+4.2.1  
+
+4.2.2  
+
+4.3.1  
+
+4.3.1  
+
+4.12.0  
+
+4.6.2  
+
+4.6.2  
+
+4.6.2  
+
+4.6.2  
+
+4.6.4  
+
+4.6.1  
+
+4.6.5  
+
+4.6.1  
+
+4.6.1  
+
+4.6.1  
+
+4.6.1  
+
+4.6.5  
+
+4.6.4  
+
+4.6.3  
+
+(none)  
+
+(none)  
+
+(none)  
+
+(none)  
+
+8.1  
+
+8.2  
+
+8.3  
+
+8.4  
+
+8.5  
+
+8.6  
+
+8.7  
+
+8.8  
+
+8.9  
+
+8.10  
+
+8.11  
+
+9.1  
+
+9.2  
+
+9.3  
+
+9.4  
+
+9.5  
+
+10.1  
+
+10.2  
+
+10.3  
+
+10.4  
+
+10.5  
+
+10.6  
+
+10.7  
+
+10.8  
+
+10.9  
+
+10.10  
+
+10.11  
+
+10.12  
+
+12.3  
+
+12.4  
+
+12.6  
+
+12.7  
+
+5.1.2  
+
+5.2.0  
+
+5.5.1  
+
+5.5.2  
+
+5.1.2  
+
+5.1.2  
+
+(none)  
+
+5.6.1  
+
+5.1.3  
+
+(none)  
+
+5.5.0  
+
+7.1.0  
+
+3.1.2  
+
+7.3.0  
+
+7.4.0  
+
+5.4.0  
+
+1.0.0  
+
+6.1.2  
+
+6.1.1  
+
+6.1.3  
+
+6.2.6  
+
+6.2.4  
+
+6.2.1  
+
+6.2.3  
+
+6.2.2  
+
+6.3.1  
+
+6.5.0  
+
+6.6.0  
+
+8.0.0  
+
+8.0.0  
+
+4.5.0  
+
+5.1.0  
+
+Page vi 
+
+AFP Consortium 
+
+Preface
+
+<<<PAGE 9>>>
+AFPC Font Typeface Registry 
+
+Font Global ID (FGID) Registry 
+
+Fixed Pitch (10 Pitch):  1–65 (X'0001' – X'0041')  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Fixed Pitch (10 Pitch):  001–065                                (part 1 of 3) 
+
+00001  
+
+X'0001'  
+
+00002 
+
+X'0002'  
+
+00003  
+
+X'0003'  
+
+00004  
+
+X'0004'  
+
+00005  
+
+X'0005'  
+
+00006  
+
+X'0006'  
+
+00007  
+
+X'0007'  
+
+00008  
+
+X'0008'  
+
+00009  
+
+X'0009'  
+
+00010  
+
+X'000A'  
+
+00011  
+
+X'000B'  
+
+00012  
+
+X'000C'  
+
+Family = Advocate 
+Style = Upright, Light, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Delegate 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = OCR-B (Alternate FGID = 306) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+Family = Polygo Pica 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+Family = Orator, alias Rhetoric 
+                (Alternate FGID = 434) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Light Italic (APL) 
+               (alternate FGID = 58) 
+Style = Inclined, Light, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Orator 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Scribe, alias Symbol 
+                (Alternate FGID = 30) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+Family = Large Pica 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Cyrillic 22 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Prestige (Alternate FGID = 432) 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+
+00013  
+
+X'000D'  
+
+00014  
+
+X'000E'  
+
+00015  
+
+X'000F'  
+
+00016  
+
+X'0010'  
+
+00017  
+
+X'0011'  
+
+00018  
+
+X'0012'  
+
+00019  
+
+X'0013'  
+
+00020  
+
+X'0014'  
+
+00021  
+
+X'0015'  
+
+00022  
+
+X'0016'  
+
+00023  
+
+X'0017'  
+
+00024  
+
+X'0018'  
+
+Family = Artisan 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Manifold 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Bookface Academic 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = High Speed Latin 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = 1403 OCR 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+
+Family = Courier 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = OCR-A (Alternate FGID = 305) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+Family = Pica 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+
+Family = Katakana 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Printing & Publishing #3 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Light Modified 
+Style = Inclined, Light, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = OCR-CD 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 1 of 60
+
+<<<PAGE 10>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Fixed Pitch (10 Pitch):  001–065                            (part 2 of 3) 
+
+00025  
+
+X'0019'  
+
+00026  
+
+X'001A'  
+
+00027  
+
+X'001B'  
+
+00028  
+
+X'001C'  
+
+00029  
+
+X'001D'  
+
+00030  
+
+X'001E'  
+
+00031  
+
+X'001F'  
+
+00032  
+
+X'0020'  
+
+00033  
+
+X'0021'  
+
+00034  
+
+X'0022'  
+
+00035  
+
+X'0023'  
+
+00036  
+
+X'0024'  
+
+00037  
+
+X'0025'  
+
+00038  
+
+X'0026'  
+
+00039  
+
+X'0027'  
+
+Family = Presentor 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Matrix Gothic 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Ultra-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+
+Family = Symbol (Format, Math Symbol Set,  
+               Symbol Set, Symbol Set OS/6) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+Family = Aviv 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Gothic Rotated 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Kateb (Courier) 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Linguistic 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Theory 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Letter Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Throughscored Courier 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Orator (Alternate FGID = 435) 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Gothic Text 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+
+00040  
+
+X'0028'  
+
+00041  
+
+X'0029'  
+
+00042  
+
+X'002A'  
+
+00043  
+
+X'002B'  
+
+00044  
+
+X'002C'  
+
+00045  
+
+X'002D'  
+
+00046  
+
+X'002E'  
+
+00047  
+
+X'002F'  
+
+00048  
+
+X'0030'  
+
+00049  
+
+X'0031'  
+
+00050  
+
+X'0032'  
+
+00051  
+
+X'0033'  
+
+00052  
+
+X'0034'  
+
+00053  
+
+X'0035'  
+
+00054  
+
+X'0036'  
+
+Family = Gothic Text 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Roman Text 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Serif Text 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Serif Text 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Katakana Gothic 
+                (Alternate FGID = 433) 
+Style = Upright, Medium, Normal 
+Class 13 = (not assigned) 
+Subclass 2 = (not assigned) 
+Family = APL (Alternate FGID = 307) 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Courier 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier Sub/Superscript 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier Sub/Superscript 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Shalom 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Shalom 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Matrix Gothic 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Courier 
+Style = Upright, Medium, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Yasmin (with Artisan) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Yasmin (with Courier) 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Page 2 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 11>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Fixed Pitch (10 Pitch):  001–065                        (part 3 of 3) 
+
+00055  
+
+X'0037'  
+
+00056  
+
+X'0038'  
+
+00057  
+
+X'0039'  
+
+00058  
+
+X'003A'  
+
+00059  
+
+X'003B'  
+
+Family = Aviv 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Artisan 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Courier 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = APL 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = PC Lines 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 8 = Design Independent 
+
+00060  
+
+X'003C'  
+
+Family = Prestige Pica (Alternate FGID = 318) 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+
+00061  
+
+X'003D'  
+
+00062  
+
+X'003E'  
+
+00063  
+
+X'003F'  
+
+00064  
+
+X'0040'  
+
+00065  
+
+X'0041'  
+
+Family = Nasseem 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Nasseem 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Nasseem 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Nasseem 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Harel 
+Source = IBM 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 3 of 60
+
+<<<PAGE 12>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (12 Pitch):  066–153 (X'0042' – X'0099')  
+
+Dec. ID  Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Fixed Pitch (12 Pitch):  066–153                                    (part 1 of 2) 
+
+00066 
+
+X'0042' 
+
+00067  
+
+X'0043'  
+
+00068  
+
+X'0044'  
+
+00069  
+
+X'0045'  
+
+00070  
+
+X'0046'  
+
+00071  
+
+X'0047'  
+
+00072  
+
+X'0048'  
+
+00073  
+
+X'0049'  
+
+00074  
+
+X'004A'  
+
+00075  
+
+X'004B'  
+
+00076  
+
+X'004C'  
+
+00077  
+
+X'004D'  
+
+00078  
+
+X'004E'  
+
+Family = Gothic Text 
+               (Alternate FGID = 400) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Theory 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Family = Gothic Text 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Text 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Serif Text 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Serif Text 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Serif Text 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Gothic Text Rotated 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+
+Family = Matrix Gothic 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Courier 
+Style = Upright, Medium, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = APL 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Harel 
+Source = IBM 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Katakana 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end
+
+00079  
+
+X'004F'  
+
+Family = Linguistic 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+00080  
+
+X'0050'  
+
+00081  
+
+X'0051'  
+
+00082  
+
+X'0052'  
+
+00083  
+
+X'0053'  
+
+00084  
+
+X'0054'  
+
+00085  
+
+X'0055'  
+
+00086  
+
+X'0056'  
+
+00087  
+
+X'0057'  
+
+00088  
+
+X'0058'  
+
+00089  
+
+X'0059'  
+
+00090  
+
+X'005A'  
+
+Family = Scribe (Symbol) (Format, Math Symbol 
+               Set, Symbol Set, Symbol Set OS/6) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+Family = Artisan 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Auto Elite 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Elite 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Script 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 9 = Informal Unjoined 
+Family = Courier 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Prestige (Prestige Elite, Elite) 
+                (Alternate FGID = 432) 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = High Speed Latin 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Large Elite 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Dual Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+
+00091  
+
+X'005B'  
+
+Family = Light 
+Style = Inclined, Light, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Page 4 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 13>>>
+AFPC Font Typeface Registry 
+
+Dec. ID  Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID   Font Typeface Description 
+
+Fixed Pitch (12 Pitch):  066–153                                     (part 2 of 2) 
+
+00092  
+
+X'005C'  
+
+00093  
+
+X'005D'  
+
+00094  
+
+X'005E'  
+
+00095  
+
+X'005F'  
+
+00096  
+
+X'0060'  
+
+00097  
+
+X'0061'  
+
+00098  
+
+X'0062'  
+
+00099  
+
+X'0063'  
+
+00100  
+
+X'0064'  
+
+00101  
+
+X'0065'  
+
+00102  
+
+X'0066'  
+
+00103  
+
+X'0067'  
+
+00104  
+
+X'0068'  
+
+00105  
+
+X'0069'  
+
+Family = Courier 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Polygo Elite 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+Family = Diplomat 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Adjudant 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Old World 
+Style = Upright, Medium, Normal 
+Class 9 = Ornamentals 
+Subclass 2 = Black Letter 
+Family = Light Modified 
+Style = Inclined, Light, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Shalom 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Aviv 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Yasmin, with Courier 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Shalom 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Aviv 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Nasseem 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Nasseem 
+Style = Inclined, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = APL 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+00106  
+
+X'006A'  
+
+00107  
+
+X'006B'  
+
+00108  
+
+X'006C'  
+
+00109  
+
+X'006D'  
+
+00110  
+
+X'006E'  
+
+00111  
+
+X'006F'  
+
+00112  
+
+X'0070'  
+
+00113  
+
+X'0071'  
+
+00114  
+
+X'0072'  
+
+00115  
+
+X'0073'  
+
+00116  
+
+X'0074'  
+
+00117  
+
+X'0075'  
+
+00118  
+
+X'0076'  
+
+00119 –  
+00153  
+
+X'0077' –  
+X'0099'  
+
+Family = Matrix Gothic 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Inclined, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Courier 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Prestige (Prestige Elite, Elite) 
+                             (Alternate FGID = 318) 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Prestige (Prestige Elite, Elite) 
+                (Alternate FGID = 319) 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Symbol Set (Alternate FGID = 80) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+Family = Symbol Set (OS/6) 
+               (Alternate FGID = 80) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+Family = Math Symbol Set 
+               (Alternate FGID = 80) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+Family = Courier 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Bold, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Reserved (12 pitch)  
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 5 of 60
+
+<<<PAGE 14>>>
+AFPC Font Typeface Registry 
+
+PSM Spacing (Size Independent):  154–200 (X'009A' – X'00C8')  
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+PSM Spacing (Size Independent):  154–200                   (part 1 of 2) 
+
+00154  
+
+X'009A'  
+
+00155  
+
+X'009B'  
+
+00156  
+
+X'009C'  
+
+00157  
+
+X'009D'  
+
+00158  
+
+X'009E'  
+
+00159  
+
+X'009F'  
+
+00160  
+
+X'00A0'  
+
+00161  
+
+X'00A1'  
+
+00162  
+
+X'00A2'  
+
+00163  
+
+X'00A3'  
+
+00164  
+
+X'00A4'  
+
+00165  
+
+X'00A5'  
+
+00166  
+
+X'00A6'  
+
+Family = Essay 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Boldface (Yasmin) 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Note:  Corresponds to Document Inclined Bold 
+Family = Thesis 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Title 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Modern 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 1 = Italian 
+Family = Boldface (Yasmin) 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Note:  Corresponds to Document Upright Bold 
+Family = Essay 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Arcadia 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Essay 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Essay 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Prestige PS 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = High Speed Latin PSM 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Yasmin PS (Boldface) 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+00167  
+
+X'00A7'  
+
+00168  
+
+X'00A8'  
+
+00169  
+
+X'00A9'  
+
+00170  
+
+X'00AA'  
+
+00171  
+
+X'00AB'  
+
+00172  
+
+X'00AC'  
+
+00173  
+
+X'00AD'  
+
+00174  
+
+X'00AE'  
+
+00175  
+
+X'00AF'  
+
+00176  
+
+X'00B0'  
+
+00177  
+
+X'00B1'  
+
+00178  
+
+X'00B2'  
+
+00179  
+
+X'00B3'  
+
+Family = Barak PS 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Barak PS 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned)  
+
+Family = Yasmin PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Essay 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Courier PS 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier PS 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Essay 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Gothic Text 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Document 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Boldface (Alternate FGID = 159) 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Boldface (Alternate FGID = 155) 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Barak PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Barak PS 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Page 6 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 15>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+PSM Spacing (Size Independent):  154–200                   (part 2 of 2) 
+
+00180  
+
+X'00B4'  
+
+00181  
+
+X'00B5'  
+
+00182  
+
+X'00B6'  
+
+00183  
+
+X'00B7'  
+
+00184  
+
+X'00B8'  
+
+00185  
+
+X'00B9'  
+
+00186  
+
+X'00BA'  
+
+00187  
+
+X'00BB'  
+
+00188  
+
+X'00BC'  
+
+00189  
+
+X'00BD'  
+
+00190  
+
+X'00BE'  
+
+Family = Barak PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Barak PS 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Barak PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Barak PS 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Courier PS 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier PS 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Press Roman 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Press Roman 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Press Roman 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Press Roman 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Foundry PS 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+
+00191  
+
+X'00BF'  
+
+00192  
+
+X'00C0'  
+
+00193  
+
+X'00C1'  
+
+00194  
+
+X'00C2'  
+
+00195  
+
+X'00C3'  
+
+00196  
+
+X'00C4'  
+
+00197  
+
+X'00C5'  
+
+00198  
+
+X'00C6'  
+
+00199  
+
+X'00C7'  
+
+00200  
+
+X'00C8'  
+
+Family = Foundry PS 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Diwanee PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Rugaa PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Foundry PS 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Foundry PS 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Throughscored Essay 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 15 = Miscellaneous 
+Family = Thai Official PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Orator PS 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Presentor PS 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Script PS 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 7 of 60
+
+<<<PAGE 16>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (13.3 Pitch):  201–210 (X'00C9' – X'00D2')   
+
+Fixed Pitch (13.3 Pitch):  201–210 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+00201  
+
+X'00C9'  
+
+00202  
+
+X'00CA'  
+
+00203  
+
+X'00CB'  
+
+00204  
+
+X'00CC'  
+
+00205  
+
+X'00CD'  
+
+Family = Data1 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Data1 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Data1 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Matrix Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+
+00206  
+
+X'00CE'  
+
+00207  
+
+X'00CF'  
+
+00208  
+
+X'00D0'  
+
+00209  
+
+X'00D1'  
+
+00210  
+
+X'00D2'  
+
+Family = APL 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Matrix Gothic 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Inclined, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+
+Page 8 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 17>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (15 Pitch):  211–239 (X'00C9' – X'00EF')   
+
+Fixed Pitch (15 Pitch):  211–239 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID   Hex. ID  Font Typeface Description 
+
+00211  
+
+X'00D3'  
+
+00212  
+
+X'00D4'  
+
+00213  
+
+X'00D5'  
+
+00214  
+
+X'00D6'  
+
+00215  
+
+X'00D7'  
+
+00216  
+
+X'00D8  
+
+00217  
+
+X'00D9  
+
+00218  
+
+X'00DA'  
+
+00219  
+
+X'00DB'  
+
+00220  
+
+X'00DC'  
+
+00221  
+
+X'00DD'  
+
+X'00DE'  
+
+00222 
+(See also 
+FGID 230)  
+
+00223  
+
+X'00DF'  
+
+00224  
+
+X'00E0'  
+
+00225  
+
+X'00E1'  
+
+Family = Shalom 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Shalom 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Courier 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Gothic Text 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Reserved  
+
+Family = APL 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Gothic Text 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Prestige 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Gothic Text (Alt. FGID = 400) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Courier 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Data1 Rotated (13.3 pitch) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Symbol (Format, Math Symbol Set, 
+              Scribe Symbol Set, Symbol Set OS/6) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+
+00226  
+
+X'00E2'  
+
+00227  
+
+X'00E3'  
+
+00228  
+
+X'00E4'  
+
+00229  
+
+X'00E5'  
+
+X'00E6'  
+
+00230 
+(See also 
+FGID 222) 
+
+00231  
+
+X'00E7'  
+
+00232  
+
+X'00E8'  
+
+00233  
+
+X'00E9'  
+
+00234  
+
+X'00EA'  
+
+00235  
+
+X'00EB'  
+
+00236  
+
+X'00EC'  
+
+00237  
+
+X'00ED'  
+
+00238  
+
+X'00EE'  
+
+00239  
+
+X'00EF'  
+
+Family = Shalom 
+Style = Upright, Medium, Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Data 1 Rotated (13.3 pitch) 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Micro 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Serif Text 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Gothic Text (Alt. FGID = 400)         
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Text 
+Style = Upright, Medium, Semi-Condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Matrix Gothic 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Courier 
+Style = Upright, Medium, Expanded 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Shalom 
+Style = Upright, Bold, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Matrix Gothic 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Inclined, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Courier 
+Style = Upright, Bold, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Reserved (15 pitch)  
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 9 of 60
+
+<<<PAGE 18>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (5 Pitch):  240–246 (X'00F0' – X'00F6')   
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Fixed Pitch (5 Pitch):  240–246 
+
+00240  
+
+X'00F0'  
+
+00241  
+
+X'00F1'  
+
+00242  
+
+X'00F2'  
+
+00243  
+
+X'00F3'  
+
+Family = Matrix Gothic 
+Style = Upright, Light, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Medium, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Bold, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic 
+Style = Upright, Ultra-Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+
+00244  
+
+X'00F4'  
+
+00245  
+
+X'00F5'  
+
+00246  
+
+X'00F6'  
+
+Family = Courier 
+Style = Upright, Medium, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Bold, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Reserved (5 pitch)  
+
+Page 10 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 19>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (17.1 Pitch):  247–259 (X'00F7' – X'0103')   
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Fixed Pitch (17.1 Pitch):  247–259 
+
+00247  
+
+X'00F7'  
+
+00248  
+
+X'00F8'  
+
+00249  
+
+X'00F9'  
+
+00250  
+
+X'00FA'  
+
+00251  
+
+X'00FB'  
+
+00252  
+
+X'00FC'  
+
+00253  
+
+X'00FD'  
+
+Family = Shalom -17.1 Pitch 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Shalom -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Katakana -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Matrix Gothic -17.1 Pitch 
+Style = Upright, Medium, Ultra-Condensed 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic -17.1 Pitch 
+Style = Upright, Bold, Ultra-Condensed 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Courier -17.1 Pitch 
+Style = Upright, Medium, Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier -17.1 Pitch 
+Style = Upright, Bold, Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+00254  
+
+X'00FE'  
+
+00255  
+
+X'00FF'  
+
+00256  
+
+X'0100'  
+
+00257  
+
+X'0101'  
+
+00258  
+
+X'0102'  
+
+00259  
+
+X'0103'  
+
+Family = Courier -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Letter Gothic -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Prestige -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Gothic Rotated -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Matrix Gothic -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic -17.1 Pitch 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 11 of 60
+
+<<<PAGE 20>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (8 Pitch):  260–273 (X'0104' – X'0111')    
+
+Dec. ID  Hex. ID 
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Fixed Pitch (8 Pitch):  260–273 
+
+00260  
+
+X'0104' 
+
+00261  
+
+X'0105'  
+
+00262  
+
+X'0106'  
+
+00263  
+
+X'0107'  
+
+00264  
+
+X'0108'  
+
+00265  
+
+X'0109'  
+
+Family = Matrix Gothic (8.55 pitch) 
+Style = Upright, Bold, 
+            Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Matrix Gothic (8.55 pitch) 
+Style = Upright, Ultra-Bold, 
+            Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Courier (8.55 pitch) 
+Style = Upright, Medium, 
+            Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier (8.55 pitch) 
+Style = Upright, Bold, 
+            Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier Sub/Superscript 
+Style = Upright, Medium, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Kateb 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+00266 
+
+X'010A'  
+
+00267 
+
+X'010B'  
+
+00268  
+
+X'010C'  
+
+00269  
+
+X'010D'  
+
+Family = Nasseem 
+Style = Upright, Bold, Expanded 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Family = Nasseem 
+Style = Inclined, Bold, Expanded 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Family = MICR 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+
+Family = Shalom 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+00270 –  
+00273  
+
+X'010E' –  
+X'0111'  
+
+Reserved (8 pitch) 
+
+Page 12 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 21>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (17­27 Pitch):  274–299 (X'0112' – X'012B')     
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Fixed Pitch (17-27 Pitch):  274–299 
+
+00274  
+
+X'0112'  
+
+00275  
+
+X'0113'  
+
+00276  
+
+X'0114'  
+
+00277  
+
+X'0115'  
+
+00278  
+
+X'0116'  
+
+00279  
+
+X'0117'  
+
+00280  
+
+X'0118'  
+
+00281  
+
+X'0119'  
+
+00282  
+
+X'011A'  
+
+00283  
+
+X'011B'  
+
+00284  
+
+X'011C'  
+
+00285  
+
+X'011D'  
+
+00286  
+
+X'011E'  
+
+Family = Letter Gothic -17.1 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic -18 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Text -17.1 Pitch 
+Style = Upright, Medium, Extra-Condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Text -20 Pitch 
+Style = Upright, Medium, Ultra-Condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Reserved  
+
+Family = Nasseem -17.1 Pitch 
+Style = Upright, Medium, Bold 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = APL -20 Pitch 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Gothic Text -20 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Aviv -20 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Nasseem -20 Pitch 
+Style = Upright, Medium, Bold 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Courier -20 Pitch 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Letter Gothic -25 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Courier -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+00287  
+
+X'011F'  
+
+00288  
+
+X'0120'  
+
+00289  
+
+X'0121'  
+
+00290  
+
+X'0122'  
+
+00291  
+
+X'0123'  
+
+00292  
+
+X'0124'  
+
+00293  
+
+X'0125'  
+
+00294  
+
+X'0126'  
+
+00295  
+
+X'0127'  
+
+00296  
+
+X'0128'  
+
+00297  
+
+X'0129'  
+
+00298  
+
+X'012A'  
+
+00299  
+
+X'012B'  
+
+Family = Prestige -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Letter Gothic -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Orator -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Gothic -27 Pitch 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Presentor -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Script -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = Boldface -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Gothic Text -24 Pitch 
+Style = Upright, Medium, Ultra-condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic -18 Pitch 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic -18 Pitch 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic -18 Pitch 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic -18 Pitch 
+Style = Inclined, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Reserved  
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 13 of 60
+
+<<<PAGE 22>>>
+AFPC Font Typeface Registry 
+
+Fixed Pitch (Size Independent):  300–699 (X'012C' – X'02BB')     
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID   Font Typeface Description 
+
+Fixed Pitch (Size Independent):  300–699                         (part 1 of 6) 
+
+00300  
+
+X'012C'  
+
+00301  
+
+X'012D'  
+
+00302  
+
+X'012E'  
+
+00303  
+
+X'012F'  
+
+00304  
+
+X'0130'  
+
+00305  
+
+X'0131'  
+
+00306  
+
+X'0132'  
+
+00307  
+
+X'0133'  
+
+00308  
+
+X'0134'  
+
+00309  
+
+X'0135'  
+
+00310  
+
+X'0136'  
+
+00311  
+
+X'0137'  
+
+00312  
+
+X'0138'  
+
+00313  
+
+X'0139'  
+
+00314  
+
+X'013A'  
+
+Family = Letter Gothic 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Courier -Short Overstrike 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Gothic Text 
+Style = Upright, Semi-light, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Text 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = OCR-A 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+Family = OCR-B 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+Family = APL 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Semi-Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Semi-Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Negative Image Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 15 = Miscellaneous 
+Family = Underscored Gothic 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 15 = Miscellaneous 
+Family = Underscored Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 15 = Miscellaneous 
+Family = IBM Logo 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 8 = Design Independent 
+Family = Matrix Gothic 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+
+00315  
+
+X'013B'  
+
+00316  
+
+X'013C'  
+
+00317  
+
+X'013D'  
+
+00318  
+
+X'013E'  
+
+00319  
+
+X'013F'  
+
+00320  
+
+X'0140'  
+
+00321  
+
+X'0141'  
+
+00322  
+
+X'0142'  
+
+00323  
+
+X'0143'  
+
+00324  
+
+X'0144'  
+
+00325  
+
+X'0145'  
+
+00326  
+
+X'0146'  
+
+00327  
+
+X'0147'  
+
+00328  
+
+X'0148'  
+
+00329  
+
+X'0149'  
+
+Family = Screen Corners 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 8 = Design Independent 
+Family = Letter Gothic 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Prestige 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Prestige 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Courier 
+Style = Upright, Bold, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = APL 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Bar Code (Alternate FGID = 53047) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 15 = Miscellaneous 
+Family = Letter Gothic 
+Style = Upright, Extra-Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Extra-Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Monthob 
+Style = Upright, Bold, Normal 
+Class 14 = (not assigned) 
+Subclass 6 = (not assigned) 
+Family = Monthob 
+Style = Inclined, Medium, Normal 
+Class 14 = (not assigned) 
+Subclass 6 = (not assigned) 
+Family = Monthob 
+Style = Upright, Medium, Normal 
+Class 14 = (not assigned) 
+Subclass 6 = (not assigned) 
+Family = Matrix Gothic 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+
+Page 14 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 23>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Fixed Pitch (Size Independent):  300–699                      (part 2 of 6) 
+
+00330  
+
+X'014A'  
+
+00331  
+
+X'014B'  
+
+00332  
+
+X'014C'  
+
+00333  
+
+X'014D'  
+
+00334  
+
+X'014E'  
+
+00335  
+
+X'014F'  
+
+00336  
+
+X'0150'  
+
+00337  
+
+X'0151'  
+
+00338  
+
+X'0152'  
+
+00339  
+
+X'0153'  
+
+00340  
+
+X'0154'  
+
+00341  
+
+X'0155'  
+
+00342 –  
+00395  
+
+X'0156' –  
+X'018B'  
+
+00396  
+
+X'018C'  
+
+00397  
+
+X'018D'  
+
+00398  
+
+X'018E'  
+
+Family = Matrix Gothic 
+Style = Inclined, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = APL2 Document 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Throughscored Serif 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Text 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Underscored Text 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Bookmaster Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Bookmaster Gothic 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Bookmaster Gothic 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Bookmaster Gothic 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Bookmaster Gothic Reverse 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 15 = Miscellaneous 
+Family = Narkiss Tam 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Shalom 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Reserved (variable)  
+
+Family = Letter Gothic 
+Style = Upright, Medium, Ultra-condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Medium, Extra-condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+
+00399  
+
+X'018F'  
+
+00400  
+
+X'0190'  
+
+00401  
+
+X'0191'  
+
+00402  
+
+X'0192'  
+
+00403  
+
+X'0193'  
+
+00404  
+
+X'0194'  
+
+00405  
+
+X'0195'  
+
+00406  
+
+X'0196'  
+
+00407  
+
+X'0197'  
+
+00408  
+
+X'0198'  
+
+00409  
+
+X'0199'  
+
+00410  
+
+X'019A'  
+
+00411  
+
+X'019B'  
+
+00412  
+
+X'019C'  
+
+00413  
+
+X'019D'  
+
+00414  
+
+X'019E'  
+
+Family = Letter Gothic 
+Style = Upright, Medium, Semi-condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Medium, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Semi-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Semi-Bold, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Bold, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Extra-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Upright, Extra-Bold, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Medium, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Semi-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Semi-Bold, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Bold, Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Letter Gothic 
+Style = Inclined, Extra-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 15 of 60
+
+<<<PAGE 24>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Fixed Pitch (Size Independent):  300–699                    (part 3 of 6) 
+
+00415  
+
+X'019F'  
+
+00416  
+
+X'01A0'  
+
+00417  
+
+X'01A1'  
+
+00418  
+
+X'01A2'  
+
+00419 –  
+00420 
+
+X'01A3' –  
+X'01A4'  
+
+00421  
+
+X'01A5'  
+
+00422  
+
+X'01A6'  
+
+00423  
+
+X'01A7'  
+
+00424  
+
+X'01A8'  
+
+00425  
+
+X'01A9'  
+
+00426  
+
+X'01AA'  
+
+00427  
+
+X'01AB'  
+
+00428  
+
+X'01AC'  
+
+00429  
+
+X'01AD'  
+
+00430  
+
+X'01AE'  
+
+Family = Letter Gothic 
+Style = Inclined, Extra-Bold, 
+            Ultra-Expanded 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Courier 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Medium, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Semi-Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Reserved 
+
+Family = Courier 
+Style = Upright, Bold, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Extra-Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Extra-Bold, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Semi-Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Semi-Bold, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Bold, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Extra-Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+00431  
+
+X'01AF'  
+
+00432  
+
+X'01B0'  
+
+00433  
+
+X'01B1'  
+
+00434  
+
+X'01B2'  
+
+00435  
+
+X'01B3'  
+
+00436  
+
+X'01B4'  
+
+00437  
+
+X'01B5'  
+
+00438  
+
+X'01B6'  
+
+00439  
+
+X'01B7'  
+
+00440  
+
+X'01B8'  
+
+00441  
+
+X'01B9'  
+
+00442  
+
+X'01BA'  
+
+00443  
+
+X'01BB'  
+
+00444  
+
+X'01BC'  
+
+00445  
+
+X'01BD'  
+
+Family = Courier 
+Style = Inclined, Extra-Bold, 
+            Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Prestige 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Katakana Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+Family = Orator 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Orator 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Nasseem 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem 
+Style = Inclined, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem 
+Style = Upright, Bold, Expanded 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem 
+Style = Inclined, Bold, Expanded 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Small Pro-Emulation 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Medium, Semi-Condensed 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Medium, Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Medium, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Medium, Extra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Medium, Semi-Expanded 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+
+Page 16 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 25>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Fixed Pitch (Size Independent):  300–699                     (part 4 of 6) 
+
+00446  
+
+X'01BE'  
+
+00447  
+
+X'01BF'  
+
+00448  
+
+X'01C0'  
+
+00449  
+
+X'01C1'  
+
+00450  
+
+X'01C2'  
+
+00451  
+
+X'01C3'  
+
+00452  
+
+X'01C4'  
+
+00453  
+
+X'01C5'  
+
+00454  
+
+X'01C6'  
+
+00455  
+
+X'01C7'  
+
+00456  
+
+X'01C8'  
+
+00457  
+
+X'01C9'  
+
+00458  
+
+X'01CA'  
+
+00459  
+
+X'01CB'  
+
+00460  
+
+X'01CC'  
+
+00461  
+
+X'01CD'  
+
+Family = Small Pro-Emulation 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Bold, Semi-Condensed 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Bold, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Small Pro-Emulation 
+Style = Upright, Bold, Extra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous Product 
+Family = Thai Official 
+Style = Upright, Medium, Normal 
+Class 14 = (not assigned) 
+Subclass 1 = (not assigned) 
+Family = Pro-Emulation 
+Style = Upright, Medium, Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Medium, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Bold, Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Bold, Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Prestige 
+Style = Upright, Medium, Extra-Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Prestige 
+Style = Upright, Medium, Ultra-Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Orator 
+Style = Upright, Medium, Semi-Condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Orator 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Orator 
+Style = Upright, Medium, Extra-Condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+
+00462  
+
+X'01CE'  
+
+00463  
+
+X'01CF'  
+
+00464  
+
+X'01D0'  
+
+00465  
+
+X'01D1'  
+
+00466  
+
+X'01D2'  
+
+00467  
+
+X'01D3'  
+
+00468  
+
+X'01D4'  
+
+00469  
+
+X'01D5'  
+
+00470  
+
+X'01D6'  
+
+00471  
+
+X'01D7'  
+
+00472  
+
+X'01D8'  
+
+00473  
+
+X'01D9'  
+
+00474  
+
+X'01DA'  
+
+00475  
+
+X'01DB'  
+
+00476  
+
+X'01DC'  
+
+00477  
+
+X'01DD'  
+
+Family = Orator 
+Style = Upright, Medium, Ultra-Condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Presentor 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Presentor 
+Style = Upright, Medium, Semi-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Presentor 
+Style = Upright, Medium, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Presentor 
+Style = Upright, Medium, Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Presentor 
+Style = Upright, Medium, Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Script 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = Script 
+Style = Upright, Medium, Semi-Condensed 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = Script 
+Style = Upright, Medium, Condensed 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = Script 
+Style = Upright, Medium, Extra-Condensed 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = Script 
+Style = Upright, Medium, Ultra-Condensed 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = Olde World 
+Style = Upright, Medium, Normal 
+Class 9 = Ornamentals 
+Subclass 2 = Black Letter 
+Family = Olde World 
+Style = Upright, Medium, Semi-Condensed 
+Class 9 = Ornamentals 
+Subclass 2 = Black Letter 
+Family = Olde World 
+Style = Upright, Medium, Condensed 
+Class 9 = Ornamentals 
+Subclass 2 = Black Letter 
+Family = Olde World 
+Style = Upright, Medium, Extra-Condensed 
+Class 9 = Ornamentals 
+Subclass 2 = Black Letter 
+Family = Olde World 
+Style = Upright, Medium, Ultra-Condensed 
+Class 9 = Ornamentals 
+Subclass 2 = Black Letter 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 17 of 60
+
+<<<PAGE 26>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Fixed Pitch (Size Independent):  300–699                     (part 5 of 6) 
+
+00478  
+
+X'01DE'  
+
+00479  
+
+X'01DF'  
+
+00480  
+
+X'01E0'  
+
+00481  
+
+X'01E1'  
+
+00482  
+
+X'01E2'  
+
+00483  
+
+X'01E3'  
+
+00484  
+
+X'01E4'  
+
+00485  
+
+X'01E5'  
+
+00486  
+
+X'01E6'  
+
+00487  
+
+X'01E7'  
+
+00488  
+
+X'01E8'  
+
+00489  
+
+X'01E9'  
+
+00490  
+
+X'01EA'  
+
+00491  
+
+X'01EB'  
+
+00492  
+
+X'01EC'  
+
+00493  
+
+X'01ED'  
+
+Family = Boldface 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Boldface 
+Style = Upright, Medium, Semi-Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Boldface 
+Style = Upright, Medium, Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Boldface 
+Style = Upright, Medium, Extra-Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Boldface 
+Style = Upright, Medium, Ultra-Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Aviv 
+Style = Upright, Medium, Semi-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Aviv 
+Style = Upright, Medium, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Aviv 
+Style = Upright, Medium, Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Aviv 
+Style = Upright, Medium, Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Shalom 
+Style = Upright, Medium, Semi-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Shalom 
+Style = Upright, Medium, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Shalom 
+Style = Upright, Medium, Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Shalom 
+Style = Upright, Medium, Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Courier 
+Style = Upright, Medium, Semi-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Medium, Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Upright, Medium, Extra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+00494  
+
+X'01EE'  
+
+00495  
+
+X'01EF'  
+
+00496  
+
+X'01F0'  
+
+00497  
+
+X'01F1'  
+
+00498  
+
+X'01F2'  
+
+00499  
+
+X'01F3'  
+
+00500  
+
+X'01F4'  
+
+00501  
+
+X'01F5'  
+
+00502  
+
+X'01F6'  
+
+00503  
+
+X'01F7'  
+
+00504  
+
+X'01F8'  
+
+00505  
+
+X'01F9'  
+
+00506  
+
+X'01FA'  
+
+00507  
+
+X'01FB'  
+
+00508  
+
+X'01FC'  
+
+00509  
+
+X'01FD'  
+
+Family = Courier 
+Style = Upright, Medium, Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Prestige 
+Style = Upright, Medium, Semi-Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Prestige 
+Style = Upright, Medium, Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Harel 
+Style = Upright, Medium, Semi-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Harel 
+Style = Upright, Medium, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Harel 
+Style = Upright, Medium, Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Diwanee 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Diwanee 
+Style = Upright, Medium, Semi-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Diwanee 
+Style = Upright, Medium, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Diwanee 
+Style = Upright, Medium, Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Diwanee 
+Style = Upright, Medium, Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Rugaa 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Rugaa 
+Style = Upright, Medium, Semi-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Rugaa 
+Style = Upright, Medium, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Rugaa 
+Style = Upright, Medium, Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Rugaa 
+Style = Upright, Medium, Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Page 18 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 27>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Fixed Pitch (Size Independent):  300–699                           (part 6 of 6) 
+
+00510  
+
+X'01FE'  
+
+00511  
+
+X'01FF'  
+
+00512  
+
+X'0200'  
+
+00513  
+
+X'0201'  
+
+00514  
+
+X'0202'  
+
+00515  
+
+X'0203'  
+
+00516  
+
+X'0204'  
+
+Family = Harel 
+Style = Upright, Medium, Ultra-
+Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Courier 
+Style = Inclined, Medium, Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, 
+            Extra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier 
+Style = Inclined, Medium, 
+            Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Artisan 
+Style = Upright, Medium, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Artisan 
+Style = Upright, Medium, 
+            Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Artisan 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+00517  
+
+X'0205'  
+
+Family = Artisan 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+00518  
+
+X'0206'  
+
+00519  
+
+X'0207'  
+
+00520  
+
+X'0208'  
+
+00521  
+
+X'0209'  
+
+00522  
+
+X'020A'  
+
+Family = Artisan 
+Style = Upright, Bold, Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Artisan 
+Style = Upright, Bold, Extra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Family = Artisan 
+Style = Upright, Bold, Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Family = Katakana Gothic 
+Style = Upright, Semi-light, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+Family = OCR-B Katakana 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 8 = Square Geometric (OCR) 
+
+00523 –  
+00699  
+
+X'020B' –  
+X'02BB'  
+
+Reserved 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 19 of 60
+
+<<<PAGE 28>>>
+AFPC Font Typeface Registry 
+
+PSM Spacing (Size Independent):  700–749 (X'02BC' – X'02ED')     
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+PSM Spacing (Size Independent):  700–749 
+
+00700  
+
+X'02BC'  
+
+00701  
+
+X'02BD'  
+
+00702 –  
+00738  
+
+X'02BE' –  
+X'02E2'  
+
+00739  
+
+X'02E3'  
+
+00740  
+
+X'02E4'  
+
+00741  
+
+X'02E5'  
+
+00742  
+
+X'02E6'  
+
+Family = Essay 
+Style = Inclined, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+
+Family = Prestige 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+
+00743  
+
+X'02E7'  
+
+00744  
+
+X'02E8'  
+
+Reserved (PSM font)  
+
+00745  
+
+X'02E9'  
+
+Family = Courier PSM 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Prestige PSM 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+Family = Gothic PSM 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Script PSM 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+
+00746  
+
+X'02EA'  
+
+00747  
+
+X'02EB'  
+
+00748  
+
+X'02EC'  
+
+00749  
+
+X'02ED'  
+
+Family = Orator PSM 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+Family = Presentor PSM 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Yasmin PSM 
+Style = Upright, Medium, Expanded 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Gothic PSM 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+
+Family = Aviv PSM 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Family = Shalom PSM 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Family = Harel PSM 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+
+Page 20 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 29>>>
+AFPC Font Typeface Registry 
+
+IBM RPQs and Deviations:  750–2,303 (X'02EE' – X'08FF')     
+
+Note:  Any further use of these FGIDs is prohibited. Use existing FGIDs for Sonoran Serif, #4407 and above.  An RPQ 
+is a special service (Request for Price Quote); deviations are granted for use only by a specific product. 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+IBM RPQs and Deviations:  750–2,303                        (part 1 of 2) 
+
+00750  
+
+X'02EE'  
+
+Reserved (RPQs and Deviations)  
+
+00763  
+
+X'02FB'  
+
+00751  
+
+X'02EF'  
+
+00752  
+
+X'02F0'  
+
+00753  
+
+X'02F1'  
+
+00753  
+
+X'02F1'  
+
+00754  
+
+X'02F2'  
+
+00755  
+
+X'02F3'  
+
+00756  
+
+X'02F4'  
+
+00757  
+
+X'02F5'  
+
+00758  
+
+X'02F6'  
+
+00759  
+
+X'02F7'  
+
+00760  
+
+X'02F8'  
+
+00761  
+
+X'02F9'  
+
+00762  
+
+X'02FA'  
+
+Family = Sonoran Serif (DW/370 Use Only) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Family = Nasseem (OS/400 Use Only) 
+Style = Upright, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem (OS/400 Use Only) 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Sonoran Serif (DW/370 Use Only) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Family = Nasseem (OS/400 Use Only) 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem (OS/400 Use Only) 
+Style = Upright, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem (OS/400 Use Only) 
+Style = Inclined, Medium, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem (OS/400 Use Only) 
+Style = Inclined, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem (OS/400 Use Only) 
+Style = Inclined, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Nasseem (OS/400 Use Only) 
+Style = Inclined, Bold, Normal 
+Class m = (not assigned) 
+Subclass n = (not assigned) 
+Family = Courier (European Use Only) 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier (European Use Only) 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier (European Use Only) 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Letter Gothic (European Use Only) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Reserved for use by IBM AFP Viewer 
+
+00764 – 
+00783  
+
+X'02FC' –
+X'030F  
+
+00784 – 
+01050  
+
+X'0310' – 
+X'041A'  
+
+Reserved (RPQs and Deviations) 
+
+01051  
+
+X'041B'  
+
+01052  
+
+X'041C'  
+
+Family = Sonoran Serif (DW/370 Use Only) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Reserved (RPQs and Deviations)  
+
+01053  
+
+X'041D'  
+
+01054  
+
+X'041E'  
+
+Family = Sonoran Serif (DW/370 Use Only) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Reserved (RPQs and Deviations)  
+
+01055  
+
+X'041F'  
+
+Reserved (RPQs and Deviations)  
+
+01056  
+
+X'0420'  
+
+01057 – 
+01350  
+
+X'0421' – 
+X'0546'  
+
+01351  
+
+X'0547'  
+
+01352  
+
+X'0548'  
+
+01353  
+
+X'0549'  
+
+01354 – 
+01650  
+
+X'054A' –
+X'0672'  
+
+Family = Sonoran Serif 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Reserved (RPQs and Deviations) 
+
+Family = Sonoran Serif (DW/370 Use Only) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Reserved (RPQs and Deviations)  
+
+Family = Sonoran Serif (DW/370 Use Only) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Reserved (RPQs and Deviations) 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 21 of 60
+
+<<<PAGE 30>>>
+AFPC Font Typeface Registry 
+
+Dec. ID  
+
+Hex. ID  
+
+Font Typeface Description Dec. ID  
+
+Hex. ID  
+
+Font Typeface Description 
+
+IBM RPQs and Deviations:  750–2,303                        (part 2 of 2) 
+
+01651  
+
+X'0673'  
+
+01652  
+
+X'0674'  
+
+01653  
+
+X'0675'  
+
+01654 – 
+01802  
+
+X'0676' – 
+X'070A'  
+
+Family = Sonoran Serif (DW/370 
+Use Only) 
+Style = Upright, Normal, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded 
+Legibility 
+Reserved (RPQs and Deviations)  
+
+Family = Sonoran Serif 
+               (DW/370 Use Only) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded 
+Legibility 
+Reserved (RPQs and Deviations) 
+
+01803  
+
+X'070B'  
+
+01804 – 
+02102  
+02103  
+
+X'070C' – 
+X'0836'  
+X'0837'  
+
+02104 – 
+02303  
+
+X'0838' – 
+X'08FF'  
+
+Family = Sonoran Serif 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded 
+Legibility 
+
+Reserved (RPQs and Deviations) 
+
+Family = Sonoran Serif 
+                (DW/370 Use Only) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded 
+Legibility 
+Reserved (RPQs and Deviations) 
+
+Page 22 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 31>>>
+AFPC Font Typeface Registry 
+
+Proportional Designs:  2,304–3,839 (X'0900' – X'0EFF')      
+Character Escapement Table Dependent, Size and Character Set Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Proportional Designs:  2,304–3,839 
+
+02304  
+
+X'0900'  
+
+02305  
+
+X'0901'  
+
+02306  
+
+X'0902'  
+
+02307  
+
+X'0903'  
+
+02308  
+
+X'0904'  
+
+Family = Swiss 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Swiss 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Swiss 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Swiss 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Roman 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+
+02309  
+
+X'0905'  
+
+02310  
+
+X'0906'  
+
+02311  
+
+X'0907'  
+
+02312 – 
+03839  
+
+X'0908' – 
+X'0EFF'  
+
+Family = Roman 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Roman 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Roman 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Reserved 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 23 of 60
+
+<<<PAGE 32>>>
+AFPC Font Typeface Registry 
+
+Customer Assigned:  3,840–4,095 (X'0F00' – X'0FFF')       
+
+Note:  The numbers assigned in this range should be for fixed and PSM fonts only, with the numbers for proportionally 
+spaced designs being assigned to the range 65,280 to 65,534. 
+
+Dec. ID  
+
+Hex. ID  
+
+Font Typeface Description 
+
+03840 – 04095  
+
+X'0F00' – X'0FFF'  
+
+Reserved (Customer Use) 
+
+Customer Assigned:  3,840–4,095 
+
+Page 24 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 33>>>
+AFPC Font Typeface Registry 
+
+Scalable, Fixed or Proportional:  4,096–53,247 (X'1000' – X'CFFF')  
+
+To provide a convenient method of locating FGID numbers within this section, the following subsections group the 
+assigned FGID numbers by their Design Classification.  The Font Typeface Registration allocates FGID numbers 4,096 
+to 53,247 for Fixed or Proportional Designs, with no sub-allocation of those FGID numbers for particular Design Classes 
+or Subclasses. Therefore, the following subsection headings all refer to the full range of Proportional Design FGID 
+numbers, not just the range actually used within the subsection.  Product implementations should not design code which 
+is dependent on the sub-allocations implied by the range of FGID numbers actually assigned within any of the following 
+subsections.  
+
+Class 1 =Oldstyle Serifs  
+Size, Character Set and Metrics Independent  
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Class 1 = Oldstyle Serifs                                         (part 1 of 3) 
+
+04407  
+
+X'1137'  
+
+04427  
+
+X'114B'  
+
+04535  
+
+X'11B7'  
+
+04555  
+
+X'11CB'  
+
+04643  
+
+X'1223'  
+
+04663  
+
+X'1237'  
+
+04683  
+
+X'124B'  
+
+Family = Sonoran Serif 
+               (Alternate FGID = 5431) 
+Source = IBM 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Family = Sonoran Serif 
+               (Alternate FGID = 5451) 
+Source = IBM 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Family = Sonoran Serif 
+               (Alternate FGID = 5559) 
+Source = IBM 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Family = Sonoran Serif 
+               (Alternate FGID = 5579) 
+Source = IBM 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 1 = IBM Rounded Legibility 
+Family = Garamond (Monotype Garamond, 
+                Monotype Bembo) 
+Style = Upright, Light, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+Family = Garamond (Monotype Garamond, 
+                Monotype Bembo) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+Family = Garamond (Monotype Garamond, 
+                Monotype Bembo) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+
+04791  
+
+X'12B7'  
+
+04811  
+
+X'12CB'  
+
+04919  
+
+X'1337'  
+
+04939  
+
+X'134B'  
+
+04949  
+
+X'1355'  
+
+05047  
+
+X'13B7'  
+
+05067  
+
+X'13CB'  
+
+Family = Garamond (Monotype Garamond 
+                Monotype Bembo) 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+
+Family = Garamond (Monotype Garamond, 
+               Monotype Bembo) 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+
+Family = Goudy 
+               (Goudy Oldstyle, Compugraphic) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 3 = Venetian 
+
+Family = Goudy 
+               (Goudy Oldstyle, Compugraphic) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 3 = Venetian 
+
+Family = Goudy 
+               (Goudy Oldstyle, Compugraphic) 
+Style = Upright, Extra-Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 3 = Venetian 
+Family = Goudy 
+               (Goudy Oldstyle, Compugraphic) 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 3 = Venetian 
+Family = Goudy 
+               (Goudy Oldstyle, Compugraphic) 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 3 = Venetian 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 25 of 60
+
+<<<PAGE 34>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Class 1 = Oldstyle Serifs                                        (part 2 of 3) 
+
+05175  
+
+X'1437'  
+
+05195  
+
+X'144B'  
+
+05303  
+
+X'14B7'  
+
+05323  
+
+X'14CB'  
+
+05411  
+
+X'1523'  
+
+05431  
+
+X'1537'  
+
+05451  
+
+X'154B'  
+
+05559  
+
+X'15B7'  
+
+05579  
+
+X'15CB'  
+
+05687  
+
+X'1637'  
+
+05707  
+
+X'164B'  
+
+Family = Palatino 
+               (Alternate FGID = 6199) 
+Source = Linotype AG 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Palatino 
+               (Alternate FGID = 6219) 
+Source = Linotype AG 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Palatino 
+               (Alternate FGID = 6327) 
+Source = Linotype AG 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Palatino 
+               (Alternate FGID = 6347) 
+Source = Linotype AG 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Monotype Times New Roman 
+Source = Monotype 
+Style = Upright, Light, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 5 = Dutch Modern 
+
+Family = Monotype Times New Roman 
+Source = Monotype (Penimin, Monotype) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 5 = Dutch Modern 
+
+Family = Monotype Times New Roman 
+Source = Monotype (Penimin Monotype) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 5 = Dutch Modern 
+
+Family = Monotype Times New Roman 
+Source = Monotype (Alachson Monotype) 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 5 = Dutch Modern 
+
+Family = Monotype Times New Roman 
+Source = Monotype (Alachson Monotype) 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 5 = Dutch Modern 
+Family = Press Roman 
+               (Times, Linotype AG) (Dutch) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Press Roman 
+               (Times, Linotype AG) (Dutch) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+
+05815  
+
+X'16B7'  
+
+05835  
+
+X'16CB'  
+
+05943  
+
+X'1737'  
+
+05963  
+
+X'174B'  
+
+06199  
+
+X'1837'  
+
+06219  
+
+X'184B'  
+
+06327  
+
+X'18B7'  
+
+06347  
+
+X'18CB'  
+
+06435  
+
+X'1923'  
+
+06465  
+
+X'1941'  
+
+06563  
+
+X'19A3'  
+
+Family = Press Roman 
+               (Times, Linotype AG) (Dutch) 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+
+Family = Press Roman 
+               (Times, Linotype AG) (Dutch) 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+
+Family = University (Testimonial) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 7 = Contemporary 
+
+Family = University (Testimonial) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 7 = Contemporary 
+
+Family = Palacio, 
+Source = Compugraphic 
+               (Palatino Linotype AG) 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Palacio, 
+Source = Compugraphic 
+               (Palatino Linotype AG) 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Palacio, 
+Source = Compugraphic 
+               (Palatino Linotype AG) 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Palacio, 
+Source = Compugraphic 
+               (Palatino Linotype AG) 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 4 = Modified Venetian 
+Family = Bookman 
+Style = Upright, light, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+
+Family = Bookman 
+Style = Upright, Semi-Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+
+Family = Bookman 
+Style = Inclined, Light, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+
+Page 26 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 35>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Class 1 = Oldstyle Serifs                                        (part 3 of 3) 
+
+06593  
+
+X'19C1'  
+
+06711  
+
+X'1A37'  
+
+06731  
+
+X'1A4B'  
+
+06839  
+
+X'1AB7'  
+
+06859  
+
+X'1ACB'  
+
+06967  
+
+X'1B37'  
+
+06987  
+
+X'1B4B'  
+
+07095  
+
+X'1BB7'  
+
+07115  
+
+X'1BCB'  
+
+07223  
+
+X'1C37'  
+
+07243  
+
+X'1C4B'  
+
+Family = Bookman 
+Style = Inclined, Semi-Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Benguiat 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Benguiat 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Benguiat 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Benguiat 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Galliard 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+Family = Galliard 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+Family = Galliard, 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+Family = Galliard, 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 2 = Garalde 
+Family = Caslon 540 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+
+Family = Caslon #3 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+
+07351  
+
+X'1CB7'  
+
+07371  
+
+X'1CCB'  
+
+07479  
+
+X'1D37'  
+
+07499  
+
+X'1D4B'  
+
+07607  
+
+X'1DB7'  
+
+07627  
+
+X'1DCB'  
+
+07735  
+
+X'1E37'  
+
+07755  
+
+X'1E4B'  
+
+07863  
+
+X'1EB7'  
+
+07883  
+
+X'1ECB'  
+
+Family = Caslon 540 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+Family = Caslon #3 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 6 = Dutch Traditional 
+
+Family = Tiffany 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Tiffany 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Tiffany 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Tiffany 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 10 = Revival 
+Family = Trump Mediaeval 
+Source = Linotype AG 
+Style = Upright, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 14 = Mediaeval 
+Family = Trump Mediaeval 
+Source = Linotype AG 
+Style = Upright, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 14 = Mediaeval 
+Family = Trump Mediaeval 
+Source = Linotype AG 
+Style = Inclined, Medium, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 14 = Mediaeval 
+Family = Trump Mediaeval 
+Source = Linotype AG 
+Style = Inclined, Bold, Normal 
+Class 1 = Oldstyle Serifs 
+Subclass 14 = Mediaeval 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 27 of 60
+
+<<<PAGE 36>>>
+AFPC Font Typeface Registry 
+
+Class 2 =Transitional Serifs  
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Class 2 =Transitional Serifs 
+
+08503  
+
+X'2137'  
+
+08523  
+
+X'214B'  
+
+08631  
+
+X'21B7'  
+
+08651  
+
+X'21CB'  
+
+Family = Monotype Baskerville 
+Source = Monotype 
+Style = Upright, Medium, Normal 
+Class 2 = Transitional Serifs 
+Subclass 1 = Direct Line 
+Family = Monotype Baskerville 
+Source = Monotype 
+Style = Upright, Bold, Normal 
+Class 2 = Transitional Serifs 
+Subclass 1 = Direct Line 
+Family = Monotype Baskerville 
+Source = Monotype 
+Style = Inclined, Medium, Normal 
+Class 2 = Transitional Serifs 
+Subclass 1 = Direct Line 
+Family = Monotype Baskerville 
+Source = Monotype 
+Style = Inclined, Bold, Normal 
+Class 2 = Transitional Serifs 
+Subclass 1 = Direct Line 
+
+08759  
+
+X'2237'  
+
+08779  
+
+X'224B'  
+
+08887  
+
+X'22B7'  
+
+08907  
+
+X'22CB'  
+
+Family = Nasseem 
+Style = Upright, Medium, Normal 
+Class 2 = Transitional Serifs 
+Subclass 2 = Script 
+
+Family = Nasseem 
+Style = Upright, Bold, Normal 
+Class 2 = Transitional Serifs 
+Subclass 2 = Script 
+
+Family = Nasseem 
+Style = Inclined, Medium, Normal 
+Class 2 = Transitional Serifs 
+Subclass 2 = Script 
+
+Family = Nasseem 
+Style = Inclined, Bold, Normal 
+Class 2 = Transitional Serifs 
+Subclass 2 = Script 
+
+Page 28 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 37>>>
+AFPC Font Typeface Registry 
+
+Class 3 = Modern Serifs  
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Class 3 = Modern Serifs 
+
+12599  
+
+X'3137'  
+
+12619  
+
+X'314B'  
+
+12629  
+
+X'3155'  
+
+12727  
+
+X'31B7'  
+
+12747  
+
+X'31CB'  
+
+12855  
+
+X'3237'  
+
+Family = Bodoni 
+               (Monotype Bodoni, Monotype) 
+               (Bodoni Book, Compugraphic) 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 1 = Italian 
+Family = Bodoni 
+               (Monotype Bodoni, Monotype) 
+               (Bodoni Bold, Compugraphic) 
+Style = Upright, Bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 1 = Italian 
+Family = Bodoni 
+               (Bauer Bodoni Black) 
+Style = Upright, Extra-Bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 1 = Italian 
+Family = Bodoni 
+               (Monotype Bodoni, Monotype) 
+               (Bodoni Book Italic, 
+                Compugraphic) 
+Style = Inclined, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 1 = Italian 
+Family = Bodoni 
+           (Monotype Bodoni, Monotype) 
+           (Bodoni Bold Italic, 
+            Compugraphic) 
+Style = Inclined, Bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 1 = Italian 
+Family = Narkissim 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 2 = Script 
+
+12875  
+
+X'324B'  
+
+13111  
+
+X'3337'  
+
+13131  
+
+X'334B'  
+
+13239  
+
+X'33B7'  
+
+13259  
+
+X'33CB'  
+
+Family = Narkissim 
+Style = Upright, Bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 2 = Script 
+
+Family = Melliza 
+Source = Compugraphic 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+
+Family = Melliza 
+Source = Compugraphic 
+Style = Upright, Bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = Melliza 
+Source = Compugraphic 
+Style = Inclined, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+
+Family = Melliza 
+Source = Compugraphic 
+Style = Inclined, Bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 29 of 60
+
+<<<PAGE 38>>>
+AFPC Font Typeface Registry 
+
+Class 4 = Clarendon Serifs  
+Size, Character Set and Metrics Independent  
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Class 4 = Clarendon Serifs                                      (part 1 of 2)
+
+16673  
+
+X'4121'  
+
+16675  
+
+X'4123'  
+
+16693  
+
+X'4135'  
+
+16695  
+
+X'4137'  
+
+16715  
+
+X'414B'  
+
+16823  
+
+X'41B7'  
+
+16951  
+
+X'4237'  
+
+16971  
+
+X'424B'  
+
+17079  
+
+X'42B7'  
+
+17099  
+
+X'42CB'  
+
+17207  
+
+X'4337'  
+
+Family = Clarendon 
+Source = Linotype AG 
+Style = Upright, Light, Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 1 = Clarendon 
+
+Family = Clarendon 
+Source = Linotype AG 
+Style = Upright, Light, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 1 = Clarendon 
+Family = Clarendon 
+Source = Linotype AG 
+Style = Upright, Medium, Condensed 
+Class 4 = Clarendon Serifs 
+Subclass 1 = Clarendon 
+Family = Clarendon 
+Source = Linotype AG (Garland) 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 1 = Clarendon 
+Family = Clarendon 
+Source = Linotype AG (Garland) 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 1 = Clarendon 
+Family = Clarendon 
+Source = Linotype AG (Garland) 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 1 = Clarendon 
+Family = Monotype Century Schoolbook 
+Source = Monotype 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 2 = Modern 
+Family = Monotype Century Schoolbook 
+Source = Monotype 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 2 = Modern 
+Family = Monotype Century Schoolbook 
+Source = Monotype 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 2 = Modern 
+Family = Monotype Century Schoolbook 
+Source = Monotype 
+Style = Inclined, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 2 = Modern 
+Family = Monotype Century 
+Source = Monotype 
+               (Hadassah, Tetterode-Nederland) 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+
+17227  
+
+X'434B'  
+
+17335  
+
+X'43B7'  
+
+17355  
+
+X'43CB'  
+
+17463  
+
+X'4437'  
+
+17483  
+
+X'444B'  
+
+17591  
+
+X'44B7'  
+
+17719  
+
+X'4537'  
+
+17739  
+
+X'454B'  
+
+17847  
+
+X'45B7'  
+
+17867  
+
+X'45CB'  
+
+17975  
+
+X'4637'  
+
+Family = Monotype Century 
+Source = Monotype 
+                (Hadassah, Tetterode-Nederland) 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Monotype Century 
+Source = Monotype 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Monotype Century 
+Source = Monotype 
+Style = Inclined, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+Family = Excelsior 
+Source = Linotype AG 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 4 = Newspaper 
+Family = Excelsior 
+Source = Linotype AG 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 4 = Newspaper 
+Family = Excelsior 
+Source = Linotype AG 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 4 = Newspaper 
+Family = ITC Cheltenham 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 5 = Stub Serif 
+Family = ITC Cheltenham 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 5 = Stub Serif 
+Family = ITC Cheltenham 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 5 = Stub Serif 
+Family = ITC Cheltenham 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 5 = Stub Serif 
+Family = ITC Korinna 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 6 = Monotone 
+
+Page 30 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 39>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Class 4 = Clarendon Serifs                                      (part 2 of 2) 
+
+17995  
+
+X'464B'  
+
+18103  
+
+X'46B7'  
+
+18123  
+
+X'46CB'  
+
+18231  
+
+X'4737'  
+
+Family = ITC Korinna 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 6 = Monotone 
+Family = ITC Korinna Kursive 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 6 = Monotone 
+Family = ITC Korinna Kursiv 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 6 = Monotone 
+Family = Prestige Proportional 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+
+18359  
+
+X'47B7'  
+
+18487  
+
+X'4837'  
+
+20225  
+
+X'4F01'  
+
+Family = Prestige Proportional 
+Style = Inclined, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 7 = Typewriter 
+
+Family = Aachen 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 8 = (not assigned) 
+
+Family = Boldface 
+Style = Upright, Medium, Normal 
+Class 4 = Clarendon Serifs 
+Subclass 3 = Traditional 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 31 of 60
+
+<<<PAGE 40>>>
+AFPC Font Typeface Registry 
+
+Class 5 = Slab Serifs  
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Class 5 = Slab Serifs                                        (part 1 of 2) 
+
+20771  
+
+X'5123'  
+
+20801  
+
+X'5141'  
+
+20899  
+
+X'51A3'  
+
+20929  
+
+X'51C1'  
+
+21047  
+
+X'5237'  
+
+21057  
+
+X'5241'  
+
+21067  
+
+X'524B'  
+
+21175  
+
+X'52B7'  
+
+21195  
+
+X'52CB'  
+
+21303  
+
+X'5337'  
+
+21323  
+
+X'534B'  
+
+Family = ITC Lubalin Graph 
+Source = ITC 
+Style = Upright, light, Normal 
+Class 5 = Slab Serifs 
+Subclass 1 = Monotone 
+Family = ITC Lubalin Graph 
+Source = ITC 
+Style = Upright, Semi-Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 1 = Monotone 
+Family = ITC Lubalin Graph 
+Source = ITC 
+Style = Inclined, light, Normal 
+Class 5 = Slab Serifs 
+Subclass 1 = Monotone 
+Family = ITC Lubalin Graph 
+Source = ITC 
+Style = Inclined, Semi-Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 1 = Monotone 
+Family = Candida 
+Source = Ludwig & Mayer GmbH & Co. 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 2 = Humanist 
+
+Family = Candida 
+Source = Ludwig & Mayer GmbH & Co. 
+Style = Upright, Semi-bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 2 = Humanist 
+Family = Candida 
+Source = Ludwig & Mayer GmbH & Co. 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 2 = Humanist 
+Family = Candida 
+Source = Ludwig & Mayer GmbH & Co. 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 2 = Humanist 
+Family = Candida 
+Source = Ludwig & Mayer GmbH & Co. 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 2 = Humanist 
+Family = Monotype Rockwell 
+Source = Monotype (Stymie) 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 3 = Geometric 
+Family = Monotype Rockwell 
+Source = Monotype (Stymie) 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 3 = Geometric 
+
+21431  
+
+X'53B7'  
+
+21451  
+
+X'53CB'  
+
+21795  
+
+X'5523'  
+
+21815  
+
+X'5537'  
+
+21835  
+
+X'554B'  
+
+21943  
+
+X'55B7'  
+
+21963  
+
+X'55CB'  
+
+22071  
+
+X'5637'  
+
+22091  
+
+X'564B'  
+
+22199  
+
+X'56B7'  
+
+22219  
+
+X'56CB'  
+
+Family = Monotype Rockwell 
+Source = Monotype (Stymie) 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 3 = Geometric 
+Family = Monotype Rockwell 
+Source = Monotype (Stymie) 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 3 = Geometric 
+Family = Courier Proportional 
+               (Light Proportional) 
+Style = Upright, Light, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier Proportional 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Courier Proportional 
+               (Boldface Proportional) 
+               (Serif Text Proportional) 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Courier Proportional 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Courier Proportional 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Garth Graphic 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 6 = Light Contrast 
+
+Family = Garth Graphic 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 6 = Light Contrast 
+
+Family = Garth Graphic 
+Style = Inclined, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 6 = Light Contrast 
+
+Family = Garth Graphic 
+Style = Inclined, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 6 = Light Contrast 
+
+Page 32 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 41>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description  
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description  
+
+Class 5 = Slab Serifs                                        (part 2 of 2) 
+
+22327  
+
+X'5737'  
+
+22613  
+
+X'5855'  
+
+22711  
+
+X'58B7'  
+
+24320  
+
+X'5F00'  
+
+24321  
+
+X'5F01'  
+
+24322  
+
+X'5F02'  
+
+24323  
+
+X'5F03'  
+
+Family = Goudy Hand tooled 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 7 = Engraved 
+Family = Albertus 
+Style = Upright, Extra-bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 8 = Stub Serif 
+Family = Albertus 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 8 = Stub Serif 
+Family = Pro-Emulation 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Medium, 
+            Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+Family = Pro-Emulation 
+Style = Upright, Bold, 
+            Ultra-Condensed 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+24324  
+
+X'5F04'  
+
+24325  
+
+X'5F05'  
+
+24326  
+
+X'5F06'  
+
+24327  
+
+X'5F07'  
+
+24328  
+
+X'5F08'  
+
+24329  
+
+X'5F09'  
+
+Family = Pro-Emulation Small 
+Style = Upright, Medium, Normal 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Pro-Emulation Small 
+Style = Upright, Medium, Expanded 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Pro-Emulation Small 
+Style = Upright, Bold, Normal 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Pro-Emulation Small 
+Style = Upright, Bold, Expanded 
+Class 5 = Slab Serifs 
+Subclass 15 = Miscellaneous 
+Family = Pro-Emulation 
+Style = Upright, Medium, 
+            Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+Family = Pro-Emulation 
+Style = Upright, Bold, 
+            Ultra-Expanded 
+Class 5 = Slab Serifs 
+Subclass 5 = Typewriter 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 33 of 60
+
+<<<PAGE 42>>>
+AFPC Font Typeface Registry 
+
+Class 7 = Freeform Serifs  
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description  
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description  
+
+Class 7 = Freeform Serifs 
+
+28963  
+
+X'7123'  
+
+28983  
+
+X'7137'  
+
+28993  
+
+X'7141'  
+
+29003  
+
+X'714B'  
+
+29091  
+
+X'71A3'  
+
+29111  
+
+X'71B7'  
+
+Family = ITC Souvenir 
+Source = ITC 
+Style = Upright, Light, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+Family = ITC Souvenir 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+Family = ITC Souvenir 
+Source = ITC 
+Style = Upright, Semi-Bold, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+Family = ITC Souvenir 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+Family = ITC Souvenir 
+Source = ITC 
+Style = Inclined, Light, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+Family = ITC Souvenir 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+
+29121  
+
+X'71C1'  
+
+29131  
+
+X'71CB'  
+
+29269  
+
+X'7255'  
+
+29495  
+
+X'7337'  
+
+29623  
+
+X'73B7'  
+
+Family = ITC Souvenir 
+Source = ITC 
+Style = Inclined, Semi-Bold, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+Family = ITC Souvenir 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 7 = Freeform Serifs 
+Subclass 1 = Modern 
+Family = Cooper (Cooper Black) 
+Style = Upright, Extra-Bold, Normal 
+Class 7 = Freeform Serifs 
+Subclass 2 = Light Contrast 
+
+Family = Roman 
+Style = Upright, Medium, Normal 
+Class 7 = Freeform Serifs 
+Subclass n = (not assigned) 
+
+Family = Roman 
+Style = Inclined, Medium, Normal 
+Class 7 = Freeform Serifs 
+Subclass 4 = Sharp Contrast 
+
+Page 34 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 43>>>
+AFPC Font Typeface Registry 
+
+Class 8 = Sans Serif  
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Class 8 = Sans Serif                                             (part 1 of 4) 
+
+33077  
+
+X'8135'  
+
+33079  
+
+X'8137'  
+
+33080  
+
+X'8138'  
+
+33081  
+
+X'8139'  
+
+33097  
+
+X'8149'  
+
+33099  
+
+X'814B'  
+
+33101  
+
+X'814D'  
+
+33205  
+
+X'81B5'  
+
+33207  
+
+X'81B7'  
+
+33227  
+
+X'81CB'  
+
+Family = Sonoran Sans Serif 
+Source = IBM 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+
+Family = Sonoran Sans Serif (Ariel) 
+Source = IBM 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+
+Family = Sonoran Sans Serif 
+Source = IBM 
+Style = Upright, Medium, Semi-expanded 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+
+Family = Sonoran Sans Serif 
+Source = IBM 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+
+Family = Sonoran Sans Serif 
+Source = IBM 
+Style = Upright, Bold, Condensed 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+Family = Sonoran Sans Serif (Ariel) 
+Source = IBM 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+Family = Sonoran Sans Serif 
+Source = IBM 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+Family = Sonoran Sans Serif 
+Source = IBM 
+Style = Inclined, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+Family = Sonoran Sans Serif (Ariel) 
+Source = IBM 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+Family = Sonoran Sans Serif (Ariel) 
+Source = IBM 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 1 = IBM Neo-grotesque 
+
+33335  
+
+X'8237'  
+
+33355  
+
+X'824B'  
+
+33463  
+
+X'82B7'  
+
+33483  
+
+X'82CB'  
+
+33591  
+
+X'8337'  
+
+33601  
+
+X'8341'  
+
+33611  
+
+X'834B'  
+
+33719  
+
+X'83B7'  
+
+33729  
+
+X'83C1'  
+
+33739  
+
+X'83CB'  
+
+Family = Optima 
+               (Omega, Compugraphic) 
+Source = Linotype AG 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Optima 
+               (Omega, Compugraphic) 
+Source = Linotype AG 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Optima 
+               (Omega, Compugraphic) 
+Source = Linotype AG 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Optima 
+               (Omega, Compugraphic) 
+Source = Linotype AG 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 2 = Humanist 
+Family = Futura 
+Source = Fundicion Tipografica Neufville 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Futura 
+Source = Fundicion Tipografica Neufville 
+Style = Upright, Semi-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Futura 
+Source = Fundicion Tipografica Neufville 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Futura 
+Source = Fundicion Tipografica Neufville 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Futura 
+Source = Fundicion Tipografica Neufville 
+Style = Inclined, Semi-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Futura 
+Source = Fundicion Tipografica Neufville 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 35 of 60
+
+<<<PAGE 44>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID  Hex. ID  Font Typeface Description  
+
+Class 8 = Sans Serif                                             (part 2 of 4) 
+
+33837  
+
+X'842D'  
+
+33847  
+
+X'8437'  
+
+33857  
+
+X'8441'  
+
+33867  
+
+X'844B'  
+
+33965  
+
+X'84AD'  
+
+33975  
+
+X'84B7'  
+
+33985  
+
+X'84C1'  
+
+33995  
+
+X'84CB'  
+
+34081  
+
+X'8521'  
+
+34083  
+
+X'8523'  
+
+34085  
+
+X'8525'  
+
+34101  
+
+X'8535'  
+
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Upright, Semi-Light, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Upright, Semi-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Inclined, Semi-Light, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Inclined, Semi-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Avant Garde Gothic 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Light, Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Light, Expanded 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica (Triumverant) 
+Source = Linotype AG 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+
+34102  
+
+X'8536'  
+
+34103  
+
+X'8537'  
+
+34105  
+
+X'8539'  
+
+34121  
+
+X'8549'  
+
+34122  
+
+X'854A'  
+
+34123  
+
+X'854B'  
+
+34125  
+
+X'854D'  
+
+34143  
+
+X'855F'  
+
+34211  
+
+X'85A3'  
+
+34229  
+
+X'85B5'  
+
+34230  
+
+X'85B6'  
+
+34231  
+
+X'85B7'  
+
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Medium, Semi-Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+               (Foundry, Swiss, Levenim) 
+Source = Linotype AG 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica (Triumverant) 
+Source = Linotype AG 
+Style = Upright, Bold, Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Bold, Semi-Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+               (Foundry, Swiss, Levenim) 
+Source = Linotype AG 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Upright, Ultra-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Inclined, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica (Triumverant) 
+Source = Linotype AG 
+Style = Inclined, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Inclined, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica (Foundry, Swiss) 
+Source = Linotype AG 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+
+Page 36 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 45>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Class 8 = Sans Serif                                             (part 3 of 4) 
+
+34249  
+
+X'85C9'  
+
+34251  
+
+X'85CB'  
+
+34271  
+
+X'85DF'  
+
+34337  
+
+X'8621'  
+
+34339  
+
+X'8623'  
+
+34357  
+
+X'8635'  
+
+34359  
+
+X'8637'  
+
+34377  
+
+X'8649'  
+
+34379  
+
+X'864B'  
+
+34465  
+
+X'86A1'  
+
+34467  
+
+X'86A3'  
+
+Family = Helvetica 
+Source = Linotype AG 
+Style = Inclined, Bold, Condensed 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica (Foundry, Swiss) 
+Source = Linotype AG 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Helvetica 
+Source = Linotype AG 
+Style = Inclined, Ultra-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 5 = Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Upright, Light, Condensed 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers (Oron, Asher-Oron) 
+Source = Linotype AG 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Upright, Bold, Condensed 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers (Oron, Asher-Oron) 
+Source = Linotype AG 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Inclined, Light, Condensed 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Inclined, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+
+34485  
+
+X'86B5'  
+
+34487  
+
+X'86B7'  
+
+34505  
+
+X'86C9'  
+
+34507  
+
+X'86CB'  
+
+34613  
+
+X'8735'  
+
+34615  
+
+X'8737'  
+
+34741  
+
+X'87B5'  
+
+34743  
+
+X'87B7'  
+
+34871  
+
+X'8837'  
+
+34891  
+
+X'884B'  
+
+34999  
+
+X'88B7'  
+
+Family = Univers 
+Source = Linotype AG 
+Style = Inclined, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Inclined, Bold, Condensed 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Univers 
+Source = Linotype AG 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 6 = Modified Neo-grotesque 
+Family = Orator 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+
+Family = Orator 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+
+Family = Orator 
+Style = Inclined, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+
+Family = Orator 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 7 = Single Alphabet 
+
+Family = Publisher 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass n = (not assigned) 
+
+Family = Publisher 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass n = (not assigned) 
+
+Family = Publisher 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass n = (not assigned) 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 37 of 60
+
+<<<PAGE 46>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Class 8 = Sans Serif                                            (part 4 of 4) 
+
+35125  
+
+X'8935'  
+
+35127  
+
+X'8937'  
+
+35147  
+
+X'894B'  
+
+35255  
+
+X'89B7'  
+
+35275  
+
+X'89CB'  
+
+35383  
+
+X'8A37'  
+
+35639  
+
+X'8B37'  
+
+35895  
+
+X'8C37'  
+
+35897  
+
+X'8C39'  
+
+35915  
+
+X'8C4B'  
+
+Family = Gothic Proportional 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+
+Family = Gothic Proportional 
+               (Gothic Text Proportional) 
+               (Letter Gothic Proportional) 
+               (Compugraphic Trade) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Proportional 
+               (Gothic Text Proportional) 
+               (Letter Gothic Proportional) 
+               (Compugraphic Trade) 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Proportional 
+               (Gothic Text Proportional) 
+               (Letter Gothic Proportional) 
+               (Compugraphic Trade) 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Gothic Proportional 
+               (Gothic Text Proportional) 
+               (Letter Gothic Proportional) 
+               (Compugraphic Trade) 
+Style = Inclined, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 9 = Typewriter 
+Family = Matrix Gothic Proportional 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 10 = Matrix 
+Family = Outline Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 11 = Outline 
+Family = Microstyle 
+Source = Compugraphic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 12 = Monotone 
+Family = Microstyle 
+Source = Compugraphic 
+Style = Upright, Medium, Expanded 
+Class 8 = Sans Serif 
+Subclass 12 = Monotone 
+Family = Microstyle 
+Source = Compugraphic 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 12 = Monotone 
+
+35917  
+
+X'8C4D'  
+
+36151  
+
+X'8D37'  
+
+Family = Microstyle 
+Source = Compugraphic 
+Style = Upright, Bold, Expanded 
+Class 8 = Sans Serif 
+Subclass 12 = Monotone 
+Family = Antique Olive 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+
+36171  
+
+X'8D4B'  
+
+Family = Antique Olive 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+
+36181  
+
+X'8D55'  
+
+Family = Antique Olive 
+Style = Upright, Extra-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+
+36279  
+
+X'8DB7'  
+
+Family = Antique Olive 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+
+36407  
+
+X'8E37'  
+
+36427  
+
+X'8E4B'  
+
+36437  
+
+X'8E55'  
+
+36535  
+
+X'8EB7'  
+
+36663  
+
+X'8F37'  
+
+Family = Shanon 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 14 = (not assigned) 
+Family = Shanon 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 14 = (not assigned) 
+Family = Shanon 
+Style = Upright, Extra-Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 14 = (not assigned) 
+
+Family = Shanon 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 14 = (not assigned) 
+
+Family = Hobo 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 15 = Miscellaneous 
+
+Page 38 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 47>>>
+AFPC Font Typeface Registry 
+
+Class 9 = Ornamentals 
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Class 9 = Ornamentals 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+37431  
+
+X'9237'  
+
+37684  
+
+X'9334'  
+
+38219  
+
+X'954B'  
+
+Family = Monotype Old English Text 
+               (Engraved Old English) 
+Source = Monotype 
+Style = Upright, Medium, Normal 
+Class 9 = Ornamentals 
+Subclass 2 = Black Letter 
+Family = Thunderbird 
+Style = Upright, Medium, 
+             Extra-Condensed 
+Class 9 = Ornamentals 
+Subclass n = (not assigned) 
+Family = Broadway 
+Style = Upright, Bold, Normal 
+Class 9 = Ornamentals 
+Subclass 5 = Art Deco 
+
+38435  
+
+X'9623'  
+
+38711  
+
+X'9737'  
+
+38967  
+
+X'9837'  
+
+Family = Review 
+Source = Letraset 
+Style = Upright, Light, Normal 
+Class 9 = Ornamentals 
+Subclass 6 = Monotone 
+
+Family = Review Shadow 
+Source = Letraset 
+Style = Upright, Medium, Normal 
+Class 9 = Ornamentals 
+Subclass 7 = Shadow 
+Family = Eccentric 
+Style = Upright, Medium, Normal 
+Class 9 = Ornamentals 
+Subclass 8 = Ultra-high x 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 39 of 60
+
+<<<PAGE 48>>>
+AFPC Font Typeface Registry 
+
+Class 10 = Scripts 
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Class 10 = Scripts 
+
+41271  
+
+X'A137'  
+
+41655  
+
+X'A2B7'  
+
+Family = Uncial 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 1 = Uncial 
+
+Family = Brush 
+Style = Inclined, Medium, Normal 
+Class 10 = Scripts 
+Subclass 2 = Brush Joined 
+
+41783  
+
+X'A337'  
+
+Family = Coronet (Cursive, Park Avenue) 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+
+41803  
+
+X'A34B'  
+
+41911  
+
+X'A3B7'  
+
+42039  
+
+X'A437'  
+
+42167  
+
+X'A4B7'  
+
+42551  
+
+X'A637'  
+
+Family = Coronet (Cursive Bold) 
+Style = Upright, Bold, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+
+Family = Coronet 
+Style = Inclined, Medium, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+
+Family = Script Proportional 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+
+Family = Script Proportional 
+Style = Inclined, Medium, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = Dom Casual 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 6 = Brush Unjoined 
+
+42935  
+
+X'A7B7'  
+
+43319  
+
+X'A937'  
+
+43329  
+
+X'A941'  
+
+43339  
+
+X'A94B'  
+
+43447  
+
+X'A9B7'  
+
+43467  
+
+X'A9CB'  
+
+44983  
+
+X'AFB7'  
+
+Family = Monotype New Berolina 
+               (Signet Roundhand) 
+Source = Monotype 
+Style = Inclined, Medium, Normal 
+Class 10 = Scripts 
+Subclass 7 = Formal Unjoined 
+Family = ITC Zapf Chancery 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+Family = ITC Zapf Chancery 
+Source = ITC 
+Style = Upright, Semi-Bold, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+Family = ITC Zapf Chancery 
+Source = ITC 
+Style = Upright, Bold, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+Family = ITC Zapf Chancery 
+Source = ITC 
+Style = Inclined, Medium, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+Family = ITC Zapf Chancery 
+Source = ITC 
+Style = Inclined, Bold, Normal 
+Class 10 = Scripts 
+Subclass 3 = Formal Joined 
+Family = Marigold 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 7 = Formal Unjoined 
+
+Page 40 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 49>>>
+AFPC Font Typeface Registry 
+
+Class 12 = Symbolic  
+Size, Character Set and Metrics Independent 
+
+Note:  Unless otherwise specified, the default Font Width for proportionally spaced designs is 1/3 the Font Height (0.5 to 
+0.9 rounded to the next higher integer), and the Font Height is 20/1440 inches per Point. 
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Dec. ID   Hex. ID   Font Typeface Description  
+
+Class 12 = Symbolic 
+
+49463  
+
+X'C137'  
+
+49483  
+
+X'C14B'  
+
+49719  
+
+X'C237'  
+
+49739  
+
+X'C24B'  
+
+49975  
+
+X'C337'  
+
+50231  
+
+X'C437'  
+
+50743  
+
+X'C637'  
+
+Family = Pi Serif 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 1 = Serif 
+Family = Pi Serif 
+Style = Upright, Bold, Normal 
+Class 12 = Symbolic 
+Subclass 1 = Serif 
+Family = Pi Sans Serif 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 2 = Sans Serif 
+
+Family = Pi Sans Serif 
+Style = Upright, Bold, Normal 
+Class 12 = Symbolic 
+Subclass 2 = Sans Serif 
+Family = Symbol 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 3 = Mixed Serif 
+Family = Format 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 4 = Design Transparent 
+
+Family = Press Roman Symbol 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 6 = Oldstyle Serifs 
+
+50763  
+
+X'C64B'  
+
+50999  
+
+X'C737'  
+
+51255  
+
+X'C837'  
+
+51511  
+
+X'C937'  
+
+51767  
+
+X'CA37'  
+
+53047  
+
+X'CF37'  
+
+Family = Press Roman Symbol 
+Style = Upright, Bold, Normal 
+Class 12 = Symbolic 
+Subclass 6 = Oldstyle Serifs 
+Family = Helvetica Symbol 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 7 = Neo-grotesque Sans Serif 
+Family = ITC Zapf Dingbats 
+Source = ITC 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 8 = Design Independent 
+Family = Wingdings 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 8 = Design Independent 
+Family = IBM LOGO 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 8 = Design Independent 
+Family = Bar Code 
+                (see also FGID=323) 
+Style = Upright, Medium, Normal 
+Class 12 = Symbolic 
+Subclass 15 = Miscellaneous 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 41 of 60
+
+<<<PAGE 50>>>
+AFPC Font Typeface Registry 
+
+Asia Pacific Designs:  53,248–61,439 (X'D000' – X'EFFF')   
+Fixed and Proportional Spacing; Size, Character Set and Metrics Independent 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID   Font Typeface Description 
+
+Asia Pacific Designs:  53,248–61,439                           (part 1 of 3) 
+
+53248  
+
+X'D000'  
+
+53249  
+
+X'D001'  
+
+53250  
+
+X'D002'  
+
+53251 – 
+53259 
+
+X'D003' – 
+X'D00B' 
+
+53260  
+
+X'D00C'  
+
+53261  
+
+X'D00D'  
+
+53262  
+
+X'D00E'  
+
+53263  
+
+X'D00F'  
+
+53264  
+
+X'D010'  
+
+53265  
+
+X'D011'  
+
+53266  
+
+X'D012'  
+
+53267  
+
+X'D013'  
+
+53268  
+
+X'D014'  
+
+53269  
+
+X'D015'  
+
+53270  
+
+X'D016'  
+
+Family = Japanese Heisei Mincho 
+Style = Upright, Light, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = Japanese Heisei Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Japanese Heisei Rounded Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+Reserved 
+
+Family = DFHS  -W3 
+Style = Upright, Light, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = DFHS Mincho-W5 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = DFHS Mincho-W7 
+Style = Upright, Bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = DFHS Mincho-W9 
+Style = Upright, Ultra-bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = DF Mincho-UB 
+Style = Upright, Ultra-bold, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = DFHS Gothic-W3 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = DFHS Gothic-W5 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = DFHS Gothic-W7 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = DFHS Gothic-W9 
+Style = Upright, Ultra-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = DF Gothic-EB 
+Style = Upright, Extra-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = DF Gothic-UB 
+Style = Upright, Ultra-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+
+53271  
+
+X'D017'  
+
+53272  
+
+X'D018'  
+
+53273  
+
+X'D019'  
+
+53274  
+
+X'D01A'  
+
+53275  
+
+X'D01B'  
+
+53276  
+
+X'D01C'  
+
+53277  
+
+X'D01D'  
+
+53278  
+
+X'D01E'  
+
+53279  
+
+X'D01F'  
+
+53280  
+
+X'D020'  
+
+53281  
+
+X'D021'  
+
+53282  
+
+X'D022'  
+
+53283  
+
+X'D023'  
+
+53284  
+
+X'D024'  
+
+53285  
+
+X'D025'  
+
+Family = DFHS MaruGothic-W4 
+Style = Upright, Semi-light, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+Family = DF MaruGothic-Lt 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+Family = DF MaruGothic-Md 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+Family = DF MaruGothic-Bd 
+Style = Upright, Bold, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+Family = DF KaiSho-Lt 
+Style = Upright, Light, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = DF KaiSho-Md 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = DF KaiSho-Sb 
+Style = Upright, Semi-bold, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = DF KaiSho-Bd 
+Style = Upright, Bold, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = DF GyoSho-Lt 
+Style = Upright, Light, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = DF LeiSho-Sb 
+Style = Upright, Semi-bold, Normal 
+Class 10 = Scripts 
+Subclass 12 = Hard Brush 
+Family = DF KanTeiRyu-Xb 
+Style = Upright, Extra-bold, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Family = DF Pop 1-W3 
+Style = Upright, Light, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+Family = DF Pop 1-W5 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+Family = DF Pop 1-Sb 
+Style = Upright, Semi-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+Family = DF Pop 1-W9 
+Style = Upright, Ultra-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 13 = Light Contrast 
+
+Page 42 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 51>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID   Font Typeface Description 
+
+Dec. ID  Hex. ID  Font Typeface Description 
+
+Asia Pacific Designs:  53,248–61,439                           (part 2 of 3) 
+
+Family = DF MaruMoji-W3 
+Style = Upright, Light, Normal 
+Class 10 = Scripts 
+Subclass 8 = Monotone Unjoined 
+Family = DF MaruMoji-Sl 
+Style = Upright, Semi-Light, Normal 
+Class 10 = Scripts 
+Subclass 8 = Monotone Unjoined 
+
+Family = DF MaruMoji-W7 
+Style = Upright, Bold, Normal 
+Class 10 = Scripts 
+Subclass 8 = Monotone Unjoined 
+Family = DF MaruMoji-W9 
+Style = Upright, Ultra-bold, Normal 
+Class 10 = Scripts 
+Subclass 8 = Monotone Unjoined 
+Reserved 
+
+Family = Japanese Mincho 
+               (Korean Myengjo) 
+               (raster, shifted to baseline) 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = Korean Myengjo 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Reserved 
+
+Family = Japanese Gothic 
+               (raster, shifted to baseline) 
+Style = Upright, Medium, Condensed 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Reserved 
+
+Family = Korean Gothic 
+               (raster, shifted to baseline) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Family = Korean Gothic 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Reserved 
+
+53286  
+
+X'D026'  
+
+53287  
+
+X'D027'  
+
+53288  
+
+X'D028'  
+
+53289  
+
+X'D029'  
+
+53290 – 
+53558 
+53559  
+
+X'D02A' – 
+X'D136' 
+X'D137'  
+
+53560  
+
+X'D138'  
+
+53561 – 
+53812 
+
+X'D139' – 
+X'D234' 
+
+53813  
+
+X'D235'  
+
+53814 
+
+X'D236' 
+
+53815  
+
+X'D237'  
+
+53816  
+
+X'D238'  
+
+53817 – 
+54070 
+
+X'D239' – 
+X'D336' 
+
+54071  
+
+X'D337'  
+
+54072 – 
+54326 
+
+X'D338' – 
+X'D436' 
+
+Reserved 
+
+54327  
+
+X'D437'  
+
+54328 – 
+54562 
+
+X'D438' – 
+X'D522' 
+
+54563  
+
+X'D523'  
+
+54564 
+
+X'D524' 
+
+54565  
+
+X'D525'  
+
+54566  
+
+X'D526'  
+
+54567  
+
+X'D527'  
+
+54568  
+
+X'D528'  
+
+54569 – 
+54582 
+54583  
+
+X'D529' – 
+X'D536' 
+X'D537'  
+
+54584 – 
+57654 
+
+X'D538' – 
+X'E136' 
+
+57655  
+
+X'E137'  
+
+Family = Traditional Chinese Song 
+               (raster, shifted to baseline) 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Reserved 
+
+Family = Traditional Chinese Sung 
+Style = Upright, light, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Reserved 
+
+Family = Simplified Chinese Hei 
+Style = Upright, Semi-bold, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+
+Family = Simplified Chinese Fang Song 
+Style = Upright, Semi-light, Normal 
+Class 10 = Scripts 
+Subclass 11 = Soucho (engraved) 
+Family = Simplified Chinese Song 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Family = Simplified Chinese Kai 
+               (Traditional Chinese Kai) 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 10 = Kaisho (soft brush) 
+Reserved 
+
+Family = Traditional Chinese Ming 
+               (raster, shifted to baseline) 
+Style = Upright, Medium, Normal 
+Class 3 = Modern Serifs 
+Subclass 3 = Mincho 
+Reserved 
+
+Family = Thai Official 
+               (raster, shifted to baseline) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square end 
+Reserved 
+
+Family = Japanese Rounded Gothic 
+               (raster, shifted to baseline) 
+Style = Upright, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 4 = Round Geometric, round end 
+
+57656 – 
+58038 
+
+X'E138' – 
+X'E2B6' 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 43 of 60
+
+<<<PAGE 52>>>
+AFPC Font Typeface Registry 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Dec. ID   Hex. ID  
+
+Font Typeface Description 
+
+Asia Pacific Designs:  53,248–61,439                           (part 3 of 3) 
+
+58039  
+
+X'E2B7'  
+
+58040 – 
+59190 
+
+X'E2B8' – 
+X'E736' 
+
+Family = Thai Italic 
+               (raster, shifted to baseline) 
+Style = Inclined, Medium, Normal 
+Class 8 = Sans Serif 
+Subclass 3 = Round Geometric, square 
+end 
+Reserved 
+
+59191  
+
+X'E737'  
+
+Family = Korean Myungjo 
+Style = Upright, Medium, Normal 
+Class 10 = Scripts 
+Subclass 8 = Monotone Unjoined 
+
+59192 – 
+61439 
+
+X'E738' – 
+X'EFFF' 
+
+Reserved 
+
+Page 44 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 53>>>
+AFPC Font Typeface Registry 
+
+IBM AFP Restricted Use:  61,440–65,279 (X'F000' – X'FEFF')  
+
+IBM AFP Restricted Use:  61,440–65,279 
+
+Dec. ID  
+
+61440 – 65279  
+
+Hex. ID  
+
+Font Typeface Description 
+
+X'F000' – X'FEFF'  
+
+Reserved (Private Use)  
+
+Customer Assigned: 65,280–65,534 (X'FF00' – X'FFFE')   
+Note:  The numbers assigned in this range should be for proportionally spaced designs only, with the numbers for fixed 
+or PSM designs being assigned to the range 3,840 to 4,095.  
+
+Dec. ID  
+
+65280– 65534  
+
+Hex. ID  
+
+Font Typeface Description 
+
+X'FF00' – X'FFFE'  
+
+Reserved (Customer Use) 
+
+Customer Assigned: 65,280–65,534 
+
+FGID Registry 
+
+AFP Consortium 
+
+Page 45 of 60
+
+<<<PAGE 54>>>
+AFPC Font Typeface Registry 
+
+Page 46 of 60 
+
+AFP Consortium 
+
+FGID Registry
+
+<<<PAGE 55>>>
+AFPC Font Typeface Registry 
+
+Index 
+
+1 
+
+10 Pitch ....................................................................... 1, 2, 3 
+12 Pitch ........................................................................... 4, 5 
+13.3 Pitch ............................................................................ 8 
+1403 OCR ............................................................................ 1 
+15 Pitch ............................................................................... 9 
+17.1 Pitch .................................................................... 11, 13 
+17‐27 Pitch ........................................................................ 13 
+
+5 
+
+5 Pitch ............................................................................... 10 
+
+8 
+
+Baskerville .................................................................... iv, 28 
+Bembo .............................................................................. 25 
+Benguiat ........................................................................... 27 
+Bodoni .......................................................................... iv, 29 
+Boldface ...................................................... 6, 13, 18, 31, 32 
+Bookface Academic ............................................................ 1 
+Bookman .................................................................... 26, 27 
+Broadway ......................................................................... 39 
+Brush ....................................................................... v, 40, 42 
+
+C 
+
+Candida ........................................................................ iii, 32 
+Caslon ............................................................................... 27 
+Century .................................................................... iii, iv, 30 
+Century Schoolbook ................................................ iii, iv, 30 
+Cheltenham .................................................................. iii, 30 
+Clarendon iii, v, 1, 3, 4, 5, 6, 9, 11, 13, 14, 15, 16, 17, 18, 20, 
+
+8 Pitch ............................................................................... 12 
+
+30, 31 
+
+A 
+
+Aachen .............................................................................. 31 
+Adjudant ............................................................................. 5 
+Advanced Function Presentation Consortium .................... iii 
+Advocate ............................................................................. 1 
+AFPC ............................................................................. 2, iii 
+Alachson ........................................................................... 26 
+Albertus ............................................................................ 33 
+Antique Olive .................................................................... 38 
+APL ................................................... 1, 2, 3, 4, 5, 8, 9, 13, 14 
+Arcadia ................................................................................ 6 
+Arial .................................................................................... iv 
+Ariel .................................................................................. 35 
+Artisan ............................................................... 1, 2, 3, 4, 19 
+Asher‐Oron .................................................................. iv, 37 
+Asia Pacific Designs ............................................... 42, 43, 44 
+Auto Elite ............................................................................ 4 
+Avant Garde ................................................................. iii, 36 
+Aviv ........................................................... 2, 3, 5, 13, 18, 20 
+
+Compugraphic Trade ........................................................ 38 
+Cooper .............................................................................. 34 
+Coronet ............................................................................ 40 
+Courier..... 1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 16, 18, 19, 
+
+20, 21, 32 
+
+Cursive .............................................................................. 40 
+Customer Assigned ..................................................... 24, 45 
+Cyrillic ................................................................................. 1 
+
+D 
+
+Data1 .............................................................................. 8, 9 
+Delegate ............................................................................. 1 
+Diplomat ............................................................................. 5 
+Diwanee ....................................................................... 7, 18 
+Diwanee PS ......................................................................... 7 
+Document ..................................................................... 6, 15 
+Dom Casual ...................................................................... 40 
+Dual Gothic ......................................................................... 4 
+Dutch Traditional ...................................... v, 2, 7, 23, 26, 27 
+
+B 
+
+E 
+
+Bar Code ..................................................................... 14, 41 
+Barak PS .......................................................................... 6, 7 
+
+Eccentric ........................................................................... 39 
+Elite ................................................................................ 4, 5 
+Essay ......................................................................... 6, 7, 20 
+
+Index 
+
+AFP Consortium 
+
+Page 47 of 60
+
+<<<PAGE 56>>>
+AFPC Font Typeface Registry 
+
+Excelsior ............................................................................ 30 
+
+K 
+
+F 
+
+Fang Song .......................................................................... 43 
+FGID .................. 2, iii, iv, vi, 1, 2, 3, 4, 5, 6, 9, 14, 25, 26, 41 
+Font Class ....................................................................... v, vi 
+Font Subclass ...................................................................... v 
+Font Typeface Global Identifier ......................................... iii 
+Format .................................................................. 2, 4, 9, 41 
+Foundry PS .......................................................................... 7 
+Futura .......................................................................... iii, 35 
+
+G 
+
+Galliard ............................................................................. 27 
+Garamond ............................................................... iii, iv, 25 
+Garland ............................................................................. 30 
+Garth Graphic ................................................................... 32 
+Gothic iii, 2, 4, 6, 9, 11, 13, 14, 15, 16, 19, 20, 36, 38, 42, 43 
+Gothic Rotated .............................................................. 2, 11 
+Gothic Text ............................................ 2, 4, 6, 9, 13, 14, 38 
+Goudy ......................................................................... 25, 33 
+GyoSho .............................................................................. 42 
+
+H 
+
+Hadassah ...................................................................... iii, 30 
+Harel ............................................................. 3, 4, 18, 19, 20 
+Hei ..................................................................................... 43 
+Helvetica .......................................................... iii, 36, 37, 41 
+High Speed Latin ......................................................... 1, 4, 6 
+Hobo ................................................................................. 38 
+
+I 
+
+IBM LOGO ......................................................................... 41 
+
+KaiSho ............................................................................... 42 
+KanTeiRyu ......................................................................... 42 
+Katakana .................................................... 1, 2, 4, 11, 16, 19 
+Kateb ............................................................................ 2, 12 
+Korinna ................................................................... iii, 30, 31 
+
+L 
+
+Large Pica ........................................................................... 1 
+LeiSho ............................................................................... 42 
+Letter Gothic ..................... 2, 4, 5, 11, 13, 14, 15, 16, 21, 38 
+Levenim ........................................................................ iv, 36 
+Light .... v, 1, 2, 4, 5, 6, 10, 25, 26, 30, 32, 34, 36, 37, 38, 39, 
+
+42, 43 
+
+Light Italic ........................................................................... 1 
+Light Modified ................................................................ 1, 5 
+Linguistic ........................................................................ 2, 4 
+Lubalin Graph ............................................................... iii, 32 
+
+M 
+
+Manifold ............................................................................. 1 
+Marigold ........................................................................... 40 
+MaruGothic ...................................................................... 42 
+MaruMoji ......................................................................... 43 
+Math Symbol Set ............................................................ 2, 9 
+Matrix Gothic .................. 2, 4, 5, 8, 9, 10, 11, 12, 14, 15, 38 
+Melliza .............................................................................. 29 
+MICR ................................................................................. 12 
+Micro .................................................................................. 9 
+Microstyle ........................................................................ 38 
+Mincho .............................................................. v, 29, 42, 43 
+Ming ................................................................................. 43 
+Modern ........................................ v, 6, 26, 29, 30, 34, 42, 43 
+Monthob .......................................................................... 14 
+Myengjo ........................................................................... 43 
+Myungjo ........................................................................... 44 
+
+J 
+
+N 
+
+Japanese Heisei Mincho .................................................... 42 
+Japanese Heisei Rounded Gothic ...................................... 42 
+
+Narkiss Tam ...................................................................... 15 
+Narkissim .......................................................................... 29 
+Nasseem ........................................ 3, 5, 9, 12, 13, 16, 21, 28 
+Negative Image Gothic ..................................................... 14 
+New Berolina ................................................................ iv, 40 
+
+Page 48 of 60 
+
+AFP Consortium 
+
+Index
+
+<<<PAGE 57>>>
+AFPC Font Typeface Registry 
+
+O 
+
+S 
+
+OCR‐A ............................................................................ 1, 14 
+OCR‐B ............................................................................ 1, 14 
+OCR‐B Katakana ................................................................ 19 
+OCR‐CD ............................................................................... 1 
+Old English ................................................................... iv, 39 
+Old World ........................................................................... 5 
+Olde World ........................................................................ 17 
+Omega .............................................................................. 35 
+Optima ......................................................................... iv, 35 
+Orator ........................................... 1, 2, 7, 13, 16, 17, 20, 37 
+Oron ............................................................................. iv, 37 
+Outline .......................................................................... v, 38 
+
+P 
+
+Palacio ............................................................................... 26 
+Palatino ........................................................................ iv, 26 
+Park Avenue ...................................................................... 40 
+PC Lines ............................................................................... 3 
+Penimin ............................................................................. 26 
+Penini ................................................................................. iv 
+Pi Sans Serif ....................................................................... 41 
+Pi Serif ............................................................................... 41 
+Pica ................................................................................. 1, 3 
+Polygo Pica .......................................................................... 1 
+Pop 1 ................................................................................. 42 
+Presentor ...................................................... 2, 7, 13, 17, 20 
+Press Roman ........................................................... 7, 26, 41 
+Prestige ............ 1, 3, 4, 5, 6, 9, 11, 13, 14, 16, 17, 18, 20, 31 
+Printing & Publishing #3 ...................................................... 1 
+Pro‐Emulation ............................................................. 17, 33 
+Publisher ........................................................................... 37 
+
+R 
+
+Review .............................................................................. 39 
+Rhetoric .............................................................................. 1 
+Rockwell ....................................................................... iv, 32 
+Roman ..................................................................... 2, 23, 34 
+Roman Text ......................................................................... 2 
+Rounded Gothic ................................................................ 43 
+Roundhand ....................................................................... 40 
+Rugaa ............................................................................ 7, 18 
+Rugaa PS ............................................................................. 7 
+
+Screen Corners ................................................................. 14 
+Scribe .......................................................................... 1, 4, 9 
+Script ....................................... v, 4, 7, 13, 17, 20, 28, 29, 40 
+Serif Text ...............................................................2, 4, 9, 32 
+Shalom .......................................... 2, 5, 9, 11, 12, 15, 18, 20 
+Shanon ............................................................................. 38 
+Signet ............................................................................... 40 
+Simplified Chinese ............................................................ 43 
+Small Pro‐Emulation ................................................... 16, 17 
+Sonoran Sans Serif ........................................................ iv, 35 
+Sonoran Serif .................................................... iv, 21, 22, 25 
+Souvenir ....................................................................... iv, 34 
+Stymie .............................................................................. 32 
+Swiss ................................................................. v, 23, 36, 37 
+Symbol ........................................................... 1, 2, 4, 5, 9, 41 
+
+T 
+
+Testimonial ....................................................................... 26 
+Text ............................................................................ 15, 39 
+Thai Italic .......................................................................... 44 
+Thai Official ............................................................ 7, 17, 43 
+Theory ............................................................................ 2, 4 
+Thesis ................................................................................. 6 
+Throughscored Courier ...................................................... 2 
+Throughscored Serif ......................................................... 15 
+Thunderbird ..................................................................... 39 
+Tiffany .............................................................................. 27 
+Times ............................................................................ iv, 26 
+Times New Roman ....................................................... iv, 26 
+Title .................................................................................... 6 
+Traditional Chinese Song .................................................. 43 
+Traditional Chinese Sung .................................................. 43 
+Triumverant ...................................................................... 36 
+Trump Mediaeval ............................................................. 27 
+Trump Medieval ................................................................ iv 
+typeface ............................................................................. iii 
+
+U 
+
+Uncial ........................................................................... v, 40 
+Underscored Gothic ......................................................... 14 
+Underscored Text ............................................................. 15 
+Univers ......................................................................... iv, 37 
+University ......................................................................... 26 
+
+Index 
+
+AFP Consortium 
+
+Page 49 of 60
+
+<<<PAGE 58>>>
+AFPC Font Typeface Registry 
+
+W 
+
+Z 
+
+Wingdings ......................................................................... 41 
+
+Zapf Chancery ............................................................... iv, 40 
+Zapf Dingbats ............................................................... iv, 41 
+
+Y 
+
+Yasmin .................................................................. 2, 5, 6, 20 
+
+Page 50 of 60 
+
+AFP Consortium 
+
+Index
+
+<<<PAGE 59>>>
+AFPC Font Typeface Registry 
+
+Index 
+
+AFP Consortium 
+
+Page 51 of 60
+
+<<<PAGE 60>>>
+Advanced 
+AFPC
+
+Function Prese
+C Font Ty
+
+entation Conso
+ypeface 
+
+ortium 
+Registryy 
+
+AFPC-0016-0
+
+01

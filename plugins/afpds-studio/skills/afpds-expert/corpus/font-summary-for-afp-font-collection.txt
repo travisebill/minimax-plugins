@@ -1,0 +1,18414 @@
+<<<PAGE 1>>>
+(cid:201)´(cid:212)
+
+Font Summary for AFP Font Collection
+
+S544-5633-02
+
+<<<PAGE 2>>>
+
+
+<<<PAGE 3>>>
+(cid:201)´(cid:212)
+
+Font Summary for AFP Font Collection
+
+S544-5633-02
+
+<<<PAGE 4>>>
+Note! 
+
+Before using this information and the product it supports, be sure to read the general information in
+“Notices” on page 83.
+
+Third Edition (June 2000)
+
+This edition applies to the version, release, and modification levels of the products shown in Table 1 on page xiii and to all
+subsequent releases and modifications until otherwise indicated in new editions or technical newsletters. See the Summary of
+Changes for the changes made to this publication. Technical changes or additions to the text and illustrations are indicated by a
+vertical line to the left of the change. Be sure to use the correct edition for the level of the product.
+
+Order publications through your IBM representative or the IBM branch office serving your locality. Publications are not stocked at the
+address given below.
+
+IBM welcomes your comments. For your convenience, a form for reader’s comments is provided at the back of this publication. You
+may send your comments by fax to 1-800-524-1519 within U.S. or to 1-303-924-6873 outside U.S. You may also e-mail your
+comments to printpub@us.ibm.com, or mail your comments to:
+
+INFORMATION DEVELOPMENT
+IBM PRINTING SYSTEMS
+DEPARTMENT 588 BUILDING 003G
+PO BOX 1900
+BOULDER, CO 80301-9191
+
+Note:  Visit our homepage at http://www.ibm.com/printers
+
+When you send information to IBM, you grant IBM a nonexclusive right to use or distribute the information in any way it believes
+appropriate without incurring any obligation to you.
+
+ Copyright International Business Machines Corporation 1998, 2000. All rights reserved.
+US Government Users Restricted Rights – Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+
+<<<PAGE 5>>>
+Contents
+
+|
+
+Preface   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+
+ix
+
+Summary of Changes
+Third Edition (June 2000)
+.
+Second Edition (March 1999)
+First Edition (September 1998)
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Summary of Releases
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+About the IBM AFP Font Collection .
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.  xi
+.  xi
+.  xi
+.  xi
+
+ xiii
+
+.  1
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Format of IBM Character Sets
+.
+Spacing Characteristics of IBM Fonts
+Point and Pitch Sizes
+.
+
+IBM Font Concepts
+.  3
+.
+Font Definitions   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 3
+Representation of Characters .
+.  4
+.
+.  5
+IBM Font Structure .
+.
+.
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 6
+Coded Font
+  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 6
+Character Set
+Code Page   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 8
+ 11
+.
+ 13
+ 14
+.
+Point Examples   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 14
+Pitch Examples   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 15
+ 15
+Box Size Examples
+.
+.
+ 16
+How IBM Supplies Fonts
+.
+Distribution   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 17
+Supported Languages   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 21
+ 22
+IBM Font Naming Conventions
+.
+ 23
+ 26
+ 27
+ 28
+ 29
+ 30
+ 32
+ 32
+ 33
+ 33
+
+.
+.
+Expanded Core Fonts (240-pel, 300-pel, and AFP Outlines)
+Compatibility Fonts (240-pel and 300-pel)
+.
+DBCS Core Outline Fonts
+.
+.
+DBCS Core Full-Width Naming
+DBCS Core Half-Width Fonts
+DBCS Simulation Fonts
+.
+
+Single-Byte Code Pages
+.
+DBCS Code Pages Using Half-Width Characters .
+DBCS Code Pages Using Full-Width Characters
+.
+
+.
+IBM Code Page Naming Conventions
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+ 35
+Font Summary Tables
+Expanded Core Fonts
+ 37
+.
+Compatibility Fonts   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 47
+ 53
+DBCS Core Fonts
+.
+.
+DBCS Simulation Fonts
+ 59
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Code Pages   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 63
+APL Code Pages
+ 68
+.
+.
+ 68
+Arabic Code Pages .
+.
+.
+ 69
+Chinese, Japanese, and Korean Code Pages
+ 70
+Cyrillic Greek Code Pages
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+ Copyright IBM Corp. 1998, 2000 
+
+iii
+
+<<<PAGE 6>>>
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Document Composition Facility and Desktop Publishing Code Pages
+Format Code Pages
+.
+.
+Hebrew Code Pages
+.
+Katakana Code Pages .
+.
+.
+Latin1 EBCDIC Country Extended and BookMaster Code Pages
+Latin1 Euro Code Pages
+.
+.
+.
+.
+.
+Latin1 EBCDIC Publishing and BookMaster Code Pages .
+Latin1 ASCII Code Pages
+.
+.
+.
+.
+Latin2345 EBCDIC and ASCII Code Pages
+Lao Code Pages
+.
+.
+.
+.
+Compatibility Font NLS Code Pages .
+OCR Code Pages
+.
+.
+Symbols Code Pages
+Text Code Pages
+.
+Thai Code Pages
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+ 71
+ 71
+ 72
+ 72
+ 73
+ 74
+ 76
+ 77
+ 78
+ 79
+ 79
+ 80
+ 80
+ 81
+ 81
+
+Notices   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 83
+
+Trademarks   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 85
+
+iv Font Summary for AFP Font Collection
+
+<<<PAGE 7>>>
+Figures
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.  3
+1. Helvetica Type Family .
+.
+.  4
+2. Print Resolution Examples
+.
+.
+.
+3. Print Direction and Character Rotation Combinations (Print Orientations)
+.  5
+4. Font Components   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 5
+.  6
+5. Composition of a Character Set
+.
+.
+.
+.  8
+6. Translation of a Keyboard Character into a Printed Character
+7.
+.  9
+.
+ 13
+8. Type Size in Pitch
+9. Type Size in Points
+ 13
+.
+.
+10. Expanded Core Fonts (240-pel, 300-pel, and AFP Outlines) Naming
+
+IBM Code Page T1V10037 .
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Convention Overview   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 23
+ 26
+11. Compatibility Fonts Naming Convention Overview
+.
+ 27
+12. DBCS Core Outline Fonts Naming Convention Overview
+13. DBCS Core Full-Width Naming Convention Overview
+ 28
+.
+ 29
+14. DBCS Half-Width Fonts Naming Convention Overview .
+15. DBCS Simulation Fonts Naming Convention Overview for Character Sets  30
+ 30
+16. DBCS Simulation Fonts Naming Convention Overview for Coded Fonts .
+ 31
+17. Simulation Fonts Naming Convention .
+.
+.
+18. Code Page Name and Category or Version Level
+ 32
+.
+19. DBCS Code Pages Using Half-Width Characters Naming Convention
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Overview   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 33
+
+20. DBCS Code Pages Using Full-Width Characters Naming Convention
+
+Overview   .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . 33
+
+ Copyright IBM Corp. 1998, 2000 
+
+v
+
+<<<PAGE 8>>>
+vi
+
+Font Summary for AFP Font Collection
+
+<<<PAGE 9>>>
+
+
+<<<PAGE 10>>>
+viii
+
+Font Summary for AFP Font Collection
+
+<<<PAGE 11>>>
+Preface
+
+|
+
+|
+|
+
+This publication summarizes the contents of the AFP Font Collection products:
+AFP Font Collection for MVS, OS/390, VM, and VSE (product number 5648-B33),
+and AFP Font Collection for Workstations and OS/400 (product number 5648-B45).
+Other IBM font products and AFP Font Collection Version 1.1, 5648-113, are
+summarized in IBM AFP Fonts: Font Summary, G544-3810.
+
+This publication is organized as follows:
+
+„ “IBM Font Concepts” explains some basic font concepts, explains the difference
+between pitch and point size, identifies the languages supported by the various
+fonts, and provides figures that explain the naming conventions for fonts and
+code pages.
+
+„ “Font Summary Tables” contains tables that identify the operating systems,
+
+media shipped on, formats available, major font types, code page identifiers,
+coded font identifiers, character set identifiers, and available point or pitch size
+for the following:
+
+– Expanded Core Fonts (included with 5648-B33 and 5648-B45)
+
+– Compatibility Fonts (included with 5648-B45, but not included with
+
+5648-B33)
+
+– DBCS Core Fonts (included with 5648-B45 and 5648-B33)
+
+– Simulation Fonts (included with 5648-B45 and 5648-B33)
+
+„ “Code Pages” contains tables identifying the code pages.
+
+For more information about character sets, code pages, coded fonts, warranty, and
+usage information, refer to the following publications:
+
+„ IBM AFP Font Collection for MVS, OS/390, VM, and VSE Licensed Program
+Specifications, G544-5634, which provides an overview of the AFP Font
+Collection for MVS, OS/390, VM, and VSE and warranty information.
+
+„ IBM AFP Font Collection for Workstations and OS/400 Licensed Information,
+
+G544-5632, which provides warranty information for the AFP Font Collection for
+AIX, OS/400, and OS/2.
+
+„ IBM AFP Fonts: Introduction to Typography, G544-3122, which introduces the
+concepts of typography to help the user design documents and print them
+using Advanced Function Presentation (AFP) software.
+
+„ IBM AFP Fonts: Font Summary, G544-3810, which summarizes the contents of
+the AFP Font Collection, Version 1.1.0, and the IBM font licensed programs.
+
+„ IBM AFP Fonts: Technical Reference for Code Pages, S544-3802, which
+provides in depth Expanded Core font information including character set
+attributes, tables that show all AFP characters and the language complements
+that contain them.
+
+„ IBM Technical Reference for AFP Font Collection Expanded Core Fonts,
+
+S544-5228
+
+„ ABOUT TYPE: IBM's Technical Reference for 240-Pel Digitized Type,
+S544-3516, which provides technical details for the Compatibility fonts.
+
+ Copyright IBM Corp. 1998, 2000 
+
+ix
+
+<<<PAGE 12>>>
+„ IBM AFP Fonts: Font Samples, G544-3792, which provides printed samples of
+
+all AFP fonts.
+
+„ IBM Technical Reference for AFP Font Collection Japanese Fonts, S544-5685,
+which provides technical details for the Japanese character sets and code
+pages (available only as a PDF file at
+http://www.printers.ibm.com/psc.nsf/support/manuals).
+
+„ IBM Technical Reference for AFP Font Collection Korean Fonts, S544-5686,
+
+which provides technical details for the Korean character sets and code pages
+(available only as a PDF file at
+http://www.printers.ibm.com/psc.nsf/support/manuals).
+
+„ IBM Technical Reference for AFP Font Collection Simplified Chinese Fonts,
+S544-5687, which provides technical details for the Simplified Chinese
+character sets and code pages (available only as a PDF file at
+http://www.printers.ibm.com/psc.nsf/support/manuals).
+
+„ IBM Technical Reference for AFP Font Collection Traditional Chinese Fonts,
+S544-5688, which provides technical details for the Traditional Chinese
+character sets and code pages (available only as a PDF file at
+http://www.printers.ibm.com).
+http://www.printers.ibm.com/psc.nsf/support/manuals).
+
+For more information about Type Transformer, refer to IBM AFP Fonts: Type
+Transformer for Windows User's Guide, G544-5726.
+
+For information about the font formats supported by IBM printers, refer to Advanced
+Function Presentation: Printer Information, G544-3290.
+
+x Font Summary for AFP Font Collection
+
+<<<PAGE 13>>>
+Summary of Changes
+
+| Third Edition (June 2000)
+|
+|
+
+This publication is based on the IBM Font Summary for AFP Font Collection,
+S544-5633-01. Changes are marked with revision bars. This publication has:
+
+|
+
+|
+
+|
+
+„ Revised information about DBCS simulation fonts
+
+„ Revised information about DBCS Core fonts
+
+„ Minor technical changes as marked by revision bars.
+
+Second Edition (March 1999)
+
+This publication is based on the IBM Font Summary for AFP Font Collection,
+S544-5633-00. Changes are marked with revision bars. This publication has:
+
+„ Added information about DBCS simulation fonts
+
+„ Revised information about DBCS Core fonts
+
+„ Minor technical changes as marked by revision bars.
+
+First Edition (September 1998)
+
+This publication is based on the IBM AFP Fonts: Font Summary, G544-3810-03.
+This publication has:
+
+„ Added information about the euro currency symbol
+
+„ Added information about support for the Thai language
+
+„ Added information about support for the Lao language
+
+„ Added information about new code pages added to the AFP Font Collection for
+
+Version 2.1.0
+
+„ Added a section covering what is provided in the IBM AFP Font Collection
+
+„ Added detailed information about DBCS fonts
+
+„ Removed information about the 4028 Font Metrics and IBM 240-pel Font
+
+Licensed Programs
+
+ Copyright IBM Corp. 1998, 2000 
+
+xi
+
+<<<PAGE 14>>>
+xii
+
+Font Summary for AFP Font Collection
+
+<<<PAGE 15>>>
+Summary of Releases
+
+This publication reflects the following licensed program releases:
+
+|
+|
+
+Table 1. Summary of Font Releases
+
+Licensed
+Program
+
+5648-B33
+
+5648-B45
+
+Release
+Level
+
+2.1.0
+
+2.1.1
+
+Description
+
+IBM AFP Font Collection for
+MVS, OS/390, VM, and VSE
+(contains IBM Expanded Core
+Fonts)
+
+IBM AFP Font Collection for
+Workstations and OS/400
+(contains Expanded Core Fonts
+and features that provide
+Compatibility Fonts, Type
+Transformer plus other font
+utilities, and DBCS Core Fonts)
+
+ Copyright IBM Corp. 1998, 2000 
+
+xiii
+
+<<<PAGE 16>>>
+xiv Font Summary for AFP Font Collection
+
+<<<PAGE 17>>>
+About the IBM AFP Font Collection
+
+About the IBM AFP Font Collection
+
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+
+The IBM AFP Font Collection provides fonts and font utilities that can be used to
+create a robust AFP presentation environment. Version 2.1.1 of AFP Font
+Collection is similar to the first version (1.1.0), and it adds support for the euro
+currency symbol to the Latin1 fonts, the Thai language, and the Lao language, as
+well as some new code pages. However, Version 2.1.1 divides Version 1.1.0 into
+two separate products:
+
+„ IBM AFP Font Collection for MVS, OS/390, VM, and VSE (product number
+5648-B33), provides font resources for the MVS, OS/390, VM, and VSE
+operating environments. Font data formats include 240-pel bitmaps, 300-pel
+bitmaps, and AFP outline fonts. No program code is offered in the AFP font
+collection for MVS, OS/390, VM, and VSE.
+
+„ IBM AFP Font Collection for Workstations and OS/400 (product number
+
+In addition to the font
+
+5648-B45), provides font resources for the workstations, such as AIX and
+Windows, and OS/400 operating environments.
+resources, an orderable feature of this product also provides Windows font
+utilities that allow you to: edit outline fonts, create AFP font resources from
+Type 1 outline fonts, create and modify code pages, and create and modify
+coded fonts. DBCS CID-keyed outline fonts are also provided for the Chinese,
+Japanese, and Korean languages. The Chinese, Japanese, and Korean fonts
+can be used with Type Transformer to create 240-pel and AFP Outline Font
+resources.
+
+The SBCS type families provided in the AFP Font Collection are called the
+Expanded Core Fonts and include:
+
+„ Boldface Latin1 (with euro)
+„ BookMaster Latin1 and Specials (with euro)
+„ Courier (with euro)
+
+  „ Courier APL2
+  „ Gothic Katakana
+
+„ Gothic Text Latin1 (with euro)
+„ Helvetica (with euro)
+„ IBM Logo (for BookMaster)
+„ Letter Cothic Latin1 (with euro)
+
+  „ OCR-A
+  „ OCR-B
+
+„ Prestige Latin1 (with euro)
+„ Times New Roman (with euro)
+
+Language support includes the Latin1-5 language groups, along with Arabic,
+Cyrillic, Greek, Hebrew, Lao, and Thai for the Courier, Helvetica, and Times New
+Roman type families.
+
+DBCS type families and languages provided in the AFP Font Collection for Outline
+Fonts and Programs include:
+
+  „ Japanese
+
+Heisei Kaku Gothic
+Heisei Maru Gothic
+Heisei Mincho
+
+„ Korean with Full Hangul Characters
+
+ Copyright IBM Corp. 1998, 2000 
+
+1
+
+<<<PAGE 18>>>
+About the IBM AFP Font Collection
+
+  Gothic
+  Myengjo
+  „ Simplified Chinese
+
+Fang Song (GB)
+Hei (GB)
+Kai (GB)
+Song (GBK)
+
+  „ Traditional Chinese
+
+Kai
+Sung
+
+The AFP Font Collection Version 2.1.1 does not contain any of the following:
+
+„ Font licensed products, including the Sonoran fonts
+
+„ Font RPQs, including Postal Bar Codes and Bar Code/OCR
+
+„ 4028 Font Metrics
+
+„ Compatibility fonts in 5648-B33; however, they are included in 5648-B45
+
+„ DBCS 240 dpi raster fonts from the following previous program products:
+
+  – Japanese
+
+AFP Japanese Font V2 (5771-AGB)
+AFP Japanese Heisei Font (5648-104)
+
+  – Korean
+
+AFP Korean Font (5771-AFW)
+
+  – Simplified Chinese
+
+AFP Simplified Chinese Font (5771-AEK)
+
+  – Traditional Chinese
+
+AFP Traditional Chinese Font (5771-AFZ)
+
+2 Font Summary for AFP Font Collection
+
+<<<PAGE 19>>>
+Font Concepts
+
+IBM Font Concepts
+
+This section introduces you to font terminology and how characters are represented
+in digitized type. The structure of IBM fonts is then presented along with the format
+of the fonts and spacing characteristics.
+In addition, the ways in which IBM
+supplies fonts are described, and the naming conventions for the fonts are
+included.
+
+ Font Definitions
+
+To understand IBM font structure, you must first understand some definitions about
+fonts. Figure 1 shows the basic components of a type family, including typeface,
+style, weight, width, complement, type font, and type size. These terms are
+illustrated and defined in this section.
+
+Type Family
+
+Helvetica
+
+Typeface
+
+Style
+
+Weight
+
+Width
+
+Roman
+
+Italic
+
+Medium
+
+Bold
+
+Medium
+
+Bold
+
+Condensed
+
+Normal
+
+Complement
+
+Latin1
+
+Latin 235
+
+Cyrillic Greek
+
+Type Font
+
+Type Size
+
+Latin1: Helvetica 8-point roman medium normal
+
+Latin1: Helvetica 10-point roman medium normal
+
+Latin1: Helvetica 12-point roman medium normal
+
+Figure 1. Helvetica Type Family
+
+ Type Family
+
+A type family is a group of typefaces that share basic design characteristics and
+encompass many size and style variations. Examples of type families include:
+
+Courier
+Helvetica (Figure 1)
+Times New Roman
+
+ Typeface
+
+A typeface is a collection of characters having the same style, weight, and width.
+Examples of these attributes are shown in Figure 1.
+
+„ Style is the inclination of a letter around a vertical axis; for example, roman
+
+(upright) or italic (slanted).
+
+„ Weight is the degree of boldness of a typeface; for example, medium or bold.
+
+„ Width is the horizontal variation in a character design; for example, normal or
+
+condensed.
+
+ Copyright IBM Corp. 1998, 2000 
+
+3
+
+<<<PAGE 20>>>
+Font Concepts
+
+Type Font, Type
+Size, and
+Complement
+
+A type font, or font, is a collection of characters sharing the same type family,
+typeface, and type size. Collections of characters for Expanded Core Fonts are
+referred to as complements.
+
+Note:  In IBM Type Transformer, complements are called character lists.
+
+Representation of Characters
+
+An important concept to understand is how fonts are represented. For the fonts
+printed by page printers using Advanced Function Presentation (AFP) licensed
+programs, characters are represented by mathematical formulas (outline fonts) or
+by data describing each dot to be printed (raster or bitmap fonts).
+
+Pels and Print
+Resolution
+
+A dot is called a picture element or pel. The sequence of dots forming a
+character is called a raster pattern. The number of dots per inch that a printer
+generates is called the print resolution, or density. A resolution of 240 pels means
+that a printer prints 240 pels per inch both vertically and horizontally, or 57 600
+pels per square inch (240 × 240).
+
+Figure 2 shows two images of different print resolutions. The image on the right
+has more pels per inch and greater print resolution than the image on the left.
+
+ Outline Fonts
+
+Figure 2. Print Resolution Examples
+
+The ability to print at a given pel density is determined by the type of printer.
+Because IBM fonts are provided for specific resolutions, different fonts are available
+for printers with different resolutions (for example, 240-pel and 300-pel printers).
+
+Characters in outline fonts are described by mathematical formulas rather than by
+pels. These formulas are used by rasterizing software to create bitmap characters
+based on two variables: resolution and point size. This means that a single
+outline font can offer many print resolutions and point sizes.
+“Hints” are also
+contained in the outline fonts to ensure that typographic characteristics of the
+typeface are maintained in a consistent manner throughout all printed characters.
+Some of these characteristics include horizontal and vertical stroke widths, serifs,
+and curve radii.
+
+4 Font Summary for AFP Font Collection
+
+<<<PAGE 21>>>
+Font Concepts
+
+ Rotation of
+Characters
+
+The ability to print in different directions and with different character rotations is
+also determined by the type of printer. Print direction shows the direction in which
+characters are added to a line of text. Character rotation is the clockwise rotation
+of a character with respect to the character baseline. The character baseline is a
+reference on which characters are aligned as they are added to the page in the
+print direction. The character baseline is always parallel to the print direction.
+
+Figure 3 shows how print direction and character rotation can be combined to
+print in many orientations.
+
+Figure 3. Print Direction and Character Rotation Combinations (Print Orientations)
+
+IBM Font Structure
+
+In IBM AFP terminology, a font has three components (Figure 4). They are:
+
+  „ Coded font
+  „ Character set
+  „ Code page
+
+Figure 4. Font Components
+
+IBM Font Concepts 5
+
+<<<PAGE 22>>>
+Font Concepts
+
+ Coded Font
+
+In IBM font structure, a coded font translates your request for type (for example,
+text you previously entered at a computer terminal) into characters for printing. A
+raster coded font consists of two parts:
+
+„ References to specific character sets
+„ References to specific code pages
+
+A character must be included in the specified character set and listed on the
+specified code page before it can be printed. A coded font pairs a specific code
+page with a specific character set.
+
+An outline coded font consists of three parts:
+
+„ References to specific character sets
+„ References to specific code pages
+„ References to point size
+
+Many coded fonts are shipped with the IBM AFP Font Collection for IBM Operating
+Systems and the IBM font licensed programs. Typically, a coded font is provided
+for each 10-point roman medium character set and code page combination. For
+certain primary code pages, such as code page 500, a coded font is provided for all
+character sets and code page combinations.
+
+Note:  BookMaster does not use coded fonts, so none are provided.
+
+ Character Set
+
+In IBM font structure, a character set corresponds to the definition of a font; it
+contains the characters of a single type family, typeface, and type size.
+a character set specifies character properties and printing attributes (Figure 5).
+
+In addition,
+
+Figure 5. Composition of a Character Set
+
+ Characters
+
+Characters are the letters, numerals, punctuation marks, or other symbols of a
+font.
+
+ Character
+Properties
+
+Character properties detail how a character is positioned relative to the characters
+around it. Some character properties include the following:
+
+„ The baseline of a character showing its general alignment
+„ The dimensions of space in which the character is printed
+„ The position of the character within that space
+„ The identifier of the character (the character ID)
+
+6 Font Summary for AFP Font Collection
+
+<<<PAGE 23>>>
+Font Concepts
+
+One of the character properties is the character ID (or graphic character ID). Each
+character is assigned a character ID; for example, the character A (uppercase A) is
+assigned the character ID LA020000.
+
+The purpose of a character ID is to distinguish the character from similar
+characters. For example, the following characters look similar; however, they are
+different and are assigned different character IDs.
+
+Minus sign (−)
+Hyphen (-)
+Em dash (—)
+
+Character ID SA000000
+Character ID SP100000
+Character ID SM900000
+
+For a list of character IDs, the character each represents, and the code pages
+where the characters are found, refer to IBM AFP Fonts: Technical Reference for
+Code Pages.
+
+ Printing Attributes
+
+The printing attributes define how the character set will be printed. Some printing
+attributes include rotation of characters, maximum ascender, and point size.
+
+ Single- and
+Double-Byte
+Character Sets
+
+A single-byte character set (SBCS) is a font character set intended for use with a
+single-byte code page (see page 9).
+
+A double-byte character set (DBCS) is a font character set intended for use with a
+double-byte code page. Double-byte character sets contain some single-byte
+characters, usually romaji (Western characters) and katakana. Single-byte code
+pages are used with these characters.
+
+IBM Font Concepts 7
+
+<<<PAGE 24>>>
+Font Concepts
+
+ Code Page
+
+In IBM font structure, a code page maps each character of text to the characters in
+a character set (Figure 6). As you enter your text at a computer terminal, each
+keyboard character is translated into a code point. When the text is printed, each
+code point is matched to a character ID on the code page you specified. The
+character ID is then matched to the image (raster pattern or outline pattern) of the
+character in the character set you specified. The image in the character set is the
+image that is printed in your text. To be a valid code page for a particular
+character set, all character IDs in the code page must be included in that character
+set.
+
+Figure 6. Translation of a Keyboard Character into a Printed Character
+
+A character ID is an 8-byte character data string. A code point is an 8-bit binary
+number representing one of 256 potential characters (the maximum number of
+characters available on a code page). Code points are usually shown as
+hexadecimal representations of their binary values.
+
+Binary
+  Decimal
+  Hexadecimal
+
+11000001
+193
+C1
+
+Figure 7 on page 9 shows an example of a code page. When the printer receives
+hexadecimal code point C1 for the code page shown (code page T1V10037), it
+prints an uppercase A (character ID LA020000).
+
+8 Font Summary for AFP Font Collection
+
+<<<PAGE 25>>>
+Font Concepts
+
+Figure 7. IBM Code Page T1V10037
+
+ Different Code
+Pages
+
+Code pages accommodate various national languages by using characters and
+special symbols appropriate to the language. Different code pages can have
+identical character IDs assigned to different code points.
+
+For example, the character é (lowercase e accent acute, character ID LE110000)
+has the following code point assignments in two different code pages:
+
+„ Hexadecimal code point 51 in code page T1V10037 (Country Extended:
+
+United States, Canada)
+
+„ Hexadecimal code point 5A in code page T1V10280 (Country Extended: Italy)
+
+ Single- and
+Double-Byte Code
+Pages
+
+A single-byte code page contains 256 or fewer one-byte code points. Single-byte
+code pages are large enough for languages with alphabetic writing systems, such
+as English, Greek, and Arabic.
+
+A double-byte code page can contain as many as 65 536 two-byte code points.
+Languages with non-alphabetic writing systems, such as Chinese, Japanese, and
+Korean, require double-byte code pages.
+
+Double-byte character sets contain some single-byte characters, usually romaji
+(Western characters) and katakana. Single-byte code pages are used with these
+characters. Because the characters are either half-width (see “Box Size” on
+page 13) or proportionally spaced, these code pages are sometimes called
+half-width code pages.
+
+IBM Font Concepts 9
+
+<<<PAGE 26>>>
+Font Concepts
+
+ Code Page
+Sections
+
+If you think of a double-byte code page as a collection of single-byte code pages,
+the first byte indicating a section of
+a double-byte character code has two parts:
+the code page and the second byte a code point within the section.
+
+Raster coded fonts treat double-byte code pages this way. The coded font is
+divided into sections, each with its own single-byte code page. Each character in
+the section has a single-byte code point.
+
+Outline coded fonts treat double-byte code pages as single large code pages.
+Each character has a double-byte code point.
+
+10 Font Summary for AFP Font Collection
+
+<<<PAGE 27>>>
+Font Concepts
+
+Format of IBM Character Sets
+
+IBM supplies character sets in these formats:
+
+„ 240-pel Bounded-box raster format
+„ 300-pel raster format
+„ Type 1 outline format for IBM Type Transformer
+„ CID-keyed outline format for IBM Type Transformer
+„ AFP outline format
+
+ 240-pel Raster
+
+240-pel raster fonts are bounded-box fonts used on 240-pel printers. The
+resolution of these fonts is 240 dots per inch. All character positioning metrics in
+these fonts are expressed in whole-pel (fixed-metric) values.
+
+ 300-pel Raster
+
+300-pel raster fonts are used on printers where the resolution is 300 dots per inch.
+The character positioning values are expressed in relative metrics and the exact
+pel count is determined at print time.
+
+Type 1 Outline
+
+Type 1 outline is the format used with IBM Type Transformer for SBCS fonts.
+This format includes outlines of the various type families, which can be
+transformed for use by advanced function printers in sizes from 1–999 points (AFP
+outline fonts) or from 1–72 points (raster fonts). For more information, refer to
+IBM AFP Fonts: Type Transformer for Windows User's Guide.
+
+ CID-Keyed Outline
+
+CID-keyed outline is the format used with IBM Type Transformer for DBCS fonts.
+This format includes outlines of the various type families, which can be
+transformed for use by advanced function printers in sizes from 1–999.9 points
+(AFP outline fonts) or from 1–72 points (raster fonts). For more information, refer
+to IBM AFP Fonts: Type Transformer for Windows User's Guide.
+
+ AFP Outline
+
+ Fixed Metrics
+
+AFP outline is the format by which PSF and other AFP applications can identify
+Type 1 outline fonts. The Type 1 or CID-keyed outlines are encapsulated in Font
+Object Content Architecture (FOCA) wrappers which allow them to be accessed
+as AFP resources. AFP outlines utilize relative metrics in exactly the same way
+as 300-pel fonts.
+
+Fixed-metric fonts have all character positioning metrics expressed in whole-pel
+values. All 240-pel fonts are fixed-metric fonts. For example, the character
+increment of the ‘A’ in 240-pel Helvetica Latin1 roman medium 10pt is 22 pels.
+When 240-pel fonts are created, any fractional pels encountered are eliminated by
+rounding up or down to whole-pel values.
+
+IBM Font Concepts 11
+
+<<<PAGE 28>>>
+Font Concepts
+
+ Relative Metrics
+
+Relative metrics were developed for scaleable outline fonts where a single metric
+value could be used to determine a pel value given a desired resolution and point
+size. Relative metrics are based on 1000 units per “em space,” which means the
+fonts are designed for a hypothetical 1000 dpi, 72-point font where each side of
+the bounding box is 1000 pels. All AFP outlines and 300-dpi fonts contain relative
+metrics. The exact pel values are determined when the font is used, such as
+during document formatting or printing. For example, the character increment for
+‘A’ in 300-pel Helvetica Latin1 roman medium is 667 relative units.
+hypothetical 1000 dpi, 72-point font, the ‘A’ would have a character increment of
+667 pels, but at 10 points and 300-dpi resolution, the character increment of the
+‘A’ is 27.8 pels. The fractional pel (.8 in this case) is accumulated by the printer
+and a whole white pel is inserted when the accumulator = 1. Constantly adjusting
+the character increments in this way ensures that the output text is as close to the
+original outline specification as possible.
+
+In the
+
+12 Font Summary for AFP Font Collection
+
+<<<PAGE 29>>>
+Font Concepts
+
+Spacing Characteristics of IBM Fonts
+
+Fonts can be classified according to their spacing characteristics as well as by their
+format.
+
+ Uniformly Spaced
+Fonts
+
+Uniformly spaced fonts, or monospaced fonts, are similar to typewriter fonts, for
+which each character increment1 is the same width. Thus, the lowercase “i” and
+the “.” each occupy as much space as the uppercase “M.” Examples of uniformly
+spaced fonts include Courier and Letter Gothic.
+
+i.M.i.M.i.M.i.M.i.M.i.M.i.M.i.M.
+
+ Typographic Fonts
+
+Typographic fonts are proportionally spaced fonts. The character increment1 is
+part of the design and varies on a character-by-character basis. Thus, the
+lowercase “i” and the “.” occupy narrow spaces. The uppercase “M” occupies a
+wide space. Examples of typographic fonts include Helvetica and Times New
+Roman.
+
+i.M.i.M.i.M.i.M.i.M.i.M.i.M.i.M.
+
+ Pitch
+
+Uniformly spaced fonts are often described or referred to in pitch, or the number
+of characters printed in 1 horizontal inch (Figure 8).
+
+ Points
+
+ Box Size
+
+Figure 8. Type Size in Pitch
+
+All fonts are measured in points, the vertical size of the font. One inch is equal to
+approximately 72 points. Point size is a baseline-to-baseline measurement, which
+includes minimal white space. The baseline is the line upon which the characters
+rest. Thus, the actual height of the characters in an 18-point font is less than
+18 points (Figure 9). The line spacing usually includes one or more additional
+points of white space between lines of type.
+
+Figure 9. Type Size in Points
+
+DBCS raster fonts were formerly measured in box size, the number of pels in the
+character box. Box size can be either a horizontal or a vertical measurement.
+Usually both dimensions are given, the box width first.
+given, it is the box height.
+box height.
+
+In half-width fonts, the box width is one-half the box height.
+
+In full-width fonts, the box width is usually equal to the
+
+If only one dimension is
+
+1 A character increment is the distance that the current print position is increased for the particular character printed.
+
+IBM Font Concepts 13
+
+<<<PAGE 30>>>
+Font Concepts
+
+Point and Pitch Sizes
+
+This section illustrates various point and pitch sizes. See the figures in “IBM Font
+Naming Conventions” on page 22 for the character position within the font naming
+conventions that represent the point or pitch size.
+
+Uniformly spaced SBCS fonts are measured horizontally in pitch and specified as
+points in the coded font or character set name. Proportionally spaced and
+mixed-pitch fonts are measured vertically in points. Although the DBCS fonts are
+uniformly spaced, they are measured vertically in points.
+
+ Point Examples
+
+Point size is a vertical measurement.
+
+This is 6 points.
+
+This is 7 points.
+This is 8 points.
+This is 9 points.
+This is 10 points.
+This is 11 points.
+This is 12 points.
+This is 14 points.
+This is 16 points.
+This is 18 points.
+This is 20 points.
+This is 24 points.
+This is 30 points.
+This is 36 points.
+
+109876
+
+11
+
+12
+
+14
+
+16
+
+18
+
+20
+
+24
+
+30
+
+36
+
+14 Font Summary for AFP Font Collection
+
+<<<PAGE 31>>>
+Pitch Examples
+
+Pitch size is a horizontal measurement.
+
+Font Concepts
+
+Box Size Examples
+
+Box size is a 240-pel measurement.
+
+IBM Font Concepts 15
+
+<<<PAGE 32>>>
+Font Concepts
+
+How IBM Supplies Fonts
+
+Four IBM font groups that can be used with advanced function printers are included
+in AFP Font Collection:
+
+„ Expanded Core Fonts
+
+  „ Compatibility Fonts
+„ DBCS Core Fonts
+„ DBCS Simulation Fonts
+
+Other fonts are available separately as licensed programs.
+
+ Expanded Core
+Fonts
+
+The SBCS type families provided in the AFP Font Collection are called the
+Expanded Core Fonts and include:
+
+„ Boldface Latin1 (with euro)
+„ BookMaster Latin1 and Specials (with euro)
+„ Courier (with euro)
+
+  „ Courier APL2
+  „ Gothic Katakana
+
+„ Gothic Text Latin1 (with euro)
+„ Helvetica (with euro)
+„ IBM Logo (for BookMaster)
+„ Letter Gothic Latin1 (with euro)
+
+  „ OCR-A
+  „ OCR-B
+
+„ Prestige Latin1 (with euro)
+„ Times New Roman (with euro)
+
+The Expanded Core Fonts are summarized in “Expanded Core Fonts” on
+page  37.
+
+ Compatibility Fonts
+
+The Compatibility Fonts include the following font families; APL, Boldface, Courier,
+Document, Essay, Format, Gothic, Letter Gothic, Orator, Prestige, Roman, Script,
+Serif, Symbols, and Text.
+
+The Compatibility Fonts are summarized in “Compatibility Fonts” on page 47.
+
+16 Font Summary for AFP Font Collection
+
+<<<PAGE 33>>>
+DBCS Core Fonts
+
+DBCS type families and languages provided in the AFP Font Collection for Outline
+Fonts and Programs include:
+
+Font Concepts
+
+  „ Japanese
+
+Heisei Kaku Gothic
+Heisei Maru Gothic
+Heisei Mincho
+
+„ Korean with Full Hangul Characters
+
+  Gothic
+  Myengjo
+  „ Simplified Chinese
+
+Fang Song (GB)
+Hei (GB)
+Kai (GB)
+Song (GBK)
+
+  „ Traditional Chinese
+
+Kai
+Sung
+
+DBCS Simulation Fonts include the following font families:
+
+  „ Japanese
+
+Heisei Kaku Gothic
+Heisei Maru Gothic
+Heisei Mincho
+
+  „ Korean
+
+  Gothic
+  Myengjo
+  „ Simplified Chinese
+
+Hei
+Song
+  „ Traditional Chinese
+Sung
+
+ DBCS Simulation
+Fonts
+
+The IBM DBCS Simulation Fonts are summarized in “DBCS Simulation Fonts” on
+page  59.
+
+ Distribution
+
+The following table summarizes the packaging for AFP Font Collection:
+
+Table 2. Packaging for AFP Font Collection
+
+Operating
+System
+
+SBCS fonts
+
+DBCS fonts
+
+Outline fonts
+
+Expanded
+Core
+
+Compats
+
+DBCS
+Core
+
+DBCS
+Simulation
+
+CID-Keyed Type 1
+
+OS/390
+
+OS/400
+
+AIX and OS/2
+
+OS/2 Programs
+
+Yes
+
+Yes
+
+Yes
+
+No
+
+No
+
+Yes
+
+Yes
+
+No
+
+Yes
+
+Yes
+
+Yes
+
+No
+
+Yes
+
+Yes
+
+Yes
+
+No
+
+No
+
+No
+
+Yes
+
+Yes
+
+No
+
+No
+
+Yes
+
+Yes
+
+The following tables summarize the distribution numbers and media for AFP Font
+Collection:
+
+IBM Font Concepts 17
+
+<<<PAGE 34>>>
+Font Concepts
+
+Table 3. SBCS Fonts Distribution Information for MVS, OS/390, VSE, and VM
+
+Operating System
+
+MVS and OS/390
+
+VSE
+
+VM
+
+Distribution
+Medium
+
+Media
+Feature
+Number
+
+OTC
+Feature
+Number
+
+Material ID
+
+3480
+
+4mm
+
+3480
+
+4mm
+
+3480
+
+4mm
+
+5802
+
+6200
+
+5812
+
+6203
+
+5822
+
+6205
+
+0001
+
+0001
+
+0001
+
+0001
+
+0001
+
+0001
+
+N/A
+
+N/A
+
+N/A
+
+N/A
+
+N/A
+
+N/A
+
+Table 4. SBCS Fonts Distribution for OS/400, AIX, and OS/2
+
+Operating
+System
+
+OTC Feature
+Number
+
+AIX Fonts
+
+OS/400 Fonts
+
+0004
+
+0005
+
+OS/2 Fonts
+
+Outline Fonts
+and Programs
+for OS/2
+
+0004
+
+0006
+
+Medium
+Feature
+Number
+
+5970
+
+5832
+
+6206
+
+5902
+
+5824
+
+5957
+
+5974
+
+6208
+
+Medium
+
+Material ID
+
+CD-ROM
+
+3480 tape
+
+4mm tape
+
+8mm tape
+
+1/4-inch tape
+
+CD-ROM
+
+CD-ROM
+
+CD-ROM
+
+LK2T-9269
+
+N/A
+
+N/A
+
+N/A
+
+N/A
+
+LK2T-9270
+
+LK2T-9269
+
+LCD4-0464
+
+18 Font Summary for AFP Font Collection
+
+<<<PAGE 35>>>
+Font Concepts
+
+Table 5. DBCS Fonts Distribution Information for MVS, OS/390, and VSE
+
+Language
+
+Japanese
+
+Korean
+
+Simplified Chinese
+
+Traditional Chinese
+
+Operating
+System
+
+Distribution
+Medium
+
+Media
+Feature
+Number
+
+OTC
+Feature
+Number
+
+Material
+ID
+
+MVS
+and
+OS/390
+
+MVS
+and
+OS/390
+
+VSE
+
+VSE
+
+MVS
+and
+OS/390
+
+MVS
+and
+OS/390
+
+VSE
+
+VSE
+
+MVS
+and
+OS/390
+
+MVS
+and
+OS/390
+
+VSE
+
+VSE
+
+MVS
+and
+OS/390
+
+MVS
+and
+OS/390
+
+VSE
+
+VSE
+
+3480
+
+5832
+
+0002
+
+N/A
+
+4mm
+
+6490
+
+0002
+
+N/A
+
+3480
+
+4mm
+
+3480
+
+5872
+
+6204
+
+5842
+
+0002
+
+0002
+
+0003
+
+N/A
+
+N/A
+
+N/A
+
+4mm
+
+6491
+
+0003
+
+N/A
+
+3480
+
+4mm
+
+3480
+
+5882
+
+6208
+
+5852
+
+0003
+
+0003
+
+0004
+
+N/A
+
+N/A
+
+N/A
+
+4mm
+
+6492
+
+0004
+
+N/A
+
+3480
+
+4mm
+
+3480
+
+5892
+
+6206
+
+5862
+
+0004
+
+0004
+
+0005
+
+N/A
+
+N/A
+
+N/A
+
+4mm
+
+6493
+
+0005
+
+N/A
+
+3480
+
+4mm
+
+6002
+
+6207
+
+0005
+
+0005
+
+N/A
+
+N/A
+
+Table 6. DBCS Font Feature for AIX on CD-ROM medium
+
+Language
+
+Japanese
+
+Korean
+
+Simplified Chinese
+
+Traditional
+Chinese
+
+OTC Feature
+Number
+
+Medium Feature
+Number
+
+0007
+
+0008
+
+0009
+
+0010
+
+5809
+
+5819
+
+5829
+
+5839
+
+Material ID
+
+LK2T-9276
+
+LK2T-9278
+
+LK2T-9280
+
+LK2T-9282
+
+IBM Font Concepts 19
+
+<<<PAGE 36>>>
+Font Concepts
+
+Table 7. DBCS Font Feature for OS/400
+
+Language
+
+Japanese
+
+Korean
+
+Simplified Chinese
+
+Traditional Chinese
+
+OTC
+Feature
+Number
+
+Medium
+Feature
+Number
+
+Medium
+
+Material ID
+
+0011
+
+0011
+
+0012
+
+0012
+
+0013
+
+0013
+
+0014
+
+0014
+
+5849
+
+5823
+
+5859
+
+5833
+
+5869
+
+5843
+
+5879
+
+5853
+
+CD-ROM
+
+LK2T-9275
+
+1/4 inch
+tape
+
+N/A
+
+CD-ROM
+
+LK2T-9277
+
+1/4 inch
+tape
+
+N/A
+
+CD-ROM
+
+LK2T-9279
+
+1/4 inch
+tape
+
+N/A
+
+CD-ROM
+
+LK2T-9281
+
+1/4 inch
+tape
+
+N/A
+
+Table 8. DBCS Font Feature for OS/2 on CD-ROM Medium
+
+Language
+
+Japanese
+
+Korean
+
+Simplified Chinese
+
+Traditional
+Chinese
+
+OTC Feature
+Number
+
+Medium Feature
+Number
+
+0015
+
+0016
+
+0017
+
+0018
+
+5889
+
+5899
+
+6219
+
+6229
+
+Material ID
+
+LK2T-9286
+
+LK2T-9285
+
+LK2T-9283
+
+LK2T-9284
+
+20 Font Summary for AFP Font Collection
+
+<<<PAGE 37>>>
+Supported Languages
+
+Font Concepts
+
+Language groups identified in items 1 through 9 are defined in the International
+Organization for Standardization (ISO) standard 8859.
+
+Note:  Not every font provides characters for every language listed.
+
+1. The Latin1 language group (ISO 8859-1) includes Danish, Dutch, English,
+Faeroese, Finnish, French, German, Icelandic, Irish, Italian, Norwegian,
+Portuguese, Spanish, and Swedish. The Latin1 language group also provides
+the euro currency symbol and all Latin9 (ISO 8859-15) characters.
+
+2. The Latin2 language group (ISO 8859-2) includes Albanian, Czech, English,
+
+German, Hungarian, Polish, Romanian, Serbocroatian, Slovak, and Slovenian.
+
+3. The Latin3 language group (ISO 8859-3) includes Afrikaans, Catalan, Dutch,
+English, Esperanto, French, German, Italian, Maltese, Spanish, and Turkish.
+
+4. The Latin4 language group (ISO 8859-4) includes Danish, English, Finnish,
+
+French, German, Greenlandic, Lap, Latvian, Lithuanian, Estonian, and
+Norwegian.
+
+5. The Latin/Cyrillic language group (ISO 8859-5) includes Bulgarian,
+
+Byelorussian, English, Macedonian, Russian, Serbocroatian, and Ukrainian.
+
+6. The Latin/Arabic language group (ISO 8859-6) includes Latin and Arabic
+
+scripts.
+
+7. The Latin/Greek language group (ISO 8859-7) includes Latin and Greek scripts.
+
+8. The Latin/Hebrew language group (ISO 8859-8) includes Latin and Hebrew
+
+scripts.
+
+9. The Latin5 language group (ISO 8859-9) includes Danish, Dutch, English,
+
+Finnish, French, Irish, Italian, Norwegian, Portuguese, Spanish, Swedish, and
+Turkish.
+
+10. The Latin/Lao language group provides support for the Lao language.
+
+11. The Latin/Thai language group provides support for the Thai language.
+
+12. Katakana/Gothic Katakana contains phonetic syllabic characters used for
+writing non-Japanese words, such as foreign names, borrowed words, or
+company names.
+
+13. The DBCS Fonts contain characters for Simplified Chinese, Traditional
+
+Chinese, Japanese, and Korean.
+
+IBM Font Concepts 21
+
+<<<PAGE 38>>>
+Naming Summary
+
+IBM Font Naming Conventions
+
+You can select a font from the tables in this publication without understanding the
+naming conventions. However, if you want to know how the IBM naming
+conventions identify a specific font and its characteristics, this section helps you.
+
+Naming conventions for the code pages are described under “IBM Code Page
+Naming Conventions” on page 32.
+
+The following list shows the first letter of the naming convention and the type of
+font component that each letter represents.
+
+First Character
+
+C
+X
+T
+
+Font Component
+Character set
+Coded font
+Code page
+
+First Character in
+the IBM Naming
+Convention
+
+ Remaining
+Characters in the
+IBM Naming
+Convention
+
+The remainder of each name has been assigned according to different
+conventions, for each of the following IBM font groups:
+
+„ Expanded Core Fonts (see Figure 10 on page 23)
+„ Compatibility Fonts (see Figure 11 on page 26)
+„ DBCS Core Fonts (see Figure 13 on page 28 and Figure 14 on page 29)
+„ DBCS Simulation Fonts (Figure 17 on page 31)
+
+Character set and coded font names are usually distinctive and can be used to
+determine whether a font is an Expanded Core Font, a Compatibility Font, or DBCS
+Core Fonts.
+
+Code page names are usually not distinctive enough to determine for which IBM
+font group the code page is supplied.
+
+For character set, code page, and coded font names associated with AFP Font
+Collection, see:
+
+„ “Expanded Core Fonts” on page 37
+„ “Compatibility Fonts” on page 47
+„ “DBCS Core Fonts” on page 53
+„ “DBCS Simulation Fonts” on page 59
+
+Note:  For the naming conventions for fonts produced by IBM Type Transformer,
+refer to IBM AFP Fonts: Type Transformer for Windows User's Guide.
+
+22 Font Summary for AFP Font Collection
+
+<<<PAGE 39>>>
+Expanded Core Fonts (240-pel, 300-pel, and AFP Outlines)
+
+Naming Summary
+
+Figure 10 (Part 1 of 3). Expanded Core Fonts (240-pel, 300-pel, and AFP Outlines) Naming Convention Overview
+
+IBM Font Concepts 23
+
+<<<PAGE 40>>>
+Naming Summary
+
+Figure 10 (Part 2 of 3). Expanded Core Fonts (240-pel, 300-pel, and AFP Outlines) Naming Convention Overview
+
+24 Font Summary for AFP Font Collection
+
+<<<PAGE 41>>>
+Naming Summary
+
+Figure 10 (Part 3 of 3). Expanded Core Fonts (240-pel, 300-pel, and AFP Outlines) Naming Convention Overview
+
+IBM Font Concepts 25
+
+<<<PAGE 42>>>
+Naming Summary
+
+Compatibility Fonts (240-pel and 300-pel)
+
+Figure 11. Compatibility Fonts Naming Convention Overview
+
+26 Font Summary for AFP Font Collection
+
+<<<PAGE 43>>>
+Naming Summary
+
+DBCS Core Outline Fonts
+
+P P
+
+PP  Prefix
+
+X X X X
+
+W n
+
+XXXX Language and Typeface
+
+Wn Weight (not used when
+
+PP is CZ)
+
+W3  Light
+
+W4  Semilight
+
+W5  Medium
+
+W6  Semibold
+
+IB  CID outline
+
+JHKG Japanese Heisei Kaku Gothic
+
+IK
+
+CID outline (GBK)
+
+JHMG Japanese Heisei Maru Gothic
+
+CZ  AFP outline
+
+JHMN Japanese Heisei Mincho
+
+HKG2 Korean Gothic (Full Hangul)
+
+HSM2 Korean Myengjo (Full Hangul)
+
+KKG2 Korean Gothic (KS)
+
+KSM2 Korean Mincho (KS)
+
+SFSG Simplified Chinese Fang Song
+
+SHEI
+
+Simplified Chinese Hei
+
+SKAI
+
+Simplified Chinese Kai
+
+SSNG Simplified Chinese Song (GBK)
+
+PSNG Simplified Chinese Song (GB)*
+
+TKAI
+
+Traditional Chinese Kai
+
+TSNG Traditional Chinese Sung
+
+Figure 12. DBCS Core Outline Fonts Naming Convention Overview.  This naming convention is used for CID-keyed
+outlines and AFP outline character sets. * indicates typeface only used by CZ. The following abbreviations are used
+in this figure:
+
+GB
+GBK
+KS
+
+Code of Chinese Graphic Character Set for Information Interchange GB 2312-80.
+Chinese Internal Code Specification.
+Korean Industrial Standards Association. Code for information interchange (Hangul and Hanja) KS C
+5601-1987.
+
+IBM Font Concepts 27
+
+<<<PAGE 44>>>
+Naming Summary
+
+DBCS Core Full-Width Naming
+
+Figure 13. DBCS Core Full-Width Naming Convention Overview.  This naming convention applies to Full-Width
+Raster Coded Fonts, Full-Width AFP Outline Coded Fonts, and Full-Width Raster Character Sets.
+
+28 Font Summary for AFP Font Collection
+
+<<<PAGE 45>>>
+DBCS Core Half-Width Fonts
+
+Naming Summary
+
+Figure 14. DBCS Half-Width Fonts Naming Convention Overview
+
+IBM Font Concepts 29
+
+<<<PAGE 46>>>
+Naming Summary
+
+DBCS Simulation Fonts
+
+ Character Set
+
+CZ
+
+CZ 
+
+CZ
+
+AFP Outline Character Set
+
+JHKG
+
+Japanese Heisei Kaku Gothic
+
+XXXX
+
+XXXX
+
+Language and Typeface
+
+JJKG 
+
+Japanese Gothic*
+
+JJMG
+
+Japanese Round Gothic*
+
+JHMN
+
+Japanese Heisei Mincho
+
+JJMN 
+
+Japanese Mincho*
+
+KKG2
+
+Korean Gothic* (KS)
+
+KSM2
+
+Korean Mincho* (KS)
+
+SHEI
+
+Simplified Chinese Hei (GBK)
+
+PSNG
+
+Simplified Chinese Song* (GB)
+
+TSNG
+
+Traditional Chinese Song
+
+Figure 15. DBCS Simulation Fonts Naming Convention Overview for Character Sets.  * indicates typeface only used
+by CZ. The following abbreviations are used in this figure:
+
+GB
+GBK
+KS
+
+Code of Chinese Graphic Character Set for Information Interchange GB 2312-80.
+Chinese Internal Code Specification.
+Korean Industrial Standards Association. Code for information interchange (Hangul and Hanja) KS C
+5601-1987.
+
+ Coded Font
+
+XZ
+
+XZ 
+
+XZ
+
+AFP Outline Coded Font
+
+XXXX
+
+XXXX 
+
+T 
+
+BX 
+
+E 
+
+Typestyle
+
+Box Size
+
+Encoding
+
+Figure 16. DBCS Simulation Fonts Naming Convention Overview for Coded Fonts.  See Figure 17 on page 31 for
+detailed information.
+
+30 Font Summary for AFP Font Collection
+
+<<<PAGE 47>>>
+Naming Summary
+
+Figure 17. Simulation Fonts Naming Convention
+
+IBM Font Concepts 31
+
+<<<PAGE 48>>>
+Naming Summary
+
+IBM Code Page Naming Conventions
+
+The name of an IBM code page makes it possible to recognize it as a code page.
+The resource names of all AFP code pages begin with “T1.”
+
+Single-Byte Code Pages
+
+The name of a single-byte code page used with single-byte character sets makes it
+possible to identify its code page number or name. For more detailed information,
+refer to IBM AFP Fonts: Technical Reference for Code Pages.
+
+The last 6 characters of the code page name are used to identify the code page.
+In all cases where the first two characters are “00,” “V1,” or “B0,” the following 4
+characters are the Code Page Global Identifier, a number registered by IBM to
+uniquely identify each code page. All future code pages provided by IBM will be
+named in this manner.
+
+Figure 18. Code Page Name and Category or Version Level
+
+32 Font Summary for AFP Font Collection
+
+<<<PAGE 49>>>
+Naming Summary
+
+DBCS Code Pages Using Half-Width Characters
+
+You can recognize a new single-byte code page used with double-byte character
+sets because the third and fourth characters of its name are H0. Some older code
+pages follow a different naming convention.
+
+T 1
+
+H 0
+
+X X X X
+
+H0  Always H0
+
+XXXX Code page global identifier (CPGID)
+
+Exception: Japanese
+CPGID:0037 and
+Simplified Chinese
+CPGID:1114 take HK.
+
+Figure 19. DBCS Code Pages Using Half-Width Characters Naming Convention Overview
+
+DBCS Code Pages Using Full-Width Characters
+
+The names of double-byte code pages supplied for use with IBM CJK fonts follow a
+new convention, so you may see some older double-byte code pages with different
+names.
+
+You can recognize a double-byte code page used with an outline font because its
+name is only 6 characters long instead of the usual 8.
+
+T 1
+
+X X X X
+
+XXXX Code page global identifier (CPGID)
+
+Exception: Korean and Full Hangul code page is
+K834 for CPGID:0834; Simplified Chinese GBK code
+page is K837 for CPGID:0837.
+
+S S
+
+SS 
+
+SS
+
+blank
+
+Section number
+
+Code page used
+with a raster font
+
+Code page used
+with an outline font
+
+Figure 20. DBCS Code Pages Using Full-Width Characters Naming Convention Overview
+
+IBM Font Concepts 33
+
+<<<PAGE 50>>>
+Naming Summary
+
+34 Font Summary for AFP Font Collection
+
+<<<PAGE 51>>>
+Font Summary Tables
+
+Font Summary Tables
+
+The font summary tables provide the following information for AFP Font Collection
+font resources:
+
+„ AFP Typeface Name. This is the IBM name for the typeface.
+
+„ Type 1 Typeface Name. This is the Type 1 outline font name for the typeface.
+
+It is used in the Typefaces window of SBCS Type Transformer.
+
+„ Style and Weight. Possible values are:
+
+RB  Roman Bold
+RM  Roman Medium
+
+IM 
+IB 
+
+Italic Medium
+Italic Bold
+
+„ Code Page. Alphabetic script and symbol fonts (Expanded Core Fonts, and
+Compatibility Fonts) use only single-byte code pages. DBCS Core Fonts use
+both double-byte and single-byte code pages.
+
+„ Character Set Identifier. A 6- or 8-character name used to identify AFP
+
+character sets. The second character identifies the character set as raster or
+outline. When applicable to the figures contained in this publication, substitute
+the following values for n:
+
+240-pel and 300-pel raster
+
+0
+Z  AFP outline
+
+„ Type 1 File Name. Extensions are AFM, INF, and PFB.
+
+„ CID-Keyed File Name. Extensions are CID and CMP.
+
+„ Coded Font Identifier. The n in the second position has the same values as
+
+in the character set identifier.
+
+„ Alternate Coded Font Identifier. Certain operating environments, such as
+
+JES, limit coded font identifiers (names) to 6 characters.
+be asked for only 4 characters:
+you.)
+
+the other two, X0 and XZ, are supplied for
+
+(Sometimes you will
+
+An alternate coded font identifier is required to operate within these
+environments; all of the fonts within the Expanded Core Font group are
+provided with both a coded font and an alternate coded font identifier.
+
+„ Graphic Character Set Global Identifier (GCSGID). The GCSGID is a
+
+collection of characters registered with a unique number and sometimes used
+for font and code page selection.
+
+„ Font Global Identifier (FGID). The FGID is a number assigned to each
+
+typeface and is sometimes used for font selection.
+
+„ Size in Pitch or Points. The sizes of uniformly-spaced fonts are expressed in
+pitch, which is the number of characters that can be printed in one inch of text.
+The sizes of typographic and mixed-pitch (MP) fonts are expressed in points, a
+vertical measurement indicating the general size of the font. One point = 1/72
+inch.
+
+Not all information applies to all font groups. For example, alternate coded font
+identifiers are provided only for Expanded Core Fonts. Because all of the possible
+coded fonts are not shipped, additional coded fonts may need to be created. See
+IBM Technical Reference for AFP Font Collection Expanded Core Fonts for
+
+ Copyright IBM Corp. 1998, 2000 
+
+35
+
+<<<PAGE 52>>>
+Font Summary Tables
+
+information on which coded fonts are provided and how to create additional coded
+fonts.
+
+36 Font Summary for AFP Font Collection
+
+<<<PAGE 53>>>
+Expanded Core Fonts
+
+Expanded Core Fonts
+
+This section describes the Expanded Core Fonts available for use with IBM Print
+Services Facility (PSF) licensed programs. These fonts contain various typefaces
+and font sizes (include typographic and uniformly spaced typeface families) suitable
+for printing a variety of documents. They are provided in the following formats:
+
+Table 9. Format and Operating Systems for Expanded Core Fonts
+
+Format
+
+Operating Systems
+
+240-pel bounded-box fonts
+
+300-pel fonts
+
+AFP outline fonts
+
+MVS, OS/390, VSE, VM, OS/400, AIX,
+OS/2
+
+MVS, OS/390, VSE, VM, OS/400, AIX,
+OS/2
+
+MVS, OS/390, VSE, VM, OS/400, AIX,
+OS/2
+
+Type 1 outline fonts
+
+AIX, OS/2
+
+Table 10 shows the values to be used in Table 11. Substitute the point size
+identifier (listed under the columns headed p) shown in Table 10 for the lowercase
+p shown in the seventh position of the Character Set Identifier, Coded Font
+Identifier, or the last position of the Alternate Coded Font Identifier in Table 11.
+The pitch or point sizes available for that font are identified in the column Sizes in
+Points or Pitch.
+
+Table 10. Point and Pitch Identifiers
+
+Typographic Fonts
+
+Uniformly Spaced Fonts
+
+p
+
+5
+6
+7
+8
+9
+0
+A
+B
+
+Point Size
+
+  5 points
+  6 points
+  7 points
+  8 points
+  9 points
+10 points
+11 points
+12 points
+
+p
+
+D
+F
+H
+J
+N
+T
+Z
+
+Point Size
+
+14 points
+16 points
+18 points
+20 points
+24 points
+30 points
+36 points
+
+p
+
+5
+6
+7
+8
+9
+0
+B
+D
+J
+
+Point Size
+
+Pitch Size
+
+  5 points
+  6 points
+  7 points
+  8 points
+  9 points
+10 points
+12 points
+14 points
+20 points
+
+pitch
+ 24
+ 20
+pitch
+ 17.1 pitch
+pitch
+ 15
+ 13.3 pitch
+pitch
+ 12
+ 10
+pitch
+  8.5 pitch
+pitch
+  6
+
+Certain operating environments, such as JES, limit coded font identifiers (names) to
+6 characters (Xn plus four characters). An example is X0GT10. The Expanded
+Core Fonts include 6-character coded font identifiers for use in these environments.
+These 6-character code font identifiers are shown in Table 11 under the column
+heading Alternate Coded Font Identifier.
+
+In Table 11 the lowercase n in the second position of the Coded Font Identifier,
+the Alternate Coded Font Identifier, and the Character Set Identifier identifies
+the font format or orientation; see Figure 10 on page 23 for details.
+
+IBM BookMaster Fonts do not have a Coded Font Identifier because BookMaster
+does not use coded fonts.
+
+Font Summary Tables 37
+
+<<<PAGE 54>>>
+3
+8
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+Table 11 (Page 1 of 9). Expanded Core Fonts
+
+AFP Typeface
+Name
+
+Courier APL2
+
+Type 1 Typeface Name
+
+Courier APL2
+" Bold
+
+AFP Typeface
+Name
+
+Boutros Typing
+Arabic
+
+ITC Boutros
+Modern Rokaa
+Arabic
+
+ITC Boutros
+Setting Arabic
+
+AFP Typeface
+Name
+
+BookMaster
+Specials
+
+BookMaster
+Specials
+Reverse
+
+Type 1 Typeface Name
+
+Typing
+
+" Bold
+" Italic
+" Bold Italic
+
+Rokaa
+
+" Bold
+" Italic
+" Bold Italic
+
+Setting
+
+" Bold
+" Italic
+" Bold Italic
+
+Type 1 Typeface Name
+
+BookMaster Specials
+
+" Bold
+" Italic
+" Bold Italic
+
+BookMaster Specials
+Reverse
+
+Style
+and
+Weight
+
+RM
+RB
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+
+APL
+
+Character
+Set
+Identifier
+
+Type 1
+File
+Name
+
+Coded
+Font
+Identifier
+
+Alternate
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Cn420PB0
+Cn440PB0
+
+APL
+APLB
+
+Xn427PB2
+Xn447PB2
+
+Xn480B
+Xn481B
+
+1364
+
+307
+322
+
+Code Page
+
+T1000293
+T1000293
+
+Code Page
+
+T1000420
+T1000420
+T1000420
+T1000420
+
+T1000420
+T1000420
+T1000420
+T1000420
+
+T1000420
+T1000420
+T1000420
+T1000420
+
+Arabic
+
+Character
+Set
+Identifier
+
+Cn4204p0
+Cn4404p0
+Cn4304p0
+Cn4504p0
+
+CnH204p0
+CnH404p0
+CnH304p0
+CnH504p0
+
+CnN204p0
+CnN404p0
+CnN304p0
+CnN504p0
+
+Type 1
+File
+Name
+
+COU_A
+COU_AB
+COU_AI
+COU_ABI
+
+HEL_A
+HEL_AB
+HEL_AI
+HEL_ABI
+
+TNR_A
+TNR_AB
+TNR_AI
+TNR_ABI
+
+BookMaster Specials
+
+Character
+Set
+Identifier
+
+CnB20Cp0
+CnB40Cp0
+CnB30Cp0
+CnB50Cp0
+
+Type 1
+File
+Name
+
+EDFBS
+EDFBSB
+EDFBSI
+EDFBSBI
+
+Code Page
+
+T1B00BGS
+T1B00BGS
+T1B00BGS
+T1B00BGS
+
+T1B00BGS
+
+CnB60Cp0
+
+EDFBSR
+
+Coded
+Font
+Identifier
+
+Xn4264p1
+Xn4464p1
+Xn4364p1
+Xn4564p1
+
+XnH264p1
+XnH464p1
+XnH364p1
+XnH564p1
+
+XnN264p1
+XnN464p1
+XnN364p1
+XnN564p1
+
+Coded
+Font
+Identifier
+
+N/A
+N/A
+N/A
+N/A
+
+N/A
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn427p
+Xn449p
+Xn438p
+Xn45Ap
+
+XnH27p
+XnH49p
+XnH38p
+XnH5Ap
+
+XnN27p
+XnN49p
+XnN38p
+XnN5Ap
+
+Alternate
+Coded
+Font
+Identifier
+
+N/A
+N/A
+N/A
+N/A
+
+N/A
+
+GCSGID
+
+FGID
+
+1264
+
+1264
+
+1264
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+GCSGID
+
+FGID
+
+1241
+
+1241
+
+335
+336
+337
+338
+
+339
+
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+Size in Pitch
+or Points
+
+10 pitch
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+Size in Pitch
+or Points
+
+5 6 7 8 9 10
+11 12 14 16 18
+20 24 30 36
+points
+
+5 6 7 8 9 10
+11 12 14 16 18
+20 24 30 36
+points
+
+<<<PAGE 55>>>
+Table 11 (Page 2 of 9). Expanded Core Fonts
+
+AFP Typeface
+Name
+
+Courier Cyrillic
+Greek
+
+Helvetica
+Cyrillic Greek
+
+Times New
+Roman Cyrillic
+Greek
+
+AFP Typeface
+Name
+
+Courier Cyrillic
+Greek
+
+Helvetica
+Cyrillic Greek
+
+Times New
+Roman Cyrillic
+Greek
+
+Type 1 Typeface Name
+
+Courier Cyr Grk
+
+" Bold
+" Italic
+" Bold Italic
+
+Helvetica Cyr Grk
+
+" Bold
+" Italic
+" Bold Italic
+
+Times New Roman Cyr Grk
+
+" Bold
+" Italic
+" Bld It
+
+Type 1 Typeface Name
+
+Courier Cyr Grk
+
+" Bold
+" Italic
+" Bold Italic
+
+Helvetica Cyr Grk
+
+" Bold
+" Italic
+" Bold Italic
+
+Times New Roman Cyr Grk
+
+" Bold
+" Italic
+" Bld It
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Code Page
+
+T1001025
+T1001025
+T1001025
+T1001025
+
+T1001025
+T1001025
+T1001025
+T1001025
+
+T1001025
+T1001025
+T1001025
+T1001025
+
+Code Page
+
+T1000875
+T1000875
+T1000875
+T1000875
+
+T1000875
+T1000875
+T1000875
+T1000875
+
+T1000875
+T1000875
+T1000875
+T1000875
+
+Cyrillic
+
+Character
+Set
+Identifier
+
+Cn4203p0
+Cn4403p0
+Cn4303p0
+Cn4503p0
+
+CnH203p0
+CnH403p0
+CnH303p0
+CnH503p0
+
+CnN203p0
+CnN403p0
+CnN303p0
+CnN503p0
+
+Greek
+
+Character
+Set
+Identifier
+
+Cn4203p0
+Cn4403p0
+Cn4303p0
+Cn4503p0
+
+CnH203p0
+CnH403p0
+CnH303p0
+CnH503p0
+
+CnN203p0
+CnN403p0
+CnN303p0
+CnN503p0
+
+Type 1
+File
+Name
+
+COU_CG
+COU_CGB
+COU_CGI
+COU_CGBI
+
+HEL_CG
+HEL_CGB
+HEL_CGI
+HEL_CGBI
+
+TNR_CG
+TNR_CGB
+TNR_CGI
+TNR_CGBI
+
+Type 1
+File
+Name
+
+COU_CG
+COU_CGB
+COU_CGI
+COU_CGBI
+
+HEL_CG
+HEL_CGB
+HEL_CGI
+HEL_CGBI
+
+TNR_CG
+TNR_CGB
+TNR_CGI
+TNR_CGBI
+
+Coded
+Font
+Identifier
+
+Xn4263p9
+Xn4463p9
+Xn4363p9
+Xn4563p9
+
+XnH263p9
+XnH463p9
+XnH363p9
+XnH563p9
+
+XnN263p9
+XnN463p9
+XnN363p9
+XnN563p9
+
+Coded
+Font
+Identifier
+
+Xn4263p5
+Xn4463p5
+Xn4363p5
+Xn4563p5
+
+XnH263p5
+XnH463p5
+XnH363p5
+XnH563p5
+
+XnN263p5
+XnN463p5
+XnN363p5
+XnN563p5
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn45Cp
+Xn45Ep
+Xn45Dp
+Xn45Fp
+
+XnH5Cp
+XnH5Ep
+XnH5Dp
+XnH5Fp
+
+XnN5Cp
+XnN5Ep
+XnN5Dp
+XnN5Fp
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn448p
+Xn44Ap
+Xn449p
+Xn44Bp
+
+XnH48p
+XnH4Ap
+XnH49p
+XnH4Bp
+
+XnN48p
+XnN4Ap
+XnN49p
+XnN4Bp
+
+GCSGID
+
+FGID
+
+1300
+
+1300
+
+1300
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+GCSGID
+
+FGID
+
+1300
+
+1300
+
+1300
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+F
+o
+n
+
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+T
+a
+b
+e
+s
+
+l
+
+3
+9
+
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 56>>>
+4
+0
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+Table 11 (Page 3 of 9). Expanded Core Fonts
+
+AFP Typeface
+Name
+
+Shalom
+Hebrew
+
+Narkiss Tam
+Hebrew
+
+Narkissim
+Hebrew
+
+Type 1 Typeface Name
+
+Shalom Hebrew
+
+" Bold
+" Italic
+" Bold Italic
+
+Narkiss Tam Hebrew
+
+" Bold
+" Italic
+" Bold Italic
+
+Narkissim Hebrew
+
+" Bold
+" Italic
+" Bold Italic
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Code Page
+
+T1000424
+T1000424
+T1000424
+T1000424
+
+T1000424
+T1000424
+T1000424
+T1000424
+
+T1000424
+T1000424
+T1000424
+T1000424
+
+Hebrew
+
+Character
+Set
+Identifier
+
+Cn4205p0
+Cn4405p0
+Cn4305p0
+Cn4505p0
+
+CnH205p0
+CnH405p0
+CnH305p0
+CnH505p0
+
+CnN205p0
+CnN405p0
+CnN305p0
+CnN505p0
+
+IBM Logo
+
+Type 1
+File
+Name
+
+COU_H
+COU_HB
+COU_HI
+COU_HBI
+
+HEL_H
+HEL_HB
+HEL_HI
+HEL_HBI
+
+TNR_H
+TNR_HB
+TNR_HI
+TNR_HBI
+
+Coded
+Font
+Identifier
+
+Xn4265p3
+Xn4465p3
+Xn4365p3
+Xn4565p3
+
+XnH265p3
+XnH465p3
+XnH365p3
+XnH565p3
+
+XnN265p3
+XnN465p3
+XnN365p3
+XnN565p3
+
+AFP Typeface
+Name
+
+Type 1 Typeface Name
+
+Style
+and
+Weight
+
+Code Page
+
+Character
+Set
+Identifier
+
+Type 1
+File
+Name
+
+Coded
+Font
+Identifier
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn42Cp
+Xn42Ep
+Xn42Dp
+Xn42Fp
+
+XnH2Cp
+XnH2Ep
+XnH2Dp
+XnH2Fp
+
+XnN2Cp
+XnN2Ep
+XnN2Dp
+XnN2Fp
+
+Alternate
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+1362
+
+1362
+
+1362
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+GCSGID
+
+FGID
+
+IBM Logo
+
+IBM Logo
+
+RM
+
+T1001093
+
+CnIBM0p0
+
+LOGOIBM
+
+N/A
+
+N/A
+
+2040
+
+51767
+
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+Size in Pitch
+or Points
+
+10 12 14 16 18
+20 24 28 32 36
+40 48 points
+
+AFP Typeface
+Name
+
+Gothic
+Katakana
+
+Type 1 Typeface Name
+
+Gothic Katakana
+
+Style
+and
+Weight
+
+RM
+RM
+RM
+RM
+
+Code Page
+
+T1000897
+T1001027
+T1001041
+T1V10290
+
+Katakana
+
+Character
+Set
+Identifier
+
+Cn6208p0
+Cn6208p0
+Cn6208p0
+Cn6208p0
+
+Type 1
+File
+Name
+
+GOT_K
+GOT_K
+GOT_K
+GOT_K
+
+Coded
+Font
+Identifier
+
+Xn6288pE
+Xn6268pA
+Xn6288pF
+Xn6268p6
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn699p
+Xn69Ap
+Xn69Bp
+Xn698p
+
+GCSGID
+
+1306
+
+FGID
+
+304
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 20 pitch
+
+<<<PAGE 57>>>
+Table 11 (Page 4 of 9). Expanded Core Fonts
+
+Latin1
+
+AFP Typeface
+Name
+
+Type 1 Typeface Name
+
+Boldface Latin1
+
+Boldface
+
+BookMaster
+Latin1
+
+BookMaster
+" Bold
+" Italic
+" Bold Italic
+
+BookMaster
+Latin1 Reverse
+
+BookMaster Reverse
+
+Courier Latin1
+
+Courier
+
+" Bold
+" Italic
+" Bold Italic
+
+Gothic Text
+
+Helvetica
+" Bold
+" Italic
+" Bold Italic
+
+Letter Gothic
+" Bold
+
+Gothic Text
+Latin1
+
+Helvetica
+Latin1
+
+Letter Gothic
+Latin1
+
+Prestige Latin1
+
+Prestige
+
+Times New
+Roman Latin1
+
+" Bold
+" Italic
+
+Times New Roman
+
+" Bold
+" Italic
+" Bold Italic
+
+Style
+and
+Weight
+
+Code Page
+
+Character
+Set
+Identifier
+
+Type 1
+File
+Name
+
+Coded
+Font
+Identifier
+
+Alternate
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+RB
+
+RM
+RB
+IM
+IB
+
+RM
+
+RM
+RB
+IM
+IB
+
+RM
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+
+RM
+RB
+IM
+
+RM
+RB
+IM
+IB
+
+T1V15000
+
+Cn8400p0
+
+BFC
+
+Xn8410pC
+
+Xn80Fp
+
+T1B00500
+T1B00500
+T1B00500
+T1B00500
+
+CnB200p0
+CnB400p0
+CnB300p0
+CnB500p0
+
+EDFBL
+EDFBLB
+EDFBLI
+EDFBLBI
+
+T1B00500
+
+CnB600p0
+
+EDFBLR
+
+N/A
+N/A
+N/A
+N/A
+
+N/A
+
+N/A
+N/A
+N/A
+N/A
+
+N/A
+
+T1V10500
+T1V10500
+T1V10500
+T1V10500
+
+Cn4200p0
+Cn4400p0
+Cn4300p0
+Cn4500p0
+
+COU
+COUB
+COUI
+COUBI
+
+Xn4210pC
+Xn4410pC
+Xn4310pC
+Xn4510pC
+
+Xn40Dp
+Xn40Fp
+Xn40Ep
+Xn410p
+
+2039
+
+2039
+
+2039
+
+2039
+
+T1V15000
+
+Cn6200p0
+
+GOT
+
+Xn6210pC
+
+Xn60Dp
+
+2039
+
+T1V10500
+T1V10500
+T1V10500
+T1V10500
+
+T1V15000
+T1V15000
+
+T1V15000
+T1V15000
+T1V15000
+
+T1V10500
+T1V10500
+T1V10500
+T1V10500
+
+CnH200p0
+CnH400p0
+CnH300p0
+CnH500p0
+
+Cn5200p0
+Cn5400p0
+
+Cn7200p0
+Cn7400p0
+Cn7300p0
+
+CnN200p0
+CnN400p0
+CnN300p0
+CnN500p0
+
+HEL
+HELB
+HELI
+HELBI
+
+LGO
+LGOB
+
+PRS
+PRSB
+PRSI
+
+TNR
+TNRB
+TNRI
+TNRBI
+
+XnH210pC
+XnH410pC
+XnH310pC
+XnH510pC
+
+Xn5210pC
+Xn5410pC
+
+Xn7210pC
+Xn7410pC
+Xn7310pC
+
+XnN210pC
+XnN410pC
+XnN310pC
+XnN510pC
+
+XnH0Dp
+XnH0Fp
+XnH0Ep
+XnH10p
+
+Xn50Dp
+Xn50Fp
+
+Xn70Dp
+Xn70Fp
+Xn70Ep
+
+XnN0Dp
+XnN0Fp
+XnN0Ep
+XnN10p
+
+2039
+
+2039
+
+2039
+
+2039
+
+20224
+
+12 points
+
+335
+336
+337
+338
+
+339
+
+416
+420
+424
+428
+
+304
+
+2304
+2305
+2306
+2307
+
+400
+404
+
+432
+318
+319
+
+2308
+2309
+2310
+2311
+
+5 6 7 8 9 10
+11 12 14 16 18
+20 24 30 36
+points
+
+5 6 7 8 9 10
+11 12 14 16 18
+20 24 30 36
+points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 8.5 10 12
+13.3 15 17.1
+20 24 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 8.5 10 12 15
+17.1 20 pitch
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+F
+o
+n
+
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+T
+a
+b
+e
+s
+
+l
+
+4
+1
+
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 58>>>
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+4
+2
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+Table 11 (Page 5 of 9). Expanded Core Fonts
+
+Latin1 euro
+
+AFP Typeface
+Name
+
+Type 1 Typeface Name
+
+Boldface Latin1
+
+Boldface
+
+BookMaster
+Latin1
+
+BookMaster
+" Bold
+" Italic
+" Bold Italic
+
+BookMaster
+Latin1 Reverse
+
+BookMaster Reverse
+
+Courier Latin1
+
+Courier
+
+" Bold
+" Italic
+" Bold Italic
+
+Gothic Text
+
+Helvetica
+" Bold
+" Italic
+" Bold Italic
+
+Letter Gothic
+" Bold
+
+Gothic Text
+Latin1
+
+Helvetica
+Latin1
+
+Letter Gothic
+Latin1
+
+Prestige Latin1
+
+Prestige
+
+Times New
+Roman Latin1
+
+" Bold
+" Italic
+
+Times New Roman
+
+" Bold
+" Italic
+" Bold Italic
+
+Style
+and
+Weight
+
+Code Page
+
+Character
+Set
+Identifier
+
+Type 1
+File
+Name
+
+Coded
+Font
+Identifier
+
+Alternate
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+RB
+
+RM
+RB
+IM
+IB
+
+RM
+
+RM
+RB
+IM
+IB
+
+RM
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+
+RM
+RB
+IM
+
+RM
+RB
+IM
+IB
+
+T1001148
+
+Cn8400p0
+
+BFC
+
+Xn841EpC
+
+Xn80Vp
+
+T1B00500
+T1B00500
+T1B00500
+T1B00500
+
+CnB200p0
+CnB400p0
+CnB300p0
+CnB500p0
+
+EDFBL
+EDFBLB
+EDFBLI
+EDFBLBI
+
+T1B00500
+
+CnB600p0
+
+EDFBLR
+
+N/A
+N/A
+N/A
+N/A
+
+N/A
+
+N/A
+N/A
+N/A
+N/A
+
+N/A
+
+T1001148
+T1001148
+T1001148
+T1001148
+
+Cn4200p0
+Cn4400p0
+Cn4300p0
+Cn4500p0
+
+COU
+COUB
+COUI
+COUBI
+
+Xn421EpC
+Xn441EpC
+Xn431EpC
+Xn451EpC
+
+Xn40Sp
+Xn40Vp
+Xn40Up
+Xn40Wp
+
+2041
+
+2041
+
+2041
+
+2041
+
+T1001148
+
+Cn6200p0
+
+GOT
+
+Xn621EpC
+
+Xn60Sp
+
+2041
+
+T1001148
+T1001148
+T1001148
+T1001148
+
+T1001148
+T1001148
+
+T1001148
+T1001148
+T1001148
+
+T1001148
+T1001148
+T1001148
+T1001148
+
+CnH200p0
+CnH400p0
+CnH300p0
+CnH500p0
+
+Cn5200p0
+Cn5400p0
+
+Cn7200p0
+Cn7400p0
+Cn7300p0
+
+CnN200p0
+CnN400p0
+CnN300p0
+CnN500p0
+
+HEL
+HELB
+HELI
+HELBI
+
+LGO
+LGOB
+
+PRS
+PRSB
+PRSI
+
+TNR
+TNRB
+TNRI
+TNRBI
+
+XnH21EpC
+XnH41EpC
+XnH31EpC
+XnH51EpC
+
+Xn521EpC
+Xn541EpC
+
+Xn721EpC
+Xn741EpC
+Xn731EpC
+
+XnN21EpC
+XnN41EpC
+XnN31EpC
+XnN51EpC
+
+XnH0Sp
+XnH0Vp
+XnH0Up
+XnH0Wp
+
+Xn50Sp
+Xn50Vp
+
+Xn70Sp
+Xn70Vp
+Xn70Up
+
+XnN0Sp
+XnN0Vp
+XnN0Up
+XnN0Wp
+
+2041
+
+2041
+
+2041
+
+2041
+
+20224
+
+12 points
+
+335
+336
+337
+338
+
+339
+
+416
+420
+424
+428
+
+304
+
+2304
+2305
+2306
+2307
+
+400
+404
+
+432
+318
+319
+
+2308
+2309
+2310
+2311
+
+5 6 7 8 9 10
+11 12 14 16 18
+20 24 30 36
+points
+
+5 6 7 8 9 10
+11 12 14 16 18
+20 24 30 36
+points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 8.5 10 12
+13.3 15 17.1
+20 24 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 8.5 10 12 15
+17.1 20 pitch
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+<<<PAGE 59>>>
+Table 11 (Page 6 of 9). Expanded Core Fonts
+
+AFP Typeface
+Name
+
+Courier
+Latin235
+
+Helvetica
+Latin235
+
+Times New
+Roman
+Latin235
+
+AFP Typeface
+Name
+
+Courier
+Latin235
+
+Helvetica
+Latin235
+
+Times New
+Roman
+Latin235
+
+Type 1 Typeface Name
+
+Courier
+
+" Bold
+" Italic
+" Bold Italic
+
+Helvetica
+" Bold
+" Italic
+" Bold Italic
+
+Times New Roman
+
+" Bold
+" Italic
+" Bold Italic
+
+Type 1 Typeface Name
+
+Courier
+
+" Bold
+" Italic
+" Bold Italic
+
+Helvetica
+" Bold
+" Italic
+" Bold Italic
+
+Times New Roman
+
+" Bold
+" Italic
+" Bold Italic
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Code Page
+
+T1000870
+T1000870
+T1008700
+T1008700
+
+T1000870
+T1000870
+T1000870
+T1000870
+
+T1000870
+T1000870
+T1000870
+T1000870
+
+Code Page
+
+T1000905
+T1000905
+T1000905
+T1000905
+
+T1000905
+T1000905
+T1000905
+T1000905
+
+T1000905
+T1000905
+T1000905
+T1000905
+
+Latin2
+
+Character
+Set
+Identifier
+
+Cn4202p0
+Cn4402p0
+Cn4304p0
+Cn4502p0
+
+CnH202p0
+CnH402p0
+CnH302p0
+CnH502p0
+
+CnN202p0
+CnN402p0
+CnN302p0
+CnN502p0
+
+Latin3
+
+Character
+Set
+Identifier
+
+Cn4202p0
+Cn4402p0
+Cn4302p0
+Cn4502p0
+
+CnH202p0
+CnH402p0
+CnH302p0
+CnH502p0
+
+CnN202p0
+CnN402p0
+CnN302p0
+CnN502p0
+
+Type 1
+File
+Name
+
+COU
+COUB
+COUI
+COUBI
+
+HEL
+HELB
+HELI
+HELBI
+
+TNR
+TNRB
+TNRI
+TNRBI
+
+Type 1
+File
+Name
+
+COU
+COUB
+COUI
+COUBI
+
+HEL
+HELB
+HELI
+HELBI
+
+TNR
+TNRB
+TNRI
+TNRBI
+
+Coded
+Font
+Identifier
+
+Xn4252p1
+Xn4452p1
+Xn4354p1
+Xn4552p1
+
+XnH252p1
+XnH452p1
+XnH352p1
+XnH552p1
+
+XnN252p1
+XnN452p1
+XnN352p1
+XnN552p1
+
+Coded
+Font
+Identifier
+
+Xn425202
+N/A
+N/A
+N/A
+
+XnH25202
+N/A
+N/A
+N/A
+
+XnN25202
+N/A
+N/A
+N/A
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn444p
+Xn446p
+Xn445p
+Xn447p
+
+XnH44p
+XnH46p
+XnH45p
+XnH47p
+
+XnN44p
+XnN46p
+XnN45p
+XnN47p
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn44E0
+N/A
+N/A
+N/A
+
+XnH4E0
+N/A
+N/A
+N/A
+
+XnN4E0
+N/A
+N/A
+N/A
+
+GCSGID
+
+FGID
+
+1261
+
+1261
+
+1261
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+GCSGID
+
+FGID
+
+1261
+
+1261
+
+1261
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+F
+o
+n
+
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+T
+a
+b
+e
+s
+
+l
+
+4
+3
+
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 60>>>
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+4
+4
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+Table 11 (Page 7 of 9). Expanded Core Fonts
+
+AFP Typeface
+Name
+
+Type 1 Typeface Name
+
+Courier Latin4
+
+Courier
+
+" Bold
+" Italic
+" Bold Italic
+
+Helvetica
+" Bold
+" Italic
+" Bold Italic
+
+Times New Roman
+
+" Bold
+" Italic
+" Bold Italic
+
+Type 1 Typeface Name
+
+Courier
+
+" Bold
+" Italic
+" Bold Italic
+
+Helvetica
+" Bold
+" Italic
+" Bold Italic
+
+Times New Roman
+
+" Bold
+" Italic
+" Bold Italic
+
+Helvetica
+Latin4
+
+Times New
+Roman Latin4
+
+AFP Typeface
+Name
+
+Courier
+Latin235
+
+Helvetica
+Latin235
+
+Times New
+Roman
+Latin235
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Code Page
+
+T1001069
+T1001069
+T1001069
+T1001069
+
+T1001069
+T1001069
+T1001069
+T1001069
+
+T1001069
+T1001069
+T1001069
+T1001069
+
+Code Page
+
+T1001026
+T1001026
+T1001026
+T1001026
+
+T1001026
+T1001026
+T1001026
+T1001026
+
+T1001026
+T1001026
+T1001026
+T1001026
+
+Latin4
+
+Character
+Set
+Identifier
+
+Cn4207p0
+Cn4407p0
+Cn4307p0
+Cn4507p0
+
+CnH207p0
+CnH407p0
+CnH307p0
+CnH507p0
+
+CnN207p0
+CnN407p0
+CnN307p0
+CnN507p0
+
+Latin5
+
+Character
+Set
+Identifier
+
+Cn4202p0
+Cn4402p0
+Cn4302p0
+Cn4502p0
+
+CnH202p0
+CnH402p0
+CnH302p0
+CnH502p0
+
+CnN202p0
+CnN402p0
+CnN302p0
+CnN502p0
+
+Type 1
+File
+Name
+
+COU
+COUB
+COUI
+COUBI
+
+HEL
+HELB
+HELI
+HELBI
+
+TNR
+TNRB
+TNRI
+TNRBI
+
+Type 1
+File
+Name
+
+COU
+COUB
+COUI
+COUBI
+
+HEL
+HELB
+HELI
+HELBI
+
+TNR
+TNRB
+TNRI
+TNRBI
+
+Coded
+Font
+Identifier
+
+Xn4257p9
+Xn4457p9
+Xn4357p9
+Xn4557p9
+
+XnH257p9
+XnH457p9
+XnH357p9
+XnH557p9
+
+XnN257p9
+XnN457p9
+XnN357p9
+XnN557p9
+
+Coded
+Font
+Identifier
+
+Xn4252p3
+Xn4452p3
+Xn4352p3
+Xn4552p3
+
+XnH252p3
+XnH452p3
+XnH352p3
+XnH552p3
+
+XnN252p3
+XnN452p3
+XnN352p3
+XnN552p3
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn473p
+Xn475p
+Xn474p
+Xn476p
+
+XnH73p
+XnH75p
+XnH74p
+XnH76p
+
+XnN73p
+XnN75p
+XnN74p
+XnN76p
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn460p
+Xn462p
+Xn461p
+Xn463p
+
+XnH60p
+XnH62p
+XnH61p
+XnH63p
+
+XnN60p
+XnN62p
+XnN61p
+XnN63p
+
+GCSGID
+
+FGID
+
+1261
+
+1261
+
+1261
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+GCSGID
+
+FGID
+
+1261
+
+1261
+
+1261
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+<<<PAGE 61>>>
+Table 11 (Page 8 of 9). Expanded Core Fonts
+
+AFP Typeface
+Name
+
+OCRA
+
+OCRB
+
+Type 1 Typeface Name
+
+OCR A
+
+OCR B
+
+AFP Typeface
+Name
+
+Courier Lao
+
+Pusuwan
+
+Kaewfah
+
+Type 1 Typeface Name
+
+Courier Lao
+" Bold
+" Italic
+" Bold Italic
+
+Pusuwan
+" Bold
+" Italic
+" Bold Italic
+
+Kaewfah
+" Bold
+" Italic
+" Bold Italic
+
+AFP Typeface
+Name
+
+Type 1 Typeface Name
+
+Courier
+Symbols
+
+Helvetica
+Symbols
+
+Times New
+Roman
+Symbols
+
+F
+o
+n
+
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+T
+a
+b
+e
+s
+
+l
+
+4
+5
+
+Courier Symbols
+
+" Bold
+
+Helvetica Symbols
+
+" Bold
+
+Times New Roman Symbols
+
+" Bold
+
+Style
+and
+Weight
+
+RM
+
+RM
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Style
+and
+Weight
+
+RM
+RB
+
+RM
+RB
+
+RM
+RB
+
+Optical Character Recognition (OCR)
+
+Character
+Set
+Identifier
+
+Type 1
+File
+Name
+
+Coded
+Font
+Identifier
+
+Code Page
+
+Alternate
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+T1000892
+
+Cn920AB0
+
+OCR_A
+
+Xn927AB4
+
+Xn9B0B
+
+T1000893
+
+Cn920BB0
+
+OCR_B
+
+Xn927BB5
+
+Xn9B1B
+
+968
+
+969
+
+305
+
+306
+
+10 pitch
+
+10 pitch
+
+Lao
+
+Character
+Set
+Identifier
+
+Cn4209p0
+Cn4409p0
+Cn4309p0
+Cn4509p0
+
+CnH209p0
+CnH409p0
+CnH309p0
+CnH509p0
+
+CnN209p0
+CnN409p0
+CnN309p0
+CnN509p0
+
+Type 1
+File
+Name
+
+COU_L
+COU_LB
+COU_LI
+COU_LBI
+
+HEL_L
+HEL_LB
+HEL_LI
+HEL_LBI
+
+TNR_L
+TNR_LB
+TNR_LI
+TNR_LBI
+
+Symbols
+
+Character
+Set
+Identifier
+
+Cn4201p0
+Cn4401p0
+
+CnH201p0
+CnH401p0
+
+Type 1
+File
+Name
+
+COU_S
+COU_SB
+
+HEL_S
+HEL_SB
+
+Coded
+Font
+Identifier
+
+Xn4269pE
+Xn4469pE
+Xn4369pE
+Xn4569pE
+
+XnH269pE
+XnH469pE
+XnH369pE
+XnH569pE
+
+XnN269pE
+XnN469pE
+XnN369pE
+XnN569pE
+
+Coded
+Font
+Identifier
+
+Xn4271p1
+Xn4471p1
+
+XnH271p1
+XnH471p1
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn41Op
+Xn41Qp
+Xn41Pp
+Xn41Rp
+
+XnH1Op
+XnH1Qp
+XnH1Pp
+XnH1Rp
+
+XnN1Op
+XnN1Qp
+XnN1Pp
+XnN1Rp
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn412p
+Xn413p
+
+XnH12p
+XnH13p
+
+Code Page
+
+T1001132
+T1001132
+T1001132
+T1001132
+
+T1001132
+T1001132
+T1001132
+T1001132
+
+T1001132
+T1001132
+T1001132
+T1001132
+
+Code Page
+
+T1000259
+T1000259
+
+T1000259
+T1000259
+
+T1000259
+T1000259
+
+CnN201p0
+CnN401p0
+
+TNR_S
+TNR_SB
+
+XnN271p1
+XnN471p1
+
+XnN12p
+XnN13p
+
+GCSGID
+
+FGID
+
+1341
+
+1341
+
+1341
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+GCSGID
+
+FGID
+
+1275
+
+1275
+
+1275
+
+416
+420
+
+2304
+2305
+
+2308
+2309
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 62>>>
+4
+6
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+Table 11 (Page 9 of 9). Expanded Core Fonts
+
+AFP Typeface
+Name
+
+Courier Thai
+
+Thonburi
+
+Type 1 Typeface Name
+
+Courier Thai
+" Bold
+" Italic
+" Bold Italic
+
+Thonburi
+" Bold
+" Italic
+" Bold Italic
+
+Burirum
+
+Burirum
+
+" Bold
+" Italic
+" Bold Italic
+
+Style
+and
+Weight
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+RM
+RB
+IM
+IB
+
+Code Page
+
+T1000838
+T1000838
+T1000838
+T1000838
+
+T1000838
+T1000838
+T1000838
+T1000838
+
+T1000838
+T1000838
+T1000838
+T1000838
+
+Thai
+
+Character
+Set
+Identifier
+
+Cn4206p0
+Cn4406p0
+Cn4306p0
+Cn4506p0
+
+CnH206p0
+CnH406p0
+CnH306p0
+CnH506p0
+
+CnN206p0
+CnN406p0
+CnN306p0
+CnN506p0
+
+Type 1
+File
+Name
+
+COU_T
+COU_TB
+COU_TI
+COU_TBI
+
+HEL_T
+HEL_TB
+HEL_TI
+HEL_TBI
+
+TNR_T
+TNR_TB
+TNR_TI
+TNR_TBI
+
+Coded
+Font
+Identifier
+
+Xn4266p8
+Xn4466p8
+Xn4366p8
+Xn4566p8
+
+XnH266p8
+XnH466p8
+XnH366p8
+XnH566p8
+
+XnN266p8
+XnN466p8
+XnN366p8
+XnN566p8
+
+Alternate
+Coded
+Font
+Identifier
+
+Xn47Bp
+Xn47Dp
+Xn47Cp
+Xn41Vp
+
+XnH7Bp
+XnH7Dp
+XnH7Pp
+XnH1Vp
+
+XnN7Bp
+XnN7Dp
+XnN7Cp
+XnN1Vp
+
+GCSGID
+
+FGID
+
+1279
+
+1279
+
+1279
+
+416
+420
+424
+428
+
+2304
+2305
+2306
+2307
+
+2308
+2309
+2310
+2311
+
+Size in Pitch
+or Points
+
+6 8.5 10 12 15
+17.1 pitch
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+6 7 8 9 10 11
+12 14 16 18 20
+24 30 36
+points
+
+E
+x
+p
+a
+n
+d
+e
+d
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 63>>>
+Compatibility Fonts
+
+Compatibility Fonts
+
+This section describes the 240- and 300-pel Compatibility Fonts, which include
+uniformly spaced, mixed-pitch, and Proprinter Emulation fonts. Uniformly spaced
+fonts are measured horizontally in pitch. Proportionally spaced and mixed-pitch
+fonts are measured vertically in points.
+
+Compatibility Fonts offer various typefaces and font sizes. They are provided in the
+following formats:
+
+Table 12. Formats and Operating Systems for Compatibility Fonts
+
+Format
+
+Operating Systems with
+PSF
+
+Operating Systems with
+5648-B33
+
+Bounded-box 240-pel fonts
+
+MVS, VSE, VM
+
+OS/400, AIX, OS/2
+
+Unbounded-box 240-pel
+fonts
+
+MVS, VSE
+
+300-pel fonts
+
+MVS, VSE, VM
+
+OS/400, AIX, OS/2
+
+Table 13 lists the Compatibility Fonts.
+position of the Character Set Identifier and the Coded Font Identifier identifies
+the font format or orientation; see Figure 11 on page 26 for details.
+
+In Table 13 the lowercase n in the second
+
+Table 13 (Page 1 of 6). Compatibility Fonts
+
+APL
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+CnS0AE10
+CnS0AE20
+
+XnAE10
+XnAE20
+
+2029
+
+45
+280
+
+  10
+  20
+
+pitch
+pitch
+
+Boldface
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+Code Page
+
+T1S0AE10
+T1S0AE10
+
+Code Page
+
+T1D0BASE
+
+CnS0BRTR
+
+XnBRTR
+
+T1D0BASE
+
+CnS0BITR
+
+XnBITR
+
+2023
+
+2023
+
+159
+
+155
+
+MP
+
+MP
+
+pitch
+
+pitch
+
+Courier
+
+Character
+Set
+Identifier
+
+CnS0CR10
+CnS0CR12
+CnS0CR15
+CnS0CE12
+
+CnS0CB10
+CnS0CB12
+CnS0CB15
+
+CnS0CI10
+CnS0CI12
+CnS0CI15
+
+Coded
+Font
+Identifier
+
+XnCR10
+XnCR12
+XnCR15
+XnCE12
+
+XnCB10
+XnCB12
+XnCB15
+
+XnCI10
+XnCI12
+XnCI15
+
+Code Page
+
+T1D0BASE
+T1D0BASE
+T1D0BASE
+T1D0BASE
+
+T1D0BASE
+T1D0BASE
+T1D0BASE
+
+T1D0BASE
+T1D0BASE
+T1D0BASE
+
+T1D0BASE
+
+CnS0CD15
+
+XnCD15
+
+T1D0BASE
+
+CnS0CW15
+
+XnCW15
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+2023
+
+2023
+
+2023
+
+2023
+
+2023
+
+11
+85
+223
+85
+
+46
+108
+214
+
+18
+92
+215
+
+417
+
+425
+
+  10
+  12
+  15
+  12
+
+  10
+  12
+  15
+
+  10
+  12
+  15
+
+  15
+
+  15
+
+pitch
+pitch
+pitch
+pitch
+
+pitch
+pitch
+pitch
+
+pitch
+pitch
+pitch
+
+pitch
+
+pitch
+
+Style
+and
+Weight
+
+RM
+RM
+
+Style
+and
+Weight
+
+RB
+
+IB
+
+Style
+and
+Weight
+
+RM
+RM
+RM
+RM
+
+RB
+RB
+RB
+
+IM
+IM
+IM
+
+RM
+
+IM
+
+AFP Typeface Name
+
+APL
+
+AFP Typeface Name
+
+Book
+
+Book
+
+AFP Typeface Name
+
+Courier
+
+Courier
+
+Courier
+
+Courier (Double Wide)
+
+Courier (Double Wide
+Italic)
+
+Font Summary Tables 47
+
+<<<PAGE 64>>>
+Compatibility Fonts
+
+Table 13 (Page 2 of 6). Compatibility Fonts
+
+Courier (Overstruck)
+
+Courier (Overstruck)
+elongated
+
+Courier extended
+
+AFP Typeface Name
+
+RM
+
+RM
+
+RM
+
+Style
+and
+Weight
+
+T1D0BASE
+
+CnS0CO10
+
+XnCO10
+
+T1D0BASE
+
+CnS0CH10
+
+XnCH10
+
+2025
+
+2025
+
+302
+
+37
+
+  10
+
+  10
+
+pitch
+
+pitch
+
+T1D0BASE
+
+CnS0CE10
+
+XnCE10
+
+2036
+
+85
+
+  10
+
+pitch
+
+Document
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+Code Page
+
+Book
+
+RM
+
+T1D0BASE
+
+CnS0DOTR XnDOTR
+
+2023
+
+Style
+and
+Weight
+
+Code Page
+
+Essay
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+T1D0BASE
+
+CnS0EBTR
+
+XnEBTR
+
+2023
+
+T1D0BASE
+
+CnS0EITR
+
+XnEITR
+
+2023
+
+T1D0BASE
+
+CnS0ELTR
+
+XnELTR
+
+2023
+
+T1D0BASE
+
+CnS0EOTR XnEOTR
+
+2028
+
+T1D0BASE
+
+CnS0ESTR
+
+XnESTR
+
+2023
+
+FGID
+
+175
+
+FGID
+
+163
+
+162
+
+173
+
+196
+
+160
+
+Size in Pitch
+or Points
+
+MP
+  10
+
+pitch
+points
+
+Size in Pitch
+or Points
+
+MP
+  10
+
+MP
+  10
+
+MP
+  10
+
+MP
+  10
+
+MP
+  10
+
+pitch
+points
+
+pitch
+points
+
+pitch
+points
+
+pitch
+points
+
+pitch
+points
+
+AFP Typeface Name
+
+Essay
+
+Essay (Italic)
+
+Essay (Light)
+
+Essay (Overstruck)
+
+Essay
+
+AFP Typeface Name
+
+Format
+
+AFP Typeface Name
+
+Gothic (Bold)
+
+Gothic Uppercase
+
+Gothic (Italic)
+
+Gothic Reverse
+
+Gothic
+
+Gothic
+
+Gothic13
+
+Gothic
+
+Gothic
+
+Gothic
+
+RB
+
+IM
+
+RL
+
+RM
+
+RM
+
+Style
+and
+Weight
+
+RM
+RM
+RM
+
+Style
+and
+Weight
+
+RB
+RB
+
+RC
+
+IM
+
+RM
+
+RSL
+RSL
+RSL
+
+RM
+RM
+
+RM
+
+RM
+
+RM
+RM
+
+RM
+RM
+
+48 Font Summary for AFP Font Collection 
+
+Format
+
+Character
+Set
+Identifier
+
+CnL0FM10
+CnL0FM12
+CnL0FM15
+
+Gothic
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+XnFM10
+XnFM12
+XnFM15
+
+Coded
+Font
+Identifier
+
+CnD0GB10
+CnD0GB12
+
+XnGB10
+XnGB12
+
+Code Page
+
+T1L00FMT
+T1L00FMT
+T1L00FMT
+
+Code Page
+
+T1D0BASE
+T1D0BASE
+
+T1L038BA
+
+CnL00GSC
+
+XnGSC
+
+T1D0BASE
+
+CnD0GI12
+
+XnGI12
+
+T1D0BASE
+
+CnD0GR10
+
+XnGR10
+
+T1D0BASE
+T1D0BASE
+T1D0BASE
+
+T1D0BASE
+T1D0BASE
+
+CnD0GL10
+CnD0GL12
+CnD0GL15
+
+CnD0GT10
+CnD0GT12
+
+XnGL10
+XnGL12
+XnGL15
+
+XnGT10
+XnGT12
+
+T1D0BASE
+
+CnD0GT13
+
+XnGT13
+
+T1D0BASE
+
+CnD0GC15
+
+XnGC15
+
+T1D0BASE
+T1D0BASE
+
+T1D0BASE
+T1D0BASE
+
+CnD0GT15
+CnD0GT18
+
+CnD0GT20
+CnD0GT24
+
+XnGT15
+XnGT18
+
+XnGT20
+XnGT24
+
+GCSGID
+
+FGID
+
+2027
+
+30
+80
+225
+
+Size in Pitch
+or Points
+
+  10
+  12
+  15
+
+pitch
+pitch
+pitch
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+2023
+
+2038
+
+2023
+
+2023
+
+2023
+
+2023
+
+2037
+
+2037
+
+2023
+
+2037
+
+39
+69
+
+398
+
+68
+
+310
+
+303
+303
+303
+
+40
+66
+
+203
+
+231
+
+230
+275
+
+281
+290
+
+  10
+  12
+
+  15
+
+  12
+
+  10
+
+  10
+  12
+  15
+
+  10
+  12
+
+pitch
+pitch
+
+pitch
+
+pitch
+
+pitch
+
+pitch
+pitch
+pitch
+
+pitch
+pitch
+
+  13.3 pitch
+
+  15
+
+  15
+  18
+
+  20
+  27
+
+pitch
+
+pitch
+pitch
+
+pitch
+pitch
+
+<<<PAGE 65>>>
+Table 13 (Page 3 of 6). Compatibility Fonts
+
+Compatibility Fonts
+
+Gothic Uppercase
+
+DUMP
+
+AFP Typeface Name
+
+Katakana
+
+Katakana
+
+AFP Typeface Name
+
+OCR AOA1
+
+OCRA AOA
+
+OCR A AON1
+
+OCRA AON
+
+AFP Typeface Name
+
+OCRB BOA
+
+OCRB BON
+
+OCRB OAB
+
+AFP Typeface Name
+
+RM
+RM
+RM
+RM
+
+RM
+
+Style
+and
+Weight
+
+RM
+RM
+RM
+RM
+
+RSL
+RSL
+RSL
+
+T1L038BA
+T1L038BA
+T1L038BA
+T1L038BA
+
+CnL0GU10
+CnL0GU12
+CnL0GU15
+CnL00GUC
+
+XnGU10
+XnGU12
+XnGU15
+XnGUC
+
+2038
+
+T1L0DUMP
+
+XnDUMP
+
+CnL0DUMP
+
+2022
+
+312
+312
+312
+311
+
+230
+
+  10
+  12
+  15
+  15
+
+  15
+
+pitch
+pitch
+pitch
+pitch
+
+pitch
+
+Gothic and Katakana
+
+Character
+Set
+Identifier
+
+CnL0KN12
+CnL0KN15
+CnL0KN20
+CnL0KATA
+
+Coded
+Font
+Identifier
+
+XnKN12
+XnKN15
+XnKN20
+XnKATA
+
+Code Page
+
+T1000290
+T1000290
+T1000290
+T1000290
+
+T1000290
+T1000290
+T1000290
+
+CnL0KL10
+CnL0KL12
+CnL0KL15
+
+XnKL10
+XnKL12
+XnKL15
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+2031
+
+2031
+
+433
+433
+433
+
+433
+
+521
+521
+521
+
+  12
+  15
+  20
+  10
+
+  10
+  12
+  15
+
+pitch
+pitch
+pitch
+pitch
+
+pitch
+pitch
+pitch
+
+Gothic and Optical Character Recognition-A (OCR-A)
+
+Style
+and
+Weight
+
+RM
+
+RM
+
+RM
+
+RM
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+Code Page
+
+T1L0OCR1
+
+CnL01AOA
+
+Xn1AOA
+
+T1L0OCR1
+
+CnL00AOA
+
+XnAOA
+
+T1L0OCR1
+
+CnL01AON
+
+Xn1AOD
+
+T1L0OCR1
+
+CnL00AON
+
+XnAOD
+
+GCSGID
+
+FGID
+
+2034
+
+2034
+
+2035
+
+2035
+
+19
+
+19
+
+19
+
+19
+
+Gothic and Optical Character Recognition-B (OCR-B)
+
+Style
+and
+Weight
+
+RM
+
+RM
+
+RM
+
+Style
+and
+Weight
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+Code Page
+
+T1L0OCRB
+
+CnL00BOA
+
+XnBOA
+
+T1L0OCR1
+
+CnL00BON
+
+XnBON
+
+T1L0OCR1
+
+CnL00OAB
+
+XnOAB
+
+Gothic Tri-Pitch
+
+GCSGID
+
+FGID
+
+2032
+
+2032
+
+2032
+
+3
+
+3
+
+3
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+Code Page
+
+Size in Pitch
+or Points
+
+  10
+
+  10
+
+  10
+
+  10
+
+pitch
+
+pitch
+
+pitch
+
+pitch
+
+Size in Pitch
+or Points
+
+  10
+
+  10
+
+  10
+
+pitch
+
+pitch
+
+pitch
+
+FGID
+
+174
+
+Size in Pitch
+or Points
+
+MP
+  9
+
+pitch
+points
+
+Gothic Proportional
+
+RM
+
+T1D0GP12
+
+CnD0GP12
+
+XnGP12
+
+2023
+
+Letter Gothic
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+Code Page
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+T1D0BASE
+
+CnS0LR12
+
+XnLR12
+
+T1D0BASE
+
+CnS0LB12
+
+XnLB12
+
+2023
+
+2023
+
+87
+
+110
+
+  12
+
+  12
+
+pitch
+
+pitch
+
+Orator
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+Code Page
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+T1D0BASE
+
+CnS0OR10
+
+XnOR10
+
+T1D0BASE
+
+CnS0OB10
+
+XnOB10
+
+2025
+
+2025
+
+5
+
+38
+
+  10
+
+  10
+
+pitch
+
+pitch
+
+Style
+and
+Weight
+
+RM
+
+RB
+
+Style
+and
+Weight
+
+RM
+
+RB
+
+AFP Typeface Name
+
+Letter Gothic
+
+Letter Gothic (Bold)
+
+AFP Typeface Name
+
+Orator
+
+Orator
+(Bold)
+
+Font Summary Tables 49
+
+<<<PAGE 66>>>
+Compatibility Fonts
+
+Table 13 (Page 4 of 6). Compatibility Fonts
+
+Prestige
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+CnS0PR10
+CnS0PR12
+
+XnPR10
+XnPR12
+
+Code Page
+
+T1D0BASE
+T1D0BASE
+
+T1D0BASE
+
+CnS0PB12
+
+XnPB12
+
+T1D0BASE
+
+CnS0PI12
+
+XnPI12
+
+Proprinter Emulation
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+Code Page
+
+T1000437
+
+Cn2059L0
+
+Xn2059LF
+
+T1000437
+
+Cn2058M0
+
+Xn2059MF
+
+T1000437
+
+Cn2056N0
+
+Xn2056NF
+
+T1000437
+
+Cn2055P0
+
+Xn2055PF
+
+T1000437
+
+Cn2054Q0
+
+Xn2054QF
+
+T1000437
+
+Cn2051R0
+
+Xn2051RF
+
+GCSGID
+
+FGID
+
+2023
+
+2023
+
+2023
+
+12
+86
+
+111
+
+112
+
+GCSGID
+
+FGID
+
+1262
+
+1262
+
+1262
+
+1262
+
+1262
+
+1262
+
+443
+
+444
+
+445
+
+440
+
+441
+
+442
+
+Size in Pitch
+or Points
+
+  10
+  12
+
+  12
+
+  12
+
+pitch
+pitch
+
+pitch
+
+pitch
+
+Size in Pitch
+or Points
+
+  5
+
+  6
+
+pitch
+
+pitch
+
+  8.55 pitch
+
+  10
+
+  12
+
+pitch
+
+pitch
+
+  17.1 pitch
+
+T1000437
+
+Cn2079L0
+
+Xn2079LF
+
+1262
+
+448
+
+  5
+
+pitch
+
+T1000437
+
+Cn2078M0
+
+Xn2079MF
+
+1262
+
+449
+
+  6
+
+pitch
+
+T1000437
+
+Cn2075P0
+
+Xn2075PF
+
+1262
+
+446
+
+  10
+
+pitch
+
+T1000437
+
+Cn2074Q0
+
+Xn2074QF
+
+1262
+
+447
+
+  12
+
+pitch
+
+T1000437
+
+Cn2059A0
+
+Xn2059AF
+
+T1000437
+
+Cn2059B0
+
+Xn2059BF
+
+T1000437
+
+Cn2059C0
+
+Xn2059CF
+
+T1000437
+
+Cn2055D0
+
+Xn2055DF
+
+T1000437
+
+Cn2055E0
+
+Xn2055EF
+
+T1000437
+
+Cn2055F0
+
+Xn2055FF
+
+T1000437
+
+Cn2079A0
+
+Xn2079AF
+
+1262
+
+1262
+
+1262
+
+1262
+
+1262
+
+1262
+
+1262
+
+453
+
+453
+
+453
+
+452
+
+452
+
+452
+
+456
+
+  5
+
+  6
+
+pitch
+
+pitch
+
+  8.55 pitch
+
+  10
+
+  12
+
+pitch
+
+pitch
+
+  17.1 pitch
+
+  5
+
+pitch
+
+T1000437
+
+Cn2079B0
+
+Xn2079BF
+
+1262
+
+456
+
+  6
+
+pitch
+
+T1000437
+
+Cn2075D0
+
+Xn2075DF
+
+1262
+
+455
+
+  10
+
+pitch
+
+T1000437
+
+Cn2075E0
+
+Xn2075EF
+
+1262
+
+455
+
+  12
+
+pitch
+
+T1000437
+
+Cn2055J0
+
+Xn2055JF
+
+1262
+
+452
+
+  5
+
+pitch
+
+T1000437
+
+Cn2051K0
+
+Xn2051KF
+
+1262
+
+451
+
+  10
+
+pitch
+
+T1000437
+
+Cn2075J0
+
+Xn2075JF
+
+1262
+
+T1000437
+
+Cn2071K0
+
+Xn2071KF
+
+1262
+
+455
+
+454
+
+  5
+  18
+
+  10
+
+pitch
+points
+
+pitch
+
+Style
+and
+Weight
+
+RM
+RM
+
+RB
+
+IM
+
+Style
+and
+Weight
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RB
+
+RB
+
+AFP Typeface Name
+
+Prestige
+
+Prestige (Bold)
+
+Prestige (Italic)
+
+AFP Typeface Name
+
+Proptr Emul 5 CPI Small
+
+Proptr Emul 6 CPI Small
+
+Proptr Emul 8.55 CPI
+Small
+
+Proptr Emul 10 CPI Small
+
+Proptr Emul 12 CPI Small
+
+Proptr Emul 17.1 CPI
+Small
+
+Proptr Emul 5 CPI Small
+(Bold)
+
+Proptr Emul 6 CPI Small
+(Bold)
+
+Proptr Emul 10 CPI Small
+(Bold)
+
+Proptr Emul 12 CPI Small
+(Bold)
+
+Proptr Emul 5 CPI
+
+Proptr Emul 6 CPI
+
+Proptr Emul 8.55 CPI
+
+Proptr Emul 10 CPI
+
+Proptr Emul 12 CPI
+
+Proptr Emul 17.1 CPI
+
+Proptr Emul 5 CPI
+(Bold)
+
+Proptr Emul 6 CPI
+(Bold)
+
+Proptr Emul 10 CPI
+(Bold)
+
+Proptr Emul 12 CPI
+(Bold)
+
+Proptr Emul 5 CPI Dbl
+High
+
+Proptr Emul 10 CPI Dbl
+High
+
+Proptr Emul 5 CPI Dbl
+High 
+
+(Bold)
+
+Proptr Emul 10 CPI Dbl
+High 
+
+(Bold)
+
+50 Font Summary for AFP Font Collection
+
+<<<PAGE 67>>>
+Compatibility Fonts
+
+Table 13 (Page 5 of 6). Compatibility Fonts
+
+Proptr Emul 9 PT
+
+Proptr Emul 18 PT
+
+Proptr Emul 9 PT
+(Bold)
+
+Proptr Emul 18 PT
+(Bold)
+
+Proptr Emul 9 PT Small
+
+Proptr Emul 9 PT Small
+(Bold)
+
+Proptr Emul 9 PT
+Expanded Small
+
+Proptr Emul 9 PT
+Expanded Small
+(Bold)
+
+AFP Typeface Name
+
+RM
+
+RM
+
+RM
+
+RM
+
+RM
+
+RB
+
+RM
+
+RB
+
+T1000437
+
+Cn2059G0
+
+Xn2059GF
+
+T1000437
+
+Cn2055H0
+
+Xn2055HF
+
+T1000437
+
+Cn2079G0
+
+Xn2079GF
+
+1262
+
+1262
+
+1262
+
+24328
+
+24320
+
+24329
+
+  9
+
+  18
+
+  9
+
+points
+
+points
+
+points
+
+T1000437
+
+Cn2075H0
+
+Xn2075HF
+
+1262
+
+24322
+
+  18
+
+points
+
+T1000437
+
+Cn2055S0
+
+Xn2055SF
+
+T1000437
+
+Cn2075S0
+
+Xn2075SF
+
+1262
+
+1262
+
+24324
+
+24326
+
+  4
+
+  4
+
+points
+
+points
+
+T1000437
+
+Cn2057S0
+
+Xn2057SF
+
+1262
+
+24325
+
+  4
+
+points
+
+T1000437
+
+Cn2077S0
+
+Xn2077SF
+
+1262
+
+24327
+
+  4
+
+points
+
+Style
+and
+Weight
+
+Code Page
+
+Roman
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+Roman
+
+RM
+
+T1D0BASE
+
+CnD0RT10
+
+XnRT10
+
+2023
+
+41
+
+  10
+
+pitch
+
+AFP Typeface Name
+
+Style
+and
+Weight
+
+Code Page
+
+Script
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+Script
+
+RM
+
+T1D0BASE
+
+CnS0SR12
+
+XnSR12
+
+2025
+
+84
+
+  12
+
+pitch
+
+AFP Typeface Name
+
+Serif
+(Bold)
+
+Serif (Italic)
+
+Serif (Overstruck)
+
+Serif
+
+AFP Typeface Name
+
+Symbols
+
+Symbols
+
+Symbols OS6
+
+Symbols7
+
+Style
+and
+Weight
+
+Code Page
+
+Serif
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+RB
+
+IM
+IM
+
+RM
+
+RM
+RM
+RM
+
+Style
+and
+Weight
+
+RM
+
+RM
+
+RM
+
+RM
+RM
+
+T1D0BASE
+
+CnD0SB12
+
+XnSB12
+
+2023
+
+72
+
+  12
+
+pitch
+
+T1D0BASE
+T1D0BASE
+
+CnD0SI10
+CnD0SI12
+
+XnSI10
+XnSI12
+
+T1D0BASE
+
+CnD0SO12
+
+XnSO12
+
+T1D0BASE
+T1D0BASE
+T1D0BASE
+
+CnD0ST10
+CnD0ST12
+CnD0ST15
+
+XnST10
+XnST12
+XnST15
+
+Symbols
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+Code Page
+
+T1S0S198
+
+CnS0S198
+
+XnS198
+
+T1S0S193
+
+CnS0S193
+
+XnS193
+
+T1S0S192
+
+CnS0S192
+
+XnS192
+
+T1000259
+T1000259
+
+CnS0SYM0
+CnS0SYM2
+
+XnSYM0
+XnSYM2
+
+2023
+
+2023
+
+2023
+
+43
+71
+
+332
+
+42
+70
+229
+
+  10
+  12
+
+  12
+
+  10
+  12
+  15
+
+pitch
+pitch
+
+pitch
+
+pitch
+pitch
+pitch
+
+GCSGID
+
+FGID
+
+2024
+
+2030
+
+2026
+
+340
+
+30
+
+80
+
+80
+
+49975
+49975
+
+Size in Pitch
+or Points
+
+  10
+
+  12
+
+  12
+
+  10
+  12
+
+pitch
+
+pitch
+
+pitch
+
+pitch
+pitch
+
+Font Summary Tables 51
+
+<<<PAGE 68>>>
+Compatibility Fonts
+
+Table 13 (Page 6 of 6). Compatibility Fonts
+
+Text
+
+Character
+Set
+Identifier
+
+Coded
+Font
+Identifier
+
+Code Page
+
+GCSGID
+
+FGID
+
+Size in Pitch
+or Points
+
+T1L038TE
+
+CnL00T11
+
+XnT11
+
+T1L038TE
+
+CnL0TU10
+
+XnTU10
+
+2033
+
+2033
+
+333
+
+334
+
+  10
+
+  10
+
+pitch
+
+pitch
+
+Style
+and
+Weight
+
+RM
+
+RM
+
+AFP Typeface Name
+
+Text
+
+Text
+(Underscored)
+
+52 Font Summary for AFP Font Collection
+
+<<<PAGE 69>>>
+DBCS Core Fonts
+
+DBCS Core Fonts
+
+This section describes the DBCS Core Fonts available for use with IBM Print
+Services Facility (PSF) licensed programs. These fonts contain various typefaces
+suitable for printing a variety of Chinese, Japanese, and Korean documents. They
+are provided with the Outline Fonts and Programs feature as PostScript CID-keyed
+fonts and with the DBCS Fonts feature as AFP fonts. These CID-keyed fonts can
+be used with example jobs provided with Type Transformer to create the fonts
+listed in Table 16 on page 55. The fonts can then be stored to the MVS, OS/390,
+VM, and VSE operating systems using Store Utilities that are also provided in the
+Outline Fonts and Programs feature. The CID-keyed fonts can be used directly by
+the AIX and Windows environments. Type Transformer, the CID fonts, and Store
+Utilities are all part of the Type Transformer and Utilities for Windows feature of
+IBM AFP Font Collection for AIX, OS/2, OS/400, and Windows (product number
+5648-B45). AFP Fonts are all part of the DBCS Fonts feature of IBM AFP Font
+Collection for AIX, Windows, and OS/400 (product number 5648-B45) or IBM AFP
+Font Collection for MVS, OS/390, VSE, and VM (product number 5648-B33).
+
+DBCS Core Fonts are provided in the following formats:
+
+Table 14. Format and Operating Systems for DBCS Core Fonts
+
+Format
+
+Operating Systems
+
+240-pel bounded-box fonts
+
+AFP outline fonts
+
+MVS, OS/390, VSE, OS/400, AIX,
+Windows
+
+MVS, OS/390, VSE, OS/400, AIX,
+Windows
+
+CID-Keyed fonts
+
+AIX, Windows
+
+Table 15 on page 54 shows the values to be used in Table 16 on page 55.
+Substitute the value for pd shown in Table 15 on page 54 for the lowercase “pd”
+(point deci–point) used in the Coded Font and Character Set names in Table 16 on
+page 55. The point sizes available for that font are identified under the Size
+Group column.
+
+|
+|
+
+|
+|
+|
+|
+|
+|
+
+|
+|
+
+|
+|
+
+|
+
+Font Summary Tables 53
+
+<<<PAGE 70>>>
+DBCS Core Fonts
+
+Table 15. DBCS Core Font Point sizes and Box sizes
+
+pd
+
+Point size/Box size
+
+Size
+Group 1
+
+Size
+Group 2
+
+Size
+Group 3
+
+48
+
+60
+
+72
+
+84
+
+96
+
+08
+
+B0
+
+C8
+
+E6
+
+H0
+
+J4
+
+N0
+
+T0
+
+Z0
+
+4.8 point size/box size of 16
+
+6.0 point size/box size of 20
+
+7.2 point size/box size of 24
+
+8.4 point size/box size of 28
+
+9.6 point size/box size of 32
+
+10.8 point size/box size of 36
+
+12.0 point size/box size of 40
+
+13.8 point size/box size of 46
+
+15.6 point size/box size of 52
+
+18.0 point size/box size of 60
+
+20.4 point size/box size of 68
+
+24.0 point size/box size of 80
+
+30.0 point size/box size of 100
+
+36.0 point size/box size of 120
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+X
+
+54 Font Summary for AFP Font Collection
+
+<<<PAGE 71>>>
+Table 16 (Page 1 of 4). DBCS Core Fonts
+
+AFP/CID Typeface
+Name
+
+CID File
+Name
+
+Weight
+
+Width
+
+Coded
+Font
+
+Character Set
+
+Code Page
+
+GCSCID
+
+FGID
+
+Size Group
+
+Heisei Kaku Gothic
+
+IBJHKGW5
+
+Medium
+
+Heisei Maru Gothic
+
+IBJHMGW4
+
+Semi-
+Light
+
+Heisei Mincho
+
+IBJHMNW3
+
+Light
+
+Japenese Heisei Kaku Gothic
+
+X0EFpd
+X0EDpd
+X0EJpd
+X0EOpd
+X0EVpd
+X0EWpd
+X0EYpd
+XZEFpd
+XZEDpd
+XZEJpd
+XZEOpd
+XZEVpd
+
+C0EFpdss
+C0H0EDpd
+C0H0EJpd
+C0H0EOpd
+C0H0EVpd
+C0H0EWpd
+C0H0EYpd
+CZJHKG
+CZJHKG
+CZJHKG
+CZJHKG
+CZJHKG
+
+T10300ss
+T1H01002
+T1H01041
+T1H00290
+T1H01027
+T1H01031
+T1H01030
+T10300
+T1H01002
+T1H01041
+T1H00290
+T1H01027
+
+Japanese Heisei Maru Gothic
+
+X0PFpd
+X0PDpd
+X0PJpd
+X0POpd
+X0PVpd
+X0PWpd
+X0PYpd
+XZPFpd
+XZPDpd
+XZPJpd
+XZPOpd
+XZPVpd
+
+X0KFpd
+X0KDpd
+X0KJpd
+X0KOpd
+X0KVpd
+X0KWpd
+X0KYpd
+XZKFpd
+XZKDpd
+XZKJpd
+XZKOpd
+XZKVpd
+
+C0PFpdss
+C0H0PDpd
+C0H0PJpd
+C0H0POpd
+C0H0PVpd
+C0H0PWpd
+C0H0PYpd
+CZJHMG
+CZJHMG
+CZJHMG
+CZJHMG
+CZJHMG
+
+T10300ss
+T1H01002
+T1H01041
+T1H00290
+T1H01027
+T1H01031
+T1H01030
+T10300
+T1H01002
+T1H01041
+T1H00290
+T1H01027
+
+Japanese Heisei Mincho
+
+C0KFpdss
+C0H0KDpd
+C0H0KJpd
+C0H0KOpd
+C0H0KVpd
+C0H0KWpd
+C0H0KYpd
+CZJHMN
+CZJHMN
+CZJHMN
+CZJHMN
+CZJHMN
+
+T10300ss
+T1H01002
+T1H01041
+T1H00290
+T1H01027
+T1H01031
+T1H01030
+T1H0300
+T1H01002
+T1H01041
+T1H00290
+T1H01027
+
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+Full
+Half
+Half
+Half
+Half
+
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+Full
+Half
+Half
+Half
+Half
+
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+Full
+Half
+Half
+Half
+Half
+
+2057
+1132
+1187
+1398
+1398
+1363
+1363
+2057
+1132
+1187
+1398
+1398
+
+2057
+1132
+1187
+1398
+1398
+1363
+1363
+2057
+1132
+1187
+1398
+1398
+
+2057
+1132
+1187
+1398
+1398
+1363
+1363
+2057
+1132
+1187
+1398
+1398
+
+53249
+
+53250
+
+53248
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+|
+
+|
+|
+
+|
+
+|
+|
+
+|
+
+|
+|
+
+|
+
+|
+|
+
+|
+
+|
+|
+
+|
+
+|
+|
+
+F
+o
+n
+
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+T
+a
+b
+e
+s
+
+l
+
+5
+5
+
+D
+B
+C
+S
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 72>>>
+D
+B
+C
+S
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+Character Set
+
+Code Page
+
+GCSCID
+
+FGID
+
+Size Group
+
+5
+6
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+Table 16 (Page 2 of 4). DBCS Core Fonts
+
+AFP/CID Typeface
+Name
+
+CID File
+Name
+
+Weight
+
+Width
+
+Gothic
+
+IBHKG2W5
+
+Medium
+
+Myengjo
+
+IBHSM2W5
+
+Medium
+
+Fang Song
+
+IBSFSGW4
+
+Semi-
+Light
+
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Full
+Full
+Half
+Half
+Half
+Half
+
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Full
+Full
+Half
+Half
+Half
+Half
+
+Full
+Half
+Half
+Half
+Full
+Half
+Half
+
+Coded
+Font
+
+X0GKpd
+X0GHpd
+X0GEpd
+X0GJpd
+X0GUpd
+X0GNpd
+X0GWpd
+XZGKpd
+XZGHpd
+XZGEpd
+XZGJpd
+XZGUpd
+XZGNpd
+
+X0MKpd
+X0MHpd
+X0MEpd
+X0MJpd
+X0MUpd
+X0MNpd
+X0MWpd
+XZMKpd
+XZMHpd
+XZMEpd
+XZMJpd
+XZMUpd
+XZMNpd
+
+Korean Gothic
+
+C0GKpdss
+C0GHpdss
+C0H0GEpd
+C0H0GJpd
+C0H0GUpd
+C0H0GNpd
+C0H0GWpd
+CZKKG2
+CZHKG2
+CZHKG2
+CZHKG2
+CZKKG2
+CZKKG2
+
+Korean Myengjo
+
+C0MKpdss
+C0MHpdss
+C0H0MEpd
+C0H0MJpd
+C0H0MUpd
+C0H0MNpd
+C0H0MWpd
+CZKSM2
+CZHSM2
+CZHSM2
+CZHSM2
+CZKSM2
+CZKSM2
+
+T10834ss
+T1K834ss
+T1H00833
+T1H01088
+T1H00833
+T1H01088
+T1H01150
+T10834
+T1K834
+T1H00833
+T1H01088
+T1H00833
+T1H01088
+
+T10834ss
+T1K834ss
+T1H00833
+T1H01088
+T1H00833
+T1H01088
+T1H01150
+T1H0834
+T1K0834
+T1H00833
+T1H01088
+T1H00833
+T1H01088
+
+Simplified Chinese – GB Fang Song
+
+X0FPpd
+X0FEpd
+X0FJpd
+X0FWpd
+X0FPpd
+X0FEpd
+X0FJpd
+
+C0FPpdss
+C0H0FEpd
+C0H0FJpd
+C0H0FWpd
+CZSFSG
+CZSFSG
+CZSFSG
+
+T10837ss
+T1H00836
+T1H01115
+T1H01151
+T10837
+T1H00836
+T1H01115
+
+1010
+1094
+1173
+1267
+1173
+1267
+1365
+1010
+1094
+1173
+1267
+1173
+1267
+
+1010
+1094
+1173
+1267
+1173
+1267
+1365
+1010
+1094
+1173
+1267
+1173
+1267
+
+1020
+1174
+1240
+1366
+1020
+1174
+1240
+
+53816
+
+53560
+
+54566
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+
+<<<PAGE 73>>>
+Table 16 (Page 3 of 4). DBCS Core Fonts
+
+AFP/CID Typeface
+Name
+
+CID File
+Name
+
+Weight
+
+Width
+
+Coded
+Font
+
+Character Set
+
+Code Page
+
+GCSCID
+
+FGID
+
+Size Group
+
+Hei
+
+IBSHEIW6
+
+Semi-
+Bold
+
+Kai
+
+IBSKAIW5
+
+Medium
+
+Song
+
+IKSSNGW5
+
+Medium
+
+Simplified Chinese – GB Hei
+
+X0HPpd
+X0HEpd
+X0HJpd
+X0HWpd
+XZHPpd
+XZHEpd
+XZHJpd
+
+C0HPpdss
+C0H0HEpd
+C0H0HJpd
+C0H0HWpd
+CZSHEI
+CZSHEI
+CZSHEI
+
+T10837ss
+T1H00836
+T1H01115
+T1H01151
+T10837
+T1H00836
+T1H01115
+
+Simplified Chinese – GB Kai
+
+X0JPpd
+X0JEpd
+X0JJpd
+X0JWpd
+XZJPpd
+XZJEpd
+XZJJpd
+
+C0JPpdss
+C0H0JEpd
+C0H0JJpd
+C0H0JWpd
+CZSKAI
+CZSKAI
+CZSKAI
+
+T10837ss
+T1H00836
+T1H01115
+T1H01151
+T10837
+T1H00836
+T1H01115
+
+Simplified Chinese – GBK Song
+
+X0SPpd
+X0SSpd
+X0SEpd
+X0SJpd
+X0SUpd
+X0SNpd
+X0SQpd
+X0SWpd
+XZSPpd
+XZSSpd
+XZSEpd
+XZSJpd
+XZSQpd
+XZSUpd
+XZSNpd
+
+C0SPpdss
+C0SSpdss
+C0H0SEpd
+C0H0SJpd
+C0H0SUpd
+C0H0SNpd
+C0H0SQpd
+C0H0SWpd
+CZPSNG
+CZSSNG
+CZSSNG
+CZSSNG
+CZSSNG
+CZPSNG
+CZPSNG
+
+T10837ss
+T1K837ss
+T1H00836
+T1H01115
+T1H00836
+T1H01115
+T1HK1114
+T1H01151
+T10837
+T1K837
+T1H00836
+T1H01115
+T1HK1114
+T1H00836
+T1H01115
+
+Full
+Half
+Half
+Half
+Full
+Half
+Half
+
+Full
+Half
+Half
+Half
+Full
+Half
+Half
+
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+
+1020
+1174
+1240
+1366
+1020
+1174
+1240
+
+1020
+1174
+1240
+1366
+1020
+1174
+1240
+
+1020
+1085
+1174
+1240
+1174
+1240
+1238
+1366
+1020
+1085
+1174
+1240
+1238
+1174
+1240
+
+54565
+
+54568
+
+54567
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+F
+o
+n
+
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+T
+a
+b
+e
+s
+
+l
+
+5
+7
+
+D
+B
+C
+S
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 74>>>
+Character Set
+
+Code Page
+
+GCSCID
+
+FGID
+
+Size Group
+
+5
+8
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+|
+
+|
+|
+|
+|
+|
+|
+|
+
+|
+
+|
+|
+|
+|
+|
+|
+|
+
+|
+
+|
+|
+|
+|
+|
+|
+|
+
+|
+
+|
+|
+|
+|
+|
+|
+|
+
+Table 16 (Page 4 of 4). DBCS Core Fonts
+
+AFP/CID Typeface
+Name
+
+CID File
+Name
+
+Weight
+
+Width
+
+Kai
+
+IBTKAIW5
+
+Medium
+
+Sung
+
+IBTSNGW3
+
+Light
+
+Full
+Half
+Half
+Half
+Half
+Half
+Full
+Half
+Half
+Half
+Half
+
+Full
+Half
+Half
+Half
+Half
+Half
+Full
+Half
+Half
+Half
+Half
+
+Coded
+Font
+
+X0LTpd
+X0LEpd
+X0LJpd
+X0LQpd
+X0LVpd
+X0LWpd
+XZLTpd
+XZLEpd
+XZLJpd
+XZLQpd
+XZLVpd
+
+Traditional Chinese Kai
+
+C0LTpdss
+C0H0LEpd
+C0H0LJpd
+C0H0LQpd
+C0H0LVpd
+C0H0LWpd
+CZTKAI
+CZTKAI
+CZTKAI
+CZTKAI
+CZTKAI
+
+T10835ss
+T1H00037
+T1H01043
+T1H01114
+T1H01159
+T1H01152
+T10835
+T1H00037
+T1H01043
+T1H01114
+T1H01159
+
+Traditional Chinese Sung
+
+X0TTpd
+X0TEpd
+X0TJpd
+X0TQpd
+X0TVpd
+X0TWpd
+XZTTpd
+XZTEpd
+XZTJpd
+XZTQpd
+XZTVpd
+
+C0TTpdss
+C0H0TEpd
+C0H0TJpd
+C0H0TQpd
+C0H0TVpd
+C0H0TWpd
+CZTSNG
+CZTSNG
+CZTSNG
+CZTSNG
+CZTSNG
+
+T10835
+T1H00037
+T1H01043
+T1H01114
+T1H01159
+T1H01152
+T10835
+T1H00037
+T1H01043
+T1H01114
+T1H01159
+
+2074
+1175
+1189
+1500
+1399
+1367
+2074
+1175
+1189
+1500
+1399
+
+2074
+1175
+1189
+1500
+1399
+1367
+2074
+1175
+1189
+1500
+1399
+
+54568
+
+54563
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 2
+Size Group 3
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+Size Group 1
+
+D
+B
+C
+S
+C
+o
+r
+e
+
+F
+o
+n
+t
+s
+
+<<<PAGE 75>>>
+DBCS Simulation Fonts
+
+DBCS Simulation Fonts
+
+This section describes the DBCS Simulation Fonts available for use with IBM Print
+Services Facilty (PSF) licensed programs. The DBCS Simulation Fonts are
+provided in AFP Outline Font format that simulates the following raster font
+products:
+
+  „ Japanese
+
+AFP Japanese Font V2 (5771-AGB)
+AFP Japanese Heisei Font (5648-104)
+
+  „ Korean
+
+AFP Korean Font (5771-AFW)
+
+  „ Simplified Chinese
+
+AFP Simplified Chinese Font (5771-AEK)
+
+  „ Traditional Chinese
+
+AFP Traditional Chinese Font (5771-AFZ)
+
+|
+|
+
+|
+
+DBCS Simulation Fonts are provided in the following formats:
+
+Table 17. Format and Operating Systems for DBCS Simulation Fonts
+
+Format
+
+AFP outline fonts
+
+Operating Systems
+
+MVS, OS/390, VSE, OS/400, AIX,
+Windows
+
+CID-Keyed fonts
+
+AIX, Windows
+
+See Table 18 on page 60 for the summary of the DBCS simulation fonts.
+
+Font Summary Tables 59
+
+<<<PAGE 76>>>
+6
+0
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+|
+|
+|
+|
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+|
+|
+|
+
+Table 18 (Page 1 of 3). DBCS Simulation Fonts
+
+CID File
+Name
+
+Weight
+
+Width
+
+Coded
+Font
+
+Character
+Set
+
+Code
+Page
+
+GCSGID
+
+FGID
+
+Box Size 240 pel (HxV)
+
+IBJHKGW5
+
+Medium
+
+IBJHKGW5
+
+Medium
+
+IBJHMGW4
+
+Semi-
+light
+
+Full
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+
+Full
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+
+XZGbxB
+XZGbxF
+XZGbxX
+XZHbxD
+XZHbxJ
+XZHbxN
+XZHbxO
+XZHbxU
+XZHbxV
+
+XZEbxB
+XZEbxF
+XZFbxD
+XZFbxJ
+XZFbxN
+XZFbxO
+XZFbxU
+XZFbxV
+
+XZRbxB
+XZRbxF
+XZRbxX
+XZSbxD
+XZSbxJ
+XZSbxN
+XZSbxO
+XZSbxU
+XZSbxV
+
+Japanese Gothic simulated by Heisei Kaku Gothic
+
+CZJJKG
+
+T10300
+T10300
+T10300
+T1H01002
+T1H01041
+T1HK0290
+T1H00290
+T1HK0037
+T1H10027
+
+541
+2057
+572
+1132
+1187
+332
+1398
+101
+1398
+
+53249
+
+16x16 20x24 24x30 32x32 36x36 40x40 48x48 64x64
+16x16 20x24 24x30 32x32 36x36 40x40 48x48 64x64
+48x48 64x64
+12x30 16x32 18x36 20x40 24x48 32x64
+12x30 16x32 18x36 20x40 24x48 32x64
+12x30 16x32 18x36 20x40 24x48 32x64
+12x30 16x32 18x36 20x40 24x48 32x64
+12x30 16x32 18x36 20x40 24x48 32x64
+12x30 16x32 18x36 20x40 24x48 32x64
+
+Japanese Heisei Kaku Gothic simulated by Heisei Kaku Gothic
+
+CZJHKG
+
+T10300
+T10300
+T1H01002
+T1H01041
+T1HK0290
+T1H00290
+T1HK0037
+T1H01027
+
+541
+2057
+1132
+1187
+332
+1398
+101
+1398
+
+53249
+
+24x24 26x26 32x32 36x36 40x40 44x44 48x48 52x52 64x64
+24x24 26x26 32x32 36x36 40x40 44x44 48x48 52x52 64x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+
+Japanese Round Gothic simulated by Heisei Maru Gothic
+
+CZJJMG
+
+T10300
+T10300
+T10300
+T1H01002
+T1H01041
+T1HK0290
+T1H00290
+T1HK0037
+T1H01027
+
+541
+2057
+572
+1132
+1187
+332
+1398
+101
+1398
+
+53250
+
+36x36 40x40 48x48 64x64
+36x36 40x40 48x48 64x64
+48x48 64x64
+18x36 20x40 24x48 32x64
+18x36 20x40 24x48 32x64
+18x36 20x40 24x48 32x64
+18x36 20x40 24x48 32x64
+18x36 20x40 24x48 32x64
+18x36 20x40 24x48 32x64
+
+i
+
+D
+B
+C
+S
+S
+m
+u
+l
+a
+t
+i
+o
+n
+
+F
+o
+n
+t
+s
+
+<<<PAGE 77>>>
+Table 18 (Page 2 of 3). DBCS Simulation Fonts
+
+CID File
+Name
+
+Weight
+
+Width
+
+Coded
+Font
+
+Character
+Set
+
+Code
+Page
+
+GCSGID
+
+FGID
+
+Box Size 240 pel (HxV)
+
+Japanese Mincho simulated by Heisei Mincho
+
+IBJHMNW3
+
+Light
+
+IBJHMNW3
+
+Light
+
+IBHKG2W5
+
+Medium
+
+IBHSM2W5
+
+Medium
+
+Full
+Full
+Full
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+Half
+Half
+Half
+Half
+Half
+Half
+
+Full
+Full
+Half
+Half
+Half
+Half
+Half
+Half
+
+Full
+Full
+Half
+
+Full
+Full
+Half
+
+XZMbxB
+XZMbxF
+XZMbxX
+XZZbxB
+XZZbxF
+XZNbxD
+XZNbxJ
+XZNbxN
+XZNbxO
+XZNbxU
+XZNbxV
+XZYbxD
+XZYbxJ
+XZYbxN
+XZYbxO
+XZYbxU
+XZYbxV
+
+XZKbxB
+XZKbxF
+XZLbxD
+XZLbxJ
+XZLbxN
+XZLbxO
+XZLbxU
+XZLbxV
+
+XZGbxK
+XZGbxL
+XZHbxK
+
+XZMbxK
+XZMbxL
+XZNbxK
+
+CZJJMN
+
+T10300
+T10300
+T10300
+T10300
+T10300
+T1H01002
+T1H01041
+T1HK0290
+T1H00290
+T1H00037
+T1H01027
+T1H01002
+T1H01041
+T1HK0290
+T1H00290
+T1H00037
+T1H01027
+
+541
+2057
+572
+541
+2057
+1132
+1187
+332
+1398
+101
+1398
+1132
+1187
+332
+1398
+101
+1398
+
+53248
+
+16x16 24x24 26x26 32x32 36x36 40x40 44x44 48x48 52x52 64x64
+16x16 24x24 26x26 32x32 36x36 40x40 44x44 48x48 52x52 64x64
+48x48 64x64
+24x24
+24x24
+12x24 13x26 16x32 18x36 20x40 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 24x48 26x52 32x64
+12x24
+12x24
+12x24
+12x24
+12x24
+12x24
+
+Japanese Heisei Mincho simulated by Heisei Mincho
+
+CZJHMN
+
+T10300
+T10300
+T1H01002
+T1H01041
+T1H00290
+T1H00290
+T1H00037
+T1H01027
+
+541
+2057
+1132
+1187
+332
+1398
+101
+1398
+
+53248
+
+16x16 24x24 26x26 32x32 36x36 40x40 44x44 48x48 52x52 64x64
+16x16 24x24 26x26 32x32 36x36 40x40 44x44 48x48 52x52 64x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+12x24 13x26 16x32 18x36 20x40 22x44 24x48 26x52 32x64
+
+Korean Gothic simulated by Gothic
+
+CZKKG2
+
+T10834
+T10834
+T1H00833
+
+1010
+1012
+1173
+
+53816
+
+16x16 24x30
+16x16 24x30
+8x16 12x30
+
+Korean Mincho simulated by Myengjo
+
+CZKSM2
+
+T10834
+T10834
+T1H00833
+
+1010
+1012
+1173
+
+53560
+
+24x24 32x32 36x36 40x40 48x48 64x64
+24x24 32x32 36x36 40x40 48x48 64x64
+12x30 16x32 18x36 20x40 24x48 32x64
+
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+|
+|
+|
+
+|
+|
+|
+
+|
+|
+|
+
+F
+o
+n
+
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+T
+a
+b
+e
+s
+
+l
+
+6
+1
+
+i
+
+D
+B
+C
+S
+S
+m
+u
+l
+a
+t
+i
+o
+n
+
+F
+o
+n
+t
+s
+
+<<<PAGE 78>>>
+6
+2
+
+F
+o
+n
+t
+
+S
+u
+m
+m
+a
+r
+y
+
+f
+o
+r
+
+A
+F
+P
+F
+o
+n
+t
+
+C
+o
+
+l
+l
+
+e
+c
+t
+i
+o
+n
+
+|
+
+|
+
+|
+
+Table 18 (Page 3 of 3). DBCS Simulation Fonts
+
+CID File
+Name
+
+Weight
+
+Width
+
+Coded
+Font
+
+Character
+Set
+
+Code
+Page
+
+GCSGID
+
+FGID
+
+Box Size 240 pel (HxV)
+
+IBSHEIW6
+
+Semi-
+bold
+
+Full
+
+XZGbxP
+
+CZSHEI
+
+T10837
+
+54565
+
+1020
+
+16x16
+
+Simplified Chinese Gothic simulated by Hei
+
+Simplified Chinese Song simulated by Song
+
+IKSSNGW5
+
+Medium
+
+Full
+
+XZSbxP
+
+CZPSNG
+
+T10837
+
+1020
+
+54567
+
+26x26 32x32 40x40
+
+IBTSNGW3
+
+Light
+
+Full
+
+XZGbxT
+
+CZTSNG
+
+T10835
+
+2074
+
+54563
+
+16x16
+
+Traditional Chinese Gothic simulated by Sung
+
+IBTSNGW3
+
+Light
+
+Full
+
+XZMbxT
+
+CZTSNG
+
+T10835
+
+2074
+
+54563
+
+24x24 32x32 40x40
+
+Traditional Chinese Ming simulated by Sung
+
+i
+
+D
+B
+C
+S
+S
+m
+u
+l
+a
+t
+i
+o
+n
+
+F
+o
+n
+t
+s
+
+<<<PAGE 79>>>
+Code Pages
+
+ Code Pages
+
+The following table lists, in code page ID sequence, all the code pages defined in
+this chapter with a reference to the page where additional information is located.
+ss in a double-byte code page name is the section number (blanks for code pages
+used with outline coded fonts).
+
+Code Page ID
+
+Located On
+
+Description
+
+T1000259
+
+T1000290
+
+T1000293
+
+T10300ss
+
+T1000310
+
+T1000361
+
+T1000363
+
+T1000382
+
+T1000383
+
+T1000384
+
+T1000385
+
+T1000386
+
+T1000387
+
+T1000388
+
+T1000389
+
+T1000390
+
+T1000391
+
+T1000392
+
+T1000393
+
+T1000394
+
+T1000395
+
+T1000420
+
+T1000423
+
+T1000424
+
+T1000437
+
+T1000803
+
+T1000813
+
+T1000819
+
+T1000829
+
+T10834ss
+
+T1K834ss
+
+T10835ss
+
+T1000836
+
+T10837ss
+
+T1K837ss
+
+T1000838
+
+T1000850
+
+T1000851
+
+T1000852
+
+T1000853
+T1000855
+
+T1000856
+
+T1000857
+
+T1000858
+
+T1000860
+T1000861
+
+Page 80 
+
+Page 72 
+
+Page 68 
+
+Page 69 
+
+Page 68 
+
+Page 76 
+
+Page 80 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 68 
+
+Page 70 
+
+Page 72 
+
+Page 77 
+
+Page 72 
+
+Page 70 
+
+Page 77 
+
+Page 80 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 78 
+
+Page 69 
+
+Page 69 
+
+Page 81 
+
+Page 77 
+
+Page 70 
+
+Page 78 
+
+Page 78 
+Page 70 
+
+Page 72 
+
+Page 78 
+
+Page 74 
+
+Page 77 
+Page 77 
+
+Symbols, Set 7
+
+Gothic Katakana, Katakana 10, Katakana 12
+
+APL (USA)
+
+Japanese DBCS—Host
+
+APL Graphic Escape
+
+Publishing: International #5
+
+Symbols, Set 8
+
+Publishing: Austria, Germany, Switzerland
+
+Publishing: Belgium
+
+Publishing: Brazil
+
+Publishing: Canada (French)
+
+Publishing: Denmark, Norway
+
+Publishing: Finland, Sweden
+
+Publishing: France, Switzerland
+
+Publishing: Italy, Switzerland
+
+Publishing: Japan (Latin)
+
+Publishing: Portugal
+
+Publishing: Spain, Philippines
+
+Publishing: Latin America (Spanish)
+
+Publishing: United Kingdom, Australia, Hong Kong, Ireland, New Zealand
+
+Publishing: United States, Canada (English)
+
+Arabic Bilingual
+
+Greece 183
+
+Hebrew
+
+Personal Computer: ASCII
+
+Hebrew Character Set A
+
+ISO/ANSI 8-Bit Greek
+
+ISO/ANSI 8-Bit Latin1
+
+Math Symbols
+
+Korean DBCS—Host
+
+Korean DBCS—Host (Full Hangul)
+
+Traditional Chinese DBCS—Host
+
+People's Republic of China
+
+Simplified Chinese DBCS—Host
+
+Simplified Chinese DBCS—Host (GBK)
+
+Thailand
+
+Personal Computer: Multilingual
+
+Personal Computer: Greece
+
+Personal Computer: Latin2
+
+Personal Computer: Latin3
+Personal Computer: Cyrillic
+
+Personal Computer: Hebrew
+
+Personal Computer: Latin5
+
+PC – Multilingual with euro
+
+Personal Computer: Portugal
+Personal Computer: Iceland
+
+ Copyright IBM Corp. 1998, 2000 
+
+63
+
+<<<PAGE 80>>>
+Code Pages
+
+Code Page ID
+
+Located On
+
+Description
+
+T1000862
+
+T1000863
+
+T1000864
+
+T1000865
+
+T1000866
+
+T1000867
+
+T1000869
+
+T1000870
+
+T1000874
+
+T1000875
+
+T1000876
+
+T1000877
+
+T1000880
+
+T1000889
+
+T1000892
+
+T1000893
+
+T1000897
+
+T1000899
+
+T1000903
+
+T1000904
+
+T1000905
+
+T1000910
+
+T1000912
+
+T1000913
+
+T1000914
+
+T1000915
+
+T1000916
+
+T1000920
+
+T1000923
+
+T1000924
+
+T1001002
+
+T1001003
+
+T1001004
+
+T1001008
+
+T1001025
+
+T1001026
+
+T1001027
+T1001028
+T1001029
+
+T1001038
+
+T1001039
+
+T1001041
+
+T1001042
+
+T1001043
+
+T1001046
+
+T1001068
+
+T1001069
+
+T1001087
+
+T1001091
+T1001092
+
+T1001093
+
+T1001110
+
+T1001111
+T1001112
+
+Page 72 
+
+Page 77 
+
+Page 68 
+
+Page 77 
+
+Page 70 
+
+Page 72 
+
+Page 70 
+
+Page 78 
+
+Page 81 
+
+Page 70 
+
+Page 80 
+
+Page 80 
+
+Page 70 
+
+Page 81 
+
+Page 80 
+
+Page 80 
+
+Page 72 
+
+Page 80 
+
+Page 78 
+
+Page 78 
+
+Page 78 
+
+Page 68 
+
+Page 78 
+
+Page 78 
+
+Page 78 
+
+Page 70 
+
+Page 72 
+
+Page 78 
+
+Page 74 
+
+Page 74 
+
+Page 71 
+
+Page 71 
+
+Page 71 
+
+Page 68 
+
+Page 70 
+
+Page 78 
+
+Page 72 
+Page 72 
+Page 68 
+
+Page 80 
+
+Page 71 
+
+Page 72 
+
+Page 78 
+
+Page 78 
+
+Page 68 
+
+Page 71 
+
+Page 78 
+
+Page 80 
+
+Page 80 
+Page 80 
+
+Page 80 
+
+Page 78 
+
+Page 78 
+Page 79 
+
+Personal Computer: Hebrew (ASCII)
+
+Personal Computer: France, Canada (French)
+
+Personal Computer: Arabic
+
+Personal Computer: Nordic—Denmark, Norway
+
+Personal Computer: Cyrillic #2
+
+Israel – Personal Computer
+
+Personal Computer: Greece
+
+Personal Computer: Latin2 Multilingual
+
+Personal Computer: Thailand
+
+Greece
+
+OCR-A ASCII
+
+OCR-B ASCII
+
+Cyrillic Multilingual
+
+Thailand
+
+OCR-A
+
+OCR-B
+
+Katakana PC
+
+ASCII Symbol Set 7
+
+People's Republic of China (Latin)
+
+Republic of China (Latin)
+
+Latin3 Multilingual
+
+APL ASCII
+
+Latin2 ISO/ANSI 8-Bit
+
+Latin3 ISO/ASCII
+
+Latin4 ISO/ANSI
+
+Cyrillic ISO/ANSI 8-Bit
+
+Hebrew ISO/ANSI 8-Bit
+
+Latin5 ISO/ANSI 8-Bit
+
+Latin9
+
+Latin9 EBCDIC
+
+DCF
+
+United States Text Subset
+
+Personal Computer: Desktop Publishing
+
+Arabic ISO/ASCII 8-Bit
+
+Cyrillic Multilingual
+
+Latin5
+
+Katakana
+Hebrew Publishing
+Arabic ISO/ASCII 8-Bit
+
+ASCII Symbols Abode
+
+GML List Symbols
+
+Katakana PC
+
+Simplified Chinese Extended
+
+Traditional Chinese Extended
+
+Arabic Extended ISO/ASCII 8-Bit
+
+Text with numeric spacing
+
+Latin4
+
+Symbols Abode
+
+Symbols, Set 7 Modified
+ASCII Symbols, Set 7 Modified
+
+IBM Logo
+
+Latin2 Multilingual
+
+Latin3 Multilingual
+Baltic – Multilingual EBCDIC
+
+64 Font Summary for AFP Font Collection
+
+<<<PAGE 81>>>
+Code Page ID
+
+Located On
+
+Description
+
+Code Pages
+
+T1001122
+
+T1001123
+
+T1001124
+
+T1001132
+
+T1001133
+
+T1001139
+
+T1001140
+
+T1001141
+
+T1001142
+
+T1001143
+
+T1001144
+
+T1001145
+
+T1001146
+
+T1001147
+
+T1001148
+
+T1001149
+
+T1001252
+
+T1B00037
+
+T1B00273
+
+T1B00274
+
+T1B00275
+
+T1B00277
+
+T1B00278
+
+T1B00280
+
+T1V00281
+
+T1B00282
+
+T1B00284
+
+T1B00285
+
+T1B00297
+
+T1B00382
+
+T1B00383
+
+T1B00384
+
+T1B00385
+
+T1B00386
+
+T1B00387
+
+T1B00388
+
+T1B00389
+T1B00390
+T1B00391
+
+T1B00392
+
+T1B00393
+
+T1B00394
+
+T1B00395
+
+T1B00500
+
+T1B00871
+
+T1B00BGS
+
+T1DABASE
+
+T1DBBASE
+
+T1DDBASE
+T1DEBASE
+
+T1DFBASE
+
+T1DIBASE
+
+T1DNBASE
+T1DSBASE
+
+Page 79 
+
+Page 70 
+
+Page 70 
+
+Page 79 
+
+Page 79 
+
+Page 72 
+
+Page 74 
+
+Page 74 
+
+Page 74 
+
+Page 74 
+
+Page 74 
+
+Page 74 
+
+Page 74 
+
+Page 74 
+
+Page 75 
+
+Page 75 
+
+Page 75 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+Page 76 
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 76 
+
+Page 73 
+
+Page 73 
+
+Page 80 
+
+Page 79 
+
+Page 79 
+
+Page 79 
+Page 79 
+
+Page 79 
+
+Page 79 
+
+Page 79 
+Page 79 
+
+Estonia EBCDIC
+
+Cyrillic, Ukraine EBCDIC
+
+Cyrillic, Ukraine ISO–8
+
+Lao EBCDIC
+
+Lao ISO–8
+
+Japan Alphanumeric Katakana
+
+USA, Canada ECECP
+
+Austria, Germany ECECP
+
+Denmark, Norway ECECP
+
+Finland, Sweden ECECP
+
+Italy ECECP
+
+Spain, Latin America ECECP
+
+UK ECECP
+
+France ECECP
+
+International ECECP
+
+Iceland ECECP
+
+Windows Latin1
+
+BookMaster: United States, Canada
+
+BookMaster: Austria, Germany, Switzerland
+
+BookMaster: Belgium
+
+BookMaster: Brazil
+
+BookMaster: Denmark, Norway
+
+BookMaster: Finland, Sweden
+
+BookMaster: Italy, Switzerland
+
+BookMaster: Japan (Latin)
+
+BookMaster: Portugal
+
+BookMaster: Spain, Latin America
+
+BookMaster: United Kingdom
+
+BookMaster: France
+
+BookMaster: Austria, Germany, Switzerland
+
+BookMaster: Belgium
+
+BookMaster: Brazil
+
+BookMaster: Canada (French)
+
+BookMaster: Denmark, Norway
+
+BookMaster: Finland, Sweden
+
+BookMaster: France, Switzerland
+
+BookMaster: Italy, Switzerland
+BookMaster: Japan (Latin)
+BookMaster: Portugal
+
+BookMaster: Spain, Philippines
+
+BookMaster: Latin America (Spanish)
+
+BookMaster: United Kingdom, Australia, Hong Kong, Ireland, New Zealand
+
+BookMaster: United States, Canada (English)
+
+BookMaster: International #5
+
+BookMaster: Iceland
+
+BookMaster: Specials
+
+Migration: Austria, Germany
+
+Migration: Belgium, Luxemburg, Switzerland
+
+Migration: Denmark, Iceland, Norway
+Migration: Finland, Sweden
+
+Migration: France
+
+Migration: Italy
+
+Migration: Netherlands, Portugal
+Migration: Spain, Latin America
+
+Code Pages 65
+
+<<<PAGE 82>>>
+Code Pages
+
+Code Page ID
+
+Located On
+
+Description
+
+|
+|
+|
+
+|
+|
+|
+
+T1DUBASE
+
+T1D0BASE
+
+T1D0GP12
+
+T1H00037
+
+T1HK0037
+
+T1HK0290
+
+T1H00290
+
+T1H00833
+
+T1H00836
+
+T1H01002
+
+T1H01027
+
+T1H01041
+
+T1H01043
+
+T1H01088
+
+T1H01114
+
+T1HK1114
+
+T1H01115
+
+T1H01030
+
+T1H01031
+
+T1H01150
+
+T1H01151
+
+T1H01152
+
+T1H01159
+
+T1L0DUMP
+
+T1L0FOLD
+
+T1L0OCRB
+
+T1L0OCR1
+
+T1L0OCR2
+
+T1L0OCR3
+
+T1L0PCAN
+
+T1L0PCHN
+
+T1L00A11
+
+T1L00FMT
+
+T1L00KN1
+
+T1L00QNC
+
+T1L000GN
+
+T1L000RN
+T1L000SN
+T1L000XN
+
+T1L038BA
+
+T1L038TE
+
+T1L000YN
+
+T1L02773
+
+T1L02774
+
+T1S0AE10
+
+T1S0S192
+
+T1S0S193
+
+T1S0S198
+
+T1V10037
+T1V10273
+
+T1V10274
+
+T1V10275
+
+T1V10277
+T1V10278
+
+Page 79 
+
+Page 79 
+
+Page 81 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 69 
+
+Page 81 
+
+Page 81 
+
+Page 80 
+
+Page 80 
+
+Page 80 
+
+Page 80 
+
+Page 81 
+
+Page 81 
+
+Page 81 
+
+Page 71 
+
+Page 72 
+
+Page 81 
+
+Page 81 
+
+Page 81 
+Page 81 
+Page 81 
+
+Page 81 
+
+Page 81 
+
+Page 81 
+
+Page 72 
+
+Page 72 
+
+Page 68 
+
+Page 80 
+
+Page 80 
+
+Page 80 
+
+Page 73 
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+Page 73 
+
+Migration: United Kingdom
+
+Migration: DCF
+
+DCF Gothic Tri-Pitch
+
+Traditional Chinese EBCDIC
+
+Japanese (US English)
+
+Japanese (Katakana)
+
+Japanese (Katakana Extended)
+
+Korean EBCDIC
+
+Simplified Chinese EBCDIC
+
+Japanese DCF Release 2 Compatibility
+
+Japanese (Latin) Extended
+
+Japanese PC Extended
+
+Traditional Chinese PC
+
+Korean PC
+
+Traditional Chinese PC, IBM Big 5
+
+Simplified Chinese PC, IBM GBK
+
+Simplified Chinese PB, IBM GB
+
+Japanese Extended Kana with Box
+
+Japanese Extended Latin with Box
+
+Korean EBCDIC with Box
+
+Simplified Chinese EBCDIC with Box
+
+Traditional Chinese EBCDIC with Box
+
+Traditional Chinese EBCDIC with Euro
+
+LCS Dump Character Set
+
+LCS Gothic Folded
+
+LCS Gothic and OCR B
+
+LCS OCR A
+
+LCS Gothic and OCR A
+
+LCS Gothic and OCR A
+
+LCS Gothic
+
+LCS Gothic
+
+LCS Gothic
+
+LCS Format Characters
+
+LCS Gothic, Katakana (KN1)
+
+LCS Gothic
+
+LCS Gothic
+
+LCS Gothic
+LCS Text-1 and Text-2
+LCS Gothic
+
+LCS Gothic
+
+LCS Text-1 and Text-2
+
+LCS Gothic
+
+LCS Gothic, Katakana (2773)
+
+LCS Gothic, Katakana (2774)
+
+APL (AE10)
+
+6670 Symbol Set
+
+6670 Symbol Set
+
+6670 Symbol Set
+
+Country Extended: United States, Canada
+Country Extended: Austria, Germany, Switzerland
+
+Country Extended: Belgium
+
+Country Extended: Brazil
+
+Country Extended: Denmark, Norway
+Country Extended: Finland, Sweden
+
+66 Font Summary for AFP Font Collection
+
+<<<PAGE 83>>>
+Code Pages
+
+Code Page ID
+
+Located On
+
+Description
+
+T1V10280
+
+T1V10281
+
+T1V10282
+
+T1V10284
+
+T1V10285
+
+T1V10290
+
+T1V10297
+
+T1V10500
+
+T1V10871
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Page 72 
+
+Page 73 
+
+Page 73 
+
+Page 73 
+
+Country Extended: Italy, Switzerland
+
+Country Extended: Japan (Latin)
+
+Country Extended: Portugal
+
+Country Extended: Spain, Latin America
+
+Country Extended: United Kingdom
+
+Japan (Katakana)
+
+Country Extended: France
+
+Country Extended: International #5
+
+Country Extended: Iceland
+
+Code Pages 67
+
+<<<PAGE 84>>>
+Arabic Code Pages
+
+The following figures list the IDs (CPGID stands for code page global ID),
+descriptions of available code pages, and identifies which font groups (IBM
+Expanded Core Fonts or IBM Compatibility Fonts) the code page is supported
+within.
+
+In the column headed Supported In, the following legend is used:
+
+ExpCore Expanded Core Fonts
+Comp
+DBCS
+
+Compatibility Fonts IBM Compatibility Fonts)
+DBCS Core Fonts
+
+For additional information about single-byte code pages, including Katakana code
+pages, refer to IBM AFP Fonts: Technical Reference for Code Pages.
+
+For additional information about double-byte code pages, refer to &cjkfc..
+
+APL Code Pages
+
+Table 19. APL Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+293
+
+310
+
+910
+
+T1000293
+
+T1000310
+
+T1000910
+
+2108
+
+T1S0AE10
+
+APL  (USA)
+
+APL Graphic Escape
+
+APL  ASCII
+
+APL (AE10)
+
+APL
+
+APL
+
+APL
+
+APL
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+Comp
+
+Arabic Code Pages
+
+Table 20. Arabic Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+420
+
+864
+
+1008
+
+1029
+
+T1000420
+
+T1000864
+
+T1001008
+
+T1001029
+
+1046
+
+T1001046
+
+Arabic Bilingual
+
+Personal Computer: Arabic
+
+ISO/ASCII 8-Bit: Arabic
+
+ISO/ASCII 8-Bit: Arabic
+Extended
+
+ISO/ASCII 8-Bit: Arabic
+Extended
+
+Arabic
+
+Arabic
+
+Arabic
+
+Arabic
+
+Arabic
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+68 Font Summary for AFP Font Collection
+
+<<<PAGE 85>>>
+DBCS Code Pages
+
+Chinese, Japanese, and Korean Code Pages
+
+Table 21. Chinese, Japanese, and Korean Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+300
+
+834
+
+834
+
+T10300ss
+
+T10834ss
+
+T1K834ss
+
+835
+
+T10835ss
+
+837
+
+T10837ss
+
+837
+
+T1K837ss
+
+37
+
+37
+
+290
+
+290
+
+833
+
+836
+
+T1H00037
+
+T1HK0037
+.
+
+T1H00290
+
+T1HK0290
+
+T1H00833
+
+T1H00836
+
+1002
+
+T1H01002
+
+1027
+
+1041
+
+1043
+
+1088
+
+1114
+
+T1H01027
+
+T1H01041
+
+T1H01043
+
+T1H01088
+
+T1H01114
+
+1114
+
+T1HK1114
+
+1115
+
+1130
+
+T1H01115
+
+T1H01130
+
+1131
+
+T1H01131
+
+1150
+
+1151
+
+T1H01150
+
+T1H01151
+
+1152
+
+T1H01152
+
+1159
+
+T1H01159
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+
+Japanese DBCS—Host
+
+Japanese
+
+Korean DBCS—Host
+
+Korean DBCS—Host (Full
+Hangul)
+
+Korean
+
+Korean
+
+Traditional Chinese
+DBCS—Host
+
+Simplified Chinese
+DBCS—Host
+
+Simplified Chinese
+DBCS—Host GBK
+
+Traditional Chinese
+
+Simplified Chinese
+
+Simplified Chinese
+
+Traditional Chinese EBCDIC
+
+Traditional Chinese
+
+Japanese (US English)
+
+Japanese
+
+Japanese (Katakana) Extended
+
+Japanese
+
+Japanese (Katakana)
+
+Korean EBCDIC
+
+Japanese
+
+Korean
+
+Simplified Chinese EBCDIC
+
+Simplified Chinese
+
+Japanese DCF Release 2
+Compatibility
+
+Japanese (Latin) Extended
+
+Japanese PC Extended
+
+Japanese
+
+Japanese
+
+Japanese
+
+Traditional Chinese PC
+
+Traditional Chinese
+
+Korean PC
+
+Korean
+
+Traditional Chinese PC, IBM
+Big 5
+
+Simplified Chinese PC, IBM
+GBK
+
+Traditional Chinese
+
+Simplified Chinese
+
+Simplified Chinese PB, IBM GB
+
+Simplified Chinese
+
+Japanese Extended Kana with
+Box
+
+Japanese Extended Latin with
+Box
+
+Japanese
+
+Japanese
+
+Korean EBCDIC with Box
+
+Korean
+
+Simplified Chinese EBCDIC
+with Box
+
+Traditional Chinese EBCDIC
+with Box
+
+Traditional Chinese EBCDIC
+with Euro
+
+Simplified Chinese
+
+Traditional Chinese
+
+Traditional Chinese
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+DBCS
+
+Code Pages 69
+
+<<<PAGE 86>>>
+Cyrillic Greek Code Pages
+
+Cyrillic Greek Code Pages
+
+Table 22. Cyrillic Greek Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+423
+
+T1000423
+
+Greece 183 (EBCDIC)
+
+Greek
+
+ExpCore
+
+T1000875 is the preferred
+EBCDIC code page for Greece.
+
+813
+
+T1000813
+
+ISO/ANSI 8-Bit: Greek
+
+Greek
+
+ExpCore
+
+T1000869 is the preferred
+ASCII code page for Greece.
+
+851
+
+T1000851
+
+Personal Computer: Greece
+
+Greek
+
+ExpCore
+
+T1000869 is the preferred
+ASCII code page for Greece.
+
+855
+
+T1000855
+
+Personal Computer: Cyrillic
+
+866
+
+T1000866
+
+Personal Computer: Cyrillic #2
+
+(Microsoft version)
+
+Bulgarian, Byelorussian,
+Macedonian, Russian, Serbian,
+and Ukrainian
+
+Bulgarian, Byelorussian,
+Macedonian, Russian, Serbian,
+and Ukrainian
+
+869
+
+T1000869
+
+Personal Computer: Greece
+
+Greek
+
+This is the preferred ASCII
+code page for Greece.
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+875
+
+T1000875
+
+Greece
+
+Greek
+
+ExpCore
+
+This is the preferred EBCDIC
+code page for Greece.
+
+880
+
+T1000880
+
+Cyrillic Multilingual
+
+T1001025 is the preferred
+EBCDIC code page for Cyrillic.
+
+915
+
+T1000915
+
+ISO/ANSI 8-Bit: Cyrillic
+
+1025
+
+T1001025
+
+Cyrillic Multilingual
+
+This is the preferred EBCDIC
+code page for Cyrillic.
+
+Bulgarian, Byelorussian,
+Macedonian, Russian, Serbian,
+and Ukrainian
+
+Bulgarian, Byelorussian,
+Macedonian, Russian, Serbian,
+and Ukrainian
+
+Bulgarian, Byelorussian,
+Macedonian, Russian, Serbian,
+and Ukrainian
+
+1123
+
+1124
+
+T1001123
+
+T1001124
+
+Cyrillic, Ukraine EBCDIC
+
+Cyrillic, Ukraine ISO–8
+
+Ukrainian
+
+Ukrainian
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+70 Font Summary for AFP Font Collection
+
+<<<PAGE 87>>>
+Format Code Pages
+
+Document Composition Facility and Desktop Publishing Code Pages
+
+Table 23. Document Composition Facility and Desktop Publishing Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Additional Information
+
+Supported In
+
+1002
+
+1003
+
+T1001002
+
+T1001003
+
+1004
+
+T1001004
+
+1039
+
+1068
+
+T1001039
+
+T1001068
+
+DCF
+
+(Subset of T1D0BASE)
+
+United States Text Subset
+
+(Same as T1DCDCFS)
+
+Personal Computer: Desktop
+Publishing
+
+GML List Symbols
+
+N/A
+
+N/A
+
+Text with numeric spacing
+
+(Same as T1D0BASE)
+
+ExpCore
+
+ExpCore
+Comp
+
+ExpCore
+
+ExpCore
+
+ExpCore
+Comp
+
+Note:  ASCII code pages cannot be used with Document Composition Facility (DCF), program number 5748-XX9.
+
+Format Code Pages
+
+Table 24. Format Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Additional Information
+
+Supported In
+
+2094
+
+T1L00FMT
+
+LCS Format Characters (FM10,
+FM12, FM15)
+
+N/A
+
+Comp
+
+Code Pages 71
+
+<<<PAGE 88>>>
+Katakana Code Pages
+
+Hebrew Code Pages
+
+Table 25. Hebrew Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+424
+
+T1000424
+
+Hebrew
+
+Hebrew
+
+ExpCore
+
+This is the preferred EBCDIC
+code page for Hebrew.
+
+803
+
+T1000803
+
+Hebrew Character Set A
+
+Hebrew
+
+ExpCore
+
+T1000424 is the preferred
+EBCDIC code page for
+Hebrew.
+
+856
+
+T1000856
+
+Personal Computer: Hebrew
+
+Hebrew
+
+ExpCore
+
+T1000862 is the preferred
+ASCII code page for Hebrew.
+
+862
+
+T1000862
+
+Personal Computer: Hebrew
+
+Hebrew
+
+ExpCore
+
+867
+
+916
+
+T1000867
+
+T1000916
+
+This is the preferred ASCII
+code page for Hebrew.
+
+Israel – Personal Computer
+
+ISO/ASCII 8-Bit: Hebrew
+
+T1000862 is the preferred
+ASCII code page for Hebrew.
+
+Hebrew
+
+Hebrew
+
+ExpCore
+
+ExpCore
+
+1028
+
+T1001028
+
+Hebrew Publishing
+
+Hebrew
+
+ExpCore
+
+T1000424 is the preferred
+EBCDIC code page for
+Hebrew.
+
+Katakana Code Pages
+
+Table 26. Katakana Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+290
+
+T1000290
+
+Gothic, Katakana, Katakana 10,
+Katakana 12
+
+897
+
+T1000897
+
+Katakana PC
+
+Supported Languages
+
+Japanese (Katakana)
+
+Japanese (Katakana)
+
+Japanese (Katakana)
+
+Japanese (Katakana)
+
+ExpCore
+Comp
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+1027
+
+1041
+
+1139
+
+2095
+
+2102
+
+2103
+
+T1001027
+
+T1001041
+
+T1001139
+
+T1L00KN1
+
+T1L02773
+
+T1L02774
+
+Katakana
+
+Katakana PC
+
+Japan Alphanumeric Katakana
+
+Japanese (Katakana)
+
+LCS Gothic, Katakana (KN1)
+
+Japanese (Katakana)
+
+LCS Gothic, Katakana (2773)
+
+Japanese (Katakana)
+
+LCS Gothic, Katakana (2774)
+
+Japanese (Katakana)
+
+290
+
+T1V10290
+
+Gothic Katakana
+
+Japanese (Katakana)
+
+ExpCore
+
+72 Font Summary for AFP Font Collection
+
+<<<PAGE 89>>>
+Latin1 EBCDIC Country Extended Code Pages
+
+Latin1 EBCDIC Country Extended and BookMaster Code Pages
+
+The Code Page ID in the following table starts with T1xx. Subtitute a V1 for the xx
+for a Country Extended code page or a B0 for a BookMaster code page. All
+BookMaster code pages in Table 27 have the euro currency symbol assigned to
+code point X‘34’.
+
+Table 27. Latin1 EBCDIC Country Extended and BookMaster Code Pages (CECP)
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+37
+
+T1xx0037
+
+United States, Canada
+
+US English, Canadian French,
+Brazilian Portuguese, Dutch,
+and Portuguese
+
+ExpCore
+
+273
+
+T1xx0273
+
+Austria, Germany, Switzerland
+
+German and Swiss German
+
+ExpCore
+
+T1V10500 is the preferred
+CECP code page for
+Switzerland.
+
+274
+
+T1xx0274
+
+Belgium
+
+T1V10500 is the preferred
+CECP code page for Belgium.
+
+Belgian French and Belgian
+Dutch (Flemish)
+
+ExpCore
+
+275
+
+T1xx0275
+
+Brazil
+
+Brazilian Portuguese
+
+ExpCore
+
+277
+
+278
+
+280
+
+T1xx0277
+
+T1xx0278
+
+T1xx0280
+
+T1V10037 is the preferred
+CECP code page for Brazil.
+
+Denmark, Norway
+
+Finland, Sweden
+
+Italy, Switzerland
+
+T1V10500 is the preferred
+CECP code page for
+Switzerland.
+
+Danish and Norwegian
+
+Finnish and Swedish
+
+Italian and Swiss Italian
+
+281
+
+282
+
+T1xx0281
+
+T1xx0282
+
+Japan (Latin)
+
+Portugal
+
+Japanese (Latin)
+
+Portuguese
+
+T1V10037 is the preferred
+CECP code page for Portugal.
+
+284
+
+T1xx0284
+
+Spain, Latin America
+
+Spanish (Castillian) and Latin
+American Spanish
+
+285
+
+297
+
+500
+
+T1xx0285
+
+T1xx0297
+
+T1xx0500
+
+United Kingdom
+
+UK English
+
+France
+
+International #5
+
+This is the preferred Latin1
+CECP code page for general
+use.
+
+French and Catalan
+
+Belgian French, Belgian Dutch
+(Flemish), Swiss French, Swiss
+German, and Swiss Italian
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+871
+
+T1xx0871
+
+Iceland
+
+Icelandic
+
+ExpCore
+
+Code Pages 73
+
+<<<PAGE 90>>>
+Latin1 Euro Code Pages
+
+Latin1 Euro Code Pages
+
+Table 28 (Page 1 of 2). Latin1 Euro Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+858
+
+T1000858
+
+PC – Multilingual with euro
+
+923
+
+T1000923
+
+Latin9
+
+924
+
+T1000924
+
+Latin9 EBCDIC
+
+1140
+
+T1001140
+
+USA, Canada ECECP
+
+T1001140 is T1V10037 with
+the international currency
+symbol replaced by the euro.
+
+Belgian French, Belgian Dutch
+(Flemish), Dutch, Spanish,
+Norwegian, Portuguese,
+Brazilian Portuguese, Danish,
+Swiss French, Swiss German,
+Swiss Italian, Icelandic, and US
+English
+
+Danish, Dutch, English,
+Faeroese, Finnish, French,
+German, Icelandic, Irish, Italian,
+Norwegian, Portuguese,
+Spanish, and Swedish
+
+Danish, Dutch, English,
+Faeroese, Finnish, French,
+German, Icelandic, Irish, Italian,
+Norwegian, Portuguese,
+Spanish, and Swedish
+
+US English, Canadian French,
+Brazilian Portuguese, Dutch,
+and Portuguese
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+1141
+
+T1001141
+
+Austria, Germany ECECP
+
+German
+
+ExpCore
+
+T1001141 is T1V10273 with
+the international currency
+symbol replaced by the euro.
+
+1142
+
+T1001142
+
+Denmark, Norway ECECP
+
+Danish and Norwegian
+
+ExpCore
+
+T1001142 is T1V10277 with
+the international currency
+symbol replaced by the euro.
+
+1143
+
+T1001143
+
+Finland, Sweden ECECP
+
+Finnish and Swedish
+
+ExpCore
+
+T1001143 is T1V10278 with
+the international currency
+symbol replaced by the euro.
+
+1144
+
+T1001144
+
+Italy ECECP
+
+Italian
+
+ExpCore
+
+T1001144 is T1V10280 with
+the international currency
+symbol replaced by the euro.
+
+1145
+
+T1001145
+
+Spain, Latin America ECECP
+
+T1001145 is T1V10284 with
+the international currency
+symbol replaced by the euro.
+
+Spanish (Castillian) and Latin
+American Spanish
+
+ExpCore
+
+1146
+
+T1001146
+
+UK ECECP
+
+UK English
+
+ExpCore
+
+T1001146 is T1V10285 with
+the international currency
+symbol replaced by the euro.
+
+1147
+
+T1001147
+
+France ECECP
+
+French and Catalan
+
+ExpCore
+
+T1001147 is T1V10297 with
+the international currency
+symbol replaced by the euro.
+
+74 Font Summary for AFP Font Collection
+
+<<<PAGE 91>>>
+Latin1 Euro Code Pages
+
+Table 28 (Page 2 of 2). Latin1 Euro Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+1148
+
+T1001148
+
+International ECECP
+
+This is the preferred Latin1
+ECECP code page for general
+use.
+
+T1001148 is T1V10500 with
+the international currency
+symbol replaced by the euro.
+
+Belgian French, Belgian Dutch
+(Flemish), Swiss French, Swiss
+German, and Swiss Italian
+
+ExpCore
+
+1149
+
+T1001149
+
+Iceland ECECP
+
+Icelandic
+
+ExpCore
+
+T1001149 is T1V10871 with
+the international currency
+symbol replaced by the euro.
+
+1252
+
+T1001252
+
+Windows, Latin1
+
+Danish, Dutch, English,
+Faeroese, Finnish, French,
+German, Icelandic, Irish, Italian,
+Norwegian, Portuguese,
+Spanish, and Swedish
+
+ExpCore
+
+Note:  Only the Latin1 fonts provided with AFP Font Collection, Version 2.1.0 can be used with these code pages.
+
+Code Pages 75
+
+<<<PAGE 92>>>
+Latin1 EBCDIC Publishing Code Pages
+
+Latin1 EBCDIC Publishing and BookMaster Code Pages
+
+The Code Page ID in the following table starts with T1x. Subtitute a 0 for the x for
+a Publishing code page or a B for a BookMaster code page.
+
+Table 29. Latin1 EBCDIC Publishing and BookMaster Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+361
+
+T1x00361
+
+International #5
+
+This is the preferred Latin1
+Publishing Code page for
+general use.
+
+Belgian French, Belgian Dutch
+(Flemish), Swiss French, Swiss
+German, and Swiss Italian
+
+ExpCore
+
+382
+
+T1x00382
+
+Austria, Germany, Switzerland
+
+German and Swiss German
+
+ExpCore
+
+T1000361 is the preferred
+EBCDIC code page for
+Switzerland.
+
+383
+
+T1x00383
+
+Belgium
+
+384
+
+385
+
+386
+
+387
+
+388
+
+T1x00384
+
+T1x00385
+
+T1x00386
+
+T1x00387
+
+T1x00388
+
+T1000361 is the preferred
+EBCDIC code page for
+Belgium.
+
+Brazil
+
+Canada (French)
+
+Denmark, Norway
+
+Finland, Sweden
+
+France, Switzerland
+
+T1000361 is the preferred
+EBCDIC code page for
+Switzerland.
+
+Belgian French and Belgian
+Dutch (Flemish)
+
+ExpCore
+
+Brazilian Portuguese
+
+Canadian French
+
+Danish and Norwegian
+
+Finnish and Swedish
+
+French, Catalan, and Swiss
+French
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+389
+
+T1x00389
+
+Italy, Switzerland
+
+Italian and Swiss Italian
+
+ExpCore
+
+390
+
+391
+
+392
+
+393
+
+T1x00390
+
+T1x00391
+
+T1x00392
+
+T1x00393
+
+394
+
+T1x00394
+
+395
+
+T1x00395
+
+T1000361 is the preferred
+EBCDIC code page for
+Switzerland.
+
+Japan (Latin)
+
+Portugal
+
+Japanese (Latin)
+
+Portuguese
+
+Spain, Philippines
+
+Spanish (Castillian)
+
+Spanish
+
+UK English
+
+Latin America (Spanish
+speaking)
+
+United Kingdom, Australia,
+Hong Kong, Ireland, New
+Zealand
+
+United States, Canada
+(English)
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+US English
+
+ExpCore
+
+76 Font Summary for AFP Font Collection
+
+<<<PAGE 93>>>
+Latin1 ASCII Code Pages
+
+Latin1 ASCII Code Pages
+
+Table 30. Latin1 ASCII Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+437
+
+T1000437
+
+Personal Computer
+
+Austria, Finland, Italy,
+Germany, Sweden, South
+Africa, United Kingdom, and
+the United States
+
+819
+
+T1000819
+
+ISO/ANSI 8-Bit: Latin 1
+
+850
+
+T1000850
+
+Personal Computer:
+Multilingual
+
+This is the preferred ASCII
+code page for: Belgium, Brazil,
+Spain, Canada, Iceland, Latin
+America (Spanish), the
+Netherlands, Norway,
+Denmark, Portugal, and
+Switzerland.
+
+US English, UK English,
+German, Finnish, Italian,
+Spanish, and Swedish
+
+Danish, Dutch, English,
+Faeroese, Finnish, French,
+German, Icelandic, Irish, Italian,
+Norwegian, Portuguese,
+Spanish, and Swedish
+
+Belgian French, Belgian Dutch
+(Flemish), Dutch, Spanish,
+Norwegian, Portuguese,
+Brazilian Portuguese, Danish,
+Swiss French, Swiss German,
+Swiss Italian, Icelandic, and US
+English
+
+860
+
+T1000860
+
+Personal Computer: Portugal
+
+Portuguese
+
+T1000850 is the preferred
+ASCII code page for Portugal.
+
+861
+
+T1000861
+
+Personal Computer:
+
+Iceland
+
+Icelandic
+
+863
+
+T1000863
+
+865
+
+T1000865
+
+T1000850 is the preferred
+ASCII code page for Iceland.
+
+Personal Computer: France,
+Canada (French)
+
+T1000850 is the preferred
+ASCII code page for Canada.
+
+Personal Computer:
+Nordic—Denmark, Norway
+
+T1000850 is the preferred
+ASCII code page for Denmark
+and Norway.
+
+French and Canadian French
+
+Danish and Norwegian
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+Code Pages 77
+
+<<<PAGE 94>>>
+Latin2345 Code Pages
+
+Latin2345 EBCDIC and ASCII Code Pages
+
+Table 31 (Page 1 of 2). Latin2345 Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+836
+
+T1000836
+
+People's Republic of China
+(PRC)
+
+PRC (Latin)
+
+852
+
+T1000852
+
+Personal Computer: Latin2
+
+853
+
+T1000853
+
+Personal Computer: Latin3
+
+T1000857 is the preferred
+ASCII code page for Turkish.
+
+Croatian, Czech, Polish,
+German, Hungarian, Slovak,
+Romanian, and Slovenian
+
+Esperanto, Maltese, and
+Turkish
+
+For use with Latin
+Type 1 outlines
+only
+
+ExpCore
+
+ExpCore
+
+857
+
+T1000857
+
+Personal Computer: Latin5
+
+Turkish
+
+ExpCore
+
+This is the preferred ASCII
+code page for Turkish.
+
+870
+
+T1000870
+
+Latin2 Multilingual (EBCDIC)
+
+Croatian, Czech, Polish,
+German, Hungarian, Slovak,
+Romanian, and Slovenian
+
+ExpCore
+
+903
+
+T1000903
+
+People's Republic of China
+(PC)
+
+PRC (Latin)
+
+904
+
+T1000904
+
+Republic of China (ROC) (PC)
+
+ROC (Latin)
+
+905
+
+T1000905
+
+Latin3 Multilingual (EBCDIC)
+
+T1001026 is the preferred
+EBCDIC code page for Turkish.
+
+912
+
+T1000912
+
+ISO/ANSI 8-Bit: Latin2
+
+913
+
+T1000913
+
+Latin 3, ISO/ASCII
+
+914
+
+T1000914
+
+ISO/ANSI: Latin4
+
+Esperanto, Maltese, and
+Turkish
+
+Croatian, Czech, Polish,
+German, Hungarian, Slovak,
+Romanian, and Slovenian
+
+Esperanto, Maltese, and
+Turkish
+
+Estonian, Greenlandic, Lappish,
+Latvian, and Lithuanian
+
+920
+
+T1000920
+
+ISO/ANSI 8-Bit: Latin5
+
+Turkish
+
+T1000857 is the preferred
+ASCII code page for Turkish.
+
+For use with Latin
+Type 1 outlines
+only
+
+For use with Latin
+Type 1 outlines
+only
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+1026
+
+T1001026
+
+Latin5 (EBCDIC)
+
+Turkish
+
+ExpCore
+
+1042
+
+T1001042
+
+This is the preferred EBCDIC
+code page for Turkish.
+
+Simplified Chinese Extended
+(PC)
+
+Chinese (Latin)
+
+1043
+
+T1001043
+
+Traditional Chinese Extended
+(PC)
+
+Chinese (Latin)
+
+For use with Latin
+Type 1 outlines
+only
+
+For use with Latin
+Type 1 outlines
+only
+
+1069
+
+T1001069
+
+Latin4 (EBCDIC)
+
+1110
+
+T1001110
+
+Latin2 Multilingual (EBCDIC)
+
+Estonian, Greenlandic, Lappish,
+Latvian, and Lithuanian
+
+Croatian, Czech, Polish,
+German, Hungarian, Slovak,
+Romanian, and Slovenian
+
+ExpCore
+
+ExpCore
+
+78 Font Summary for AFP Font Collection
+
+<<<PAGE 95>>>
+Compatibility Font NLS Code Pages
+
+Table 31 (Page 2 of 2). Latin2345 Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+1111
+
+T1001111
+
+Latin3, Multilingual (EBCIDIC)
+
+Esperanto, Maltese, and
+Turkish
+
+1112
+
+T1001112
+
+Baltic – Multilingual, EBCIDIC
+
+Baltic Rim Turkish
+
+ExpCore
+
+ExpCore
+
+Note:  There are no character sets or coded fonts provided that support the Baltic code page. To use T1001112, you must
+create character sets and coded fonts with Type Transformer using the Latin Type 1 outlines and filtering with the Baltic
+character list.
+
+1122
+
+T1001122
+
+Estonia EBCIDIC
+
+Estonia
+
+ExpCore
+
+Lao Code Pages
+
+Table 32. Lao Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+1132
+
+1133
+
+T1001132
+
+T1001133
+
+Lao, EBCDIC
+
+Lao ISO–8
+
+Lao
+
+Lao
+
+ExpCore
+
+ExpCore
+
+Compatibility Font NLS Code Pages
+
+Table 33. Compatibility Font NLS Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+2055
+
+2056
+
+T1DABASE
+
+T1DBBASE
+
+Austria, Germany
+
+German
+
+Belgium, Switzerland,
+Luxemburg
+
+2057
+
+T1DDBASE
+
+Denmark, Norway, Iceland
+
+Belgian Dutch (Flemish), Swiss
+French, Swiss Italian, and
+Swiss German
+
+Danish, Norwegian, and
+Icelandic
+
+2058
+
+2059
+
+2060
+
+2061
+
+2062
+
+2116
+
+2063
+
+T1DEBASE
+
+T1DFBASE
+
+T1DIBASE
+
+T1DNBASE
+
+T1DSBASE
+
+T1DUBASE
+
+T1D0BASE
+
+Finland, Sweden
+
+Finnish and Swedish
+
+France
+
+Italy
+
+French
+
+Italian
+
+Netherlands, Portugal
+
+UK English and Portuguese
+
+Spain, Latin America
+
+Spanish (Castillian) and Latin
+American Spanish
+
+United Kingdom
+
+UK English
+
+DCF
+
+DCF Base Code Page
+
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+Comp
+
+Code Pages 79
+
+<<<PAGE 96>>>
+Symbols Code Pages
+
+OCR Code Pages
+
+Table 34. OCR Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Additional Information
+
+Supported In
+
+876
+
+877
+
+892
+
+893
+
+T1000876
+
+T1000877
+
+T1000892
+
+T1000893
+
+OCR-A ASCII
+
+OCR-B ASCII
+
+OCR-A
+
+OCR-B
+
+OCR
+
+OCR
+
+OCR
+
+OCR
+
+2087
+
+T1L0OCR1
+
+LCS OCR A (AOA, OAA)
+
+Gothic and OCR
+
+2088
+
+T1L0OCR2
+
+LCS Gothic and OCR A (AON,
+ONA)
+
+Gothic and OCR
+
+2089
+
+T1L0OCR3
+
+LCS Gothic and OCR A (ODA)
+
+Gothic and OCR
+
+2086
+
+T1L0OCRB
+
+LCS Gothic and OCR B (BOA,
+BON, ONB, OAB)
+
+Gothic and OCR
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+Comp
+
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+Symbols Code Pages
+
+Table 35. Symbols Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+259
+
+T1000259
+
+Symbols, Set 7
+
+ExpCore
+Comp
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+Symbols
+
+Symbols
+
+Symbols
+
+Symbols
+
+Symbols
+
+Symbols
+
+Symbols
+
+Special Use
+
+Symbols
+
+Symbols
+
+363
+
+829
+
+899
+
+1038
+
+1087
+
+1091
+
+1092
+
+1093
+
+T1000363
+
+T1000829
+
+T1000899
+
+T1001038
+
+T1001087
+
+T1001091
+
+T1001092
+
+T1001093
+
+Symbols, Set 8
+
+Math Symbols
+
+ASCII: Symbols, Set 7
+
+ASCII: Symbols, Adobe
+
+Symbols, Adobe
+
+Symbols, Set 7 Modified
+
+ASCII: Symbols, Set 7 Modified
+
+Symbols
+
+IBM Logo
+
+396
+
+T1B00BGS
+
+BookMaster Specials
+
+2091
+
+T1S0S192
+
+6670 Symbol Set (S192)
+
+2092
+
+T1S0S193
+
+6670 Symbol Set (S193)
+
+Symbols
+
+2093
+
+T1S0S198
+
+6670 Symbol Set (S198)
+
+Symbols
+
+80 Font Summary for AFP Font Collection
+
+<<<PAGE 97>>>
+Thai Code Pages
+
+Text Code Pages
+
+Table 36. Text Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Additional Information
+
+Supported In
+
+2085
+
+2097
+
+T1D0GP12
+
+T1L000GN
+
+DCF Gothic Tri-Pitch (GP12)
+
+Special Use
+
+LCS Gothic (GN, G11)
+
+1403 Print Train
+
+2098
+
+T1L000RN
+
+LCS Gothic (RN)
+
+1403 Print Train
+
+2099
+
+T1L000SN
+
+LCS Text-1 and Text-2 (SN)
+
+1403 Print Train
+
+2100
+
+T1L000XN
+
+LCS Gothic (XN)
+
+1403 Print Train
+
+2101
+
+T1L000YN
+
+LCS Gothic (YN)
+
+1403 Print Train
+
+2087
+
+T1L00A11
+
+LCS Gothic (A11)
+
+1403 Print Train
+
+2096
+
+T1L00QNC
+
+2104
+
+T1L038BA
+
+2105
+
+T1L038TE
+
+2083
+
+T1L0DUMP
+
+2084
+
+T1L0FOLD
+
+LCS Gothic (QNC, QN, PN,
+P11)
+
+LCS Gothic (GS10, GS12,
+GS15, GSC, GU10, GU12,
+GU15, GUC)
+
+LCS Text-1 and Text-2 (T11,
+TN, TU10)
+
+LCS Dump Character Set
+(DUMP)
+
+LCS Gothic Folded (GF10,
+GF12, GF15, GFC)
+
+1403 Print Train
+
+Special Use
+
+Special Use
+
+Special Use
+
+Special Use
+
+2089
+
+T1L0PCAN
+
+LCS Gothic (PCAN, AN)
+
+1403 Print Train
+
+2090
+
+T1L0PCHN
+
+LCS Gothic (PCHN, HN, H11)
+
+1403 Print Train
+
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+ExpCore
+Comp
+
+Thai Code Pages
+
+Table 37. Thai Code Pages
+
+CPGID
+
+Code Page ID
+
+Description
+
+Supported Languages
+
+Supported In
+
+838
+
+874
+
+889
+
+T1000838
+
+T1000874
+
+T1000889
+
+Thailand
+
+Personal Computer: Thailand
+
+Thailand
+
+Thai
+
+Thai
+
+Thai
+
+ExpCore
+
+ExpCore
+
+ExpCore
+
+Code Pages 81
+
+<<<PAGE 98>>>
+Thai Code Pages
+
+82 Font Summary for AFP Font Collection
+
+<<<PAGE 99>>>
+Notices
+
+References in this publication to products or services of
+IBM do not suggest or imply that IBM will make them
+available in all countries where IBM does business or
+that only products or services of IBM may be used.
+Noninfringing equivalents may be substituted, but the
+user must verify that such substitutes, unless expressly
+
+designated by IBM, work correctly. No license,
+expressed or implied, to patents or copyrights of IBM is
+granted by furnishing this document. You can send
+license inquiries, in writing, to the IBM Director of
+Licensing, IBM Corporation, 500 Columbus Avenue,
+Thornwood, NY 10594, USA.
+
+ Copyright IBM Corp. 1998, 2000 
+
+83
+
+<<<PAGE 100>>>
+84 Font Summary for AFP Font Collection
+
+<<<PAGE 101>>>
+Trademarks
+
+The following terms appear in this publication and are
+trademarks of the IBM Corporation:
+
+Advanced Function
+Presentation
+AIX
+APL2
+Application System/400
+BookMaster
+IBM
+MVS
+Operating System/2
+Operating System/400
+Print Services Facility
+Proprinter
+
+AFP
+
+AS/400
+
+OS/2
+OS/400
+PSF
+
+Trademark
+
+Boutros Typing
+
+Heisei Kaku Gothic
+Heisei Maru Gothic
+Heisei Mincho
+
+Helvetica
+
+ITC
+ITC Boutros Modern Rokaa
+ITC Boutros Setting
+
+Company
+
+Applied Arabic Limited
+
+Japanese Standards
+Association
+
+Linotype-Hell Company
+
+International Typeface
+Corporation
+
+Microsoft
+
+Microsoft Corporation
+
+Monotype
+Monotype Times New Roman
+Times New Roman
+
+Monotype Typography, Inc.
+
+Many of the fonts provided by IBM have been designed
+by other companies and adapted for IBM printers. The
+following terms appear in this publication and are
+trademarks of other companies:
+
+Narkiss Tam
+Narkissim
+
+PostScript
+
+Windows
+
+Licensed to IBM by Zvi
+Narkiss
+
+Adobe Systems Incorporated
+
+Microsoft Corporation
+
+ Copyright IBM Corp. 1998, 2000 
+
+85
+
+<<<PAGE 102>>>
+
+
+<<<PAGE 103>>>
+Readers' Comments — We'd Like to Hear from You
+
+Font Summary for AFP Font Collection
+
+Publication No. S544-5633-02
+
+Use this form to provide comments about this publication, its organization, or subject matter. Understand
+that IBM may use the information any way it believes appropriate, without incurring any obligation to you.
+Your comments will be sent to the author's department for the appropriate action. Comments may be
+written in your language.
+
+Note:  IBM publications are not stocked at the location to which this form is addressed. Direct requests
+for publications or for assistance in using your IBM system, to your IBM representative or local IBM branch
+office.
+
+Yes  
+
+No
+
+„ Does the publication meet your needs?
+„ Did you find the information:
+
+Accurate?
+Easy to read and
+understand?
+Easy to retrieve?
+Organized for convenient
+use?
+Legible?
+Complete?
+Well illustrated?
+Written for your technical
+level?
+
+„ Do you use this publication:
+
+As an introduction to the
+subject?
+As a reference manual?
+As an instructor in class?
+As a student in class?
+
+„ What is your occupation?
+
+Thank you for your input and cooperation.
+
+Note:  You may either send your comments by fax to 1-800-524-1519, or mail your comments.
+in the U.S.A., no postage stamp is necessary. For residents outside the U.S.A., your local IBM office or
+representative will forward your comments.
+
+If mailed
+
+Comments:
+
+Name 
+
+Address
+
+Company or Organization
+
+Phone No.
+
+<<<PAGE 104>>>
+Readers' Comments — We'd Like to Hear from You
+S544-5633-02
+
+(cid:201)´(cid:212)(cid:217)
+
+Cut or Fold
+Along Line
+
+Fold and Tape
+
+Please do not staple
+
+Fold and Tape
+
+NO POSTAGE
+NECESSARY
+IF MAILED IN THE
+UNITED STATES
+
+BUSINESS REPLY MAIL
+
+FIRST-CLASS MAIL PERMIT NO. 40 ARMONK, NEW YORK
+
+POSTAGE WILL BE PAID BY ADDRESSEE
+
+Information Development
+The IBM Printing Systems Company
+Department H7FE Building 003G
+P O Box 1900
+BOULDER CO 80301-9817
+
+Fold and Tape
+
+Please do not staple
+
+Fold and Tape
+
+S544-5633-02
+
+Cut or Fold
+Along Line
+
+<<<PAGE 105>>>
+
+
+<<<PAGE 106>>>
+(cid:201)´(cid:212)(cid:217)
+
+Printed in the United States of America
+on recycled paper containing 10%
+recovered post-consumer fiber.
+
+S544-5633-02
