@@ -132,6 +132,30 @@ for (const [encoding, encode] of [
   badId.write('D3FF00', lenAt + 2, 'hex');
   const r6 = run(badId);
   check(`${encoding}: unknown identifier reported`, r6.code === 1 && (r6.out.includes('WARN') || r6.out.includes('ERROR')), `rc=${r6.code}\n${r6.out}`);
+
+  // 7. a Length that is off by exactly ONE must still be caught.
+  //    This is the case that a "the X'5A' prefix is optional" parser cannot
+  //    see: the record swallows the next record's prefix byte as data, the
+  //    chain still lines up, and the error disappears. The validator decides
+  //    the prefix convention once for the whole stream and enforces it, which
+  //    is what makes this case detectable.
+  for (const delta of [1, -1]) {
+    const offByOne = Buffer.from(good);
+    const lowByte = lenAt + 1;
+    offByOne[lowByte] = (offByOne[lowByte] + delta) & 0xff;
+    const r7 = run(offByOne);
+    check(`${encoding}: length off by ${delta > 0 ? '+' : '-'}1 rejected`, r7.code === 1 && r7.out.includes('ERROR'), `rc=${r7.code}\n${r7.out}`);
+  }
+
+  // 8. a missing X'5A' prefix must be caught in a prefixed stream
+  if (encode === sfPrefixed) {
+    const noPrefix = Buffer.from(good);
+    const second = good.indexOf(0x5a, 1);
+    if (second < 0) throw new Error('test setup: second prefix not found');
+    noPrefix[second] = 0x00;
+    const r8 = run(noPrefix);
+    check(`${encoding}: missing X'5A' prefix rejected`, r8.code === 1 && r8.out.includes('ERROR'), `rc=${r8.code}\n${r8.out}`);
+  }
 }
 
 if (failures.length) {

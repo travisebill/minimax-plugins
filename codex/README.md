@@ -4,7 +4,7 @@
 
 > **版本要分清兩件事**：本表列的是**原始碼版本**；已發布的 ZIP 仍是較早的版本（`dist/`），移植當時的規格與驗證紀錄保留在 `spec.md` 與 `validation/`。原始碼可以先跑，發布產物與主機驗證另排期 —— 見 `marketplace/plugins/three-kingdoms-focus-studio/WAVEFORM.md`。
 
-最初的移植來源固定於 commit `0d74e7638bcb04bf589ed9b5e37e78efda3ec00c`，移植日期為 2026-10-05。`afpds-studio` 於 2026-11-08 加入，來源 commit `aca8d6a75cc9f15648f4530f0d11080a8b6ae638`。
+最初的移植來源固定於 commit `0d74e7638bcb04bf589ed9b5e37e78efda3ec00c`，移植日期為 2026-10-05。`afpds-studio` 於 2026-11-08 加入，來源 commit `3629e0e8951f88221e7725bfffa70e195cb70ecc`。
 
 | 外掛 | 版本 | 可以做什麼 |
 | --- | --- | --- |

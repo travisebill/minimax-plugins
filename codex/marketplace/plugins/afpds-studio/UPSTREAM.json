@@ -1,6 +1,6 @@
 {
   "source_repository": "https://github.com/travisebill/minimax-plugins",
-  "source_commit": "aca8d6a75cc9f15648f4530f0d11080a8b6ae638",
+  "source_commit": "3629e0e8951f88221e7725bfffa70e195cb70ecc",
   "ported_date": "2026-11-08",
   "name": "afpds-studio",
   "source_version": "1.0.0",
@@ -141,9 +141,9 @@
     },
     {
       "source_path": "skills/afpds-expert/SKILL.md",
-      "source_sha256": "a201776826fbcd0accb505990773f50d5ce229e8b68454304040cdb5e0e4a29b",
+      "source_sha256": "f59e95fc4ea7b8657369328bfde458641090117438146eed9d0b2894343efa68",
       "codex_path": "skills/afpds-expert/SKILL.md",
-      "codex_sha256": "9cb7c02f7486e1f400e41c9262962153883bb84901f1a8165a83f9a4c05fe8d0",
+      "codex_sha256": "e7e4bf8ff35b196385f162ade58d49498547c0330e377b7c642c3206f46a55f4",
       "change": "adapted"
     },
     {
@@ -442,16 +442,16 @@
     },
     {
       "source_path": "skills/afpds-expert/scripts/test-verify-stream.mjs",
-      "source_sha256": "571f3ac96124124fbba5c62f7f9ffa595dd7bd707f3fc84b9d46a5462385ec5e",
+      "source_sha256": "32272905aa795e5e964dac6a2b3c103682382bd80416bc8bfd95aba52d45ea02",
       "codex_path": "skills/afpds-expert/scripts/test-verify-stream.mjs",
-      "codex_sha256": "571f3ac96124124fbba5c62f7f9ffa595dd7bd707f3fc84b9d46a5462385ec5e",
+      "codex_sha256": "32272905aa795e5e964dac6a2b3c103682382bd80416bc8bfd95aba52d45ea02",
       "change": "unchanged"
     },
     {
       "source_path": "skills/afpds-expert/scripts/verify-stream.mjs",
-      "source_sha256": "81259012bfd435f0d81e6daf3156fdbb2c0fefc429311363f4b59a3f8b29c21c",
+      "source_sha256": "6ccfa99cab76340ed3957d0c44e8af653c6af19c93d9a7f9ebfb26beb2b48f0c",
       "codex_path": "skills/afpds-expert/scripts/verify-stream.mjs",
-      "codex_sha256": "81259012bfd435f0d81e6daf3156fdbb2c0fefc429311363f4b59a3f8b29c21c",
+      "codex_sha256": "6ccfa99cab76340ed3957d0c44e8af653c6af19c93d9a7f9ebfb26beb2b48f0c",
       "change": "unchanged"
     }
   ]
