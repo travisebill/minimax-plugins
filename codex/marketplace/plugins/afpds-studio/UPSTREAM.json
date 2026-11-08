@@ -1,6 +1,6 @@
 {
   "source_repository": "https://github.com/travisebill/minimax-plugins",
-  "source_commit": "3629e0e8951f88221e7725bfffa70e195cb70ecc",
+  "source_commit": "4e25c694ebd3dd3963efb3790a4afd7a00ef8aab",
   "ported_date": "2026-11-08",
   "name": "afpds-studio",
   "source_version": "1.0.0",
@@ -24,7 +24,7 @@
       "source_path": null,
       "source_sha256": null,
       "codex_path": "README.md",
-      "codex_sha256": "2bb21859b527990a7d6f6e535f9127aeb508a85234af92b470db561f2b8172e4",
+      "codex_sha256": "54568f2295b09ddc5841824635775a64b4cce616069b86764bb3025f7282ea79",
       "change": "codex_native_not_in_source"
     },
     {
@@ -442,9 +442,9 @@
     },
     {
       "source_path": "skills/afpds-expert/scripts/test-verify-stream.mjs",
-      "source_sha256": "32272905aa795e5e964dac6a2b3c103682382bd80416bc8bfd95aba52d45ea02",
+      "source_sha256": "6ba8944d3a7cbc4b24d86b909dfcfc600be87afdaba82028baffb5bd241ea06f",
       "codex_path": "skills/afpds-expert/scripts/test-verify-stream.mjs",
-      "codex_sha256": "32272905aa795e5e964dac6a2b3c103682382bd80416bc8bfd95aba52d45ea02",
+      "codex_sha256": "6ba8944d3a7cbc4b24d86b909dfcfc600be87afdaba82028baffb5bd241ea06f",
       "change": "unchanged"
     },
     {

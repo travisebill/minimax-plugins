@@ -25,7 +25,7 @@ AFP / AFPDS（Advanced Function Presentation）文件開發工具箱：內建 AF
 
 ## 來源
 
-移植自 [travisebill/minimax-plugins](https://github.com/travisebill/minimax-plugins)，commit `3629e0e8951f88221e7725bfffa70e195cb70ecc`。檔案對照與 SHA-256 見 `UPSTREAM.json`。
+移植自 [travisebill/minimax-plugins](https://github.com/travisebill/minimax-plugins)，commit `4e25c694ebd3dd3963efb3790a4afd7a00ef8aab`。檔案對照與 SHA-256 見 `UPSTREAM.json`。
 
 該上游的原始來源是本機的 `AFPDS_Expert` 專案（無公開 remote，因此無法用 commit 追溯）；`skills/afpds-expert/corpus/` 是 AFP Consortium 公開出版品（32 份 PDF）的純文字萃取。**AFPC 出版品的再散布授權條款尚未確認** —— 本套件目前只供私人本機使用，若要公開散布需先確認條款。
 
