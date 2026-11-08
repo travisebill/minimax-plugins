@@ -224,6 +224,17 @@ the same **Unconfirmed** list.
 - **The request is about printing pipeline, driver, or PostScript/PDF conversion
   rather than the AFP architecture** — answer directly without this skill's
   machinery.
+- **The validator reports an IPDS error for a file you know is MO:DCA** — the
+  automatic layer detection reads the *first* structured field to decide, so a
+  corrupted Length in that first field makes it fall back to the IPDS reading and
+  the message then points at a nonsense offset. It still fails (exit 1), it just
+  fails with the wrong diagnosis. Re-run with `--layer modca` to force the
+  MO:DCA reading:
+  ```bash
+  node scripts/verify-stream.mjs output.afp --layer modca
+  ```
+  That turns the same file into `ERROR offset 0: Length=7 is smaller than the
+  8-byte introducer` — the actual fault.
 
 ## Windows (win32) platform notes
 
