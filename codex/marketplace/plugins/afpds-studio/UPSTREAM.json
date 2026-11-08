@@ -1,6 +1,6 @@
 {
   "source_repository": "https://github.com/travisebill/minimax-plugins",
-  "source_commit": "4e25c694ebd3dd3963efb3790a4afd7a00ef8aab",
+  "source_commit": "0d4a7cdfb5c086e42a30197efd84b354df80d95a",
   "ported_date": "2026-11-08",
   "name": "afpds-studio",
   "source_version": "1.0.0",
@@ -24,7 +24,7 @@
       "source_path": null,
       "source_sha256": null,
       "codex_path": "README.md",
-      "codex_sha256": "54568f2295b09ddc5841824635775a64b4cce616069b86764bb3025f7282ea79",
+      "codex_sha256": "ec0fa9e09f3b26cbb9009de81d94db0e0f5a479d33b76008b77257f0b2a4221e",
       "change": "codex_native_not_in_source"
     },
     {
@@ -141,9 +141,9 @@
     },
     {
       "source_path": "skills/afpds-expert/SKILL.md",
-      "source_sha256": "f59e95fc4ea7b8657369328bfde458641090117438146eed9d0b2894343efa68",
+      "source_sha256": "94b0bc3a287b11c398e972682c4aafa231350a379f0622521cb431d6e4814473",
       "codex_path": "skills/afpds-expert/SKILL.md",
-      "codex_sha256": "e7e4bf8ff35b196385f162ade58d49498547c0330e377b7c642c3206f46a55f4",
+      "codex_sha256": "f3246fc5e6617736f0645155e9a7901b72125c716b62cbaca40e86a3a5520ee4",
       "change": "adapted"
     },
     {
