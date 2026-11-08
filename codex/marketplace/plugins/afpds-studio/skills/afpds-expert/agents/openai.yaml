@@ -1,0 +1,4 @@
+interface:
+  display_name: "AFP 規格專家"
+  short_description: "查詢 AFP Consortium 規格語料庫，每個常數與結構 ID 都能追回頁碼"
+  default_prompt: "使用 $afpds-expert，查這份 AFP 的物件結構與對應的規格頁碼。"

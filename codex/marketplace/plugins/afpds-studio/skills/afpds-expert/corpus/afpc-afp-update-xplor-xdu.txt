@@ -1,0 +1,1839 @@
+<<<PAGE 1>>>
+AFP Consortium (AFPC) and AFP 
+Update 
+Update
+
+XPLOR Document University
+XPLOR Document University
+March 7, 2009
+
+Reinhard Hohensee, Distinguished Engineer  
+Di
+R i h d H h
+InfoPrint Solutions Company
+
+i h d E i
+
+i
+
+1
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 2>>>
+Agenda
+
+• AFPC News
+• AFP Update  
+• AFP Update
+• Future Directions 
+Q & A
+• Q & A
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+2
+
+<<<PAGE 3>>>
+AFP Consortium (AFPC) News
+
+• AFPC was incorporated into a non-profit corporation on 
+
+•
+
+p
+
+February 25, 2009
+Incorporation allows the AFPC to function as a vendor-
+neutral open standards body that is a legal entity
+– Able to own trademarks for  terms such as AFP, MO:DCA, 
+
+IPDS, CMOCA, …
+
+– Able to own copyrights to architecture documents such as 
+
+specifications, white papers, etc.
+
+– Can collect membership dues to fund activities to promote 
+
+AFP:
+AFP
+
+• AFPC participation and booth at conferences such as XPLOR, 
+
+OnDemand
+• Marketing activities
+Marketing activities
+• Compliance and certification activities
+
+– Can negotiate with 3rd parties on behalf of AFPC members, 
+
+e.g. for licenses to software, ICC profiles, etc.  
+
+3
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 4>>>
+AFPC News (contd)
+
+• Corporation run by an annually elected Board of Directors (BOD) 
+
+•
+•
+
+and their appointed/elected officers
+In recognition of IBM/InfoPrint s work on AFP for the past 25 
+In recognition of IBM/InfoPrint’s work on AFP for the past 25
+years, InfoPrint is identified as the “Founder” of the AFPC and 
+has the right to appoint a standing director  to the BOD
+
+Development
+p
+
+m • AFPC governing body:
+mm
+m
+• AFPC governing body:
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+– Board of Directors (BOD) for 2009:
+
+• Jeff Paterra, InfoPrint - Sr. VP & GM, Technology & Solutions 
+
+• Michele Pracchi, Oce – Sr. VP Corporate Software Development  
+• Dennis Ladd, StreamServe – President and CEO
+• Paul Gerelle, MPI Tech – Director
+• Roberto Anzola, ISIS Papyrus - Board Director and Manager of 
+
+Research and Development
+
+4
+
+<<<PAGE 5>>>
+AFPC News (contd)
+AFPC News (contd)
+
+– Officers for 2009:
+– Officers for 2009:
+
+• President and Secretary: Harry Lewis, InfoPrint - Program Manager  
+
+Intellectual Property & Open Standards
+
+• Treasurer: Paul Gerelle, MPI Tech – Director
+
+5
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 6>>>
+AFPC News (contd)
+AFPC News (contd)
+
+• AFPC Membership & annual dues
+
+– Core Member ($10K): 
+Core Member ($10K):
+
+• govern AFPC, nominate candidate for BOD, nominate candidate for 
+
+officer position, elect BOD  
+
+• Participate in development of AFP (meetings, workgroups, architecture 
+(
+
+g ,
+
+p ,
+
+p
+
+g
+
+p
+voting, etc.)
+InfoPrint, as Founder, is a Core Member
+
+•
+
+– Participating Member ($5K):
+
+• Participate in development of AFP (meetings, workgroups, architecture 
+
+voting, etc.)
+
+– Associate Member ($1K):
+
+• Observe the workings of the AFPC (see internal architecture docs etc
+
+Observe the workings of the AFPC (see internal architecture docs, etc., 
+but no active participation, no architecture voting)   
+
+6
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 7>>>
+AFPC News (contd)
+AFPC News (contd)
+
+• How can I join?
+
+– AFPC Bylaws: “….Any natural person or entity with a significant 
+AFPC Bylaws: “ Any natural person or entity with a significant
+interest in developing and promoting the AFP architecture and 
+products and services based on the AFP architecture may be a 
+member….” 
+
+– Application must be approved by the BOD
+– Contact myself (hohensee@us.ibm.com) or Harry Lewis 
+
+(harryl@us.ibm.com)
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+7
+
+<<<PAGE 8>>>
+AFPC News (contd)
+AFPC News (contd)
+
+• AFPC Website - see www.afpcolor.org :
+
+– List of members and links to member websites
+List of members and links to member websites
+– Architecture publications
+
+• All current architecture references
+• Addendums to current references
+• Addendums to current references
+• White papers
+
+– New content:
+
+)
+IOCA Reference (November 2008)
+(
+
+•
+• MO:DCA Addendum 1 (Image Resolution triplet; September 2008)
+• MO:DCA Addendum 2 (Multipage Containers; September 2008)
+• MO:DCA-L Reference 
+– Presentations (XPLOR, etc.)
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+8
+
+<<<PAGE 9>>>
+AFP Update
+
+• MO:DCA-L definition has been moved from the MO:DCA 
+
+reference to its own document
+– What is it?
+
+• MO:DCA-L (“L” stands for “Library”) is the  MO:DCA “Resource” format; 
+contrast with MO:DCA-P (“P” stands for “Presentation”) which is 
+the format used in AFP
+
+• Currently defined in MO:DCA reference (SC31-6802-07) in chapter 7 –
+
+p
+
+y
+
+(
+
+)
+
+“MO:DCA Resource Interchange Set”
+
+• Has not changed since 1990
+• Only used in IBM’s OS/2 – defines the OS/2 Presentation Manager 
+
+(PM) metafile format
+(PM) metafile format
+
+• Uses many of the MO:DCA-P structured fields and triplets plus a few 
+
+that are unique to MO:DCA-L
+
+• Uses the GOCA DR/3V1 function set (not part of AFP GOCA and not 
+used in AFP; defined in the “old” GOCA reference, available on the 
+AFPC website)
+
+• Uses the IOCA FS20 function set (not used in AFP; defined in the IOCA 
+
+reference)  
+
+)
+
+• Similar to Windows GDI metafile 
+
+9
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 10>>>
+AFP Update (contd)
+AFP Update (contd)
+
+– How is it defined in the MO:DCA reference?
+
+• References to the MO:DCA resource format sprinkled throughout 
+• References to the MO:DCA resource format sprinkled throughout
+
+document  
+
+• Color Attribute Table structured fields  (BCA, CAT, MCA, ECA) defined 
+
+Interchange Set”
+
+in ch. 5 - “MO:DCA Structured Fields”
+
+• CAT content defined in appendix A – “The Color Table Resource”   
+• Complete format defined in chapter 7 – “MO:DCA Resource 
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o • All MO:DCA-L information and all references to MO:DCA-L will 
+• All MO:DCA-L information and all references to MO:DCA-L will
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+be gone from the MO:DCA reference in the next update, and are 
+now provided in the new document: 
+“MO:DCA-L: The OS/2 Presentation Manager Metafile ( met) Format”
+MO:DCA L: The OS/2 Presentation Manager Metafile (.met) Format
+available on the AFPC website
+***The MO:DCA reference will be updated to now refer to 
+“MO:DCA P” simply as “MO:DCA” and to make both terms
+MO:DCA-P  simply as  MO:DCA , and to make both terms 
+synonymous***
+
+•
+
+10
+
+<<<PAGE 11>>>
+AFP Update (contd)
+
+MO:DCA-L file structure
+Begin Document
+
+Begin Resource Group
+
+Color Attribute Table (BCA, CAT, ECA)
+Color Attribute Table (BCA, CAT, ECA)
+Begin Image Object (IOCA FS20)
+Begin Resource Group
+
+Color Attribute Table (BCA, CAT, ECA)
+
+End Resource Group
+End Resource Group
+Image Object Environment Group (BOC, MCA, EOC)
+Image Data Descriptor (IDD)
+Image Picture Data (IPD)
+
+……….
+
+End Image Object
+Begin Graphics Object (GOCA DR/3V1)
+
+Graphics Object Environment Group ( BOC, MCA, MCF, MDR, EOC)
+Graphics Data Descriptor (GDD)
+Graphics Data (GAD)
+
+……….
+
+End Graphics Object
+
+End Resource Group
+
+End Document
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+11
+
+<<<PAGE 12>>>
+AFP Update (contd)
+
+•
+
+“Old” GOCA definition now available on AFPC website
+– “Graphics Object Content Architecture Reference” (SC31-6804-01)
+“Graphics Object Content Architecture Reference” (SC31 6804 01)
+
+• Defines DR/3V1 function set used in MO:DCA-L
+• Superset of AFP GOCA  (DR/2V0++)
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+12
+
+<<<PAGE 13>>>
+AFP Update (contd)
+
+• New function: Image Resolution triplet (defined in MO:DCA 
+
+age eso ut o t p et (de ed
+
+u ct o
+
+O C
+
+e
+
+Addendum 1, available on AFPC website)
+– Background: 
+
+g
+
+• Not all image formats specify their actual physical dimensions 
+• JFIF and GIF formats specify the number of pixels in the x and y 
+directions, but not the resolution in the x and y directions, e.g.
+
+y
+
+y
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+………………..
+. . . . . . . . . . . . . . . . . . . . 
+
+Same number of pixels in each line; in the first line the pixels are 
+rendered with a resolution of 2x/inch, in the second line x/inch 
+
+•
+
+If resolution not specified, presentation device needs to make  
+assumption on the resolution which may or may not be correct
+
+– Device may assume that resolution of image matches the device 
+
+resolution. In that case a 600 pixel x 1200 pixel image prints as a 1 
+inch by 2 inch image on a 600 dpi printer, but as a 2 inch by 4 inch 
+p p
+image on a 300 dpi printer 
+
+g
+
+y
+
+y
+
+,
+
+– Device may assume fixed resolution for the image, such as 300 dpi. 
+In that case, if the image was created at 72 dpi, the printer will print 
+the image at roughly 1/4 of the real size
+the image at roughly 1/4 of the real size
+
+•
+
+Image formats, like IOCA and TIFF do specify the native resolution and 
+therefore allow an output device to render the image at the right size
+
+13
+
+<<<PAGE 14>>>
+AFP Update (contd)
+
+– Solution: 
+
+• Define a new Image Resolution (X 9A ) triplet to specify the image 
+• Define a new Image Resolution (X’9A’) triplet to specify the image
+
+resolution in the x and directions
+
+• Allow the Image Resolution triplet on the following structured fields:
+
+– Include Object (IOB)
+– Container Data Descriptor (CDD) (in case container is specified 
+
+directly within BGP/EPG)
+
+– Preprocess Presentation Object (PPO) (in case the object is to be 
+
+p e pped)
+pre-ripped)
+
+•
+
+If the object is installed in a library using  a Resource Access Table 
+(RAT), the triplet information may also be stored in the Data Object RAT 
+entry for that object 
+
+14
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 15>>>
+AFP Update (contd)
+
+•
+•
+
+Image Resolution (X 9A ) Triplet Syntax
+Image Resolution (X’9A’) Triplet Syntax
+
+Offset
+
+Type
+
+Name Range Meaning
+
+0
+
+1
+
+2-3
+
+4
+
+5
+
+6–7
+
+8–9
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+UBIN
+
+Tlength
+
+10
+
+CODE
+
+Tid
+
+X’9A’
+
+CODE
+
+XBase
+
+CODE
+
+YBase
+
+X’00’-
+X’01’
+
+X’00’-
+X’01’
+
+Length of the triplet, including 
+Tlength
+
+Identifies the Image Resolution 
+triplet 
+
+Reserved; must be zero
+
+;
+
+Unit base for image resolution 
+in the X direction: 
+• X’00’ – 10 in
+• X’01’ – 10 cm
+
+Unit base for image resolution 
+in the Y direction: 
+• X’00’ – 10 in
+• X’01’ – 10 cm
+b
+
+(must be same as for X direction)
+(
+)
+
+f X di
+
+i
+
+UBIN
+
+XResol
+
+1-32767
+
+UBIN
+
+YResol
+
+1-32767
+
+Number of image points in X 
+direction per X unit base 
+
+Number of image points in Y 
+direction per Y unit base 
+
+15
+
+<<<PAGE 16>>>
+AFP Update (contd)
+
+•
+
+Image Resolution (X’9A’) Triplet Usage
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+16
+
+<<<PAGE 17>>>
+AFP Update (contd)
+
+• New function: Multipage Containers (defined in MO:DCA 
+
+Addendum 2; available on AFPC website)
+Addendum 2; available on AFPC website)
+– Background: 
+
+• Current AFP architecture only allows single-page objects to be carried 
+
+in AFP Object Containers
+
+j
+
+• Formats such as TIFF and PDF, which are supported as containers in 
+AFP, can contain many images or pages; if such a file is referenced 
+using current architecture, most products select the first image/page 
+• Would be useful to support multi-page PDF and  TIFF as containers, 
+• Would be useful to support multi page PDF and TIFF as containers
+
+and then select individual objects/images for presentation
+
+• For PDF, would allow RIP to be set up once and then used for all PDFs 
+
+in file
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+17
+
+<<<PAGE 18>>>
+AFP Update (contd)
+
+• Solution:
+
+– Define concept of a multipage resource object:
+
+• File that contains multiple pages or multiple “paginated objects” (e.g. 
+
+images) for presentation
+
+• Each file type is registered in the MO:DCA Registry with an object-type 
+
+OID that identifies it as a file that may contain multiple pages or 
+paginated objects
+
+p p g
+
+y
+
+• When referenced in data stream, e.g. with an Include Object (IOB),  
+must be indexed to select only a single paginated object for 
+presentation
+presentation
+
+– Register new multipage objects in MO:DCA Registry
+
+• TIFF Multiple Image File 
+• TIFF Multiple Image - without Transparency – File
+• PDF Multiple Page File 
+• PDF Multiple Page - with Transparency - File 
+
+– Allow the Object Offset (X'5A') triplet on the IOB, CDD, PPO to 
+select a single paginated object in the referenced multipage file 
+t i
+
+t d bj
+
+th
+
+lti
+
+fil
+
+d
+
+f
+
+t
+
+l
+
+i
+
+l
+
+i
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+18
+
+<<<PAGE 19>>>
+AFP Update (contd)
+
+• Object Offset X 5A  Syntax
+• Object Offset X’5A’ Syntax
+
+Offset
+
+Type
+
+Name
+
+Range
+
+Meaning
+
+UBIN
+
+Tlength
+
+8, 12
+
+CODE
+
+Tid
+
+X’5A’
+
+CODE
+
+ObjTpe
+j p
+
+,
+X’A8’, X’AF’
+
+0
+
+1
+
+2
+
+3
+
+Length of the triplet, including 
+Tlength
+
+Identifies the  Object Offset 
+triplet 
+
+Object type to be counted:
+
+yp
+
+j
+
+• X’A8’ – document
+• X’AF’ – page or 
+paginated object
+
+Reserved; must be zero
+
+4–7
+
+UBIN
+
+ObjOset
+
+8–11
+8 11
+
+UBIN
+UBIN
+
+ObjOstHi
+ObjOstHi
+
+X’00000000’ –
+X’FFFFFFFF’
+
+X’00000000’
+X 00000000  –
+X’FFFFFFFF’
+
+Number of objects that precede 
+the selected object in the 
+document or print file 
+
+Number of objects that precede
+Number of objects that precede 
+the selected object, high-order 
+bytes 
+
+19
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 20>>>
+Usage e a p e
+• Usage example
+
+AFP Update (contd)
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+20
+
+<<<PAGE 21>>>
+AFP Update (contd)
+
+• BCOCA Update
+
+– The USPS Intelligent Mail Barcode
+
+• Fully supported by many IPDS printers and most print servers
+• Latest implementations can create the smallest size bar code symbol that the post 
+• Latest implementations can create the smallest size bar code symbol that the post
+
+office allows
+
+– Small bar code symbol size
+
+• Supporting printers  now allow two sizes for the fixed-size bar codes (such as, 
+
+POSTNET PLANET RM4SCC Dutch KIX Maxicode Australia Post and USPS
+POSTNET, PLANET, RM4SCC, Dutch KIX, Maxicode, Australia Post, and USPS 
+Four-State)
+
+• Either an optimal or a small bar code symbol can be produced using the same 
+
+method as is used for the USPS Four-State bar code
+
+– Desired symbol width parameter
+
+• New parameter has  been added to the Bar Code Symbol Descriptor in previously 
+
+reserved bytes 10-11
+• Allows user to specify a desired bar code symbol width (in 1440ths)
+Allows user to specify a desired bar code symbol width (in 1440ths)
+• Supporting printers produce a symbol that fits into the designated width at the 
+
+largest size possible (module width parameter is ignored)
+
+• Non-supporting printers ignore the value in bytes 10-11 and use the module width 
+
+to determine the final symbol width
+
+y
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+21
+
+<<<PAGE 22>>>
+AFP Update (contd)
+
+• AFP GOCA Update
+• AFP GOCA Update
+
+– The Graphics Data Descriptor (GDD) is being extended to provide the following 
+
+additional functions:
+
+• Allow the specification of an “absolute” line width in 1440ths of an inch; the Set Line Width and 
+
+p
+Set Fractional Line Width orders will then specify multipliers of this absolute line width
+• Allow the specification of a process color using the AFP color specification syntax (i.e. the 
+
+p
+
+y
+
+syntax in the Color Specification X’4E’ triplet)
+– Details will follow; please check the AFPC website
+
+• PTOCA Update
+
+– Significant ongoing work effort to improve Unicode support
+
+•
+
+“Extended” code pages are now available; they map IBM code page data to Unicode values so 
+that TrueType/OpenType fonts can be used with EBCDIC and ASCII data including user-defined 
+that Tr eT pe/OpenT pe fonts can be sed ith EBCDIC and ASCII data incl ding ser defined
+code points and non-IBM-defined characters
+
+• How to support Unicode complex scripts
+
+right-to-left languages like Arabic , Urdu, Farsi, and Hebrew
+
+–
+– languages  that require  characters be presented with different shapes or in a different 
+
+order than their storage order, e.g. south Asian languages that require  characters to be 
+repositioned, reordered, or split, depending on adjacent characters
+• How to better support migration from AFP FOCA-based fonts (raster and outline) to 
+
+TrueType/OpenType fonts
+
+–
+
+Information will be placed on the AFPC website as it becomes available 
+
+p
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+22
+
+<<<PAGE 23>>>
+AFP Update (contd)
+AFP Update (contd)
+
+• CMOCA Update
+
+– Printer vendors and composition tool vendors have begun rolling out products and 
+Printer vendors and composition tool vendors have begun rolling out products and
+product updates that support  the base CMOCA architecture
+
+– To get accurate and consistent color output from AFP workflows, compliance with 
+
+CMOCA, especially tagging of input colors with audit Color Management Resources 
+(
+(CMRs), is essential!
+
+)
+
+•
+
+IOCA Update
+– New IOCA reference (S550-1142-00) was generated in August, 2008 and is now 
+
+available on the AFPC website 
+available on the AFPC website
+
+• AFP Line Data
+
+– Extensions to the PageDef to keep up with other AFP extensions are under way; this 
+
+p p
+
+y;
+
+g
+
+architecture is still very much alive!! 
+
+23
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 24>>>
+Future Directions
+d t
+
+i t
+
+f AFP
+
+Improve interoperability of AFP products
+I
+bilit
+– Define conformance level(s)
+– Compliance testing 
+– Certification
+Integrate new object containers into AFP as their industry 
+acceptance and use increases
+
+•
+
+•
+
+o e obus a d e b e
+
+• Develop more robust and flexible metadata architecture
+e ada a a c ec u e
+
+e e op
+– NOPs  are unarchitected
+– Tag Logical Element structured fields (TLEs) are limited to attribute name/value pairs
+Investigate integration of JDF into AFP 
+Improve communications with customers, users, and user 
+groups
+
+If you want to get more involved, please send us a note!!
+
+hohensee@us.ibm.com
+
+a y @us b co
+harryl@us.ibm.com
+
+24
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+•
+r
+r
+o •
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 25>>>
+Summary
+Summary
+
+• The AFPC has been incorporated into a standards body that is a 
+non-profit legal entity; as such it can own intellectual property, 
+non profit legal entity; as such it can own intellectual property
+negotiate with third parties, fund conference participation and 
+marketing activities
+
+Image resolution specification and support for multipage 
+containers are among a number of AFP extensions that have 
+recently been processed; more are in the pipeline as the AFPC 
+recently been processed; more are in the pipeline as the AFPC
+continues to develop, update, and extend AFP to be the best-of-
+breed presentation architecture for variable-data production print
+
+m • Various AFPC membership levels are now available
+mm
+m
+• Various AFPC membership levels are now available
+u
+u
+•
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+25
+
+<<<PAGE 26>>>
+• Q & A
+
+Questions?
+Questions?
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+26

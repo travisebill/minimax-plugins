@@ -1,0 +1,371 @@
+<<<PAGE 1>>>
+Recommended IPDS Values for Object Container Versions
+
+AFPC-0017-02
+
+Last update: 1/12/2015
+
+This document lists recommendations for values to be returned in the Object Container Version Support self-defining field of the IPDS XOH:OPC reply.
+
+The following table lists recommended values that an IPDS printer should return if it supports the versions listed.
+
+This document is non-normative and can be updated at any time.  The intention, however, is that once officially published (in conjunction with the first edition of the IPDS 
+Reference that contains the Object Container Version Support self-defined field), information will only be added , and will never be changed.  Furthermore, the intention is 
+that information will likely only be added when requested--this document will not attempt to keep up-to-date on all possible versions of all possible object containers.
+
+To request an update to this document, contact Dennis Carney (Ricoh).
+
+Object Container
+
+Versions
+
+Major
+version
+
+Suggested values in XOH:OPC
+Minor
+version
+
+Subminor
+version
+
+Version name
+
+Anacomp COM Setup File
+Anacomp COM Tape Label Setup File
+AnaStack Record Setup File
+Color Management Resource (CMR)
+Color Mapping Table Setup File
+EPS without transparency
+EPS with transparency
+GIF
+
+IOCA Tile Resource
+JPEG, before AFPC JPEG Subset defined
+JPEG (AFPC JPEG Subset)
+JP2 (JPEG2000 File Format)
+PCL page object
+
+none, AFP object
+none, AFP object
+3.0 (appears to be only version, at least since 1992)
+
+GIF87a
+GIF89a
+none, AFP object
+0.9
+1.0
+
+1
+1+
+2
+3
+3+
+3c+
+3GUI
+4
+5
+5e
+5c
+6
+
+3
+
+87
+89
+
+0
+1
+
+1
+1
+2
+3
+3
+3
+3
+4
+5
+5
+5
+6
+
+0
+
+X'FFFF'
+
+X'A'
+X'A'
+
+9
+0
+
+X'FFFF'
+1
+X'FFFF'
+X'FFFF'
+1
+X'C'
+2
+X'FFFF'
+X'FFFF'
+X'E'
+X'C'
+X'FFFF'
+
+X'FFFF'
+X'FFFF'
+
+X'FFFF'
+X'FFFF'
+
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+1
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+
+3.0
+
+GIF87a
+GIF89a
+
+0.9
+1.0
+
+1
+1+
+2
+3
+3+
+3c+
+3GUI
+4
+5
+5e
+5c
+6
+
+Page 1 of 2
+
+<<<PAGE 2>>>
+Object Container
+
+Versions
+
+PDF multi-page file without transparency
+PDF multi-page file with transparency
+PDF single-page file without transparency
+PDF single-page file with transparency
+PDF Resource Object
+
+PNG, before AFPC PNG Subset defined
+PNG (AFPC PNG Subset)
+Resident Color Profile
+SVG (AFPC SVG subset)
+TIFF - AFPC TIFF subset
+TIFF with transparency
+TIFF without transparency
+TIFF multi-page with transparency
+TIFF multi-page without transparency
+TrueType/OpenType Collection
+TrueType/OpenType Font
+
+UP3I Print Data
+
+6, class 1.1
+6, class 2.0
+6, class 2.1
+6, class 3.0
+1.0
+1.1
+1.2
+1.3
+1.4
+1.5
+1.6
+1.7
+1.7 extension level 3
+1.7 extension level 5
+1.7 extension level 8
+ (PLUS  PDF/X, PDF/A, PDF/E, PDF/VT, and PDF/UA versions--no 
+special version support values defined for these at this time.)
+
+0.9
+1.0
+
+1.1
+1.0
+6.0 (only version since 1992, but no one fully implements?)
+
+(Open Type) 1.0
+(Open Type) 1.01
+(Open Type) 1.1
+(Open Type) 1.2
+(Open Type) 1.25
+(Open Type) 1.3
+(Open Type) 1.4
+(Open Type) 1.5
+(Open Type) 1.6
+1.04
+1.20
+
+Major
+version
+6
+6
+6
+6
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+
+0
+1
+
+1
+1
+6
+
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+
+Version name
+
+Suggested values in XOH:OPC
+Minor
+version
+1
+2
+2
+3
+0
+1
+2
+3
+4
+5
+6
+7
+7
+7
+7
+
+Subminor
+version
+1
+0
+1
+0
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+3
+5
+8
+
+6, class 1.1
+6, class 2.0
+6, class 2.1
+6, class 3.0
+PDF-1.0
+PDF-1.1
+PDF-1.2
+PDF-1.3
+PDF-1.4
+PDF-1.5
+PDF-1.6
+PDF-1.7
+PDF-1.7, ext level 3
+PDF-1.7, ext level 5
+PDF-1.7, ext level 8
+
+9
+0
+
+1
+0
+0
+
+0
+0
+1
+2
+2
+3
+4
+5
+6
+0
+2
+
+X'FFFF'
+X'FFFF'
+
+X'FFFF'
+X'FFFF'
+X'FFFF'
+
+X'FFFF'
+1
+X'FFFF'
+X'FFFF'
+5
+X'FFFF'
+X'FFFF'
+X'FFFF'
+X'FFFF'
+4
+0
+
+0.9
+1.0
+
+1.1
+1.0
+6.0
+
+1.0
+1.01
+1.1
+1.2
+1.25
+1.3
+1.4
+1.5
+1.6
+1.04
+1.20
+
+Recommended IPDS Values for Object Container Versions
+
+Page 2 of 2

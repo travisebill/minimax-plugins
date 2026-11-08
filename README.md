@@ -8,6 +8,7 @@
 | --- | --- | --- | --- |
 | `learning-game-studio` | 0.2.1 | 2 | 教學遊戲機制與互動回饋 |
 | `three-kingdoms-focus-studio` | 1.7.1 | 8 | 三國音樂企劃、影片製作、提示詞、審查與 YouTube 發布 |
+| `afpds-studio` | 1.0.0 | 2 | AFP / MO:DCA 規格語料庫與頁面渲染器 |
 
 > 本表列的是**原始碼版本**。Codex 的已發布 ZIP 仍是 1.2.1（`codex/dist/`）——
 > 發布產物與主機驗證紀錄另排期，理由見 `codex/validation/verification.md`；
@@ -19,6 +20,7 @@
 codex plugin marketplace add travisebill/minimax-plugins
 codex plugin add learning-game-studio@travis-codex-studios
 codex plugin add three-kingdoms-focus-studio@travis-codex-studios
+codex plugin add afpds-studio@travis-codex-studios
 ```
 
 [Codex 使用與維護說明](codex/README.md) · [完整安裝 ZIP](codex/dist/minimax-codex-plugins-bundle.zip) · [驗證紀錄](codex/validation/verification.md)

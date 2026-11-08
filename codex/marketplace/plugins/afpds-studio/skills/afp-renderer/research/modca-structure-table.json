@@ -1,0 +1,899 @@
+{
+  "document": "mo-dca-reference-mixed-object-document-content-architecture-reference",
+  "source": "MO:DCA Reference table of contents + Appendix E",
+  "offset": 32,
+  "count": 98,
+  "structures": [
+    {
+      "acronym": "MFC",
+      "hex": "D3A088",
+      "name": "Medium Finishing Control",
+      "toc_pdf_page": 18,
+      "printed_page": 279,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "TLE",
+      "hex": "D3A090",
+      "name": "Tag Logical Element",
+      "toc_pdf_page": 19,
+      "printed_page": 356,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MCC",
+      "hex": "D3A288",
+      "name": "Medium Copy Count",
+      "toc_pdf_page": 17,
+      "printed_page": 246,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "OBD",
+      "hex": "D3A66B",
+      "name": "Object Area Descriptor",
+      "toc_pdf_page": 18,
+      "printed_page": 313,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IID",
+      "hex": "D3A67B",
+      "name": "IM Image Input Descriptor",
+      "toc_pdf_page": 28,
+      "printed_page": 631,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MDD",
+      "hex": "D3A688",
+      "name": "Medium Descriptor",
+      "toc_pdf_page": 17,
+      "printed_page": 257,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "CDD",
+      "hex": "D3A692",
+      "name": "Container Data Descriptor",
+      "toc_pdf_page": 15,
+      "printed_page": 183,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PTD-1",
+      "hex": "D3A69B",
+      "name": "Presentation Text Data Descriptor Format 1",
+      "toc_pdf_page": 25,
+      "printed_page": 628,
+      "source": "toc",
+      "aliases": [
+        "Composed Text Descriptor"
+      ]
+    },
+    {
+      "acronym": "PGD",
+      "hex": "D3A6AF",
+      "name": "Page Descriptor",
+      "toc_pdf_page": 19,
+      "printed_page": 323,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "GDD",
+      "hex": "D3A6BB",
+      "name": "Graphics Data Descriptor",
+      "toc_pdf_page": 16,
+      "printed_page": 208,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "FGD",
+      "hex": "D3A6C5",
+      "name": "Form Environment Group Descriptor",
+      "toc_pdf_page": 25,
+      "printed_page": 583,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BDD",
+      "hex": "D3A6EB",
+      "name": "Bar Code Data Descriptor",
+      "toc_pdf_page": 14,
+      "printed_page": 134,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IDD",
+      "hex": "D3A6FB",
+      "name": "Image Data Descriptor",
+      "toc_pdf_page": 16,
+      "printed_page": 209,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IOC",
+      "hex": "D3A77B",
+      "name": "IM Image Output Control",
+      "toc_pdf_page": 28,
+      "printed_page": 633,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MMC",
+      "hex": "D3A788",
+      "name": "Medium Modification Control",
+      "toc_pdf_page": 18,
+      "printed_page": 289,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "CTC",
+      "hex": "D3A79B",
+      "name": "Composed Text Control",
+      "toc_pdf_page": 25,
+      "printed_page": 582,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PEC",
+      "hex": "D3A7A8",
+      "name": "Presentation Environment Control",
+      "toc_pdf_page": 19,
+      "printed_page": 319,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PMC",
+      "hex": "D3A7AF",
+      "name": "Page Modification Control",
+      "toc_pdf_page": 19,
+      "printed_page": 341,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BPS",
+      "hex": "D3A85F",
+      "name": "Begin Page Segment",
+      "toc_pdf_page": 15,
+      "printed_page": 167,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BII",
+      "hex": "D3A87B",
+      "name": "Begin IM Image Object",
+      "toc_pdf_page": 28,
+      "printed_page": 629,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BOC",
+      "hex": "D3A892",
+      "name": "Begin Object Container",
+      "toc_pdf_page": 14,
+      "printed_page": 155,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BPT",
+      "hex": "D3A89B",
+      "name": "Begin Presentation Text Object",
+      "toc_pdf_page": 15,
+      "printed_page": 169,
+      "source": "toc",
+      "aliases": [
+        "Begin Composed Text"
+      ]
+    },
+    {
+      "acronym": "BPF",
+      "hex": "D3A8A5",
+      "name": "Begin Print File",
+      "toc_pdf_page": 15,
+      "printed_page": 161,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BDI",
+      "hex": "D3A8A7",
+      "name": "Begin Document Index",
+      "toc_pdf_page": 14,
+      "printed_page": 136,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BDT",
+      "hex": "D3A8A8",
+      "name": "Begin Document",
+      "toc_pdf_page": 14,
+      "printed_page": 138,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BNG",
+      "hex": "D3A8AD",
+      "name": "Begin Named Page Group",
+      "toc_pdf_page": 14,
+      "printed_page": 151,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BPG",
+      "hex": "D3A8AF",
+      "name": "Begin Page",
+      "toc_pdf_page": 15,
+      "printed_page": 164,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BGR",
+      "hex": "D3A8BB",
+      "name": "Begin Graphics Object",
+      "toc_pdf_page": 14,
+      "printed_page": 143,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BDG",
+      "hex": "D3A8C4",
+      "name": "Begin Document Environment Group",
+      "toc_pdf_page": 14,
+      "printed_page": 135,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BFG",
+      "hex": "D3A8C5",
+      "name": "Begin Form Environment Group",
+      "toc_pdf_page": 25,
+      "printed_page": 582,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BRG",
+      "hex": "D3A8C6",
+      "name": "Begin Resource Group",
+      "toc_pdf_page": 15,
+      "printed_page": 172,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BOG",
+      "hex": "D3A8C7",
+      "name": "Begin Object Environment Group",
+      "toc_pdf_page": 14,
+      "printed_page": 160,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BAG",
+      "hex": "D3A8C9",
+      "name": "Begin Active Environment Group",
+      "toc_pdf_page": 14,
+      "printed_page": 130,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BMM",
+      "hex": "D3A8CC",
+      "name": "Begin Medium Map",
+      "toc_pdf_page": 14,
+      "printed_page": 147,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BFM",
+      "hex": "D3A8CD",
+      "name": "Begin Form Map",
+      "toc_pdf_page": 14,
+      "printed_page": 141,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BRS",
+      "hex": "D3A8CE",
+      "name": "Begin Resource",
+      "toc_pdf_page": 15,
+      "printed_page": 174,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BSG",
+      "hex": "D3A8D9",
+      "name": "Begin Resource Environment Group",
+      "toc_pdf_page": 15,
+      "printed_page": 182,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BMO",
+      "hex": "D3A8DF",
+      "name": "Begin Overlay",
+      "toc_pdf_page": 14,
+      "printed_page": 149,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BBC",
+      "hex": "D3A8EB",
+      "name": "Begin Bar Code Object",
+      "toc_pdf_page": 14,
+      "printed_page": 131,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BIM",
+      "hex": "D3A8FB",
+      "name": "Begin Image Object",
+      "toc_pdf_page": 14,
+      "printed_page": 145,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EPS",
+      "hex": "D3A95F",
+      "name": "End Page Segment",
+      "toc_pdf_page": 16,
+      "printed_page": 202,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EII",
+      "hex": "D3A97B",
+      "name": "End IM Image Object",
+      "toc_pdf_page": 28,
+      "printed_page": 630,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EOC",
+      "hex": "D3A992",
+      "name": "End Object Container",
+      "toc_pdf_page": 16,
+      "printed_page": 198,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EPT",
+      "hex": "D3A99B",
+      "name": "End Presentation Text Object",
+      "toc_pdf_page": 16,
+      "printed_page": 203,
+      "source": "toc",
+      "aliases": [
+        "End Composed Text"
+      ]
+    },
+    {
+      "acronym": "EPF",
+      "hex": "D3A9A5",
+      "name": "End Print File",
+      "toc_pdf_page": 16,
+      "printed_page": 200,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EDI",
+      "hex": "D3A9A7",
+      "name": "End Document Index",
+      "toc_pdf_page": 15,
+      "printed_page": 189,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EDT",
+      "hex": "D3A9A8",
+      "name": "End Document",
+      "toc_pdf_page": 15,
+      "printed_page": 190,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "ENG",
+      "hex": "D3A9AD",
+      "name": "End Named Page Group",
+      "toc_pdf_page": 16,
+      "printed_page": 196,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EPG",
+      "hex": "D3A9AF",
+      "name": "End Page",
+      "toc_pdf_page": 16,
+      "printed_page": 201,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EGR",
+      "hex": "D3A9BB",
+      "name": "End Graphics Object",
+      "toc_pdf_page": 15,
+      "printed_page": 192,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EDG",
+      "hex": "D3A9C4",
+      "name": "End Document Environment Group",
+      "toc_pdf_page": 15,
+      "printed_page": 188,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EFG",
+      "hex": "D3A9C5",
+      "name": "End Form Environment Group",
+      "toc_pdf_page": 25,
+      "printed_page": 583,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "ERG",
+      "hex": "D3A9C6",
+      "name": "End Resource Group",
+      "toc_pdf_page": 16,
+      "printed_page": 204,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EOG",
+      "hex": "D3A9C7",
+      "name": "End Object Environment Group",
+      "toc_pdf_page": 16,
+      "printed_page": 199,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EAG",
+      "hex": "D3A9C9",
+      "name": "End Active Environment Group",
+      "toc_pdf_page": 15,
+      "printed_page": 186,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EMM",
+      "hex": "D3A9CC",
+      "name": "End Medium Map",
+      "toc_pdf_page": 16,
+      "printed_page": 194,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EFM",
+      "hex": "D3A9CD",
+      "name": "End Form Map",
+      "toc_pdf_page": 15,
+      "printed_page": 191,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "ERS",
+      "hex": "D3A9CE",
+      "name": "End Resource",
+      "toc_pdf_page": 16,
+      "printed_page": 205,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "ESG",
+      "hex": "D3A9D9",
+      "name": "End Resource Environment Group",
+      "toc_pdf_page": 16,
+      "printed_page": 206,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EMO",
+      "hex": "D3A9DF",
+      "name": "End Overlay",
+      "toc_pdf_page": 16,
+      "printed_page": 195,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EBC",
+      "hex": "D3A9EB",
+      "name": "End Bar Code Object",
+      "toc_pdf_page": 15,
+      "printed_page": 187,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "EIM",
+      "hex": "D3A9FB",
+      "name": "End Image Object",
+      "toc_pdf_page": 225,
+      "printed_page": 193,
+      "source": "body-heading",
+      "aliases": []
+    },
+    {
+      "acronym": "MMT",
+      "hex": "D3AB88",
+      "name": "Map Media Type",
+      "toc_pdf_page": 18,
+      "printed_page": 302,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MCF",
+      "hex": "D3AB8A",
+      "name": "Map Coded Font Format 2",
+      "toc_pdf_page": 17,
+      "printed_page": 250,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MCD",
+      "hex": "D3AB92",
+      "name": "Map Container Data",
+      "toc_pdf_page": 17,
+      "printed_page": 248,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MPT",
+      "hex": "D3AB9B",
+      "name": "Map Presentation Text",
+      "toc_pdf_page": 18,
+      "printed_page": 310,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MPG",
+      "hex": "D3ABAF",
+      "name": "Map Page",
+      "toc_pdf_page": 18,
+      "printed_page": 305,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MGO",
+      "hex": "D3ABBB",
+      "name": "Map Graphics Object",
+      "toc_pdf_page": 18,
+      "printed_page": 286,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MDR",
+      "hex": "D3ABC3",
+      "name": "Map Data Resource",
+      "toc_pdf_page": 17,
+      "printed_page": 259,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IMM",
+      "hex": "D3ABCC",
+      "name": "Invoke Medium Map",
+      "toc_pdf_page": 17,
+      "printed_page": 212,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MMD",
+      "hex": "D3ABCD",
+      "name": "Map Media Destination",
+      "toc_pdf_page": 18,
+      "printed_page": 299,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MPO",
+      "hex": "D3ABD8",
+      "name": "Map Page Overlay",
+      "toc_pdf_page": 18,
+      "printed_page": 307,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MSU",
+      "hex": "D3ABEA",
+      "name": "Map Suppression",
+      "toc_pdf_page": 18,
+      "printed_page": 311,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MBC",
+      "hex": "D3ABEB",
+      "name": "Map Bar Code Object",
+      "toc_pdf_page": 17,
+      "printed_page": 245,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MIO",
+      "hex": "D3ABFB",
+      "name": "Map Image Object",
+      "toc_pdf_page": 18,
+      "printed_page": 287,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "OBP",
+      "hex": "D3AC6B",
+      "name": "Object Area Position",
+      "toc_pdf_page": 18,
+      "printed_page": 315,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "ICP",
+      "hex": "D3AC7B",
+      "name": "IM Image Cell Position",
+      "toc_pdf_page": 28,
+      "printed_page": 630,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PGP-1",
+      "hex": "D3ACAF",
+      "name": "Page Position Format 1",
+      "toc_pdf_page": 28,
+      "printed_page": 628,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PPO",
+      "hex": "D3ADC3",
+      "name": "Preprocess Presentation Object",
+      "toc_pdf_page": 19,
+      "printed_page": 343,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IPS",
+      "hex": "D3AF5F",
+      "name": "Include Page Segment",
+      "toc_pdf_page": 17,
+      "printed_page": 237,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IPG",
+      "hex": "D3AFAF",
+      "name": "Include Page",
+      "toc_pdf_page": 17,
+      "printed_page": 232,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IOB",
+      "hex": "D3AFC3",
+      "name": "Include Object",
+      "toc_pdf_page": 17,
+      "printed_page": 214,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IPO",
+      "hex": "D3AFD8",
+      "name": "Include Page Overlay",
+      "toc_pdf_page": 17,
+      "printed_page": 235,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MPS",
+      "hex": "D3B15F",
+      "name": "Map Page Segment",
+      "toc_pdf_page": 18,
+      "printed_page": 309,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MCF-1",
+      "hex": "D3B18A",
+      "name": "Map Coded Font Format 1",
+      "toc_pdf_page": 28,
+      "printed_page": 626,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PTD",
+      "hex": "D3B19B",
+      "name": "Presentation Text Data Descriptor Format 2",
+      "toc_pdf_page": 19,
+      "printed_page": 354,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PGP",
+      "hex": "D3B1AF",
+      "name": "Page Position Format 2",
+      "toc_pdf_page": 19,
+      "printed_page": 326,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "MMO",
+      "hex": "D3B1DF",
+      "name": "Map Medium Overlay",
+      "toc_pdf_page": 18,
+      "printed_page": 301,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PFC",
+      "hex": "D3B288",
+      "name": "Presentation Fidelity Control",
+      "toc_pdf_page": 19,
+      "printed_page": 321,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IEL",
+      "hex": "D3B2A7",
+      "name": "Index Element",
+      "toc_pdf_page": 16,
+      "printed_page": 210,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "LLE",
+      "hex": "D3B490",
+      "name": "Link Logical Element",
+      "toc_pdf_page": 17,
+      "printed_page": 239,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IRD",
+      "hex": "D3EE7B",
+      "name": "IM Image Raster Data",
+      "toc_pdf_page": 28,
+      "printed_page": 635,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "OCD",
+      "hex": "D3EE92",
+      "name": "Object Container Data",
+      "toc_pdf_page": 19,
+      "printed_page": 318,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "PTX",
+      "hex": "D3EE9B",
+      "name": "Presentation Text Data",
+      "toc_pdf_page": 19,
+      "printed_page": 355,
+      "source": "toc",
+      "aliases": [
+        "Composed Text Data"
+      ]
+    },
+    {
+      "acronym": "GAD",
+      "hex": "D3EEBB",
+      "name": "Graphics Data",
+      "toc_pdf_page": 16,
+      "printed_page": 207,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "BDA",
+      "hex": "D3EEEB",
+      "name": "Bar Code Data",
+      "toc_pdf_page": 14,
+      "printed_page": 133,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "NOP",
+      "hex": "D3EEEE",
+      "name": "No Operation",
+      "toc_pdf_page": 18,
+      "printed_page": 312,
+      "source": "toc",
+      "aliases": []
+    },
+    {
+      "acronym": "IPD",
+      "hex": "D3EEFB",
+      "name": "Image Picture Data",
+      "toc_pdf_page": 17,
+      "printed_page": 231,
+      "source": "toc",
+      "aliases": []
+    }
+  ],
+  "appendix_e_only": []
+}

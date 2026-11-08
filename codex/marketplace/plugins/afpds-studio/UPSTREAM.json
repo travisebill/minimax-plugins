@@ -1,0 +1,458 @@
+{
+  "source_repository": "https://github.com/travisebill/minimax-plugins",
+  "source_commit": "aca8d6a75cc9f15648f4530f0d11080a8b6ae638",
+  "ported_date": "2026-11-08",
+  "name": "afpds-studio",
+  "source_version": "1.0.0",
+  "codex_version": "1.0.0",
+  "files": [
+    {
+      "source_path": ".minimax-plugin/plugin.json",
+      "source_sha256": "127ae0798e1ddec2e79758644231146db40573a7fb46b063accc2c35924cfa72",
+      "codex_path": ".codex-plugin/plugin.json",
+      "codex_sha256": "93d0d76093485dd5724377c8fe9113d94ecae6b87464cb73523da6d90abee301",
+      "change": "replaced_by_codex_manifests"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "CODEX.md",
+      "codex_sha256": "3774aa5ceebf09e0a3a64f78087094903d1f4ff8912f971b58bd05619a34ca46",
+      "change": "codex_native_not_in_source"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "README.md",
+      "codex_sha256": "2bb21859b527990a7d6f6e535f9127aeb508a85234af92b470db561f2b8172e4",
+      "change": "codex_native_not_in_source"
+    },
+    {
+      "source_path": "icon-dark.png",
+      "source_sha256": "0fd55e85743af48e878be6f1a8e2b6198c967570026aee73132561f24c2712ac",
+      "codex_path": "assets/icon-dark.png",
+      "codex_sha256": "0fd55e85743af48e878be6f1a8e2b6198c967570026aee73132561f24c2712ac",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "icon.png",
+      "source_sha256": "888547c34c661e12f25a98252a25b8745d80b0a836861cc71ab67e5908d0d088",
+      "codex_path": "assets/icon.png",
+      "codex_sha256": "888547c34c661e12f25a98252a25b8745d80b0a836861cc71ab67e5908d0d088",
+      "change": "unchanged"
+    },
+    {
+      "source_path": ".minimax-plugin/plugin.json",
+      "source_sha256": "127ae0798e1ddec2e79758644231146db40573a7fb46b063accc2c35924cfa72",
+      "codex_path": "plugin.json",
+      "codex_sha256": "324dbe9b38d6e9964672bb7cce8d8dcff1cd7c80142b11360c811081fd00b91e",
+      "change": "replaced_by_codex_manifests"
+    },
+    {
+      "source_path": "skills/afp-renderer/SKILL.md",
+      "source_sha256": "4e662c0269d5e5d47f26684075274fdacd9593cc3b50209139d963c662a96b8e",
+      "codex_path": "skills/afp-renderer/SKILL.md",
+      "codex_sha256": "dceddbab4311e279f48f74da536f96e9fc5ac2b9011a0e5e444e12105d1b9dbc",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/afp-renderer/agents/openai.yaml",
+      "codex_sha256": "fd09da70f769af1e78d2760515948154836aef4d6b6cdb43f0b9e6e24fdb6f2b",
+      "change": "codex_native_not_in_source"
+    },
+    {
+      "source_path": "skills/afp-renderer/references/renderer.md",
+      "source_sha256": "805bcdec3d182162607804725c19817d2aa5baa204bb4651084ffbe832630ca4",
+      "codex_path": "skills/afp-renderer/references/renderer.md",
+      "codex_sha256": "805bcdec3d182162607804725c19817d2aa5baa204bb4651084ffbe832630ca4",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/research/modca-structure-table.json",
+      "source_sha256": "ce6a411f1cf157830029c88b9ea2a6e3f7780b565033910d400d4e76110084d0",
+      "codex_path": "skills/afp-renderer/research/modca-structure-table.json",
+      "codex_sha256": "ce6a411f1cf157830029c88b9ea2a6e3f7780b565033910d400d4e76110084d0",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/afpstream.py",
+      "source_sha256": "2fa17c0393055af90d81fde14c36187d5a574972d6629807b85c26a688040fdd",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/afpstream.py",
+      "codex_sha256": "2fa17c0393055af90d81fde14c36187d5a574972d6629807b85c26a688040fdd",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/colors.py",
+      "source_sha256": "f889f3f9b8623d4775fac87df4e2b8894699c3476c584fac19c3ea7c6787a492",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/colors.py",
+      "codex_sha256": "f889f3f9b8623d4775fac87df4e2b8894699c3476c584fac19c3ea7c6787a492",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/goca.py",
+      "source_sha256": "be0bfb93ae4ec41608a5d2a2f6883205815c766fb1225b538e518e5fd36cfb48",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/goca.py",
+      "codex_sha256": "be0bfb93ae4ec41608a5d2a2f6883205815c766fb1225b538e518e5fd36cfb48",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/imimage.py",
+      "source_sha256": "724ee1808f0cc0b5d20f4c6610c0277dfde6a00c10136ff8cbac52f9405c8117",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/imimage.py",
+      "codex_sha256": "724ee1808f0cc0b5d20f4c6610c0277dfde6a00c10136ff8cbac52f9405c8117",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/ptoca.py",
+      "source_sha256": "203153fd15fe39b41bbab7eeeb7f7a67507ed927797137fa48f11222a998d850",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/ptoca.py",
+      "codex_sha256": "203153fd15fe39b41bbab7eeeb7f7a67507ed927797137fa48f11222a998d850",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/render.py",
+      "source_sha256": "83feb6c023c6d35cb560e6b124471c45aed90d85788fe4f3462f4d5f78614eca",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/render.py",
+      "codex_sha256": "83feb6c023c6d35cb560e6b124471c45aed90d85788fe4f3462f4d5f78614eca",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/resfile.py",
+      "source_sha256": "974bc858c519ea88686a21efc6afe20d7b582fff57942586e50ad5ac02dcdd1c",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/resfile.py",
+      "codex_sha256": "974bc858c519ea88686a21efc6afe20d7b582fff57942586e50ad5ac02dcdd1c",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/resources.py",
+      "source_sha256": "35cee663b00a1a537f63c775876be224de157e7ea2457e1dac5d281806141ecd",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/resources.py",
+      "codex_sha256": "35cee663b00a1a537f63c775876be224de157e7ea2457e1dac5d281806141ecd",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afp-renderer/scripts/afp_render/units.py",
+      "source_sha256": "ad01878af28cae48dcc27718504fe4320b90bc92f4ebbc2c051e80fc0629de51",
+      "codex_path": "skills/afp-renderer/scripts/afp_render/units.py",
+      "codex_sha256": "ad01878af28cae48dcc27718504fe4320b90bc92f4ebbc2c051e80fc0629de51",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/SKILL.md",
+      "source_sha256": "a201776826fbcd0accb505990773f50d5ce229e8b68454304040cdb5e0e4a29b",
+      "codex_path": "skills/afpds-expert/SKILL.md",
+      "codex_sha256": "9cb7c02f7486e1f400e41c9262962153883bb84901f1a8165a83f9a4c05fe8d0",
+      "change": "adapted"
+    },
+    {
+      "source_path": null,
+      "source_sha256": null,
+      "codex_path": "skills/afpds-expert/agents/openai.yaml",
+      "codex_sha256": "e58117708af4c43b74e525dd5bc6c32627e044e690683abdcb900da4fbfa543f",
+      "change": "codex_native_not_in_source"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/acma-overview-presentation-xplor.txt",
+      "source_sha256": "aed1d77fa9b9bf6a8cf675019609676cf1a48811c42d635b2f1c1e0211c429ac",
+      "codex_path": "skills/afpds-expert/corpus/acma-overview-presentation-xplor.txt",
+      "codex_sha256": "aed1d77fa9b9bf6a8cf675019609676cf1a48811c42d635b2f1c1e0211c429ac",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afp-advances-and-directions-xplor.txt",
+      "source_sha256": "c99dbd0f983cd9b83d69991592cf14ead923c255cff4bed8273ad566cc4e4f38",
+      "codex_path": "skills/afpds-expert/corpus/afp-advances-and-directions-xplor.txt",
+      "codex_sha256": "c99dbd0f983cd9b83d69991592cf14ead923c255cff4bed8273ad566cc4e4f38",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afp-color-management-architecture-acma.txt",
+      "source_sha256": "5b610d5330aec749728d443af1798c5821c92c180d2160991848ced8d5f543ff",
+      "codex_path": "skills/afpds-expert/corpus/afp-color-management-architecture-acma.txt",
+      "codex_sha256": "5b610d5330aec749728d443af1798c5821c92c180d2160991848ced8d5f543ff",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afp-color-management-xplor.txt",
+      "source_sha256": "53978c63bb2b95d1d9b0eac5a16d95a74b2cd9a6defc8ea7b67e0bf4675ccc65",
+      "codex_path": "skills/afpds-expert/corpus/afp-color-management-xplor.txt",
+      "codex_sha256": "53978c63bb2b95d1d9b0eac5a16d95a74b2cd9a6defc8ea7b67e0bf4675ccc65",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afp-goca-reference-graphics-object-content-architecture-for-afp-reference.txt",
+      "source_sha256": "8c4b4c3698fe57ab17b995fdd56c95be8c36066b187ec5a794a09ed4b4dcdc86",
+      "codex_path": "skills/afpds-expert/corpus/afp-goca-reference-graphics-object-content-architecture-for-afp-reference.txt",
+      "codex_sha256": "8c4b4c3698fe57ab17b995fdd56c95be8c36066b187ec5a794a09ed4b4dcdc86",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afpc-afp-update-share.txt",
+      "source_sha256": "fc326a83196c00619decc630e36aed2fbaf80524bc90a391f942bf4b05cda61d",
+      "codex_path": "skills/afpds-expert/corpus/afpc-afp-update-share.txt",
+      "codex_sha256": "fc326a83196c00619decc630e36aed2fbaf80524bc90a391f942bf4b05cda61d",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afpc-afp-update-xplor-xdu.txt",
+      "source_sha256": "26b451d0135b6bb7c16689760e229a25df6d0d3ed856fc19c168200f94bb7249",
+      "codex_path": "skills/afpds-expert/corpus/afpc-afp-update-xplor-xdu.txt",
+      "codex_sha256": "26b451d0135b6bb7c16689760e229a25df6d0d3ed856fc19c168200f94bb7249",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afpc-company-abbreviation-registry.txt",
+      "source_sha256": "3fabee40e5da7273dc186d64a8637da723b0d0abd945171d6eda70cf68b1cef6",
+      "codex_path": "skills/afpds-expert/corpus/afpc-company-abbreviation-registry.txt",
+      "codex_sha256": "3fabee40e5da7273dc186d64a8637da723b0d0abd945171d6eda70cf68b1cef6",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/afpc-white-paper-drupa.txt",
+      "source_sha256": "e5cb6fc01138b254c857c328b3db22d59dc9b888035f50bcc973a9a4f24e3473",
+      "codex_path": "skills/afpds-expert/corpus/afpc-white-paper-drupa.txt",
+      "codex_sha256": "e5cb6fc01138b254c857c328b3db22d59dc9b888035f50bcc973a9a4f24e3473",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/bcoca-faq-bar-code-object-content-architecture-frequently-asked-questions.txt",
+      "source_sha256": "09f877cf6d22f8d0fce70dbd67d733179b37f78ef92a7d8a034784783dae7b31",
+      "codex_path": "skills/afpds-expert/corpus/bcoca-faq-bar-code-object-content-architecture-frequently-asked-questions.txt",
+      "codex_sha256": "09f877cf6d22f8d0fce70dbd67d733179b37f78ef92a7d8a034784783dae7b31",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/bcoca-reference-bar-code-object-content-architecture-reference.txt",
+      "source_sha256": "eca272205759fda8358b90fa2c9a257f6441febb6e8963423d00c6dac7ba5777",
+      "codex_path": "skills/afpds-expert/corpus/bcoca-reference-bar-code-object-content-architecture-reference.txt",
+      "codex_sha256": "eca272205759fda8358b90fa2c9a257f6441febb6e8963423d00c6dac7ba5777",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/character-data-representation-architecture-and-reference-and-registry.txt",
+      "source_sha256": "d2dbff471a699ff43e5a901b4541e15ce2814f8cb2140875905ad82fb1fd9e6c",
+      "codex_path": "skills/afpds-expert/corpus/character-data-representation-architecture-and-reference-and-registry.txt",
+      "codex_sha256": "d2dbff471a699ff43e5a901b4541e15ce2814f8cb2140875905ad82fb1fd9e6c",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/cmoca-reference-color-management-object-content-architecture-reference.txt",
+      "source_sha256": "6652f672f23c5a8f8c96646b80ebce6230f50e134ce95970cf67994badfe6c5b",
+      "codex_path": "skills/afpds-expert/corpus/cmoca-reference-color-management-object-content-architecture-reference.txt",
+      "codex_sha256": "6652f672f23c5a8f8c96646b80ebce6230f50e134ce95970cf67994badfe6c5b",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/fgid-registry-afpc-font-typeface-registry.txt",
+      "source_sha256": "38172010036bcbcbb7991919c90556e367ead85f4148aea3eb238c69be2fccc1",
+      "codex_path": "skills/afpds-expert/corpus/fgid-registry-afpc-font-typeface-registry.txt",
+      "codex_sha256": "38172010036bcbcbb7991919c90556e367ead85f4148aea3eb238c69be2fccc1",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/foca-reference-font-object-content-architecture-reference.txt",
+      "source_sha256": "d05be969aa80eaf878786da23a6f6bc11bad98b130f56d7f17b5ab3a561ed42d",
+      "codex_path": "skills/afpds-expert/corpus/foca-reference-font-object-content-architecture-reference.txt",
+      "codex_sha256": "d05be969aa80eaf878786da23a6f6bc11bad98b130f56d7f17b5ab3a561ed42d",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/font-summary-for-afp-font-collection.txt",
+      "source_sha256": "4dc985bca540364846e1cd4716b6f2a16280e2aaa23e38059458380afd838f02",
+      "codex_path": "skills/afpds-expert/corpus/font-summary-for-afp-font-collection.txt",
+      "codex_sha256": "4dc985bca540364846e1cd4716b6f2a16280e2aaa23e38059458380afd838f02",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/future-summit-fogra-symposium-15th-anniversary-of-icc.txt",
+      "source_sha256": "34d24573211cc75ec96852f5b0bdaad46939d0c790595f276f6f72c611690b0d",
+      "codex_path": "skills/afpds-expert/corpus/future-summit-fogra-symposium-15th-anniversary-of-icc.txt",
+      "codex_sha256": "34d24573211cc75ec96852f5b0bdaad46939d0c790595f276f6f72c611690b0d",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/index.json",
+      "source_sha256": "1a44bdb73d1093e859f4cc0be7f3e9b24ffb9e7a38ae9f1cbd706ecf98738114",
+      "codex_path": "skills/afpds-expert/corpus/index.json",
+      "codex_sha256": "1a44bdb73d1093e859f4cc0be7f3e9b24ffb9e7a38ae9f1cbd706ecf98738114",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/ioca-reference-image-object-content-architecture-reference.txt",
+      "source_sha256": "c0244b8b5c5c6f29969d7f55d50de1f13e63e307484b6df0266a06a1a78a10be",
+      "codex_path": "skills/afpds-expert/corpus/ioca-reference-image-object-content-architecture-reference.txt",
+      "codex_sha256": "c0244b8b5c5c6f29969d7f55d50de1f13e63e307484b6df0266a06a1a78a10be",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/ipds-reference-intelligent-printer-data-stream-reference.txt",
+      "source_sha256": "0d1a94582d460eb61bdbadea7312afbb420bd898fc29485c0f648488bb87953b",
+      "codex_path": "skills/afpds-expert/corpus/ipds-reference-intelligent-printer-data-stream-reference.txt",
+      "codex_sha256": "0d1a94582d460eb61bdbadea7312afbb420bd898fc29485c0f648488bb87953b",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/line-data-reference-programming-guide-and-line-data-reference.txt",
+      "source_sha256": "7a195d68f3948a89eb1c7d59d6c73cd275d92ad2aaf7995bd8aa5f9fadefce36",
+      "codex_path": "skills/afpds-expert/corpus/line-data-reference-programming-guide-and-line-data-reference.txt",
+      "codex_sha256": "7a195d68f3948a89eb1c7d59d6c73cd275d92ad2aaf7995bd8aa5f9fadefce36",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/metadata-guide-for-afp.txt",
+      "source_sha256": "a14e2c9dd5e7650dfa60745ec5e5caa502afb325c37e8db2b78e83709506c53c",
+      "codex_path": "skills/afpds-expert/corpus/metadata-guide-for-afp.txt",
+      "codex_sha256": "a14e2c9dd5e7650dfa60745ec5e5caa502afb325c37e8db2b78e83709506c53c",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/mo-dca-l-the-os-2-presentation-manager-metafile-met-format.txt",
+      "source_sha256": "97e232ab8839baa99df586ad2c33a6a45e3d27cc23d44a7400ad32518727fbad",
+      "codex_path": "skills/afpds-expert/corpus/mo-dca-l-the-os-2-presentation-manager-metafile-met-format.txt",
+      "codex_sha256": "97e232ab8839baa99df586ad2c33a6a45e3d27cc23d44a7400ad32518727fbad",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/mo-dca-reference-mixed-object-document-content-architecture-reference.txt",
+      "source_sha256": "9bbf70aa28e427dd6d3a261f8f6932b8b8eebb935dc1dc516b15c7ce00a87e23",
+      "codex_path": "skills/afpds-expert/corpus/mo-dca-reference-mixed-object-document-content-architecture-reference.txt",
+      "codex_sha256": "9bbf70aa28e427dd6d3a261f8f6932b8b8eebb935dc1dc516b15c7ce00a87e23",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/moca-reference-metadata-object-content-architecture-reference.txt",
+      "source_sha256": "64271f4844cb4fa1254dbb66813cec500e5d64a14a9697b02b788c49e4a09a58",
+      "codex_path": "skills/afpds-expert/corpus/moca-reference-metadata-object-content-architecture-reference.txt",
+      "codex_sha256": "64271f4844cb4fa1254dbb66813cec500e5d64a14a9697b02b788c49e4a09a58",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/presentation-object-subsets-for-afp.txt",
+      "source_sha256": "5b72c09f480c477da6479f3c3da58f0c71af5234ed35c3239301013f65e2cf0e",
+      "codex_path": "skills/afpds-expert/corpus/presentation-object-subsets-for-afp.txt",
+      "codex_sha256": "5b72c09f480c477da6479f3c3da58f0c71af5234ed35c3239301013f65e2cf0e",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/printstream-shootout-afp-xplor.txt",
+      "source_sha256": "ad56e7b46fd1880f6723a801a1a44af8b41e9961c921fcd1d6519538d459bd38",
+      "codex_path": "skills/afpds-expert/corpus/printstream-shootout-afp-xplor.txt",
+      "codex_sha256": "ad56e7b46fd1880f6723a801a1a44af8b41e9961c921fcd1d6519538d459bd38",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/ptoca-reference-presentation-text-object-content-architecture-reference.txt",
+      "source_sha256": "036b8b0159d2de05bce7dbeb63c8ab569d6b91d7584713f0aa8fa5b9b7fc0fbc",
+      "codex_path": "skills/afpds-expert/corpus/ptoca-reference-presentation-text-object-content-architecture-reference.txt",
+      "codex_sha256": "036b8b0159d2de05bce7dbeb63c8ab569d6b91d7584713f0aa8fa5b9b7fc0fbc",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/recommended-ipds-values-for-object-container-versions.txt",
+      "source_sha256": "666a86b37c96bdd085dfd398112e538bf4cdf715ac42b2b3b20c63d53a49dfe4",
+      "codex_path": "skills/afpds-expert/corpus/recommended-ipds-values-for-object-container-versions.txt",
+      "codex_sha256": "666a86b37c96bdd085dfd398112e538bf4cdf715ac42b2b3b20c63d53a49dfe4",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/recommended-method-to-encrypt-ipds-communications.txt",
+      "source_sha256": "6a39b5996fd979006ff3c53aae12397cd779e8a2087c48445b3971ecd336d416",
+      "codex_path": "skills/afpds-expert/corpus/recommended-method-to-encrypt-ipds-communications.txt",
+      "codex_sha256": "6a39b5996fd979006ff3c53aae12397cd779e8a2087c48445b3971ecd336d416",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/technical-reference-for-code-pages.txt",
+      "source_sha256": "b784c3e860977e54cb65478a133095385ebd84194b7b9f256fd8c3ff3d013b8c",
+      "codex_path": "skills/afpds-expert/corpus/technical-reference-for-code-pages.txt",
+      "codex_sha256": "b784c3e860977e54cb65478a133095385ebd84194b7b9f256fd8c3ff3d013b8c",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/up3i-v1-20-3rd-party-specification.txt",
+      "source_sha256": "f0aeebf875eac0e85e07ab9e9571db2220a0a1b86108a22df2e1e7e3b4280ab5",
+      "codex_path": "skills/afpds-expert/corpus/up3i-v1-20-3rd-party-specification.txt",
+      "codex_sha256": "f0aeebf875eac0e85e07ab9e9571db2220a0a1b86108a22df2e1e7e3b4280ab5",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/corpus/using-opentype-fonts-in-an-afp-system.txt",
+      "source_sha256": "bc290cae3c701ac9f1cb1141d5aa6fbd6a6c91d57e7845e3efea650d42ef8ddb",
+      "codex_path": "skills/afpds-expert/corpus/using-opentype-fonts-in-an-afp-system.txt",
+      "codex_sha256": "bc290cae3c701ac9f1cb1141d5aa6fbd6a6c91d57e7845e3efea650d42ef8ddb",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/references/ecosystem.md",
+      "source_sha256": "68284462357d5deff6e6abef4e10ad964c6ace2cc0a7ef10d69b501a5a729345",
+      "codex_path": "skills/afpds-expert/references/ecosystem.md",
+      "codex_sha256": "68284462357d5deff6e6abef4e10ad964c6ace2cc0a7ef10d69b501a5a729345",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/references/fonts-and-encoding.md",
+      "source_sha256": "8df1da93862caceed1564bd3f66d0b9c0b99b5df4c1111ff4b114436f17d57e9",
+      "codex_path": "skills/afpds-expert/references/fonts-and-encoding.md",
+      "codex_sha256": "8df1da93862caceed1564bd3f66d0b9c0b99b5df4c1111ff4b114436f17d57e9",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/references/ipds.md",
+      "source_sha256": "40161562b6a8f7de0ba7b25a453e9d85f89251191ab955a363c97ae8b45bf0ac",
+      "codex_path": "skills/afpds-expert/references/ipds.md",
+      "codex_sha256": "40161562b6a8f7de0ba7b25a453e9d85f89251191ab955a363c97ae8b45bf0ac",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/references/line-data-metadata-color.md",
+      "source_sha256": "b57804ca1c0ebb72238307065630f1b5cb7d54f81c52c58064d6717d1d2ef607",
+      "codex_path": "skills/afpds-expert/references/line-data-metadata-color.md",
+      "codex_sha256": "b57804ca1c0ebb72238307065630f1b5cb7d54f81c52c58064d6717d1d2ef607",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/references/modca.md",
+      "source_sha256": "1f4dce81e563698b0b605c224b4f48c7df9e3d1256a6f0bd400eb824ce6add4e",
+      "codex_path": "skills/afpds-expert/references/modca.md",
+      "codex_sha256": "1f4dce81e563698b0b605c224b4f48c7df9e3d1256a6f0bd400eb824ce6add4e",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/references/oca.md",
+      "source_sha256": "771f01b6185a2cb84b951894eea4d9bf9a53c106cc0516dec721e3470e90deff",
+      "codex_path": "skills/afpds-expert/references/oca.md",
+      "codex_sha256": "771f01b6185a2cb84b951894eea4d9bf9a53c106cc0516dec721e3470e90deff",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/scripts/mo-dca-structures.mjs",
+      "source_sha256": "1c86235b4ee3f7f32370c4759ea1d0c78c70509f91c2b38d92edbc4f7902887c",
+      "codex_path": "skills/afpds-expert/scripts/mo-dca-structures.mjs",
+      "codex_sha256": "1c86235b4ee3f7f32370c4759ea1d0c78c70509f91c2b38d92edbc4f7902887c",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/scripts/spec-search.mjs",
+      "source_sha256": "2364d8248b8232e32fb0bd7efa92a0b9f013b9b44253b7d2bad7e35426740cbf",
+      "codex_path": "skills/afpds-expert/scripts/spec-search.mjs",
+      "codex_sha256": "2364d8248b8232e32fb0bd7efa92a0b9f013b9b44253b7d2bad7e35426740cbf",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/scripts/test-verify-stream.mjs",
+      "source_sha256": "571f3ac96124124fbba5c62f7f9ffa595dd7bd707f3fc84b9d46a5462385ec5e",
+      "codex_path": "skills/afpds-expert/scripts/test-verify-stream.mjs",
+      "codex_sha256": "571f3ac96124124fbba5c62f7f9ffa595dd7bd707f3fc84b9d46a5462385ec5e",
+      "change": "unchanged"
+    },
+    {
+      "source_path": "skills/afpds-expert/scripts/verify-stream.mjs",
+      "source_sha256": "81259012bfd435f0d81e6daf3156fdbb2c0fefc429311363f4b59a3f8b29c21c",
+      "codex_path": "skills/afpds-expert/scripts/verify-stream.mjs",
+      "codex_sha256": "81259012bfd435f0d81e6daf3156fdbb2c0fefc429311363f4b59a3f8b29c21c",
+      "change": "unchanged"
+    }
+  ]
+}

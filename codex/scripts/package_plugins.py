@@ -19,6 +19,7 @@ EXPECTED = {
         'three-kingdoms-music-review', 'three-kingdoms-vocal-single',
         'yt-publish-strategy', 'audio-reactive-waveform',
     },
+    'afpds-studio': {'afpds-expert', 'afp-renderer'},
 }
 
 

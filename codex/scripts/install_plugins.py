@@ -12,6 +12,7 @@ commands = [
     ['plugin', 'marketplace', 'add', str(root / 'marketplace'), '--json'],
     ['plugin', 'add', 'learning-game-studio@travis-codex-studios', '--json'],
     ['plugin', 'add', 'three-kingdoms-focus-studio@travis-codex-studios', '--json'],
+    ['plugin', 'add', 'afpds-studio@travis-codex-studios', '--json'],
     ['plugin', 'list', '--marketplace', 'travis-codex-studios', '--json'],
 ]
 for args in commands:

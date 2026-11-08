@@ -1,0 +1,1594 @@
+<<<PAGE 1>>>
+AFP Color Management Architecture 
+(ACMA) Overview – XPLOR 2006
+
+Reinhard Hohensee, IBM
+Jean Aschenbrenner, IBM
+John Meixel, IBM
+
+© 2006 IBM Corporation
+
+AFP Color Consortium
+
+<<<PAGE 2>>>
+Agenda
+
+(cid:137) Overview – Reinhard Hohensee
+
+(cid:131) What is the AFP Color Consortium (AFPCC) and what are its goals?
+(cid:131) ICC Profiles and Color Management Resources (CMRs)
+(cid:131) CMRs in MO:DCA (AFP) data
+
+(cid:137) Color Management Resources (CMRs) – Jean Aschenbrenner
+
+(cid:131) Color Management Object Content Architecture (CMOCA)
+(cid:131) CMR types and structure
+(cid:131) CMRs in IPDS data
+
+(cid:137) AFP Color Management Tools and Utilities – John Meixel
+
+(cid:131) CMR Installer and the CMR Resource Access Table (RAT)
+(cid:131) CMR Engine (CMRE)
+(cid:131) Data Object Installer and the Data Object RAT
+(cid:131) CMR Usage scenarios
+
+(cid:137) Summary
+(cid:137) Q & A
+
+2
+
+AFP Color Consortium
+
+<<<PAGE 3>>>
+AFP Color Consortium
+
+(cid:137) Formed in October 2004
+(cid:137) Goal is to develop a comprehensive color management capability 
+
+within the AFP architecture 
+(cid:131) Customers demand accurate colors regardless of output device
+• Customers demand consistent colors across multi-vendor configurations 
+
+and workflows
+
+• To protect significant color investment, products must be based on  open 
+
+standards
+
+• Many companies provide AFP products, need broad buy-in to have an 
+
+industry-wide solution
+
+(cid:137) First release of architecture was formally approved January 20, 
+
+2006 and will now be published
+
+(cid:137) For more information, see afpcolor.org
+
+3
+
+AFP Color Consortium
+
+<<<PAGE 4>>>
+Current AFP Color Consortium Membership (27)
+
+(cid:131) Document Composition & 
+
+Resource Creation:
+
+• Cincom
+• COPI
+• DocuCorp
+• Document Sciences
+• Elixir Technologies
+• Exstream Software
+• GMC Software Technology
+• Group 1
+•
+•
+• Metavante
+• PrintSoft
+• StreamServe
+
+Inventive Designers
+Isis-Papyrus
+
+(cid:131) Servers & Transforms
+• CDP Communications 
+• Compart Systemhaus
+• Crawford Technologies
+• Emtex
+• MPI
+• Solimar Systems
+• Xenos Group Inc.
+(cid:131) Printers & Controllers
+
+IBM
+Intermate
+
+•
+•
+• Kodak
+• Lexmark
+• Oce
+• Xeikon International
+• Xerox
+
+4
+
+AFP Color Consortium
+
+<<<PAGE 5>>>
+Goals of AFP Color Management (contd)
+
+(cid:131) Accurate output color if input 
+
+color properly defined
+
+(cid:131) Standards-based (ICC), 
+
+open architecture
+
+(cid:131) Consistent output color and 
+grayscale simulation on 
+different devices driven by 
+different applications 
+
+RGB
+CMYK
+....
+
+input
+profile
+
+CMYK
+
+AFP
+Printer
+
+printer
+profile
+
+printer (x)
+profile
+
+CMYK (x)
+
+CMYK (y)
+
+AFP
+Printer (x)
+
+AFP
+Printer (y)
+
+RGB
+CMYK
+....
+
+input
+profile
+
+printer (y)
+profile
+
+5
+
+AFP Color Consortium
+
+<<<PAGE 6>>>
+Goals of AFP Color Management (contd)
+
+(cid:131) Tunable output color
+
+(cid:131) High-speed output color
+
+AFP
+Printer
+
+halftone
+(x)
+
+halftone
+(y)
+
+6
+
+AFP Color Consortium
+
+<<<PAGE 7>>>
+ICC Profiles
+
+The International Color Consortium (ICC) was formed in the early 
+1990s to address the problem of color management in printers, displays, 
+scanners, operating systems, applications, servers, in an open, industry-
+standard manner. This work resulted in the ICC Specification, which 
+defines methods for color management that are based on objects called 
+ICC profiles.
+ICC profiles are created for input and output devices by their 
+manufacturer and are essentially look-up-tables (LUTs) that specify how 
+to convert between the color space of the device, e.g. a specific RGB for 
+a display (input color), or a specific CMYK for a printer (output color), 
+and a standard device-independent color space called the Profile 
+Connection Space (PCS). The color spaces used for the PCS are CIE 
+Lab and CIE XYZ.
+
+This conversion to/from PCS via ICC profiles allows colors to be
+accurately passed from input devices to output devices.
+
+7
+
+AFP Color Consortium
+
+<<<PAGE 8>>>
+ICC Profiles – System View
+
+AFP
+
+Scanner X
+
+Lab value of blue is
+L = 48
+a = -12
+b = -22
+
+(Rx,Gx,Bx)
+
+AFP
+
+Scanner X
+ICC Profile
+
+Display Z
+
+(Rz,Gz,Bz)
+
+Profile Connection
+Space (PCS)
+
+Display Z
+ICC Profile
+
+L = 48
+a = -12
+b = -22
+
+Printer A
+ICC Profile
+
+Printer B
+ICC Profile
+
+(Ca,Ma,Ya,Ka)
+
+(Cb,Mb,Yb,Kb)
+
+Printer A
+
+Printer B
+
+AFP
+
+AFP
+
+8
+
+AFP Color Consortium
+
+<<<PAGE 9>>>
+The AFP Color Management Resource (CMR)
+
+(cid:137) ICC profiles are the industry-standard for color management and  
+form the basis for color management in AFP; they are integrated 
+into AFP as resources that are called AFP Color Management 
+Resources (CMRs)
+
+• AFP CMRs are:
+
+• Defined in a new formal architecture under the AFP Architecture umbrella –
+
+the Color Management Object Content Architecture (CMOCA)
+
+• Processed as AFP resources – installed, downloaded, activated, captured, 
+
+re-used 
+
+• Can be associated with a MO:DCA document component:
+
+• Printfile
+• Document
+• Group of pages/sheets
+• Page or overlay
+• Data object
+
+9
+
+AFP Color Consortium
+
+<<<PAGE 10>>>
+CMR Types
+
+(cid:137) Color Conversion (CC) CMRs: Contain ICC profiles (in their ICC-
+defined syntax) that convert a device-specific color to/from the 
+device-independent ICC Profile Connection Space (PCS)
+
+(cid:137) Tone Transfer Curve (TTC) CMRs: Transfer curves that are used 
+
+to modify the values of a particular color component
+
+(cid:137) Halftone (HT) CMRs: Screens that are applied to multi-bit data
+
+(cid:137) Indexed (IX) CMRs: Mappings of indexed colors in the data stream 
+
+to output device colors or colorant combinations 
+
+(cid:137) Link Color Conversion (LK) CMRs: Look-up tables (LUTs) that 
+
+convert directly from a device-specific input color space in the data 
+to the device-specific output color space of the presentation device
+
+10
+
+AFP Color Consortium
+
+<<<PAGE 11>>>
+CMR Processing Modes
+
+(cid:137) Audit: An audit CMR specifies color-management processing that has 
+been done on a document component; for example, it may specify a 
+color conversion that has been done on the data
+
+(cid:137) Instruction: An instruction CMR specifies color-management 
+
+processing that is to be done on a document component; for example, 
+it may specify a halftone that is to be applied to multi-bit data
+
+(cid:137) Link: A link CMR is used to link an input color space in the presentation 
+
+data directly to the output color space of the presentation device 
+(without going through the PCS)  
+
+The processing mode is not part of the CMR; it is specified in the 
+context in which the CMR is associated with a document component, 
+e.g., on the structured field that references the CMR.
+
+11
+
+AFP Color Consortium
+
+<<<PAGE 12>>>
+CMR Creation and Installation: CMR Installer and 
+CMRE
+
+(cid:137) CMRs are installed as resources in an AFP resource library with a 
+workstation-based CMR Installer that is part of a new Resource 
+Installer. The CMR Installer:
+(cid:131) uploads the CMR into the resource library of a print server
+(cid:131) builds the CMR Resource Access Table (RAT) entry that maps the CMR 
+name to a file name, to an object-OID, and optionally to other CMRs
+
+(cid:137) CMRs are created by the CMR Engine (CMRE), which runs in 
+
+conjunction with the Resource Installer to:
+(cid:131) Generate Color Conversion (CC) CMRs from ICC profiles, including profiles 
+
+that were copied/extracted from data objects
+
+(cid:131) Generate Halftone (HT), Tone Transfer Curve (TTC), and Indexed (IX) 
+
+CMRs from input data
+
+(cid:131) Generate Link Color Conversion (LK) CMRs that convert the input color 
+
+space defined in an audit CC CMR to the output color space of configured 
+presentation devices
+
+12
+
+AFP Color Consortium
+
+<<<PAGE 13>>>
+Inline CMRs
+
+(cid:137) CMRs may also be carried in a printfile-level resource group in a BRS -
+
+BOC/EOC – ERS container, and are then called inline CMRs
+(cid:131) BRS specifies CMR name
+(cid:131) For inline Color Conversion CMRs, BRS may specify Link Color Conversion CMRs
+
+that convert directly to output color spaces of different target devices
+
+(cid:131) For inline generic Halftone or Tone Transfer Curve CMRs, BRS may specify device-
+
+specific HT or TTC CMRs; such CMRs are used in place of the inline generic CMR if 
+the device type and model match the target device  
+
+13
+
+AFP Color Consortium
+
+<<<PAGE 14>>>
+Associating CMRs with a MO:DCA document 
+component
+
+(cid:137) CMRs can be associated with document components at all levels of the
+
+MO:DCA document hierarchy:
+(cid:131) Printfile (highest)
+(cid:131) Document
+(cid:131) Group of pages/sheets
+(cid:131) Page/overlay
+(cid:131) Data object (lowest)
+
+(cid:137) A CMR at a lower level always overrides – for that document component 
+
+only – a conflicting CMR at a higher level
+(cid:131) Example: CC CMR at printfile level defines RGB = scanner (y) RGB, CC 
+
+CMR at page (n) level defines RGB = scanner (x) RGB. According to rule, 
+since CC CMRs conflict, all RGB for page (n) is interpreted as scanner (x) 
+RGB 
+
+14
+
+AFP Color Consortium
+
+<<<PAGE 15>>>
+Example: Associating CMRs with a Document 
+Component: Printfile
+
+BFM (FormDef)
+
+BDG (Document Environment Group (DEG))
+
+.................
+MDR, CMRname = cmrxyz
+
+X’10’ triplet: Object-type OID = CMR
+X’91’ triplet: Processing mode = audit
+
+Resource
+Library
+
+CMR
+RAT
+
+cmrxyz
+
+..................
+
+EDG
+....................
+
+EFM
+
+AFP
+(MO:DCA-P)
+Printfile
+
+Print
+Server
+
+IPDS
+
+Controller PRT
+
+*** CMR scope = complete printfile ***
+
+Captured
+CMRs
+
+Printer
+Cache
+
+15
+
+AFP Color Consortium
+
+<<<PAGE 16>>>
+Associating CMRs with a MO:DCA document 
+component (Cont’d)
+
+(cid:137) A similar method can be used to associate CMRs with a single 
+
+document in the printfile by specifying the offset to the document 
+in the printfile
+
+(cid:137) CMRs can be associated with a group of pages/sheets by 
+
+referencing the CMRs in a Medium Map; the scope of the CMRs
+is then the group of pages/sheets that follow
+
+(cid:137) CMRs can be associated with a page or overlay by referencing 
+
+the CMRs in the Active Environment Group (AEG) if the 
+page/overlay
+
+(cid:137) CMRs can be associated with a data object, such as an IOCA 
+
+FS45 color image, in a number of ways:
+(cid:131) By referencing the CMRs in the Object Environment Group (OEG) of the 
+
+data object
+
+16
+
+AFP Color Consortium
+
+<<<PAGE 17>>>
+Associating CMRs with a MO:DCA document 
+component (Cont’d)
+
+(cid:131) By referencing the CMRs on the Include Object (IOB) structured field that 
+
+places the data object on the page/overlay
+
+(cid:137) Data objects may be installed by a component of the Resource 
+Installer called the Data Object Installer. This installer builds a 
+Data Object Resource Access Table (RAT) that maps the object 
+name to a file name, to an object OID, and optionally to one or 
+more CMRs. This provides a method for associating CMRs
+with a data object that does not require any changes to the 
+object or the data stream that references the object.
+
+17
+
+AFP Color Consortium
+
+<<<PAGE 18>>>
+User Input: Rendering Intent
+
+(cid:137) The ICC defines four rendering intents to specify how out-of-gamut 
+colors should be mapped to in-gamut colors; each may produce a 
+different output appearance:
+(cid:131) Perceptual: Tries to preserve appearance by maintaining color relationships; typically 
+
+used to render continuous-tone images 
+
+(cid:131) Saturation: Tries to generate vivid, saturated colors, even at the expense of color 
+
+accuracy; typically used for business graphics
+
+(cid:131) Media-relative colorimetric: Maps white point of source color to white point of output 
+media; colors ‘look right’ but may not be accurate colorimetrically. Typically used for 
+vector graphics or images.
+ICC-absolute colorimetric: Does not map white point of source color to white point 
+of output media. If source white is bluish and media white is yellowish, system adds 
+cyan to simulate blue on output medium. Colors are accurate colorimetrically but may 
+not ‘look right’. Typically used for logos or  proofing.
+
+(cid:131)
+
+(cid:137) To properly process Color Conversion CMRs and Link Color Conversion 
+
+CMRs, the system needs to know the end user’s rendering intent
+
+18
+
+AFP Color Consortium
+
+<<<PAGE 19>>>
+Rendering Intent (Cont’d)
+
+(cid:137) End users can associate rendering intent with MO:DCA document 
+
+components at the same levels of the document hierarchy as CMRs
+(cid:131) Specified with a Rendering Intent (RI) triplet:
+
+•
+
+In the DEG of the FormDef to specify RI for the printfile or for a specific 
+document in the printfile
+In the AEG of a page or overlay to specify RI for that page/overlay
+In the OEG of a data object to specify RI for the data object
+
+•
+•
+• On an IOB to specify RI for the included object
+• On a PPO to specify RI for an object to be preprocessed
+(cid:131) Can also be associated with a data object in the Data Object RAT
+(cid:131) Specified independently for each major AFP object-type category
+
+IOCA
+
+•
+• Object containers (EPS/PDF/TIFF/JFIF/GIF)
+• PTOCA
+• GOCA 
+
+19
+
+AFP Color Consortium
+
+<<<PAGE 20>>>
+CMR Architecture
+
+(cid:137) ACMA (cid:206) AFP Color Management Architecture
+
+(cid:131) Developed by AFP Color Consortium w/ IBM’s leadership
+(cid:131) Additions to MO:DCA,  IPDS,  IOCA …
+(cid:131) CMOCA:     new tower in AFP
+(cid:131) White Paper:  draft is available at www.afpcolor.org
+
+(cid:137) CMOCA  (cid:206) Color Management Object Content Architecture
+
+(cid:131) Defines CMRs - Color Management Resources
+(cid:131) Documents how CMRs are used
+(cid:131) CMR is an AFP resource;  carried in an Object Container
+(cid:131) Specification coming soon to www.afpcolor.org
+
+20
+
+AFP Color Consortium
+
+<<<PAGE 21>>>
+CMR  Structure   
+
+Length (bytes)
+
+Name
+
+Description
+
+164
+
+N
+
+CMRHeader
+
+header
+
+CMRData
+
+CMR data  (tag format)
+
+21
+
+AFP Color Consortium
+
+<<<PAGE 22>>>
+CMR  Structure   - CMR Header
+
+Length (bytes)
+
+4
+
+4
+
+2
+
+146
+
+8
+
+N
+
+Name
+
+Length
+
+CMRSig
+
+Reserved
+
+CMRName
+
+Reserved
+
+CMRData
+
+Description
+
+CMR length
+
+Signature for CMR type
+Eye-catcher string
+X’434D5239’ (cid:206) CMR9
+
+Set to zero
+
+Used to reference the 
+CMR in data stream
+(UTF-16BE format)
+
+Set to zero
+
+22
+
+AFP Color Consortium
+
+<<<PAGE 23>>>
+CMR Structure   - CMR Name
+
+Length 
+(bytes)
+
+Name
+
+Description
+
+4
+
+4
+
+2
+
+16
+
+4
+
+14
+
+28
+
+22
+
+46
+
+16
+
+8
+
+N
+
+Length
+
+CMRSig
+
+Reserved
+
+CMR Alias
+
+CMR Type
+
+CMR Version
+Or ‘generic’
+
+Human-readable name
+
+CMR Type: HT, TTC, CC, LK, IX
+
+Version of this CMR
+
+Device-specific fields 
+
+Media-specific fields
+
+CMR-type-specific fields
+
+Reserved
+
+Reserved
+
+CMRData
+
+Set to “@...@”
+
+23
+
+AFP Color Consortium
+
+<<<PAGE 24>>>
+CMR Structure :  CMRData
+
+(cid:137) All CMR data is carried in CMR tags
+
+(cid:131) Each type of CMR tag has an ID
+(cid:131) CMR tags are specified in ascending order of ID
+(cid:131) Tag has header and data
+(cid:131) All tags (headers) occur first in the CMR data field
+(cid:131) Tag data follows
+
+(cid:137) Tags used depend on the CMR type:
+
+(cid:131) Halftone
+(cid:131) Calibration Curve
+(cid:131) Color Conversion
+(cid:131) Indexed
+(cid:131) Link Color Conversion
+
+24
+
+AFP Color Consortium
+
+<<<PAGE 25>>>
+CMR Structure – Tag Syntax
+
+Length (bytes)
+
+Name
+
+Description
+
+2
+
+1 
+
+1
+
+4
+
+4
+
+TagID
+
+Unique identifier for tag
+
+Reserved
+
+Set to zero
+
+FieldType
+
+Data format of field
+
+Count
+
+Value/Offset
+
+Number of values of indicated field 
+type
+
+if <4 bytes:   Data, left aligned 
+else:  offset to data from byte 164 
+
+25
+
+AFP Color Consortium
+
+<<<PAGE 26>>>
+Going from Input to Output with CMRs
+
+(cid:137) Color Conversion
+
+(cid:131) Input  (e.g. RGB) (cid:206) PCS  (cid:206) Output (e.g. CMYK)
+
+(cid:137) Tone Transfer Curve :  calibration
+
+(cid:131) 1-D for each color plane
+(cid:137) Halftone (each color plane)
+
+(cid:137) Indexed CMRs :  maps index to color components 
+
+(cid:131) Will be discussed later
+
+26
+
+AFP Color Consortium
+
+<<<PAGE 27>>>
+CMR Type: Color Conversion (CC) CMR
+
+ICC Profile Connection
+Space (PCS) - CIELab D50
+or CIEXYZ D50 (24 bit)
+
+TIFF image
+24 bit RGB
+scanner x
+
+CC CMR: scanner x
+ICC profile -
+RGB --> PCS
+
+CC CMR: Infocolor 130+
+ICC profile -
+PCS --> CMYK
+
+Printer bit map
+32 bit CMYK
+Infocolor 130+
+
+Processing mode = audit
+
+Processing mode = instruction
+
+27
+
+AFP Color Consortium
+
+<<<PAGE 28>>>
+CMR Type: Tone Transfer Curve (TTC) CMR
+
+Tone Transfer Curve Data Tag -
+
+Cyan Component
+
+C (in)
+
+C (out)
+
+0
+
+1
+
+2
+
+1
+
+1
+
+3
+
+.......
+
+.....
+
+95
+
+102
+
+255
+
+250
+
+256 entries for
+each of the 256
+possible input
+values
+(0 to 255)
+
+4 tables total if output color space is CMYK
+
+28
+
+AFP Color Consortium
+
+<<<PAGE 29>>>
+CMR Type: Halftone (HT) CMR 
+
+Cell
+height (m)
+
+Bilevel Point-Operation
+Screen Data Tag -
+Cyan component
+
+.
+
+T00
+
+.
+.
+.
+
+.........
+
+T0n
+
+.
+
+.
+
+.
+.
+.
+
+Tm0
+
+.........
+
+Tmn
+
+Cell width (n)
+
+Threshold array for
+n x m halftone cell
+
+xxxx
+xxxx
+
+Page pixel grid
+
+Halftone cells are superimposed on pixel grid;
+if pixel value corresponding to Tij is less than Tij,
+output pixel = B’0’, otherwise it is B’1’
+
+29
+
+AFP Color Consortium
+
+<<<PAGE 30>>>
+CMR Type: Link Color Conversion (LK) CMR
+
+(cid:137) Look-up tables (LUTs) that convert directly 
+
+(cid:131) from the input color space of the data 
+(cid:131) to the output color space of the presentation device
+
+(cid:137) Improves performance since Links avoid conversion to/from 
+
+PCS
+
+(cid:137) Formally associates an audit Color Conversion CMR with 
+an instruction Color Conversion CMR by specifying the 
+object OIDs for each CMR
+
+(cid:137) Each Link CMR actually contains 4 LUTs
+
+(cid:131) one for each rendering intent
+
+(cid:137) Transparent to end-user; not referenced in data stream 
+
+30
+
+AFP Color Consortium
+
+<<<PAGE 31>>>
+Link Color Conversions (contd)
+
+TIFF image
+24 bit RGB
+scanner x
+
+LK CMR:
+
+scanner x RGB ->
+Infocolor 130+ CMYK
+
+Printer bit map
+32 bit CMYK
+Infocolor 130+
+
+Processing mode = link
+
+31
+
+AFP Color Consortium
+
+<<<PAGE 32>>>
+CMR Type:  Indexed (IX) CMR
+
+(cid:137) Color Specified =  Highlight Color Space     (X’4E’ triplet format) 
+
+(cid:131) X’0000’ – X’00FF’ (cid:206) spot color
+(cid:131) X’0100’ – X’FFFF’ (cid:206) resolve with Indexed CMR
+
+(cid:137) Indexed CMR tells how to create output given the index
+
+(cid:137) Different types of tags:
+
+(cid:131) CMYK Tag:                  Index values  (cid:206) CMYK values
+(cid:131) Gray Tag:                     Index values  (cid:206) grayscale values
+(cid:131) Named Colorant Tag:  Index values  (cid:206) combinations of named              
+
+colorants
+
+(cid:131) All tags:   Index values  (cid:206) CIELAB values 
+
+• Used if device does not support the selected color space
+
+32
+
+AFP Color Consortium
+
+<<<PAGE 33>>>
+Indexed CMR:  Named Colorant Tag
+
+…………..
+
+ID = X’xxxx’
+
+………………..
+
+………………
+
+CIELAB value
+
+Intensity of 1st colorant
+
+Intensity of 2nd colorant
+
+………….
+
+Intensity of nth colorant
+
+……………
+
+……………
+
+………………..
+
+33
+
+AFP Color Consortium
+
+<<<PAGE 34>>>
+Indexed CMR:  Colorant Identification Tag
+
+Length              Colorant 1 Name   
+
+Length              Colorant 2 Name
+
+……….              ……………………
+
+Length              Colorant n Name
+
+34
+
+AFP Color Consortium
+
+<<<PAGE 35>>>
+Generic CMRs
+
+(cid:137) Instruction CMRs provide a mechanism whereby the output can be 
+
+tuned to a specific output device.
+
+(cid:137) Generic (instruction) CMRs provide a mechanism whereby the output 
+
+can be tuned consistently across different devices.
+(cid:131) Use generic CMRs to request an intended output appearance.
+
+35
+
+AFP Color Consortium
+
+<<<PAGE 36>>>
+Generic CMRs (contd)
+
+(cid:137) Generic Halftone CMR examples:
+
+(cid:131) 71 lpi (clustered dot)
+(cid:131) 85 lpi (clustered dot)
+(cid:131) 106 lpi (clustered dot)
+(cid:131) Stochastic
+(cid:131) Error diffusion
+
+(cid:137) Generic Tone Transfer Curve examples:
+
+(cid:131) Dark
+(cid:131) Accutone
+(cid:131) Highlight Midtone
+(cid:131) Standard 
+
+36
+
+AFP Color Consortium
+
+<<<PAGE 37>>>
+Generic CMRs (contd)
+
+(cid:137) Only Halftone and Tone Transfer Curve CMRs can be specified as 
+
+generic CMRs.
+
+(cid:137) Generic CMRs are identified with the fixed character pattern “generic” in 
+
+the version field of the CMR name 
+
+(cid:137) All generic CMRs are registered in the CMR Architecture Spec.
+
+(cid:137) Generic CMRs are never used directly by an output device
+(cid:137) They are always replaced by device-specific CMRs 
+
+(cid:131) Done by the print server based on a device-specific CMR mapping 
+
+in the CMR RAT   or
+
+(cid:131) Done by the output device
+
+37
+
+AFP Color Consortium
+
+<<<PAGE 38>>>
+IPDS Considerations
+
+(cid:137) CMRs are activated/deactivated like all other resources
+(cid:137) Printer selects CMRs using the following hierarchy:
+
+(cid:131) Data-object level
+(cid:131) Page overlay level
+(cid:131) Page level
+(cid:131) Homestate level (printfile, document-level, and page/sheet group level CMRs)
+(cid:131) Default level
+(cid:137) Invoking CMRs
+
+(cid:131) Audit and instruction CMRs must be explicitly invoked
+(cid:131) New Invoke CMR command for homestate-level invocation
+(cid:131) New Invoke CMR triplet for object-level invocation
+(cid:131) Link CMRS need not be invoked
+
+38
+
+AFP Color Consortium
+
+<<<PAGE 39>>>
+CMR Resource Access Table (RAT)
+
+(cid:137) When CMRs are installed in resource libraries, they are processed using a CMR 
+
+Resource Access Table (RAT)
+(cid:131) RAT concept first introduced in AFP with TrueType/OpenType fonts
+(cid:131) Architected structure defined in the MO:DCA reference (SC31-6802)
+
+(cid:137) Allows CMRs to be referenced in data stream by their inherent, native name, 
+
+not by a platform-specific file name
+(cid:131) Data stream is platform-independent
+(cid:131) Mapping to platform-specific file name, to object-OID, and to other processing 
+
+information accomplished via RAT
+
+(cid:137) CMR RAT is located in same library as CMRs
+(cid:137) RAT consists of repeating groups (RGs)
+
+(cid:131) One repeating group for each CMR in library
+(cid:131) Repeating group is indexed with CMR name from data stream 
+
+39
+
+AFP Color Consortium 
+
+RAT
+
+<<<PAGE 40>>>
+RAT Processing to Find TrueType Font 
+
+MDR = Arial
+FONTPATH = ‘/u/meixel’
+
+FONTPATH = ‘/u/meixel’
+
+1. Job specifies “Arial” font
+2. Print Server looks in RAT 
+contained in path /u/meixel
+specified by:
+1. Job FONTPATH parameter
+2. Print Server FONTPATH parameter
+RAT has reserved name of: 
+IBM_DataObjectFont.rat
+
+3. Print Server finds RAT entry for 
+
+font name “Arial”
+
+4. Arial RAT entry point to 
+
+TrueType file name of “arial.ttf”
+5. Print Server downloads “arial.ttf”
+
+to printer
+
+Print
+Server
+
+/u/meixel
+RAT
+arial.ttf
+
+40
+
+AFP Color Consortium
+
+<<<PAGE 41>>>
+TrueType Font Specified in Application File
+
+Map Data Resource, MDR
+
+Data-Object Font Descriptor
+
+Fully Qualified Name “Arial”
+
+41
+
+AFP Color Consortium
+
+<<<PAGE 42>>>
+RAT Processing to Find TrueType Font
+
+Application or Print Server 
+Fontpath Parameter
+
+FONTPATH = '/u/meixel'
+
+RAT
+
+Font Resource Directory “/u/meixel”
+
+EUID=888613003   /u/meixel/ 
+Type  Filename              
+_ Dir   .                     
+_ Dir   ..                    
+_ File  arial.ttf
+_ File  IBM_DataObjectFont.rat
+
+Full Font Name
+(internal application
+name): “Arial”
+
+Font File Name
+(external): “arial.ttf”
+
+42
+
+AFP Color Consortium
+
+<<<PAGE 43>>>
+CMR Installer
+
+(cid:137) CMRs are installed as resources in an AFP resource library
+(cid:137) The CMR Installer is part of a new workstation Resource Installer 
+
+(cid:137) The CMR Installer:
+
+(cid:131) uploads the CMR into the resource library of a print server
+(cid:131) builds the CMR Resource Access Table (RAT) entry that maps the CMR 
+
+name to a file name, to an object-OID, and possibly to one or more device-
+specific CMRs
+
+43
+
+AFP Color Consortium
+
+<<<PAGE 44>>>
+CMRs – System View
+
+ICC Profiles
+Halftones
+Tone Transfer Curves
+Indexed Color Mappings
+
+Color AFP Files +
+CMR References
+
+CMRs
+RAT
+
+CMR
+Resource
+Library
+
+CMR Installer
+
+AFP Generator
+
+Print Server
+
+Printer Control Unit 
+
+44
+
+AFP Color Consortium
+
+<<<PAGE 45>>>
+Data Object Installer
+
+(cid:137) Copies TIFF, JPEG, GIF, FS45, and other color object files, to 
+
+the Data Object resource library without modification
+
+(cid:137) Adds entry to Data Object RAT to associate internal application 
+object name, (object-OID), with the object’s external file name
+(cid:137) Builds Color Conversion CMRs for Data Objects that contain 
+
+embedded ICC profiles
+
+(cid:137) Optionally builds a Compacted Data Object, by removing the 
+
+embedded ICC profile, to improve object download performance
+
+45
+
+AFP Color Consortium
+
+<<<PAGE 46>>>
+Data Objects – System View
+
+TIFF
+JPEG
+GIF
+FS45
+
+Data
+Objects
+RAT
+
+Data Object
+Resource
+Library
+
+Data Object Installer
+
+Color AFP Files +
+Data Object 
+References
+
+AFP Generator
+
+Print Server
+
+Printer Control Unit 
+
+46
+
+AFP Color Consortium
+
+<<<PAGE 47>>>
+CMR Usage Scenarios
+
+(cid:137) “What’s the least amount of work I need to do to get accurate and 
+
+consistent colors?”
+
+(cid:137) “I like my output with saturated colors; can I tune the data stream to 
+
+achieve this regardless of where I print?”
+
+(cid:137) “I’m very picky and am not afraid of AFP structured fields - can I control 
+
+the whole process?”
+
+47
+
+AFP Color Consortium
+
+<<<PAGE 48>>>
+Usage scenario: least amount of work
+
+(cid:137) Ensure that every device-dependent color in the printfile is properly 
+
+defined using audit CC CMRs
+(cid:131) If all colors created by same device, e.g. same scanner or same digital 
+camera, need only associate the CC CMR for that device at the printfile-
+level in the FormDef (as an audit CMR)
+
+(cid:131) If differently-sourced colors at different levels of the hierarchy, need to 
+associate appropriate CC CMRs as audit CMRs with those document 
+components
+
+(cid:137) Don’t specify instruction CMRs – let the output device select the 
+
+appropriate defaults
+
+48
+
+AFP Color Consortium
+
+<<<PAGE 49>>>
+Usage scenario – tuned, consistent output
+
+(cid:137) Reference generic instruction TTC/HT CMRs in data stream; output
+devices will make reasonably consistent adjustment to the output.
+Example: Specify following generic CMRs as instruction CMRs for printfile in 
+
+FormDef:
+
+Generic HT CMR = 106 lpi
+Generic TTC CMR = Highlight Midtone
+
+Each output device will apply device-specific CMRs that simulate the 
+requested output appearance
+
+49
+
+AFP Color Consortium
+
+<<<PAGE 50>>>
+Usage scenario – control it all
+
+(cid:137) Ensure that every device-dependent color in the printfile is properly 
+
+defined using audit CC CMRs
+(cid:131) If all colors created by same device, e.g. same scanner or same digital 
+camera, need only associate the CC CMR for that device at the printfile-
+level in the FormDef (as an audit CMR)
+
+(cid:131) If differently-sourced colors at different levels of the hierarchy, need to 
+associate appropriate CC CMRs as audit CMRs with those document 
+components
+
+(cid:137) Specify instruction CC, HT, and TTC CMRs for the printfile
+
+(cid:131) Use device-specific HT and TTC CMRs tuned for the output device
+(cid:131) Tune CC, HT, and TTC CMRs for the specific output media  
+
+50
+
+AFP Color Consortium
+
+<<<PAGE 51>>>
+Summary: AFP Color Management System
+
+ICC Profiles
+Halftones
+Tone Transfer
+
+curves
+
+Indexed color
+mappings
+
+CMR
+Installer
+
+- installs CMRs
+- builds CMR RAT
+
+CMR
+Resource
+Library
+
+CMR Engine
+
+(CMRE)
+- creates CMRs
+- builds link CMRs
+
+CMR
+RAT
+- maps CMR names to
+file names & OIDs
+- points to link CMRs
+
+AFP Generator
+Application
+
+Color AFP files +
+CMR references
+
+Print
+Server
+
+Printer
+Controller
+
+Accurate,
+Consistent,
+Tuneable
+Colors and
+Grayscales
+
+CMR Engine
+
+(CMRE)
+- creates CMRs
+from copied/
+extracted profiles
+
+Data Object
+RAT
+- maps object names
+to file names & OIDs
+
+- associates CMRs
+
+with objects
+
+CMR Engine
+
+(CMRE)
+
+- creates
+link CMRs
+
+TIFF/JPEG/GIF
+
+EPS/PDF
+
+FS45
+
+.....
+
+Object
+Installer
+
+- installs data objects
+
+& compacted objects
+
+- builds DO RAT
+- copies/extracts
+
+profiles
+
+Data
+Object
+Resource
+Library
+
+51
+
+AFP Color Consortium

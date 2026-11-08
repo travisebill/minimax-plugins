@@ -7,6 +7,10 @@
      audio-reactive-waveform），且沒有「音樂視覺化」那一節。
   3. `yt-publish-strategy` 在 Codex 版有一條不同的資料時效揭露句。
 
+第 2、3 條是**依 skill 名稱**套用的特例，所以 skill 清單改成從來源目錄
+自動發現後，這支工具對任何外掛都成立，而不只是 three-kingdoms。
+發現規則：來源 `skills/` 下含有 SKILL.md 的子目錄。
+
 用法：
     python3 tools/sync_codex_variant.py --src <minimax-plugin-dir> --codex <codex-plugin-dir> [--dry-run]
 """
@@ -18,16 +22,16 @@ import sys
 GUIDANCE = ("Read [Codex runtime guidance](../../CODEX.md) before using this skill. "
             "Resolve bundled skills and resources relative to this installed package.")
 
-SKILLS = [
-    "yt-focus-music-pipeline",
-    "three-kingdoms-focus-music",
-    "three-kingdoms-video-project",
-    "music3-instrumental-prompts",
-    "three-kingdoms-music-review",
-    "three-kingdoms-vocal-single",
-    "yt-publish-strategy",
-    "audio-reactive-waveform",
-]
+
+def discover_skills(src):
+    """回傳來源 plugin 內所有含 SKILL.md 的 skill 目錄名（已排序）。"""
+    skills_dir = os.path.join(src, "skills")
+    if not os.path.isdir(skills_dir):
+        return []
+    return sorted(
+        name for name in os.listdir(skills_dir)
+        if os.path.isfile(os.path.join(skills_dir, name, "SKILL.md"))
+    )
 
 
 def split_frontmatter(text):
@@ -106,10 +110,20 @@ def main():
     ap.add_argument("--src", required=True)
     ap.add_argument("--codex", required=True)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--skills", default=None,
+                    help="逗號分隔的 skill 名單；未指定時自動發現來源目錄下的全部 skill")
     args = ap.parse_args()
 
+    if args.skills:
+        skills = [s.strip() for s in args.skills.split(",") if s.strip()]
+    else:
+        skills = discover_skills(args.src)
+    if not skills:
+        print(f"[sync] 在 {args.src} 找不到任何含 SKILL.md 的 skill")
+        return 1
+
     changed = []
-    for skill in SKILLS:
+    for skill in skills:
         src_path = os.path.join(args.src, "skills", skill, "SKILL.md")
         codex_path = os.path.join(args.codex, "skills", skill, "SKILL.md")
         src_text = open(src_path, encoding="utf-8").read()

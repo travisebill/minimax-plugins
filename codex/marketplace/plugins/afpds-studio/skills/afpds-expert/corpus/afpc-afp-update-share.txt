@@ -1,0 +1,2426 @@
+<<<PAGE 1>>>
+Update on AFP and the AFP 
+Consortium (AFPC) 
+Consortium (AFPC)
+
+009
+SHARE 2009
+S
+Denver, Colorado
+August 25, 2009
+
+Reinhard Hohensee 
+Distinguished Engineer  
+InfoPrint Solutions Company
+
+g
+
+g
+
+1
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 2>>>
+Agenda
+
+y
+
+y
+
+• What is AFP
+• History – road to open industry standard
+p
+• Why/how to join AFPC
+• Why AFP for production variable-data print
+m • Future directions
+mm
+m
+• Future directions
+u
+u
+• Summary 
+i
+i
+t
+t
+• Q & A
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+2
+
+<<<PAGE 3>>>
+AFP: A group of products and systems for managing 
+presentable information that is based on a set of formal 
+l
+th t i b
+presentation architectures
+
+t bl
+
+i f
+
+f f
+
+d
+
+ti
+
+t
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+3
+
+<<<PAGE 4>>>
+Typical AFP System
+
+4
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 5>>>
+AFP History
+l 1980 t
+th
+
+l
+
+l
+
+t
+
+ti
+
+d
+
+d t b d
+
+d b IBM i
+
+AFP
+• AFP was developed by IBM in the early 1980s to support all-
+ll
+points-addressable printing on the 3800 printer; the first AFP 
+products shipped in 1984 – PSF/MVS, 3800-3
+• AFP continued to be developed by the Printing Systems Division 
+i
+AFP
+of IBM throughout the 1980s and 1990s and became the de-
+facto industry standard for monochrome transaction printing 
+(statements, bills, etc.); significant enhancements include:
+(statements bills etc ); significant enhancements include:
+– Index/view
+– N-up print
+g
+– Document  finishing
+– Outline fonts
+
+d b th P i ti
+
+S t
+
+Di
+
+i
+
+• The colorization of AFP started in the late 1990s (in support of 
+
+the InfoColor 130+ printer); with the adoption of  ICC-based color 
+management in 2006 AFP became a leading-edge full-color 
+presentation architecture
+
+);
+
+p
+
+p
+
+• With the industry transition to open standards, IBM embarked on 
+p
+
+y
+
+a path to open the AFP architecture starting in 2004, which 
+culminated in the formation of the incorporated AFPC in 2009    
+
+5
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 6>>>
+AFP Color Consortium (AFPCC)
+
+Initial membership was 16 companies
+
+• Formed (at the invitation of IBM) in October 2004
+•
+• Scope was limited to developing a comprehensive color 
+management capability within the AFP architecture 
+
+• Work progressed very well – the AFP Color Management 
+
+Architecture (ACMA) was formally approved by AFPCC on 
+January 20, 2006 and has been published; see 
+www.afpcolor.org :
+– Overview document  - AFP Color Management Architecture (ACMA) Release 1
+Overview document AFP Color Management Architecture (ACMA) Release 1
+– Significant updates to the MO:DCA, IPDS, and AFP Line Data data streams; see updated  
+
+references
+
+– New architecture reference – Color Management Object Content Architecture (CMOCA) 
+
+Reference
+
+•
+
+Provides syntax for wrapping ICC profiles and other color management objects so they can be processed 
+as AFP resources 
+
+CC
+
+f
+
+f
+
+• Addition of  comprehensive ICC-based color management 
+gives AFP color capabilities matched by few presentation 
+architectures 
+
+6
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 7>>>
+AFP Consortium (AFPC)
+
+•
+
+In May, 2006, IBM announced intent  to open development of  
+the complete AFP architecture to the AFPCC; this was 
+accepted by all members in September, 2006
+2006
+
+i S t
+• As a result, the AFPCC transitioned to the AFP Consortium 
+
+t d b
+
+b
+
+b
+
+ll
+
+• More consistent implementations, therefore better interoperability of products
+• Broader choice of vendors and products
+• Better investment protection - standards have industry staying power
+
+(AFPC)
+– Customer benefits
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o • New scope of AFPC work :
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+– Data streams - MO:DCA, IPDS, AFP Line Data
+– Object Architectures:
+
+AFP GOCA (vector graphics)                      BCOCA (bar codes)
+CMOCA (color management resources)     FOCA (fonts)
+IOCA (image)                                              PTOCA (text)
+
+7
+
+<<<PAGE 8>>>
+AFPC (contd)
+
+• To complete the transition of AFP to a fully open industry
+• To complete the  transition of AFP to a fully open industry 
+standard, the AFPC was incorporated into a non-profit 
+corporation on February 25, 2009
+Incorporation allows the AFPC to function as a vendor-
+Incorporation allows the AFPC to function as a vendor-
+neutral open standards body that is a legal entity
+– Able to own trademarks for  terms such as AFP, MO:DCA, IPDS, 
+
+•
+•
+
+CMOCA, …
+
+– Able to own copyrights to architecture documents such as 
+
+specifications, white papers, etc.
+
+– Can collect membership dues to fund activities to promote AFP:
+
+• AFPC participation and booth at conferences such as XPLOR, OnDemand
+• AFPC participation and booth at conferences such as XPLOR OnDemand
+• Marketing activities
+• Compliance and certification activities
+
+– Can negotiate with 3rd parties on behalf of AFPC members, e.g. for 
+
+licenses to software, ICC profiles, etc.  
+li
+
+ICC
+
+fil
+
+ft
+
+t
+
+t
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+8
+
+<<<PAGE 9>>>
+AFPC (contd)
+
+• Corporation run by an annually elected Board of Directors (BOD) 
+
+•
+
+and their appointed/elected officers
+In recognition of IBM/InfoPrint’s work on AFP for the past 25 
+years, InfoPrint is identified as the “Founder” of the AFPC and 
+has the right to appoint a standing director  to the BOD
+
+• AFPC governing body:
+
+– Board of Directors (BOD) for 2009:
+
+• Jeff Paterra, InfoPrint - Sr. VP & GM, Technology & Solutions Development
+• Michele Pracchi, Oce – Sr. VP Corporate Software Development  
+Dennis Ladd, StreamServe President and CEO
+• Dennis Ladd, StreamServe – President and CEO
+• Paul Gerelle, MPI Tech – Director
+• Roberto Anzola, ISIS Papyrus - Board Director and Manager of Research and 
+
+Development
+
+– Officers for 2009:
+– Officers for 2009:
+
+• President and Secretary: Harry Lewis, InfoPrint - Program Manager  Intellectual 
+
+Property & Open Standards
+
+• Treasurer: Paul Gerelle, MPI Tech – Director
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+9
+
+<<<PAGE 10>>>
+AFPC (contd)
+
+• AFPC membership & annual dues
+
+– Core Member ($10K): 
+
+• govern AFPC, nominate candidate for BOD, nominate candidate for officer 
+
+position, elect BOD  
+l
+
+t BOD
+
+iti
+
+• Participate in development of AFP (meetings, workgroups, architecture voting, 
+
+etc.)
+InfoPrint, as Founder, is a Core Member
+
+•
+P ti
+
+– Participating Member ($5K):
+($5K)
+
+ti M b
+
+i
+
+• Participate in development of AFP (meetings, workgroups, architecture voting, 
+
+etc.)
+
+– Associate Member ($1K):
+
+• Observe the workings of the AFPC (see internal architecture docs, etc., but no 
+
+active participation, no architecture voting)  
+
+• How can I join?
+
+AFPC Bylaws: “ Any natural person or entity with a significant interest in
+– AFPC Bylaws:  ….Any natural person or entity with a significant interest in 
+developing and promoting the AFP architecture and products and services 
+based on the AFP architecture may be a member….” 
+
+– Application must be approved by the BOD
+– Contact myself (reinhard.hohensee@infoprint.com) or Harry Lewis 
+
+(harry.lewis@infoprint.com)
+
+10
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 11>>>
+AFPC (contd)
+
+• AFPC Website - see www.afpcolor.org :
+– List of members and links to member websites
+List of members and links to member websites
+– Architecture publications
+
+• All current architecture references
+• Addendums to current references
+• White papers
+
+– New content:
+
+O C
+
+IOCA Reference (November 2008)
+
+•
+008)
+• MO:DCA Addendum 1 (Image Resolution triplet; September 2008)
+• MO:DCA Addendum 2 (Multipage Containers; September 2008)
+• MO:DCA-L Reference 
+
+age eso ut o t p et; Septe be
+
+dde du
+
+(
+
+– Presentations (XPLOR, DRUPA, SHARE, etc.)
+
+11
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 12>>>
+Why AFP for production variable-data  
+print? 
+
+There are other PDLs and print architectures that are used 
+in the industry, e.g. PostScript, VIP, VPS, PPML, …, what 
+makes AFP ideal for monochrome and color variable data 
+print?
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+12
+
+<<<PAGE 13>>>
+Why AFP: print integrity
+
+Every page is guaranteed to print as defined,
+or an error is generated
+t d
+i
+
+Page object
+
+...
+
+Page object
+
+PSF/
+
+Infoprint Mgr
+
+IPDS Data Stream
+
+1
+
+page 1 received
+i d
+page 1 received
+
++ committed
+
+page 1 received
+
++ commited
++ stacked
++ stacked
+
+AFP Control Unit + Printer:
+Architected Page Pipeline
+
+Received
+Page
+Counter
+
+Committed
+Page
+Counter
+
+Stacked
+Page
+Counter
+
+Bi-directional IPDS protocol and architected printer pipeline allow server to track
+every page until stacked; errors result in server-directed page-level recovery
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+13
+
+<<<PAGE 14>>>
+Why AFP: resource management -
+load once, RIP once, then reuse
+load once RIP once then reuse
+
+Avoids redundant storage, transmission,
+and processing of data
+and processing of data
+
+Page object
+
+Environment
+
+Group
+.....
+
+Map Image1
+
+.....
+
+Page Data
+
+.....
+.....
+
+Include Image1
+
+.....
+.....
+.....
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+- Environment Group processed
+
+before page data
+
+- Map structure triggers resource query
+
+and download only if needed
+
+Image1 available?
+
+AFP
+Server
+
+No
+
+AFP
+Printer
+
+Download Image1
+
+Image1
+
+Resource
+Library
+
+14
+
+<<<PAGE 15>>>
+Why AFP: job ticket (Formdef) external 
+to data stream
+
+Redirect document to different device or different
+media with change to FormDef, NOT change to
+pp
+application
+
+j
+Form Definition object
+- media selection
+- output bin selection
+- simplex/duplex
+- N-up
+N up
+- .......
+
+Formdef ties device-independent MO:DCA document
+to specific device and specific media
+
+Page object
+
+....
+
+Page object
+
+AFP
+
+Application
+Generator
+
+MO:DCA (AFP) Data Stream
+MO DCA (AFP) D t St
+
+PSF/
+PSF/
+Infoprint Mgr
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+15
+
+<<<PAGE 16>>>
+Why AFP: support for ultra high-
+speed (>>1000 ppm) color printing
+speed (>>1000 ppm) color printing
+
+• Color printing involves significantly more data than monochrome 
+
+printing (32 bit CMYK data vs 1 bit bi level data)  
+printing (32 bit CMYK data vs 1 bit bi-level data)
+
+• Brute force alone won’t solve the problem; need underlying 
+architecture that is designed from the ground up for speed
+
+objects
+
+– Sequential structure allows processing to start with first bytes in printfile
+– Object-oriented structure leverages parallel processing of sheets, pages, 
+
+m • AFP architecture provides what is needed:
+mm
+m
+• AFP architecture provides what is needed:
+u
+u
+i
+i
+t
+t
+r
+r
+o – Extensive resource management for static repeating data – download and RIP 
+o
+o
+o
+s
+s
+n
+n
+o – Efficient, tuned native image format (IOCA)
+o
+o
+o
+tuned native image format (IOCA)
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+– Fast native text (PTOCA) and graphics (GOCA)
+
+once, re-use many times 
+
+Efficient
+
+16
+
+<<<PAGE 17>>>
+High speed printing (contd) - object-
+oriented structure allows parallel 
+processing
+
+Document Object
+
+Page object
+
+Text
+Object
+
+Bar Code
+Object
+
+Container
+Object
+
+Overlay
+Resource
+
+Font
+Font
+Resource
+
+.............................
+
+Page object
+
+Text
+Object
+
+Graphics
+Object
+
+Image
+Object
+
+EPS
+EPS
+TIFF
+PDF
+....
+
+AFP
+AFP
+
+Application
+
+)
+MO:DCA (AFP)
+Data Stream
+
+(
+
+AFP
+AFP
+Server
+
+IPDS
+Data Stream
+
+AFP
+Printer
+
+i
+
+All data in printfile is structured in self-contained
+t i d
+t
+All d t
+objects - document objects, page objects, data
+objects, resource objects; this supports parallel
+
+i tfil
+
+d i
+
+lf
+
+t
+
+i
+
+object processing
+
+17
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 18>>>
+High speed printing (contd) – high-
+speed text
+t
+d t
+
+• Variable data is mostly text; AFP text is in highly efficient 
+
+PTOCA format
+PTOCA format
+– Doesn’t require setup of complex graphics state
+– Simple hex control sequences define and position text
+– Can be processed at print speeds > 2000 pages/min
+
+AFP Text Color
+AFP Text Color
+AFP Text Color
+AFP Text Color
+AFP Text Color
+
+Set Extended Text Color (color of rule)
+AMB
+AMB
+AMI
+Draw Inline Rule
+.....
+
+(positions rule)
+
+Set Extended Text Color (color of text)
+Set Extended Text Color (color of text)
+AMB
+AMI
+Set Coded Font Local (specifies font)
+)
+TRN (code points)
+
+(positions text)
+
+p
+
+(
+
+.....
+
+18
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 19>>>
+Why AFP: support for industry-
+standard data formats
+standard data formats
+
+• Much color data is generated (scan, photo, etc.) in formats 
+
+such as TIFF and PDF 
+
+• To enable simple and flexible document composition, AFP 
+
+was extended in the late 1990s with a “container” 
+architecture
+– AFP container architecture allows customers to integrate popular de-
+
+facto standard data formats such as EPS, PDF, TIFF, GIF, and JPEG 
+(JFIF) into their AFP printfiles and workflows
+(JFIF) into their AFP printfiles and workflows
+
+– Industry standard data formats can be mixed as peer objects with 
+
+traditional AFP data formats – e.g. everything that can be done with 
+IOCA can be done with TIFF, and AFP pages can contain any 
+combination of IOCA, TIFF, EPS, PTOCA, etc.
+combination of IOCA TIFF EPS PTOCA etc
+
+– Industry standard formats can be processed as AFP resources –
+download once, re-use multiple times, for high print performance
+
+– Industry standard formats can easily be included on an AFP page using 
+an Include Object (IOB) structured field that can scale, rotate, position 
+the data
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+19
+
+<<<PAGE 20>>>
+Support for industry-standard data 
+Include Object (IOB) 
+formats (contd) - Include Object (IOB)
+formats (contd) 
+
+Page
+
+Xp
+
+Begin Page (BPG)
+
+Active Environment Group
+Active Environment Group
+.......
+
+Include Object (IOB)
+
+Object-type OID = TIFF
+Object Area Size
+Object Area Position
+Object Area Rotation
+Object Mapping
+Object Name / Type
+......
+
+End Page (EPG)
+
+Y
+o
+a
+
+Yp
+
+X
+o
+a
+
+Scale-to-fit
+Mapping
+pp g
+
+Xo
+
+Object = flatiron . tiff
+Object
+flatiron tiff
+
+Yo
+
+20
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 21>>>
+Why AFP: support for 
+TrueType/OpenType fonts and Unicode
+TrueType/OpenType fonts and Unicode 
+allows globalization of applications
+
+• Scalable outline font technology used on the Windows and Mac 
+• Scalable outline font technology used on the Windows and Mac
+
+platforms; most prevalent font technology in the industry
+• Strategic replacement for FOCA raster fonts (!!) and FOCA 
+
+outline fonts
+outline fonts
+
+• Benefits for AFP customers:
+
+– Provides greater choice of typefaces, particularly non-Latin typefaces
+– Allows migration to the same single font technology on all presentation  
+Allows migration to the same single font technology on all presentation
+platforms, e.g. Windows, zOS, AIX
+
+– Provides ability to generate applications on authoring platforms, .e. Windows 
+
+and Mac, and print without font substitutions in server or printer
+
+– Provides ability to transform to/from other PDLs, e.g. PS/PDF, without font 
+
+substitutions
+
+– Provides basis for future, more advanced support of complex non-Latin 
+
+scripts, e.g. Arabic, Hebrew, Indic, Thai
+
+p
+
+g
+
+• Bi-di (e.g. right-to-left) printing
+• Contextual glyph selection
+• Composed characters
+
+21
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 22>>>
+TrueType/OpenType fonts (contd)
+
+• Fonts are installed and used as is – they are not altered and they 
+
+are not wrapped in an AFP container; therefore they can be 
+shared with non AFP applications
+shared with non-AFP applications
+
+• Fonts must support Unicode encoding (almost all do) 
+• Fonts can be installed as part of a TrueType Collection file (TTC)
+– File with common header and multiple TTF/OTFs that share tables
+File with common header and multiple TTF/OTFs that share tables
+– File size reduction with TTC if fonts share large number of glyphs 
+
+• Libraried fonts are accessed via a Resource Access Table (RAT) 
+which is indexed with the full font name from the data stream  and 
+m provides the platform specific file name
+mm
+m
+provides the platform-specific file name
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+22
+
+<<<PAGE 23>>>
+TrueType/OpenType fonts (contd)
+
+• Fonts can be ‘linked’:
+
+– Provides ability to add additional characters (TTF/OTF file format 
+restricts number of characters in a given font to 64K) and user-
+defined characters (UDCs)
+– Fonts “font1”, “font a”, “font b”, and “font “c” are treated logically as 
+a single font; base font (font1) is always processed first, followed by 
+the first linked font (font a), then the second linked font (font b), etc.
+the first linked font (font a) then the second linked font (font b) etc
+
+ffn (font1)
+ffn (font1)
+
+(base font)
+
+ffn = full font name
+
+(
+
+)
+ffn (font a)
+ffn (font b)
+ffn (font c)
+
+(first linked font)
+(first linked font)
+(second linked font)
+(third linked font)
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 24>>>
+TrueType/OpenType fonts (contd) –
+U code
+Unicode
+
+Current Environment
+
+The German and French words for beauty are Schonheit and beaute, respectively.
+
+English code page
+
+German
+code
+page
+
+Eng
+French
+code
+code
+page page
+
+English code
+
+page
+
+FS = font switch
+
+FS
+
+FS
+
+FS
+
+FS
+
+*** Application needs to understand scripts and code pages ***
+
+Unicode Environment
+
+The German and French words for beauty are Schonheit and beaute, respectively.
+
+Unicode code page
+
+*** Application only needs to understand Unicode ***
+*** A li
+t d U i d ***
+d t
+
+d
+
+ti
+
+l
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+24
+
+<<<PAGE 25>>>
+Why AFP: advanced color 
+management
+management
+
+– Accurate output color if input 
+Accurate output color if input
+color properly defined
+
+RGB
+CMYK
+....
+
+input
+profile
+profile
+
+CMYK
+
+AFP
+Printer
+
+printer
+printer
+profile
+
+– Consistent output color and 
+grayscale simulation on 
+different devices driven by 
+different applications 
+
+printer (x)
+profile
+
+CMYK (x)
+
+CMYK (y)
+
+AFP
+Printer (x)
+
+AFP
+Printer (y)
+
+RGB
+CMYK
+....
+
+input
+profile
+
+printer (y)
+profile
+profile
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+<<<PAGE 26>>>
+)
+Advanced color management (contd)
+
+g
+
+(
+
+AFP
+AFP
+Printer
+
+halftone
+(x)
+
+halftone
+(y)
+
+m
+mm – Tuneable output color
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+– High-speed  color conversions: 
+integrate ICC profiles as AFP 
+p
+resources  to leverage 
+performance gains from AFP 
+resource management
+
+– Standards (ICC) based
+
+g
+
+architecture
+
+<<<PAGE 27>>>
+Advanced color management (contd)
+
+• AFP color management is based on ICC profiles and ICC color 
+
+t
+
+•
+
+management constructs such as tone transfer curves and halftones 
+
+– Defined in a new formal architecture under the AFP Architecture umbrella –
+
+management concepts
+t
+ICC profiles and other color management structures are integrated 
+into AFP using a new AFP object – the AFP Color Management 
+m Resource (CMR):
+mm
+m
+Resource (CMR):
+u
+u
+– Provides wrapper for ICC profiles (which are not modified) and other color 
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+• New CMOCA Architecture Reference (S550-0511), available at www.afpcolor.org
+– Allows color management constructs like ICC profiles, tone transfer curves, 
+halftones to be processed as AFP resources – download once reference
+halftones, to be processed as AFP resources download once, reference 
+multiple times, capture in device, package in inline resource group, etc.
+
+the Color Management Object Content Architecture (CMOCA)
+
+27
+
+<<<PAGE 28>>>
+Advanced color management (contd):  
+
+CMR types
+
+• Color Conversion (CC) CMRs: contain ICC profiles (in their ICC-defined 
+syntax) that convert a device-specific color to/from the device-independent 
+syntax) that convert a device specific color to/from the device independent
+ICC Profile Connection Space (PCS)
+
+y
+
+p
+
+p
+
+g y
+
+• Tone Transfer Curve (TTC) CMRs: one-dimensional curves that are used 
+
+Indexed (IX) CMRs: mappings of indexed (numbered) colors in the data 
+stream to output device colors or colorant combinations; can support Pantone 
+
+to modify the values of a particular color component, e.g. cyan
+• Halftone (HT) CMRs: screens that are applied to multibit data
+•
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o colors  
+o
+o
+o
+s
+s
+• Link Color Conversion (LK) CMRs: Look-up tables (LUTs) that convert 
+n
+n
+directly from a device-specific input color space in the data to the device-
+o specific output color space of the presentation device without going through 
+o
+o
+o
+specific output color space of the presentation device without going through
+C
+C
+the PCS
+P
+P
+F
+F
+F
+F
+A
+A
+
+– LK CMRs are  not referenced in the data stream - they are generated by the Resource 
+
+Installer and processed automatically by the system; cut color conversion time
+
+28
+
+<<<PAGE 29>>>
+Advanced color management (contd): 
+CMR processing mode
+CMR processing mode
+
+• Specifies why a CMR was created and how it should be 
+
+•
+•
+
+• Processing modes
+
+processed
+processed
+Is specified as part of the CMR reference in the data stream
+Is not part of the CMR definition, i.e. when a CMR is created it 
+m can be used in audit or instruction processing mode 
+mm
+m
+can be used in audit or instruction processing mode
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+– Link: a link CMR is used to convert an input color space in the presentation data 
+directly to the output color space of the presentation device without going through 
+the PCS (similar to an ICC device link profile)
+
+– Audit: an audit CMR specifies color-management processing that has been done
+y
+on a document component; for example it may specify a color conversion that has 
+been done on the data (similar to an ICC input profile)
+
+– Instruction: an instruction CMR specifies color-management processing that is to 
+be done on a document component; for example it may specify a color conversion 
+that is to be applied to the data (similar to an ICC output profile)
+
+y p
+
+p
+
+p
+
+29
+
+<<<PAGE 30>>>
+Advanced color management (contd) –
+association of CMRs with objects
+association of CMRs with objects
+
+CMRs can be associated with document components at all 
+• CMRs can be associated with document components at all
+levels of the MO:DCA document hierarchy:
+– Print file (highest)
+– Document
+– Group of pages/sheets
+– Page/overlay
+– Data object (lowest)
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o • A CMR at a lower level always overrides – for that document 
+o
+o
+o
+s
+s
+component only – a conflicting CMR at a higher level
+n
+n
+– Example: CC CMR at print file level defines RGB = scanner(y) RGB, CC 
+o
+o
+o
+o
+CMR at page(n) level defines RGB = scanner(x) RGB According to rule
+CMR at page(n) level defines RGB = scanner(x) RGB. According to rule, 
+C
+C
+since CC CMRs conflict, all RGB for page(n) is interpreted as scanner(x) 
+RGB 
+P
+P
+F
+F
+F
+F
+A
+A
+
+30
+
+<<<PAGE 31>>>
+Advanced color management 
+g
+(contd) – CC CMR processing
+(
+
+p
+
+)
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+31
+
+<<<PAGE 32>>>
+Future Directions
+
+•
+
+p oducts ( o
+
+p o e te ope ab ty o
+
+C e be s)
+Improve interoperability of AFP products (from AFPC members) 
+– Define conformance level(s)
+– Compliance testing 
+– Certification
+t
+l
+D
+interoperate with other  workflows – PDF, XML, web, view, 
+archive, ….
+– Develop more robust and flexible metadata architecture
+Develop more robust and flexible metadata architecture
+
+• Develop extensions to allow AFP workflows to better 
+ll
+
+t b tt
+
+AFP
+
+kfl
+
+t
+
+i
+
+• NOPs  are unarchitected
+• Tag Logical Element structured fields (TLEs) are limited to attribute name/value 
+
+pairs
+
+Integrate new object containers into AFP as their industry 
+acceptance and use increases
+– SVG?  PNG? …..
+Investigate integration of JDF into AFP 
+I
+f JDF i t AFP
+ti
+t
+Improve communications with customers, users, and user 
+groups
+
+i t
+
+ti
+
+If you want to get more involved, please send us a note!!
+
+reinhard.hohensee@infoprint.com
+
+harry.lewis@infoprint.com
+
+32
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o •
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+•
+•
+
+<<<PAGE 33>>>
+Summary
+
+• AFP has shown unique longevity as a presentation architecture, 
+
+dating back to 1984
+dating back to 1984
+
+• AFP started out as an IBM-owned architecture but was 
+
+positioned on an “open” path by IBM in 2004 and is now a fully 
+open industry standard owned developed and maintained by
+open industry standard owned, developed, and maintained by 
+the AFP Consortium (AFPC) 
+
+• Various AFPC membership levels are available, ranging from 
+
+Core ($10K), to Participating ($5K), to Associate ($1K)
+Core ($10K) to Participating ($5K) to Associate ($1K)
+
+• With the recent addition of OpenType/Unicode support and ICC-
+based color management, AFP is uniquely structured to support 
+modern mission-critical multi-language variable-data color
+modern mission-critical, multi-language, variable-data color  
+workflows 
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+33
+
+<<<PAGE 34>>>
+Questions?
+
+• Q & A
+
+m
+mm
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+o
+o
+s
+s
+n
+n
+o
+o
+o
+o
+C
+C
+P
+P
+F
+F
+F
+F
+A
+A
+
+34

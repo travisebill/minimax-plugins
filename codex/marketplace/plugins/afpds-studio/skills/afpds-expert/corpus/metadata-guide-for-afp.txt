@@ -1,0 +1,5818 @@
+<<<PAGE 1>>>
+Advanced Function Presentation Consortium 
+
+Metadata Guide for AFP
+
+AFPC-0018-01
+
+<<<PAGE 2>>>
+Note:
+
+Before using this information, read the information in “Notices” on page 47.
+
+AFPC-0018-01
+First Edition (November 2023)
+
+This edition applies to the Advanced Function Presentation™ (AFP™) Architecture. This is the first edition and is produced
+by the AFP Consortium™ (AFPC™). This edition remains current until a new edition is published.
+
+Internet
+
+Visit the AFP Consortium home page at: www.afpconsortium.org
+
+Copyright © AFP Consortium 2023
+
+ii
+
+<<<PAGE 3>>>
+Preface
+
+This guide describes the implementation of a suggested Metadata structure for Advanced Function
+Presentation (AFP) to be used with the metadata object defined in the AFP architecture.
+
+Who Should Read This Book
+
+This book is for systems programmers and other developers who need such information to develop or adapt a
+product or program to interoperate with other presentation products.
+
+AFP Consortium (AFPC)
+
+The AFP Consortium is an international group bringing together voices from across the print industry to keep
+the AFP architecture up to date and continually improving. AFP Consortium members, often market
+competitors, work together to ensure this stable, efficient, flexible architecture continues to thrive, even as the
+world of printing changes.
+
+The Advanced Function Presentation (AFP) architectures began as the strategic, general purpose document
+and information presentation architecture for the IBM® Corporation. The first specifications and products go
+back to 1984. Although all of the components of the architecture have grown over the years, the major
+concepts of object-driven structures, print integrity, resource management, and support for high print speeds
+were built in from the start.
+
+In the early twenty-first century, IBM saw the need to enable applications to create color output that is
+independent from the device used for printing and to preserve color consistency, quality, and fidelity of the
+printed material. This need resulted in the formation, in October 2004, of the AFP Color Consortium™
+(AFPCC™). The goal was to extend the object architectures with support for full-color devices including
+support for comprehensive color management. The idea of doing this via a consortium consisting of the
+primary AFP architecture users was to build synergism with partners from across the relevant industries, such
+as hardware manufacturers that produce printers as well as software vendors of composition, work flow,
+viewer, and transform tools. Quickly more than 30 members came together in regular meetings and work group
+sessions to create the AFP Color Management Object Content Architecture™ (CMOCA™). A major milestone
+was reached by the AFP Color Consortium with the initial official release of the CMOCA specification in May
+2006.
+
+Since the cooperation between the members of the AFP Color Consortium turned out to be very effective and
+valuable, it was decided to broaden the scope of the consortium efforts and IBM soon announced its plans to
+open up the complete scope of the AFP architecture to the consortium. In June 2007, IBM's role as founding
+member of the consortium was transferred to the InfoPrint® Solutions Company, an IBM/Ricoh® joint venture ;
+currently Ricoh holds the founding member position. In February 2009, the consortium was incorporated under
+a new set of bylaws with tiered membership and shared governance resulting in the creation of a formal open
+standards body called the AFP Consortium (AFPC). Ownership of and responsibility for the AFP architectures
+was transferred at that time to the AFP Consortium.
+
+Copyright © AFP Consortium 2023
+
+iii
+
+<<<PAGE 4>>>
+Data Definitions Used in the AFP Tagging Structures
+
+Throughout this book, syntax is described for the AFP Tagging Structures using the following data definitions:
+Integer
+String
+
+Zero (0) and positive whole numbers
+Character strings that can contain characters, line feeds, carriage returns, and tab characters
+
+In addition, a column heading of “M/O” for Textual Content, Attributes, or Child Elements indicates if the entry is
+Mandatory (M) or Optional (O).
+
+iv Metadata Guide for AFP
+
+<<<PAGE 5>>>
+Related Publications
+
+Following is a list of related Architecture publications.
+
+AFP Architecture Publications
+
+Several other publications can help you understand the architecture concepts described in this book. AFP
+Consortium publications are available on the AFP Consortium web site at www.afpconsortium.org.
+
+Table 1. AFP Consortium Architecture References
+
+AFP Architecture Publication
+
+Book Identification
+
+AFP Programming Guide and Line Data Reference
+
+Bar Code Object Content Architecture™ Reference
+
+Color Management Object Content Architecture Reference
+
+Font Object Content Architecture Reference
+
+AFPC-0010
+
+AFPC-0005
+
+AFPC-0006
+
+AFPC-0007
+
+Graphics Object Content Architecture for Advanced Function Presentation Reference
+
+AFPC-0008
+
+Image Object Content Architecture Reference
+
+Intelligent Printer Data Stream™ Reference
+
+Metadata Object Content Architecture Reference
+
+Mixed Object Document Content Architecture™ (MO:DCA™ Reference
+
+Presentation Text Object Content Architecture Reference
+
+Table 2. Additional AFP Consortium Documentation
+
+AFPC Publication
+
+AFP Color Management Architecture™ (ACMA™)
+
+AFPC Company Abbreviation Registry
+
+AFPC Font Typeface Registry
+
+BCOCA™ Frequently Asked Questions
+
+Metadata Guide for AFP
+
+MO:DCA-L:The OS/2 PM Metafile (.met) Format
+
+Presentation Object Subsets for AFP
+
+Recommended IPDS™ Values for Object Container Versions
+
+AFPC-0003
+
+AFPC-0001
+
+AFPC-0013
+
+AFPC-0004
+
+AFPC-0009
+
+Book Identification
+
+G550-1046 (IBM)
+
+AFPC-0012
+
+AFPC-0016
+
+AFPC-0011
+
+AFPC-0018
+
+AFPC-0014
+
+AFPC-0002
+
+AFPC-0017
+
+Metadata Guide for AFP v
+
+<<<PAGE 6>>>
+Other References
+
+AFP Metadata uses XML and requires languages to be specified in a consistent manner. For that purpose, we
+use the following publications:
+
+Table 3. Other References
+
+Publication
+
+Extensible Markup Language (XML) 1.0 (Fifth Edition)
+
+Available at:
+
+www.w3.org/TR/xml
+
+Tags for Identifying Languages
+
+Available at:
+
+www.rfc-editor.org/rfc/rfc5646.txt
+
+IANA Language Subtag Registry
+
+Available at:
+
+www.iana.org/assignments/language-subtag-registry/language-subtag-registry
+
+vi Metadata Guide for AFP
+
+<<<PAGE 7>>>
+Contents
+
+Preface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . iii
+Who Should Read This Book .....................................................................................................................iii
+AFP Consortium (AFPC) ...........................................................................................................................iii
+Data Definitions Used in the AFP Tagging Structures ..................................................................................... iv
+Related Publications ................................................................................................................................ v
+AFP Architecture Publications ................................................................................................................ v
+Other References............................................................................................................................... vi
+
+Figures . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xi
+
+Tables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . xiii
+
+Chapter 1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1
+AFP Metadata Description......................................................................................................................... 1
+
+Chapter 2. Overview. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3
+AFP Tagging .......................................................................................................................................... 3
+DocumentObjectModel and DOMNode Tags ................................................................................................. 3
+Pointer and Pointer Position....................................................................................................................... 3
+Reading Order ........................................................................................................................................ 4
+Ignore Data ............................................................................................................................................ 4
+
+Chapter 3. AFP Tagging Structures . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .5
+AFP Tagging Description........................................................................................................................... 5
+Tag Syntax Structure................................................................................................................................ 5
+DocumentObjectModel ............................................................................................................................. 5
+DOMNode ............................................................................................................................................. 6
+SemanticProperties ................................................................................................................................. 6
+AFPTag................................................................................................................................................. 6
+Private .................................................................................................................................................. 6
+
+Chapter 4. AFP Metadata Tags . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .7
+General Information ................................................................................................................................. 7
+ActualText.............................................................................................................................................. 8
+Textual Content of Element ................................................................................................................... 8
+Attributes........................................................................................................................................... 8
+Semantics ......................................................................................................................................... 8
+Child Elements ................................................................................................................................... 8
+Example............................................................................................................................................ 8
+Exception Condition Summary ............................................................................................................... 8
+AFPTag................................................................................................................................................. 9
+Textual Content of Element ................................................................................................................... 9
+Attributes........................................................................................................................................... 9
+Semantics ......................................................................................................................................... 9
+Child Elements ................................................................................................................................... 9
+Example.......................................................................................................................................... 10
+Exception Condition Summary ............................................................................................................. 10
+Alt ...................................................................................................................................................... 11
+Textual Content of Element ................................................................................................................. 11
+Attributes......................................................................................................................................... 11
+Semantics ....................................................................................................................................... 11
+Child Elements ................................................................................................................................. 11
+Example.......................................................................................................................................... 11
+Exception Condition Summary ............................................................................................................. 11
+BeginIndex .......................................................................................................................................... 12
+Textual Content of Element ................................................................................................................. 12
+Attributes......................................................................................................................................... 12
+Semantics ....................................................................................................................................... 12
+Child Elements ................................................................................................................................. 12
+Example.......................................................................................................................................... 12
+
+Copyright © AFP Consortium 2023
+
+vii
+
+<<<PAGE 8>>>
+Exception Condition Summary ............................................................................................................. 12
+DocumentObjectModel ........................................................................................................................... 13
+Textual Content of Element ................................................................................................................. 13
+Attributes......................................................................................................................................... 13
+Semantics ....................................................................................................................................... 13
+Child Elements ................................................................................................................................. 14
+Example.......................................................................................................................................... 14
+Exception Condition Summary ............................................................................................................. 14
+DOMNode ........................................................................................................................................... 15
+Textual Content of Element ................................................................................................................. 15
+Attributes......................................................................................................................................... 15
+Child Elements ................................................................................................................................. 15
+Semantics ....................................................................................................................................... 15
+Example.......................................................................................................................................... 16
+Exception Condition Summary ............................................................................................................. 16
+EndIndex............................................................................................................................................. 18
+Textual Content of Element ................................................................................................................. 18
+Attributes......................................................................................................................................... 18
+Semantics ....................................................................................................................................... 18
+Child Elements ................................................................................................................................. 18
+Example.......................................................................................................................................... 18
+Exception Condition Summary ............................................................................................................. 18
+Hyperlink ............................................................................................................................................. 19
+Textual Content of Element ................................................................................................................. 19
+Attributes......................................................................................................................................... 19
+Child Elements ................................................................................................................................. 19
+Example.......................................................................................................................................... 19
+Exception Condition Summary ............................................................................................................. 19
+IndexElement ....................................................................................................................................... 20
+Textual Content of Element ................................................................................................................. 20
+Attributes......................................................................................................................................... 20
+Semantics ....................................................................................................................................... 20
+Child Elements ................................................................................................................................. 20
+Example.......................................................................................................................................... 20
+Exception Condition Summary ............................................................................................................. 20
+NodeType ............................................................................................................................................ 21
+Textual Content of Element ................................................................................................................. 21
+Attributes......................................................................................................................................... 21
+Semantics ....................................................................................................................................... 21
+Child Elements ................................................................................................................................. 21
+Example.......................................................................................................................................... 21
+Exception Condition Summary ............................................................................................................. 21
+Offset.................................................................................................................................................. 22
+Textual Content of Element ................................................................................................................. 22
+Attributes......................................................................................................................................... 22
+Semantics ....................................................................................................................................... 22
+Child Elements ................................................................................................................................. 22
+Example.......................................................................................................................................... 22
+Exception Condition Summary ............................................................................................................. 22
+Private ................................................................................................................................................ 23
+Textual Content of Element ................................................................................................................. 23
+Attributes......................................................................................................................................... 23
+Child Elements ................................................................................................................................. 23
+Example.......................................................................................................................................... 23
+Exception Condition Summary ............................................................................................................. 23
+SemanticProperties ............................................................................................................................... 24
+Textual Content of Element ................................................................................................................. 24
+Attributes......................................................................................................................................... 24
+Child Elements ................................................................................................................................. 24
+Example.......................................................................................................................................... 24
+Exception Condition Summary ............................................................................................................. 24
+
+Appendix A. Tag Cross Reference . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+
+viii Metadata Guide for AFP
+
+<<<PAGE 9>>>
+AFP Tags Sorted by Name ...................................................................................................................... 25
+AFP Tag Attributes Sorted by Name .......................................................................................................... 25
+
+Appendix B. AFPId Subsets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+AT1 Subset .......................................................................................................................................... 27
+
+Appendix C. NodeType Subsets . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+NT1 Subset.......................................................................................................................................... 29
+
+Appendix D. Examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+Text Example........................................................................................................................................ 31
+Hypertext Example ................................................................................................................................ 33
+Image Example..................................................................................................................................... 34
+Table Example ...................................................................................................................................... 35
+Text Block Across Page Boundaries Example .............................................................................................. 44
+
+Notices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 47
+Trademarks.......................................................................................................................................... 48
+
+Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+
+Metadata Guide for AFP ix
+
+<<<PAGE 10>>>
+x Metadata Guide for AFP
+
+<<<PAGE 11>>>
+Figures
+
+1. Text Example ...................................................................................................................................... 31
+2. Hypertext Example ............................................................................................................................... 33
+Image Example ................................................................................................................................... 34
+3.
+4. Table Example..................................................................................................................................... 35
+5. Text Block Across Page Boundaries — First Page Example........................................................................... 44
+6. Text Block Across Page Boundaries — Second Page Example ...................................................................... 45
+
+Copyright © AFP Consortium 2023
+
+xi
+
+<<<PAGE 12>>>
+xii Metadata Guide for AFP
+
+<<<PAGE 13>>>
+Tables
+
+1. AFP Consortium Architecture References ................................................................................................... v
+2. Additional AFP Consortium Documentation ................................................................................................. v
+3. Other References.................................................................................................................................. vi
+4. DocumentObjectModel Tag Structure ......................................................................................................... 5
+5. DOMNode Tag Structure.......................................................................................................................... 6
+6. SemanticProperties Tag Structure.............................................................................................................. 6
+7. AFPTag Tag Structure ............................................................................................................................. 6
+8. Private Tag Structure .............................................................................................................................. 6
+9. AFP Tags Sorted by Name ..................................................................................................................... 25
+10. AFP Tag Attributes Sorted by Name ....................................................................................................... 25
+11. AFP Acronyms Allowed for the AFPId Attribute Sorted by Acronym................................................................ 27
+12. Structural Elements Allowed for the NodeType Tag Sorted by Element........................................................... 29
+
+Copyright © AFP Consortium 2023
+
+xiii
+
+<<<PAGE 14>>>
+xiv Metadata Guide for AFP
+
+<<<PAGE 15>>>
+Chapter 1. Introduction
+
+AFP Metadata Description
+
+Advanced Function Presentation data streams allow inclusion of non-AFP objects. Among the many non-AFP
+objects supported are objects that carry descriptive metadata, providing extra information for archive and
+presentation systems. These objects, known as Metadata Objects (MOs) are defined in the Metadata Object
+Content Architecture Reference.
+
+While the inclusion of MOs is well defined in the architecture, the recommended interchange content of these
+MOs is defined in this document. The purpose of this guide is to define a tagging schema in XML format for
+carrying AFP tagging information within an MO for use by archiving and presentation systems. An example of
+the benefit of metadata tagging is the ability to associate extra information with a given part of an AFP
+document, allowing users with vision impairments or other restrictions to make full use of the content provided
+by an AFP system – meeting the requirements of universal accessibility (UA). Another example is the case
+where an automated archive system could use the extra information provided in the metadata tagging to
+provide a more comprehensive index of the data in an archived AFP file.
+
+In AFP environments, the MOs have no presentation semantic and may be ignored by products not interested
+in the metadata.
+
+Copyright © AFP Consortium 2023
+
+1
+
+<<<PAGE 16>>>
+2 Metadata Guide for AFP
+
+<<<PAGE 17>>>
+Chapter 2. Overview
+
+AFP Tagging
+
+This chapter provides an Overview of AFP tagging, what it is used for, and related concepts.
+
+To tag something is to associate “extra” information (metadata) to a given piece of AFP data. By its very nature,
+the AFP data to be tagged must be visible to a reader or viewer of the AFP document. To be useful there must
+be an association between where something is in the AFP stream and the “extra” tagging information to be
+associated with it. AFP itself contains Metadata objects that act as containers for metadata.
+
+DocumentObjectModel and DOMNode Tags
+
+The DocumentObjectModel tag defines the scope of how the tags are parsed and defines the version, method,
+default language, and XML Schema for these tags. It is designed to allow maximum flexibility over time to allow
+new tags or XML schema to be used as new tags and technologies are developed. The DocumentObjectModel
+contains DOMNode tags that carry all the semantic properties (using the <SemanticProperties> tag), pointers
+to the corresponding AFP data (using the <AFPTag> tag), and private (using the <Private> tag) data to be
+tagged in an AFP print file.
+
+The DOMNode tags are the “backbone” of the logical document structure. The nesting of DOMNode tags in the
+XML corresponds to the logical hierarchical organization of the document contents. They contain the
+semantics of the elements, in terms of their structural meaning (paragraph, section, table, heading, and so on).
+In turn, these semantics (the “what”) are associated with pointers into the AFP file (the “where”). DOMNode
+tags contain the ordered list of pointers to AFP page contents, but do not carry contents themselves (since the
+contents are already defined in the AFP page stream). Rather, they link to the contents by means of pointers,
+pointers that are defined by AFPTag elements.
+
+Additionally, DOMNode tags can carry unarchitected information, using the Private tag. The private section is
+intended for custom extensions to AFP Tagging that may be needed to address specific use cases outside of
+what is currently defined in this guide. An example of this would be the case where additional information might
+be required for AFP processing applications (archive, etc.). These private extensions are ignored by
+conformant metadata processors. Note that any information relevant to assistive technology should not be
+included in the private section.
+
+Pointer and Pointer Position
+
+A pointer is used to indicate the start of the AFP data that will have metadata associated with it. Each AFPTag
+has one pointer associated with it. The pointer position starts at zero in the AFP following the Metadata Object
+(MO) containing this metadata tagging information. The pointer position is set by the Offset tag or the
+BeginIndex tag. These tags move the pointer to the correct spot in the AFP in the following manner:
+
+1. The Offset tag specifies the number of bytes the pointer position is to be moved using the bytes parameter
+
+from the start of the AFP object pointed to by the IndexElement tag.
+
+2. The index element tags (BeginIndex, EndIndex, and IndexElement) move the pointer by going to the AFP
+structured field identified by the AFPId parameter in the metadata object. The AFPId parameter moves the
+pointer by the number of this type of AFP structured fields found in the AFP object.
+
+Copyright © AFP Consortium 2023
+
+3
+
+<<<PAGE 18>>>
+Overview
+
+Reading Order
+
+Reading order is defined as the sequence in which the tagged information associated with text will be
+presented to the user. For AFP tagging, the reading order is determined by visiting the sequence of DOMNode
+tags in the DomainObjectModel using a depth-first traversal, seeking the corresponding PTOCA and other
+visible objects on the page, pointed to by the AFPTag elements.
+
+Ignore Data
+
+Any content not explicitly tagged is to be considered as ignored by default.
+
+4 Metadata Guide for AFP
+
+<<<PAGE 19>>>
+Chapter 3. AFP Tagging Structures
+
+AFP Tagging Description
+
+Advanced Function Presentation data streams allow inclusion of non-AFP objects. Among the many non-AFP
+objects supported are objects that carry descriptive metadata, providing extra information for archive and
+presentation systems. These objects, known as Metadata Objects (MOs) are defined in the Metadata Object
+Content Architecture Reference.
+
+This chapter:
+• Defines the tag syntax structure of the descriptive Metadata in AFP.
+
+Tag Syntax Structure
+
+This section specifies the syntax used to define the Metadata tags for AFP.
+
+The conventions used in these tag descriptions are:
+
+[ ]
+
+(S)
+
+Brackets indicate optional tags. When a tag is shown without brackets, it must appear
+between the beginning and ending tags.
+
+The enclosed (S) indicates that the tag may be repeated. When present on a required tag, at
+least one occurrence of the tag is required, but multiple instances of it may occur.
+
+If a specific tag is used, it must appear exactly in the order shown in this chapter.
+
+To assist with readability, some end tags (</tag>) have been omitted in this chapter, but are required when the
+XML is generated.
+
+DocumentObjectModel
+
+This section describes the contents of the DocumentObjectModel structure.
+
+Table 4. DocumentObjectModel Tag Structure
+
+<DocumentObjectModel version=“...” method=“...” XMLLang=“...” AFPLang=“...” xmlns=“...”>
+
+<DOMNode did=“...” AFPLang=“...” fromPage=“...” toPage=“...” XMLLang=“...”>
+
+(S)
+
+</DocumentObjectModel>
+
+Note: All of the XML tags and attributes found in this version of the AFP Tagging Guide belong to the following
+
+XML namespace (xmlns): “https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0”
+(with the exception of the xmlns attribute itself). For more information about XML namespaces, refer to
+the W3C website (www.w3.org/TR/xml-names/).
+
+Copyright © AFP Consortium 2023
+
+5
+
+<<<PAGE 20>>>
+AFP Tagging Structures
+
+DOMNode
+
+This section describes the contents of the DOMNode structure.
+
+Table 5. DOMNode Tag Structure
+
+<DOMNode did=“...” AFPLang=“...” fromPage=“...” toPage=“...” XMLLang=“...”>
+
+<SemanticProperties>
+<AFPTag tid=”...” page=“...”>
+<Private>
+<DOMNode did=“...” AFPLang=“...” fromPage=“...” toPage=“...” XMLLang=“...”>
+
+[
+[
+
+</DOMNode>
+
+SemanticProperties
+
+This section describes the contents of the SemanticProperties structure.
+
+Table 6. SemanticProperties Tag Structure
+
+<SemanticProperties>
+<NodeType>
+<ActualText XMLLang=“...”>
+<Alt XMLLang=“...”>
+<Hyperlink>
+
+</SemanticProperties>
+
+[
+[
+[
+
+AFPTag
+
+This section describes the contents of the AFPTag structure.
+
+Table 7. AFPTag Tag Structure
+
+<AFPTag tid=“...” page=“...”>
+
+[
+[
+[
+[
+
+<BeginIndex AFPId=“...” count=“...”>
+<EndIndex AFPId=“...” count=“...”>
+<IndexElement AFPId=“...” count=“...”>
+<Offset bytes=“...” length=“...”>
+
+</AFPTag>
+
+(S)
+
+(S)
+
+]
+(S) ]
+
+(S) ]
+(S) ]
+]
+
+]
+]
+]
+]
+
+Note: The AFPTag Tag Structure shows all of the listed child elements as optional, but in practice, either the
+BeginIndex/EndIndex tag pair or the IndexElement/Offset tag pair must be specified, or an error
+condition will result.
+
+Private
+
+This section describes the contents of the Private tag.
+
+Table 8. Private Tag Structure
+
+<Private>
+
+Private extensions — not architected
+
+</Private>
+
+6 Metadata Guide for AFP
+
+<<<PAGE 21>>>
+Chapter 4. AFP Metadata Tags
+
+This chapter:
+• Briefly describes the purpose of each AFP metadata tag
+• Provides the syntax and semantics for each AFP metadata tag
+• Identifies each AFP metadata tag's attribute set
+• Identifies exception conditions
+
+General Information
+
+Detailed formats, syntaxes, and semantics are provided here to enable product developers to design and
+produce applications that can be used in the AFP data stream.
+
+The syntax tables in this chapter describe the less restrictive requirements of the overall architecture and
+include whether a data element is Mandatory (M) or Optional (O) as indicated by the column heading of “M/O”.
+
+Exception conditions that may occur because of special conditions such as a mismatch between the individual
+attributes of one or more tags are listed under the “Exception Condition Summary” heading for each tag.
+
+Metadata must be valid XML as defined in Extensible Markup Language (XML) 1.0 (Fifth Edition) and encoding
+must be in UTF-8.
+
+The following AFP metadata tags are sorted in alphabetical order based on the XML tag name.
+
+Copyright © AFP Consortium 2023
+
+7
+
+<<<PAGE 22>>>
+ActualText
+
+ActualText
+
+The ActualText tag associates text contained within this tag with the corresponding tagged AFP and can be
+any text. A typical use of this tag is to provide text for use by a screen reader.
+
+Textual Content of Element
+
+Value
+
+Text
+
+Attributes
+
+Meaning
+
+Text data associated with the tagged AFP
+
+Attribute
+
+XMLLang
+
+Type
+
+string
+
+Range
+
+language
+
+Meaning
+
+Indicates the language used for the
+XML text
+
+M/O
+
+M
+
+M/O
+
+O
+
+Semantics
+
+XMLLang
+
+Indicates the language used for the text.
+
+This specifies the language using RFC 5646: “Tags for Identifying Languages” and “IANA
+Language Subtag Registry”. Some examples follow:
+• de — German
+• en — English
+• en-US — US English
+• es — Spanish
+• fr — French
+• it — Italian
+• jp — Japanese
+
+Child Elements
+
+None.
+
+Example
+
+<ActualText XMLLang="en-US">Hello, world. Follow our website for details.</ActualText>
+
+Exception Condition Summary
+
+• The XMLLang language is not recognized.
+• The text has zero length (e.g., an empty string).
+
+8 Metadata Guide for AFP
+
+<<<PAGE 23>>>
+AFPTag
+
+The AFPTag surrounds a group of AFP specific sub-elements.
+
+Textual Content of Element
+
+None
+
+Attributes
+
+Attribute
+
+Type
+
+Range
+
+Meaning
+
+tid
+
+integer
+
+1–n
+
+page
+
+integer
+
+1–n
+
+Defines a unique AFP Tag associated
+with a group of AFP controls in a given
+DOMNode.
+
+Defines the page the AFPTag is to be
+used in. In the case of an MO in a
+page, this defaults to 1. If the MO is in
+a Begin Named Page Group (BNG),
+the page indicates the page the
+AFPTag applies to.
+
+AFPTag
+
+M/O
+
+M
+
+O
+
+Semantics
+
+tid
+
+page
+
+This is a number that defines a unique AFP Tag associated with a group of AFP controls in a
+given DOMNode – this value must be a positive integer. “Unique”, in this case, refers to a tag
+id (tid) number that is unique to the AFP page being tagged.
+
+This is a number that defines the page number the AFP Tag is to be used with. In the case
+where the MO is at the AFP page object level, this value defaults to 1.
+
+Child Elements
+
+Although all child elements are shown as “optional” in this table, in practice, the BeginIndex and EndIndex tags
+must be used as a pair, and together they describe the begin and end of a group of AFP structured fields to tag
+and reference as a whole. In the same way, the IndexElement and Offset tags must also be used as a pair, and
+together they describe a single AFP structured field and an offset and length; this serves to tag a portion of an
+AFP object (typically, PTOCA text). These elements cannot be used individually and are not meant to be
+intermixed (for example, you cannot use a BeginIndex and an Offset together).
+
+Element
+
+BeginIndex
+
+EndIndex
+
+Meaning
+
+The BeginIndex tag starts a group of index-specific sub-elements. See
+“BeginIndex” on page 12.
+
+The EndIndex tag ends a group of index-specific sub-elements. See
+“EndIndex” on page 18.
+
+IndexElement
+
+The IndexElement tag surrounds a group of index-specific sub-elements. See
+“IndexElement” on page 20.
+
+Offset
+
+The Offset tag surrounds a group of offset-specific sub-elements. See
+“Offset” on page 22.
+
+M/O
+
+O
+
+O
+
+O
+
+O
+
+Metadata Guide for AFP 9
+
+<<<PAGE 24>>>
+AFPTag
+
+Note: The AFPTag child elements are all shown as “optional” but in practice, either the BeginIndex/EndIndex
+tag pair or the IndexElement/Offset tag pair must be specified, or an error condition will result.
+
+Example
+
+<AFPTag tid="1" page="3"> <!-- Identifies this as AFP Tag ID 1 in page 3
+
+of a Named Page Group -->
+
+<IndexElement AFPId="BPT" count="3"></IndexElement><!-- Advances the pointer to the
+
+start of the third BPT on the page -->
+
+<Offset bytes="72" length="19"> <!-- Advances the pointer position 72 bytes and
+
+associates the next 19 bytes with the associated tag -->
+
+</Offset>
+
+</AFPTag>
+
+Exception Condition Summary
+
+• The tid attribute is not specified.
+• The tid attribute is out of range.
+• The tid attribute is not unique on the target page.
+• The page attribute is out of range.
+• No child element is specified.
+
+10 Metadata Guide for AFP
+
+<<<PAGE 25>>>
+Alt
+
+Alt
+
+The Alt tag associates descriptive text contained within this tag with the corresponding tagged AFP. A typical
+use of this tag is to provide extra information about the AFP being tagged for items that are not text based
+(graphics, images, scanned documents, etc.) or where the ActualText needs to be augmented (abbreviations,
+numbers, formulas, etc.). It can also be used to provide an alternative translation for the ActualText.
+
+Textual Content of Element
+
+Value
+
+Descriptive Text
+
+Attributes
+
+Meaning
+
+Text that provides extra information about an AFP tagged item
+
+Attribute
+
+XMLLang
+
+Type
+
+string
+
+Range
+
+language
+
+Meaning
+
+Indicates the language used for the
+XML text
+
+M/O
+
+M
+
+M/O
+
+O
+
+Semantics
+
+XMLLang
+
+Indicates the language used for the text.
+
+This specifies the language using RFC 5646: “Tags for Identifying Languages” and “IANA
+Language Subtag Registry” . Some examples follow:
+• de — German
+• en — English
+• en-US — US English
+• es — Spanish
+• fr — French
+• it — Italian
+• jp — Japanese
+
+Child Elements
+
+None.
+
+Example
+
+<ActualText>This is a calendar from 1958.</ActualText>
+<Alt>This is a calendar from Nineteen Hundred Fifty-eight.</Alt>
+
+Exception Condition Summary
+
+• The XMLLang language is not recognized.
+• The text has zero length (e.g., an empty string).
+
+Metadata Guide for AFP 11
+
+<<<PAGE 26>>>
+BeginIndex
+
+BeginIndex
+
+The BeginIndex tag starts a group of index-specific sub-elements.
+
+Textual Content of Element
+
+None.
+
+Attributes
+
+Attribute
+
+AFPId
+
+Type
+
+string
+
+count
+
+integer
+
+1–n
+
+Range
+
+Meaning
+
+M/O
+
+M
+
+O
+
+The AFPId tag defines the AFP
+acronym to look for in the AFP data
+stream.
+
+Count advances the pointer position in
+the AFP file by the number of
+structured fields or controls specified
+by the AFPId attribute. Must be a
+positive integer. Default value is 1.
+
+Semantics
+
+AFPId
+
+count
+
+This specifies the AFP acronym ID to search for. SeeTable 11 on page 27 for the list of allowed
+acronyms.
+
+Count advances the pointer position in the AFP file by the number of structured fields or
+controls specified by the AFPId attribute. Must be a positive integer. Default value is 1.
+
+Child Elements
+
+None.
+
+Example
+
+<BeginIndex AFPId="BPG" count="3">
+
+<!-- Find the third BPG in the AFP file -->
+
+</BeginIndex>
+
+Exception Condition Summary
+
+• The AFPId attribute is not specified.
+• The AFPId attribute is not recognized.
+• The count attribute is out of range.
+
+12 Metadata Guide for AFP
+
+<<<PAGE 27>>>
+DocumentObjectModel
+
+DocumentObjectModel
+
+The DocumentObjectModel tag is the top-level tag of the AFP tagging structure and defines the schema,
+version number, method, and default language of the AFP tagging model.
+
+Textual Content of Element
+
+None
+
+Attributes
+
+Attribute
+
+method
+
+Type
+
+string
+
+Range
+
+“Index”
+
+version
+
+string
+
+“1.0”
+
+AFPLang
+
+string
+
+language
+
+XMLLang
+
+string
+
+language
+
+xmlns
+
+string
+
+XML namespace
+
+Meaning
+
+M/O
+
+Indicates the method of the AFP
+Tagging model to be used
+
+Indicates the version of the AFP
+Tagging model to be used
+
+Indicates the default language to be
+used for the AFP text
+
+Indicates the default language to be
+used for the XML text
+
+Specifies the XML namespace that
+contains the schema used for AFP
+Tagging
+
+M
+
+M
+
+O
+
+O
+
+M
+
+Semantics
+
+method
+
+Indicates the method of the AFP tagging model to be used. For this document, the only
+allowed value is “Index”.
+
+version
+
+Indicates the version of the AFP Tagging model to be used.
+
+AFPLang
+
+Indicates the default language to be used for the AFP text.
+
+This specifies the language using RFC 5646: “Tags for Identifying Languages” and “IANA
+Language Subtag Registry” . Some examples follow:
+• de — German
+• en — English
+• en-US — US English
+• es — Spanish
+• fr — French
+• it — Italian
+• jp — Japanese
+
+XMLLang
+
+Indicates the default language to be used for the XML text.
+
+This specifies the language using RFC 5646: “Tags for Identifying Languages” and “IANA
+Language Subtag Registry” . Some examples follow:
+• de — German
+• en — English
+• en-US — US English
+• es — Spanish
+• fr — French
+• it — Italian
+
+Metadata Guide for AFP 13
+
+<<<PAGE 28>>>
+DocumentObjectModel
+
+• jp — Japanese
+
+xmlns
+
+This specifies the XML namespace that contains the schema used for AFP Tagging.
+
+For this version of the Guide, the namespace is:
+“https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0”.
+
+Child Elements
+
+Element
+
+DOMNode
+
+Example
+
+Meaning
+
+Specifies the nodes that make up the DocumentObjectModel. See “DOMNode”
+on page 15.
+
+M/O
+
+M
+
+<DocumentObjectModel xmlns="https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0"
+version="1.0" method="Index" XMLLang="en-US">
+
+Exception Condition Summary
+
+• Missing attributes.
+• The method is not recognized.
+• The version is not recognized.
+• The AFPLang language is not recognized.
+• The XMLLang language is not recognized.
+• No DOMNode child element is specified.
+• No xmlns is specified.
+
+14 Metadata Guide for AFP
+
+<<<PAGE 29>>>
+DOMNode
+
+The DOMNode tag contains all of the AFPTags, SemanticProperties, and Private data to be tagged in an AFP
+print file.
+
+DOMNode
+
+Textual Content of Element
+
+None
+
+Attributes
+
+Attribute
+
+Type
+
+Range
+
+Meaning
+
+did
+
+integer
+
+1–n
+
+AFPLang
+
+string
+
+language
+
+fromPage
+
+integer
+
+1–n
+
+toPage
+
+integer
+
+1–n
+
+XMLLang
+
+string
+
+language
+
+Child Elements
+
+Defines a unique node in the table of
+tags associated with a group of AFP
+tags
+
+Indicates the default language to be
+used for the AFP text
+
+Indicates the page in the AFP
+document where a given DOMNode
+(and its descendants) is located, so it
+is possible to immediately fetch the
+start of the node
+
+Indicates the page in the AFP
+document where a given DOMNode
+(and its descendants) is located, so it
+is possible to immediately fetch the
+end of the node
+
+Indicates the default language to be
+used for the XML text
+
+M/O
+
+M
+
+O
+
+O
+
+O
+
+O
+
+Element
+
+AFPTag
+
+Meaning
+
+The AFPTag surrounds a group of AFP specific sub-elements. See “AFPTag”
+on page 9.
+
+SemanticProperties
+
+Specifies the semantic properties of the node. See “SemanticProperties” on
+page 24.
+
+DOMNode
+
+Private
+
+Specifies the subnodes that make up the DOMNode. DOMNode tags may
+have other DOMNode tags defined within them, provided each is terminated
+correctly in the nesting with a corresponding “</DOMNode>”.
+
+The Private tag surrounds a group of private sub-elements that are not
+architected, but are expected to follow the semantic rules of XML. See
+“Private” on page 23.
+
+M/O
+
+M
+
+M
+
+O
+
+O
+
+Semantics
+
+did
+
+This is a number that makes each DOMNode in the tagging information unique – this value
+must be a positive integer. Unique, in this case, refers to a DOMNode id number that is unique
+to the collection of structured fields being tagged in the print file. The same did number can
+
+Metadata Guide for AFP 15
+
+<<<PAGE 30>>>
+DOMNode
+
+appear multiple times if the same metadata element is referred to in different places.
+Examples include a named page group that includes multiple different pages, or a text block
+that spans multiple pages.
+
+fromPage
+
+toPage
+
+Indicates the page in the AFP document where a given DOMNode (and its descendants) is
+located, so it is possible to immediately fetch the start of the node.
+
+Indicates the page in the AFP document where a given DOMNode (and its descendants) is
+located, so it is possible to immediately fetch the end of the node.
+
+AFPLang
+
+Indicates the default language to be used for the AFP text.
+
+This specifies the language using RFC 5646: “Tags for Identifying Languages” and “IANA
+Language Subtag Registry” . Some examples follow:
+• de — German
+• en — English
+• en-US — US English
+• es — Spanish
+• fr — French
+• it — Italian
+• jp — Japanese
+
+XMLLang
+
+Indicates the default language to be used for the XML text.
+
+This specifies the language using RFC 5646: “Tags for Identifying Languages” and “IANA
+Language Subtag Registry” . Some examples follow:
+• de — German
+• en — English
+• en-US — US English
+• es — Spanish
+• fr — French
+• it — Italian
+• jp — Japanese
+
+Example
+
+<DOMNode did="1" XMLLang="en-US">
+
+... tagging information for node 1
+<DOMNode did ="2">
+
+... tagging information for node 2
+
+</DOMNode>
+... more tagging information for node 1
+
+</DOMNode>
+
+Note: DOMNode tags may have other DOMNode tags defined within them, provided each is terminated
+
+correctly in the nesting with a corresponding “</DOMNode>”, as shown in this example.
+
+Exception Condition Summary
+
+• The did is not specified.
+• The did is out of range.
+• The did is not unique.
+• The AFPLang language is not recognized.
+• The XMLLang language is not recognized.
+• The fromPage attribute is out of range.
+• The toPage attribute is out of range.
+
+16 Metadata Guide for AFP
+
+<<<PAGE 31>>>
+• The toPage attribute is smaller than the fromPage attribute.
+• No AFPTag child element is specified.
+• No SemanticProperties child element is specified.
+
+DOMNode
+
+Metadata Guide for AFP 17
+
+<<<PAGE 32>>>
+EndIndex
+
+EndIndex
+
+The EndIndex tag ends a group of index-specific sub-elements.
+
+Textual Content of Element
+
+None.
+
+Attributes
+
+Attribute
+
+AFPId
+
+Type
+
+string
+
+count
+
+integer
+
+1–n
+
+Range
+
+Meaning
+
+M/O
+
+M
+
+O
+
+The AFPId tag defines the AFP
+acronym to look for in the AFP data
+stream.
+
+Count sets the end pointer position in
+the AFP file by the number of
+structured fields or controls specified
+by the AFPId attribute. Must be a
+positive integer. Default value is 1.
+
+Semantics
+
+AFPId
+
+count
+
+This specifies the AFP acronym ID to search for. See Table 11 on page 27 for the list of
+allowed acronyms.
+
+Count sets the end pointer position in the AFP file by the number of structured fields or
+controls specified by the AFPId attribute. Must be a positive integer. Default value is 1.
+
+Child Elements
+
+None.
+
+Example
+
+<EndIndex AFPId="EPG" count="3">
+
+<!-- Find the third EPG in the AFP file -->
+
+</EndIndex>
+
+Exception Condition Summary
+
+• The AFPId attribute is not specified.
+• The count attribute is out of range.
+• The AFPId attribute is not recognized.
+• The EndIndex is earlier in the file than the BeginIndex. For example, the BeginIndex points to the third BPG
+
+and the EndIndex points to the second BPG.
+
+18 Metadata Guide for AFP
+
+<<<PAGE 33>>>
+Hyperlink
+
+The Hyperlink tag is used to associate tagged data with an external URL.
+
+Textual Content of Element
+
+Hyperlink
+
+Meaning
+
+Defines the Uniform Resource Locator (URL) to be associated with
+tagged data.
+
+M/O
+
+M
+
+Value
+
+URL
+
+Attributes
+
+None.
+
+Child Elements
+
+None.
+
+Example
+
+<Hyperlink>https://www.afpconsortium.org/</Hyperlink>
+
+Exception Condition Summary
+
+• The URL is missing.
+• The URL is not valid.
+
+Metadata Guide for AFP 19
+
+<<<PAGE 34>>>
+IndexElement
+
+IndexElement
+
+The IndexElement tag surrounds a group of index-specific sub-elements.
+
+Textual Content of Element
+
+None.
+
+Attributes
+
+Attribute
+
+AFPId
+
+Type
+
+string
+
+count
+
+integer
+
+1–n
+
+Range
+
+Meaning
+
+M/O
+
+M
+
+O
+
+The AFPId tag defines the AFP
+acronym to look for in the AFP data
+stream.
+
+Count advances the pointer position in
+the AFP file by the number of
+structured fields or controls specified
+by the AFPId attribute. Must be a
+positive integer. Default value is 1.
+
+Semantics
+
+AFPId
+
+count
+
+This specifies the AFP acronym ID to search for. See Table 11 on page 27 for the list of
+allowed acronyms.
+
+Count advances the pointer position in the AFP file by the number of structured fields or
+controls specified by the AFPId attribute. Must be a positive integer. Defaults to 1.
+
+Child Elements
+
+None.
+
+Example
+
+<IndexElement AFPId="BPG" count="3">
+
+<!-- Find the third BPG in the AFP file -->
+
+</IndexElement>
+
+Exception Condition Summary
+
+• The AFPId attribute is not specified.
+• The AFPId attribute is not recognized.
+• The count attribute is out of range.
+
+20 Metadata Guide for AFP
+
+<<<PAGE 35>>>
+NodeType
+
+NodeType
+
+The NodeType tag defines the structural element the tagged AFP is associated with.
+
+Textual Content of Element
+
+Value
+
+Meaning
+
+string: structural element
+
+The NodeType tag defines the structural element the tagged AFP is
+associated with.
+
+M/O
+
+M
+
+Attributes
+
+None.
+
+Semantics
+
+structural
+element
+
+This specifies the structural element the AFP is associated with. See Table 12 on page 29 for
+the list of allowed elements.
+
+Child Elements
+
+None.
+
+Example
+
+<SemanticProperties>
+
+<NodeType>P</NodeType> <!-- Tagged text is a Paragraph -->
+
+</SemanticProperties>
+
+Exception Condition Summary
+
+• Structural element is not specified.
+• Structural element is not recognized.
+
+Metadata Guide for AFP 21
+
+<<<PAGE 36>>>
+Offset
+
+Offset
+
+The Offset tag surrounds a group of offset-specific sub-elements.
+
+Textual Content of Element
+
+None.
+
+Attributes
+
+Attribute
+
+Type
+
+Range
+
+Meaning
+
+bytes
+
+integer
+
+0–n
+
+length
+
+integer
+
+1–n
+
+This parameter advances the pointer
+position into the AFP file by the
+number of bytes specified. Must be a
+non-negative integer.
+
+This parameter specifies the number of
+AFP bytes to be tagged from the
+pointer position in the AFP file. Must be
+a positive integer. Default value is 1.
+
+M/O
+
+M
+
+O
+
+Semantics
+
+bytes
+
+length
+
+This advances the pointer position into the AFP file by the number of bytes specified.
+
+This specifies the number of AFP bytes to be tagged from the pointer position in the AFP file.
+Must be a positive integer. Default value is 1.
+
+Child Elements
+
+None.
+
+Example
+
+<Offset bytes="72" length="19"> <!-- Advances the pointer position 72 bytes and
+
+associates the next 19 bytes with the associated tag -->
+
+</Offset>
+
+Exception Condition Summary
+
+• The bytes attribute is not specified.
+• The bytes attribute is out of range.
+• The length attribute is out of range.
+
+22 Metadata Guide for AFP
+
+<<<PAGE 37>>>
+Private
+
+The Private tag surrounds a group of private sub-elements that are not architected, but are expected to follow
+the semantic rules of XML.
+
+Private
+
+Textual Content of Element
+
+None.
+
+Attributes
+
+None.
+
+Child Elements
+
+None architected.
+
+Note: The children of the <Private> tag must not be part of the following XML namespace (xmlns): “https://
+www.afpconsortium.org/schemas/metadata/metadata-2/1.0 (with the exception of the xmlns
+attribute itself)”. For more information about XML namespaces, refer to the W3C website (
+www.w3.org/TR/xml-names).
+
+Example
+
+<Private>
+
+<!-- Private extensions - not architected-->
+
+</Private>
+
+Exception Condition Summary
+
+• None.
+
+Metadata Guide for AFP 23
+
+<<<PAGE 38>>>
+SemanticProperties
+
+SemanticProperties
+
+The SemanticProperties tag surrounds a group of semantic-specific sub-elements.
+
+Textual Content of Element
+
+None.
+
+Attributes
+
+None.
+
+Child Elements
+
+Meaning
+
+The ActualText tag associates text contained within this tag with the
+corresponding tagged AFP and can be any text. See “ActualText” on page 8.
+
+The Alt tag associates descriptive text contained within this tag with the
+corresponding tagged AFP . See “Alt” on page 11.
+
+The Hyperlink tag is used to associate tagged data with an external URL. See
+“Hyperlink” on page 19.
+
+The NodeType tag defines the structural element the AFP is associated with.
+See “NodeType” on page 21.
+
+M/O
+
+O
+
+O
+
+O
+
+M
+
+Element
+
+ActualText
+
+Alt
+
+Hyperlink
+
+NodeType
+
+Example
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+<ActualText>Hello World</ActualText>
+...
+
+</SemanticProperties>
+
+Exception Condition Summary
+
+• No NodeType child element is specified.
+
+24 Metadata Guide for AFP
+
+<<<PAGE 39>>>
+Appendix A. Tag Cross Reference
+
+AFP Tags Sorted by Name
+
+Table 9. AFP Tags Sorted by Name
+
+8
+
+9
+
+11
+
+12
+
+13
+
+15
+
+18
+
+19
+
+20
+
+21
+
+22
+
+23
+
+24
+
+Parent
+
+Sibling(s)
+
+Children
+
+Page
+
+SemanticProperties
+
+Alt, Hyperlink, NodeType
+
+(None)
+
+DOMNode
+
+DOMNode, Private,
+SemanticProperties
+
+Tag Name
+
+ActualText
+
+AFPTag
+
+DOMNode
+
+EndIndex
+
+Hyperlink
+
+BeginIndex,
+EndIndex,
+IndexElement,
+Offset
+
+(None)
+
+(None)
+
+DOMNode
+
+AFPTag,
+DOMNode, Private,
+SemanticProperties
+
+Alt
+
+SemanticProperties
+
+BeginIndex
+
+AFPTag
+
+DocumentObjectModel
+
+(None)
+
+ActualText, Hyperlink,
+NodeType
+
+EndIndex
+
+(None)
+
+DocumentObjectModel,
+DOMNode
+
+AFPTag, DOMNode, Private,
+SemanticProperties
+
+AFPTag
+
+BeginIndex
+
+(None)
+
+SemanticProperties
+
+ActualText, Alt, NodeType
+
+(None)
+
+IndexElement
+
+AFPTag
+
+Offset
+
+(None)
+
+NodeType
+
+SemanticProperties
+
+ActualText, Alt, Hyperlink
+
+(None)
+
+Offset
+
+Private
+
+AFPTag
+
+DOMNode
+
+IndexElement
+
+AFPTag, DOMNode,
+SemanticProperties
+
+(None)
+
+(None)
+
+SemanticProperties
+
+DOMNode
+
+AFPTag, DOMNode, Private
+
+ActualText, Alt,
+Hyperlink,
+NodeType
+
+AFP Tag Attributes Sorted by Name
+
+Table 10. AFP Tag Attributes Sorted by Name
+
+Tag Attribute Name
+
+Parent Tag
+
+Sibling Attribute(s)
+
+AFPId
+
+AFPLang
+
+bytes
+
+count
+
+did
+
+BeginIndex, EndIndex, IndexElement
+
+count
+
+DocumentObjectModel
+
+method, version, XMLLang, xmlns
+
+DOMNode
+
+Offset
+
+did, fromPage, toPage, XMLLang
+
+length
+
+BeginIndex, EndIndex, IndexElement
+
+AFPId
+
+DOMNode
+
+AFPLang, fromPage, toPage,
+XMLLang
+
+Copyright © AFP Consortium 2023
+
+25
+
+<<<PAGE 40>>>
+Tag Cross Reference
+
+Table 10 AFP Tag Attributes Sorted by Name (cont'd.)
+
+Tag Attribute Name
+
+fromPage
+
+length
+
+method
+
+page
+
+tid
+
+toPage
+
+version
+
+XMLLang
+
+Parent Tag
+
+DOMNode
+
+Offset
+
+Sibling Attribute(s)
+
+AFPLang, did, toPage, XMLLang
+
+bytes
+
+DocumentObjectModel
+
+AFPLang, version, XMLLang, xmlns
+
+AFPTag
+
+AFPTag
+
+DOMNode
+
+tid
+
+page
+
+AFPLang, did, fromPage, XMLLang
+
+DocumentObjectModel
+
+AFPLang, method, XMLLang, xmlns
+
+ActualText
+
+Alt
+
+(None)
+
+(None)
+
+DocumentObjectModel
+
+AFPLang, method, version, xmlns
+
+DOMNode
+
+AFPLang, did, fromPage, toPage
+
+xmlns
+
+DocumentObjectModel
+
+AFPLang, method, version, XMLLang
+
+Note: All of the XML tags and attributes found in this version of the AFP Tagging Guide belong to the following
+
+XML namespace (xmlns): “https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0”
+(with the exception of the xmlns attribute itself). For more information about XML namespaces, refer to
+the W3C website (www.w3.org/TR/xml-names/).
+
+26 Metadata Guide for AFP
+
+<<<PAGE 41>>>
+Appendix B. AFPId Subsets
+
+AT1 Subset
+
+The following table shows the allowed AFP Acronym IDs that can be used in the AFPId parameter. The
+acronyms come from a variety of AFP Object Content Architectures as noted in the table below.
+
+Table 11. AFP Acronyms Allowed for the AFPId Attribute Sorted by Acronym
+
+Acronym Name
+
+Object Content
+Architecture
+
+Reference
+
+AMB
+
+BBC
+
+Absolute Move
+Baseline
+
+Begin Bar Code
+Object
+
+PTOCA
+
+MO:DCA
+
+BDT
+
+Begin Document
+
+MO:DCA
+
+BGR
+
+BIM
+
+Begin Graphics
+Object
+
+Begin Image
+Object
+
+MO:DCA
+
+MO:DCA
+
+BMO
+
+Begin Overlay
+
+MO:DCA
+
+BNG
+
+BOC
+
+Begin Named
+Page Group
+
+Begin Object
+Container
+
+MO:DCA
+
+MO:DCA
+
+BPG
+
+Begin Page
+
+MO:DCA
+
+BPS
+
+BPT
+
+BSD
+
+EBC
+
+Begin Page
+Segment
+
+Begin
+Presentation Text
+Object
+
+MO:DCA
+
+MO:DCA
+
+Bar Code Symbol
+Descriptor
+
+BCOCA
+
+End Bar Code
+Object
+
+MO:DCA
+
+EDT
+
+End Document
+
+MO:DCA
+
+Presentation Text Object Content Architecture Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Bar Code Object Content Architecture Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+EGR
+
+End Graphics
+Object
+
+MO:DCA
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+EIM
+
+End Image Object MO:DCA
+
+EMO
+
+End Overlay
+
+MO:DCA
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Copyright © AFP Consortium 2023
+
+27
+
+<<<PAGE 42>>>
+AFPId Subsets
+
+Table 11 AFP Acronyms Allowed for the AFPId Attribute Sorted by Acronym (cont'd.)
+
+Acronym Name
+
+Object Content
+Architecture
+
+Reference
+
+ENG
+
+EOC
+
+End Named Page
+Group
+
+MO:DCA
+
+End Object
+Container
+
+MO:DCA
+
+EPG
+
+End Page
+
+MO:DCA
+
+EPS
+
+EPT
+
+End Page
+Segment
+
+MO:DCA
+
+End Presentation
+Text Object
+
+MO:DCA
+
+IOB
+
+Include Object
+
+MO:DCA
+
+PTD
+
+SCFL
+
+TLE
+
+Presentation Text
+Data Descriptor
+
+Set Coded Font
+Local
+
+Tag Logical
+Element
+
+PTOCA
+
+PTOCA
+
+MO:DCA
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+Presentation Text Object Content Architecture Reference
+
+Presentation Text Object Content Architecture Reference
+
+Mixed Object Document Content Architecture (MO:DCA)
+Reference
+
+28 Metadata Guide for AFP
+
+<<<PAGE 43>>>
+Appendix C. NodeType Subsets
+
+NT1 Subset
+
+The following table shows the allowed structural elements for the NodeType tag. These structural elements are
+derived from HTML5.
+
+Table 12. Structural Elements Allowed for the NodeType Tag Sorted by Element
+
+Structural Element
+
+DD
+
+Div
+
+DL
+
+DT
+
+Figcaption
+
+Figure
+
+Footer
+
+H1
+
+H2
+
+H3
+
+H4
+
+H5
+
+H6
+
+Header
+
+Img
+
+LI
+
+Link
+
+OL
+
+P
+
+Part
+
+Section
+
+Span
+
+Table
+
+TD
+
+TH
+
+TR
+
+UL
+
+Name
+
+Definition Details
+
+Division of page content
+
+Definition List
+
+Definition Term
+
+Figure caption
+
+Figure
+
+Footer
+
+Heading level 1
+
+Heading level 2
+
+Heading level 3
+
+Heading level 4
+
+Heading level 5
+
+Heading level 6
+
+Header
+
+Image
+
+List Item
+
+Hyperlink
+
+Ordered List
+
+Paragraph
+
+Part of a hierarchical document content group
+
+Section
+
+Span
+
+Table
+
+Table cell
+
+Table Heading
+
+Table Row
+
+Unordered List
+
+Copyright © AFP Consortium 2023
+
+29
+
+<<<PAGE 44>>>
+30 Metadata Guide for AFP
+
+<<<PAGE 45>>>
+Appendix D. Examples
+
+Text Example
+
+This example shows how to associate metadata with text information carried in a BPT object.
+
+In this example, the tags shown are contained within a Metadata Object at the AFP page level:
+
+Figure 1. Text Example
+
+<?xml version=“1.0” encoding=“UTF-8”?>
+<DocumentObjectModel xmlns=“https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0” version=“1.0”
+
+method=“Index” XMLLang=“en-US”>
+
+<DOMNode did=“1”>
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+<ActualText>Hello, world. Follow our website for details.</ActualText>
+<Alt>Hello, world - made up of 3 different text controls.</Alt>
+
+</SemanticProperties>
+<AFPTag tid=“1”>
+
+<IndexElement AFPId=”PTX” count=”1”></IndexElement>
+<Offset bytes=”6” length=”13”></Offset>
+
+</AFPTag>
+<AFPTag tid=“2”>
+
+<IndexElement AFPId=”PTX” count=”1”></IndexElement>
+<Offset bytes=”28” length=”23”></Offset>
+
+</AFPTag>
+<AFPTag tid=“3”>
+
+<IndexElement AFPId=”PTX” count=”2”></IndexElement>
+<Offset bytes=”63” length=”9”></Offset>
+
+</AFPTag>
+
+</DOMNode>
+
+</DocumentObjectModel>
+
+Copyright © AFP Consortium 2023
+
+31
+
+<<<PAGE 46>>>
+Text Example
+
+32 Metadata Guide for AFP
+
+<<<PAGE 47>>>
+Hypertext Example
+
+Hypertext Example
+
+This example shows how to associate metadata with text showing a hyperlink in the second PTX in a BPT.
+
+In this example, the tags shown are contained within a Metadata Object at the AFP page level:
+
+Figure 2. Hypertext Example
+
+<?xml version=“1.0” encoding=“UTF-8”?>
+<DocumentObjectModel xmlns=“https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0” version=“1.0”
+
+method=“Index” XMLLang=“en-US”>
+
+<DOMNode did=“1”>
+
+<SemanticProperties>
+
+<NodeType>link</NodeType>
+<Alt>AFP Consortium website</Alt>
+<Hyperlink>https://www.afpconsortium.org/</Hyperlink>
+
+</SemanticProperties>
+<AFPTag tid=“1”>
+
+<IndexElement AFPId=”PTX” count=”3”></IndexElement>
+<Offset bytes=”6” length=”30”></Offset>
+
+</AFPTag>
+
+</DOMNode>
+
+</DocumentObjectModel>
+
+Metadata Guide for AFP 33
+
+<<<PAGE 48>>>
+Image Example
+
+Image Example
+
+This example shows how to associate metadata with an AFP image.
+
+In this example, the tags shown are contained within a Metadata Object at the AFP page level:
+
+Figure 3. Image Example
+
+<?xml version=“1.0” encoding=“UTF-8”?>
+<DocumentObjectModel xmlns=“https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0” version=“1.0”
+
+method=“Index” XMLLang=“en-US”>
+
+<DOMNode did=“1”>
+
+<SemanticProperties>
+
+<NodeType>Img</NodeType>
+<Alt>Large AFP Consortium logo</Alt>
+
+</SemanticProperties>
+<AFPTag tid=“1”>
+
+<BeginIndex AFPId=”BIM” count=”1”></BeginIndex>
+<EndIndex AFPId=”EIM” count=”1”></EndIndex>
+
+</AFPTag>
+
+</DOMNode>
+
+</DocumentObjectModel>
+
+34 Metadata Guide for AFP
+
+<<<PAGE 49>>>
+Table Example
+
+Table Example
+
+This example shows how to associate metadata with a table built using AFP.
+
+In this example, the tags shown are contained within a Metadata Object at the AFP page level:
+
+Figure 4. Table Example
+
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<DocumentObjectModel method="Index" version="1.0"
+
+xmlns="https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0"
+xmlns:p="https://www.isis-papyrus.com/metadata-2/1.0/private">
+
+<DOMNode did="2" AFPLang="en" XMLLang=”en”>
+
+<SemanticProperties>
+
+<NodeType>Document</NodeType>
+
+</SemanticProperties>
+<DOMNode did="3" XMLLang="en">
+
+<SemanticProperties>
+
+<NodeType>Part</NodeType>
+
+</SemanticProperties>
+<DOMNode did="4" XMLLang="en">
+
+<SemanticProperties>
+
+<NodeType>Figure</NodeType>
+<Alt>Large AFP Consortium logo.</Alt>
+
+</SemanticProperties>
+<Private>
+
+<p:BBox>1701;2268;10235;4541</p:BBox>
+
+</Private>
+<AFPTag tid="4">
+
+<BeginIndex AFPId="BIO" count="1"/>
+<EndIndex AFPId="EIO" count="1"/>
+
+</AFPTag>
+
+</DOMNode>
+<DOMNode did="5">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>Welcome to AFP UA</Alt>
+
+</SemanticProperties>
+<DOMNode did="6">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="6">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="8" length="55"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="7">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>No text here</Alt>
+
+</SemanticProperties>
+<DOMNode did="8">
+
+<SemanticProperties>
+
+Metadata Guide for AFP 35
+
+<<<PAGE 50>>>
+Table Example
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<DOMNode did="9">
+
+<SemanticProperties>
+
+<NodeType>Span</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="9">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="63" length="91"/>
+
+</AFPTag>
+
+</DOMNode>
+<DOMNode did="10">
+
+<SemanticProperties>
+
+<NodeType>Link</NodeType>
+<Alt>AFP consortium website</Alt>
+<Hyperlink>https://www.afpconsortium.org/</Hyperlink>
+
+</SemanticProperties>
+<Private>
+
+<p:BBox>5875;7414;9468;7735</p:BBox>
+
+</Private>
+<DOMNode did="11">
+
+<SemanticProperties>
+
+<NodeType>Span</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="11">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="154" length="106"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="12">
+
+<SemanticProperties>
+
+<NodeType>Span</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="12">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="260" length="32"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="13">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>No text here</Alt>
+
+</SemanticProperties>
+<DOMNode did="14">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="14">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="292" length="58"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+36 Metadata Guide for AFP
+
+<<<PAGE 51>>>
+Table Example
+
+<DOMNode did="15">
+
+<SemanticProperties>
+
+<NodeType>Table</NodeType>
+
+</SemanticProperties>
+<DOMNode did="16">
+
+<SemanticProperties>
+
+<NodeType>TR</NodeType>
+
+</SemanticProperties>
+<DOMNode did="17">
+
+<SemanticProperties>
+
+<NodeType>TH</NodeType>
+
+</SemanticProperties>
+<DOMNode did="18">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>AFP Consortium standard document name:</Alt>
+
+</SemanticProperties>
+<DOMNode did="19">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="19">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="350" length="39"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="20">
+
+<SemanticProperties>
+
+<NodeType>TH</NodeType>
+
+</SemanticProperties>
+<DOMNode did="21">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>Current revision number:</Alt>
+
+</SemanticProperties>
+<DOMNode did="22">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="22">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="389" length="66"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="23">
+
+<SemanticProperties>
+
+<NodeType>TR</NodeType>
+
+</SemanticProperties>
+<DOMNode did="24">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+Metadata Guide for AFP 37
+
+<<<PAGE 52>>>
+Table Example
+
+</SemanticProperties>
+<DOMNode did="25">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="26">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="26">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="455" length="23"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="27">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="28">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="29">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="29">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="478" length="89"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="30">
+
+<SemanticProperties>
+
+<NodeType>TR</NodeType>
+
+</SemanticProperties>
+<DOMNode did="31">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="32">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="33">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="33">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="567" length="20"/>
+
+</AFPTag>
+
+38 Metadata Guide for AFP
+
+<<<PAGE 53>>>
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="34">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="35">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="36">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="36">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="587" length="89"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="37">
+
+<SemanticProperties>
+
+<NodeType>TR</NodeType>
+
+</SemanticProperties>
+<DOMNode did="38">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="39">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="40">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="40">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="676" length="18"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="41">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="42">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="43">
+
+<SemanticProperties>
+
+Table Example
+
+Metadata Guide for AFP 39
+
+<<<PAGE 54>>>
+Table Example
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="43">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="694" length="89"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="44">
+
+<SemanticProperties>
+
+<NodeType>TR</NodeType>
+
+</SemanticProperties>
+<DOMNode did="45">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="46">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="47">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="47">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="783" length="20"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="48">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="49">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="50">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="50">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="803" length="89"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="51">
+
+<SemanticProperties>
+
+<NodeType>TR</NodeType>
+
+40 Metadata Guide for AFP
+
+<<<PAGE 55>>>
+</SemanticProperties>
+<DOMNode did="52">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="53">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="54">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="54">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="892" length="18"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="55">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="56">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="57">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="57">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="910" length="89"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="58">
+
+<SemanticProperties>
+
+<NodeType>TR</NodeType>
+
+</SemanticProperties>
+<DOMNode did="59">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="60">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="61">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+
+Table Example
+
+Metadata Guide for AFP 41
+
+<<<PAGE 56>>>
+Table Example
+
+<AFPTag tid="61">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="999" length="18"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="62">
+
+<SemanticProperties>
+
+<NodeType>TD</NodeType>
+
+</SemanticProperties>
+<DOMNode did="63">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+
+</SemanticProperties>
+<DOMNode did="64">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="64">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="1017" length="89"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="65">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="65">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="1106" length="84"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DocumentObjectModel>
+
+42 Metadata Guide for AFP
+
+<<<PAGE 57>>>
+Table Example
+
+Metadata Guide for AFP 43
+
+<<<PAGE 58>>>
+Text Block Across Page Boundaries Example
+
+Text Block Across Page Boundaries Example
+
+This example shows how to associate metadata with a block of text that crosses page boundaries.
+
+In this example, the tags shown are contained within a Metadata Object at the AFP page level for both pages:
+
+Figure 5. Text Block Across Page Boundaries — First Page Example
+
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<DocumentObjectModel method="Index" version="1.0"
+
+xmlns="https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0"
+xmlns:p="https://www.isis-papyrus.com/metadata-2/1.0/private">
+
+<DOMNode did="1" AFPLang="en" XMLLang=”en”>
+
+<SemanticProperties>
+
+<NodeType>Document</NodeType>
+
+</SemanticProperties>
+<DOMNode did="2" XMLLang="en">
+
+<SemanticProperties>
+
+<NodeType>Part</NodeType>
+
+</SemanticProperties>
+<DOMNode did="3" XMLLang="en">
+
+<SemanticProperties>
+
+<NodeType>Figure</NodeType>
+<Alt>Large AFP Consortium logo.</Alt>
+
+</SemanticProperties>
+<Private>
+
+<p:BBox>1701;2268;10235;4541</p:BBox>
+
+</Private>
+<AFPTag tid="3">
+
+<BeginIndex AFPId="BIO" count="1"/>
+<EndIndex AFPId="EIO" count="1"/>
+
+</AFPTag>
+
+</DOMNode>
+<DOMNode did="4">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>Welcome to AFP UA</Alt>
+
+</SemanticProperties>
+<DOMNode did="5">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="5">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="8" length="55"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="6">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>Placeholder text to showcase tagged AFP when a
+
+paragraph flows across pages.</Alt>
+
+</SemanticProperties>
+<DOMNode did="7">
+
+44 Metadata Guide for AFP
+
+<<<PAGE 59>>>
+Text Block Across Page Boundaries Example
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="7">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="63" length="581"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DocumentObjectModel>
+
+This is the second page, where the text at the bottom of the first page is continued on to the second page:
+
+Figure 6. Text Block Across Page Boundaries — Second Page Example
+
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<DocumentObjectModel method="Index" version="1.0"
+
+xmlns="https://www.afpconsortium.org/schemas/metadata/metadata-2/1.0"
+xmlns:p="https://www.isis-papyrus.com/metadata-2/1.0/private">
+
+<DOMNode did="1"AFPLang="en" XMLLang=”en”>
+
+<SemanticProperties>
+
+<NodeType>Document</NodeType>
+
+</SemanticProperties>
+<DOMNode did="2"XMLLang="en">
+
+<SemanticProperties>
+
+<NodeType>Part</NodeType>
+
+</SemanticProperties>
+
+Metadata Guide for AFP 45
+
+<<<PAGE 60>>>
+Text Block Across Page Boundaries Example
+
+<DOMNode did="6">
+
+<SemanticProperties>
+
+<NodeType>Div</NodeType>
+<Alt>Placeholder text to showcase tagged AFP when a
+
+paragraph flows across pages.</Alt>
+
+</SemanticProperties>
+<DOMNode did="8">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="8">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="18" length="365"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+<DOMNode did="9">
+
+<SemanticProperties>
+
+<NodeType>P</NodeType>
+
+</SemanticProperties>
+<AFPTag tid="9">
+
+<IndexElement AFPId="PTX" count="1"/>
+<Offset bytes="373" length="84"/>
+
+</AFPTag>
+
+</DOMNode>
+
+</DOMNode>
+
+</DOMNode>
+
+</DocumentObjectModel>
+
+46 Metadata Guide for AFP
+
+<<<PAGE 61>>>
+Notices
+
+The AFP Consortium or consortium member companies might have patents or pending patent applications
+covering subject matter described in this document. The furnishing of this document does not give you any
+license to these patents.
+
+The following statement does not apply to the United Kingdom or any other country where such
+provisions are inconsistent with local law: AFP Consortium PROVIDES THIS PUBLICATION "AS IS"
+WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED
+TO, THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE. Some states do not allow disclaimer of express or implied warranties in certain
+transactions, therefore, this statement might not apply to you.
+
+This publication could include technical inaccuracies or typographical errors. Changes are periodically made to
+the information herein; these changes will be incorporated in new editions of the publication. The AFP
+Consortium might make improvements and/or changes in the architecture described in this publication at any
+time without notice.
+
+Any references in this publication to Web sites are provided for convenience only and do not in any manner
+serve as an endorsement of those Web sites. The materials at those Web sites are not part of the materials for
+this architecture and use of those Web sites is at your own risk.
+
+The AFP Consortium may use or distribute any information you supply in any way it believes appropriate
+without incurring any obligation to you.
+
+This information contains examples of data and reports used in daily business operations. To illustrate them in
+a complete manner, some examples include the names of individuals, companies, brands, or products. These
+names are fictitious and any similarity to the names and addresses used by an actual business enterprise is
+entirely coincidental.
+
+Copyright © AFP Consortium 2023
+
+47
+
+<<<PAGE 62>>>
+Trademarks
+
+AFPC and AFP Consortium are trademarks of the AFP Consortium.
+
+IBM is a registered trademark of the International Business Machines Corporation in the United States, other
+countries, or both.
+
+These terms are trademarks or registered trademarks of Ricoh Co., Ltd., in the United States, other countries,
+or both:
+ACMA
+Advanced Function Presentation
+AFP
+AFPCC
+AFP Color Consortium
+AFP Color Management Architecture
+Bar Code Object Content Architecture
+BCOCA
+CMOCA
+Color Management Object Content Architecture
+InfoPrint
+Intelligent Printer Data Stream
+IPDS
+Mixed Object Document Content Architecture
+MO:DCA
+Ricoh
+
+Other company, product, or service names might be trademarks or service marks of others.
+
+48 Metadata Guide for AFP
+
+<<<PAGE 63>>>
+Glossary
+
+Some of the terms and definitions that appear in this
+glossary have been taken from other source
+documents.
+
+XML terms are not listed here; for those, see “Other
+References” on page vi.
+
+The following definitions are provided as supporting
+information only, and are not intended to be used as
+a substitute for the semantics described in the body
+of this reference.
+
+A
+
+A space. The distance from the character reference point
+to the least positive character coordinate system X-axis
+value of the character shape. A-space can be positive,
+zero, or negative. See also B space and C space.
+
+absolute coordinate. One of the coordinates that identify
+the location of an addressable point with respect to the
+origin of a specified coordinate system. Contrast with
+relative coordinate.
+
+Acknowledge Reply. A printer-to-host reply that returns
+printer information or reports exceptions. An Acknowledge
+Reply can be positive or negative. See also Positive
+Acknowledge Reply and Negative Acknowledge Reply.
+
+acknowledgment-required flag (ARQ). A flag that
+requests a printer to return an Acknowledge Reply. The
+acknowledgment-required flag is bit zero of an IPDS
+command's flag byte.
+
+additive primary colors. Red, green, and blue light,
+transmitted in video monitors and televisions. When used
+in various degrees of intensity and variation, they create all
+other colors of light; when superimposed equally, they
+create white. Contrast with subtractive primary colors.
+
+addressable position. A position in a presentation space
+or on a physical medium that can be identified by a
+coordinate from the coordinate system of the presentation
+space or physical medium. See also picture element.
+Synonymous with position.
+
+Advanced Function Presentation (AFP). An open
+architecture for the management of presentable
+information that is developed by the AFP Consortium
+(AFPC). AFP comprises a number of data stream and data
+object architectures:
+• Mixed Object Document Content Architecture (MO:DCA);
+
+formerly referred to as AFPDS
+
+• Intelligent Printer Data Stream (IPDS)
+• AFP Line Data Architecture
+• Bar Code Object Content Architecture (BCOCA)
+
+• Color Management Object Content Architecture
+
+(CMOCA)
+
+• Font Object Content Architecture (FOCA)
+• Graphics Object Content Architecture for AFP (AFP
+
+GOCA)
+
+• Image Object Content Architecture (IOCA)
+• Metadata Object Content Architecture (MOCA)
+• Presentation Text Object Content Architecture (PTOCA)
+
+AFP. See Advanced Function Presentation.
+
+AFP Consortium (AFPC). A formal open standards body
+that develops and maintains AFP architecture. Information
+about the consortium can be found at
+www.afpconsortium.org.
+
+AFP data stream. A presentation data stream that is
+processed in AFP environments. The MO:DCA
+architecture defines the strategic AFP interchange data
+stream. The IPDS architecture defines the strategic AFP
+printer data stream.
+
+(1) Associating extra information,
+
+AFP Tagging.
+contained in a metadata object, with a given piece of AFP
+data. Among other uses, such information could enable
+users with vision impairments or other restrictions to make
+full use of the content provided by an AFP system. (2) In
+MOCA, a known format of a metadata object.
+
+AFPDS. A term formerly used to identify the composed-
+page MO:DCA-based data stream interchanged in AFP
+environments. See also MO:DCA and AFP data stream.
+
+AFP GOCA. A subset of the GOCA architecture, originally
+defined by IBM, specifically designed for AFP
+environments. See Graphics Object Content Architecture
+(GOCA).
+
+AFP Line Data Architecture. An AFP architecture that
+controls formatting of line data using a Page Definition
+(PageDef).
+
+AIAG. See Automotive Industry Action Group.
+
+(1) The use to which an information system
+
+application.
+is put. (2) A collection of software components used to
+perform specific types of work on a computer.
+
+arc. A continuous portion of the curved line of a circle or
+ellipse. See also full arc.
+
+arc parameters. Variables that specify the curvature of
+an arc.
+
+In GOCA, a set of closed figures that can be filled
+
+area.
+with a pattern or a color.
+
+Copyright © AFP Consortium 2023
+
+49
+
+<<<PAGE 64>>>
+architected • character angle
+
+architected.
+by an architecture. Contrast with unarchitected.
+
+Identifies data that is defined and controlled
+
+asynchronous exception. Any exception other than
+those used to report a synchronous data-stream defect
+(action code X'01' or X'1F'), function no longer achievable
+(action code X'06'), or synchronous resource-storage
+problem (action code X'0C'). Asynchronous exceptions
+occur after the received page station. An example of an
+asynchronous exception is a paper jam. See also data-
+stream exception. Contrast with synchronous exception.
+
+bar code. An array of elements, such as bars, spaces,
+and two-dimensional modules that together represent data
+elements or characters in a particular symbology. The
+elements are arranged in a predetermined pattern
+following unambiguous rules defined by the symbology.
+See also bar code symbol.
+
+bar code symbol. A combination of characters including
+start and stop characters, quiet zones, data characters,
+and check characters required by a particular symbology,
+that form a complete, scannable entity. See also bar code.
+
+attribute. A property or characteristic of one or more
+constructs. See also character attribute, color attribute,
+current drawing attributes, default drawing attributes, line
+attributes, marker attributes, and pattern attributes.
+
+Automotive Industry Action Group (AIAG). The
+coalition of automobile manufacturers and suppliers
+working to standardize electronic communications within
+the auto industry.
+
+B
+
+Bar Code Object Content Architecture (BCOCA). An
+architected collection of constructs used to interchange
+and present bar code data.
+
+bar code symbology. A bar code language. Bar code
+symbologies are defined and controlled by various industry
+groups and standards organizations. Bar code
+symbologies are described in public domain bar code
+specification documents. Synonymous with symbology.
+See also Canadian Grocery Product Code (CGPC),
+European Article Numbering (EAN), Japanese Article
+Numbering (JAN), and Universal Product Code (UPC).
+
+B axis. The axis of the I,B coordinate system that extends
+in the baseline or B direction. The B axis does not have to
+be parallel to the Yp axis of its bounding Xp,Yp coordinate
+space.
+
+baseline. A conceptual line with respect to which
+successive characters are aligned. See also character
+baseline. Synonymous with printing baseline and
+sequential baseline.
+
+B direction (B). The direction in which successive lines of
+text appear on a logical page. Synonymous with baseline
+direction and baseline progression.
+
+baseline direction (B). The direction in which successive
+lines of text appear on a logical page. Synonymous with
+baseline progression and B direction.
+
+B space. The distance between the character coordinate
+system X-axis values of the two extremities of a character
+shape. See also A space and C space.
+
+baseline progression (B). The direction in which
+successive lines of text appear on a logical page.
+Synonymous with baseline direction and B direction.
+
+(1) The part of a presentation space that is
+
+background.
+not occupied with object data. Contrast with foreground.
+(2) In GOCA, that portion of a graphics primitive that is
+mixed into the presentation space under the control of the
+current values of the background mix and background
+color attributes. (3) In GOCA, that portion of a character
+cell that does not represent a character. (4) In bar codes,
+the spaces, quiet zones, and area surrounding a printed
+bar code symbol.
+
+background color. The color of a background. Contrast
+with foreground color.
+
+bar.
+In bar codes, the darker element of a printed bar
+code symbol. See also element. Contrast with space.
+
+(1) An attribute that determines how
+
+background mix.
+the color of the background of a graphics primitive is
+combined with the existing color of the graphics
+presentation space. (2) An attribute that determines how
+the points in overlapping presentation space backgrounds
+are combined. Contrast with foreground mix.
+
+C
+
+C space. The distance from the most positive character
+coordinate system X-axis value of a character shape to the
+character escapement point. C-space can be positive,
+zero, or negative. See also A space and B space.
+
+Canadian Grocery Product Code (CGPC). The bar
+code symbology used to code grocery items in Canada.
+
+character.
+(1) A member of a set of elements used for the
+organization, control, or representation of data. A character
+can be either a graphic character or a control character.
+See also graphic character and control character. (2) In
+bar codes, a single group of bar code elements that
+represent an individual number, letter, punctuation mark, or
+other symbol.
+
+character angle. The angle that is between the baseline
+of a character string and the horizontal axis of a
+presentation space or physical medium.
+
+50 Metadata Guide for AFP
+
+<<<PAGE 65>>>
+character attribute. A characteristic that controls the
+appearance of a character or character string.
+
+Coded Character Set for Information Processing
+Interchange.
+
+character attribute • code page
+
+character baseline. A conceptual reference line that is
+coincident with the X axis of the character coordinate
+system.
+
+character coordinate system. An orthogonal coordinate
+system that defines font and character measurement
+distances. The origin is the character reference point. The
+X axis coincides with the character baseline.
+
+character escapement point. The point where the next
+character reference point is usually positioned. See also
+character increment and presentation position.
+
+character identifier. The unique name for a graphic
+character.
+
+character increment. The distance from a character
+reference point to a character escapement point. For each
+character, the increment is the sum of a character's A
+space, B space, and C space. A character's character
+increment is the distance the inline coordinate is
+incremented when that character is placed in a
+presentation space or on a physical medium. Character
+increment is a property of each graphic character in a font
+and of the font's character rotation.
+
+character metrics. Measurement information that
+defines individual character values such as height, width,
+and space. Character metrics can be expressed in specific
+fixed units, such as pels, or in relative units that are
+independent of both the resolution and the size of the font.
+Often included as part of the more general term font
+metrics. See also character set metrics and font metrics.
+
+character origin. The point within the graphic pattern of a
+character that is to be aligned with the presentation
+position. See also character reference point.
+
+character pattern. The scan pattern for a graphic
+character of a particular size, style, and weight.
+
+character reference point. The origin of a character
+coordinate system. The X axis is the character baseline.
+See also character origin.
+
+character rotation. The alignment of a character with
+respect to its character baseline, measured in degrees in a
+clockwise direction. Examples are 0°, 90°, 180°, and 270°.
+Zero-degree character rotation exists when a character is
+in its customary alignment with the baseline. Character
+rotation and font inline sequence are related in that
+character rotation is a clockwise rotation; font inline
+sequence is a counter-clockwise rotation. Contrast with
+rotation.
+
+character set. A finite set of different graphic characters
+or control characters that is complete for a given purpose.
+For example, the character set in ISO Standard 646, 7-Bit
+
+character set metrics. The measurements used in a
+font. Examples are height, width, and character increment
+for each character of the font. See also character metrics
+and font metrics.
+
+character shape. The visual representation of a graphic
+character.
+
+character string. A sequence of characters.
+
+In bar codes, a character included
+
+check character.
+within a bar code message whose value is used to perform
+a mathematical check to ensure the accuracy of that
+message. Synonymous with check digit.
+
+In bar codes, a character included within a
+
+check digit.
+bar code message whose value is used to perform a
+mathematical check to ensure the accuracy of that
+message. Synonymous with check character.
+
+CIE. See Commission Internationale d'Éclairage.
+
+clear area. A clear space that contains no machine-
+readable marks preceding the start character of a bar code
+symbol or following the stop character. Synonymous with
+quiet zone. Contrast with intercharacter gap and space.
+
+(1) The color model used in four-
+
+CMYK color space.
+color printing. Cyan, magenta, and yellow, the subtractive
+primary colors, are used with black to effectively create a
+multitude of other colors. (2) The primary colors used
+together in printing to effectively create a multitude of other
+colors: cyan, magenta, yellow, and black. Based on the
+subtractive color theory; the primary colors used in four-
+color printing processes.
+
+Code 39. A bar code symbology characterized by a
+variable-length, bidirectional, discrete, self-checking,
+alphanumeric code. Three of the nine elements are wide
+and six are narrow. It is the standard for LOGMARS (the
+Department of Defense) and the AIAG.
+
+code table. A table showing the character allocated to
+each code point in a code. See also code page and code
+point.
+
+code page.
+(1) A resource object containing descriptive
+information, graphic character identifiers, and code points
+corresponding to a coded graphic character set. Graphic
+characters can be added over time; therefore, to
+specifically identify a code page, both a GCSGID and a
+CPGID should be used. See also coded graphic character
+set. (2) A set of assignments, each of which assigns a
+code point to a character. Each code page has a unique
+name or identifier. Within a given code page, a code point
+is assigned to one character. More than one character set
+can be assigned code points from the same code page.
+See also code point and section.
+
+Metadata Guide for AFP 51
+
+<<<PAGE 66>>>
+Code Page Global Identifier (CPGID) • control character
+
+Code Page Global Identifier (CPGID). A unique code
+page identifier that can be expressed as either a two-byte
+binary or a five-digit decimal value.
+
+code point. A unique bit pattern that can serve as an
+element of a code page or a site in a code table, to which a
+character can be assigned. The element is associated with
+a binary value. The assignment of a character to an
+element of a code page determines the binary value that
+will be used to represent each occurrence of the character
+in a character string. Code points are one or more bytes
+long. See also code table and section.
+
+(1) A resource containing elements of a code
+
+coded font.
+page and a font character set, used for presenting text,
+graphics character strings, and bar code HRI. See also
+code page and font character set. (2) In FOCA, a resource
+containing the resource names of a valid pair of font
+character set and code page resources. The graphic
+character set of the font character set must match the
+graphic character set of the code page for the coded font
+resource pair to be valid. (3) In the IPDS architecture, a
+raster font resource containing code points that are directly
+paired to font metrics and the raster representation of
+character shapes, for a specific graphic character set. (4)
+In the IPDS architecture, a font resource containing
+descriptive information, a code page, font metrics, and a
+digital-technology representation of character shapes for a
+specific graphic character set.
+
+coded graphic character set. A set of graphic
+characters with their assigned code points.
+
+color. A visual attribute of things that results from the light
+they emit, transmit, or reflect.
+
+color attribute. An attribute that affects the color values
+provided in a graphics primitive, a text control sequence, or
+an IPDS command. Examples of color attributes are
+foreground color and background color.
+
+Images whose image data elements are
+
+color image.
+represented by multiple bits or whose image data element
+values are mapped to color values. Constructs that map
+image-data-element values to color values are look-up
+tables and image-data-element structure parameters.
+Examples of color values are screen color values for
+displays and color toner values for printers.
+
+Color Management Object Content Architecture
+(CMOCA). An architected collection of constructs used for
+the interchange and presentation of the color management
+information required to render a print file, document, group
+of pages or sheets, page, overlay, or data object with color
+fidelity.
+
+color model. The method by which a color is specified.
+For example, the RGB color space specifies color in terms
+of three intensities for red (R), green (G), and blue (B). Also
+referred to as color space.
+
+52 Metadata Guide for AFP
+
+coordinate system. A Cartesian coordinate system. An
+example is the image coordinate system that uses the
+fourth quadrant with positive values for the Y axis. The
+origin is the upper left-hand corner of the fourth quadrant.
+A pair of (x,y) values corresponds to one image point. Each
+image point is described by an image data element. See
+also character coordinate system.
+
+Color Management Object Content Architecture
+(CMOCA). An architected collection of constructs used for
+the interchange and presentation of the color management
+information required to render a print file, document, group
+of pages or sheets, page, overlay, or data object with color
+fidelity.
+
+Color Management Object Content Architecture
+(CMOCA). An architected collection of constructs used for
+the interchange and presentation of the color management
+information required to render a print file, document, group
+of pages or sheets, page, overlay, or data object with color
+fidelity.
+
+color space. The method by which a color is specified.
+For example, the RGB color space specifies color in terms
+of three intensities for red (R), green (G), and blue (B). Also
+referred to as color model.
+
+color table. A collection of color element sets. The table
+can also specify the method used to combine the intensity
+levels of each element in an element set to produce a
+specific color. Examples of methods used to combine
+intensity levels are the additive method and the subtractive
+method. See also color model.
+
+colorimetry. The science of measuring color and color
+appearance. Classical colorimetry deals primarily with
+color matches rather than with color appearance as such.
+The main focus of colorimetry has been the development
+of methods for predicting perceptual matches on the basis
+of physical measurements.
+
+(1) In the IPDS architecture, a structured field
+
+command.
+sent from a host to a printer. (2) In GOCA, a data-stream
+construct used to communicate from the controlling
+environment to the drawing process. The command
+introducer is environment dependent. (3) A request for
+system action.
+
+Commission Internationale d'Éclairage (CIE). An
+association of international color scientists who produced
+the standards that are used as the basis of the description
+of color.
+
+construct. An architected set of data such as a structured
+field or a triplet.
+
+continuous-form media. Connected sheets. An example
+of connected sheets is sheets of paper connected by a
+perforated tear strip. Contrast with cut-sheet media.
+
+control character.
+modification, or end of a control function. A control
+
+(1) A character that denotes the start,
+
+<<<PAGE 67>>>
+control sequence • downloaded resource
+
+character can be recorded for use in a subsequent action,
+and it can have a graphic representation. See also
+character. (2) A control function the coded representation
+of which consists of a single code point.
+
+Data Map. A print control object in a Page Definition
+(PageDef) that establishes the page environment and
+specifies the mapping of line data to the page.
+Synonymous with Page Format.
+
+control sequence. A sequence of bytes that specifies a
+control function. A control sequence consists of a control
+sequence introducer and zero or more parameters.
+
+data stream. A continuous stream of data that has a
+defined format. An example of a defined format is a
+structured field.
+
+control sequence class. An assigned coded character
+that identifies a control sequence's syntax and how that
+syntax is to be interpreted. An example of a control
+sequence class is X'D3', that identifies presentation text
+object control sequences.
+
+control sequence function type. The coded character
+occupying the fourth byte of an unchained control
+sequence introducer. This code defines the function whose
+semantics can be prescribed by succeeding control
+sequence parameters.
+
+control sequence introducer. The information at the
+beginning of a control sequence. An unchained control
+sequence introducer consists of a control sequence prefix,
+a class, a length, and a function type. A chained control
+sequence introducer consists of a length and a function
+type.
+
+control sequence length. The number of bytes used to
+encode a control sequence excluding the control sequence
+prefix and class.
+
+control sequence prefix. The escape character used to
+identify a control sequence. The control sequence prefix is
+the first byte of a control sequence. An example of a
+control sequence prefix is X'2B'.
+
+controlling environment. The environment in which an
+object is embedded, for example, the IPDS and MO:DCA
+data streams.
+
+coordinates. A pair of values that specify a position in a
+coordinate space. See also absolute coordinate and
+relative coordinate.
+
+current drawing attributes. The set of attributes used at
+the present time to direct a drawing process. Contrast with
+default drawing attributes.
+
+CPGID. See Code Page Global Identifier.
+
+custom line type value. A user-defined line type, defined
+by a series of pairs of a dash/dot length followed by a move
+length. Contrast with standard line type value.
+
+cut-sheet media. Unconnected sheets. Contrast with
+continuous-form media.
+
+D
+
+data element. A unit of data that is considered indivisible.
+
+In the IPDS architecture, a
+
+data-stream exception.
+condition that exists when the printer detects an invalid or
+unsupported command, order, control, or parameter value
+from the host. Data-stream exceptions are those whose
+action code is X'01', X'19', or X'1F'. See also asynchronous
+exception and synchronous exception.
+
+default drawing attributes. The set of drawing attributes
+adopted at the beginning of a drawing process and usually
+at the beginning of each root segment that is processed.
+See also root segment. Contrast with current drawing
+attributes.
+
+device profile. A structure that provides a means of
+defining the color characteristics of a given device in a
+particular state.
+
+discrete code. A bar code symbology characterized by
+placing spaces that are not a part of the code between
+characters, that is, intercharacter gaps.
+
+document.
+(1) A machine-readable collection of one or
+more objects that represents a composition, a work, or a
+collection of data. (2) A publication or other written
+material.
+
+document component. An architected part of a
+document data stream. Examples of document
+components are documents, pages, page groups, indexes,
+resource groups, objects, and process elements.
+
+document content architecture. A family of
+architectures that define the syntax and semantics of the
+document component. See also document component and
+structured field.
+
+document element. A self-identifying, variable-length,
+bounded record, that can have a content portion that
+provides control information, data, or both. An application
+or device does not have to understand control information
+or data to parse a data stream when all the records in the
+data stream are document elements. See also structured
+field.
+
+In the IPDS architecture, a
+
+downloaded resource.
+resource in a printer that is installed and removed under
+control of a host presentation services program. A
+downloaded resource is referenced by a host-assigned
+name that is valid for the duration of the session between
+the presentation services program and the printer. Contrast
+with resident resource.
+
+Metadata Guide for AFP 53
+
+<<<PAGE 68>>>
+drawing control • foreground mix
+
+drawing control. A control that determines how a picture
+is drawn. Examples of drawing controls are arc
+parameters, transforms, and the viewing window.
+
+In GOCA, a graphics construct that the
+
+drawing order.
+controlling environment builds to instruct a drawing
+processor about what to draw and how to draw it. The
+order can specify, for example, that a graphics primitive be
+drawn, a change to drawing attributes or drawing controls
+be effected, or a segment be called. One or more graphics
+primitives can be used to draw a picture. Drawing orders
+can be included in a structured field. See also order.
+
+drawing processor. A graphics processor component
+that executes segments to draw a picture in a presentation
+space. See also segment, graphics presentation space,
+and image presentation space.
+
+E
+
+(1) A bar or space in a bar code character or a
+
+element.
+bar code symbol. (2) A structured field in a document
+content architecture data stream. (3) In GOCA, a portion of
+a segment consisting of either a single order or a group of
+orders enclosed in an element bracket, in other words,
+between a begin element and an end element. (4) A basic
+member of a mathematical or logical class or set.
+
+environment interface. The part of the graphics
+processor that interprets commands and instructions from
+the controlling environment.
+
+European Article Numbering (EAN). The bar code
+symbology used to code grocery items in Europe.
+
+exchange. The predictable interpretation of shared
+information by a family of system processes in an
+environment where the characteristics of each process
+must be known to all other processes. Contrast with
+interchange.
+
+(1) An invalid or unsupported data-stream
+
+exception.
+construct. (2) In the IPDS architecture, a condition
+requiring host notification. (3) In the IPDS architecture, a
+condition that requires the host to resend data. See also
+data-stream exception, asynchronous exception, and
+synchronous exception.
+
+F
+
+Examples of characteristics are character shape, graphic
+pattern, style, size, weight class, and increment. Examples
+of fonts are fully described fonts, symbol sets, and their
+internal printer representations. See also coded font and
+symbol set.
+
+font character set. A FOCA resource containing
+descriptive information, font metrics, and the digital
+representation of character shapes for a specified graphic
+character set.
+
+(1) The mapping of a descriptive font name to
+font index.
+a font member name in a font library. An example of a font
+member in a font library is a font resource object.
+Examples of attributes used to form a descriptive font
+name are typeface, family name, point size, style, weight
+class, and width class. (2) In the IPDS architecture, an
+LF1-type raster-font resource containing character metrics
+for each code point of a raster font or raster-font section for
+a particular font inline sequence. There can be a font index
+for 0 degree, 90 degree, 180 degree, and 270 degree font
+inline sequences. A font index can be downloaded to a
+printer using the Load Font Index command. An LF1-type
+coded font or coded-font section is the combination of one
+fully described font and one font index. See also fully
+described font.
+
+font inline sequence. The clockwise rotation of the inline
+direction relative to a character pattern. Character rotation
+and font inline sequence are related in that character
+rotation is a clockwise rotation; font inline sequence is a
+counter-clockwise rotation.
+
+font metrics. Measurement information that defines
+individual character values such as height, width, and
+space, as well as overall font values such as averages and
+maximums. Font metrics can be expressed in specific fixed
+units, such as pels, or in relative units that are independent
+of both the resolution and the size of the font. See also
+character metrics and character set metrics.
+
+font object. A resource object that contains some or all of
+the description of a font.
+
+Font Object Content Architecture (FOCA). An
+architected collection of constructs used to describe fonts
+and to interchange those font descriptions.
+
+foreground color. A color attribute used to specify the
+color of the foreground of a primitive. Contrast with
+background color.
+
+fillet. A curved line drawn tangential to a specified set of
+straight lines. An example of a fillet is the concave junction
+formed where two lines meet.
+
+FOCA. See Font Object Content Architecture.
+
+(1) The part of a presentation space that is
+
+foreground.
+occupied by object data. (2) In GOCA, the portion of a
+graphics primitive that is mixed into the presentation space
+under the control of the current value of the mix and color
+attributes. See also pel. Contrast with background.
+
+font. A set of graphic characters that have a characteristic
+design, or a font designer's concept of how the graphic
+characters should appear. The characteristic design
+specifies the characteristics of its graphic characters.
+
+foreground mix. An attribute used to determine how the
+foreground color of data is combined with the existing color
+of a graphics presentation space. An example of data is a
+graphics primitive. Contrast with background mix.
+
+54 Metadata Guide for AFP
+
+<<<PAGE 69>>>
+form. A division of the physical medium; multiple forms
+can exist on a physical medium. For example, a roll of
+paper might be divided by a printer into rectangular pieces
+of paper, each representing a form. Envelopes are an
+example of a physical medium that comprises only one
+form. The IPDS architecture defines four types of
+forms: cut-sheet media, continuous-form media,
+envelopes, and computer output on microfilm. Each type of
+form has a top edge. A form has two sides, a front side and
+a back side. Synonymous with sheet.
+
+Form Definition (Formdef). A print control object that
+contains an environment definition and one or more
+Medium Maps. Synonymous with Form map.
+
+Form Map. A print control object that contains an
+environment definition and one or more Medium Maps.
+Synonymous with Form Definition. See also Medium Map.
+
+full arc. A complete circle or ellipse. See also arc.
+
+In the IPDS architecture, an LF1-
+
+fully described font.
+type raster-font resource containing font metrics,
+descriptive information, and the raster representation of
+character shapes, for a specific graphic character set. A
+fully described font can be downloaded to a printer using
+the Load Font Control and Load Font commands. An LF1-
+type coded font or coded-font section is the combination of
+one fully described font and one font index. See also font
+index.
+
+G
+
+In color reproduction, the subset of colors which
+
+gamut.
+can be accurately represented in a given circumstance,
+such as within a given color space or by a certain output
+device.
+
+GCSGID. See Graphic Character Set Global Identifier.
+
+glyph.
+(1) A member of a set of symbols that represent
+data. Glyphs can be letters, digits, punctuation marks, or
+other symbols. Synonymous with graphic character. See
+also character. (2) In typography, a glyph is a particular
+graphical representation of a grapheme, or sometimes
+several graphemes in combination (a composed glyph), or
+only a part of a grapheme. In computing as well as
+typography, the term character refers to a grapheme or
+grapheme-like unit of text, as found in natural language
+writing systems (scripts). A character or grapheme is a unit
+of text, whereas a glyph is a graphical unit. TrueType/
+OpenType fonts describe glyphs as a set of paths.
+
+GOCA. See Graphics Object Content Architecture.
+
+grapheme.
+(1) A minimally distinctive unit of writing in the
+context of a particular writing system. For example, å (“a +
+Combining Ring Above” or “Latin Small Letter A with Ring
+Above”) is a grapheme in the Danish writing system.
+(2) What an end-user thinks of as a character. (3) In
+typography, a grapheme is the fundamental unit in written
+
+form • graphics processor
+
+language. Graphemes include alphabetic letters, Chinese
+characters, numerals, punctuation marks, and all the
+individual symbols of any of the world's writing systems. In
+a typeface each character typically corresponds to a single
+glyph, but there are exceptions, such as a font used for a
+language with a large alphabet or complex writing system,
+where one character may correspond to several glyphs, or
+several characters to one glyph.
+
+graphic character. A member of a set of symbols that
+represent data. Graphic characters can be letters, digits,
+punctuation marks, or other symbols. Synonymous with
+glyph. See also character.
+
+graphic character identifier. The unique name for a
+graphic character in a font or in a graphic character set.
+See also character identifier.
+
+Graphic Character Set Global Identifier (GCSGID). A
+unique graphic character set identifier that can be
+expressed as either a two-byte binary or a five-digit
+decimal value.
+
+graphics data. Data containing lines, arcs, markers, and
+other constructs that describe a picture.
+
+graphics model space. A two-dimensional conceptual
+space in which a picture is constructed. All model
+transforms are completed before a picture is constructed in
+a graphics model space. Contrast with graphics
+presentation space. Synonymous with model space.
+
+graphics object. An object that contains graphics data.
+See also object.
+
+Graphics Object Content Architecture (GOCA). An
+architected collection of constructs used to interchange
+and present graphics data. GOCA was originally defined by
+IBM; this architecture is no longer used in AFP. Instead, a
+subset of GOCA was defined for use in AFP environments,
+called AFP GOCA. Usually when the term “GOCA” is used
+in AFP documentation, it means AFP GOCA.
+
+graphics presentation space. A two-dimensional
+conceptual space in which a picture is constructed. In this
+space graphics drawing orders are defined. The picture
+can then be mapped onto an output medium. All viewing
+transforms are completed before the picture is generated
+for presentation on an output medium. An example of a
+graphics presentation space is the abstract space
+containing graphics pictures defined in an IPDS Write
+Graphics Control command. Contrast with graphics model
+space.
+
+graphics primitive. A basic construct used by an output
+device to draw a picture. Examples of graphics primitives
+are arc, line, fillet, character string, and marker.
+
+graphics processor. The processing capability required
+to interpret a GOCA object, that is, to present the picture
+represented by the object. It includes the environment
+
+Metadata Guide for AFP 55
+
+<<<PAGE 70>>>
+graphics segment • inline coordinate
+
+interface, that interprets commands and instructions, and
+the drawing processor, that interprets the drawing orders.
+
+graphics segment. A set of graphics drawing orders
+contained within a Begin Segment command. See also
+segment.
+
+Images whose image data elements
+
+grayscale image.
+are represented by multiple bits and whose image data
+element values are mapped to more than one level of
+brightness through an image data element structure
+parameter or a look-up table.
+
+H
+
+highlight color. A spot color that is used to accentuate or
+contrast monochromatic areas. See also spot color.
+
+(1) In the IPDS architecture, a computer that drives
+
+host.
+a printer. (2) In IOCA, the host is the controlling
+environment.
+
+HRI. See human-readable interpretation.
+
+human-readable interpretation (HRI). The printed
+translation of bar code characters into equivalent Latin
+alphabetic characters, Arabic numeral decimal digits, and
+common special characters normally used for printed
+human communication.
+
+I
+
+I,B coordinate system. The coordinate system used to
+present graphic characters. This coordinate system is used
+to establish the inline direction and baseline direction for
+the placement of successive graphic characters within a
+presentation space. See also Xp,Yp coordinate system.
+
+(1) The direction in which successive
+
+I direction.
+characters appear in a line of text. (2) In GOCA, the
+direction specified by the character angle attribute.
+Synonymous with inline direction.
+
+ICC. See International Color Consortium.
+
+ICC-absolute colorimetric. A rendering intent in which
+the chromatically adapted tristimulus values of the in-
+gamut colors are unchanged. It is useful for spot colors and
+when simulating one medium on another (proofing). Note
+that this definition of ICC-absolute colorimetry is actually
+called “relative colorimetry” in CIE terminology, since the
+data has been normalized relative to the perfect diffuser
+viewed under the same illumination source as the sample.
+
+ICC profile. A file in the International Color Consortium
+profile format, containing information about the color
+reproduction capabilities of a device such as a scanner, a
+digital camera, a monitor, or a printer. An ICC profile
+includes three elements: 128-byte file header, tag table,
+and tagged element data. The intent of this format is to
+
+56 Metadata Guide for AFP
+
+provide a cross-platform device profile format. Such device
+profiles can be used to translate color data created on one
+device into another device's native color space.
+
+illuminant. Something that can serve as a source of light.
+
+image. An electronic representation of a picture produced
+by means of sensing light, sound, electron radiation, or
+other emanations coming from the picture or reflected by
+the picture. An image can also be generated directly by
+software without reference to an existing picture.
+
+image content.
+data parameters.
+
+Image data and its associated image
+
+image coordinate system. An X,Y Cartesian coordinate
+system using only the fourth quadrant with positive values
+for the Y axis. The origin of an image coordinate system is
+its upper left hand corner. An X,Y coordinate specifies a
+presentation position that corresponds to one and only one
+image data element in the image content.
+
+image data. Rectangular arrays of raster information that
+define an image.
+
+image data element (IDE). A basic unit of image
+information. An image data element expresses the
+intensity of a signal at a corresponding image point. An
+image data element can use a look-up table to introduce a
+level of indirection into the expression of grayscale image
+or color image.
+
+image data parameter (IDP). A parameter that describes
+characteristics of image data.
+
+image object. An object that contains image data. See
+also object.
+
+Image Object Content Architecture (IOCA). An
+architected collection of constructs used to interchange
+and present images.
+
+image point. A discrete X,Y coordinate in the image
+presentation space. See also addressable position.
+
+image presentation space (IPS). A two-dimensional
+conceptual space in which an image is generated.
+
+image segment.
+Segment and End Segment self-defining fields. See also
+segment.
+
+Image content bracketed by Begin
+
+IM Image. A migration image object that is resolution
+dependent, bi level, and cannot be compressed or scaled.
+Contrast with IO Image.
+
+inline coordinate. The first of a pair of values that
+identifies the position of an addressable position with
+respect to the origin of a specified I,B coordinate system.
+This value is specified as a distance in addressable
+positions from the B axis of an I,B coordinate system.
+
+<<<PAGE 71>>>
+(1) The direction in which successive
+
+inline direction (I).
+characters appear in a line of text. (2) In GOCA, the
+direction specified by the character angle attribute.
+Synonymous with I direction.
+
+Intelligent Printer Data Stream (IPDS). An architected
+host-to-printer data stream that contains both data and
+controls defining how the data is to be presented.
+
+interchange. The predictable interpretation of shared
+information in an environment where the characteristics of
+each process need not be known to all other processes.
+Contrast with exchange.
+
+In bar codes, the space between two
+
+intercharacter gap.
+adjacent bar code characters in a discrete code, for
+example, the space between two characters in Code 39.
+Synonymous with intercharacter space. Contrast with clear
+area, element, and space.
+
+In bar codes, the space between
+
+intercharacter space.
+two adjacent bar code characters in a discrete code, for
+example, the space between two characters in Code 39.
+Synonymous with intercharacter gap. Contrast with
+element and space.
+
+interchange. The predictable interpretation of shared
+information in an environment where the characteristics of
+each process need not be known to all other processes.
+Contrast with exchange.
+
+inline direction (I) • medium presentation space
+
+line attributes. Those attributes that pertain to straight
+and curved lines. Examples of line attributes are line type
+and line width.
+
+line data. Unformatted text data. Line data can be
+formatted using a Page Definition (PageDef).
+
+line type. A line attribute that controls the appearance of
+a line. The line type can either be a standard line type
+value or a custom line type value. Contrast with line width.
+
+line width. A line attribute that controls the appearance of
+a line. Examples of line width are normal and thick.
+Contrast with line type.
+
+logical page. A presentation space. One or more object
+areas can be mapped to a logical page. A logical page has
+specifiable characteristics, such as size, shape,
+orientation, and offset. The shape of a logical page is the
+shape of a rectangle. Orientation and offset are specified
+relative to a medium coordinate system.
+
+look-up table (LUT).
+(1) A table used to map one or more
+input values to one or more output values. (2) A logical list
+of colors or intensities. The list has a name and can be
+referenced to select a color or intensity. See also color
+table.
+
+M
+
+International Color Consortium (ICC). A group of
+companies chartered to develop, use, and promote cross-
+platform standards so that applications and devices can
+exchange color data without ambiguity.
+
+marker. A symbol with a recognizable appearance that is
+used to identify a particular location. An example of a
+marker is a symbol that is positioned by the center point of
+its cell.
+
+IO Image. An image object containing IOCA constructs.
+Contrast with IM Image.
+
+marker attributes. The characteristics that control the
+appearance of a marker. Examples of marker attributes are
+size and color.
+
+IOCA. See Image Object Content Architecture.
+
+IPDS. See Intelligent Printer Data Stream.
+
+italics. A typeface with characters that slant upward to
+the right. In FOCA, italics is the common name for the
+defined inclined typeface posture attribute or parameter.
+
+J
+
+Japanese Article Numbering (JAN). The bar code
+symbology used to code grocery items in Japan.
+
+L
+
+language. A set of symbols, conventions, and rules that
+is used for conveying information. See also pragmatics,
+semantics, and syntax.
+
+marker set.
+coded font.
+
+In GOCA, an attribute used to access a
+
+Medium Map. A print control object in a Form Map that
+defines resource mappings and controls modifications to a
+form, page placement on a form, and form copy
+generation. See also Form Map.
+
+medium preprinted form overlay (M-PFO).
+a PFO that is designed to simulate a preprinted form for a
+sheet-side. An M-PFO is invoked with the MMC structured
+field and is applied last to the medium presentation space
+after all other data for the sheet-side has been applied.
+
+In MO:DCA,
+
+medium presentation space. A two-dimensional
+conceptual space with a base coordinate system from
+which all other coordinate systems are either directly or
+indirectly derived. A medium presentation space is mapped
+onto a physical medium in a presentation-system-
+dependent manner. Synonymous with medium. See also
+logical page, physical medium, and presentation space.
+
+Metadata Guide for AFP 57
+
+<<<PAGE 72>>>
+media-relative colorimetric • overlay
+
+media-relative colorimetric. This rendering intent
+rescales the in-gamut, chromatically-adapted tristimulus
+values such that the white point of the actual medium is
+mapped to the PCS white point (for either input or output).
+It is useful for colors that have already been mapped to a
+medium with a smaller gamut than the reference medium
+(and therefore need no further compression).
+
+medium. A two-dimensional conceptual space with a
+base coordinate system from which all other coordinate
+systems are either directly or indirectly derived. A medium
+is mapped onto a physical medium in a presentation-
+system-dependent manner. Synonymous with medium
+presentation space. See also logical page, physical
+medium, and presentation space.
+
+metadata. Descriptive information that is associated with
+and augments other data.
+
+metadata object.
+metadata.
+
+In AFP, the resource object that carries
+
+Metadata Object Content Architecture (MOCA). A
+resource object architecture to carry metadata that serves
+to provide context or additional information about an AFP
+object or other AFP data.
+
+mix. A method used to determine how the color of a
+graphics primitive is combined with the existing color of a
+graphics presentation space. See also foreground mix and
+background mix.
+
+Mixed Object Document Content Architecture
+(MO:DCA). An architected, presentation-system-
+independent data stream for interchanging documents.
+
+MO:DCA. See Mixed Object Document Content
+Architecture.
+
+model space. A two-dimensional conceptual space in
+which a picture is constructed. All model transforms are
+completed before a picture is constructed in a graphics
+model space. Contrast with graphics presentation space.
+Synonymous with graphics model space.
+
+model transform. A transform that is applied to drawing-
+order coordinates. Contrast with viewing transform.
+
+M-PFO. See medium preprinted form overlay (M-PFO).
+
+N
+
+Negative Acknowledge Reply (NACK).
+architecture, a reply from a printer to a host, indicating that
+an exception has occurred. Contrast with Positive
+Acknowledge Reply.
+
+In the IPDS
+
+58 Metadata Guide for AFP
+
+O
+
+(1) A collection of structured fields. The first
+
+object.
+structured field provides a begin-object function, and the
+last structured field provides an end-object function. The
+object can contain one or more other structured fields
+whose content consists of one or more data elements of a
+particular data type. An object can be assigned a name,
+that can be used to reference the object. Examples of
+objects are presentation text, font, graphics, and image
+objects. (2) Something that a user works with to perform a
+task.
+
+object area. A rectangular area in a presentation space
+into which a data object is mapped. The presentation
+space can be for a page or an overlay. Examples are a
+graphics object area, an image object area, and a bar code
+object area.
+
+object data. A collection of related data elements
+bundled together. Examples of object data include graphic
+characters, image data elements, and drawing orders.
+
+order.
+(1) In GOCA, a graphics construct that the
+controlling environment builds to instruct a drawing
+processor about what to draw and how to draw it. The
+order can specify, for example, that a graphics primitive be
+drawn, a change to drawing attributes or drawing controls
+be effected, or a segment be called. One or more graphics
+primitives can be used to draw a picture. Orders can be
+included in a structured field. Synonymous with drawing
+order. (2) In the IPDS architecture, a construct within an
+execute-order command. (3) In IOCA, a functional
+operation that is performed on the image content.
+
+orientation. The angular distance a presentation space
+or object area is rotated in a specified coordinate system,
+expressed in degrees and minutes. For example, the
+orientation of printing on a physical medium, relative to the
+Xm axis of the Xm,Ym coordinate system. See also
+presentation space orientation and text orientation.
+
+origin. The point in a coordinate system where the axes
+intersect. Examples of origins are the addressable position
+in an Xm,Ym coordinate system where both coordinate
+values are zero and the character reference point in a
+character coordinate system.
+
+(1) A resource object that contains presentation
+
+overlay.
+data such as, text, image, graphics, and bar code data.
+Overlays define their own environment and are often used
+as pre-defined pages or electronic forms. Overlays are
+classified according to how they are presented with other
+presentation data: a medium overlay is positioned at the
+origin of the medium presentation space before any pages
+are presented, and a page overlay is positioned at a
+specified point in a page's logical page. A Page
+Modification Control (PMC) overlay is a special type of
+page overlay used in MO:DCA environments. (2) The final
+representation of such an object on a physical medium.
+Contrast with page segment.
+
+<<<PAGE 73>>>
+P
+
+(1) A data stream object delimited by a Begin Page
+
+page.
+structured field and an End Page structured field. A page
+can contain presentation data such as text, image,
+graphics, and bar code data. (2) The final representation
+of a page object on a physical medium.
+
+Page Definition (PageDef). A print control object used to
+format line data into page data. A Page Definition contains
+one or more Data Maps and may optionally specify
+conditional processing of the line data. Synonymous with
+Page Map. See also Data Map.
+
+Page Format. Synonymous with Data Map.
+
+page group. A named group of sequential pages. A page
+group is delimited by a Begin Named Page Group
+structured field and an End Named Page Group structured
+field. A page group can contain nested page groups. All
+pages in the page group inherit the attributes and
+processing characteristics that are assigned to the page
+group.
+
+Page Map. A print control object used to format line data
+into page data. A Page Map contains one or more Data
+Maps and may optionally specify conditional processing of
+the line data. Synonymous with Page Definition. See also
+Data Map.
+
+(1) In the IPDS architecture, a resource
+
+page segment.
+object that can contain text, image, graphics, and bar code
+data. Page segments do not define their own environment,
+but are processed in the existing environment. (2) In
+MO:DCA, a resource object that can contain any mixture of
+bar code objects, graphics objects, and IOCA image
+objects. A page segment does not contain an active
+environment group. The environment for a page segment
+is defined by the active environment group of the including
+page or overlay. (3) The final representation of such an
+object on a physical medium. Contrast with overlay.
+
+(1) A variable that is given a constant value
+
+parameter.
+for a specified application. (2) A variable used in
+conjunction with a command to affect its result.
+
+page • preprinted form overlay (PFO)
+
+a measurement of presentation granularity. Synonymous
+with picture element and pixel.
+
+perceptual rendering intent. The exact gamut mapping
+of the perceptual rendering intent is vendor specific and
+involves compromises such as trading off preservation of
+contrast in order to preserve detail throughout the tonal
+range. It is useful for general reproduction of images,
+particularly pictorial or photographic-type images.
+
+PFO. See preprinted form overlay (PFO).
+
+physical medium. A physical entity on which information
+is presented. Examples of a physical medium are a sheet
+of paper, a roll of paper, an envelope, and a display screen.
+See also medium presentation space and sheet.
+
+picture chain. A string of segments that defines a picture.
+Synonymous with segment chain.
+
+picture element. The smallest printable or displayable
+unit on a physical medium. In computer graphics, the
+smallest element of a physical medium that can be
+independently assigned color and intensity. Picture
+elements per inch is often used as a measurement of
+presentation granularity. Synonymous with pel and pixel.
+
+pixel. The smallest printable or displayable unit on a
+physical medium. In computer graphics, the smallest
+element of a physical medium that can be independently
+assigned color and intensity. Picture elements per inch is
+often used as a measurement of presentation granularity.
+Synonymous with pel and picture element.
+
+position. A position in a presentation space or on a
+physical medium that can be identified by a coordinate
+from the coordinate system of the presentation space or
+physical medium. See also picture element. Synonymous
+with addressable position.
+
+Positive Acknowledge Reply (ACK).
+architecture, a reply to an IPDS command that has its
+acknowledgment-required flag on and in which no
+exception is reported. Contrast with Negative Acknowledge
+Reply.
+
+In the IPDS
+
+pattern. An array of symbols used to fill an area.
+
+pattern attributes. The characteristics that specify the
+appearance of a pattern.
+
+posture.
+Inclination of a letter with respect to a vertical
+axis. Examples of inclination are upright and inclined. An
+example of upright is Roman. An example of inclined is
+italics.
+
+pattern set. An attribute in GOCA used to access a
+symbol set or coded font.
+
+pragmatics.
+construct. See also semantics and syntax.
+
+Information related to the usage of a
+
+(1) See Print Contrast Signal. (2) See Profile
+
+PCS.
+Connection Space.
+
+preprinted form. A form or sheet that is not blank when it
+is selected as input media for presentation.
+
+pel. The smallest printable or displayable unit on a
+physical medium. In computer graphics, the smallest
+element of a physical medium that can be independently
+assigned color and intensity. Pels per inch is often used as
+
+preprinted form overlay (PFO). An overlay and
+associated processing designed to simulate a preprinted
+form.
+
+Metadata Guide for AFP 59
+
+<<<PAGE 74>>>
+presentation position • root segment
+
+presentation position. An addressable position that is
+coincident with a character reference point. See also
+addressable position and character reference point.
+
+In printing, a software component
+
+presentation services.
+that communicates with a printer using a printer data
+stream, such as the IPDS data stream, to print pages,
+download and manage print resources, and handle
+exceptions.
+
+presentation space. A conceptual address space with a
+specified coordinate system and a set of addressable
+positions. The coordinate system and addressable
+positions can coincide with those of a physical medium.
+Examples of presentation spaces are medium, logical
+page, and object area. See also graphics presentation
+space, image presentation space, logical page, medium
+presentation space, and text presentation space.
+
+presentation space orientation. The number of degrees
+and minutes a presentation space is rotated in a specified
+coordinate system. For example, the orientation of printing
+on a physical medium, relative to the Xm axis of the Xm,Ym
+coordinate system. See also orientation and text
+orientation.
+
+presentation text object. An object that contains
+presentation text data. See also object.
+
+Presentation Text Object Content Architecture
+(PTOCA). An architected collection of constructs used to
+interchange and present presentation text data.
+
+print contrast. A measurement of the ratio of the
+reflectivities between the bars and spaces of a bar code
+symbol, commonly expressed as a percent. Synonymous
+with Print Contrast Signal.
+
+Print Contrast Signal (PCS). A measurement of the ratio
+of the reflectivities between the bars and spaces of a bar
+code symbol, commonly expressed as a percent.
+Synonymous with print contrast.
+
+print control object. A resource object that contains
+layout, finishing, and resource mapping information used to
+present a document on physical media. Examples of print
+control objects are Form Maps and Medium Maps.
+
+printing baseline. A conceptual line with respect to which
+successive characters are aligned. See also character
+baseline. Synonymous with baseline and sequential
+baseline.
+
+process color. A color that is specified as a combination
+of the components, or primaries, of a color space. A
+process color is rendered by mixing the specified amounts
+of the primaries. An example of a process color is C=0.1,
+M=0.8, Y=0.2, K=0.1 in the cyan/magenta/yellow/black
+(CMYK) color space. Contrast with spot color.
+
+process element.
+that is defined by a structured field and that facilitates a
+
+In MO:DCA, a document component
+
+60 Metadata Guide for AFP
+
+form of document processing that does not affect the
+presentation of the document. Examples of process
+elements are Tag Logical Elements (TLEs) that specify
+document attributes and Link Logical Elements (LLEs) that
+specify linkages between document components.
+
+Profile Connection Space (PCS). The reference color
+space defined by ICC, in which colors are encoded in order
+to provide an interface for connecting source and
+destination transforms. The PCS is based on the CIE 1931
+standard colorimetric observer.
+
+Q
+
+quiet zone. A clear space that contains no machine-
+readable marks preceding the start character of a bar code
+symbol or following the stop character. Synonymous with
+clear area. Contrast with intercharacter gap and space.
+
+R
+
+relative coordinate. One of the coordinates that identify
+the location of an addressable point by means of a
+displacement from some other addressable point. Contrast
+with absolute coordinate.
+
+rendering intent. A particular gamut-mapping style or
+method of converting colors in one gamut to colors in
+another gamut. ICC profiles support four different
+rendering intents: perceptual, media-relative colorimetric,
+saturation, and ICC-absolute colorimetric.
+
+In the IPDS architecture, a resource
+
+resident resource.
+in a printer or in a resource-caching intermediate device. A
+resident resource can be installed manually or can be
+captured by the device if it is intended for public use. A
+resident resource is referenced by a global ID that is valid
+for the duration of the resource's presence in the device.
+Contrast with downloaded resource.
+
+(1) A measure of the sharpness of an input or
+
+resolution.
+output device capability, as given by some measure
+relative to the distance between two points or lines that can
+just be distinguished. (2) The number of addressable pels
+per unit of length.
+
+resource. An object that is referenced by a data stream
+or by another object to provide data or information.
+Resource objects can be stored in libraries. In MO:DCA,
+resource objects can be contained within a resource group.
+Examples of resources are fonts, overlays, and page
+segments. See also downloaded resource, resident
+resource, and secondary resource.
+
+Roman. Relating to a type style with upright letters.
+
+root segment. A segment in the picture chain that is not
+called by any other segment. If a single segment that is not
+in a segment chain is drawn, it is treated as a root segment
+for the duration of the drawing process.
+
+<<<PAGE 75>>>
+rotation. The orientation of a presentation space with
+respect to the coordinate system of a containing
+presentation space. Rotation is measured in degrees in a
+clockwise direction. Zero-degree rotation exists when the
+angle between a presentation space's positive X axis and
+the containing presentation space's positive X axis is zero
+degrees. Contrast with character rotation.
+
+S
+
+saturation rendering intent. The exact gamut mapping
+of the saturation rendering intent is vendor specific and
+involves compromises such as trading off preservation of
+hue in order to preserve the vividness of pure colors. It is
+useful for images that contain objects such as charts or
+diagrams.
+
+screen.
+(1) A halftone-threshold array. (2) The display
+surface of a display device such as a computer monitor.
+
+secondary resource. A resource for an object that is
+itself a resource.
+
+section. A portion of a double-byte code page that
+consists of 256 consecutive entries. The first byte of a two-
+byte code point is the section identifier. A code-page
+section is also called a code-page ward in some
+environments. See also code page and code point.
+
+section identifier. A value that identifies a section.
+Synonymous with section number.
+
+section number. A value that identifies a section.
+Synonymous with section identifier.
+
+(1) In GOCA, a set of graphics drawing orders
+
+segment.
+contained within a Begin Segment command. See also
+graphics segment. (2) In IOCA, image content bracketed
+by Begin Segment and End Segment self-defining fields.
+See also image segment.
+
+segment chain. A string of segments that defines a
+picture. Synonymous with picture chain.
+
+segment transform. A model transform that is applied to
+a whole segment.
+
+semantics. The meaning of the parameters of a
+construct. See also pragmatics and syntax.
+
+sequential baseline. A conceptual line with respect to
+which successive characters are aligned. See also
+character baseline. Synonymous with baseline and printing
+baseline.
+
+sheet. A division of the physical medium; multiple sheets
+can exist on a physical medium. For example, a roll of
+paper might be divided by a printer into rectangular pieces
+of paper, each representing a sheet. Envelopes are an
+example of a physical medium that comprises only one
+sheet. The IPDS architecture defines four types of
+
+rotation • symbol set
+
+sheets: cut-sheet media, continuous-form media,
+envelopes, and computer output on microfilm. Each type of
+sheet has a top edge. A sheet has two sides, a front side
+and a back side. Synonymous with form.
+
+side. A physical surface of a sheet. A sheet has a front
+side and a back side. See also sheet.
+
+space.
+In bar codes, the lighter element of a printed bar
+code symbol, usually formed by the background between
+bars. See also element. Contrast with bar, clear area,
+intercharacter gap, and quiet zone.
+
+spot color. A color that is specified with a unique
+identifier such as a number. A spot color is normally
+rendered with a custom colorant instead of with a
+combination of process color primaries. See also highlight
+color. Contrast with process color.
+
+standard line type value. A predefined line type, like
+solid, invisible, or dash dot. Contrast with custom line type
+value.
+
+stroke. A straight or curved line used to create the shape
+of a letter.
+
+structured field. A self-identifying, variable-length,
+bounded record, that can have a content portion that
+provides control information, data, or both. See also
+document element.
+
+In MO:DCA, the header
+
+structured field introducer.
+component of a structured field that provides information
+that is common for all structured fields. Examples of
+information that is common for all structured fields are
+length, function type, and category type. Examples of
+structured field function types are begin, end, data, and
+descriptor. Examples of structured field category types are
+presentation text, image, graphics, and page.
+
+subtractive primary colors. Cyan, magenta, and yellow
+colorants used to subtract a portion of the white light that is
+illuminating an object. Subtractive colors are reflective on
+paper and printed media. When used together with various
+degrees of coverage and variation, they have the ability to
+create billions of other colors. Contrast with additive
+primary colors.
+
+(1) A visual representation of something by
+
+symbol.
+reason of relationship, association, or convention. (2) In
+GOCA, the subpicture referenced as a character definition
+within a font character set and used as a character, marker,
+or fill pattern. A bitmap can also be referenced as a symbol
+for use as a fill pattern. See also bar code symbol.
+
+symbol set. A coded font that is usually simpler in
+structure than a fully described font. Symbol sets are used
+where typographic quality is not required. Examples of
+devices that might not provide typographic quality are dot-
+matrix printers and displays. See also character set,
+marker set, and pattern set.
+
+Metadata Guide for AFP 61
+
+<<<PAGE 76>>>
+symbology • Xp,Yp coordinate system
+
+symbology. A bar code language. Bar code symbologies
+are defined and controlled by various industry groups and
+standards organizations. Bar code symbologies are
+described in public domain bar code specification
+documents. Synonymous with bar code symbology. See
+also Canadian Grocery Product Code (CGPC), European
+Article Numbering (EAN), Japanese Article Numbering
+(JAN), and Universal Product Code (UPC).
+
+In the IPDS architecture, a
+
+synchronous exception.
+data-stream, function no longer achievable, or resource-
+storage exception that must be reported to the host before
+a printer can return a Positive Acknowledge Reply or can
+increment the received-page counter for a page containing
+the exception. Synchronous exceptions are those with
+action code X'01', X'06', X'0C', or X'1F'. See also data-
+stream exception. Contrast with asynchronous exception.
+
+type weight. A parameter indicating the degree of
+boldness of a typeface. A character's stroke thickness
+determines its type weight. Examples are light, medium,
+and bold. Synonymous with weight class.
+
+type width. A parameter indicating a relative change from
+the font's normal width-to-height ratio. Examples are
+normal, condensed, and expanded. Synonymous with
+width class.
+
+typeface. All characters of a single type family or style,
+weight class, width class, and posture, regardless of size.
+For example, Helvetica Bold Condensed Italics, in any
+point size.
+
+U
+
+syntax. The rules governing the structure of a construct.
+See also pragmatics and semantics.
+
+unarchitected.
+controlled by an architecture. Contrast with architected.
+
+Identifies data that is neither defined nor
+
+T
+
+text. A graphic representation of information. Text can
+consist of alphanumeric characters and symbols arranged
+in paragraphs, tables, columns, and other shapes. An
+example of text is the data sent in an IPDS Write Text
+command.
+
+text orientation. A description of the appearance of text
+as a combination of inline direction and baseline direction.
+See also baseline direction, inline direction, orientation,
+and presentation space orientation.
+
+text presentation space. A two-dimensional conceptual
+space in which text is generated for presentation on an
+output medium.
+
+transform. A modification of one or more characteristics
+of a picture. Examples of picture characteristics that can be
+transformed are position, orientation, and size. See also
+model transform, segment transform, and viewing
+transform.
+
+triplet. A three-part self-defining variable-length
+parameter consisting of a length byte, an identifier byte,
+and parameter-value bytes.
+
+tristimulus values. Three values that together are used
+to describe a specific color. These values are the amounts
+of three reference colors (such as red, green, and blue)
+that can be mixed to give the same visual sensation as the
+specific color.
+
+type family. All characters of a single design, regardless
+of attributes such as width, weight, posture, and size.
+Examples are Courier and Gothic.
+
+type style. The form of characters within the same font,
+for example, Courier or Gothic.
+
+62 Metadata Guide for AFP
+
+Universal Product Code (UPC). A standard bar code
+symbology, commonly used to mark the price of items in
+stores, that can be read and interpreted by a computer.
+
+V
+
+viewing transform. A transform that is applied to model-
+space coordinates. Contrast with model transform.
+
+viewing window. That part of a model space that is
+transformed, clipped, and moved into a graphics
+presentation space.
+
+W
+
+weight class. A parameter indicating the degree of
+boldness of a typeface. A character's stroke thickness
+determines its weight class. Examples are light, medium,
+and bold. Synonymous with type weight.
+
+white point. One of a number of reference illuminants
+used in colorimetry that serve to define the color “white”.
+Depending on the application, different definitions of white
+are needed to give acceptable results. For example,
+photographs taken indoors might be lit by incandescent
+lights, that are relatively orange compared to daylight.
+Defining “white” as daylight will give unacceptable results
+when attempting to color correct a photograph taken with
+incandescent lighting.
+
+width class. A parameter indicating a relative change
+from the font's normal width-to-height ratio. Examples are
+normal, condensed, and expanded. Synonymous with type
+width.
+
+X
+
+Xp,Yp coordinate system. The coordinate system of a
+presentation space or a logical page. This coordinate
+
+<<<PAGE 77>>>
+Xio,Yio coordinate system • Xio,Yio coordinate system
+
+system describes the size, position, and orientation of a
+presentation space or a logical page. Orientation of an Xp,
+Yp coordinate system is relative to an environment-
+specified coordinate system. An example of an
+environment-specified coordinate system is the Xm,Ym
+coordinate system. The Xp,Yp coordinate system origin is
+specified by an IPDS Logical Page Position command. See
+also logical page, medium presentation space, and
+presentation space.
+
+Xio,Yio coordinate system. The IO-Image presentation
+space coordinate system.
+
+Metadata Guide for AFP 63
+
+<<<PAGE 78>>>
+64 Metadata Guide for AFP
+
+<<<PAGE 79>>>
+Index
+A
+ActualText ................... 6, 8, 11, 24–26
+AFPC.........................................iii
+AFPId Subsets .............................27
+AT1 Subset ..............................27
+AFPTag ............3–4, 6, 9–10, 15, 25–26
+Alt................................ 6, 11, 24–25
+Attributes. ....... 8–9, 11–13, 15, 18–20, 22
+AFPId............................ 12, 18, 20
+AFPLang ............................ 13, 15
+bytes......................................22
+count............................. 12, 18, 20
+did.........................................15
+fromPage.................................15
+length .....................................22
+method ...................................13
+page ....................................... 9
+tid .......................................... 9
+toPage....................................15
+URL .......................................19
+version. ...................................13
+XMLLang..................... 8, 11, 13, 15
+xmlns .....................................13
+
+H
+Hyperlink............... 6, 19, 24–25, 29, 33
+
+SemanticProperties ..................6, 24
+trademarks .................................48
+
+I
+Ignore data .................................. 4
+IndexElement ............ 3, 6, 9–10, 20, 25
+Integer .......................................iv
+introduction .................................. 1
+
+M
+Metadata Objects ..................... 1, 3, 5
+
+N
+NodeType.................. 6, 21, 24–25, 29
+NodeType Subsets ........................29
+NT1 Subset ..............................29
+
+B
+BeginIndex ................... 3, 6, 9, 12, 25
+
+O
+Offset...................... 3, 6, 9–10, 22, 25
+Overview..................................... 3
+
+C
+Child Elements ................. 9, 14–15, 24
+ActualText ................................24
+AFPTag...................................15
+Alt .........................................24
+BeginIndex ................................ 9
+DOMNode. .......................... 14–15
+EndIndex .................................. 9
+Hyperlink .................................24
+IndexElement ............................. 9
+NodeType ................................24
+Offset ...................................... 9
+Private ....................................15
+
+D
+DocumentObjectModel... 3, 5, 13–14, 25–
+26
+DOMNode ............3–6, 9, 14–16, 25–26
+
+E
+EndIndex. ..................... 3, 6, 9, 18, 25
+Examples ..................... 31, 33–35, 44
+Hypertext Example......................33
+Image Example..........................34
+Table Example...........................35
+Text Block Across Page Boundaries
+Example ................................44
+Text Example ............................31
+
+P
+Pointer Position ............3, 12, 18, 20, 22
+Private ....................... 3, 6, 15, 23, 25
+
+R
+Reading order ............................... 4
+
+S
+SemanticProperties. ....3, 6, 15, 21, 24–25
+String .........................................iv
+
+T
+tagging structures........................... 5
+Tags ........... 5–6, 8–9, 11–13, 15, 18–24
+ActualText .............................. 6, 8
+AFPTag................................. 6, 9
+Alt ...................................... 6, 11
+BeginIndex ............................6, 12
+DocumentObjectModel ..............5, 13
+DOMNode. ............................6, 15
+EndIndex ..............................6, 18
+Hyperlink ..............................6, 19
+IndexElement .........................6, 20
+NodeType .............................6, 21
+Offset ..................................6, 22
+Private .................................6, 23
+
+Copyright © AFP Consortium 2023
+
+65
+
+<<<PAGE 80>>>
+Advanced Function Presentation Consortium
+Metadata Guide for AFP 
+
+AFPC-0018-01

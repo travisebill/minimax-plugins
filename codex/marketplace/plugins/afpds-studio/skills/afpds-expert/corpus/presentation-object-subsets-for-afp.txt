@@ -1,0 +1,1855 @@
+<<<PAGE 1>>>
+Advanced Function Presentation Consortium 
+
+Presentation Object Subsets for 
+AFP
+
+AFPC-0002-03
+
+<<<PAGE 2>>>
+Third Edition (July 2016)
+
+This edition applies to the Advanced Function Presentation architecture. This is the third edition produced by the AFP
+Consortium and replaces and makes obsolete the previous edition (AFPC-0002-02). This edition remains current until a
+new edition is published.
+
+Changes between the previous edition and this edition are indicated in green and with a green vertical bar to the left of the
+change, although minor editorial fixes are not marked. The major change in this edition is the addition of the definition of the
+AFPC SVG Subset. In addition, entries were added to the glossary.
+
+This publication is available from the AFP Consortium Web site at
+
+http://www.afpcinc.org
+
+Copyright © AFP Consortium 2010, 2016
+
+ii
+
+<<<PAGE 3>>>
+Contents
+
+Chapter 1. Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .1
+
+Chapter 2. Tagged Image File Format (TIFF). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .3
+Overview ............................................................................................................................................... 3
+Subset Specification ................................................................................................................................ 3
+Fully Supported Standard Tags .............................................................................................................. 4
+Standard Tags Supported with Restrictions ............................................................................................... 4
+Unsupported Standard Tags .................................................................................................................. 5
+Additional Supported Tags .................................................................................................................... 6
+Multi-page TIFFs ..................................................................................................................................... 7
+Transparency Masks ................................................................................................................................ 7
+Resources ............................................................................................................................................. 7
+Object-type OID.................................................................................................................................. 7
+References ........................................................................................................................................ 8
+
+Chapter 3. Joint Photographic Experts Group (JPEG) . . . . . . . . . . . . . . . . . . . . . . . . . . . . .9
+Overview ............................................................................................................................................... 9
+Specification .......................................................................................................................................... 9
+Color Spaces ..................................................................................................................................... 9
+Start of Frame (SOF) Markers.............................................................................................................. 10
+Other Issues .................................................................................................................................... 10
+Resources ........................................................................................................................................... 11
+Object-type OID................................................................................................................................ 11
+References ...................................................................................................................................... 11
+
+Chapter 4. Portable Network Graphics (PNG). . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+Overview ............................................................................................................................................. 13
+Subset Specification .............................................................................................................................. 13
+Fully Supported Chunks ..................................................................................................................... 13
+Chunks Supported with Restrictions ...................................................................................................... 13
+Unsupported Chunks ......................................................................................................................... 13
+Restrictions .......................................................................................................................................... 14
+Color Types and Bit Depths ................................................................................................................. 14
+Palette ............................................................................................................................................ 14
+Transparency ................................................................................................................................... 14
+Reserved and Safe-to-copy bits ........................................................................................................... 14
+Other Support....................................................................................................................................... 14
+Interlaced data order.......................................................................................................................... 14
+Compression.................................................................................................................................... 15
+Filter Algorithms................................................................................................................................ 15
+Color Management ................................................................................................................................ 15
+Resources ........................................................................................................................................... 15
+Object-type OID................................................................................................................................ 15
+References ...................................................................................................................................... 15
+
+Chapter 5. Scalable Vector Graphics (SVG) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+Overview ............................................................................................................................................. 17
+Subset Specification .............................................................................................................................. 17
+Linked Resources ............................................................................................................................. 17
+Fonts.............................................................................................................................................. 17
+Pixel Size ........................................................................................................................................ 17
+Color Spaces ................................................................................................................................... 18
+Compression.................................................................................................................................... 18
+Presentation Space Size..................................................................................................................... 18
+Resources ........................................................................................................................................... 18
+Object-type OID ................................................................................................................................ 18
+References ...................................................................................................................................... 18
+
+Appendix A. Related Publications. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+
+Copyright © AFP Consortium 2010, 2016
+
+iii
+
+<<<PAGE 4>>>
+Appendix B. Adobe APP14 JPEG Marker. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+
+Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+
+Index . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+
+iv Presentation Object Subsets for AFP
+
+<<<PAGE 5>>>
+Chapter 1. Introduction
+
+Advanced Function Presentation (AFP) datastreams allow inclusion of non-AFP objects. In some cases, such
+as TIFF, the formats can contain a wide variety of features and data formats. Some of these features may not
+be well defined, while others may be rarely used in practice. Popular formats may also be extended in various
+ways to support particular applications, or privately enhanced or modified by different vendors. A definitive list
+of features and extensions may not exist, which makes it very hard or impossible for AFP products to support
+all the possible features of each non-AFP object type.
+
+This book describes AFPC Subsets for some of the object types that can be embedded in AFP. The members
+of the AFP Consortium (AFPC) have agreed that their products will support all the features and processing
+instructions described in each subset.
+
+Each subset is a minimum set of functions supported by all the AFPC members. AFP products may support
+additional features that are not part of a subset. There is no guarantee, however, that a different product, even
+from the same vendor, will support these additional features in the same way.
+
+Each subset is described in a separate chapter. Subsets are defined relative to the underlying object type. The
+specification assumes the reader is familiar with the object type that is the basis for the subset. In addition to
+the subset specification, each chapter will list the relevant Object-type Object IDs (OIDs) that can be used for
+the conformant objects and main references describing the object type. Appendix A, “Related Publications”, on
+page 19 lists references that apply to multiple object types.
+
+Copyright © AFP Consortium 2010, 2016
+
+1
+
+<<<PAGE 6>>>
+2 Presentation Object Subsets for AFP
+
+<<<PAGE 7>>>
+Chapter 2. Tagged Image File Format (TIFF)
+
+Tagged Image File Format (TIFF) is a rich image format that is also easily extended by using private tags. This
+makes TIFF a difficult format to process. Most of the image applications, however, use a contained TIFF
+subset. The purpose of this chapter is to define a TIFF subset that would be relatively straightforward to
+process, but still meet the needs of most printing applications, as well as cover most TIFF images encountered
+in practice. This subset is called the AFPC TIFF Subset.
+
+AFPC TIFF Subset is defined relative to the whole TIFF 6.0 Specification. It is not defined relative to the
+“baseline TIFF” described in the specification, since the baseline subset is much too restrictive to be useful.
+
+Overview
+
+This section describes the main TIFF features included in the subset. The purpose is to give an overview and
+explain the rationale for some of the main restrictions. The Specification section describes the details from the
+technical perspective.
+
+This TIFF subset is tuned for printing, with the assumption that the TIFF objects are included in the AFP data
+stream using the object container mechanism. Both single and multiple-page TIFFs are supported in this
+subset. Please see “Multi-page TIFFs” on page 7.
+
+Thumbnails (reduced resolution images) are not supported in this subset, since thumbnails are not meant for
+printing.
+
+Transparency mask images are not supported, since popular image processing programs used to generate
+and view images do not support them. Instead, transparency masks are supported via the ExtraSamples tag,
+as explained in “Transparency Masks” on page 7.
+
+Tiled images are not supported, since they are seldom encountered in practice.
+
+The old-style JPEG data (compression 6) has well-documented problems and is not supported. JPEG-
+compressed data is supported via the compression 7 mechanism defined in TIFF Tech Note 2 (see
+“References” on page 8 for a link to this tech note). Any image conforming to the AFPC JPEG subset (defined
+in Chapter 3, “Joint Photographic Experts Group (JPEG)”, on page 9) is supported under compression 7.
+
+TIFF allows private tags. Applications can obtain reserved tag IDs from Adobe for their private tags. If a
+receiver encounters an unknown tag, the TIFF specification instructs it to ignore it. If a receiver encounters a
+private tag that it understands and whose values conflict with a standard tag, the AFPC TIFF Subset gives
+priority to the standard tag.
+
+Subset Specification
+
+This subset is based on the TIFF Release 6.0 specification, combined with the TIFF Tech Note 2 (see
+“References” on page 8 for a link to this tech note), which defines a new way of incorporating JPEG-
+compressed data. Note that a standard tag means a tag described in TIFF Release 6.0 specification, not a tag
+in the baseline TIFF subset.
+
+Copyright © AFP Consortium 2010, 2016
+
+3
+
+<<<PAGE 8>>>
+Fully Supported Standard Tags
+
+The following standard TIFF tags are fully supported:
+
+Table 1. Fully Supported Standard TIFF Tags
+
+Hex Tag ID
+
+X'FF'
+
+X'100'
+
+X'101'
+
+X'10A'
+
+X'111'
+
+X'112'
+
+X'116'
+
+X'117'
+
+X'11A'
+
+X'11B'
+
+X'11C'
+
+X'11E'
+
+X'11F'
+
+X'122'
+
+X'123'
+
+X'124'
+
+X'125'
+
+X'13D'
+
+X'140'
+
+X'211'
+
+X'212'
+
+X'214'
+
+Tag Name
+
+SubfileType
+
+ImageWidth
+
+ImageLength
+
+FillOrder
+
+StripOffsets
+
+Orientation
+
+RowsPerStrip
+
+StripByteCounts
+
+XResolution
+
+YResolution
+
+PlanarConfiguration
+
+XPosition
+
+YPosition
+
+GrayResponseUnit
+
+GrayResponseCurve
+
+T4Options
+
+T6Options
+
+Predictor
+
+ColorMap
+
+YCbCrCoefficients
+
+YCbCrSubsampling
+
+ReferenceBlackWhite
+
+Standard Tags Supported with Restrictions
+
+X'FE' – NewSubfileType
+
+Thumbnail and transparency mask images are skipped. Please see “Multi-page TIFFs” on page 7 and
+“Transparency Masks” on page 7.
+
+X'102' – BitsPerSample
+
+1 and 8 bits per color channel. If the image has multiple channels, all channels must have the same bit
+depth. 1 bit data is supported only for Photometric Interpretations of 0 and 1 (i.e., black and white). All
+multichannel images must be 8 bits per channel.
+
+Note: Extra samples that describe transparency masks can be 1-bit in planar images, regardless of
+
+the bit depth of the main color channels.
+
+X'103' – Compression
+
+4 Presentation Object Subsets for AFP
+
+<<<PAGE 9>>>
+Old-style JPEG compression (6) is not supported. JPEG compression 7 (details in TIFF Tech Note 2;
+see “References” on page 8 for a link to this tech note) is supported instead.
+
+X'106' – PhotometricInterpretation
+
+CIELab is assumed to have the D65 illuminant, which follows from the TIFF specification.
+
+The YCbCr color space is treated as a device-dependent RGB color space that has been transformed
+using the default weights from the TIFF specification (ITU-R Recommendation BT.601, which was
+CCIR Recommendation 601-1 when the TIFF Specification was published). The YCbCrCoefficients
+tag is supported if the application has used different weights.
+
+RGB and CMYK images that are otherwise unqualified are treated as device-dependent and receivers
+can interpret the color information as they deem appropriate.
+
+Please see Appendix B, “Adobe APP14 JPEG Marker”, on page 21 on issues related to processing of
+JPEG-compressed images generated by Adobe products.
+
+X'115' – SamplesPerPixel
+
+Only certain extra samples are supported. See “Transparency Masks” on page 7.
+
+X'128' – ResolutionUnit
+
+Relative resolution treated as inches (i.e., 1 treated as 2).
+
+X'129' – PageNumber
+
+The second value, indicating the total number of images in the file, is ignored.
+
+X'152' – ExtraSamples
+
+Only certain extra samples, carrying associated alpha data denoting transparency mask, are
+supported. See “Transparency Masks” on page 7.
+
+Unsupported Standard Tags
+
+The following unsupported tags are ignored:
+
+Table 2. Unsupported Standard TIFF Tags
+
+Hex Tag ID
+
+X'107'
+
+X'108'
+
+X'109'
+
+X'10D'
+
+X'10E'
+
+X'10F'
+
+X'110'
+
+X'118'
+
+X'119'
+
+X'11D'
+
+X'120'
+
+X'121'
+
+X'12D'
+
+X'131'
+
+X'132'
+
+Tag Name
+
+Thresholding
+
+CellWidth
+
+CellLength
+
+DocumentName
+
+ImageDescription
+
+Make
+
+Model
+
+MinSampleValue
+
+MaxSampleValue
+
+PageName
+
+FreeOffsets
+
+FreeByteCounts
+
+TransferFunction
+
+Software
+
+DateTime
+
+Presentation Object Subsets for AFP 5
+
+<<<PAGE 10>>>
+Table 2 Unsupported Standard TIFF Tags (cont'd.)
+
+Hex Tag ID
+
+X'13B'
+
+X'13C'
+
+X'13E'
+
+X'13F'
+
+X'141'
+
+X'142'
+
+X'143'
+
+X'144'
+
+X'145'
+
+X'14C'
+
+X'14D'
+
+X'14E'
+
+X'150'
+
+X'151'
+
+X'153'
+
+X'154'
+
+X'155'
+
+X'156'
+
+X'200'
+
+X'201'
+
+X'202'
+
+X'203'
+
+X'205'
+
+X'206'
+
+X'207'
+
+X'208'
+
+X'209'
+
+X'213'
+
+Tag Name
+
+Artist
+
+HostComputer
+
+WhitePoint
+
+PrimaryChromaticities
+
+HalftoneHints
+
+TileWidth
+
+TileLength
+
+TileOffsets
+
+TileByteCounts
+
+InkSet
+
+InkNames
+
+NumberOfInks
+
+DotRange
+
+TargetPrinter
+
+SampleFormat
+
+SMinSampleValue
+
+SMaxSampleValue
+
+TransferRange
+
+JPEGProc
+
+JPEGInterchangeFormat
+
+JPEGInterchangeFormatLength
+
+JPEGRestartInterval
+
+JPEGLosslessPredictors
+
+JPEGPointTransforms
+
+JPEGQTables
+
+JPEGDCTables
+
+JPEGACTables
+
+YCbCrPositioning
+
+X'8298'
+
+Copyright
+
+Additional Supported Tags
+
+X'8773' – ICCProfile
+
+If the receiving product can color manage, it must use the ICC profile provided in the file.
+
+Note: The receivers can use the information as appropriate in their color management scheme. For
+example, it is valid for the product to let the user override the embedded profile. It should also
+be noted that support of embedded ICC profiles is a system-level requirement, not a transform
+requirement. A print server can extract the ICC profile from the data, make an audit Color
+
+6 Presentation Object Subsets for AFP
+
+<<<PAGE 11>>>
+Management Resource (CMR) based on it and send the TIFF to the printer with the profile
+removed and the CMR attached instead.
+
+Multi-page TIFFs
+
+TIFF files may contain multiple pages or images. If the TIFF file is being processed in a context where multiple
+images are not meaningful, the receiver will process only the first image. The “first” is defined according to the
+order described below.
+
+If the TIFF file has multiple pages, the pages are ordered in the ordering specified by the PageNumber tag.
+Any images that do not contain the PageNumber tag are processed in the order in which they occur in the file,
+after the images that do contain the PageNumber tag. If no image in the file has a PageNumber tag, the
+images are processed in order.
+
+The page numbers in PageNumber tags of different images do not have to be consecutive, but must be
+unique. If two images have the same PageNumber tag, the receiver should report an error.
+
+Any thumbnail and transparency mask images found in processing are ignored and the above rules are
+applied by skipping them.
+
+Transparency Masks
+
+TIFF has two mechanisms for specifying the transparency mask. One is by using the NewSubfileType tag,
+where the image may be marked as a transparency mask. This tag has potential ambiguities and is not
+supported by image processing packages such as Gimp or Adobe Photoshop. Transparency Mask images are
+not supported by this TIFF subset.
+
+The second mechanism for specifying the transparency mask is via extra samples. It is known that at least
+Photoshop can generate such data. This subset supports transparency masks specified via extra samples with
+the following conditions and restrictions:
+
+• Both planar and interleaved data are supported.
+
+• The ExtraSamples tag must be marked with 1, Associated alpha data (with pre-multiplied color).
+
+• If the image is interleaved, the mask channel must have the same bit depth as the other data.
+
+• If the data is planar, the mask data may also be 1-bit.
+
+• The image must be compressed using a lossless algorithm.
+
+• If the mask value is nonzero for a pixel, that pixel is treated as foreground. Only the pixels that have the extra
+
+sample of zero are treated as background.
+
+• Foreground pixels knock out the background. There is no blending, regardless of the extra sample mask
+
+value for the pixel.
+
+Resources
+
+Object-type OID
+
+Images that conform to the TIFF Subset are marked with the following OID:
+
+X'06072B120004010142'
+
+AFPC TIFF Subset
+
+Presentation Object Subsets for AFP 7
+
+<<<PAGE 12>>>
+Note: If a TIFF containing a transparency mask defined via the alpha channel is marked by one of the other
+
+TIFF OIDs, the receiver will ignore the transparency mask.
+
+References
+
+• TIFF Revision 6.0 Specification, Adobe Systems Incorporated, June 3, 1993. Available at
+http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf
+
+• DRAFT TIFF Technical Note 2, March 17, 1995. Available at
+
+http://www.remotesensing.org/libtiff/TIFFTechNote2.html
+
+8 Presentation Object Subsets for AFP
+
+<<<PAGE 13>>>
+Chapter 3. Joint Photographic Experts Group (JPEG)
+
+Joint Photographic Experts Group (JPEG) defines a number of image compression schemes and several ways
+to organize the data. This subset is designed to cover all of the parts of the JPEG specification that the
+receivers can reasonably expect to encounter in practice. This subset is called the AFPC JPEG Subset.
+
+JPEG is primarily defined as a compression format, but is also being widely used as a file format. Using JPEG
+as a file format depends on all emitters and receivers making common assumptions on image parameters,
+such as the color space, that are not explicitly defined in the data. These assumptions will be explicitly
+described in the specification of this subset.
+
+Overview
+
+This section describes the main JPEG features included in the subset. The purpose is to give an overview and
+explain the rationale for some of the main restrictions. The Specification section describes the details from the
+technical perspective.
+
+JPEG-compressed data can be either sequential or hierarchical. The data can be compressed using either
+lossless or lossy algorithms. Hierarchical JPEG and lossless compression are not in widespread use and are
+not supported.
+
+JPEG supports two types of entropy coding: Huffman and arithmetic. Arithmetic coding is rarely encountered in
+practice and is not supported. Arithmetic coding was subject to several patents, believed since expired.
+Intellectual property issues, complexity of the arithmetic coding, and potential performance penalties resulted
+in Huffman coding being used almost exclusively for images meant for interchange among different
+applications.
+
+JPEG allows underlying image data to be either 8 or 12 bits per color channel. 12 bit images, used mainly for
+medical imaging, are not supported.
+
+A number of file formats, like JPEG Interchange File Format (JFIF) and Exchangeable File Format (EXIF), use
+application markers to provide additional image information, such as resolution and thumbnail. Some may
+impose additional requirements on the data, such as the color space and gamma correction. This subset does
+not require support for such file formats.
+
+Specification
+
+Color Spaces
+
+Images with one, three, and four components are supported. Single component images are assumed to be
+grayscale; i.e., zero is black, 255 is white. Three-component images are assumed to be RGB data encoded as
+YCbCr using the luma red, luma green, and luma blue values of 0.299, 0.587, and 0.114, respectively, as
+specified in ITU-R Recommendation BT.601, which was previously known as CCIR Recommendation 601-1.
+
+Four-component images are assumed to be CMYK. CMYK may be present in a transformed form if the Adobe
+APP14 marker is present in the data; see Appendix B, “Adobe APP14 JPEG Marker”, on page 21.
+
+If the receiving product can color manage, it must use the ICC profile provided via the APP2 (X'FFE2') marker.
+The receivers can use the information as appropriate in their color management scheme. For example, it is
+valid for the product to let the user override the embedded profile. It should also be noted that support of
+embedded ICC profiles is a system-level requirement, not a transform requirement. A print server can extract
+
+Copyright © AFP Consortium 2010, 2016
+
+9
+
+<<<PAGE 14>>>
+the ICC profile from the data, make an audit Color Management Resource (CMR) based on it and send the
+JPEG to the printer with the profile removed and the CMR attached instead.
+
+Please see Appendix B, “Adobe APP14 JPEG Marker”, on page 21 on issues related to processing of JPEG-
+compressed images generated by Adobe products.
+
+Start of Frame (SOF) Markers
+
+Start of Frame Markers are X'FFC0–3' , X'FFC5–7' , X'FFC9–B', and X'FFCD–F'. Each marker corresponds to
+a particular data organization (sequential or hierarchical), compression type (lossy or lossless), entropy coding
+(Huffman or arithmetic), and scan organization (sequential or progressive).
+
+The Start of Frame Marker contains the frame header describing the image. The frame header contains the
+following fields:
+
+frame header length
+
+This value depends on the number of the color components.
+
+sample precision
+Must be 8.
+
+number of lines
+
+Must be nonzero. JPEG also allows a zero value, meaning that the image length will be specified later
+using the DNL marker. The DNL marker and zero length are not supported in the subset.
+
+number of samples per line
+
+The subset places no restrictions on this field. Any values allowed by JPEG are valid.
+
+number of components in frame
+Must be 1, 3, or 4.
+
+frame component specfication
+
+The subset places no restrictions on the fields in the component specification. Any values allowed by
+JPEG are valid. In particular, there are no restrictions on the subsampling factors.
+
+The AFPC JPEG Subset supports the following SOF markers:
+
+• X'FFC0' – Baseline DCT.
+
+• X'FFC1' – Huffman Extended Sequential DCT.
+
+• X'FFC2' – Huffman Progressive DCT.
+
+Other SOF markers are not supported.
+
+For the Huffman Progressive DCT data, both spectral selection and successive approximation are supported.
+
+Note: If the “Progressive” option is chosen on saving a JPEG image, Adobe Photoshop will often generate an
+image that has been compressed using both progressive selection and successive approximation.
+
+Other Issues
+
+The viewers that present images on a display will generally scale a JPEG image to some reasonable output
+size, so the image resolution is irrelevant. Some of the applications that convert JPEG images to other formats
+will assume that the images were generated for displays and have the resolution of 72dpi. There are scanner
+products, however, that package scanned images as high-quality JPEGs that may have a resolution of 300dpi
+or higher.
+
+AFP generators should include the Image Resolution Triplet X'9A' to describe the resolution of the input JPEG
+image. Alternatively, the output mapping option can be set to scale-to-fit or scale-to-fill to get the output of the
+
+10 Presentation Object Subsets for AFP
+
+<<<PAGE 15>>>
+desired size. If neither of these are specified for a JPEG image, the receivers should assume that the image
+has been produced at the device output resolution.
+
+Resources
+
+Object-type OID
+
+The generators should mark the images known to conform to the JPEG Subset with the following OID:
+
+X'06072B120004010117'
+
+AFPC JPEG Subset
+
+References
+
+• Pennebaker, William B., and Mitchell, Joan L., JPEG: Still Image Data Compression Standard. Van Nostrand
+
+Reinhold, New York, 1992. ISBN 0-442-01272-01.
+
+• ISO/IEC International Standard 10918-1.
+
+• ITU–TSS Recommendation T.81.
+
+Presentation Object Subsets for AFP 11
+
+<<<PAGE 16>>>
+12 Presentation Object Subsets for AFP
+
+<<<PAGE 17>>>
+Chapter 4. Portable Network Graphics (PNG)
+
+PNG (Portable Network Graphics) is a lossless image format.
+
+The subset defined by this chapter is called the AFPC PNG Subset.
+
+Overview
+
+This section describes the main PNG features included in the subset.
+
+Subset Specification
+
+This subset is based on the ISO/IEC 15948:2004 PNG Specification.
+
+Fully Supported Chunks
+
+The following PNG chunks are fully supported:
+
+Description
+
+Image data
+
+Image trailer
+
+Standard RGB color space
+
+Embedded ICC profiles
+
+Background color
+
+Chunks
+
+IDAT
+
+IEND
+
+sRGB
+
+iCCP
+
+bKGD
+
+Chunk Type
+
+Critical
+
+Critical
+
+Ancillary
+
+Ancillary
+
+Ancillary
+
+Chunks Supported with Restrictions
+
+The following PNG chunks are supported with restrictions that are described in “Restrictions” on page 14:
+
+Description
+
+Image header
+
+Palette
+
+Transparency
+
+Unsupported Chunks
+
+The following PNG chunks are ignored:
+
+Description
+
+Image gamma
+
+Primary chromaticities
+
+Text strings
+
+Chunks
+
+IHDR
+
+PLTE
+
+tRNS
+
+Chunks
+
+gAMA
+
+cHRM
+
+iTXt, tEXt, zTXt
+
+Chunk Type
+
+Critical
+
+Critical
+
+Ancillary
+
+Chunk Type
+
+Ancillary
+
+Ancillary
+
+Ancillary
+
+Copyright © AFP Consortium 2010, 2016
+
+13
+
+<<<PAGE 18>>>
+Description
+
+Physical pixel dimensions
+
+Significant bits
+
+Suggested palette
+
+Palette histogram
+
+Image last-modification time
+
+Private chunks
+
+Additional public chunks
+
+Restrictions
+
+Chunks
+
+Chunk Type
+
+pHYs
+
+sBIT
+
+sPLT
+
+hIST
+
+tIME
+
+Ancillary
+
+Ancillary
+
+Ancillary
+
+Ancillary
+
+Ancillary
+
+Color Types and Bit Depths
+
+In the IHDR chunk, all five color types (0, 2, 3, 4, and 6) are supported in this subset. However, the supported
+bit depths for the color types are restricted as follows:
+
+Color Type
+
+Allowed Bit Depths
+
+0
+
+2
+
+3
+
+4
+
+6
+
+Palette
+
+1, 8
+
+8
+
+1, 8
+
+8
+
+8
+
+The PLTE chunk defines a set of 1 to 256 palette entries. This chunk is required for color type 3, but is ignored
+for color types 2 and 6 (this is a slight deviation from the full PNG specification, which allows the PLTE chunk to
+be used optionally for color types 2 and 6).
+
+Transparency
+
+The tRNS chunk is supported with one restriction. For color type 3, all nonzero alpha values indicate that the
+color palette value is to be made fully opaque. The full PNG specification allows for color values to be made
+semi-transparent, but that option is not available in this subset.
+
+Reserved and Safe-to-copy bits
+
+The reserved bit and safe-to-copy bits in a chunk type code are normally only used by PNG generators, so
+they are ignored in this subset.
+
+Other Support
+
+Interlaced data order
+
+Handling of interlaced data order is fully supported in this subset.
+
+14 Presentation Object Subsets for AFP
+
+<<<PAGE 19>>>
+Compression
+
+Currently, the only compression method defined in the PNG specification is method 0. The compression
+algorithm is deflate/inflate compression with a sliding window of at most 32768 bytes. All the details of the
+compression method defined in the PNG specification are supported in this subset.
+
+Filter Algorithms
+
+All five filter types of PNG filter method 0 of the PNG specification are fully supported in this subset. These are
+filter types 0 (None), 1 (Sub), 2 (Up), 3 (Average), and 4 (Paeth).
+
+Color Management
+
+PNG images are color managed in the same way as all other presentation objects in AFP. However, there can
+be PNG-specific processing, depending on the chunks found in the PNG:
+
+• For a PNG with an iCCP chunk, the internal ICC profile specified by the iCCP chunk is used for color
+
+management unless overridden by an audit color conversion CMR on the PNG object.
+
+• For a PNG with an sRGB chunk and no iCCP chunk, the resident sRGB ICC profile is used for color
+
+management unless overridden by an audit color conversion CMR on the PNG object.
+
+• For a PNG image without iCCP or sRGB chunks, the image is color managed in AFP in the same way as any
+
+presentation object that does not specify internal color management information.
+
+• The gAMA and cHRM chunks are ignored in all cases.
+
+Resources
+
+Object-type OID
+
+Images that conform to the AFPC PNG Subset are marked with the following OID:
+
+X'06072B120004010141'
+
+AFPC PNG Subset
+
+References
+
+• ISO/IEC International Standard 15948:2004.
+
+Presentation Object Subsets for AFP 15
+
+<<<PAGE 20>>>
+16 Presentation Object Subsets for AFP
+
+<<<PAGE 21>>>
+Chapter 5. Scalable Vector Graphics (SVG)
+
+Scalable Vector Graphics (SVG) is a family of specifications of an XML-based file format for two-dimensional
+vector graphics, both static and dynamic (i.e. interactive or animated). The SVG specification is an open
+standard that has been under development by the World Wide Web Consortium (W3C) since 1999. SVG 1.1
+became an official W3C recommendation on August 16, 2011.
+
+The subset defined by this chapter is called the AFPC SVG Subset.
+
+Overview
+
+This section describes the main SVG features included in the subset. Embedding SVG in MO:DCA for
+presentation on a mostly static, high-resolution additive medium raises some questions and this chapter tries
+to provide some guidance to implementers.
+
+To specify what is supported in the subset, this document references the feature strings as listed by SVG 1.1 in
+Appendix O: Feature Strings.
+
+Subset Specification
+
+The AFPC SVG Subset is defined as the SVG Static subset of SVG 1.1. See
+
+http://www.w3.org/TR/SVG11/feature#SVG-static
+
+There is one feature string in SVG-Static that needs additional consideration in this light, the Conditional
+Processing feature string. See
+
+http://www.w3.org/TR/SVG11/feature#ConditionalProcessing
+
+This feature could result in different visualizations based upon the capabilities of the SVG engine used to
+rasterize the graphics. A suggested way to resolve this and to ensure consistent visualization is to ensure the
+same branches are taken every time. It is therefore required that the renderer claims conditional processing
+support for features in SVG-Basic and nothing more. No extensions should be claimed to be supported and no
+system language should be reported.
+
+Linked Resources
+
+Implementations shall not attempt to contact external systems or services. Only the URIs mentioned by the
+Fully Qualified Name (X'02') triplet as Data Object Internal Resource References can be successfully resolved
+by the SVG renderer to secondary resources.
+
+Fonts
+
+The SVG renderer will have access to all OTF/TTF fonts referenced as secondary resources.
+
+Pixel Size
+
+A pixel is defined to be 1/96 inch in size.
+
+Copyright © AFP Consortium 2010, 2016
+
+17
+
+<<<PAGE 22>>>
+Color Spaces
+
+Even though SVG supports ICC profiles, the compositing formula specified in section 14.2 of the SVG 1.1
+Specification assumes a three-valued color space, either sRGB, linearRGB, or deviceRGB depending on the
+values of the color-interpolation and color-rendering attributes. Given that all SVG shapes need to be
+composited at least once with the root canvas, all SVG images are in an RGB color space.
+
+Compression
+
+SVG images, being XML, contain many repeated fragments of text, so they are well suited for lossless data
+compression algorithms. When an SVG image has been compressed with the industry standard gzip
+algorithm, it is referred to as an SVGZ image. SVGZ images are fully supported in this subset. An SVGZ file is
+typically 20 to 50 percent of the original size.
+
+Presentation Space Size
+
+If the SVG viewport within the SVG object does not specify absolute width and height values, AFP Generators
+should include the Object Container Presentation Space Size triplet X'9C' to specify the presentation space
+size to use for the SVG object.
+
+Resources
+
+Object-type OID
+
+Objects that conform to the AFPC SVG Subset are marked with the following OID:
+
+X'06072B120004010144'
+
+AFPC SVG Subset
+
+This OID is also used for SVGZ objects, so implementations should look for the gzip header in the object to
+differentiate between the two serializations.
+
+References
+
+• Scalable Vector Graphics (SVG) 1.1 (Second Edition), August 16, 2011. Available at
+
+http://www.w3.org/TR/SVG11/
+
+• SVG 1.1, Appendix O: Feature Strings
+
+http://www.w3.org/TR/SVG11/feature.html
+
+18 Presentation Object Subsets for AFP
+
+<<<PAGE 23>>>
+Appendix A. Related Publications
+
+This Appendix lists references that are of interest for more than one object type. The following are the related
+AFP architecture documents, available at the AFP Consortium Web site at
+
+http://www.afpcinc.org
+
+• Mixed Object Document Content Architecture (MO:DCA) Reference
+
+• Intelligent Printer Data Stream (IPDS) Reference
+
+• Color Management Object Content Architecture (CMOCA) Reference
+
+Copyright © AFP Consortium 2010, 2016
+
+19
+
+<<<PAGE 24>>>
+20 Presentation Object Subsets for AFP
+
+<<<PAGE 25>>>
+Appendix B. Adobe APP14 JPEG Marker
+
+Adobe products use the APP14 (X'FFEE') JPEG marker to describe the actual color information in the
+compressed JPEG data. The following description is based on researching the information publicly available
+and by experiment, since Adobe does not publicly document the data placed in the APP14 marker.
+
+The marker has the length of 14, meaning there are 12 data bytes following the length. The data bytes are as
+follows:
+
+Table 3. Adobe Application Tag 14 Syntax
+
+Byte Offset
+
+Name
+
+Value
+
+Adobe
+
+Meaning
+
+APP14 marker contains Adobe data
+
+Encoder identifier tag
+
+X'0064'
+
+Photoshop
+
+flag0
+
+flag1
+
+X'0000', X'8000'
+
+X'0000' nothing specified
+X'8000' blend subsampling
+
+X'0000'
+
+X'0000' nothing specified
+
+Transform flag
+
+X'00' – X'02'
+
+X'00'
+
+X'01'
+X'02'
+
+Unknown. 4–component data is
+assumed CMYK, 3–component RGB
+YCbCr
+YCCK
+
+0–4
+
+5–6
+
+7–8
+
+9–10
+
+11
+
+Notes:
+
+1.
+
+2.
+
+flag0 contains hepful but optional data for the decoder (i.e., the decoder may safely ignore).
+
+flag1 contains required decoder data (i.e., the decoder must use the information).
+
+YCCK is obtained from CMYK by converting CMY to “YCC” using the RGB-to-YCbCr conversion formulas with
+the ITU-R Recommendation BT.601 (CCIR Recommendation 601-1) lumas:
+
+lumaRed = 0.299
+
+lumaGreen = 0.587
+
+lumaBlue = 0.114
+
+Y = lumaRed * cyan + lumaBlue * magenta + lumaGreen * yellow
+
+Cb = (magenta – Y) / (2 – 2 * lumaBlue )
+
+Cr = (cyan – Y) / (2 – 2 * lumaRed)
+
+These formulas lead to “reverse video” Y, Cb, and Cr. The K channel is also reversed (i.e., “K” in YCCK is really
+255-K). Thus, a YCCK value of 255,0,0,0 is black and a value of 0,0,0,255 is white.
+
+This mechanism is the same regardless of whether the data is carried within TIFF or as standalone JPEG.
+
+The meaning of “CMYK” (transform flag value of X'00' for 4-channel data) depends on whether the JPEG is
+standalone, or carried within TIFF. If carried within TIFF, CMYK is standard CMYK (0,0,0,0 is white). If within
+standalone JPEG, CMYK is reverse video; i.e., each component must be inverted via 255- before using
+(0,0,0,0 is black).
+
+Copyright © AFP Consortium 2010, 2016
+
+21
+
+<<<PAGE 26>>>
+Note: This means that 4-component JPEG images that contain an Adobe APP14 marker with a transform flag
+value of zero cannot be converted to TIFF just by prepending the appropriate TIFF header to the JPEG
+data. CMYK values must be transcoded and inverted, or the TIFF will be reverse-video.
+
+22 Presentation Object Subsets for AFP
+
+<<<PAGE 27>>>
+Glossary
+
+A
+
+addressable position. A position in a presentation space
+or on a physical medium that can be identified by a
+coordinate from the coordinate system of the presentation
+space or physical medium. See also picture element.
+Synonymous with position.
+
+Advanced Function Presentation (AFP). An open
+architecture for the management of presentable
+information that is developed by the AFP Consortium
+(AFPC). AFP comprises a number of data stream and data
+object architectures:
+• Mixed Object Document Content (MO:DCA) Architecture;
+
+formerly referred to as AFPDS
+
+• Intelligent Printer Data Stream (IPDS) Architecture
+• AFP Line Data Architecture
+• Bar Code Object Content Architecture (BCOCA)
+• Color Management Object Content Architecture
+
+(CMOCA)
+
+• Font Object Content Architecture (FOCA)
+• Graphics Object Content Architecture for AFP (AFP
+
+GOCA)
+
+• Image Object Content Architecture (IOCA)
+• Metadata Object Content Architecture (MOCA)
+• Presentation Text Object Content Architecture (PTOCA)
+
+AFP. See Advanced Function Presentation.
+
+AFP Consortium (AFPC). A formal open standards body
+that develops and maintains AFP architecture. Information
+about the consortium can be found at www.afpcinc.org.
+
+all points addressable (APA). The capability to address,
+reference, and position data elements at any addressable
+position in a presentation space or on a physical medium.
+Contrast with character cell addressing, in which the
+presentation space is divided into a fixed number of
+character-size rectangles in which characters can appear.
+Only the cells are addressable. An example of all points
+addressability is the positioning of text, graphics, and
+images at any addressable point on the physical medium.
+See also picture element.
+
+B
+
+background. The part of a presentation space that is not
+occupied with object data. Contrast with foreground.
+
+background color. The color of a background. Contrast
+with foreground color.
+
+band. An arbitrary layer of an image. An image can
+consist of one or more bands of data.
+
+C
+
+CMOCA. See Color Management Object Content
+Architecture.
+
+CMR. See color management resource.
+
+CMYK color space. The primary colors used together in
+printing to effectively create a multitude of other colors:
+cyan, magenta, yellow, and black. Based on the
+subtractive color theory; the primary colors used in four
+color printing processes.
+
+color management resource. Objects that provide color
+management in presentation environments.
+
+color model. The model by which a color is specified. For
+example, the RGB model specifies color in terms of three
+intensities for red (R), green (G), and blue (B).
+
+Color Management Object Content Architecture
+(CMOCA). An architected collection of constructs used for
+the interchange and presentation of the color management
+information required to render a print file, document, group
+of pages or sheets, page, overlay, or data object with color
+fidelity.
+
+coordinate system. A Cartesian coordinate system. An
+example is the image coordinate system that uses the
+fourth quadrant with positive values for the Y axis. The
+origin is the upper left-hand corner of the fourth quadrant.
+A pair of (x,y) values corresponds to one image point. Each
+image point is described by an image data element.
+
+D
+
+data element. A unit of data that is considered indivisible.
+
+data stream. A continuous stream of data that has a
+defined format.
+
+device dependent. Dependent upon one or more device
+characteristics.
+
+device-independent color space. CIE-based color
+space that allow color to be expressed in a device-
+independent way. It ensures colors to be predictably and
+accurately matched among various color devices.
+
+digital image. An image whose image data was sampled
+at regular intervals to produce a digital representation of
+
+Copyright © AFP Consortium 2010, 2016
+
+23
+
+<<<PAGE 28>>>
+embedded ICC profile • lossless
+
+the image. The digital representation is usually restricted to
+a specified set of values.
+
+other emanations coming from the picture or reflected by
+the picture. An image can also be generated directly by
+software without reference to an existing picture.
+
+E
+
+ICC profiles that are embedded
+embedded ICC profile.
+within graphic documents and images. An embedded ICC
+profile allows users to transparently move color data
+between different computers, networks and even operating
+systems without having to worry if the necessary profiles
+are present on the destination systems.
+
+exchange. The predictable interpretation of shared
+information by a family of system processes in an
+environment where the characteristics of each process
+must be known to all other processes. Contrast with
+interchange.
+
+F
+
+foreground. The part of a presentation space that is
+occupied with object data. See also pel. Contrast with
+background.
+
+foreground color. A color attribute used to specify the
+color of the foreground of a primitive. Contrast with
+background color.
+
+G
+
+image point. A discrete X,Y coordinate in the image
+presentation space. See also addressable position.
+
+Intelligent Printer Data Stream (IPDS). An architected
+host-to-printer data stream that contains both data and
+controls defining how the data is to be presented.
+
+interchange. The predictable interpretation of shared
+information in an environment where the characteristics of
+each process need not be known to all other processes.
+Contrast with exchange.
+
+International Color Consortium (ICC). A group of
+companies chartered to develop, use, and promote cross-
+platform standards so that applications and devices can
+exchange color data without ambiguity.
+
+International Organization for Standardization
+(ISO). An organization of national standards bodies from
+various countries established to promote development of
+standards to facilitate international exchange of goods and
+services, and develop cooperation in intellectual, scientific,
+technological, and economic activity.
+
+interoperability. The capability to communicate, execute
+programs, or transfer data among various functional units
+in a way that requires the user to have little or no
+knowledge of the unique characteristics of those units.
+
+gzip. A widely-used, free software compression
+algorithm.
+
+IPDS. See Intelligent Printer Data Stream.
+
+H
+
+hexadecimal. A number system with a base of sixteen.
+The decimal digits 0 through 9 and characters A through F
+are used to represent hexadecimal digits. The hexadecimal
+digits A through F correspond to the decimal numbers 10
+through 15, respectively. An example of a hexadecimal
+number is X'1B', which is equal to the decimal number 27.
+
+I
+
+ISO. See International Organization for Standardization.
+
+J
+
+JFIF. JPEG File Interchange Format. Three-component
+JPEG images. RGB data is assumed without gamma
+correction and the APP0 marker is used to specify the
+resolution and optionally the thumbnail.
+
+JPEG. Joint Photographic Experts Group. An image
+compression standard.
+
+ICC. See International Color Consortium.
+
+L
+
+lossless. A form of image transformation in which all of
+the data is retained. Contrast with lossy.
+
+ICC profile. A file in the International Color Consortium
+profile format, containing information about the color
+reproduction capabilities of a device such as a scanner, a
+digital camera, a monitor, or a printer. An ICC profile
+includes three elements: 128-byte file header, tag table,
+and tagged element data. The intent of this format is to
+provide a cross-platform device profile format. Such device
+profiles can be used to translate color data created on one
+device into another device’s native color space.
+
+image. An electronic representation of a picture produced
+by means of sensing light, sound, electron radiation, or
+
+24 Presentation Object Subsets for AFP
+
+<<<PAGE 29>>>
+lossy • YCrCb
+
+lossy. A form of image transformation in which some of
+the data is lost. Contrast with lossless.
+
+the containing presentation space's positive X axis is zero
+degrees.
+
+M
+
+Mixed Object Document Content Architecture
+(MO:DCA). An architected, device-independent data
+stream for interchanging documents.
+
+row. A subarray that consists of all elements that have an
+identical position within the high dimension of a regular
+two-dimensional array.
+
+S
+
+O
+
+SVG. Scalable Vector Graphics. An XML-based vector
+image format.
+
+orientation. The angular distance a presentation space
+or data block is rotated in a specified coordinate system,
+expressed in degrees and minutes. For example, the
+orientation of printing on a physical medium, relative to the
+Xm axis of the Xm,Ym coordinate system.
+
+T
+
+TIFF. Tagged Image File Format. A rich and flexible image
+format.
+
+P
+
+Y
+
+physical medium. A physical entity on which information
+is presented. Examples of a physical medium are a sheet
+of paper and a display screen.
+
+pel. The smallest printable or displayable unit on a
+physical medium. In computer graphics, the smallest
+element of a physical medium that can be independently
+assigned color and intensity. Picture elements per inch is
+often used as a measurement of presentation granularity.
+Synonymous with pixel and picture element.
+
+picture element. The smallest printable or displayable
+unit on a physical medium. In computer graphics, the
+smallest element of a physical medium that can be
+independently assigned color and intensity. Picture
+elements per inch is often used as a measurement of
+presentation granularity. Synonymous with pel and pixel.
+
+pixel. The smallest printable or displayable unit on a
+physical medium. In computer graphics, the smallest
+element of a physical medium that can be independently
+assigned color and intensity. Picture elements per inch is
+often used as a measurement of presentation granularity.
+Synonymous with pel and picture element.
+
+PNG. Portable Network Graphics. A lossless image
+format.
+
+presentation space. A conceptual address space with a
+specified coordinate system and a set of addressable
+positions. The coordinate system and addressable
+positions can coincide with those of a physical medium.
+
+R
+
+rotation. The orientation of a presentation space with
+respect to the coordinate system of a containing
+presentation space. Rotation is measured in degrees in a
+clockwise direction. Zero-degree rotation exists when the
+angle between a presentation space's positive X axis and
+
+YCbCr. A three-component color space that
+approximately models how color is interpreted by the
+human visual system, with an intensity value and two color
+values. YCbCr and YCrCb use the same three values, but
+in a different order.
+
+YCCK. CMYK data carried in the luminance-chrominance
+form. YCC are computed from CMY, while K is the black
+channel carried in the reverse-video form (K = 255 - K).
+See Appendix B, “Adobe APP14 JPEG Marker”.
+
+YCrCb. A three-component color space that
+approximately models how color is interpreted by the
+human visual system, with an intensity value and two color
+values. YCbCr and YCrCb use the same three values, but
+in a different order.
+
+Presentation Object Subsets for AFP 25
+
+<<<PAGE 30>>>
+26 Presentation Object Subsets for AFP
+
+<<<PAGE 31>>>
+Index
+A
+Adobe ......................... 3, 5, 7–10, 21
+Adobe Application Marker ................21
+Advanced Function Presentation
+(AFP) ....................................... 1
+AFP Consortium
+See AFPC
+
+AFPC.......... 1, 3, 7, 9–10, 13, 15, 17–19
+alpha channel ..................... 5, 7–8, 14
+
+B
+baseline TIFF................................ 3
+
+C
+CCIR Recommendation 601–1.....5, 9, 21
+CIELab ....................................... 5
+CMR................................. 7, 10, 15
+CMYK ............................ 5, 9, 21–22
+Color Management Resource
+
+See CMR
+
+E
+extra samples ......................... 3–5, 7
+
+G
+gzip ..........................................18
+
+I
+ICC ........................................... 6
+ICC profile ................... 6, 9, 13, 15, 18
+International Color Consortium
+
+See ICC
+
+ITU-R Recommendation BT.601 ...5, 9, 21
+
+J
+Joint Photographic Experts Group
+
+See JPEG
+
+JPEG ............................... 3, 5, 9, 21
+
+O
+Object ID
+
+See OID
+
+OID ........................... 1, 7, 11, 15, 18
+
+P
+PNG .........................................13
+bit depths.................................14
+
+color management ......................15
+color types ...............................14
+compression method ...................15
+filter types ................................15
+interlaced data order ....................14
+palette entries ...........................14
+reserved bit ..............................14
+safe-to-copy bit ..........................14
+transparency.............................14
+
+PNG chunks
+chunks
+
+bKGD ..................................13
+cHRM ............................. 13, 15
+gAMA ............................. 13, 15
+hIST ....................................14
+iCCP .............................. 13, 15
+IDAT....................................13
+IEND ...................................13
+IHDR .............................. 13–14
+iTXt.....................................13
+other ...................................14
+pHYs ...................................14
+PLTE .............................. 13–14
+private .................................14
+sBIT ....................................14
+sPLT ...................................14
+sRGB ............................. 13, 15
+tEXt ....................................13
+tIME ....................................14
+tRNS .............................. 13–14
+zTXt ....................................13
+fully supported ...........................13
+supported with restrictions .............13
+unsupported .............................13
+
+R
+RGB .............................. 5, 9, 18, 21
+
+S
+SVG .................................... 17–18
+color spaces .............................18
+compression .............................18
+feature strings ...................... 17–18
+ConditionalProcessing ...............17
+SVG-static.............................17
+fonts ......................................17
+linked resources .........................17
+pixel size .................................17
+presentation space size ................18
+
+T
+Tagged Image File Format
+
+See TIFF
+
+TIFF .......................................... 3
+TIFF Compression 7..................... 3, 5
+TIFF private tags ............................ 3
+TIFF standard tags ...................... 4–5
+TIFF Tags
+
+additional Supported Tags .............. 6
+
+standard tags
+
+fully supported ......................... 4
+supported with restrictions............ 4
+TIFF standard tags .................... 4
+unsupported............................ 5
+
+tags
+
+Artist .................................... 6
+BitsPerSample ......................... 4
+CellLength.............................. 5
+CellWidth ............................... 5
+ColorMap ............................... 4
+Compression........................... 4
+Copyright ............................... 6
+DateTime ............................... 5
+DocumentName ....................... 5
+DotRange .............................. 6
+ExtraSamples .................... 3, 5, 7
+FillOrder ................................ 4
+FreeByteCounts ....................... 5
+FreeOffsets............................. 5
+GrayResponseCurve.................. 4
+GrayResponseUnit .................... 4
+HalftoneHints .......................... 6
+HostComputer ......................... 6
+ICCProfile .............................. 6
+ImageDescription...................... 5
+ImageLength ........................... 4
+ImageWidth ............................ 4
+InkNames .............................. 6
+InkSet ................................... 6
+JPEGACTables ........................ 6
+JPEGDCTables ........................ 6
+JPEGInterchangeFormat ............. 6
+JPEGInterchangeFormatLength ..... 6
+JPEGLosslessPredictors ............. 6
+JPEGPointTransforms ................ 6
+JPEGProc .............................. 6
+JPEGQTables.......................... 6
+JPEGRestartInterval .................. 6
+Make .................................... 5
+MaxSampleValue...................... 5
+MinSampleValue ...................... 5
+Model ................................... 5
+NewSubfileType .................... 4, 7
+NumberOfInks ......................... 6
+Orientation ............................. 4
+PageName ............................. 5
+PageNumber........................ 5, 7
+PhotometricInterpretation. ............ 5
+PlanarConfiguration ................... 4
+Predictor ................................ 4
+PrimaryChromaticities ................ 6
+ReferenceBlackWhite ................. 4
+ResolutionUnit ......................... 5
+RowsPerStrip .......................... 4
+SampleFormat ......................... 6
+SamplesPerPixel ...................... 5
+SMaxSampleValue .................... 6
+SMinSampleValue..................... 6
+Software ................................ 5
+StripByteCounts ....................... 4
+StripOffsets............................. 4
+SubfileType. ............................ 4
+T4Options .............................. 4
+T6Options .............................. 4
+TargetPrinter ........................... 6
+
+Copyright © AFP Consortium 2010, 2016
+
+27
+
+<<<PAGE 32>>>
+Thresholding ........................... 5
+TileByteCounts ........................ 6
+TileLength .............................. 6
+TileOffsets .............................. 6
+TileWidth ............................... 6
+TransferFunction ...................... 5
+TransferRange......................... 6
+WhitePoint.............................. 6
+XPosition ............................... 4
+XResolution ............................ 4
+YCbCrCoefficients. .................... 4
+YCbCrPositioning ..................... 6
+YCbCrSubsampling ................... 4
+YPosition ............................... 4
+YResolution ............................ 4
+TIFF Tech Note 2 ..................... 3, 5, 8
+transparency mask ................ 3–5, 7–8
+
+W
+W3C .........................................17
+World Wide Web Consortium
+
+See W3C
+
+Y
+YCbCr .................................5, 9, 21
+YCCK .......................................21
+
+28 Presentation Object Subsets for AFP
+
+<<<PAGE 33>>>
+Presentation Object Subsets for AFP 29
+
+<<<PAGE 34>>>
+Advanced Function Presentation Consortium
+Presentation Object Subsets for AFP
+
+AFPC-0002-03

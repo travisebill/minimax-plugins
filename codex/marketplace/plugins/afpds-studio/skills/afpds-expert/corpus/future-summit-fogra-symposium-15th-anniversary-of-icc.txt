@@ -1,0 +1,759 @@
+<<<PAGE 1>>>
+Future Summit
+
+Fogra CM Symposium
+15th Anniversary of ICC 
+Munich, 21th-22nd February 2008
+
+Presented by
+
+José La Rosa Ducato
+Exec. Dir. Software development
+
+Océ Printing Systems GmbH
+
+2008 AFP Consortium. All rights reserved
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+<<<PAGE 2>>>
+• Where are we ?
+– Printing today
+– The coming challenges
+
+• What is AFP ?
+
+– The AFP approach
+– The AFP Consortium
+
+• What’s to Come ?
+– “Back to the Future”
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Agenda
+
+2
+
+<<<PAGE 3>>>
+Printing today
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Source: “The Future of Printing”, Frank Romano, Adobe eSeminar 2006
+
+3
+
+<<<PAGE 4>>>
+Printing today
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Source: “The Future of Printing”, Frank Romano, Adobe eSeminar 2006
+
+4
+
+<<<PAGE 5>>>
+Printing today
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Source: “The Future of Printing”, Frank Romano, Adobe eSeminar 2006
+
+5
+
+<<<PAGE 6>>>
+Printing today
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Source: “The Future of Printing”, Frank Romano, Adobe eSeminar 2006
+
+6
+
+<<<PAGE 7>>>
+Printing today
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Source: “The Future of Printing”, Frank Romano, Adobe eSeminar 2006
+
+7
+
+<<<PAGE 8>>>
+Printing today
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Source: “The Future of Printing”, Frank Romano, Adobe eSeminar 2006
+
+8
+
+<<<PAGE 9>>>
+Printing today
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+Source: “The Future of Printing”, Frank Romano, Adobe eSeminar 2006
+
+9
+
+<<<PAGE 10>>>
+The coming challenges
+
+• Extreme short run lengths, …
+
+– Book on Demand
+– Personalized / 1:1 products
+– Legal / Financial / Transactional reports
+
+->
+
+TransPromo
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+• … including personal, sensitive data, …
+
+– Confidentiality, integrity, liability
+
+->
+
+Tracking
+
+• … require high speed rips, …
+
+– Rip once, print many once
+
+->
+
+Workflows
+
+• … and automated workflows for very high data volumes
+
+– Print job = 10.000 copies of a 10 standard-pages brochure 
+
+(10 pages of data, 10 Mb)
+
+– Print job = 10.000 copies of a 10 personalized-pages brochure
+
+(100.000 pages of data, 100 Gb)
+
+10
+
+<<<PAGE 11>>>
+The AFP approach
+
+• Advanced Function Presentation, …
+
+– Wide industry support in Finance, Legal, Transactional products
+– Billions of pages generated annually
+– Mature, robust standard with proven 22+ years experience
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+• … specialized in 1:1 personalized data, …
+
+– For extreme short runs
+– Used to print checks and financial documents
+– Complete document accounting / tracking
+
+->
+->
+->
+
+Performance 
+Confidentiality
+Integrity
+
+• … for high speed production printing, …
+– Extensive support of reusable resources ->
+– Page / Object structure allows streaming ->
+
+RIP once
+Print while RIP 
+
+•
+
+... in b/w, spot and full process color workflows
+– Reusable color attributes / objects 
+
+->
+
+ICC profiles
+
+11
+
+<<<PAGE 12>>>
+The AFP approach
+
+• Open Architecture, …
+
+– Created by IBM in 1984, opened to the industry in 2006
+– Wide, still increasing industry support (see AFP Consortium)
+
+• … supports media and finishing intents, …
+
+– Media and finishing requirements specified directly in the data stream
+– Provides maximum flexibility for large, very high volume, variable jobs
+
+• … with low device dependency, …
+
+– IPDS (Intelligent Printer Data Stream) as device independent protocol
+– Unrestricted backwards compatibility to insure investment protection
+
+• … for late binding workflows
+– Keep your job device independent 
+– AFP may carry TIFF, GIF, EPS, PDF objects 
+
+->
+->
+
+max. flexibility
+Compatibility
+
+12
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+<<<PAGE 13>>>
+The AFP Consortium
+
+• Started in 2004 as AFP Color Consortium, …
+
+– Goal: develop comprehensive color management for AFP architecture
+– Initial membership: 16 hardware and software manufacturers
+– First release of AFP Color Management Architecture (ACMA) in 2006
+– Published and available on the Consortium’s web site: 
+
+www.afpcolor.org
+
+• … extended in 2006, …
+
+– To include all AFP Object Content based architectures: 
+
+MO:DCA (documents), 
+BCOCA (barcodes),  FOCA (fonts), 
+IPDS
+PTOCA (text), 
+
+AFP Line Data,
+
+GOCA (vector graphics), 
+
+IOCA (raster images),
+
+– Initial AFPC membership (2006): 31 hardware and software 
+
+manufacturers
+
+• … in order to
+
+– Develop AFP into a best-of-breed presentation architecture
+
+13
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+<<<PAGE 14>>>
+Current AFP Consortium Membership
+
+• Printers & Controllers
+
+– InfoPrint Solutions/Ricoh
+– Kodak
+– Lexmark
+– Oce
+– Punch Graphix
+– Xerox
+
+• Servers & Transforms 
+
+– CDP Communications 
+– Compart Systemhaus
+– Crawford Technologies
+– Emtex
+– IBM
+– Intermate
+– LRS
+– MPI
+– Solimar Systems
+– Xenos Group Inc.
+
+• Document Composition 
+& Resource Creation:
+
+– Cincom
+– COPI
+– CRE-DO
+– DocPath
+– Document Sciences
+– Elixir Technologies
+– Exstream Software
+– GMC Software Technology
+– Pitney Bowes Group 1
+– Invaris
+– Inventive Designers
+– Isis-Papyrus
+– Metavante
+– PrintSoft
+– RenderX
+– Skywire Software
+– StreamServe
+
+14
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+<<<PAGE 15>>>
+What’s to come (polarizing statement)
+
+• “Back to the Future”
+
+– AFP as standard for Full Color, Very High Volume, Variable Data, Production 
+
+Printing
+
+AFP, 2%
+
+Other, 15%
+
+XML, 8%
+
+VPS, 13%
+
+PDF, 26%
+
+PDF, 
+33%
+
+PostScript, 
+1%
+
+AFP, 
+33%
+
+Other, 
+33%
+
+PPML, 18%
+
+PostScript, 
+18%
+
+Output languages used for CVDP
+in Commercial Print in 2006
+(Source: INTERQUEST)
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+15
+
+<<<PAGE 16>>>
+The AFP Consortium
+
+www.afpcolor.org
+
+m
+m
+u
+u
+i
+i
+t
+t
+r
+r
+o
+o
+s
+s
+n
+n
+o
+o
+C
+C
+P
+P
+F
+F
+A
+A
+
+16

@@ -36,6 +36,30 @@ class PackageCLI(unittest.TestCase):
                         self.assertTrue(any(n.endswith('skills/audio-reactive-waveform/' + suffix) for n in names), suffix)
                     self.assertFalse(any('__pycache__' in n or n.endswith(('.mov', '.wav', '.mp3')) for n in names))
 
+    def test_archive_carries_afp_corpus_and_renderer(self):
+        """AFP 套件可攜：語料與渲染器必須真的進了匯出檔，否則安裝後 skill 空殼。"""
+        with tempfile.TemporaryDirectory() as directory:
+            copy = Path(directory) / 'codex'
+            shutil.copytree(ROOT, copy, ignore=shutil.ignore_patterns('dist', '__pycache__'))
+            result = subprocess.run([sys.executable, str(copy / 'scripts/package_plugins.py')],
+                                    capture_output=True, text=True,
+                                    env={**os.environ, 'PYTHONDONTWRITEBYTECODE': '1'})
+            self.assertEqual(result.returncode, 0, result.stderr)
+            report = json.loads(result.stdout)
+            afp = next(p for p in report['plugins'] if p['name'] == 'afpds-studio')
+            self.assertEqual(set(afp['skills']), {'afpds-expert', 'afp-renderer'})
+            archive = copy / 'dist' / f"afpds-studio-{afp['version']}-codex.zip"
+            with zipfile.ZipFile(archive) as package:
+                names = package.namelist()
+                for suffix in ('SKILL.md', 'agents/openai.yaml',
+                               'corpus/index.json',
+                               'scripts/afp_render/render.py'):
+                    self.assertTrue(
+                        any(n.endswith('skills/afpds-expert/' + suffix)
+                            or n.endswith('skills/afp-renderer/' + suffix)
+                            for n in names), suffix)
+                self.assertFalse(any('__pycache__' in n or n.endswith('.pyc') for n in names))
+
 
 if __name__ == '__main__':
     unittest.main()

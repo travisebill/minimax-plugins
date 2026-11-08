@@ -1,0 +1,4 @@
+interface:
+  display_name: "AFP 頁面渲染器"
+  short_description: "把 AFP / MO:DCA 資料流渲染成 PNG 頁面圖，含字型、圖形與影像解碼"
+  default_prompt: "使用 $afp-renderer，把這份 AFP 的第 1 頁渲染成 PNG 給我看。"

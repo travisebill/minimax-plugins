@@ -10,7 +10,17 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-NAMES = ('learning-game-studio', 'three-kingdoms-focus-studio')
+MARKETPLACE = ROOT / 'marketplace/.agents/plugins/marketplace.json'
+
+
+def marketplace_names():
+    """外掛清單取自 marketplace manifest，不另維一份硬編碼名單。
+
+    少一份名單 = 少一個會被漏驗的外掛。名單只有一份來源時，
+    新增外掛不必記得回來改這支腳本。
+    """
+    data = json.loads(MARKETPLACE.read_text(encoding='utf-8'))
+    return tuple(entry['name'] for entry in data['plugins'])
 
 
 def main():
@@ -19,6 +29,7 @@ def main():
     args = parser.parse_args()
     if not args.codex:
         raise SystemExit('Codex CLI unavailable')
+    names = marketplace_names()
     output = ROOT / 'validation'
     output.mkdir(exist_ok=True)
     messages = queue.Queue()
@@ -64,7 +75,7 @@ def main():
             process.stdin.write('{"jsonrpc":"2.0","method":"initialized","params":{}}\n')
             process.stdin.flush()
             plugins = []
-            for name in NAMES:
+            for name in names:
                 response = request('plugin/read', {
                     'pluginName': name,
                     'marketplacePath': str(ROOT / 'marketplace/.agents/plugins/marketplace.json'),
@@ -81,7 +92,7 @@ def main():
             listed = request('skills/list', {'cwds': [str(ROOT)], 'forceReload': True})
             skills = [s for entry in listed['data'] for s in entry['skills']
                       if '/travis-codex-studios/' in s['path']]
-            expected_count = sum(len(list((ROOT / 'marketplace/plugins' / name / 'skills').glob('*/SKILL.md'))) for name in NAMES)
+            expected_count = sum(len(list((ROOT / 'marketplace/plugins' / name / 'skills').glob('*/SKILL.md'))) for name in names)
             assert len(skills) == expected_count, [(s['name'], s['path']) for s in skills]
             assert all(s['enabled'] for s in skills)
             package_errors = [e for entry in listed['data'] for e in entry['errors']

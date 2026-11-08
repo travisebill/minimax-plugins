@@ -1,0 +1,40 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "afpds-studio",
+  "version": "1.0.0",
+  "description": "AFP / AFPDS（Advanced Function Presentation）文件開發工具箱：內建 AFPC 完整出版品語料庫（32 份文件、5,490 頁、11.7 MB 純文字），每個位元組值、結構識別碼與繪圖規則都能追回規格頁碼；並附一套自建的 MO:DCA 資料流 → PNG 渲染器，可直接解出 FOCA 字型、PTOCA 文字、GOCA 圖形與 IOCA 影像並合成頁面預覽。適合解析 .afp 檔、驗證結構、撰寫產生器，或把 AFP 頁面轉成圖片檢視。",
+  "author": {
+    "name": "Travis Chen"
+  },
+  "keywords": [
+    "codex",
+    "skills",
+    "afp",
+    "modca",
+    "printing"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "AFP 文件工作室",
+        "shortDescription": "AFP 規格語料庫與 MO:DCA 頁面渲染器",
+        "longDescription": "AFP / AFPDS（Advanced Function Presentation）文件開發工具箱：內建 AFPC 完整出版品語料庫（32 份文件、5,490 頁、11.7 MB 純文字），每個位元組值、結構識別碼與繪圖規則都能追回規格頁碼；並附一套自建的 MO:DCA 資料流 → PNG 渲染器，可直接解出 FOCA 字型、PTOCA 文字、GOCA 圖形與 IOCA 影像並合成頁面預覽。適合解析 .afp 檔、驗證結構、撰寫產生器，或把 AFP 頁面轉成圖片檢視。",
+        "developerName": "Travis Chen",
+        "category": "Code",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "defaultPrompt": [
+          "幫我解析這份 .afp 檔，列出它的物件結構與每個結構的規格頁碼",
+          "把這個 AFP 的第 1 頁 render 成 PNG 給我看",
+          "這個 AFP 在印表機上印出來是空白的，幫我查結構有沒有問題"
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png",
+        "logoDark": "./assets/icon-dark.png",
+        "composerIconDark": "./assets/icon-dark.png"
+      }
+    }
+  }
+}
